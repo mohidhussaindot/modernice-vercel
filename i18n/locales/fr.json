@@ -1,0 +1,1389 @@
+{
+  "navigation": {
+    "home": "ACCUEIL",
+    "features": "FONCTIONNALITÉS",
+    "organizer": "ORGANISATEUR",
+    "player": "JOUEUR",
+    "growth": "MARCHÉ"
+  },
+  "auth": {
+    "login": "CONNEXION",
+    "signUp": "INSCRIPTION"
+  },
+  "lintro": {
+    "title": "Esports pour Tous. Vrais Matchs.",
+    "titleHighlight": "Vrai Argent.",
+    "description": "Que vous soyez en quête de gloire, que vous organisiez vos propres tournois ou simplement là pour regarder et encourager, TZone vous donne le pouvoir d'en faire plus — avec moins de tracas.",
+    "joinNow": "Rejoindre Maintenant",
+    "viewTournaments": "Voir les Tournois"
+  },
+  "footer": {
+    "resources": {
+      "title": "Ressources",
+      "items": [
+        "Centre d'Aide",
+        "Politique de confidentialité",
+        "Feuille de Route",
+        "Journal des Modifications"
+      ]
+    },
+    "features": {
+      "title": "Fonctionnalités",
+      "items": [
+        "Affiliés",
+        "Portail",
+        "Contactez-nous",
+        "Sponsors"
+      ]
+    },
+    "company": {
+      "title": "Entreprise",
+      "about": "À Propos",
+      "blog": "Blog",
+      "careers": "Carrières",
+      "terms": "Conditions Générales"
+    },
+    "notifyMe": {
+      "title": "Prévenez-moi à la date de lancement",
+      "placeholder": "Enregistrez votre e-mail",
+      "button": "Prévenez-moi"
+    },
+    "trustedByGamers": {
+      "title": "Approuvé par les Gamers du Monde Entier",
+      "description": "Rejoignez des milliers de joueurs qui font confiance à TZONE pour un gaming fluide, des tournois sécurisés et de vraies récompenses."
+    },
+    "contact_us": "Contactez Notre Équipe"
+  },
+  "helpCenter": {
+    "breadcrumb": {
+      "home": "Accueil",
+      "helpCenter": "Centre d'Aide"
+    },
+    "header": {
+      "title": "Besoin d'Aide ?",
+      "subtitle": "Trouvez des réponses ou posez vos questions"
+    },
+    "search": {
+      "placeholder": "Comment pouvons-nous vous aider ?"
+    },
+    "categories": {
+      "account": {
+        "title": "Problèmes de Compte",
+        "description": "Réinitialisation de mot de passe, récupération de compte"
+      },
+      "gameplay": {
+        "title": "Support de Jeu",
+        "description": "Mécaniques de jeu, succès"
+      },
+      "payments": {
+        "title": "Paiements & Facturation",
+        "description": "Abonnements, remboursements"
+      },
+      "technical": {
+        "title": "Aide Technique",
+        "description": "Configuration système, bugs"
+      },
+      "security": {
+        "title": "Sécurité",
+        "description": "Confidentialité, paramètres de sécurité"
+      },
+      "community": {
+        "title": "Règles de la Communauté",
+        "description": "Règles, signalements"
+      }
+    },
+    "faqs": {
+      "title": "FAQs Populaires",
+      "items": {
+        "password": {
+          "question": "Comment réinitialiser mon mot de passe ?",
+          "answer": "Pour réinitialiser votre mot de passe, allez sur l'écran de connexion et cliquez sur \"Mot de passe oublié\". Nous enverrons un lien de réinitialisation à votre email enregistré. Suivez les instructions pour définir un nouveau mot de passe."
+        },
+        "settings": {
+          "question": "Où puis-je trouver mes paramètres de compte ?",
+          "answer": "Vous pouvez accéder aux paramètres de votre compte en cliquant sur votre avatar dans le coin supérieur droit du site et en sélectionnant \"Paramètres\". Vous pouvez y mettre à jour votre profil, email et préférences."
+        },
+        "support": {
+          "question": "Comment contacter le support client ?",
+          "answer": "Cliquez sur le bouton \"Contacter le Support\" en bas de cette page ou allez dans notre Centre de Support. Vous pouvez ouvrir un ticket pour des problèmes techniques, des questions de facturation ou signaler un joueur."
+        },
+        "payment": {
+          "question": "Quels modes de paiement acceptez-vous ?",
+          "answer": "Nous acceptons les cartes de crédit/débit, PayPal, Google Pay et Apple Pay. Des options de paiement régionales sont également disponibles selon votre localisation."
+        },
+        "technical": {
+          "question": "Comment signaler un problème technique ?",
+          "answer": "Pour signaler un bug ou un problème technique, visitez la section \"Aide Technique\", décrivez le problème en détail et joignez des captures d'écran ou logs si possible. Notre équipe examinera et répondra rapidement."
+        }
+      }
+    },
+    "stillNeedHelp": {
+      "title": "Toujours besoin d'aide ?",
+      "contactSupport": "Contacter le Support"
+    }
+  },
+  "affiliatesPage": {
+    "breadcrumb": "Affiliés",
+    "headerTitle": "Gagnez avec TZONE",
+    "headerSubtitle": "Rejoignez le Futur des Partenariats Gaming",
+    "stats": {
+      "totalEarned": "Total Gagné",
+      "activePartners": "Partenaires Actifs",
+      "averageMonthly": "Moyenne Mensuelle"
+    },
+    "rewards": {
+      "title": "Récompenses Inégalées",
+      "bronze": "Bronze",
+      "bronzeCommission": "Taux de Commission : 10%",
+      "silver": "Argent",
+      "silverCommission": "Taux de Commission : 15%",
+      "gold": "Or",
+      "goldCommission": "Taux de Commission : 20%"
+    },
+    "howItWorks": {
+      "title": "Comment ça Marche",
+      "signUp": "Inscrivez-vous",
+      "signUpDescription": "Créez votre compte partenaire TZONE",
+      "share": "Partagez",
+      "shareDescription": "Promouvez avec vos liens uniques",
+      "earn": "Gagnez",
+      "earnDescription": "Soyez payé pour chaque référence réussie"
+    },
+    "partnerBenefits": {
+      "title": "Avantages des Partenaires",
+      "realTimeTracking": "Suivi en Temps Réel",
+      "realTimeTrackingDescription": "Surveillez vos performances 24/7",
+      "instantPayouts": "Paiements Instantanés",
+      "instantPayoutsDescription": "Soyez payé tous les 30 jours",
+      "dedicatedSupport": "Support Dédié",
+      "dedicatedSupportDescription": "Équipe de support partenaire 24/7",
+      "exclusiveTools": "Outils Exclusifs",
+      "exclusiveToolsDescription": "Analyses et rapports avancés"
+    },
+    "faq": {
+      "title": "Questions Fréquentes",
+      "q1": "Comment suis-je payé ?",
+      "a1": "Vous recevrez vos paiements via votre banque ou portefeuille électronique enregistré tous les 30 jours.",
+      "q2": "Quelles sont les conditions ?",
+      "a2": "Vous devez avoir un compte vérifié et promouvoir en utilisant votre lien de référence unique.",
+      "q3": "Quand reçois-je mes commissions ?",
+      "a3": "Les commissions sont traitées à la fin de chaque mois pour les références du mois précédent.",
+      "q4": "Comment suivre mes références ?",
+      "a4": "Vous pouvez suivre vos références dans votre tableau de bord avec des données et insights en temps réel."
+    },
+    "cta": {
+      "title": "Commencez à Gagner dès Aujourd'hui",
+      "joinNowButton": "Rejoindre Maintenant"
+    }
+  },
+  "roadmapPage": {
+    "breadcrumb": "Feuille de Route",
+    "title": "Notre Feuille de Route",
+    "titleHighlight": "vers le Futur",
+    "subtitle": "Suivez l'évolution de TZONE et ses futures innovations",
+    "quarterlyViewButton": "Vue Trimestrielle",
+    "yearlyViewButton": "Vue Annuelle",
+    "statusCompleted": "Terminé",
+    "statusInProgress": "En Cours",
+    "statusComingSoon": "Bientôt Disponible",
+    "items": {
+      "q2_2025_launch_title": "Lancement de la Plateforme TZONE Core",
+      "q2_2025_launch_description": "Version initiale de notre écosystème gaming avec fonctionnalités de base et hub communautaire.",
+      "q3_2025_matchmaking_title": "Système de Matchmaking Avancé",
+      "q3_2025_matchmaking_description": "Appariement des joueurs par IA et organisation de tournois basée sur les compétences.",
+      "q3_2025_nft_title": "Intégration du Marché NFT",
+      "q3_2025_nft_description": "Plateforme d'échange d'actifs numériques avec objets de collection gaming exclusifs.",
+      "q1_2026_expansion_title": "Expansion Multi-Plateformes",
+      "q1_2026_expansion_description": "Intégration du gameplay cross-platform.",
+      "q3_2026_vr_title": "Intégration de la Réalité Virtuelle",
+      "q3_2026_vr_description": "Expériences de gaming immersives en VR et espaces sociaux."
+    },
+    "subscribeTitle": "Restez Informé",
+    "subscribeSubtitle": "Abonnez-vous à notre newsletter pour les dernières mises à jour sur le développement de TZONE",
+    "subscribePlaceholder": "Entrez votre email",
+    "subscribeButton": "S'abonner"
+  },
+  "changelogPage": {
+    "breadcrumb": "Journal des Modifications",
+    "title": "Mises à Jour TZONE",
+    "subtitle": "Restez informé de nos derniers changements",
+    "filterAll": "Tous",
+    "updateTypes": {
+      "major": "Mise à Jour Majeure",
+      "minor": "Mise à Jour Mineure",
+      "patch": "Correctif"
+    },
+    "changes": {
+      "v3_1_2": {
+        "item1": "Amélioration des performances de l'interface utilisateur",
+        "item2": "Ajout de nouveaux widgets de tableau de bord",
+        "item3": "Correction de vulnérabilités de sécurité critiques",
+        "item4": "Mise en place de fonctionnalités de collaboration en temps réel",
+        "item5": "Ajout d'un tableau de bord d'analyses avancées"
+      },
+      "v3_1_1": {
+        "item1": "Corrections de bugs et améliorations de stabilité",
+        "item2": "Mise à jour des dépendances",
+        "item3": "Gestion des erreurs améliorée"
+      },
+      "v3_1_0": {
+        "item1": "Introduction du mode sombre",
+        "item2": "Ajout de nouveaux effets d'animation",
+        "item3": "Amélioration de la réactivité mobile"
+      }
+    },
+    "widgets": {
+      "quickLinksTitle": "Liens Rapides",
+      "quickLinkPreviousVersions": "Versions Précédentes",
+      "quickLinkRequestFeature": "Demander une Fonctionnalité",
+      "versionTypesTitle": "Types de Version",
+      "versionTypeMajor": "Mises à Jour Majeures",
+      "versionTypeMinor": "Mises à Jour Mineures",
+      "versionTypePatch": "Correctifs",
+      "latestFeaturesTitle": "Dernières Fonctionnalités",
+      "latestFeature1": "Mode Sombre",
+      "latestFeature2": "Collaboration en Temps Réel",
+      "latestFeature3": "Analyses Avancées"
+    }
+  },
+  "contactUs": {
+    "breadcrumb": {
+      "home": "Accueil",
+      "contactUs": "Contactez-nous"
+    },
+    "header": {
+      "title": "contactez-nous !",
+      "subtitle": "Vos Questions. Notre Mission."
+    },
+    "form": {
+      "title": "Parlons",
+      "description": "Une question, un feedback ou juste envie de dire bonjour ? Remplissez le formulaire et nous vous répondrons bientôt.",
+      "name": "Votre Nom",
+      "email": "Votre Adresse Email",
+      "topic": "De quoi s'agit-il ?",
+      "message": "Votre Message",
+      "screenshot": "Télécharger une capture d'écran (si applicable)",
+      "placeholders": {
+        "name": "Entrez votre nom",
+        "email": "Entrez votre email",
+        "selectTopic": "Sélectionnez un sujet",
+        "message": "Tapez votre message ici...",
+        "dropzone": "Glissez-déposez votre fichier ici, ou cliquez pour sélectionner"
+      },
+      "topics": {
+        "default": "Sélectionnez un sujet",
+        "generalInquiry": "Demande Générale",
+        "support": "Support",
+        "feedback": "Feedback"
+      },
+      "submit": "Envoyer le Message"
+    },
+    "sidebar": {
+      "connectTitle": "Connectez-vous avec Nous",
+      "discord": "Discord",
+      "twitter": "Twitter",
+      "twitch": "Twitch",
+      "youtube": "YouTube",
+      "helpTitle": "Besoin d'Aide Rapidement ?",
+      "helpOptions": {
+        "faq": {
+          "title": "FAQ & Centre d'Aide",
+          "description": "Trouvez des réponses rapides aux questions courantes"
+        },
+        "business": {
+          "title": "Demandes Commerciales"
+        },
+        "report": {
+          "title": "Signaler un Joueur",
+          "description": "Utilisez notre outil de signalement"
+        }
+      }
+    }
+  },
+  "careerPage": {
+    "breadcrumb": {
+      "home": "Accueil",
+      "career": "Carrières"
+    },
+    "hero": {
+      "title": "Propulser la Prochaine Ère du Gaming Compétitif Commence avec Vous.",
+      "subtitle": "Nous construisons une plateforme mondiale où les joueurs s'élèvent, les événements se multiplient et l'esports prospère — et nous avons besoin de talents pour nous aider à y parvenir."
+    },
+    "cta": {
+      "viewRoles": "Voir les Postes Ouverts",
+      "connectLinkedIn": "Se Connecter sur LinkedIn"
+    },
+    "whyWorkHere": {
+      "title": "Pourquoi Travailler chez TZone",
+      "quote": "Chez TZone, votre travail ne fait pas que sortir — il concourt.",
+      "reasons": {
+        "missionDriven": {
+          "title": "Équipe Motivée par la Mission",
+          "description": "Nous résolvons de vrais problèmes dans l'esports, nous ne suivons pas les tendances."
+        },
+        "remoteFirst": {
+          "title": "Remote-first",
+          "description": "Travaillez de n'importe où, collaborez globalement."
+        },
+        "impactfulRoles": {
+          "title": "Rôles Impactants",
+          "description": "Vous ne serez pas isolé — vous construirez des fonctionnalités utilisées par de vrais joueurs tous les jours."
+        },
+        "builtByGamers": {
+          "title": "Conçu par des Gamers, pour des Gamers",
+          "description": "Nous comprenons l'industrie, car nous en faisons partie."
+        },
+        "stabilityTrust": {
+          "title": "Stabilité & Confiance",
+          "description": "Soutenu par EPAS et conçu pour évoluer."
+        }
+      }
+    },
+    "openRoles": {
+      "title": "Postes Ouverts",
+      "filters": {
+        "location": "Tous les Lieux",
+        "type": "Tous les Types"
+      },
+      "button": "Postuler Maintenant",
+      "noRoles": "Aucun poste correspondant trouvé. Essayez d'autres filtres."
+    },
+    "cultureAndValues": {
+      "title": "Culture & Valeurs",
+      "values": [
+        {
+          "title": "Priorité au Joueur",
+          "description": "Tout ce que nous construisons commence par l'expérience utilisateur."
+        },
+        {
+          "title": "L'intégrité Compte",
+          "description": "L'équité, la sécurité et le respect guident chaque système que nous déployons."
+        },
+        {
+          "title": "Agir avec Intention",
+          "description": "Nous avançons vite, mais avec but et données."
+        },
+        {
+          "title": "Grandir Ensemble",
+          "description": "La croissance personnelle fait partie de la croissance de l'équipe."
+        },
+        {
+          "title": "Global par Défaut",
+          "description": "L’esport est mondial. Nous aussi."
+        }
+      ],
+      "testimonial": {
+        "quote": "Travailler chez TZone, c'est comme être dans une start-up et une équipe d’esport en même temps — rapide, concentré et toujours compétitif.",
+        "author": "Ingénieur Backend Senior, TZone"
+      },
+      "callToAction": {
+        "title": "Prêt à construire la plateforme que l’esport mérite ?",
+        "submitApplication": "Soumettre une Candidature Générale",
+        "chatWithTeam": "Discuter avec notre Équipe"
+      }
+    }
+  },
+  "lgames": {
+    "title": "Affrontez-vous dans les Jeux que Vous Aimez",
+    "description": "Des duels 1v1 aux batailles en équipe – TZone supporte les plus grands titres compétitifs, avec des formats adaptés à tous les styles.",
+    "activeTournaments": "🏆 {count} Tournois Actifs",
+    "viewAllGames": "Voir Tous les Jeux Supportés",
+    "games": {
+      "assassinsCreed": "Assassin's Creed",
+      "tombRaider": "Tomb Raider",
+      "farcry3": "Farcry 3",
+      "minecraft": "Minecraft"
+    }
+  },
+  "lsteps": {
+    "title": "COMMENCEZ EN",
+    "titleHighlight": "4 ÉTAPES SIMPLES",
+    "description": "TZone offre une vraie Compétition, des récompenses instantanées et un jeu d'équipe conçu pour les Joueurs Engagés.",
+    "steps": [
+      {
+        "title": "INSCRIVEZ-VOUS & CRÉEZ VOTRE",
+        "highlight": "PROFIL",
+        "description": "Rejoignez TZone avec votre email, réseaux sociaux ou compte gaming (Steam, PlayStation, Xbox, Discord)."
+      },
+      {
+        "title": "CRÉEZ OU REJOIGNEZ UN",
+        "highlight": "TOURNOI",
+        "description": "Organisez votre propre tournoi ou rejoignez-en un existant en quelques clics."
+      },
+      {
+        "title": "AFFRONTEZ-VOUS &",
+        "highlight": "GAGNEZ",
+        "description": "Jouez au mieux, suivez vos stats et grimpez les classements."
+      },
+      {
+        "title": "GAGNEZ DES",
+        "highlight": "RÉCOMPENSES",
+        "description": "Remportez des prix en argent, gagnez des badges et obtenez de la reconnaissance dans la communauté gaming."
+      }
+    ]
+  },
+  "lposter": {
+    "organizer": "Organisateur",
+    "title": "Organisez des Tournois comme un Pro",
+    "subtitle": "Même si Vous n'en Êtes pas Encore Un",
+    "description": "T-zone facilite la gestion des événements, paiements, joueurs et sponsors – tout au même endroit",
+    "features": [
+      {
+        "title": "Tournois",
+        "span": "Sans Effort",
+        "description": "Constructeur de brackets par glisser-déposer"
+      },
+      {
+        "title": "Tournois",
+        "span": "Personnalisés",
+        "description": "Check-ins automatisés & rapports de scores"
+      },
+      {
+        "title": "Protection",
+        "span": "Anti-Fraude",
+        "description": "Entrée vérifiée des joueurs & protection anti-fraude"
+      },
+      {
+        "title": "Contrôle",
+        "span": "Total",
+        "description": "Frais d'inscription, répartition des prix & ventes de tickets"
+      }
+    ]
+  },
+  "lplayer": {
+    "category": "Joueurs",
+    "title": "Vous Êtes Là pour Jouer.",
+    "subtitle": "Nous Rendant Tout le Reste Facile.",
+    "benefits": [
+      "Trouvez et Rejoignez des Tournois à Votre Niveau",
+      "Suivez Vos Victoires, XP et Stats dans un Profil Clair",
+      "Organisez des Événements avec Brackets Automatisés, Check-ins & Paiements",
+      "Gagnez des Récompenses en Jouant, en Regardant",
+      "Suivez des Équipes, Votez pour le MVP & Restez dans l'Action"
+    ],
+    "browseTournaments": "Parcourir les Tournois"
+  },
+  "lgamers": {
+    "title": "Conçu pour les Joueurs qui Prennnent la Compétition au Sérieux",
+    "description": "Jeu équitable, vraies récompenses et pas de faux comptes — juste du talent et de la détermination.",
+    "features": [
+      {
+        "title": "Matchs Vérifiés",
+        "description": "Pas de smurfs, pas de faux. Tout le monde joue avec une identité réelle."
+      },
+      {
+        "title": "Matchmaking",
+        "description": "Soyez apparié par skill, pas par chance. L'E-Score équilibre chaque partie."
+      },
+      {
+        "title": "Vraies Récompenses",
+        "description": "Gagnez de l'XP, débloquez des badges et competez pour des prix en argent."
+      },
+      {
+        "title": "Stats de Carrière",
+        "description": "Voyez comment vous progressez à travers chaque match et chaque jeu."
+      }
+    ]
+  },
+  "ltrusted": {
+    "title": "Approuvé par les Joueurs. Conçu pour la Croissance.",
+    "stats": [
+      {
+        "value": "14 000+",
+        "label": "Joueurs Actifs"
+      },
+      {
+        "value": "1 200+",
+        "label": "Tournois Organisés"
+      },
+      {
+        "value": "250 000 $+",
+        "label": "Paiements Vérifiés"
+      },
+      {
+        "value": "100%",
+        "label": "Compétition Vérifiée EPASS"
+      }
+    ],
+    "testimonial": {
+      "quote": "Enfin une plateforme où tout fonctionne vraiment. L'organisation est facile, les paiements sont rapides et mon équipe adore.",
+      "author": "– Organisateur Local"
+    }
+  },
+  "lTimer": {
+    "title": "Temps restant pour ",
+    "subTitle": "Zone In"
+  },
+  "sponsor": {
+    "breadcrumb": "Sponsoriser un tournoi",
+    "intro": {
+      "title": "Sponsorisez un tournoi. Alimentez la cagnotte.",
+      "description": "Votre marque. Notre stream. De vrais joueurs en compétition – en direct sur Twitch. 100 % de votre sponsoring va directement aux gagnants.",
+      "sponsorButton": "Sponsoriser un tournoi",
+      "infoButton": "Demander des infos de sponsoring"
+    },
+    "promotion": {
+      "title": "Ce n'est pas juste de la promotion —",
+      "titleHighlight": "C'est de l'engagement piloté par les joueurs",
+      "features": [
+        "100 % va aux joueurs — aucune commission de la plateforme",
+        "Stream d'esport en direct = grande attention, forte interaction",
+        "Placement intelligent = pas d'impressions perdues",
+        "Parfait pour les créateurs, les marques tech, les startups gaming et les organisations locales"
+      ],
+      "audienceTitle": "Audience",
+      "audienceTitleHighlight": "Répartition",
+      "audienceTypes": {
+        "players": {
+          "title": "Joueurs",
+          "description": "Sur les tableaux, les récompenses et les résultats officiels"
+        },
+        "twitch": {
+          "title": "Spectateurs Twitch",
+          "description": "Dans les overlays, intros et annonces MVP"
+        },
+        "community": {
+          "title": "Communauté",
+          "description": "Sur Discord, les réseaux sociaux et les emails"
+        }
+      },
+      "ctaTitle": "Envie de sponsoriser le",
+      "ctaTitleHighlight": "prochain tournoi ?",
+      "ctaDescription": "Nous streamons. Vous sponsorisez. Les joueurs gagnent.",
+      "ctaSponsorButton": "Sponsoriser un tournoi maintenant",
+      "ctaInfoButton": "Demander des infos",
+      "footerStats": [
+        "Fiable par 50+ marques",
+        "Diffusé en direct sur Twitch",
+        "Vérifié par EPASS"
+      ]
+    },
+    "whereGoes": {
+      "title": "Où va votre",
+      "titleHighlight": "sponsoring",
+      "cards": [
+        {
+          "title": "Vous financez la cagnotte",
+          "description": "Votre contribution devient le prix – chaque centime va aux meilleurs joueurs."
+        },
+        {
+          "title": "Nous organisons et diffusons l'événement",
+          "description": "TZone gère le tournoi et le diffuse en direct sur Twitch auprès d'un public engagé."
+        },
+        {
+          "title": "Votre marque est mise en avant",
+          "description": "Présente dans les overlays, annonces, MVP et visuels du tournoi."
+        }
+      ],
+      "visibilityTitle": "Visibilité que",
+      "visibilityTitleHighlight": "les joueurs remarquent",
+      "visibilityItems": [
+        {
+          "title": "Marquage sur le live stream",
+          "description": "Logo dans les overlays, écrans d'intro et mentions des commentateurs."
+        },
+        {
+          "title": "Tableaux & graphiques des vainqueurs",
+          "description": "Votre marque affichée dans les tableaux, écrans de victoire et classements."
+        },
+        {
+          "title": "Diffusion sur les réseaux & Discord",
+          "description": "Mentions dans les posts, annonces et sondages MVP."
+        },
+        {
+          "title": "Sponsoriser une récompense",
+          "description": "Associez votre nom à un drop XP ou un concours personnalisé."
+        }
+      ]
+    }
+  },
+  "aboutPage": {
+    "breadcrumb": "À propos de nous",
+    "header": {
+      "title": "Propulser l'avenir des",
+      "titleHighlight": "Esports Compétitifs",
+      "subtitle": "Une plateforme sécurisée basée sur les compétences où les joueurs s'affrontent, les organisateurs créent des événements et les fans s'engagent — soutenue par des données réelles, des récompenses réelles et une confiance réelle.",
+      "buttons": {
+        "createProfile": "Créer votre profil",
+        "viewTournaments": "Voir les tournois"
+      },
+      "stats": [
+        {
+          "icon": "mdi:gamepad-variant",
+          "label": "10K JOUEURS ACTIFS",
+          "color": "text-green-500"
+        },
+        {
+          "icon": "mdi:trophy",
+          "label": "1 400+ TOURNOIS",
+          "color": "text-yellow-500"
+        },
+        {
+          "icon": "mdi:motorbike",
+          "label": "1000+ VICTOIRES",
+          "color": "text-green-500"
+        }
+      ]
+    },
+    "whatIsTzone": {
+      "title": "Qu'est-ce que",
+      "titleHighlight": "TZone",
+      "subtitle": "TZone est une plateforme d'esports compétitive qui rassemble joueurs, organisateurs et fans dans un écosystème fiable basé sur les compétences",
+      "button": "Nous fournissons"
+    },
+    "challenges": {
+      "title": "Comment",
+      "titleHighlight": "TZone",
+      "titleEnd": "résout les défis fondamentaux",
+      "subtitle": "TZone répond aux véritables problèmes du gaming compétitif avec des solutions puissantes, sécurisées et évolutives — conçues pour les joueurs, les organisateurs et les fans.",
+      "items": [
+        {
+          "text": "Matchmaking vérifié, basé sur les compétences utilisant T-Zone et EPASS",
+          "icon": "mdi:account-check-outline"
+        },
+        {
+          "text": "Outils de tournoi automatisés pour les brackets, les paiements et les check-ins",
+          "icon": "mdi:trophy-outline"
+        },
+        {
+          "text": "Progression des joueurs en temps réel avec XP, réalisations et statistiques",
+          "icon": "mdi:chart-line"
+        },
+        {
+          "text": "Marché sécurisé avec système d'entiercement et profils vendeurs vérifiés",
+          "icon": "mdi:shield-lock-outline"
+        },
+        {
+          "text": "Fonctionnalités interactives pour les fans comme les statistiques, votes MVP et récompenses",
+          "icon": "mdi:star-outline"
+        },
+        {
+          "text": "Outils d'administration puissants pour la résolution des litiges et une modération équitable",
+          "icon": "mdi:gavel"
+        }
+      ]
+    },
+    "impact": {
+      "title": "Notre",
+      "titleHighlight": "Impact",
+      "subtitle": "Conçu pour la confiance. Propulsé par la compétition.",
+      "items": [
+        {
+          "value": "14 000+",
+          "label": "Joueurs inscrits",
+          "icon": "bi:people-fill"
+        },
+        {
+          "value": "250 000+ €",
+          "label": "Récompenses versées",
+          "icon": "mynaui:credit-card-solid"
+        },
+        {
+          "value": "1 200+",
+          "label": "Tournois organisés",
+          "icon": "material-symbols:trophy-rounded"
+        },
+        {
+          "value": "100%",
+          "label": "Événements vérifiés basés sur les compétences",
+          "icon": "map:sheild"
+        },
+        {
+          "value": "4,9/5",
+          "label": "Satisfaction moyenne",
+          "icon": "streamline-flex:like-1-solid"
+        }
+      ]
+    },
+    "video": {
+      "title": "Ce qui rend",
+      "titleHighlight": "TZone",
+      "titleEnd": "différent"
+    },
+    "partner": {
+      "title": "Devenez partenaire",
+      "subtitle": "TZone forme activement des partenariats avec :",
+      "button": "Contactez-nous",
+      "items": [
+        {
+          "label": "Équipes et organisations d'esports",
+          "icon": "mdi:gamepad-variant"
+        },
+        {
+          "label": "Éditeurs de jeux",
+          "icon": "material-symbols:developer-mode"
+        },
+        {
+          "label": "Opérateurs de tournois locaux et mondiaux",
+          "icon": "ic:baseline-emoji-events"
+        },
+        {
+          "label": "Influenceurs et créateurs de contenu",
+          "icon": "mdi:account-star"
+        },
+        {
+          "label": "Investisseurs stratégiques et sponsors",
+          "icon": "mdi:hand-coin"
+        }
+      ]
+    }
+  },
+  "termsPage": {
+    "breadcrumb": "Conditions Générales",
+    "title": "Conditions Générales",
+    "subtitle": "Bienvenue, Voyageur. En entrant dans l'univers de T-zone, vous acceptez les lois suivantes du royaume.",
+    "exploreButton": "Découvrez Nos Produits",
+    "terms": [
+      {
+        "title": "Éligibilité - Qui Peut Entrer dans l'Arène",
+        "description": "Vous devez avoir au moins 13 ans pour jouer dans l'univers de T.Zone. En continuant, vous confirmez que vous avez la sagesse et le pouvoir de rejoindre ce monde."
+      },
+      {
+        "title": "Responsabilités du Compte - Gardez Votre Portail",
+        "description": "Votre compte est votre portail. Protégez-le farouchement. Informez-nous de toute brèche dans vos murs de sécurité."
+      },
+      {
+        "title": "Utilisation des Services - Honorez le Code",
+        "description": "Engagez-vous équitablement. Utilisez vos pouvoirs pour le bien, pas pour le chaos. Les violations entraînent des conséquences."
+      },
+      {
+        "title": "Propriété du Contenu - Forgez et Partagez",
+        "description": "Vos créations restent les vôtres. En les partageant ici, vous nous accordez le droit de les présenter dans le royaume."
+      },
+      {
+        "title": "Activités Interdites - Arts Noirs Interdits",
+        "description": "Pas de spam, de piratage, de grief ou d'actes malveillants. Ceux qui abusent du royaume seront bannis."
+      },
+      {
+        "title": "Résiliation - Exil du Royaume",
+        "description": "Vous enfreignez le code ? Nous pouvons révoquer votre accès - aucune potion ni sort ne peut le défaire."
+      },
+      {
+        "title": "Avertissement - Ce que Vous Voyez Est Ce Que Vous Obtenez",
+        "description": "La plateforme est fournie \"telle quelle\". Nous n'offrons aucune promesse de trésor ou de quêtes sans encombre."
+      },
+      {
+        "title": "Limitation de Responsabilité - Les Frontières du Royaume",
+        "description": "Nous ne sommes pas responsables des dommages indirects, magiques ou cosmiques résultant d'une mauvaise utilisation."
+      },
+      {
+        "title": "Modifications - Les Parchemins Peuvent Changer",
+        "description": "Le Code peut évoluer. Un accès continu signifie un accord continu."
+      }
+    ]
+  },
+  "marketplace": {
+    "hero": {
+      "title": {
+        "line1": "Équipement de Confiance.",
+        "line2": "Promu Là Où Ça Compte."
+      },
+      "description": {
+        "part1": "Du matériel haute performance aux essentiels du quotidien",
+        "highlight": "T-zone présente",
+        "part2": "sa propre gamme de produits sélectionnés à travers la plateforme, pour que les bonnes personnes voient le bon équipement au bon moment."
+      },
+      "cta": "Explorez Nos Produits"
+    },
+    "mid": {
+      "title": {
+        "part1": "Ne Vous Contentez Pas d'Afficher des Badges.",
+        "highlight": "Obtenez du Vrai Équipement"
+      },
+      "description": "Grind XP, dominez les tournois et débloquez de vrais prix — des skins de gaming aux drops d'équipement, vêtements et merchandising exclusif. Pas de superflu. Juste ce que les joueurs veulent vraiment."
+    },
+    "audience": {
+      "title": "Vos Produits, Devant les Bonnes Personnes",
+      "partners": {
+        "title": "Partenaires et Sponsors",
+        "description": "Voyez les produits positionnés à côté de vrais résultats de match et profils."
+      },
+      "organizers": {
+        "title": "Organisateurs",
+        "description": "Peuvent intégrer l'équipement mis en avant dans les tournois comme prix ou promos partenaires."
+      },
+      "players": {
+        "title": "Joueurs",
+        "description": "Obtenez des recommandations d'équipement en jeu, pendant les tournois et dans leurs tableaux de bord personnels."
+      }
+    },
+    "features": {
+      "title": {
+        "part1": "Simple. Direct.",
+        "highlight": "Conçu pour Bouger."
+      },
+      "feature1": {
+        "title": "Pas de vendeurs tiers",
+        "description": "Seulement un inventaire géré par TZone — vérifié et contrôlé qualité."
+      },
+      "feature2": {
+        "title": "Flux centré sur le joueur",
+        "description": "Les produits apparaissent naturellement dans les endroits où les joueurs interagissent déjà."
+      },
+      "feature3": {
+        "title": "Chemins de conversion clairs",
+        "description": "Du clic au checkout — pas de redirections, pas de superflu."
+      }
+    }
+  },
+  "playerPage": {
+    "hero": {
+      "title": "Compétition. Progrès. Reconnaissance.",
+      "description": "Que vous soyez ici pour gravir les échelons ou gagner de l'XP à chaque victoire décisive, T-zone vous donne les outils pour faire évoluer votre parcours esport.",
+      "cta": "Commencer à jouer"
+    },
+    "section2": {
+      "title": "Ce que vous pouvez faire en tant que joueur",
+      "toDos": [
+        {
+          "label": "Rejoindre des tournois vérifiés",
+          "value": "Événements quotidiens selon votre jeu, votre rang et votre région."
+        },
+        {
+          "label": "Obtenir la vérification EPASS",
+          "value": "Prouvez que vous êtes réel. Pas de faux comptes. Pas de bots."
+        },
+        {
+          "label": "Suivre l'E-Score & l'XP",
+          "value": "Sachez comment vous progressez — et où vous vous situez."
+        },
+        {
+          "label": "Gagner des récompenses",
+          "value": "XP, pièces, équipements, badges et prestige."
+        },
+        {
+          "label": "Développer votre profil",
+          "value": "Affichez statistiques, victoires et moments forts."
+        }
+      ]
+    },
+    "section3": {
+      "title": "Pourquoi c’est important",
+      "subtitle": "Parce que jouer sur des plateformes aléatoires ne suffit plus",
+      "matters": [
+        {
+          "label": "Pas de fair-play :",
+          "value": "Pas de vérification = tricheurs et comptes fictifs"
+        },
+        {
+          "label": "Pas de progression réelle",
+          "value": "Pas de système d'XP = aucun sentiment de progrès"
+        },
+        {
+          "label": "Pas d’historique :",
+          "value": "Pas de récompenses = rien à atteindre"
+        },
+        {
+          "label": "Pas de gloire :",
+          "value": "Pas d’historique = vos victoires sont oubliées"
+        }
+      ]
+    },
+    "section4": {
+      "cta": "Statistiques, badges, classements — tout est dans votre profil",
+      "description": "Statistiques, badges, classements — tout est dans votre profil"
+    },
+    "section5": {
+      "title": "Confiance & sécurité des joueurs",
+      "description": "EPASS garantit un jeu équitable grâce à la prévention des comptes fictifs et des bannissements, un système de litiges basé sur des preuves, un matchmaking basé sur les compétences, des profils publics pour la transparence et une détection des fraudes avec vérification des paiements."
+    },
+    "section6": {
+      "title": "C’est votre jeu. Faites-le compter.",
+      "description": "Rejoignez une plateforme où votre identité, vos compétences et vos récompenses sont liées — et où chaque victoire vous fait avancer",
+      "cta": "Rejoindre un tournoi maintenant"
+    }
+  },
+  "antiCheat": {
+    "hero": {
+      "title": "Jouez équitable. Gagnez honnêtement.",
+      "subtitle": "Conçu pour récompenser les compétences — pas les raccourcis. Chaque match se joue sur un pied d’égalité."
+    },
+    "section2": {
+      "title": "Ce qui est empêché",
+      "items": {
+        "smurfing": {
+          "title": "Smurfing",
+          "text": "Un seul compte vérifié par joueur"
+        },
+        "fakeAccounts": {
+          "title": "Faux comptes",
+          "text": "Un seul compte vérifié par joueur"
+        },
+        "unfairPlay": {
+          "title": "Jeu déloyal :",
+          "text": "Outils ou comportements offrant des avantages injustes"
+        },
+        "bracketAbuse": {
+          "title": "Abus de classement :",
+          "text": "Surveillance en direct des comportements suspects"
+        }
+      }
+    },
+    "consequences": {
+      "title": "Conséquences de la triche",
+      "items": [
+        "Signalisations de compte ou suspensions temporaires",
+        "Disqualification des tournois et classements",
+        "Perte des récompenses et XP gagnés"
+      ]
+    },
+    "verified": {
+      "title": "Comptes vérifiés, matchs légitimes",
+      "items": [
+        "Seuls les comptes vérifiés peuvent participer aux tournois classés",
+        "Empêche les identités dupliquées et la manipulation des statistiques"
+      ]
+    },
+    "reporting": {
+      "title": "Outils de signalement",
+      "description": "Conçu pour récompenser les compétences — pas les raccourcis. Chaque match se joue sur un pied d’égalité.",
+      "items": [
+        {
+          "title": "Remarques du réviseur",
+          "description": "Ajoutez des notes facultatives pour les réviseurs"
+        },
+        {
+          "title": "Soumettre des preuves visuelles",
+          "description": "Téléchargez des captures d’écran ou une vidéo"
+        },
+        {
+          "title": "Révision par l’équipe TZone",
+          "description": "Chaque cas est examiné manuellement par des modérateurs"
+        }
+      ]
+    },
+    "footer": {
+      "notice": "L’automatisation ne suffit pas. Les actions signalées sont toujours examinées par des modérateurs humains.",
+      "buttons": {
+        "report": "Signaler une activité suspecte",
+        "policy": "Voir la politique de bannissement",
+        "learnMore": "En savoir plus sur EPASS"
+      }
+    }
+  },
+  "epass": {
+    "section1": {
+      "title": "Jouez équitablement. Progressez. Vérifiez votre identité avec EPASS.",
+      "subtitle": {
+        "highlight": "TZone",
+        "text": "propose du matériel sélectionné — présenté aux vrais joueurs via EPASS, un système tiers fiable pour les identités de joueurs vérifiées."
+      },
+      "action": "Vérifiez-vous maintenant"
+    },
+    "section2": {
+      "title": "EPASS est votre identité numérique vérifiée sur TZone",
+      "description": "Il relie votre vrai profil de joueur (email, ID de jeu, région, âge) à vos statistiques de tournoi — personne ne peut falsifier des victoires, tricher le système ou jouer sous plusieurs noms. Pensez-y comme votre passeport e-sport."
+    },
+    "section3": {
+      "title": "Vous ne pouvez pas concourir au plus haut niveau sans lui — et une fois que vous l’avez, vos progrès comptent vraiment.",
+      "subtitle": "Pourquoi EPASS est-il important ?",
+      "feature1": {
+        "title": "Parce que le jeu compétitif mérite une vraie protection.",
+        "description": "Les smurfs et les bots ruinent les matchs légitimes. Les identités fausses faussent les gains. Les organisateurs perdent du temps à gérer les litiges."
+      },
+      "feature2": {
+        "title": "EPASS garantit que",
+        "description": "Chacun est bien celui qu’il prétend être. Les résultats sont fiables. XP, récompenses et pièces vont aux vrais joueurs. Les sponsors et organisateurs peuvent organiser en toute confiance."
+      }
+    },
+    "section4": {
+      "title": "Comment ça fonctionne",
+      "description": "TZONE offre une vraie compétition, des récompenses instantanées et un jeu d'équipe pour les joueurs engagés",
+      "steps": {
+        "steps": [
+          {
+            "title": "",
+            "highlight": "1. Inscrivez-vous sur TZone"
+          },
+          {
+            "title": "",
+            "highlight": "2. Soumettez vos infos joueur (email, compte de jeu, âge)"
+          },
+          {
+            "title": "3. Obtenez votre badge EPASS sur votre profil",
+            "highlight": ""
+          },
+          {
+            "title": "4. Participez à des tournois vérifiés, réclamez des prix, et construisez votre réputation",
+            "highlight": ""
+          }
+        ]
+      }
+    },
+    "section5": {
+      "title": "Joueurs vérifiés. Victoires vérifiées.",
+      "description": "Avec EPASS, vous n’êtes pas juste un autre joueur. Vous êtes un compétiteur de confiance – avec des matchs réels, des récompenses réelles, et un profil qui le prouve.",
+      "action": "Obtenez EPASS et commencez la compétition"
+    }
+  },
+  "learn_more": "En savoir plus",
+  "marketplaceSection": {
+    "heading": "Obtenez les bons produits gaming au bon moment",
+    "description": "Des récompenses débloquées par XP aux essentiels vérifiés, TZone propose des articles de qualité directement dans les tournois, profils et distributions"
+  },
+  "countdown": {
+    "title": "Compte à rebours de l'événement",
+    "days": "Jours",
+    "hours": "Heures",
+    "minutes": "Minutes",
+    "seconds": "Secondes",
+    "join_tornament": "Rejoignez le tournoi à la fin du compte à rebours !",
+    "mins": "Min",
+    "secs": "Sec"
+  },
+  "organizerInfo": {
+    "hero": {
+      "title": "Organisez des tournois. Menez le jeu.",
+      "description": "T-Zone aide les organisateurs à créer des expériences compétitives vérifiées pour les joueurs de tous niveaux, jeux et régions.",
+      "action": "Commencer à organiser"
+    },
+    "section2": {
+      "title": "Pourquoi organiser avec T-Zone",
+      "features": [
+        {
+          "title": "Entièrement vérifié",
+          "description": "N'acceptez que de vrais joueurs — pas de tricheurs ni de faux comptes."
+        },
+        {
+          "title": "Indépendant du jeu",
+          "description": "Prend en charge n'importe quel jeu avec des règles et formats personnalisés."
+        },
+        {
+          "title": "Configuration facile",
+          "description": "Créez et gérez des tournois en quelques minutes."
+        },
+        {
+          "title": "Outils intégrés",
+          "description": "Scores, XP et classement déjà intégrés."
+        },
+        {
+          "title": "Récompenses prêtes",
+          "description": "Récompenses automatisées et vérification des paiements."
+        },
+        {
+          "title": "Croissance des joueurs",
+          "description": "Les tournois influencent les profils, XP et progression des joueurs."
+        }
+      ],
+      "action": "Organiser maintenant"
+    },
+    "section3": {
+      "title": "Conçu pour les organisateurs",
+      "features": [
+        {
+          "title": "Identité vérifiée",
+          "description": "Joueurs réels uniquement, jamais de bots ou de tricheurs."
+        },
+        {
+          "title": "Contrôle puissant",
+          "description": "Choisissez règles, récompenses, matchmaking, et plus."
+        },
+        {
+          "title": "Performance en direct",
+          "description": "Suivez les XP, stats et données de tournoi en temps réel."
+        },
+        {
+          "title": "Gagnez en reconnaissance",
+          "description": "Construisez votre réputation et soyez suivi par les joueurs."
+        },
+        {
+          "title": "Outils de promotion",
+          "description": "Fonctionnalités intégrées pour plus d’inscriptions et de visibilité."
+        }
+      ]
+    },
+    "section4": {
+      "title": "Comment ça marche",
+      "steps": [
+        {
+          "step": "1",
+          "title": "Créez votre tournoi",
+          "description": "Choisissez le jeu, les règles, le format et les récompenses."
+        },
+        {
+          "step": "2",
+          "title": "Obtenez des joueurs vérifiés",
+          "description": "T-Zone garantit de vrais joueurs uniquement — pas de faux."
+        },
+        {
+          "step": "3",
+          "title": "Suivez les XP et résultats",
+          "description": "Surveillez la progression automatiquement avec XP et stats."
+        },
+        {
+          "step": "4",
+          "title": "Distribuez les récompenses",
+          "description": "Effectuez les paiements équitablement avec protection anti-fraude."
+        }
+      ],
+      "action": "Organiser un tournoi"
+    },
+    "section5": {
+      "title": "Prêt à vous lancer ?",
+      "description": "T-Zone vous offre tout ce dont vous avez besoin pour organiser des tournois à grande échelle — avec notre système vérifié et nos outils esports.",
+      "action": "Organiser"
+    }
+  },
+  "tournamentsPage": {
+    "hero": {
+      "title": "Parcourir les tournois par jeu",
+      "subtitle": "Que la bataille commence"
+    },
+    "search": {
+      "placeholder": "Rechercher des jeux ou des tournois"
+    },
+    "sort": {
+      "label": "Trier par :",
+      "default": "À la une"
+    },
+    "popularGames": {
+      "title": "Jeux populaires"
+    },
+    "viewMode": {
+      "grid": "Vue grille",
+      "list": "Vue liste"
+    }
+  },
+  "buyTooltip": {
+    "tooltip": "Procurez-vous l’équipement Zone",
+    "button": "Adoptez le style — 29 $",
+    "description": "Touchez pour débloquer le t-shirt officiel T-Zone. Recevez-le chez vous en seulement 2 clics."
+  },
+  "privacyPolicy": {
+    "title": "Politique de confidentialité",
+    "intro": "Cette politique de confidentialité décrit comment les données sont collectées, utilisées et protégées dans toutes les fonctionnalités de TZone — y compris les profils de joueurs, la participation aux tournois, la vérification KYC (pour les organisateurs) et les interactions sur le marketplace.",
+    "sections": {
+      "collected": {
+        "title": "1. Données collectées",
+        "description": "TZone peut collecter les données suivantes en fonction de l’utilisation de la plateforme :"
+      },
+      "account": {
+        "title": "2. Données de compte & profil",
+        "items": [
+          "Nom d’utilisateur, e‑mail, mot de passe crypté",
+          "Nom affiché, région, âge, image du profil",
+          "Préférences de visibilité publique/privée (pour gains, niveau, badges et statistiques)"
+        ]
+      },
+      "game": {
+        "title": "3. Données de jeu & matchs",
+        "items": [
+          "Comptes connectés (Steam, Riot, EA, etc.)",
+          "Historique des matchs, taux de victoire/défaite, moments décisifs",
+          "Évaluation de matchmaking basée sur les compétences (E‑Score)"
+        ]
+      },
+      "organizer": {
+        "title": "4. Données organisateur & KYC",
+        "items": [
+          "Détails de vérification commerciale : licence, identifiant fiscal, informations bancaires",
+          "Éléments de marque personnalisés pour l’organisation d’événements",
+          "Historique des tournois, enregistrements de paiements, fichiers de sponsoring"
+        ]
+      },
+      "usage": {
+        "title": "5. Utilisation & activité sur la plateforme",
+        "items": [
+          "XP gagnée, réalisations, badges, titres",
+          "Résultats des tournois, participation, parrainages",
+          "Revenus du portefeuille : prix, pourboires, revenus d’affiliation"
+        ]
+      },
+      "device": {
+        "title": "6. Informations appareil & sécurité",
+        "items": [
+          "ID de l’appareil, type de navigateur, adresse IP",
+          "Journaux de connexion et métadonnées de détection de fraude",
+          "Configuration de 2FA (e‑mail, SMS, applis d’authentification)"
+        ]
+      },
+      "usageOfData": {
+        "title": "7. Comment vos données sont utilisées",
+        "description": "Vos données soutiennent les opérations suivantes :",
+        "items": [
+          "Création et gestion de comptes sécurisés pour joueurs et organisateurs",
+          "Vérification d’éligibilité pour les tournois, classements et gains",
+          "Matchmaking automatisé et prévention de la fraude",
+          "Affichage des stats, réalisations de profil et tableaux de bord",
+          "Communication liée aux matchs, rapports et drops",
+          "Support des modérateurs pour les rapports, bannissements ou litiges"
+        ]
+      },
+      "protection": {
+        "title": "8. Comment vos données sont protégées",
+        "description": "TZone applique des protocoles de sécurité solides pour protéger toutes les données :",
+        "items": [
+          "Les mots de passe et données personnelles sont chiffrés",
+          "Connexions sécurisées (HTTPS) appliquées sur toute la plateforme",
+          "Accès sensible (ex. KYC) restreint selon les autorisations",
+          "Actions administratives enregistrées et vérifiées",
+          "2FA facultative disponible pour sécuriser l’accès"
+        ]
+      },
+      "sharing": {
+        "title": "9. Quand les données sont partagées",
+        "description": "TZone ne vend pas vos données personnelles. Un partage limité peut être effectué pour les services essentiels :",
+        "items": [
+          "Avec les partenaires de tournois ou services de paiement (pour délivrer les récompenses ou vérifier les inscriptions)",
+          "Avec les prestataires de paiement et portefeuilles (pour retraits ou achats)",
+          "Avec les canaux de modération ou juridiques (pour traiter des infractions graves)"
+        ]
+      },
+      "rights": {
+        "title": "10. Vos droits et contrôle",
+        "description": "Les utilisateurs peuvent gérer l’usage des données via les paramètres de profil :",
+        "items": [
+          "Voir, modifier ou supprimer les infos de compte et liées à la partie",
+          "Ajuster la confidentialité de la visibilité du profil",
+          "Demander l’exportation ou suppression permanente des données",
+          "Choisir les préférences de communication (liens de désabonnement inclus)"
+        ]
+      },
+      "contact": {
+        "title": "11. Contactez TZone",
+        "description": "Toute question ou demande relative à TZone doit être adressée par e‑mail à TZone.",
+        "respondingTime": "Nous répondrons à toutes les demandes dans un délai de trois jours ouvrables."
+      }
+    }
+  },
+  "report": {
+    "pageTitle": "Avez-vous remarqué un jeu déloyal ? Signalez-le",
+    "pageSubtitle": "Soutenez des tournois équitables. Utilisez ce formulaire pour signaler de la triche, du smurfing, du harcèlement, une usurpation d'identité ou des violations des règles.",
+    "form": {
+      "reportType": "Type de signalement",
+      "reportedPlayer": "Joueur ou équipe signalé(e)",
+      "tournamentId": "ID du tournoi/événement",
+      "incidentDate": "Date/heure de l'incident",
+      "description": "Description détaillée",
+      "descriptionPlaceholder": "Saisir la description du tournoi",
+      "evidence": "Téléchargement des preuves à l'appui",
+      "evidenceNote": "Veuillez télécharger des captures d’écran ou des vidéos",
+      "upload": "Télécharger",
+      "selected": "Sélectionné",
+      "email": "Email pour les mises à jour (optionnel)",
+      "emailPlaceholder": "Entrez votre email",
+      "submit": "Envoyer à l’équipe de révision",
+      "placeholder": {
+        "player": "Lien vers le profil du joueur ou le match",
+        "tournament": "Nom du tournoi ou ID de l'événement"
+      }
+    },
+    "policy": {
+      "title": "Politique de signalement",
+      "points": [
+        "Les signalements doivent inclure des preuves telles que des logs de discussion, replays, captures d’écran ou vidéos",
+        "Tous les signalements doivent être faits de bonne foi. Les signalements mensongers peuvent entraîner des sanctions",
+        "Les signalements sont conservés et associés à l'historique du joueur et aux logs de tournoi"
+      ]
+    },
+    "review": {
+      "title": "Processus de révision",
+      "points": [
+        "Un identifiant de dossier est généré automatiquement",
+        "Des modérateurs attribués examinent les preuves (discussions, données de match, historique des signalements)",
+        "Un résultat est déterminé sous 24 à 72 heures",
+        "Sanctions appliquées (le cas échéant) :"
+      ],
+      "sanctions": [
+        "Aucune action",
+        "Avertissement",
+        "Restriction temporaire",
+        "Bannissement et suppression de l’XP"
+      ]
+    },
+    "reportTypes": {
+      "cheating": "Triche",
+      "smurfing": "Smurfing",
+      "harassment": "Harcèlement",
+      "impersonation": "Usurpation d'identité",
+      "other": "Autre"
+    }
+  },
+  "sponsorship": {
+    "title": "Parrainage de tournoi",
+    "subtitle": "Associez‑vous à l’avenir de l’esport",
+    "button": {
+      "submit": "Envoyer ma demande de parrainage",
+      "submitting": "Envoi en cours..."
+    },
+    "success": "Demande de parrainage envoyée avec succès !",
+    "error": "Échec de l’envoi de la demande de parrainage.",
+    "errors": {
+      "fullName": "Votre nom est requis.",
+      "organization": "Le nom de l’organisation est requis.",
+      "email": "L’adresse e-mail est requise.",
+      "phone": "Le numéro de téléphone est requis.",
+      "sponsorOptions": "Au moins une option est requise.",
+      "budget": "Le budget est requis.",
+      "package": "Un forfait préféré est requis.",
+      "selectedGames": "Au moins un jeu doit être sélectionné.",
+      "targetRegions": "La région cible est requise.",
+      "isAuthorized": "Vous devez être autorisé à représenter."
+    }
+  },
+  "sponsorInfo": {
+    "title": "Informations sur le sponsor",
+    "fullName": "Nom complet",
+    "fullNamePlaceholder": "ex. John Doe",
+    "organization": "Marque / Organisation",
+    "organizationPlaceholder": "ex. GigaTech Gaming",
+    "email": "Adresse e‑mail",
+    "phone": "Numéro de téléphone",
+    "phonePlaceholder": "+1 (555) 000‑0000"
+  },
+  "sponsorOptions": {
+    "title": "Que souhaitez‑vous parrainer ?",
+    "options": {
+      "full_tournament": "Tournoi complet",
+      "giveaway_reward_drop": "Tirage au sort / Distribution de prix",
+      "twitch_stream_segment": "Segment Twitch",
+      "product_placement": "Placement de produit",
+      "player_mvp_award": "Prix du MVP",
+      "other": "Autre"
+    }
+  },
+  "sponsorBudget": {
+    "title": "Budget et forfait",
+    "budget": {
+      "label": "Budget (USD)",
+      "placeholder": "Sélectionner le budget"
+    },
+    "package": {
+      "label": "Forfait préféré",
+      "placeholder": "Sélectionner le forfait",
+      "options": {
+        "gold": "Or",
+        "silver": "Argent",
+        "bronze": "Bronze",
+        "custom": "Personnalisé"
+      }
+    },
+    "branding": {
+      "label": "Avez‑vous du matériel de marque prêt ?"
+    },
+    "upload": {
+      "placeholder": "Glissez‑déposez vos fichiers ici, ou cliquez pour sélectionner",
+      "details": "Formats pris en charge : PNG, SVG, PDF"
+    }
+  },
+  "sponsorGames": {
+    "title": "Jeux, régions & rapports",
+    "targetRegionPlaceholder": "Région(s) cible",
+    "report": {
+      "label": "Souhaitez‑vous un rapport de performance après l’événement ?"
+    }
+  },
+  "sponsorAuthorization": {
+    "title": "Autorisation & contact",
+    "question": "Êtes‑vous autorisé à représenter cette marque ?"
+  },
+  "sponsorshipSuccess": {
+    "title": "Merci de vous être inscrit en tant que sponsor potentiel avec TZone !",
+    "subtitle": "Notre équipe de partenariats examinera votre demande et vous contactera sous peu.",
+    "button": "Retour à l'accueil"
+  },
+  "yes": "Oui",
+  "no": "Non",
+  "select_option": "Sélectionner une option",
+  "other": " Autre"
+}

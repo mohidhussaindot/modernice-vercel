@@ -1,0 +1,30 @@
+{
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@atoms": ["components/atoms/index.ts"],
+      "@molecules": ["components/molecules/index.ts"],
+      "@organisms": ["components/organisms/index.ts"],
+      "@templates": ["components/templates/index.ts"],
+       "#app": ["./.nuxt/types/app"],
+      "#app/*": ["./.nuxt/types/app/*"],
+      "@atoms/*": ["components/atoms/*"],
+      "@molecules/*": ["components/molecules/*"],
+      "@organisms/*": ["components/organisms/*"],
+      "@templates/*": ["components/templates/*"]
+    },
+    "types": [
+      "node",
+      "vue",
+      "@vue/runtime-dom",
+      "@nuxtjs/i18n"   
+    ]
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.vue",
+    "types/**/*.ts"
+  ]
+}
