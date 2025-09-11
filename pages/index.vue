@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
-import Navbar from '@organisms/Navbar.vue'
-import HeroSection from '@organisms/Herosection.vue'
-import SecondPart from '@organisms/Secondpart.vue'
-import ThirdPart from '@organisms/Thirdpart.vue'
-import LeftFeatureCta from '@organisms/LeftFeatureCta.vue'
-import CockpitShowcase from '@organisms/CockpitShowcase.vue'
-import SiteFooter from '@organisms/SiteFooter.vue'
+import Navbar from "@organisms/Navbar.vue";
+import HeroSection from "@organisms/Herosection.vue";
+import SecondPart from "@organisms/Secondpart.vue";
+import ThirdPart from "@organisms/Thirdpart.vue";
+import LeftFeatureCta from "@organisms/LeftFeatureCta.vue";
+import CockpitShowcase from "@organisms/CockpitShowcase.vue";
+import SiteFooter from "@organisms/SiteFooter.vue";
 
-import ServicesHero from '@organisms/Serviceshero.vue'
-import ServicesSecond from '@organisms/Servicessecond.vue'
-import ServicesSlider from '@organisms/ServicesSlider.vue'
-import ServicesThird from '@organisms/servicesthird.vue'
-import ServicesFourth from '@organisms/Servicesfourth.vue'
-import ServicesFifth from '@organisms/servicesfifth.vue'
+import ServicesHero from "@organisms/Serviceshero.vue";
+import ServicesSecond from "@organisms/Servicessecond.vue";
+import ServicesSlider from "@organisms/ServicesSlider.vue";
+import ServicesThird from "@organisms/servicesthird.vue";
+import ServicesFourth from "@organisms/Servicesfourth.vue";
+import ServicesFifth from "@organisms/servicesfifth.vue";
 
-const showServices = ref(false)
+const showServices = ref(false);
 
 const handleShowServices = () => {
-  showServices.value = true
-}
+  showServices.value = true;
+};
 </script>
 
 <template>
@@ -29,8 +29,16 @@ const handleShowServices = () => {
       <Navbar
         :nav-links="[
           { label: 'modernice.design', to: '/' },
-          { label: 'Services', to: '/services' },
-          { label: 'Work', to: '/work' }
+          {
+            label: 'Services',
+            to: '/services',
+            navLinks: [
+              { label: 'SEO', to: '/seo' },
+              { label: 'Website Strategy', to: '/website-strategy' },
+            ],
+          },
+
+          { label: 'Work', to: '/work' },
         ]"
         cta-label="Let’s Talk"
         cta-to="/contact"
@@ -61,8 +69,12 @@ const handleShowServices = () => {
           :onShowServices="handleShowServices"
         />
 
- <SiteFooter bg-color="#020111"  textcolor="#FCD265" quote="A goal without a plan is just a wish" author="– Antoine deww Saint-Exupéryee"/>
-
+        <SiteFooter
+          bg-color="#020111"
+          textcolor="#FCD265"
+          quote="A goal without a plan is just a wish"
+          author="– Antoine deww Saint-Exupéryee"
+        />
       </div>
     </div>
 
@@ -73,8 +85,12 @@ const handleShowServices = () => {
       <ServicesThird />
       <ServicesFourth />
       <ServicesFifth />
- <SiteFooter bg-color="#020111"  textcolor="#38EF61" quote="The Rules Dont apply you" author="-Sigma Rule #15"/>
-
+      <SiteFooter
+        bg-color="#020111"
+        textcolor="#38EF61"
+        quote="The Rules Dont apply you"
+        author="-Sigma Rule #15"
+      />
     </div>
   </div>
 </template>

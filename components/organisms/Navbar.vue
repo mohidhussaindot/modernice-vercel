@@ -18,9 +18,24 @@
         aria-label="Primary"
       >
         <template v-for="(link, index) in navLinks" :key="index">
-          <NuxtLink :to="link.to" class="hover:underline">
-            {{ link.label }}
-          </NuxtLink>
+          <template v-if="link.navLinks">
+            <NuxtLink :to="link.to" class="hover:underline">
+              {{ link.label }}
+            </NuxtLink>
+            <template
+              v-for="(subLink, subIndex) in link.navLinks"
+              :key="subIndex"
+            >
+              <NuxtLink :to="subLink.to" class="hover:underline">
+                {{ subLink.label }}
+              </NuxtLink>
+            </template>
+          </template>
+          <template v-else>
+            <NuxtLink :to="link.to" class="hover:underline">
+              {{ link.label }}
+            </NuxtLink>
+          </template>
         </template>
 
         <div
@@ -28,14 +43,11 @@
           class="relative inline-block rounded-[0.5rem] p-[0.0625rem] bg-gradient-to-r from-[#01A3FF] via-[#25CDDA] to-[#01A3FF] w-[6.8125rem] h-[2.75rem]"
         >
           <Button
-            class="w-full h-full bg-black rounded-[0.4375rem] py-[0.5rem] px-[1rem] font-semibold 
-                   duration-300 hover:scale-105 hover:bg-[#01A3FF] border-none transition text-white"
+            class="w-full h-full bg-black rounded-[0.4375rem] py-[0.5rem] px-[1rem] font-semibold duration-300 hover:scale-105 hover:bg-[#01A3FF] border-none transition text-white"
             :to="ctaTo"
           >
             <span
-              class="bg-gradient-to-r from-[#01A3FF] via-[#25CDDA] to-[#01A3FF] 
-                     bg-clip-text text-transparent duration-300 
-                     hover:cursor-pointer hover:text-white"
+              class="bg-gradient-to-r from-[#01A3FF] via-[#25CDDA] to-[#01A3FF] bg-clip-text text-transparent duration-300 hover:cursor-pointer hover:text-white"
             >
               {{ ctaLabel }}
             </span>
@@ -47,17 +59,17 @@
 </template>
 
 <script setup lang="ts">
-import Button from '@atoms/Button.vue'
+import Button from "@atoms/Button.vue";
 
 type NavLink = {
-  label: string
-  to: string
-}
+  label: string;
+  to: string;
+  navLinks?: NavLink[];
+};
 
 defineProps<{
-  navLinks: NavLink[]
-  ctaLabel?: string
-  ctaTo?: string
-  logoSrc: string
-}>()
+  ctaLabel?: string;
+  ctaTo?: string;
+  logoSrc: string;
+}>();
 </script>
