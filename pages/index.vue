@@ -52,7 +52,7 @@ const handleShowServices = () => {
           description="Wir transformieren Daten in Einblicke, Herausforderungen in Chancen. Mit unserer Strategie werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften. Lass die Zukunft nicht warten."
           cta-label="Learn more"
           cta-to="#"
-          line-svg="/images/lines.svg"
+          line-svg="/images/Lines.svg"
           spaceship-svg="/images/Frame.svg"
         />
 
