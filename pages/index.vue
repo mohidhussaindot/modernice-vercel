@@ -32,10 +32,6 @@ const handleShowServices = () => {
           {
             label: 'Services',
             to: '/services',
-            navLinks: [
-              { label: 'SEO', to: '/seo' },
-              { label: 'Website Strategy', to: '/website-strategy' },
-            ],
           },
 
           { label: 'Work', to: '/work' },
