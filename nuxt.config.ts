@@ -1,4 +1,3 @@
-
 import { defineNuxtConfig } from "nuxt/config"; // ✅ Import type for TS
 import tailwindcss from "@tailwindcss/vite";
 import { resolve } from "path";
@@ -10,10 +9,9 @@ export default defineNuxtConfig({
     "swiper/css/navigation",
     "swiper/css/autoplay",
   ],
-   typescript: {
-    shim: false
-  }
-,
+  typescript: {
+    shim: false,
+  },
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     layoutTransition: { name: "layout", mode: "out-in" },
@@ -32,12 +30,12 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
-      include: ["swiper"],
+      include: ["swiper", "gsap"],
     },
   },
 
   build: {
-    transpile: ["vue-toastification", "swiper"],
+    transpile: ["vue-toastification", "swiper", "gsap"],
   },
 
   alias: {
@@ -59,10 +57,11 @@ export default defineNuxtConfig({
   modules: ["@nuxt/icon", "@nuxt/image", "@nuxtjs/i18n"],
 
   plugins: [
-    "~/plugins/customLoading.ts",
-    "~/plugins/gsap.client.ts",
-    "~/plugins/i18n-persist.client.ts",
-    "~/plugins/progress-bar.ts",
-    "~/plugins/countryDisplay.ts",
+    { src: "~/plugins/gsap.client.ts", mode: "client" },
+    { src: "~/plugins/apexcharts.client.ts", mode: "client" },
+    { src: "~/plugins/customLoading.ts", mode: "client" },
+    { src: "~/plugins/progress-bar.ts", mode: "client" },
+    { src: "~/plugins/countryDisplay.ts", mode: "client" },
+    { src: "~/plugins/i18n-persist.client.ts", mode: "client" },
   ],
 });

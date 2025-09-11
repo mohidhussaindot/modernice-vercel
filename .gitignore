@@ -1,5 +1,5 @@
 .DS_Store
-nuxt
+.nuxt
 node_modules
 .env
 .env.local

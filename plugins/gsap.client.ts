@@ -1,22 +1,22 @@
 // plugins/gsap.client.ts
-import { defineNuxtPlugin } from "#app";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+export default defineNuxtPlugin(async () => {
+  if (process.client) {
+    // Dynamic imports to avoid SSR issues
+    const { gsap } = await import("gsap");
+    const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+    const { TextPlugin } = await import("gsap/TextPlugin");
+    // Add other plugins you need
 
-export default defineNuxtPlugin((nuxtApp) => {
-  gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+    // Register plugins
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-  // patch gsap methods so they only run on client
-  const safeGsap = new Proxy(gsap, {
-    get(target, prop) {
-      if (process.server) {
-        // return a no-op function during SSR
-        return () => {};
-      }
-      return Reflect.get(target, prop);
-    },
-  });
-
-  nuxtApp.provide("gsap", safeGsap);
+    // Make available globally
+    return {
+      provide: {
+        gsap,
+        ScrollTrigger,
+        TextPlugin,
+      },
+    };
+  }
 });

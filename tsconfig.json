@@ -8,23 +8,26 @@
       "@molecules": ["components/molecules/index.ts"],
       "@organisms": ["components/organisms/index.ts"],
       "@templates": ["components/templates/index.ts"],
-       "#app": ["./.nuxt/types/app"],
-      "#app/*": ["./.nuxt/types/app/*"],
       "@atoms/*": ["components/atoms/*"],
       "@molecules/*": ["components/molecules/*"],
       "@organisms/*": ["components/organisms/*"],
-      "@templates/*": ["components/templates/*"]
+      "@templates/*": ["components/templates/*"],
+      "#app": [".nuxt/types/app"],
+      "#app/*": [".nuxt/types/app/*"]
     },
     "types": [
       "node",
       "vue",
       "@vue/runtime-dom",
-      "@nuxtjs/i18n"   
+      "@nuxt/types",
+      "@nuxtjs/i18n",
+      "nuxt"
     ]
   },
   "include": [
     "./**/*.ts",
     "./**/*.vue",
-    "types/**/*.ts"
+    "types/**/*.ts",
+    ".nuxt/types/**/*.d.ts"
   ]
 }
