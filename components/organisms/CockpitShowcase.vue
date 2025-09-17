@@ -29,58 +29,85 @@ const warpFxRef = ref<HTMLElement | null>(null)
 const lightspeedRef = ref<HTMLElement | null>(null)
 
 onMounted(() => {
-  const cockpit = cockpitRef.value
+  const cockpitEl = cockpitRef.value
   const contentWrapper = contentWrapperRef.value
-  if (!cockpit || !contentWrapper) return
+  if (!cockpitEl || !contentWrapper) return
 
-  const bg = cockpit.querySelector('.cockpit-bg')
-  const textContent = cockpit.querySelector('.cockpit-text')
-  const cardImage = cockpit.querySelector('.cockpit-card')
+  const bg = cockpitEl.querySelector('.cockpit-bg')
+  const textContent = cockpitEl.querySelector('.cockpit-text')
+  const cardImage = cockpitEl.querySelector('.cockpit-card')
 
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: contentWrapper,
       start: "center center",
       end: "+=90%",
-      pin: cockpit,
-      scrub: true,
+      pin: cockpitEl,
+      scrub: 1, // Smooth scrub
       anticipatePin: 1,
       markers: false
     }
   })
 
   if (bg) {
-    tl.fromTo(bg, { scale: 1 }, { scale: 1.15, transformOrigin: "center center", ease: "none", duration: 1 })
+    tl.fromTo(bg,
+      { scale: 1 },
+      { scale: 1.15, transformOrigin: "center center", ease: "none", duration: 1 }
+    )
   }
+
   if (cardImage) {
-    tl.fromTo(cardImage, { opacity: 0, y: 40 }, { opacity: 1, y: 0, ease: "power2.out", duration: 1 }, "<")
+    tl.fromTo(cardImage,
+      { y: 40, autoAlpha: 0 },
+      { y: 0, autoAlpha: 1, duration: 1, ease: "power3.out" },
+      "<"
+    )
   }
+
   if (textContent) {
-    tl.fromTo(textContent, { opacity: 0, y: 40 }, { opacity: 1, y: 0, ease: "power2.out", duration: 1 }, "<")
+    tl.fromTo(textContent,
+      { y: 40, autoAlpha: 0 },
+      { y: 0, autoAlpha: 1, duration: 1, ease: "power3.out" },
+      "<"
+    )
   }
 })
 
 const handleClick = () => {
-  const cockpit = cockpitRef.value
+  const cockpitEl = cockpitRef.value
   const blackout = blackoutRef.value
   const warpFx = warpFxRef.value
   const lightspeed = lightspeedRef.value
-  if (!cockpit) return
+  if (!cockpitEl) return
 
-  const originX = cockpit.offsetWidth / 2
-  const originY = cockpit.offsetHeight / 2
-  const bg = cockpit.querySelector('.cockpit-bg')
-  const card = cockpit.querySelector('.cockpit-card')
-  const text = cockpit.querySelector('.cockpit-text')
+  const originX = cockpitEl.offsetWidth / 2
+  const originY = cockpitEl.offsetHeight / 2
+
+  const bg = cockpitEl.querySelector('.cockpit-bg')
+  const card = cockpitEl.querySelector('.cockpit-card')
+  const text = cockpitEl.querySelector('.cockpit-text')
 
   const tl = gsap.timeline({ defaults: { ease: 'power2.inOut' } })
+
   const halfwayScale = 1.4
 
-  tl.to(cockpit, { scale: halfwayScale, transformOrigin: `${originX}px ${originY}px`, duration: 2 })
-    .to(cockpit, { scale: halfwayScale, duration: 2 })
-    .to(cockpit, { scale: 1.7, duration: 2, ease: 'power3.inOut' })
-    .to([cockpit, bg, card, text], { scale: 0, duration: 0.55, ease: 'power2.out', opacity: 0 })
-    .add(() => { if (props.onShowServices) props.onShowServices() }, '+=0.05')
+  tl.to(cockpitEl, {
+    scale: halfwayScale,
+    transformOrigin: `${originX}px ${originY}px`,
+    duration: 2,
+    force3D: true
+  })
+    .to(cockpitEl, { scale: halfwayScale, duration: 1 })
+    .to(cockpitEl, { scale: 1.7, duration: 2, ease: 'power3.inOut' })
+    .to([cockpitEl, bg, card, text], {
+      scale: 0,
+      autoAlpha: 0,
+      duration: 0.6,
+      ease: 'power2.out'
+    })
+    .add(() => {
+      if (props.onShowServices) props.onShowServices()
+    }, '+=0.1')
 }
 </script>
 
@@ -96,8 +123,8 @@ const handleClick = () => {
         v-html="cockpit"
       ></div>
 
-      <div ref="warpFxRef" class="warpfx absolute inset-0 z-30 pointer-events-none"></div>
-      <div ref="lightspeedRef" class="lightspeed absolute inset-0"></div>
+      <div ref="warpFxRef" class="warpfx absolute inset-0 z-30 pointer-events-none will-change-transform"></div>
+      <div ref="lightspeedRef" class="lightspeed absolute inset-0 will-change-transform"></div>
 
       <div
         ref="contentWrapperRef"
@@ -133,7 +160,6 @@ const handleClick = () => {
                 </span>
               </Button>
             </div>
-
           </div>
         </div>
       </div>
@@ -146,8 +172,15 @@ const handleClick = () => {
 <style scoped>
 .cockpit-section {
   overflow-x: hidden;
+  perspective: 1000px;
 }
+
 body {
   overflow-x: hidden;
+}
+
+.will-change-transform {
+  will-change: transform;
+  transform: translateZ(0); 
 }
 </style>
