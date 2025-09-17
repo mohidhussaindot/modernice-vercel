@@ -35,7 +35,7 @@
 
   <!-- Card 2 -->
   <div class="w-[220px] lg:w-[240px] xl:w-[285px] h-[160px] lg:h-[175px] xl:h-[198px] p-[12px] lg:p-[14px] xl:p-[16px] border border-amber-500 rounded-[14px] lg:rounded-[16px] xl:rounded-[18px] flex flex-col items-center justify-center gap-[10px] lg:gap-[12px] xl:gap-[16px] bg-black">
-    <img src="/images/store.png" alt="Store icon" class="w-[50px] lg:w-[60px] xl:w-[70px] h-[60px] lg:h-[72px] xl:h-[84px] object-contain" />
+    <img src="/images/Store.png" alt="Store icon" class="w-[50px] lg:w-[60px] xl:w-[70px] h-[60px] lg:h-[72px] xl:h-[84px] object-contain" />
     <p class="text-white text-center text-[13px] lg:text-[14px] xl:text-[16px] leading-snug">
       A user friendly appealing online store
     </p>
