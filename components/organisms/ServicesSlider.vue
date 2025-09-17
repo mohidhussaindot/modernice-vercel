@@ -3,11 +3,10 @@
     <div class="relative inner-container">
       <div ref="scroller" class="scroller flex items-start gap-8">
 
-        <div ref="slide1" class=" slide">
+        <div ref="slide1" class="slide">
           <div class="rounded-xl shadow-2xl bg-white/7 backdrop-blur-sm p-4">
             <img src="/images/slider-first.png" alt="Robuste Technologie" class="rounded-lg" />
           </div>
-
           <div class="text-content">
             <h1>Robuste Technologie</h1>
             <p>
@@ -17,11 +16,10 @@
           </div>
         </div>
 
-        <div ref="slide2" class=" slide">
+        <div ref="slide2" class="slide">
           <div class="rounded-xl shadow-2xl bg-white/7 backdrop-blur-sm p-4">
             <img src="/images/slider2.png" alt="Innovatives Design" />
           </div>
-
           <div class="text-content">
             <h1>Innovatives Design</h1>
             <p>
@@ -30,11 +28,10 @@
           </div>
         </div>
 
-        <div ref="slide3" class=" slide">
+        <div ref="slide3" class="slide">
           <div class="rounded-xl shadow-2xl bg-white/7 backdrop-blur-sm p-4">
             <img src="/images/sliderthird.png" alt="Gesucht & Gefunden" />
           </div>
-
           <div class="text-content">
             <h1>Gesucht & Gefunden</h1>
             <p>
@@ -49,7 +46,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
@@ -60,44 +57,69 @@ const scroller = ref(null)
 const slide1 = ref(null)
 const slide2 = ref(null)
 const slide3 = ref(null)
+let triggers = []
 
-onMounted(() => {
+const initAnimation = async () => {
+  await nextTick() // wait for DOM
+
+  // Cleanup previous triggers
+  triggers.forEach(t => t.kill())
+  triggers = []
+
   const slides = [slide1.value, slide2.value, slide3.value]
   const scrollerWidth = scroller.value.scrollWidth
   const windowWidth = window.innerWidth
   const scrollDistance = scrollerWidth - windowWidth
 
-  gsap.to(scroller.value, {
-    x: -scrollDistance,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: wrapper.value,
-      start: 'top top',
-      end: () => `+=${scrollDistance}`,
-      scrub: true,
-      pin: true,
-      anticipatePin: 1,
-    },
-  })
+  // Horizontal scroll
+  triggers.push(
+    gsap.to(scroller.value, {
+      x: -scrollDistance,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: wrapper.value,
+        start: 'top top',
+        end: () => `+=${scrollDistance}`,
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+      },
+    })
+  )
 
-  // Fade in/out slides based on their position
-  slides.forEach((slide, i) => {
-    gsap.fromTo(
-      slide,
-      { opacity: 0.35, scale: 0.92 },
-      {
-        opacity: 1,
-        scale: 1.05,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: scroller.value,
-          start: () => `${i * windowWidth - windowWidth / 2}px center`,
-          end: () => `${i * windowWidth + windowWidth / 2}px center`,
-          scrub: true,
-        },
-      }
+  slides.forEach(slide => {
+    const slideCenter = slide.offsetLeft + slide.offsetWidth / 2
+    triggers.push(
+      gsap.fromTo(
+        slide,
+        { opacity: 0.35, scale: 0.92 },
+        {
+          opacity: 1,
+          scale: 1.05,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: scroller.value,
+            start: () => `${slideCenter - windowWidth / 2}px center`,
+            end: () => `${slideCenter + windowWidth / 2}px center`,
+            scrub: true,
+          },
+        }
+      )
     )
   })
+
+  ScrollTrigger.refresh()
+}
+
+onMounted(() => {
+  initAnimation()
+  window.addEventListener('resize', initAnimation)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', initAnimation)
+  triggers.forEach(t => t.kill())
+  triggers = []
 })
 </script>
 

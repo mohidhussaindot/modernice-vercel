@@ -23,9 +23,10 @@
       </p>
     </div>
 
+    <!-- SVG CONTENT -->
     <div class="md:flex lg:items-center lg:pt-20 xl:pt-0 md:justify-center">
       <div
-        ref="services-2"
+        ref="services2"
         v-html="servicesscond"
         class="mt-12 md:mt-16 lg:mt-0 lg:ml-16 w-full lg:w-[25rem] xl:max-w-[64rem] h-auto"
       />
@@ -33,19 +34,23 @@
   </section>
 </template>
 
-
 <script setup>
 import servicesscond from '@atoms/svgs/servicessecond.svg?raw'
 import gsap from 'gsap'
-import { onMounted } from 'vue'
+import { onMounted, nextTick, ref } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-onMounted(() => {
-  const shadow = document.querySelector('#Shadow_2')
-  const plant = document.querySelector('#Plant')
-  const gears = document.querySelector('#Gears')
+const services2 = ref(null)
+
+onMounted(async () => {
+  // wait until v-html finishes injecting the SVG
+  await nextTick()
+
+  const shadow = services2.value?.querySelector('#Shadow_2')
+  const plant = services2.value?.querySelector('#Plant')
+  const gears = services2.value?.querySelector('#Gears')
 
   if (shadow) {
     shadow.removeAttribute('style')
@@ -83,9 +88,9 @@ onMounted(() => {
         duration: 3,
         ease: 'power2.out',
         scrollTrigger: {
-          trigger: 'section',
-          start: 'CENTER',
-          toggleActions: 'play none none none',
+          trigger: services2.value, 
+          start: 'center bottom',
+          toggleActions: 'play none none none'
         }
       }
     )
