@@ -213,37 +213,14 @@
 </template>
  
 
-<style scoped>
-.svg-wrapper {
-  position: relative;
-  height: 100%;
-  overflow: visible; 
-}
 
-.svg-wrapper > div {
-  display: inline-block;
-  transform: translateX(-120px); /* shift svg left */
-  /* optional: to avoid inline-block whitespace issues */
-  vertical-align: top;
-}
-
-.fade-left, .fade-right, .fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  will-change: opacity, transform;
-}
-
-</style>
 <script setup>
 import servicesMainBg from '@atoms/svgs/services-mainbg.svg?raw'
 import servicesfourth from '@atoms/svgs/servicesfourth.svg?raw'
 import servicesfourth2 from '@atoms/svgs/servicesfourthsecond.svg?raw'
 import svgContent from '@atoms/svgs/servicesfifth.svg?raw'
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref, nextTick } from 'vue'
 import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const servicesFourthContainer = ref(null)
 const servicesFourth2Container = ref(null)
@@ -391,7 +368,7 @@ function setupObserver() {
   observer.observe(container)
 }
 
-onMounted(() => {
+onMounted(async () => {
   initAnimations()
   setupObserver()
 
@@ -430,26 +407,9 @@ onMounted(() => {
   // Animate Gears
   const svg2 = servicesFourth2Container.value
   if (svg2) {
-    const gears = svg2.querySelector('#Gears')
     const shadow2 = svg2.querySelector('#Shadow')
 
-    if (gears) {
-      gsap.fromTo(
-        gears,
-        { x: -60, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1.2,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: svg2.closest('section'),
-            start: 'CENTER',
-            toggleActions: 'play none none none',
-          },
-        }
-      )
-    }
+ 
 
     if (shadow2) {
       shadow2.removeAttribute('style')
@@ -466,36 +426,26 @@ onMounted(() => {
     }
   }
 
-  // ✅ Fade in/out animation for text & svgs
+  // ✅ Replace GSAP fade logic with IntersectionObserver
+  await nextTick()
   const fadeElements = document.querySelectorAll('.fade-left, .fade-right, .fade-up')
 
-  fadeElements.forEach((el) => {
-    let x = 0
-    let y = 0
+  const fadeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in')
+          entry.target.classList.remove('fade-out')
+        } else {
+          entry.target.classList.remove('fade-in')
+          entry.target.classList.add('fade-out')
+        }
+      })
+    },
+    { threshold: 0.2 }
+  )
 
-    if (el.classList.contains('fade-left')) x = -60
-    if (el.classList.contains('fade-right')) x = 60
-    if (el.classList.contains('fade-up')) y = 40
-
-    gsap.fromTo(
-      el,
-      { opacity: 0, x, y },
-      {
-        opacity: 1,
-        x: 0,
-        y: 0,
-        duration: 1.2,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 85%',
-          end: 'bottom 10%',
-          toggleActions: 'play reverse play reverse',
-          // markers: true, // for debug
-        },
-      }
-    )
-  })
+  fadeElements.forEach((el) => fadeObserver.observe(el))
 })
 
 onBeforeUnmount(() => {
@@ -503,3 +453,43 @@ onBeforeUnmount(() => {
   cancelAnimationFrame(rafId)
 })
 </script>
+
+<style scoped>
+.svg-wrapper {
+  position: relative;
+  height: 100%;
+  overflow: visible; 
+}
+
+.svg-wrapper > div {
+  display: inline-block;
+  transform: translateX(-120px); /* shift svg left */
+  vertical-align: top;
+}
+
+/* ✅ Fade logic */
+.fade-left,
+.fade-right,
+.fade-up {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-left { transform: translateX(-40px); }
+.fade-right { transform: translateX(40px); }
+.fade-up { transform: translateY(40px); }
+
+.fade-in {
+  opacity: 1 !important;
+  transform: translateX(0) translateY(0) !important;
+}
+
+.fade-out.fade-left { transform: translateX(-40px); }
+.fade-out.fade-right { transform: translateX(40px); }
+.fade-out.fade-up { transform: translateY(40px); }
+
+.fade-out {
+  opacity: 0 !important;
+}
+</style>
+
