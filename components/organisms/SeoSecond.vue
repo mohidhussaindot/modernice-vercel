@@ -5,9 +5,7 @@
 >
   <div class="flex flex-col px-6 pt-10 gap-20 xl:gap-16 max-w-7xl mx-auto">
 
-    <!-- First Row -->
     <div class="flex  items-center xl:flex-row gap-10 xl:gap-6">
-      <!-- Left Content Block -->
       <div class="flex flex-col justify-start xl:w-1/2 gap-8 xl:gap-4 fade-left">
         <h1 class="italic font-semibold text-[2.5rem] leading-snug">
           <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
@@ -22,7 +20,6 @@
         </p>
       </div>
 
-      <!-- Question Mark Graphic -->
       <div
         class="p-5 xl:w-[26.6875rem] xl:h-[27.875rem]"
         ref="seoquestionmarkone"
@@ -216,7 +213,6 @@
       />
     </div>
 
-    <!-- Row 2: Text left / Image right -->
     <div class="flex flex-row justify-between items-center gap-12 fade-right">
       <div class="w-full max-w-[35.75rem] flex flex-col gap-8">
         <h1 class="text-[2.5rem] italic font-semibold">Umsetzung</h1>
@@ -233,7 +229,6 @@
       />
     </div>
 
-    <!-- Row 3: Text left / Image right -->
     <div class="flex flex-row justify-between items-center gap-12 fade-left">
       <div class="w-full max-w-[35.75rem] flex flex-col gap-8">
         <h1 class="text-[2.5rem] italic font-semibold">Monitoring & Optimierung</h1>
@@ -255,7 +250,6 @@
 </section>
 
 
-<!-- that div -->
 <div class="relative h-[27.6875rem] w-full text-white bg-[#020111]">
   <div class="flex lg:items-center max-w-7xl pt-10 mx-auto xl:justify-start xl:items-start lg:justify-center h-full">
     <div class="fade-element w-full max-w-[35.75rem] px-6 text-center lg:text-left">
@@ -267,7 +261,7 @@
   </div>
 </div>
 
-<!-- SEO last Get in touch --><section class="relative bg-black lg:flex lg:justify-center xl:flex xl:justify-center items-center overflow-hidden h-[37.5rem]">
+<section class="relative bg-black lg:flex lg:justify-center xl:flex xl:justify-center items-center overflow-hidden h-[37.5rem]">
 
   <div
     class="absolute bg-no-repeat bg-center inset-0 bg-[length:100%]"
