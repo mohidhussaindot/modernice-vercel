@@ -1,67 +1,52 @@
 <template>
-  <section
-    ref="city"
-    class="bg-black flex items-center overflow-hidden"
-    :style="{ height: sectionHeight + 78.125 + 'rem' }" 
-  >
-    <div
-      ref="scroller"
-      class="scroller relative h-[36.3125rem] left-[7.1875rem] items-baseline-last flex gap-[4rem]"
-      :style="{ width: totalWidth + 'rem' }"
-    >
-      <div class="w-[32.773rem] text-white h-[27rem]">
-        <img
-          src="/images/slider-first.png"
-          class="h-[15.562rem] mb-[1.5625rem] w-[25.249rem]"
-        />
-        <div class="flex gap-[1.25rem] flex-col left-[3.648rem]">
-          <h1 class="font-bold text-[1.75rem] max-w-[17.563rem]">Robuste Technologie</h1>
-          <span class="max-w-[27.75rem]">
-            <p class="text-[1.125rem]">
-              Zuverlässige Technologien und Plattformen, die sicherstellen, dass
-              eine Website nicht nur gut aussieht, sondern auch nahtlos
-              funktioniert.
-            </p>
-          </span>
-        </div>
-      </div>
+  <section ref="wrapper" class="outer-wrapper flex items-center overflow-hidden bg-black">
+    <div class="relative inner-container">
+      <div ref="scroller" class="scroller flex items-start gap-8">
 
-      <div class="w-[32.773rem] text-white h-[27rem]">
-        <div class="mb-[1.5625rem] w-[38rem]">
-          <img
-            src="/images/slider2.png"
-            class="h-[17.45rem] mb-[1.5625rem] w-[26.525rem]"
-          />
+        <div ref="slide1" class=" slide">
+          <div class="rounded-xl shadow-2xl bg-white/7 backdrop-blur-sm p-4">
+            <img src="/images/slider-first.png" alt="Robuste Technologie" class="rounded-lg" />
+          </div>
+
+          <div class="text-content">
+            <h1>Robuste Technologie</h1>
+            <p>
+              Zuverlässige Technologien und Plattformen, die sicherstellen, dass eine Website nicht nur gut aussieht,
+              sondern auch nahtlos funktioniert.
+            </p>
+          </div>
         </div>
-        <div class="flex gap-[1.25rem] flex-col left-[3.648rem]">
-          <h1 class="font-bold text-[1.75rem] max-w-[17.563rem]">Innovatives Design</h1>
-          <span class="max-w-[27.75rem]">
-            <p class="text-[1.125rem]">
+
+        <div ref="slide2" class=" slide">
+          <div class="rounded-xl shadow-2xl bg-white/7 backdrop-blur-sm p-4">
+            <img src="/images/slider2.png" alt="Innovatives Design" />
+          </div>
+
+          <div class="text-content">
+            <h1>Innovatives Design</h1>
+            <p>
               Einzigartige und maßgeschneiderte Designs, die Marken repräsentieren und Visionen zum Leben erwecken.
             </p>
-          </span>
+          </div>
         </div>
-      </div>
 
-      <div class="w-[32.773rem] text-white h-[27rem]">
-        <img
-          src="/images/sliderthird.png"
-          class="h-[15.562rem] mb-[1.5625rem] w-[25.249rem]"
-        />
-        <div class="flex gap-[1.25rem] flex-col left-[3.648rem]">
-          <h1 class="font-bold text-[1.75rem] max-w-[17.563rem]">Gesucht & Gefunden</h1>
-          <span class="max-w-[27.75rem] ">
-            <p class="text-[1.125rem]">
+        <div ref="slide3" class=" slide">
+          <div class="rounded-xl shadow-2xl bg-white/7 backdrop-blur-sm p-4">
+            <img src="/images/sliderthird.png" alt="Gesucht & Gefunden" />
+          </div>
+
+          <div class="text-content">
+            <h1>Gesucht & Gefunden</h1>
+            <p>
               Tappe nicht im Dunkeln. Gezielte Suchmaschinen-Optimierung lässt Dich heller strahlen als Deine Konkurrenz.
             </p>
-          </span>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 </template>
-
-
 
 <script setup>
 import { ref, onMounted } from 'vue'
@@ -70,44 +55,113 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const city = ref(null)
+const wrapper = ref(null)
 const scroller = ref(null)
-
-const totalSlides = 3
-const cardWidth = 524.3671875
-const gap = 64
-const leftOffset = 115
-
-const totalWidth = totalSlides * cardWidth + (totalSlides - 1) * gap
-
-const sectionHeight = ref(0)
+const slide1 = ref(null)
+const slide2 = ref(null)
+const slide3 = ref(null)
 
 onMounted(() => {
-  const scrollLength = totalWidth - window.innerWidth + leftOffset
-  sectionHeight.value = scrollLength + window.innerHeight
+  const slides = [slide1.value, slide2.value, slide3.value]
+  const scrollerWidth = scroller.value.scrollWidth
+  const windowWidth = window.innerWidth
+  const scrollDistance = scrollerWidth - windowWidth
 
   gsap.to(scroller.value, {
-    x: `-${scrollLength}px`,
+    x: -scrollDistance,
     ease: 'none',
-    force3D: true,
     scrollTrigger: {
-      trigger: city.value,
-      start: 'center center',
-      end: `+=${scrollLength}`,
+      trigger: wrapper.value,
+      start: 'top top',
+      end: () => `+=${scrollDistance}`,
       scrub: true,
       pin: true,
-      anticipatePin: 2,
-      invalidateOnRefresh: true,
-      markers: false,
+      anticipatePin: 1,
     },
+  })
+
+  // Fade in/out slides based on their position
+  slides.forEach((slide, i) => {
+    gsap.fromTo(
+      slide,
+      { opacity: 0.35, scale: 0.92 },
+      {
+        opacity: 1,
+        scale: 1.05,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: scroller.value,
+          start: () => `${i * windowWidth - windowWidth / 2}px center`,
+          end: () => `${i * windowWidth + windowWidth / 2}px center`,
+          scrub: true,
+        },
+      }
+    )
   })
 })
 </script>
 
-
 <style scoped>
+.outer-wrapper {
+  position: relative;
+  height: 100vh;
+}
+
 .scroller {
+  display: flex;
   will-change: transform;
-  transform: translate3d(0, 0, 0);
+}
+
+.slide {
+  flex: 0 0 100vw;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.35;
+  scale: 0.92;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.slide img {
+  height: 16rem;
+  width: 22rem;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.text-content {
+  max-width: 28rem;
+  text-align: center;
+  color: white;
+}
+
+.text-content h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.text-content p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slide img {
+    height: 10rem;
+    width: 14rem;
+  }
+
+  .text-content h1 {
+    font-size: 1.25rem;
+  }
+
+  .text-content p {
+    font-size: 0.9rem;
+  }
 }
 </style>

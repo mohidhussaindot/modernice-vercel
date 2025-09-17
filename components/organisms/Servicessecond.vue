@@ -1,37 +1,39 @@
 <template>
-  <section class="relative h-[785px] bg-black overflow-hidden">
-
-    <div class="absolute text-white top-[5.4375rem] left-[8rem] max-w-[38rem] max-h-[31rem]">
+  <section
+    class="relative bg-black overflow-hidden md:min-h-[auto] flex flex-col md:flex-col lg:flex-row items-center lg:items-start xl:px-[8rem] xl:gap-10 lg:px-[3.25rem]"
+  >
+    <!-- TEXT CONTENT -->
+    <div
+      class="text-white xl:max-w-[38rem] lg:max-w-[25rem] flex flex-col gap-[1.5rem] md:items-center md:text-center lg:items-start lg:text-left"
+    >
       <h1 class="text-[3.75rem] font-semibold italic">
         <span class="text-green-500">Form</span> folgt <span class="text-green-500">Funktion</span>
       </h1>
 
-      <p class="text-[1.125rem] font-semilight mt-[1.5rem]">
+      <p class="text-[1.125rem] font-semilight">
         Insbesondere bei Websites, die durch ihr beeindruckendes visuelles Auftreten bestechen, wird die technische Leistungsfähigkeit oft vernachlässigt.
       </p>
 
-      <p class="text-[1.125rem] font-semilight mt-[1.5rem]">
+      <p class="text-[1.125rem] font-semilight">
         Die Umsetzung einer ansprechenden und benutzerfreundlichen Seite verlangt nicht nur ein gutes Auge für’s Design. Von entscheidender Bedeutung sind vor allem eine robuste technische Infrastruktur und das Einhalten von Best Practices.
       </p>
 
-      <p class="text-[1.125rem] font-semilight mt-[1.5rem]">
+      <p class="text-[1.125rem] font-semilight">
         Letztlich muss die Funktion immer im Zentrum der Entwicklung stehen. Nur auf einer soliden technischen Grundlage kann ein attraktives Design seine volle Wirkung entfalten und über die reine Ästhetik hinaus einen Mehrwert bieten.
       </p>
     </div>
 
-   
-
-<div class="absolute h-[916px] w-[1024px] left-[525px]top-[-77px]">
-    <div
-    ref="services-2"
-    class=" absolute h-[521.8954467773438px] top-[55px] left-[842px] w-[545.0968017578125px]"
-    v-html="servicesscond"
-  />
-</div>
-   
+    <div class="md:flex lg:items-center lg:pt-20 xl:pt-0 md:justify-center">
+      <div
+        ref="services-2"
+        v-html="servicesscond"
+        class="mt-12 md:mt-16 lg:mt-0 lg:ml-16 w-full lg:w-[25rem] xl:max-w-[64rem] h-auto"
+      />
+    </div>
   </section>
-
 </template>
+
+
 <script setup>
 import servicesscond from '@atoms/svgs/servicessecond.svg?raw'
 import gsap from 'gsap'

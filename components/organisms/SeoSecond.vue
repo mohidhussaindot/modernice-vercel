@@ -1,47 +1,52 @@
 <template>
-  <section class="relative  text-white bg-[#020111]  ">
-    <div class="fade-element h-[55.125rem]">
-  <div
-    class="absolute inset-0 bg-no-repeat bg-[length:100%] "
-    style="background-image: url('/images/seo-second-bg.png');"
-  ></div>
+<section
+  class="relative overflow-hidden text-white bg-[#020111] bg-no-repeat bg-center bg-cover"
+  style="background-image: url('/images/seo-second-bg.png');"
+>
+  <div class="flex flex-col px-6 pt-10 gap-20 xl:gap-16 max-w-7xl mx-auto">
 
-  <div
-    class="absolute p-5 left-[46.3125rem] w-[26.6875rem] h-[27.875rem] top-[0.4375rem] "
-    ref="seoquestionmarkone"
-    v-html="Seoquestionmark"
-    @mouseenter="onQuestionMarksMouseEnter"
-    @mouseleave="onQuestionMarksMouseLeave"
-  />
+    <!-- First Row -->
+    <div class="flex  items-center xl:flex-row gap-10 xl:gap-6">
+      <!-- Left Content Block -->
+      <div class="flex flex-col justify-start xl:w-1/2 gap-8 xl:gap-4 fade-left">
+        <h1 class="italic font-semibold text-[2.5rem] leading-snug">
+          <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
+            Fundament des Erfolgs:
+          </span><br />
+          Warum technische SEO entscheidend ist
+        </h1>
+        <p class="text-[1.25rem] font-light">
+          SEO ist mehr als kurzfristige Taktiken; es ist ein solides<br />
+          technisches Fundament, das nachhaltiges Wachstum<br />
+          ermöglicht.
+        </p>
+      </div>
 
-  <div class="absolute w-[37.4375rem] h-[18.5rem] top-[5.3125rem] left-[7.125rem] flex flex-col gap-[2rem] fade-left">
-    <h1 class="italic font-semibold text-[2.5rem] ">
-      <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
-        Fundament des Erfolgs:
-      </span><br />
-      Warum technische SEO entscheidend ist
-    </h1>
-
-    <p class="text-[1.25rem] font-light">
-      SEO ist mehr als kurzfristige Taktiken; es ist ein solides <br />
-      technisches Fundament, das nachhaltiges Wachstum <br />
-      ermöglicht.
-    </p>
-  </div>
-
-  <div>
-    <div class="absolute left-[6.9375rem] w-[25.375rem] h-[24.125rem] top-[28.3125rem] ">
-      <div ref="SeoSecondref" class="absolute" v-html="seosecond" />
+      <!-- Question Mark Graphic -->
+      <div
+        class="p-5 xl:w-[26.6875rem] xl:h-[27.875rem]"
+        ref="seoquestionmarkone"
+        v-html="Seoquestionmark"
+        @mouseenter="onQuestionMarksMouseEnter"
+        @mouseleave="onQuestionMarksMouseLeave"
+      ></div>
     </div>
 
-    <div class="absolute font-light text-[1.25rem] w-[37.4375rem] top-[32.5625rem] left-[45.875rem] fade-right">
-      <p>
-        Die besten SEO-Maßnahmen basieren auf einer starken technischen Infrastruktur,
-        die sich leicht anpassen lässt, um aktuellen und zukünftigen
-        Suchmaschinenanforderungen gerecht zu werden.
-      </p>
+    <!-- Second Row -->
+    <div class="flex xl:flex-row  gap-10 xl:gap-[13.5625rem]">
+      <!-- Second Graphic -->
+      <div class="xl:w-[25.375rem] xl:h-[24.125rem]" ref="SeoSecondref" v-html="seosecond"></div>
+
+      <!-- Text Block -->
+      <div class="font-light text-[1.25rem] flex items-center w-[599px] fade-right">
+        <p>
+          Die besten SEO-Maßnahmen basieren auf einer starken technischen Infrastruktur,
+          die sich leicht anpassen lässt, um aktuellen und zukünftigen
+          Suchmaschinenanforderungen gerecht zu werden.
+        </p>
+      </div>
     </div>
-  </div>
+
   </div>
 </section>
 
@@ -93,7 +98,7 @@
 
 <!-- 3rd part -->
 <section class="relative overflow-hidden text-white bg-[#020111]">
- <div class="fade-element  h-[41.5625rem] ">
+ <div class="  h-[41.5625rem] ">
   <div class="absolute fade-left w-[37.4375rem] top-[8.75rem] left-[17.0625rem] flex flex-col gap-[1.5rem] h-[16.25rem]">
     
     <h1 class="italic text-[3.75rem] font-semibold">
@@ -111,146 +116,165 @@
 
 
 
-<!-- 4rth part -->
+<section
+  class="relative overflow-hidden text-white bg-[#020111] h-[824px] bg-no-repeat bg-[length:100%] "
+  style="background-image: url('/images/seo-fourth-bg.png');"
+>
+  <div class="flex  xl:flex-row items-center justify-between px-6 pt-24 pb-16 gap-12 max-w-7xl mx-auto">
 
-<section class=" relative overflow-hidden text-white bg-[#020111]">
-   <div class=" fade-element  h-[51.5rem]">
-  <div
-    style="background-image: url('/images/seo-fourth-bg.png');"
-    class="absolute inset-0 bg-[length:100%] left-[2.875rem] bg-no-repeat"
-  ></div>
+    <div class="w-full xl:w-[32rem] fade-left flex flex-col gap-5">
+      <h1 class="text-[2.5rem] italic font-semibold">Analyse des Ist-Zustands</h1>
+      <p class="text-[1.125rem] font-light">
+        Bei jeder SEO-Strategie, die wir entwickeln, beginnen wir mit einer gründlichen Analyse des aktuellen
+        Zustands der Website. Dabei berücksichtigen wir technische Aspekte, inhaltliche Faktoren und das
+        Nutzerverhalten, um Schwachstellen und Potenziale aufzudecken.
+      </p>
+    </div>
 
-  <div class="absolute top-[8.125rem] left-[48.75rem]">
-    <NuxtImg
-      src="/images/seo-fourth.png"
-      alt="seo-fourth-image"
-      style="width: 30.465rem; height: 28.2281rem;"
-    ></NuxtImg>
-  </div>
+    <div class="w-full xl:w-auto">
+      <NuxtImg
+        src="/images/seo-fourth.png"
+        alt="seo-fourth-image"
+        class="w-[30.465rem] h-[28.2281rem] object-contain"
+      />
+    </div>
 
-  <div class="absolute w-[31.9375rem] h-[15.125rem] fade-left top-[14.0625rem] left-[7.5rem] flex flex-col gap-[1.25rem]">
-    <h1 class="text-[2.5rem] italic font-semibold">Analyse des Ist-Zustands</h1>
-    <p class="text-[1.125rem] font-light">
-      Bei jeder SEO-Strategie, die wir entwickeln, beginnen wir mit einer gründlichen Analyse des aktuellen Zustands der Website.
-      Dabei berücksichtigen wir technische Aspekte, inhaltliche Faktoren und das Nutzerverhalten, um Schwachstellen und Potenziale aufzudecken.
-    </p>
-  </div>
-  </div>
-</section>
-
-
-<!-- 5th part -->
-<section class=" relative overflow-hidden text-white bg-[#020111]">
-  <div class="fade-element h-[74.5rem] ">
-  <div
-    style="background-image: url('/images/seo-fifth-bg.png');"
-    class="absolute inset-0 bg-[length:100%] left-[2.875rem] bg-no-repeat"
-  ></div>
-
-  <div class="absolute left-[1.4375rem] w-[32.9375rem] h-[31.875rem] top-[2.25rem]">
-    <div
-      ref="SeoFifthref"
-      class="absolute"
-      v-html="seofifth"
-    />
-  </div>
-
-  <div class="absolute w-[38.1875rem] fade-right h-[17.25rem] top-[6.75rem] left-[45.625rem] flex flex-col gap-[1.25rem]">
-    <h1 class="text-[2.5rem] italic font-semibold">Technische SEO-Optimierung</h1>
-    <p class="text-[1.125rem] font-light">
-      Egal ob bei der Gestaltung einer neuen Website oder der Verbesserung einer bestehenden,
-      die technische SEO steht im Zentrum unserer Arbeit. Bei neuen Projekten 
-      sorgen wir von Anfang an für eine optimale Suchmaschinenfreundlichkeit. 
-      Bei der Optimierung bestehender Websites verbessern wir die technische
-      Grundlage, um die Sichtbarkeit in den Suchergebnissen zu erhöhen.
-    </p>
-  </div>
-
-  <div class="absolute top-[41.375rem] left-[47.4375rem]">
-    <NuxtImg
-      src="/images/seo-fifth-second.png"
-      alt="seo-fifth-second-image"
-      style="width: 30.9375rem; height: 25.6875rem;"
-    ></NuxtImg>
-  </div>
-
-  <div class="absolute w-[35.75rem] fade-left h-[21.25rem] top-[47.8125rem] left-[8.25rem] flex flex-col gap-[2rem]">
-    <h1 class="text-[2.5rem] italic font-semibold">Keyword- und Wettbewerbsanalyse</h1>
-    <p class="text-[1.125rem] font-light">
-      Im nächsten Schritt identifizieren wir die Schlüsselbegriffe, 
-      welche die Zielgruppe zur Suche nach relevanten Produkten oder Dienstleistungen verwendet.
-      Parallel dazu analysieren wir die Wettbewerbssituation, um die Marktposition zu 
-      verstehen und wirksame Strategien zur Verbesserung der Platzierung zu entwickeln.
-    </p>
-  </div>
   </div>
 </section>
 
-<!-- 6 section -->
-<section class="h-[97.3125rem] relative overflow-hidden text-white bg-[#020111]">
-<div class=" h-full ">
-  <div class="absolute flex flex-col fade-left gap-[2rem] top-[9.8125rem] left-[7.5rem] w-[35.75rem]">
-    
-    <h1 class="text-[2.5rem] italic font-semibold">Strategieentwicklung</h1>
-    <p class="text-[1.125rem] font-light">
-      Basierend auf unseren umfangreichen Analysen erstellen wir eine maßgeschneiderte SEO-Strategie, die genau auf die Ziele und das Publikum des Unternehmens zugeschnitten ist. In diesem Stadium legen wir Ziele fest, planen Maßnahmen und definieren KPIs, um den Erfolg unserer Bemühungen messbar zu machen.
-    </p>
+
+<!-- 5th Part -->
+<section
+  class="relative overflow-hidden text-white bg-[#020111] h-[1192px] bg-no-repeat bg-[length:100%] "
+  style="background-image: url('/images/seo-fifth-bg.png');"
+>
+  <div class="flex flex-col gap-24 px-6  max-w-7xl mx-auto">
+
+    <div class="flex flex-row justify-between items-center gap-12">
+
+      <div class="w-full max-w-[32.9375rem]" ref="SeoFifthref" v-html="seofifth"></div>
+
+      <div class="w-full max-w-[38.1875rem] fade-right flex flex-col gap-5">
+        <h1 class="text-[2.5rem] italic font-semibold">Technische SEO-Optimierung</h1>
+        <p class="text-[1.125rem] font-light">
+          Egal ob bei der Gestaltung einer neuen Website oder der Verbesserung einer bestehenden,
+          die technische SEO steht im Zentrum unserer Arbeit. Bei neuen Projekten 
+          sorgen wir von Anfang an für eine optimale Suchmaschinenfreundlichkeit. 
+          Bei der Optimierung bestehender Websites verbessern wir die technische
+          Grundlage, um die Sichtbarkeit in den Suchergebnissen zu erhöhen.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Second Row: Text Left / Image Right -->
+    <div class="flex flex-row justify-between items-center gap-12">
+
+      <!-- Left: Text Block -->
+      <div class="w-full max-w-[35.75rem] fade-right flex flex-col gap-8">
+        <h1 class="text-[2.5rem] italic font-semibold">Keyword- und Wettbewerbsanalyse</h1>
+        <p class="text-[1.125rem] font-light">
+          Im nächsten Schritt identifizieren wir die Schlüsselbegriffe, 
+          welche die Zielgruppe zur Suche nach relevanten Produkten oder Dienstleistungen verwendet.
+          Parallel dazu analysieren wir die Wettbewerbssituation, um die Marktposition zu 
+          verstehen und wirksame Strategien zur Verbesserung der Platzierung zu entwickeln.
+        </p>
+      </div>
+
+      <!-- Right: Image -->
+      <div class="w-full max-w-[30.9375rem] fade-right">
+        <NuxtImg
+          src="/images/seo-fifth-second.png"
+          alt="seo-fifth-second-image"
+          class="w-full h-auto object-contain"
+        />
+      </div>
+
+    </div>
   </div>
-
-  <NuxtImg
-    src="/images/seo-fifth-second.png"
-    alt="Strategieentwicklung"
-    class="absolute fade-left top-[2.8125rem] left-[49.8125rem] w-[30.9375rem] h-[25.6875rem]"
-  />
-</div>
-
-<div class=" h-full">
-  <div class="absolute flex flex-col fade-right gap-[2rem] top-[39.5rem] left-[7.5rem] w-[35.75rem]">
-    <h1 class="text-[2.5rem] italic font-semibold">Umsetzung</h1>
-    <p class="text-[1.125rem] font-light">
-      Mit der entwickelten Strategie geht es in die Umsetzungsphase. Dabei umfasst unsere Arbeit sowohl technische Optimierungen an der Website als auch die Erstellung von qualitativ hochwertigem Content, der sowohl die Zielgruppe anspricht als auch von den Suchmaschinen positiv bewertet wird.
-    </p>
-  </div>
-
-  <NuxtImg
-    src="/images/seo-fifth-second.png"
-    alt="Umsetzung"
-    class="absolute fade-right top-[32.5rem] left-[49.8125rem] w-[30.9375rem] h-[25.6875rem]"
-  />
-</div>
-  <div class="absolute flex fade-left flex-col gap-[2rem] top-[69.1875rem] left-[7.5rem] w-[35.75rem]">
-    <h1 class="text-[2.5rem] italic font-semibold">Monitoring & Optimierung</h1>
-    <p class="text-[1.125rem] font-light">
-      Da SEO ein dynamischer Prozess ist, überwachen wir ständig die Performance der Website, analysieren die gewonnenen Daten und nehmen bei Bedarf Anpassungen vor. Durch unser kontinuierliches Monitoring und die gezielte Optimierung stellen wir sicher, dass die Website stets den aktuellen SEO-Best-Practices entspricht und bestmögliche Ergebnisse liefert.
-    </p>
-  </div>
-
-  <NuxtImg
-    src="/images/seo-fifth-second.png"
-    alt="Monitoring und Optimierung"
-    class="absolute top-[62.25rem] fade-left left-[49.8125rem] w-[30.9375rem] h-[25.6875rem]"
-  />
 </section>
+
+<!-- 6th Section -->
+<section class="min-h-screen overflow-hidden text-white pt-5 bg-[#020111]">
+  <div class="flex flex-col gap-24 max-w-7xl mx-auto px-6">
+
+    <!-- Row 1: Text left / Image right -->
+    <div class="flex flex-row justify-between items-center gap-12 fade-left">
+      <div class="w-full max-w-[35.75rem] flex flex-col gap-8">
+        <h1 class="text-[2.5rem] italic font-semibold">Strategieentwicklung</h1>
+        <p class="text-[1.125rem] font-light">
+          Basierend auf unseren umfangreichen Analysen erstellen wir eine maßgeschneiderte SEO-Strategie,
+          die genau auf die Ziele und das Publikum des Unternehmens zugeschnitten ist. In diesem Stadium
+          legen wir Ziele fest, planen Maßnahmen und definieren KPIs, um den Erfolg unserer Bemühungen
+          messbar zu machen.
+        </p>
+      </div>
+      <NuxtImg
+        src="/images/seo-fifth-second.png"
+        alt="Strategieentwicklung"
+        class="w-[30.9375rem] h-[25.6875rem] object-contain fade-left"
+      />
+    </div>
+
+    <!-- Row 2: Text left / Image right -->
+    <div class="flex flex-row justify-between items-center gap-12 fade-right">
+      <div class="w-full max-w-[35.75rem] flex flex-col gap-8">
+        <h1 class="text-[2.5rem] italic font-semibold">Umsetzung</h1>
+        <p class="text-[1.125rem] font-light">
+          Mit der entwickelten Strategie geht es in die Umsetzungsphase. Dabei umfasst unsere Arbeit sowohl
+          technische Optimierungen an der Website als auch die Erstellung von qualitativ hochwertigem Content,
+          der sowohl die Zielgruppe anspricht als auch von den Suchmaschinen positiv bewertet wird.
+        </p>
+      </div>
+      <NuxtImg
+        src="/images/seo-fifth-second.png"
+        alt="Umsetzung"
+        class="w-[30.9375rem] h-[25.6875rem] object-contain fade-right"
+      />
+    </div>
+
+    <!-- Row 3: Text left / Image right -->
+    <div class="flex flex-row justify-between items-center gap-12 fade-left">
+      <div class="w-full max-w-[35.75rem] flex flex-col gap-8">
+        <h1 class="text-[2.5rem] italic font-semibold">Monitoring & Optimierung</h1>
+        <p class="text-[1.125rem] font-light">
+          Da SEO ein dynamischer Prozess ist, überwachen wir ständig die Performance der Website,
+          analysieren die gewonnenen Daten und nehmen bei Bedarf Anpassungen vor. Durch unser kontinuierliches
+          Monitoring und die gezielte Optimierung stellen wir sicher, dass die Website stets den aktuellen
+          SEO-Best-Practices entspricht und bestmögliche Ergebnisse liefert.
+        </p>
+      </div>
+      <NuxtImg
+        src="/images/seo-fifth-second.png"
+        alt="Monitoring und Optimierung"
+        class="w-[30.9375rem] h-[25.6875rem] object-contain fade-left"
+      />
+    </div>
+
+  </div>
+</section>
+
 
 <!-- that div -->
-<div class="relative h-[27.6875rem]  w-full text-white bg-[#020111]">
-  <div class="absolute left-[6.4375rem] fade-element top-[2.1875rem] w-[35.75rem] h-[6.375rem]">
-    <p class="text-[1.125rem] font-light">
-      Durch die Kombination aus Datenanalyse, technischer Expertise und kreativer Arbeit streben wir an, die Online-Präsenz unserer Kunden zu verbessern und deren Geschäftsziele zu erreichen.
-    </p>
+<div class="relative h-[27.6875rem] w-full text-white bg-[#020111]">
+  <div class="flex lg:items-center max-w-7xl pt-10 mx-auto xl:justify-start xl:items-start lg:justify-center h-full">
+    <div class="fade-element w-full max-w-[35.75rem] px-6 text-center lg:text-left">
+      <p class="text-[1.125rem] font-light">
+        Durch die Kombination aus Datenanalyse, technischer Expertise und kreativer Arbeit streben wir an,
+        die Online-Präsenz unserer Kunden zu verbessern und deren Geschäftsziele zu erreichen.
+      </p>
+    </div>
   </div>
 </div>
 
-
-  <!-- SEO last Get in touch -->
-<section class="relative bg-black flex items-center overflow-hidden h-[37.5rem]">
+<!-- SEO last Get in touch --><section class="relative bg-black lg:flex lg:justify-center xl:flex xl:justify-center items-center overflow-hidden h-[37.5rem]">
 
   <div
     class="absolute bg-no-repeat bg-center inset-0 bg-[length:100%]"
     style="background-image: url('/images/seo-footer-bg.png');"
   ></div>
 
-  <div class="absolute w-[53.6875rem] bg-black h-[27.9375rem] left-[18.125rem] border rounded border-[#01A3FF]">
+  <div class="absolute w-[53.6875rem] bg-black h-[27.9375rem] xl:left-[18.125rem] border rounded border-[#01A3FF]">
     
     <div class="absolute h-[12.5rem] text-white w-[45.6875rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]">
       <h1 class="italic font-semibold text-[2.25rem]">Get in Touch</h1>
@@ -280,6 +304,7 @@
     </div>
   </div>
 </section>
+
 
 
 </template>

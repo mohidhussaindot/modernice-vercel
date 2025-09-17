@@ -1,30 +1,30 @@
 <template>
-   <section class="bg-[#020111] relative h-[52.3125rem]">
-  <div class="absolute inset-0 bg-no-repeat bg-[length:100%]" style="background-image: url('/images/seo-hero-bg.png');"></div>
-
-  <div class="absolute left-[39.6875rem] w-[46.6423rem] h-[43.3842rem] top-[6.5rem]">
+  <section class="bg-[#020111] relative overflow-hidden py-24 px-6 md:px-16 lg:px-10 xl:px-23">
+    <!-- Background Image -->
     <div
-      ref="seocharacter"
-      class="absolute"
-      v-html="Seocharacter"
-    />
-  </div>
+      class="absolute inset-0 bg-no-repeat bg-cover z-0"
+      style="background-image: url('/images/seo-hero-bg.png');"
+    ></div>
 
-  <div class="text-white absolute top-[11.1875rem] left-[8.375rem] flex flex-col gap-[2rem] w-[39.4375rem] h-[22.1875rem]">
-    <h1 class="text-[3.75rem] italic font-lightbold">
+    <!-- Container -->
+   <div class="relative z-10 max-w-[64rem] flex flex-col lg:flex-row items-center justify-between lg:gap-3 xl:gap-12">
+
+  <!-- Text Content -->
+  <div class="text-white flex-1 lg:z-10 flex flex-col gap-8">
+    <h1 class="text-[2.5rem] md:text-[3rem] lg:text-[3.75rem] italic font-lightbold leading-tight">
       Bereit für den
       <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">Startschuss</span>
       nach
       <span class="bg-gradient-to-r from-[#25CDDA] via-[#01A3FF] to-[#1EC5E1] bg-clip-text text-transparent">Oben?</span>
     </h1>
 
-    <p class="w-[37.4375rem] font-light text-[1.25rem]">
-      Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein [after-thought] sein.
+    <p class="font-light text-[1.125rem] md:text-[1.25rem] max-w-[37.5rem]">
+      Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein <em>after-thought</em> sein.
     </p>
 
     <div>
       <Button
-        class="px-[1.5rem] py-[0.625rem] text-[1.25rem] border border-[#3BB1FF] rounded 
+        class="px-6 py-2.5 text-[1.25rem] border border-[#3BB1FF] rounded 
                hover:bg-[#3BB1FF] transition hover:border-none hover:cursor-pointer 
                bg-transparent text-white hover:text-white"
       >
@@ -38,9 +38,21 @@
       </Button>
     </div>
   </div>
-</section>
 
+  <!-- SeoCharacter: visible inline on small, becomes bg on lg -->
+  <div class="relative flex-1 w-full max-w-[31.25rem]">
+    <div
+      ref="seocharacter"
+      v-html="Seocharacter"
+      class="w-full h-auto xl:relative xl:top-0 xl:left-0 lg:absolute lg:left-[-12.5rem] lg:top-[-16.875rem] lg:z-0 pointer-events-none"
+    />
+  </div>
+</div>
+
+  </section>
 </template>
+
+
 <script setup>
 import { onMounted, ref, nextTick } from 'vue';
 import Button from '@atoms/Button.vue';

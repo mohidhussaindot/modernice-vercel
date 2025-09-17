@@ -1,40 +1,51 @@
-<template >
-  <section class="relative text-white w-full h-auto grid place-items-center">
-    <div class="" ref="cityRef">
+<template>
+  <section
+    ref="cityRef"
+    :class="[
+      'relative text-white w-full  grid place-items-center px-1 sm:px-1.5 transition-opacity duration-700',
+      fadeClass,
+    ]"
+  >
+    <div class="w-full max-w-[65.9375rem]">
       <div
-        class="relative w-[65.9375rem] h-[61rem] my-[7.375rem] bg-no-repeat bg-contain bg-center bg-[url('/first-three-sect-img/city.png')]"
-       
+        ref="cityImage"
+        class="relative w-full h-[61rem] bg-no-repeat bg-contain bg-center bg-[url('/first-three-sect-img/city.png')]"
       >
-        <div class="absolute top-[4.563rem] inset-0 grid place-items-center ">
-          <div class="">
-            <h1 class="text-[3.25rem] font-bold mb-[1rem]">
+        <div
+          class="absolute inset-0 grid place-items-center top-[0.125rem] sm:top-[0.1875rem] md:top-[0.21875rem] lg:top-[0.2851875rem]"
+        >
+          <div class="text-center px-0.125 sm:px-0.25 max-w-full">
+            <h1
+              class="text-[1.25rem] sm:text-[1.5rem] md:text-[2rem] lg:text-[3.25rem] font-bold mb-[1rem] leading-snug"
+            >
               KI-gesteuerte Geschäftslösungen
             </h1>
 
-            <div class="max-w-[43.25rem] mx-auto grid gap-[1.875rem]">
-              <p class="text-[1.188rem]">
+            <div class="mx-auto grid gap-[0.09375rem] sm:gap-[0.1171875rem]">
+              <p
+                class="text-[0.95rem] sm:text-[1.05rem] md:text-[1.125rem] xl:max-w-[50.25rem] lg:text-[1.188rem]"
+              >
                 Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz (KI),
                 Großen Sprachmodellen (LLMs) und Maschinellem Lernen (ML). Diese Technologien
                 verändern die Art und Weise, wie wir arbeiten und wachsen.
               </p>
 
-             <span
-  class="relative inline-block rounded-[0.5rem] p-[0.0625rem] bg-gradient-to-r from-[#3BE8E8] via-[#AFE639] to-[#3BE8E8] w-fit h-[2.75rem] mx-auto text-[1rem]"
->
-  <Button
-    type="button"
-    class="relative w-full h-full rounded-[0.4375rem] py-[0.5rem] px-[1rem] 
-           bg-black font-semibold border-none transition duration-300 
-           hover:bg-[#AFE639] hover:scale-105 hover:cursor-pointer"
-  >
-    <span
-      class="bg-gradient-to-r  hover:text-black from-[#3BE8E8] via-[#AFE639] to-[#3BE8E8] 
-             bg-clip-text text-transparent"
-    >
-      Prozessoptimierung durch KI
-    </span>
-  </Button>
-</span>
+              <div class="inline-block mx-auto hover:scale-105 transition w-fit rounded-[0.75rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] via-[#AFE639] to-[#3BE8E8] hover:from-[#AFE639] mt-4 hover:to-[#3BE8E8]">
+                <Button
+                  class="px-[1.5rem] py-[0.625rem] 
+                         text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1rem] 
+                         rounded-[10px] bg-black bg-opacity-90
+                         transition hover:cursor-pointer 
+                         text-white hover:text-white"
+                >
+                  <span
+                    class="bg-gradient-to-r from-[#3BE8E8] via-[#AFE639] to-[#3BE8E8] 
+                           text-transparent bg-clip-text duration-300"
+                  >
+                    Prozessoptimierung durch KI
+                  </span>
+                </Button>
+              </div>
 
             </div>
           </div>
@@ -42,81 +53,100 @@
       </div>
     </div>
   </section>
-
-
-  
 </template>
+
+
 <script setup>
-import Button from '@atoms/Button.vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import Button from '@atoms/Button.vue'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 
-import logo from '@atoms/svgs/rocket-moon.svg?raw';
+gsap.registerPlugin(ScrollTrigger)
 
+const cityRef = ref(null)
+const cityImage = ref(null)
 
-import { onMounted, ref } from 'vue';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+const isVisible = ref(true)
+const fadeClass = computed(() => (isVisible.value ? 'fade-in' : 'fade-out'))
 
-gsap.registerPlugin(ScrollTrigger);
-
-const cityRef = ref(null);
-const moonImage = ref(null);
+// GSAP Animation
 onMounted(() => {
-  const city = cityRef.value;
-  const moon = moonImage.value;
-
-  if (!city) return;
+  const city = cityRef.value
+  const image = cityImage.value
+  if (!city || !image) return
 
   const cityTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: city,
-      start: "top+=190 top", 
-      end: "+=60%",         
-      scrub: true,
+      start: 'top top',
+      end: '+=50%',
+      scrub: 1,
       pin: true,
       anticipatePin: 1,
       markers: false,
-    }
-  });
+    },
+    smoothChildTiming: true,
+  })
+
+  gsap.set(image, { willChange: 'transform, opacity' })
 
   cityTimeline.fromTo(
-    city,
-    { scale: 0.85 },
+    image,
+    { scale: 0.86, opacity: 0.95 },
     {
       scale: 1,
-      ease: "power3.out",
-      duration: 0.4,
+      opacity: 1,
+      ease: 'power1.out',
+      duration: 0.6,
     }
-  );
+  )
 
-  const textContent = city.querySelector('h1').parentElement;
+  const textContent = city.querySelector('h1')?.parentElement
   if (textContent) {
+    gsap.set(textContent, { willChange: 'transform, opacity' })
+
     cityTimeline.fromTo(
       textContent,
-      { opacity: 0, y: 20, scale: 0.85 },
+      { opacity: 0, y: 25, scale: 0.97 },
       {
         opacity: 1,
         y: 0,
-        scale: 1.1,
-        duration: 1,
-        ease: "power3.out",
-      }
-    );
+        scale: 1,
+        duration: 0.8,
+        ease: 'power1.out',
+      },
+      '<0.2'
+    )
   }
 
-  if (moon) {
-    const imgElement = moon.querySelector('svg');
-    if (imgElement) {
-      gsap.to(imgElement, {
-        x: '+=5',
-        y: '+=3',
-        rotation: 4,
-        yoyo: true,
-        repeat: -1,
-        duration: 1.5,
-        ease: 'sine.inOut',
-      });
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      isVisible.value = entry.isIntersecting
+    },
+    {
+      threshold: 0.1,
     }
-  }
-});
+  )
 
+  observer.observe(city)
+
+  onUnmounted(() => {
+    observer.disconnect()
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+  })
+})
 </script>
+
+<style scoped>
+.fade-in {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.7s ease;
+}
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s ease;
+}
+</style>

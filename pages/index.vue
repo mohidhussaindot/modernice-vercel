@@ -12,9 +12,7 @@ import SiteFooter from "@organisms/SiteFooter.vue";
 import ServicesHero from "@organisms/Serviceshero.vue";
 import ServicesSecond from "@organisms/Servicessecond.vue";
 import ServicesSlider from "@organisms/ServicesSlider.vue";
-import ServicesThird from "@organisms/servicesthird.vue";
-import ServicesFourth from "@organisms/Servicesfourth.vue";
-import ServicesFifth from "@organisms/servicesfifth.vue";
+import Servicesmain from "@organisms/Servicesmain.vue";
 
 const showServices = ref(false);
 
@@ -31,7 +29,7 @@ const handleShowServices = () => {
           { label: 'modernice.design', to: '/' },
           {
             label: 'Services',
-            to: '/services',
+            to: '',
           },
 
           { label: 'Work', to: '/work' },
@@ -39,6 +37,8 @@ const handleShowServices = () => {
         cta-label="Let’s Talk"
         cta-to="/contact"
         logo-src="/first-three-sect-img/navbar-img.png"
+           cta-from="#01A3FF"
+  cta-to-color="#25CDDA"
       />
 
       <HeroSection />
@@ -50,7 +50,7 @@ const handleShowServices = () => {
         <LeftFeatureCta
           title="Sei der Wandel, den du in deiner Branche sehen möchtest."
           description="Wir transformieren Daten in Einblicke, Herausforderungen in Chancen. Mit unserer Strategie werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften. Lass die Zukunft nicht warten."
-          cta-label="Learn more"
+          cta-label="KI-Beratung"
           cta-to="#"
           line-svg="/images/Lines.svg"
           spaceship-svg="/images/Frame.svg"
@@ -59,7 +59,7 @@ const handleShowServices = () => {
         <CockpitShowcase
           bg-image="/images/BG.png"
           card-image="/images/Hero - Illustration.svg"
-          title="Ready to take your Galaxy Product to the next level?"
+          title="Ready to take your  Online Presence to the next level?"
           description="We'll work with you to plan and create a website that aligns with your business goals and resonates with your target audience. Only if we become friends of course!"
           cta-label="Get a Website Strategy"
           :onShowServices="handleShowServices"
@@ -78,9 +78,8 @@ const handleShowServices = () => {
       <ServicesHero />
       <ServicesSecond />
       <ServicesSlider />
-      <ServicesThird />
-      <ServicesFourth />
-      <ServicesFifth />
+     
+      <Servicesmain/>
       <SiteFooter
         bg-color="#020111"
         textcolor="#38EF61"
