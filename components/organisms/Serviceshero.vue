@@ -58,7 +58,7 @@
 import Button from '@atoms/Button.vue'
 import { ref, onMounted, nextTick } from 'vue'
 import ServicesHeroRaw from '@atoms/svgs/servicesfirst.svg?raw'
-import { gsap } from 'gsap'
+import  gsap  from 'gsap'
 
 const servicesHeroRef = ref(null)
 
