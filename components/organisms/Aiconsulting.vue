@@ -164,9 +164,9 @@
     style="background-image: url('/images/ai-bglines.png');"
   ></div>
 
-  <div class="absolute w-[53.688rem] bg-black h-[27.938rem] xl:left-[18.125rem] border border-[#A138E0] rounded">
+  <div class="absolute w-[53.688rem] bg-black h-[27.938rem] flex justify-center border border-[#A138E0] rounded">
     <div class="absolute h-[12.5rem] text-white w-[45.688rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]">
-      <h1 class="italic font-semibold text-[2.25rem]">Get in Touch</h1> <!-- 36px -->
+      <h1 class="italic font-semibold text-[2.25rem]">Get in Touch</h1> 
       <p class="max-w-[45.688rem] max-h-[9rem] text-[1.25rem] font-light">
         Now that you've learned about our process, why not take the next step and let us help you take your online
         presence to the next level? Don't wait – schedule a call with us today and let's discuss how we can give your

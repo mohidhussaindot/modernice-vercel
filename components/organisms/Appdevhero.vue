@@ -59,7 +59,7 @@
       v-html="appdevsection2bg2"
     ></div>
 
-    <div class="flex items-center h-full relative z-20 lg:px-[1.875rem] xl:px-[6.8125rem]">
+    <div class="flex items-center h-full relative z-20 lg:px-[1.875rem] xl:px-[11.625rem]">
 
       <div class="flex items-center w-full h-full relative z-20 xl:gap-[6.5rem]">
 
@@ -177,7 +177,7 @@
       style="background-image: url('/images/appdev-bglines.png');"
     ></div>
 
-    <div class="absolute w-[53.6875rem] bg-black h-[27.9375rem] xl:left-[18.125rem] border border-[#A138E0] rounded">
+    <div class="absolute w-[53.6875rem] bg-black h-[27.9375rem] flex justify-center border border-[#A138E0] rounded">
       <div class="absolute h-[12.5rem] text-white w-[45.6875rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]">
         <h1 class="italic font-semibold text-[2.25rem]">Get in Touch</h1>
         <p class="max-w-[45.6875rem] max-h-[9rem] text-[1.25rem] font-light">

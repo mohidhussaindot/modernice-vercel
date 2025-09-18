@@ -251,13 +251,13 @@
 
 </section>
 
-<section class="relative bg-black flex md:hidden lg:justify-center items-center overflow-hidden h-[37.5rem]">
+<section class="relative bg-black flex md:hidden lg:flex lg:justify-center items-center overflow-hidden h-[37.5rem]">
   <div
     class="absolute bg-no-repeat bg-center inset-0 bg-[length:100%]"
     style="background-image: url('/images/ecs-bglines.png');"
   ></div>
 
-  <div class="absolute w-[53.6875rem] bg-black h-[27.9375rem] xl:left-[18.125rem] border border-amber-600 rounded">
+  <div class="absolute w-[53.6875rem] bg-black h-[27.9375rem] flex justify-center border border-amber-600 rounded">
     <div class="absolute h-[12.5rem] text-white w-[45.6875rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]">
       <h1 class="italic font-semibold text-[2.25rem]">Get in Touch</h1>
       <p class="max-w-[45.6875rem] max-h-[9rem] text-[1.25rem] font-light">
