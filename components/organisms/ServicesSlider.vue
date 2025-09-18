@@ -3,7 +3,7 @@
     <div class="relative inner-container">
       <div ref="scroller" class="scroller flex items-start gap-8">
 
-        <div ref="slide1" class="slide">
+        <div ref="slide1" class="slide ">
           <div class="rounded-xl shadow-2xl bg-white/7 backdrop-blur-sm p-4">
             <img src="/images/slider-first.png" alt="Robuste Technologie" class="rounded-lg" />
           </div>
@@ -16,7 +16,7 @@
           </div>
         </div>
 
-        <div ref="slide2" class="slide">
+        <div ref="slide2" class="slide ">
           <div class="rounded-xl shadow-2xl bg-white/7 backdrop-blur-sm p-4">
             <img src="/images/slider2.png" alt="Innovatives Design" />
           </div>
@@ -28,7 +28,7 @@
           </div>
         </div>
 
-        <div ref="slide3" class="slide">
+        <div ref="slide3" class="slide ">
           <div class="rounded-xl shadow-2xl bg-white/7 backdrop-blur-sm p-4">
             <img src="/images/sliderthird.png" alt="Gesucht & Gefunden" />
           </div>
@@ -60,53 +60,67 @@ const slide3 = ref(null)
 let triggers = []
 
 const initAnimation = async () => {
-  await nextTick() // wait for DOM
+  await nextTick()
 
-  // Cleanup previous triggers
-  triggers.forEach(t => t.kill())
+  triggers.forEach(t => {
+    try { t.kill?.() } catch (e) {}
+  })
   triggers = []
 
   const slides = [slide1.value, slide2.value, slide3.value]
+  if (!scroller.value || !wrapper.value) return
+
   const scrollerWidth = scroller.value.scrollWidth
   const windowWidth = window.innerWidth
   const scrollDistance = scrollerWidth - windowWidth
 
-  // Horizontal scroll
-  triggers.push(
-    gsap.to(scroller.value, {
-      x: -scrollDistance,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: wrapper.value,
-        start: 'top top',
-        end: () => `+=${scrollDistance}`,
-        scrub: true,
-        pin: true,
-        anticipatePin: 1,
-      },
-    })
-  )
-
-  slides.forEach(slide => {
-    const slideCenter = slide.offsetLeft + slide.offsetWidth / 2
-    triggers.push(
-      gsap.fromTo(
-        slide,
-        { opacity: 0.35, scale: 0.92 },
-        {
-          opacity: 1,
-          scale: 1.05,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: scroller.value,
-            start: () => `${slideCenter - windowWidth / 2}px center`,
-            end: () => `${slideCenter + windowWidth / 2}px center`,
-            scrub: true,
-          },
-        }
-      )
-    )
+  const horiz = gsap.to(scroller.value, {
+    x: -scrollDistance,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: wrapper.value,
+      start: 'top top',
+      end: () => `+=${scrollDistance}`,
+      scrub: true,
+      pin: true,
+      anticipatePin: 1,
+    },
   })
+  triggers.push(horiz)
+
+  slides.forEach(s => {
+    gsap.set(s, { opacity: 0.35, scale: 0.92, transformOrigin: 'center center' })
+  })
+
+  const watcher = ScrollTrigger.create({
+    trigger: wrapper.value,
+    start: 'top top',
+    end: () => `+=${scrollDistance}`,
+    scrub: true,
+    onUpdate: () => {
+      const vw = window.innerWidth
+      const vwCenter = vw / 2
+      const minOpacity = 0.35
+      const maxOpacity = 1
+      const minScale = 0.92
+      const maxScale = 1.05
+
+      slides.forEach(slide => {
+        const rect = slide.getBoundingClientRect()
+        const slideCenter = rect.left + rect.width / 2
+        const dist = Math.abs(slideCenter - vwCenter)
+
+        const normalized = Math.min(dist / (vw / 2), 1)
+        const easeFactor = 1 - normalized
+
+        const opacity = minOpacity + easeFactor * (maxOpacity - minOpacity)
+        const scale = minScale + easeFactor * (maxScale - minScale)
+
+        gsap.set(slide, { opacity, scale })
+      })
+    },
+  })
+  triggers.push(watcher)
 
   ScrollTrigger.refresh()
 }
@@ -118,7 +132,9 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   window.removeEventListener('resize', initAnimation)
-  triggers.forEach(t => t.kill())
+  triggers.forEach(t => {
+    try { t.kill?.() } catch (e) {}
+  })
   triggers = []
 })
 </script>
@@ -126,7 +142,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .outer-wrapper {
   position: relative;
-  height: 100vh;
+  height: 110vh;
 }
 
 .scroller {
@@ -142,8 +158,8 @@ onBeforeUnmount(() => {
   align-items: center;
   justify-content: center;
   opacity: 0.35;
-  scale: 0.92;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: scale(0.92);
+  transform-origin: center center;
 }
 
 .slide img {
@@ -170,6 +186,8 @@ onBeforeUnmount(() => {
   font-size: 1.125rem;
   line-height: 1.6;
 }
+
+
 
 /* Responsive */
 @media (max-width: 768px) {
