@@ -4,7 +4,7 @@
       <div ref="scroller" class="scroller flex items-start gap-8">
 
         <div ref="slide1" class="slide ">
-          <div class="rounded-xl shadow-2xl bg-white/7 backdrop-blur-sm p-4">
+          <div class="rounded-xl shadow-2xl p-4">
             <img src="/images/slider-first.png" alt="Robuste Technologie" class="rounded-lg" />
           </div>
           <div class="text-content">
@@ -17,7 +17,7 @@
         </div>
 
         <div ref="slide2" class="slide ">
-          <div class="rounded-xl shadow-2xl bg-white/7 backdrop-blur-sm p-4">
+          <div class="rounded-xl shadow-2xl p-4">
             <img src="/images/slider2.png" alt="Innovatives Design" />
           </div>
           <div class="text-content">
@@ -29,7 +29,7 @@
         </div>
 
         <div ref="slide3" class="slide ">
-          <div class="rounded-xl shadow-2xl bg-white/7 backdrop-blur-sm p-4">
+          <div class="rounded-xl shadow-2xl p-4">
             <img src="/images/sliderthird.png" alt="Gesucht & Gefunden" />
           </div>
           <div class="text-content">
@@ -160,6 +160,7 @@ onBeforeUnmount(() => {
   opacity: 0.35;
   transform: scale(0.92);
   transform-origin: center center;
+  
 }
 
 .slide img {
@@ -168,6 +169,7 @@ onBeforeUnmount(() => {
   object-fit: contain;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
+   box-shadow: 0 0 20px rgba(255,255,255,0.15);
 }
 
 .text-content {
@@ -204,4 +206,4 @@ onBeforeUnmount(() => {
     font-size: 0.9rem;
   }
 }
-</style>
+</style> 
