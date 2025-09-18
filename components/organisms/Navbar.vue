@@ -22,11 +22,12 @@
         aria-label="Primary"
       >
         <template v-for="(link, index) in navLinks" :key="index">
-          <div v-if="link.label.toLowerCase() === 'services'" class="relative group">
-            <!-- Trigger -->
-            <NuxtLink :to="link.to" class="hover:underline">
-              {{ link.label }}
-            </NuxtLink>
+          <div v-if="['services', 'leistungen'].includes(link.label.toLowerCase())" class="relative group">
+    <!-- Trigger -->
+<NuxtLink :to="link.to" class="hover:underline cursor-pointer">
+
+    {{ link.label }}
+    </NuxtLink>
 
             <div
               class="absolute left-0 mt-2 w-[13rem] bg-[#0B061F] border border-gray-700 rounded-lg shadow-lg

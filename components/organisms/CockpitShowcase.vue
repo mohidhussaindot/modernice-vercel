@@ -108,6 +108,7 @@ const handleClick = () => {
   >
     <div class="relative w-full max-w-full aspect-[1437/1540] flex items-center justify-center">
 
+      <!-- this is the background image -->
       <div
         class="cockpit-bg absolute inset-0 pointer-events-none select-none will-change-transform"
         v-html="cockpit"
@@ -116,10 +117,12 @@ const handleClick = () => {
       <div ref="warpFxRef" class="warpfx absolute inset-0 z-30 pointer-events-none will-change-transform"></div>
       <div ref="lightspeedRef" class="lightspeed absolute inset-0 will-change-transform"></div>
 
-      <div
-        ref="contentWrapperRef"
-        class="absolute left-0 right-0 xl:top-[15rem] lg:top-[4.5rem] md:top-[-0.0625rem] sm:top-[0.0625rem] mx-auto max-w-[90.25rem] h-[40.375rem] flex justify-center items-center"
-      >
+  <div
+  ref="contentWrapperRef"
+  class="content-wrapper absolute left-0 right-0 mx-auto max-w-[90.25rem] flex justify-center items-center"
+>
+
+      
         <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 lg:gap-14 w-full max-w-[80rem] px-4">
           <div v-if="props.cardImage" class="flex-shrink-0">
             <NuxtImg
@@ -160,6 +163,49 @@ const handleClick = () => {
 </template>
 
 <style scoped>
+.content-wrapper {
+  top: 0.5rem; /* Default for small screens (sm) */
+  height: 30rem; /* Default height */
+}
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    top: -1px; /* md */
+    height: 35rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-wrapper {
+    top: 7.4rem; /* lg */
+    height: 38rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .content-wrapper {
+    top: 8.7rem; /* lg */
+    height: 38rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .content-wrapper {
+    top: 12.5rem; /* xl */
+    height: 40.375rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .content-wrapper {
+    top: 14.5rem; /* xl */
+    height: 40.375rem;
+  }
+}
+
+
+
+
 .cockpit-section {
   overflow-x: hidden;
   perspective: 1000px;
