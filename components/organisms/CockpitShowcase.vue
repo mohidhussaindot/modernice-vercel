@@ -35,16 +35,13 @@ onMounted(() => {
 
   const bg = cockpitEl.querySelector('.cockpit-bg')
   const textContent = cockpitEl.querySelector('.cockpit-text')
-  const cardImage = cockpitEl.querySelector('.cockpit-card')
 
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: contentWrapper,
-      start: "center center",
-      end: "+=90%",
-      pin: cockpitEl,
-      scrub: 1, // Smooth scrub
-      anticipatePin: 1,
+      start: "top 80%",
+      end: "bottom 20%",
+      scrub: 1,
       markers: false
     }
   })
@@ -52,23 +49,16 @@ onMounted(() => {
   if (bg) {
     tl.fromTo(bg,
       { scale: 1 },
-      { scale: 1.15, transformOrigin: "center center", ease: "none", duration: 1 }
-    )
-  }
-
-  if (cardImage) {
-    tl.fromTo(cardImage,
-      { y: 40, autoAlpha: 0 },
-      { y: 0, autoAlpha: 1, duration: 1, ease: "power3.out" },
-      "<"
+      { scale: 1.15, transformOrigin: "center center", ease: "none" },
+      0
     )
   }
 
   if (textContent) {
     tl.fromTo(textContent,
-      { y: 40, autoAlpha: 0 },
-      { y: 0, autoAlpha: 1, duration: 1, ease: "power3.out" },
-      "<"
+      { scale: 0.9, autoAlpha: 0 },
+      { scale: 1, autoAlpha: 1, duration: 1, ease: "power3.out" },
+      0
     )
   }
 })
