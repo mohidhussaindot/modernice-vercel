@@ -30,7 +30,20 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
-      include: ["swiper", "gsap"],
+      include: [
+        "swiper",
+        "gsap",
+        "gsap/ScrollTrigger",
+        "gsap/TextPlugin",
+        "gsap/MotionPathPlugin",
+        "gsap/DrawSVGPlugin",
+      ],
+    },
+    define: {
+      // Optimize GSAP for production
+      __GSAP_VERSION__: JSON.stringify(
+        process.env.NODE_ENV === "production" ? "3.13.0" : "3.13.0"
+      ),
     },
   },
 
