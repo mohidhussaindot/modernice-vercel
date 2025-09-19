@@ -34,7 +34,7 @@ const handleShowServices = () => {
         cta-to-color="#25CDDA"
       />
 
-<HeroSection @show-services="handleShowServices" />
+<HeroSection @show-services="handleShowServices"/>
 
       <div class="bg-[#020111] text-white">
         <SiteFooter
