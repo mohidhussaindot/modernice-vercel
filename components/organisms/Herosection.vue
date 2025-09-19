@@ -21,7 +21,7 @@
             class="text-white flex flex-col w-full max-w-none sm:max-w-[32rem] md:max-w-[29rem] xl:max-w-[34.875rem]"
           >
             <h1
-              class="font-bold leading-tight text-[1.75rem] sm:text-[2.25rem] md:text-[2.5rem] lg:text-[3rem] xl:text-[3.375rem] w-full xl:w-[34.0625rem]"
+              class="font-bold leading-tight text-[1.75rem] sm:text-[2.25rem] md:text-[2.5rem] lg:text-[3rem] xl:text-[3.375rem] 2xl:text-[4.5rem] w-full xl:w-[34.0625rem]"
             >
               <span
                 class="text-transparent bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE]"
@@ -31,7 +31,7 @@
             </h1>
 
             <p
-              class="mt-[1.5rem] font-light leading-relaxed text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] w-full xl:w-[34.875rem]"
+              class="mt-[1.5rem] font-light leading-relaxed text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.5rem] w-full xl:w-[34.875rem]"
             >
               Kreatives Webdesign, meisterhafte Softwareentwicklung und
               bahnbrechende AI-Technologien, die dein Geschäft auf die
@@ -42,7 +42,7 @@
               class="mt-[2rem] inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] hover:from-[#6BE0FF] hover:to-[#3BB1FF]"
             >
               <Button
-                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
               >
                 <span
                   class="bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] text-transparent bg-clip-text duration-300"
@@ -67,36 +67,40 @@
       <div class="w-full max-w-[65.9375rem]">
         <div
           ref="cityImage"
-          class="relative w-full h-[61rem] bg-no-repeat bg-contain bg-center bg-[url('/first-three-sect-img/city.png')] transition-opacity duration-1000 ease-in-out opacity-0 image-fade"
+          class="relative w-full h-[61rem] bg-no-repeat bg-contain bg-center bg-[url('/first-three-sect-img/city.png')] transition-opacity duration-1000 ease-in-out  image-fade"
         >
           <div class="absolute inset-0 grid place-items-center">
             <div
               ref="textContent"
-              class="text-center px-0.125 sm:px-0.25 max-w-full opacity-0"
+              class=" items-center text-center flex flex-col  px-0.125 sm:px-0.25 max-w-full opacity-0"
             >
               <h1
-                class="text-[1.25rem] sm:text-[1.5rem] md:text-[2rem] lg:text-[3.25rem] font-bold mb-[1rem] leading-snug"
+                class="text-[1.25rem]  sm:text-[1.5rem]   2xl:text-[3.45rem] lg:text-[3.25rem] font-bold mb-[0.5rem] leading-snug"
               >
                 KI-gesteuerte Geschäftslösungen
               </h1>
-              <div class="mx-auto grid gap-[0.09375rem] sm:gap-[0.1171875rem]">
+              <div class="mx-auto grid ">
                 <p
-                  class="text-[0.95rem] sm:text-[1.05rem] md:text-[1.125rem] xl:max-w-[50.25rem] lg:text-[1.188rem]"
+                  class="text-[0.95rem]  2xl:text-[1.2rem] sm:text-[1.05rem] md:text-[1.125rem] xl:max-w-[50.25rem] lg:text-[1.188rem]"
                 >
                   Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz
                   (KI), Großen Sprachmodellen (LLMs) und Maschinellem Lernen
                   (ML). Diese Technologien verändern die Art und Weise, wie wir
                   arbeiten und wachsen.
                 </p>
-                <div
-                  class="inline-block mx-auto hover:scale-105 transition w-fit rounded-[0.75rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] via-[#AFE639] to-[#3BE8E8] hover:from-[#AFE639] mt-4 hover:to-[#3BE8E8]"
+                   <div
+              class=" inline-block mx-auto mt-[2rem]  hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8]  to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
+            >
+              <Button
+                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+              >
+                <span
+                  class="bg-gradient-to-r from-[#3BE8E8]  to-[#AFE639] text-transparent bg-clip-text duration-300"
+                  >Prozessoptimierung durch KI</span
                 >
-                  <Button
-                    class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1rem] rounded-[10px] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-                    >Prozessoptimierung durch KI</Button
-                  >
-                </div>
-              </div>
+              </Button>
+            </div>
+          </div>
             </div>
           </div>
         </div>
@@ -106,7 +110,7 @@
     <div
       ref="sectionRef"
       :class="[
-        'flex mt-[-15rem] overflow-visible px-4  md:pl-10 xl:px-20 gap-12 md:gap-0 lg:gap-0 transition-opacity duration-700 relative z-20',
+        'flex 2xl:mt-[-10rem] xl:mt-[-15rem] overflow-visible xl:px-[7.1875rem] px-4  md:pl-10  gap-12 md:gap-0 lg:gap-0 transition-opacity duration-700 relative z-20',
         fadeClassSection,
       ]"
     >
@@ -120,7 +124,7 @@
           durch Design und Technologie
         </h1>
         <p
-          class="font-light text-[1rem] sm:text-[1.0625rem] md:text-[1.125rem]"
+          class="font-light  2xl:text-[1.2rem]  lg:text-[1rem] sm:text-[1.0625rem] md:text-[1.125rem]"
         >
           In einer erfolgreichen Web-Lösung verschmelzen Design und Entwicklung
           zu einem harmonischen Ganzen. Die nahtlose Integration von Frontend
@@ -130,20 +134,24 @@
           Möglichen erweitern und das Nutzererlebnis auf ein ungekanntes Niveau
           heben.
         </p>
-        <div
-          class="inline-block hover:scale-105 transition w-fit rounded-[12px] p-[2px] bg-gradient-to-r from-[#FFE501] to-[#FFA901] hover:from-[#FFD700] hover:to-[#FFA901]"
-        >
-          <Button
-            class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1rem] rounded-[10px] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-            >Schaffe Außergewöhnliches</Button
-          >
-        </div>
-      </div>
+         <div
+              class=" inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#FFE501]  to-[#FFA901] hover:from-[#FFA901] hover:to-[#FFE501]"
+            >
+              <Button
+                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+              >
+                <span
+                  class="bg-gradient-to-r from-[#FFA901]  to-[#FFE501] text-transparent bg-clip-text duration-300"
+                  >Schaffe Außergewöhnliches</span
+                >
+              </Button>
+            </div>
+          </div>
       <div class="w-full flex justify-center items-center">
         <img
           src="/images/rocketmoon.png"
           alt="Rocket Moon"
-          class="xl:w-[650.4355025557797px] w-full h-full right-left object-contain select-none pointer-events-none"
+          class="xl:w-[650.4355025557797px] 2xl:w-[750.4355025557797px]  w-full h-full right-left object-contain select-none pointer-events-none"
         />
       </div>
     </div>
@@ -158,20 +166,19 @@
         v-html="bglines"
       ></div>
 
-      <!-- Main CTA content -->
       <div class="relative mx-auto max-w-7xl w-full z-10">
         <div class="relative flex justify-center items-center">
           <div
-            class="relative z-10 md:top-[19.438rem] xl:top-[23.438rem] flex flex-col gap-[1.5rem] xl:w-[37.125rem] lg:w-[30rem] max-h-[25.375rem]"
+            class="relative z-10 md:top-[19.438rem]  xl:top-[23.438rem] 2xl:top-[25.438rem]  flex flex-col gap-[1.5rem] xl:w-[37.125rem] lg:w-[30rem] max-h-[25.375rem]"
           >
             <h2
-              class="font-bold italic text-white leading-tight text-[2.25rem] sm:text-[2.5rem] md:text-[2rem] lg:text-[2.2rem] xl:text-[2.7rem]"
+              class="font-bold italic text-white leading-tight text-[2.25rem] sm:text-[2.5rem] md:text-[2rem] lg:text-[2.2rem] 2xl:text-[3rem] xl:text-[2.7rem]"
             >
               Sei der Wandel, den du in deiner Branche sehen möchtest.
             </h2>
 
             <p
-              class="font-light leading-snug text-[1rem] md:text-[1rem] lg:text-[1.2rem] xl:text-[1.24rem]"
+              class="font-light   2xl:text-[1.2rem] md:text-[1rem] lg:text-[1.2rem] xl:text-[1.24rem]"
             >
               Wir transformieren Daten in Einblicke, Herausforderungen in
               Chancen. Mit unserer Strategie werden Künstliche Intelligenz und
@@ -179,23 +186,22 @@
               warten.
             </p>
 
-            <div
-              class="inline-block hover:scale-105 transition w-fit rounded-[0.75rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
+             <div
+              class=" inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639]  to-[#3BE8E8] hover:from-[#6BE0FF] hover:to-[#3BB1FF]"
             >
               <Button
-                class="cta-button px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
               >
                 <span
-                  class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
+                  class="bg-gradient-to-r from-[#AFE639]  to-[#3BE8E8] text-transparent bg-clip-text duration-300"
+                  >KI-Beratung</span
                 >
-                  KI-Beratung
-                </span>
               </Button>
             </div>
           </div>
 
           <div
-            class="absolute md:w-[350.5314333374696px] md:pt-10 xl:pt-2 xl:w-[534.5314333374696px] right-0 top-0 pointer-events-none z-10 spaceship-wrapper"
+            class="absolute md:w-[350.5314333374696px] md:pt-10 2xl:pt-4 xl:pt-2 xl:w-[534.5314333374696px] right-0 top-0 pointer-events-none z-10 spaceship-wrapper"
             style="will-change: transform"
             v-html="rocket"
           ></div>
@@ -226,7 +232,7 @@
 
         <div
           ref="contentWrapperRef"
-          class="content-wrapper absolute mx-auto w-[72.9375rem] flex top-[374px]"
+          class="content-wrapper  absolute mx-auto w-[72.9375rem] flex top-[374px]"
         >
           <div
             class="flex justify-center gap-6 md:gap-10 lg:gap-14 w-full px-4"
@@ -255,20 +261,21 @@
                 audience. Only if we become friends of course!
               </p>
 
-              <div
-                class="inline-block mt-1 rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#38EF61] to-[#44E5C8] hover:scale-105 transition w-fit"
+            <div
+              class=" inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#38EF61]  to-[#44E5C8] hover:from-[#44E5C8] hover:to-[#38EF61]"
+            >
+              <Button
+              @click="handleClick"
+                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
               >
-                <Button
-                  @click="handleClick"
-                  class="xl:px-3 xl:py-1.5 lg:py-1.2 lg:px-2 text-xs sm:text-sm md:text-base rounded-lg font-medium bg-black bg-opacity-90 text-white hover:text-white transition-all duration-300 hover:cursor-pointer"
+                <span
+                  class="bg-gradient-to-r from-[#38EF61]  to-[#44E5C8] text-transparent bg-clip-text duration-300"
+                  >Get a Website Strategy</span
                 >
-                  <span
-                    class="bg-gradient-to-r from-[#44E5C8] to-[#38EF61] text-transparent bg-clip-text"
-                    >Get a Website Strategy</span
-                  >
-                </Button>
-              </div>
+              </Button>
             </div>
+          </div>
+
           </div>
         </div>
       </div>
@@ -293,7 +300,6 @@ import {
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-// Import components & SVGs
 import Button from "@atoms/Button.vue";
 import moonSVGRaw from "@atoms/svgs/rocket-moon-hero.svg?raw";
 import stripessvg from "@atoms/svgs/herosectionstripes.svg?raw";
@@ -306,7 +312,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const emit = defineEmits(["show-services"]);
 
-// Refs for DOM elements
 const firstPart = ref(null);
 const stripesDiv = ref(null);
 const cityRef = ref(null);
@@ -332,11 +337,9 @@ const fadeClassSection = computed(() =>
   isSectionVisible.value ? "fade-in" : "fade-out"
 );
 
-// Helper arrays to store observers for cleanup
 let observers = [];
 
 onMounted(() => {
-  // First Part IntersectionObserver
   if (firstPart.value && stripesDiv.value) {
     const vector343 =
       stripesDiv.value.querySelector("#Vector\\ 343") ||
@@ -389,7 +392,7 @@ onMounted(() => {
         ease: "power2.out",
         scrollTrigger: {
           trigger: cityImage.value,
-          start: "top 27%",
+          start: "top 19%",
           toggleActions: "play none none reverse",
         },
       }
@@ -420,7 +423,6 @@ onMounted(() => {
     observers.push(sectionObserver);
   }
 
-  // CTA Section spaceship scroll animation
   if (ctaSectionRef.value) {
     const section = ctaSectionRef.value;
     const spaceship = section.querySelector(".spaceship-wrapper");
@@ -447,7 +449,6 @@ onMounted(() => {
     }
   }
 
-  // Cockpit Section animation
   nextTick(() => {
     const cockpitEl = cockpitRef.value;
     const contentWrapper = contentWrapperRef.value;
@@ -482,13 +483,10 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  // Cleanup IntersectionObservers
   observers.forEach((obs) => obs.disconnect());
-  // Kill all ScrollTriggers
   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 });
 
-// Button click handler with GSAP timeline and emit
 const handleClick = () => {
   const cockpitEl = cockpitRef.value;
   const blackout = blackoutRef.value;
@@ -551,7 +549,6 @@ const handleClick = () => {
   transition: opacity 0.8s ease-in-out;
 }
 
-/* Cockpit-specific */
 .cockpit-section {
   perspective: 2000px;
 }
@@ -572,7 +569,6 @@ const handleClick = () => {
   will-change: transform;
 }
 
-/* Image fade for city */
 .image-fade {
   transition: opacity 1s ease-in-out;
 }
@@ -647,8 +643,10 @@ const handleClick = () => {
   }
 }
 
+
 @media (min-width: 1360px) {
   .content-wrapper {
+    
     top: 460px;
   }
 }
@@ -656,6 +654,12 @@ const handleClick = () => {
 @media (min-width: 1400px) {
   .content-wrapper {
     top: 490px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .content-wrapper {
+    top: 560px;
   }
 }
 </style>

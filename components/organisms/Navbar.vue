@@ -2,11 +2,13 @@
   <header
     ref="headerRef"
     :class="[
-      'fixed z-[9999] h-[2.8281rem] xl:w-[74.875rem] sm:w-full sm:px-6 md:mx-[0.9375rem] lg:mx-[1.0625rem] xl:mx-[6.25rem] px-4 top-[3.46125rem] transition-opacity duration-500',
+      'fixed z-[9999] h-[2.8281rem] px-4 top-[3.46125rem] transition-opacity duration-500 left-1/2 -translate-x-1/2',
+      'w-full max-w-[74.875rem]',      // Default max-width for small to xl
+      '2xl:max-w-[90rem]',             // Wider max-width for 2xl
       { 'opacity-0 pointer-events-none': hidden }
     ]"
   >
-    <div class="flex bg-transparent justify-between items-center">
+    <div class="flex bg-transparent justify-between items-center w-full">
       <span>
         <NuxtLink v-if="logoSrc" to="/" aria-label="Modernise home">
           <NuxtImg
@@ -18,16 +20,17 @@
       </span>
 
       <nav
-        class="relative grid grid-flow-col auto-cols-max items-center gap-[2rem] sm:gap-[3rem] md:gap-[4rem] text-white text-[1rem] font-light"
+        class="relative grid grid-flow-col auto-cols-max items-center gap-[2rem] sm:gap-[3rem] md:gap-[4rem] text-white 2xl:text-[1.3rem] xl:text-[1rem] font-light"
         aria-label="Primary"
       >
         <template v-for="(link, index) in navLinks" :key="index">
-          <div v-if="['services', 'leistungen'].includes(link.label.toLowerCase())" class="relative group">
-    <!-- Trigger -->
-<NuxtLink :to="link.to" class="hover:underline cursor-pointer">
-
-    {{ link.label }}
-    </NuxtLink>
+          <div
+            v-if="['services', 'leistungen'].includes(link.label.toLowerCase())"
+            class="relative group"
+          >
+            <NuxtLink :to="link.to" class="hover:underline cursor-pointer">
+              {{ link.label }}
+            </NuxtLink>
 
             <div
               class="absolute left-0 mt-2 w-[13rem] bg-[#0B061F] border border-gray-700 rounded-lg shadow-lg
@@ -44,11 +47,7 @@
               </NuxtLink>
             </div>
           </div>
-          <NuxtLink
-            v-else
-            :to="link.to"
-            class="hover:underline"
-          >
+          <NuxtLink v-else :to="link.to" class="hover:underline">
             {{ link.label }}
           </NuxtLink>
         </template>
@@ -65,20 +64,18 @@
             <div class="w-full h-full rounded-[0.625rem] bg-[#0B061F]"></div>
           </div>
 
-          <!-- Button text with gradient -->
           <span
-  class="relative z-10"
-  :style="`
-    background-image: linear-gradient(135deg, ${ctaToColor}, ${ctaFrom});
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-  `"
->
-  {{ ctaLabel }}
-</span>
-
+            class="relative 2xl:text-[1.3rem] z-10"
+            :style="`
+              background-image: linear-gradient(135deg, ${ctaToColor}, ${ctaFrom});
+              -webkit-background-clip: text; 
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              color: transparent;
+            `"
+          >
+            {{ ctaLabel }}
+          </span>
         </NuxtLink>
       </nav>
     </div>
