@@ -26,66 +26,63 @@
           ästhetisches Design und messbare Ergebnisse.
         </p>
 
-        <div class=" inline-block hover:scale-105 hover:transition transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#38EF61]  to-[#44E5C8] ">
-  <Button
-    class="px-[1.5rem] py-[0.625rem] 
-           text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 
-           rounded-[10px] bg-black bg-opacity-90
-           transition hover:cursor-pointer 
-           text-white hover:text-white"
-  >
-    <span
-      class="bg-gradient-to-r from-[#38EF61]  to-[#44E5C8] 
-             text-transparent bg-clip-text duration-300"
-    >
-      Termin vereinbaren
-    </span>
-  </Button>
-</div>
+        <div
+          class="inline-block hover:scale-105 hover:transition transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#38EF61] to-[#44E5C8]"
+        >
+          <Button
+            class="px-[1.5rem] py-[0.625rem] 
+                   text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 
+                   rounded-[10px] bg-black bg-opacity-90
+                   transition hover:cursor-pointer 
+                   text-white hover:text-white"
+          >
+            <span
+              class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] 
+                     text-transparent bg-clip-text duration-300"
+            >
+              Termin vereinbaren
+            </span>
+          </Button>
+        </div>
       </div>
 
       <div
         class="w-full md:w-full lg:w-[34.5rem] pt-[3rem] md:pt-[1.5rem] lg:pt-[13.75rem] h-[45.94rem] pointer-events-auto flex justify-center"
       >
-        <div ref="servicesHeroRef" class="relative" v-html="ServicesHeroRaw" />
+        <div
+          ref="servicesHeroRef"
+          class="relative services-hero-svg"
+          v-html="ServicesHeroRaw"
+        />
       </div>
     </div>
   </section>
 </template>
 
-
 <script setup>
 import Button from '@atoms/Button.vue'
 import { ref, onMounted, nextTick } from 'vue'
 import ServicesHeroRaw from '@atoms/svgs/servicesfirst.svg?raw'
-import  gsap  from 'gsap'
 
 const servicesHeroRef = ref(null)
 
 onMounted(async () => {
   await nextTick()
-
-  const coin1 = servicesHeroRef.value?.querySelector('#coin1')
-  const coin2 = servicesHeroRef.value?.querySelector('#coin2')
-
-  if (coin1) {
-    gsap.to(coin1, {
-      y: -40,
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: 'power1.inOut'
-    })
-  }
-
-  if (coin2) {
-    gsap.to(coin2, {
-      y: -40,
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: 'power1.inOut'
-    })
-  }
 })
 </script>
+
+<style>
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+.services-hero-svg #coin1,
+.services-hero-svg #coin2 {
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+</style>

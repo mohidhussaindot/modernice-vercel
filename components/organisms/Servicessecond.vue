@@ -28,7 +28,7 @@
       <div
         ref="services2"
         v-html="servicesscond"
-        class="mt-12 md:mt-16 lg:mt-0 lg:ml-16 w-full lg:w-[25rem] xl:max-w-[64rem] h-auto"
+        class="mt-12 md:mt-16 lg:mt-0 lg:ml-16 w-full lg:w-[25rem] xl:max-w-[64rem] h-auto services-hero-svg"
       />
     </div>
   </section>
@@ -36,64 +36,79 @@
 
 <script setup>
 import servicesscond from '@atoms/svgs/servicessecond.svg?raw'
-import gsap from 'gsap'
-import { onMounted, nextTick, ref } from 'vue'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
+import { onMounted, ref } from 'vue'
 
 const services2 = ref(null)
 
-onMounted(async () => {
-  // wait until v-html finishes injecting the SVG
-  await nextTick()
-
-  const shadow = services2.value?.querySelector('#Shadow_2')
-  const plant = services2.value?.querySelector('#Plant')
+onMounted(() => {
   const gears = services2.value?.querySelector('#Gears')
+  if (!gears) return
 
-  if (shadow) {
-    shadow.removeAttribute('style')
-    shadow.setAttribute('stroke-width', '2.5')
-
-    gsap.to(shadow, {
-      stroke: '#FFFF33',
-      filter: 'drop-shadow(0 0 40px #FFFF33)',
-      duration: 1.5,
-      repeat: -1,
-      yoyo: true,
-      delay: 1,
-      ease: 'power1.inOut'
-    })
-  }
-
-  if (plant) {
-    gsap.to(plant, {
-      rotate: '7deg',
-      transformOrigin: 'bottom center',
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut'
-    })
-  }
-
-  if (gears) {
-    gsap.fromTo(
-      gears,
-      { x: -60, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 3,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: services2.value, 
-          start: 'center bottom',
-          toggleActions: 'play none none none'
-        }
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        gears.classList.add('visible')
+        observer.unobserve(gears)
       }
-    )
-  }
+    },
+    { threshold: 0.5 }
+  )
+
+  observer.observe(gears)
 })
 </script>
+
+<style>
+/* Shadow pulsating stroke + glow */
+@keyframes shadowPulse {
+  0%, 100% {
+    stroke: #FFFF33;
+    filter: drop-shadow(0 0 10px #FFFF33);
+  }
+  50% {
+    stroke: #FFFF99;
+    filter: drop-shadow(0 0 40px #FFFF33);
+  }
+}
+
+/* Plant swinging rotation */
+@keyframes plantSwing {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+}
+
+/* Gears slide in and fade */
+@keyframes gearsSlideIn {
+  0% {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+/* Plant swinging (slowed down) */
+.services-hero-svg #Plant {
+  transform-origin: bottom center;
+  animation: plantSwing 5s ease-in-out infinite;
+}
+
+/* Gears - start hidden, slide in only when .visible added */
+.services-hero-svg #Gears {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: none;
+}
+
+.services-hero-svg #Gears.visible {
+  animation: gearsSlideIn 3s ease-out forwards;
+}
+</style>

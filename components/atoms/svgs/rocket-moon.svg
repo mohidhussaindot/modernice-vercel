@@ -1,4 +1,12 @@
-<svg width="684" height="673" viewBox="0 0 684 673" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg
+  viewBox="0 0 684 673"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="100%"
+  height="100%"
+  preserveAspectRatio="xMidYMid meet"
+>
+
 <ellipse opacity="0.5" cx="341.847" cy="326.287" rx="273.446" ry="266.388" transform="rotate(107.856 341.847 326.287)" fill="url(#paint0_radial_119_56309)" fill-opacity="0.5"/>
 <g opacity="0.75">
 <path d="M372.679 215.822C444.83 241.446 486.346 316.792 465.517 384.059C444.687 451.326 369.359 485.173 297.209 459.549C225.058 433.924 183.541 358.579 204.37 291.312C225.2 224.045 300.528 190.197 372.679 215.822Z" fill="url(#paint1_linear_119_56309)" stroke="url(#paint2_linear_119_56309)"/>

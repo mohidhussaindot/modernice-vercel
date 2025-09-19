@@ -1,76 +1,65 @@
 <template>
-  <section class="bg-black w-full lg:h-[1034px] xl:h-[1054px] md:h-[1324px] overflow-hidden relative">
-    <div
-      class="w-full"
-      ref="ecsbg"
-      v-html="Ecsbg"
-      style="transform: translateY(84px); z-index: 0;"
-    ></div>
-<div  class="absolute top-0  left-0 ">
-    <div class="grid grid-cols-2 lg:gap-[10px] md:gap-[10px]  xl:gap-[150px]">
-    <div class="flex flex-col  gap-[32px] pt-[245px] h-[378px] lg:w-auto md:w-auto xl:w-[634px] md:pl-2 lg:pl-2 xl:pl-[125px]  text-white">
-      <h1 class="text-5xl font-semibold">Maximize online sales with our custom <br/><span class="text-amber-400">E-Commerce</span>  strategy service.</h1>
-      <p class="text-[18px] font-light">Our e-commerce strategy service is designed to help businesses of all sizes and industries succeed in the world of online sales. Whether you're a B2C company looking to sell directly to consumers, or a B2B company looking to streamline your sales process, we can help you create a personalized e-commerce plan that meets your unique needs.</p>
-    </div>
-
-      <div
-      class="w-full pt-[207px]  "
-      ref="ecsbg"
-      v-html="Ecshero"
-     
-    ></div>
-    </div>
-
-   <div class="text-white lg:pl-2 xl:pl-[125px]  pt-[70px]">
-    <h1 class="text-5xl font-semibold mb-[32px]">What's in store?</h1>
-
-    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
-  <!-- Card 1 -->
-  <div class="w-[220px] lg:w-[240px] xl:w-[285px] h-[160px] lg:h-[175px] xl:h-[198px] p-[12px] lg:p-[14px] xl:p-[16px] border border-amber-500 rounded-[14px] lg:rounded-[16px] xl:rounded-[18px] flex flex-col items-center justify-center gap-[10px] lg:gap-[12px] xl:gap-[16px] bg-black">
-    <img src="/images/map.png" alt="Map icon" class="w-[50px] lg:w-[60px] xl:w-[70px] h-[60px] lg:h-[72px] xl:h-[84px] object-contain" />
-    <p class="text-white text-center text-[13px] lg:text-[14px] xl:text-[16px] leading-snug">
-      A Personalized plan tailored to your business
-    </p>
-  </div>
-
-  <!-- Card 2 -->
-  <div class="w-[220px] lg:w-[240px] xl:w-[285px] h-[160px] lg:h-[175px] xl:h-[198px] p-[12px] lg:p-[14px] xl:p-[16px] border border-amber-500 rounded-[14px] lg:rounded-[16px] xl:rounded-[18px] flex flex-col items-center justify-center gap-[10px] lg:gap-[12px] xl:gap-[16px] bg-black">
-    <img src="/images/Store.png" alt="Store icon" class="w-[50px] lg:w-[60px] xl:w-[70px] h-[60px] lg:h-[72px] xl:h-[84px] object-contain" />
-    <p class="text-white text-center text-[13px] lg:text-[14px] xl:text-[16px] leading-snug">
-      A user friendly appealing online store
-    </p>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="w-[220px] lg:w-[240px] xl:w-[285px] h-[160px] lg:h-[175px] xl:h-[198px] p-[12px] lg:p-[14px] xl:p-[16px] border border-amber-500 rounded-[14px] lg:rounded-[16px] xl:rounded-[18px] flex flex-col items-center justify-center gap-[10px] lg:gap-[12px] xl:gap-[16px] bg-black">
-    <img src="/images/microchip.png" alt="Chip icon" class="w-[50px] lg:w-[60px] xl:w-[70px] h-[60px] lg:h-[72px] xl:h-[84px] object-contain" />
-    <p class="text-white text-center text-[13px] lg:text-[14px] xl:text-[16px] leading-snug">
-      The most up to date e-commerce technologies
-    </p>
-  </div>
-
-  <!-- Card 4 -->
-  <div class="w-[220px] lg:w-[240px] xl:w-[285px] h-[160px] lg:h-[175px] xl:h-[198px] p-[12px] lg:p-[14px] xl:p-[16px] border border-amber-500 rounded-[14px] lg:rounded-[16px] xl:rounded-[18px] flex flex-col items-center justify-center gap-[10px] lg:gap-[12px] xl:gap-[16px] bg-black">
-    <img src="/images/comments.png" alt="Comments icon" class="w-[50px] lg:w-[60px] xl:w-[70px] h-[60px] lg:h-[72px] xl:h-[84px] object-contain" />
-    <p class="text-white text-center text-[13px] lg:text-[14px] xl:text-[16px] leading-snug">
-      Ongoing support to ensure success of your store
-    </p>
-  </div>
-</div>
-
-  </div>
-
-    </div>
-  </section>
-<section class="relative h-[131.5rem] bg-black text-white w-full overflow-hidden">
+  <section class="bg-black w-full lg:h-[64.625rem] xl:h-[65.875rem] md:h-[82.75rem] overflow-hidden relative">
   <div
-    class="absolute inset-0 z-0"
-    ref="ecsbg2"
-    v-html="Ecssecondbg"
+    class="w-full"
+    ref="ecsbg"
+    v-html="Ecsbg"
+    style="transform: translateY(5.25rem); z-index: 0;"
   ></div>
+  <div class="absolute top-0 left-0">
+    <div class="grid grid-cols-2 lg:gap-[0.625rem] md:gap-[0.625rem] xl:gap-[9.375rem]">
+      <div class="flex flex-col gap-[2rem] pt-[15.3125rem] h-[23.625rem] lg:w-auto md:w-auto xl:w-[39.625rem] md:pl-[0.125rem] lg:pl-[0.125rem] xl:pl-[7.8125rem] text-white">
+        <h1 class="text-5xl font-semibold">Maximize online sales with our custom <br /><span class="text-amber-400">E-Commerce</span> strategy service.</h1>
+        <p class="text-[1.125rem] font-light">Our e-commerce strategy service is designed to help businesses of all sizes and industries succeed in the world of online sales. Whether you're a B2C company looking to sell directly to consumers, or a B2B company looking to streamline your sales process, we can help you create a personalized e-commerce plan that meets your unique needs.</p>
+      </div>
+
+      <div class="w-full pt-[12.9375rem]" ref="ecsbg" v-html="Ecshero"></div>
+    </div>
+
+    <div class="text-white lg:pl-[0.125rem] xl:pl-[7.8125rem] pt-[4.375rem]">
+      <h1 class="text-5xl font-semibold mb-[2rem]">What's in store?</h1>
+
+      <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <div class="w-[13.75rem] lg:w-[15rem] xl:w-[17.8125rem] h-[10rem] lg:h-[10.9375rem] xl:h-[12.375rem] p-[0.75rem] lg:p-[0.875rem] xl:p-[1rem] border border-amber-500 rounded-[0.875rem] lg:rounded-[1rem] xl:rounded-[1.125rem] flex flex-col items-center justify-center gap-[0.625rem] lg:gap-[0.75rem] xl:gap-[1rem] bg-black">
+          <img src="/images/map.png" alt="Map icon" class="w-[3.125rem] lg:w-[3.75rem] xl:w-[4.375rem] h-[3.75rem] lg:h-[4.5rem] xl:h-[5.25rem] object-contain" />
+          <p class="text-white text-center text-[0.8125rem] lg:text-[0.875rem] xl:text-[1rem] leading-snug">
+            A Personalized plan tailored to your business
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="w-[13.75rem] lg:w-[15rem] xl:w-[17.8125rem] h-[10rem] lg:h-[10.9375rem] xl:h-[12.375rem] p-[0.75rem] lg:p-[0.875rem] xl:p-[1rem] border border-amber-500 rounded-[0.875rem] lg:rounded-[1rem] xl:rounded-[1.125rem] flex flex-col items-center justify-center gap-[0.625rem] lg:gap-[0.75rem] xl:gap-[1rem] bg-black">
+          <img src="/images/Store.png" alt="Store icon" class="w-[3.125rem] lg:w-[3.75rem] xl:w-[4.375rem] h-[3.75rem] lg:h-[4.5rem] xl:h-[5.25rem] object-contain" />
+          <p class="text-white text-center text-[0.8125rem] lg:text-[0.875rem] xl:text-[1rem] leading-snug">
+            A user friendly appealing online store
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="w-[13.75rem] lg:w-[15rem] xl:w-[17.8125rem] h-[10rem] lg:h-[10.9375rem] xl:h-[12.375rem] p-[0.75rem] lg:p-[0.875rem] xl:p-[1rem] border border-amber-500 rounded-[0.875rem] lg:rounded-[1rem] xl:rounded-[1.125rem] flex flex-col items-center justify-center gap-[0.625rem] lg:gap-[0.75rem] xl:gap-[1rem] bg-black">
+          <img src="/images/microchip.png" alt="Chip icon" class="w-[3.125rem] lg:w-[3.75rem] xl:w-[4.375rem] h-[3.75rem] lg:h-[4.5rem] xl:h-[5.25rem] object-contain" />
+          <p class="text-white text-center text-[0.8125rem] lg:text-[0.875rem] xl:text-[1rem] leading-snug">
+            The most up to date e-commerce technologies
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="w-[13.75rem] lg:w-[15rem] xl:w-[17.8125rem] h-[10rem] lg:h-[10.9375rem] xl:h-[12.375rem] p-[0.75rem] lg:p-[0.875rem] xl:p-[1rem] border border-amber-500 rounded-[0.875rem] lg:rounded-[1rem] xl:rounded-[1.125rem] flex flex-col items-center justify-center gap-[0.625rem] lg:gap-[0.75rem] xl:gap-[1rem] bg-black">
+          <img src="/images/comments.png" alt="Comments icon" class="w-[3.125rem] lg:w-[3.75rem] xl:w-[4.375rem] h-[3.75rem] lg:h-[4.5rem] xl:h-[5.25rem] object-contain" />
+          <p class="text-white text-center text-[0.8125rem] lg:text-[0.875rem] xl:text-[1rem] leading-snug">
+            Ongoing support to ensure success of your store
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="relative h-[131.5rem] bg-black text-white w-full overflow-hidden">
+  <div class="absolute inset-0 z-0" ref="ecsbg2" v-html="Ecssecondbg"></div>
 
   <div class="absolute top-0 left-0 w-full flex justify-center pt-[4.0625rem] z-10">
-    <div class="text-center w-[39.625rem] text-[46px] font-semibold">
+    <div class="text-center w-[39.625rem] text-[2.875rem] font-semibold">
       <h1>
         Ready to see how we do <br />
         <span class="text-yellow-400">E-Commerce</span>?
@@ -78,177 +67,106 @@
     </div>
   </div>
 
-<div class="absolute top-0 pt-[14.25rem] left-1/2 transform -translate-x-1/2 z-10">
-  <div
-    class="lg:w-[1000px] xl:w-[82.4375rem] rounded-[0.75rem] border border-amber-400"
-    style="background: linear-gradient(to bottom , rgba(19, 18, 30, 0.95) 0%, rgba(19, 18, 30, 0.6) 35%, rgba(0, 0, 0, 0.15) 100%);"
-  >
-    <div class="h-[40px] items-center bg-gradient-to-b from-[#13121E] to-[#07052761] rounded-[0.75rem] px-2 flex">
-      <img src="/images/ecs-circles.png" height="1.25rem" alt="ecs">
-    </div>
-
-    <div class="bg-black flex items-center justify-center gap-[3.125rem] lg:gap-[5rem] xl:gap-[9.3125rem] h-[4.0781rem] px-4 text-white">
-      <div class="flex items-center gap-2">
-        <img src="/images/modernice-logoecs.png" alt="modernice logo" class="h-[2.1875rem] lg:h-[2.5rem] xl:h-[2.8281rem]" />
-        <h1 class="text-[1.25rem] lg:text-[1.5rem] xl:text-[1.75rem] font-semibold">modernice.shop</h1>
+  <div class="absolute top-0 pt-[14.25rem] left-1/2 transform -translate-x-1/2 z-10">
+    <div class="lg:w-[62.5rem] xl:w-[82.4375rem] rounded-[0.75rem] border border-amber-400" style="background: linear-gradient(to bottom , rgba(19, 18, 30, 0.95) 0%, rgba(19, 18, 30, 0.6) 35%, rgba(0, 0, 0, 0.15) 100%);">
+      <div class="h-[2.5rem] items-center bg-gradient-to-b from-[#13121E] to-[#07052761] rounded-[0.75rem] px-[0.5rem] flex">
+        <img src="/images/ecs-circles.png" height="1.25rem" alt="ecs">
       </div>
 
-      <div class="flex items-center gap-2">
-        <Icon name="mdi:phone" class="w-4 h-5 lg:w-5 lg:h-6 text-white" />
-        <h1 class="text-[0.875rem] lg:text-[1rem] xl:text-[1.125rem]">0800 - 123 456 789</h1>
-      </div>
-
-      <div class="flex items-center gap-2 bg-[#1A1A1A] px-2 py-1 rounded">
-        <input type="text" placeholder="Search..." class="bg-transparent outline-none text-sm placeholder-gray-400 text-white" />
-        <Icon name="mdi:magnify" class="w-4 h-4 lg:w-5 lg:h-5 text-white" />
-      </div>
-
-      <div class="flex items-center">
-        <Icon name="mdi:cart" class="w-8 h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 text-white" />
-      </div>
-    </div>
-
-    <!-- Categories Bar -->
-    <div class="lg:w-[960px] xl:w-[1317px] h-[55px] lg:h-[60px] xl:h-[65px] flex bg-[#020111] rounded-[8px] text-sm lg:text-base">
-      <div class="flex-1 relative text-white flex items-center justify-center hover:cursor-pointer hover:bg-amber-400 border-amber-400">
-        Category 1
-      </div>
-      <div class="flex-1 relative text-white flex items-center justify-center hover:cursor-pointer hover:bg-amber-400 border-l border-amber-400">
-        Category 2
-      </div>
-      <div class="flex-1 relative text-white font-semibold flex items-center justify-center hover:cursor-pointer hover:bg-amber-400 border-l border-amber-400">
-        Our Process
-      </div>
-      <div class="flex-1 relative text-white flex items-center justify-center hover:cursor-pointer hover:bg-amber-400 border-l border-amber-400">
-        Category 4
-      </div>
-      <div class="flex-1  relative text-white flex items-center justify-center hover:cursor-pointer hover:bg-amber-400 border-l border-amber-400 rounded-tr-[8px]">
-        Category 5
-      </div>
-    </div>
-
-    <!-- View & Sort Controls -->
-    <div class="flex justify-center pt-[32px]">
-      <div class="flex items-center justify-between h-[50px] lg:h-[52px] xl:h-[54px] w-[90%] lg:w-[1000px] xl:w-[1200px] rounded-[8px] px-[20px] lg:px-[28px] xl:px-[32px] py-[8px] lg:py-[10px] xl:py-[12px] bg-[#020111]">
-        <div class="flex items-center gap-[6px] lg:gap-[8px]">
-          <!-- Grid View (Active) -->
-          <div class="bg-[#0E0D1A] border border-[#F2C94C] px-[4px] lg:px-[6px] py-[2px] lg:py-[4px] rounded-[4px] flex items-center gap-[4px]">
-            <Icon name="mdi:view-grid" class="w-[16px] lg:w-[20px] h-[16px] lg:h-[20px] text-[#F2C94C]" />
-          </div>
-          <!-- List View (Inactive) -->
-          <div class="bg-[#0E0D1A] px-[4px] lg:px-[6px] py-[2px] lg:py-[4px] rounded-[4px] flex items-center gap-[4px]">
-            <Icon name="mdi:view-list" class="w-[16px] lg:w-[20px] h-[16px] lg:h-[20px] text-white opacity-50 hover:opacity-100 transition" />
-          </div>
-          <!-- Gridicons Grid Icon -->
-          <div class="bg-[#0E0D1A] px-[4px] lg:px-[6px] py-[2px] lg:py-[4px] rounded-[4px] flex items-center gap-[4px]">
-            <Icon name="gridicons:grid" class="w-[16px] lg:w-[20px] h-[16px] lg:h-[20px] text-white opacity-50 hover:opacity-100 transition" />
-          </div>
+      <div class="bg-black flex items-center justify-center gap-[3.125rem] lg:gap-[5rem] xl:gap-[9.3125rem] h-[4.0781rem] px-[1rem] text-white">
+        <div class="flex items-center gap-[0.5rem]">
+          <img src="/images/modernice-logoecs.png" alt="modernice logo" class="h-[2.1875rem] lg:h-[2.5rem] xl:h-[2.8281rem]" />
+          <h1 class="text-[1.25rem] lg:text-[1.5rem] xl:text-[1.75rem] font-semibold">modernice.shop</h1>
         </div>
 
-        <!-- Sort Dropdown -->
-        <div class="flex items-center gap-[6px] lg:gap-[8px] bg-[#0E0D1A] border border-[#F2C94C] px-[8px] lg:px-[12px] py-[2px] lg:py-[4px] rounded-[4px] text-white text-[12px] lg:text-[14px] cursor-pointer">
-          <Icon name="mdi:chevron-down" class="w-[14px] lg:w-[16px] h-[14px] lg:h-[16px] text-white opacity-70" />
-          <span class="text-white">Relevance</span>
+        <div class="flex items-center gap-[0.5rem]">
+          <Icon name="mdi:phone" class="w-[1rem] h-[1.25rem] text-white" />
+          <h1 class="text-[0.875rem] lg:text-[1rem] xl:text-[1.125rem]">0800 - 123 456 789</h1>
+        </div>
+
+        <div class="flex items-center gap-[0.5rem] bg-[#1A1A1A] px-[0.5rem] py-[0.25rem] rounded">
+          <input type="text" placeholder="Search..." class="bg-transparent outline-none text-sm placeholder-gray-400 text-white" />
+          <Icon name="mdi:magnify" class="w-[1rem] h-[1rem] text-white" />
+        </div>
+
+        <div class="flex items-center">
+          <Icon name="mdi:cart" class="w-[2rem] h-[2rem] lg:w-[2.25rem] lg:h-[2.25rem] xl:w-[2.5rem] xl:h-[2.5rem] text-white" />
         </div>
       </div>
-    </div>
 
-    <!-- Services Grid -->
-    <div class="flex justify-center py-[23px]">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-[32px] lg:gap-[48px] xl:gap-[64px]">
+      <!-- Categories Bar -->
+      <div class="lg:w-[60rem] xl:w-[82.3125rem] h-[3.4375rem] lg:h-[3.75rem] xl:h-[4.0625rem] flex bg-[#020111] rounded-[0.5rem] text-sm lg:text-base">
+        <div class="flex-1 relative text-white flex items-center justify-center hover:cursor-pointer hover:bg-amber-400 border-amber-400">
+          Category 1
+        </div>
+        <div class="flex-1 relative text-white flex items-center justify-center hover:cursor-pointer hover:bg-amber-400 border-l border-amber-400">
+          Category 2
+        </div>
+        <div class="flex-1 relative text-white font-semibold flex items-center justify-center hover:cursor-pointer hover:bg-amber-400 border-l border-amber-400">
+          Our Process
+        </div>
+        <div class="flex-1 relative text-white flex items-center justify-center hover:cursor-pointer hover:bg-amber-400 border-l border-amber-400">
+          Category 4
+        </div>
+        <div class="flex-1 relative text-white flex items-center justify-center hover:cursor-pointer hover:bg-amber-400 border-l border-amber-400 rounded-tr-[0.5rem]">
+          Category 5
+        </div>
+      </div>
 
-        <!-- Card 1 -->
-        <div class="flex flex-col w-[90%] lg:w-[460px] xl:w-[584px] shadow-amber-600 shadow-sm rounded-[8px] border border-white/10 p-[20px] lg:p-[28px] xl:p-[32px] gap-[12px] lg:gap-[16px]">
-          <div v-html="Ecsmain4" class="overflow-hidden"></div>
-          <h2 class="text-white text-[22px] lg:text-[28px] xl:text-[32px] font-bold">1. Discovery & Strategy</h2>
-          <p class="text-white text-[14px] lg:text-[15px] xl:text-[16px] opacity-70">
-            The first step in our e-commerce strategy process is to gain a thorough understanding of your business goals and target audience. This includes conducting market research and analyzing your competitors to determine the most effective e-commerce strategy for your business.
-          </p>
-          <div class="flex items-center justify-between mt-auto">
-            <span class="text-white text-[20px] lg:text-[24px] xl:text-[28px] font-medium">420,00 <span class="text-amber-400">€</span></span>
-            <div class="flex items-center gap-[6px] lg:gap-[8px]">
-              <button class="flex items-center gap-[4px] lg:gap-[6px] px-[8px] lg:px-[12px] py-[4px] lg:py-[6px] bg-[#0E0D1A] text-white text-[12px] lg:text-[14px] rounded-[4px] border border-white/10">
-                <Icon name="mdi:cart-outline" class="w-[14px] lg:w-[16px] h-[14px] lg:h-[16px]" />
-                Add to Cart
-              </button>
-              <button>
-                <Icon name="mdi:heart-outline" class="w-[16px] lg:w-[20px] h-[16px] lg:h-[20px] text-white opacity-60 hover:opacity-100 transition" />
-              </button>
+      <!-- View & Sort Controls -->
+      <div class="flex justify-center pt-[2rem]">
+        <div class="flex items-center justify-between h-[3.125rem] lg:h-[3.25rem] xl:h-[3.375rem] w-[90%] lg:w-[62.5rem] xl:w-[75rem] rounded-[0.5rem] px-[1.25rem] lg:px-[1.75rem] xl:px-[2rem] py-[0.5rem] lg:py-[0.625rem] xl:py-[0.75rem] bg-[#020111]">
+          <div class="flex items-center gap-[0.375rem] lg:gap-[0.5rem]">
+            <!-- Grid View (Active) -->
+            <div class="bg-[#0E0D1A] border border-[#F2C94C] px-[0.25rem] lg:px-[0.375rem] py-[0.125rem] lg:py-[0.25rem] rounded-[0.25rem] flex items-center gap-[0.25rem]">
+              <Icon name="mdi:view-grid" class="w-[1rem] lg:w-[1.25rem] h-[1rem] lg:h-[1.25rem] text-[#F2C94C]" />
+            </div>
+            <!-- List View (Inactive) -->
+            <div class="bg-[#0E0D1A] px-[0.25rem] lg:px-[0.375rem] py-[0.125rem] lg:py-[0.25rem] rounded-[0.25rem] flex items-center gap-[0.25rem]">
+              <Icon name="mdi:view-list" class="w-[1rem] lg:w-[1.25rem] h-[1rem] lg:h-[1.25rem] text-white opacity-50 hover:opacity-100 transition" />
+            </div>
+            <!-- Gridicons Grid Icon -->
+            <div class="bg-[#0E0D1A] px-[0.25rem] lg:px-[0.375rem] py-[0.125rem] lg:py-[0.25rem] rounded-[0.25rem] flex items-center gap-[0.25rem]">
+              <Icon name="gridicons:grid" class="w-[1rem] lg:w-[1.25rem] h-[1rem] lg:h-[1.25rem] text-white opacity-50 hover:opacity-100 transition" />
             </div>
           </div>
-        </div>
 
-        <!-- Card 2 -->
-        <div class="flex flex-col w-[90%] lg:w-[460px] xl:w-[584px] shadow-amber-600 shadow-sm rounded-[8px] border border-white/10 p-[20px] lg:p-[28px] xl:p-[32px] gap-[12px] lg:gap-[16px]">
-          <div v-html="Ecsmain2"></div>
-          <h2 class="text-white text-[22px] lg:text-[28px] xl:text-[32px] font-bold">2. Design & Development</h2>
-          <p class="text-white text-[14px] lg:text-[15px] xl:text-[16px] opacity-70">
-            Once we have developed a personalized e-commerce strategy for your business, our team will begin working on the design and development of your online store. This includes creating a visually appealing and user-friendly website, as well as implementing the necessary e-commerce tools and technologies.
-          </p>
-          <div class="flex items-center justify-between mt-auto">
-            <span class="text-white text-[20px] lg:text-[24px] xl:text-[28px] font-medium">420,00 <span class="text-amber-400">€</span></span>
-            <div class="flex items-center gap-[6px] lg:gap-[8px]">
-              <button class="flex items-center gap-[4px] lg:gap-[6px] px-[8px] lg:px-[12px] py-[4px] lg:py-[6px] bg-[#0E0D1A] text-white text-[12px] lg:text-[14px] rounded-[4px] border border-white/10">
-                <Icon name="mdi:cart-outline" class="w-[14px] lg:w-[16px] h-[14px] lg:h-[16px]" />
-                Add to Cart
-              </button>
-              <button>
-                <Icon name="mdi:heart-outline" class="w-[16px] lg:w-[20px] h-[16px] lg:h-[20px] text-white opacity-60 hover:opacity-100 transition" />
-              </button>
-            </div>
+          <!-- Sort Dropdown -->
+          <div class="flex items-center gap-[0.375rem] lg:gap-[0.5rem] bg-[#0E0D1A] border border-[#F2C94C] px-[0.5rem] lg:px-[0.75rem] py-[0.125rem] lg:py-[0.25rem] rounded-[0.25rem] text-white text-[0.75rem] lg:text-[0.875rem] cursor-pointer">
+            <Icon name="mdi:chevron-down" class="w-[0.875rem] lg:w-[1rem] h-[0.875rem] lg:h-[1rem] text-white opacity-70" />
+            <span class="text-white">Relevance</span>
           </div>
         </div>
-
-        <!-- Card 3 -->
-        <div class="flex flex-col w-[90%] lg:w-[460px] xl:w-[584px] shadow-amber-600 shadow-sm rounded-[8px] border border-white/10 p-[20px] lg:p-[28px] xl:p-[32px] gap-[12px] lg:gap-[16px]">
-          <div v-html="Ecsmain1"></div>
-          <h2 class="text-white text-[22px] lg:text-[28px] xl:text-[32px] font-bold">3. Launch</h2>
-          <p class="text-white text-[14px] lg:text-[15px] xl:text-[16px] opacity-70">
-            Before launching your online store, we will conduct thorough testing to ensure that everything is functioning properly. This includes testing the user experience, payment processes, and overall functionality of your website.
-          </p>
-          <div class="flex items-center justify-between mt-auto">
-            <span class="text-white text-[20px] lg:text-[24px] xl:text-[28px] font-medium">420,00 <span class="text-amber-400">€</span></span>
-            <div class="flex items-center gap-[6px] lg:gap-[8px]">
-              <button class="flex items-center gap-[4px] lg:gap-[6px] px-[8px] lg:px-[12px] py-[4px] lg:py-[6px] bg-[#0E0D1A] text-white text-[12px] lg:text-[14px] rounded-[4px] border border-white/10">
-                <Icon name="mdi:cart-outline" class="w-[14px] lg:w-[16px] h-[14px] lg:h-[16px]" />
-                Add to Cart
-              </button>
-              <button>
-                <Icon name="mdi:heart-outline" class="w-[16px] lg:w-[20px] h-[16px] lg:h-[20px] text-white opacity-60 hover:opacity-100 transition" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="flex flex-col w-[90%] lg:w-[460px] xl:w-[584px] shadow-amber-600 shadow-sm rounded-[8px] border border-white/10 p-[20px] lg:p-[28px] xl:p-[32px] gap-[12px] lg:gap-[16px]">
-          <div v-html="Ecsmain3"></div>
-          <h2 class="text-white text-[22px] lg:text-[28px] xl:text-[32px] font-bold">4. Optimization</h2>
-          <p class="text-white text-[14px] lg:text-[15px] xl:text-[16px] opacity-70">
-            Our work doesn't end once your online store is launched. We will continue to monitor and analyze the performance of your e-commerce platform, making ongoing adjustments and optimizations as needed.
-          </p>
-          <div class="flex items-center justify-between mt-auto">
-            <span class="text-white text-[20px] lg:text-[24px] xl:text-[28px] font-medium">420,00 <span class="text-amber-400">€</span></span>
-            <div class="flex items-center gap-[6px] lg:gap-[8px]">
-              <button class="flex items-center gap-[4px] lg:gap-[6px] px-[8px] lg:px-[12px] py-[4px] lg:py-[6px] bg-[#0E0D1A] text-white text-[12px] lg:text-[14px] rounded-[4px] border border-white/10">
-                <Icon name="mdi:cart-outline" class="w-[14px] lg:w-[16px] h-[14px] lg:h-[16px]" />
-                Add to Cart
-              </button>
-              <button>
-                <Icon name="mdi:heart-outline" class="w-[16px] lg:w-[20px] h-[16px] lg:h-[20px] text-white opacity-60 hover:opacity-100 transition" />
-              </button>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Services Grid -->
+      <div class="flex justify-center py-[1.4375rem]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-[2rem] lg:gap-[3rem] xl:gap-[4rem]">
+
+          <!-- Cards -->
+          <div v-for="(card, index) in cards" :key="index" class="flex flex-col w-[90%] lg:w-[28.75rem] xl:w-[36.5rem] shadow-amber-600 shadow-sm rounded-[0.5rem] border border-white/10 p-[1.25rem] lg:p-[1.75rem] xl:p-[2rem] gap-[0.75rem] lg:gap-[1rem]">
+            <div v-html="card.html" class="overflow-hidden"></div>
+            <h2 class="text-white text-[1.375rem] lg:text-[1.75rem] xl:text-[2rem] font-bold">{{ card.title }}</h2>
+            <p class="text-white text-[0.875rem] lg:text-[0.9375rem] xl:text-[1rem] opacity-70">{{ card.description }}</p>
+            <div class="flex items-center justify-between mt-auto">
+              <span class="text-white text-[1.25rem] lg:text-[1.5rem] xl:text-[1.75rem] font-medium">420,00 <span class="text-amber-400">€</span></span>
+              <div class="flex items-center gap-[0.375rem] lg:gap-[0.5rem]">
+                <button class="flex items-center gap-[0.25rem] lg:gap-[0.375rem] px-[0.5rem] lg:px-[0.75rem] py-[0.25rem] lg:py-[0.375rem] bg-[#0E0D1A] text-white text-[0.75rem] lg:text-[0.875rem] rounded-[0.25rem] border border-white/10">
+                  <Icon name="mdi:cart-outline" class="w-[0.875rem] lg:w-[1rem] h-[0.875rem] lg:h-[1rem]" />
+                  Add to Cart
+                </button>
+                <button>
+                  <Icon name="mdi:heart-outline" class="w-[1rem] lg:w-[1.25rem] h-[1rem] lg:h-[1.25rem] text-white opacity-60 hover:opacity-100 transition" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
-
-
-
-</div>
-
 </section>
 
 <section class="relative bg-black flex md:hidden lg:flex lg:justify-center items-center overflow-hidden h-[37.5rem]">
@@ -297,6 +215,29 @@ import Ecsmain1 from '@atoms/svgs/ecs-main1.svg?raw'
 import Ecsmain2 from '@atoms/svgs/ecs-main2.svg?raw'
 import Ecsmain3 from '@atoms/svgs/ecs-main3.svg?raw'
 import Ecsmain4 from '@atoms/svgs/ecs-main4.svg?raw'
+
+const cards = [
+  {
+    title: '1. Discovery & Strategy',
+    description: 'The first step in our e-commerce strategy process...',
+    html: Ecsmain4,
+  },
+  {
+    title: '2. Design & Development',
+    description: 'Once we have developed a personalized e-commerce strategy...',
+    html: Ecsmain2,
+  },
+  {
+    title: '3. Launch',
+    description: 'Before launching your online store...',
+    html: Ecsmain1,
+  },
+  {
+    title: '4. Optimization',
+    description: 'Our work doesn’t end once your store is launched...',
+    html: Ecsmain3,
+  }
+];
 </script>
 
 <style scoped>

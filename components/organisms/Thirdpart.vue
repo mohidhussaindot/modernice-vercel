@@ -38,7 +38,7 @@
     </div>
 
     <div
-      class="w-full xl:max-w-full lg:max-w-[450px] md:max-w-[500px] flex justify-center items-center"
+      class="w-full xl:max-w-full lg:max-w-[450px] md:max-w-[500px] flex justify-center items-center moon-float"
       ref="moonImage"
       v-html="logo"
     />
@@ -48,31 +48,13 @@
 <script setup>
 import Button from '@atoms/Button.vue'
 import { ref, onMounted, onUnmounted, computed } from 'vue'
-import gsap from 'gsap'
 import logo from '@atoms/svgs/rocket-moon.svg?raw'
 
 const sectionRef = ref(null)
-const moonImage = ref(null)
 const isVisible = ref(true)
 const fadeClass = computed(() => (isVisible.value ? 'fade-in' : 'fade-out'))
 
 onMounted(() => {
-  const moon = moonImage.value
-  if (moon) {
-    const imgElement = moon.querySelector('svg')
-    if (imgElement) {
-      gsap.to(imgElement, {
-        x: '+=5',
-        y: '+=3',
-        rotation: 4,
-        yoyo: true,
-        repeat: -1,
-        duration: 1.5,
-        ease: 'sine.inOut',
-      })
-    }
-  }
-
   const observer = new IntersectionObserver(
     ([entry]) => {
       isVisible.value = entry.isIntersecting
@@ -103,5 +85,24 @@ onMounted(() => {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.7s ease;
+}
+
+@keyframes floatAndRotate {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(5px, 3px, 0) rotate(4deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+.moon-float {
+  animation: floatAndRotate 3s ease-in-out infinite;
+  display: inline-block;
+  will-change: transform;
+  transform-origin: center center;
 }
 </style>

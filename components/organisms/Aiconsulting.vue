@@ -1,20 +1,19 @@
 <template>
   <section class="bg-black text-white overflow-hidden relative w-full">
 
-    <!-- Absolute top position converted -->
-    <div class="w-full absolute top-[6.321rem]   z-0" v-html="aiherobg"></div> <!-- 101.14px / 16 -->
-    <div class="w-full absolute left-[34.008rem]  z-0" v-html="aiherobg2"></div> <!-- 544.13px / 16 -->
+    <div class="w-full absolute top-[6.321rem]   z-0" v-html="aiherobg"></div> 
+    <div class="w-full absolute left-[34.008rem]  z-0" v-html="aiherobg2"></div> 
 
-    <div class="relative z-10 flex   w-full h-[49.375rem]"> <!-- 790px / 16 -->
-      <div class=" flex items-center   w-full  xl:px-[6.438rem] lg:px-[1.188rem] "> <!-- 103px, 19px -->
-        <div class="xl:w-[40.5rem] lg:[400px] md:text-center lg:text-start flex flex-col gap-[1.875rem]  text-left "> <!-- 648px, 30px -->
-          <h1 class="text-[2.5rem] italic font-semibold leading-tight"> <!-- 40px -->
+    <div class="relative z-10 flex   w-full h-[49.375rem]"> 
+      <div class=" flex items-center   w-full  xl:px-[6.438rem] lg:px-[1.188rem] "> 
+        <div class="xl:w-[40.5rem] lg:[25rem] md:text-center lg:text-start flex flex-col gap-[1.875rem]  text-left "> 
+          <h1 class="text-[2.5rem] italic font-semibold leading-tight"> 
            
             <span class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent">
             Der Wegweiser zur KI-Revolution: <br/>   Strategische Beratung für dein Unternehmen
             </span> 
           </h1>
-          <p class="text-[1.25rem] leading-relaxed"> <!-- 20px -->
+          <p class="text-[1.25rem] leading-relaxed">
             Die KI-Revolution steht vor der Tür. Bist du bereit, Künstliche Intelligenz zu deinem Vorteil zu nutzen?
             Mit uns wird die KI-Integration zur nahtlosen Reise, von der ersten Idee bis zur vollen Umsetzung.
             Starte jetzt. Sei innovativ. Sei effizient. Sei revolutionär.
@@ -40,28 +39,28 @@
       </div>
 
       <div class="w-full md:hidden lg:flex items-center">
-        <div class="w-full max-w-[37.5rem]" v-html="aiheroimg"></div> <!-- 600px -->
+        <div class="w-full max-w-[37.5rem]" v-html="aiheroimg"></div> 
       </div>
     </div>
 
     <!-- Hybrid Section -->
-    <div class="relative z-10 flex lg:flex-row md:flex-col w-full xl:px-[2rem] lg:px-0"> <!-- 32px -->
+    <div class="relative z-10 flex lg:flex-row md:flex-col w-full xl:px-[2rem] lg:px-0"> 
             <div class="w-full absolute  z-[-1]" v-html="aisecondbg"></div>
-<div class="absolute bottom-0 h-[17.5rem] xl:flex md:hidden  right-0 z-[-1]" v-html="aisecondbg2"></div> <!-- 280px -->
+<div class="absolute bottom-0 h-[17.5rem] xl:flex md:hidden  right-0 z-[-1]" v-html="aisecondbg2"></div >
 
       <div class="w-1/2 flex md:justify-center">
-        <div class="w-full max-w-[37.5rem]" v-html="aisecondimg"></div> <!-- 600px -->
+        <div class="w-full max-w-[37.5rem]" v-html="aisecondimg"></div> 
       </div>
 
       <div
         class="w-[32.56rem]  flex flex-col md:text-center gap-[2rem] md:mx-auto md:pt-10 lg:pt-[3.125rem] xl:pt-[9.063rem]"
-      > <!-- 521px, 32px, 50px, 145px -->
-        <h1 class="text-[2rem] font-semibold"> <!-- 32px -->
+      >
+        <h1 class="text-[2rem] font-semibold">
           <span class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent">
             Hybrid?
           </span> What does that mean?
         </h1>
-        <p class="text-[1.125rem] flex font-light"> <!-- 18px -->
+        <p class="text-[1.125rem] flex font-light"> 
           Don’t worry, the term hybrid within app development actually stands for a good thing. You see, unlike hybrid cars which combine the worst aspects of petrol and electric cars hybrid apps actually combine the best aspects of app and web development. This means you will be able to use your lightning fast apps across all devices you can think of!
         </p>
       </div>
@@ -75,20 +74,19 @@
 <div class="absolute top-0  h-full w-full z-[10]" v-html="aimainbg"></div>
 
   <div class="relative z-20 flex lg:flex-row xl:flex-col lg:gap-4 xl:gap-[7.5rem] lg:px-[1.875rem] xl:px-[6.813rem] pt-20 ">
-  <!-- 120px, 30px, 109px -->
     <!-- Discovery -->
     <div class="flex flex-col xl:flex-row items-center xl:gap-[6.5rem]">
       <div class="text-white xl:min-w-[39.625rem] flex-shrink-0 flex flex-col gap-[2rem]">
-        <h1 class="text-[2.625rem] font-bold"> <!-- 42px -->
+        <h1 class="text-[2.625rem] font-bold"> 
           Our <span class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent">Approach</span>
         </h1>
-        <h2 class="text-[2rem] font-semibold">1. Discovery</h2> <!-- 32px -->
-        <p class="font-light w-[30.625rem] text-[1.125rem]"> <!-- 490px, 18px -->
+        <h2 class="text-[2rem] font-semibold">1. Discovery</h2> 
+        <p class="font-light w-[30.625rem] text-[1.125rem]"> 
           During the discovery phase, we work with you to understand your business goals and needs,
           as well as gather requirements and specifications for your hybrid app.
         </p>
       </div>
-            <div class="flex-shrink-0 w-full xl:max-w-[37.5rem] pt-[2.5rem]" v-html="aiourapproach"></div> <!-- 600px, 40px -->
+            <div class="flex-shrink-0 w-full xl:max-w-[37.5rem] pt-[2.5rem]" v-html="aiourapproach"></div> 
 
     </div>
 
@@ -112,7 +110,6 @@
   <div class="absolute top-0 left-0 h-full w-full z-[10]  xl:flex md:hidden" v-html="aimainbg2"></div>
 
   <div class="relative z-20 flex flex-col gap-[7.5rem] w-full lg:px-[1.875rem] xl:px-[6.813rem] pt-20 pb-20">
-  <!-- 120px, 30px, 109px -->
 
     <!-- Development -->
     <div class="flex  xl:flex-row items-center  lg:gap-4 xl:gap-[6.5rem]">
@@ -146,7 +143,6 @@
   <div class="absolute top-0 left-0 w-full z-0"></div>
   <div class="absolute top-0   w-full z-[10]" v-html="ailastbg"></div>
   <div class="relative flex flex-col lg:flex-row items-center lg:gap-30 xl:gap-[10.875rem] z-20 lg:px-[1.875rem] xl:px-[11.625rem] py-20">
-  <!-- 174px, 30px, 186px -->
     <div class="text-white lg:w-[25rem] xl:w-[30.625rem] flex-shrink-0 flex flex-col gap-[2rem]">
       <h2 class="text-[2rem] font-semibold">5. Optimize for Growth</h2>
       <p class="font-light w-[30.625rem] text-[1.125rem]">
@@ -197,14 +193,13 @@
 </section>
 
 <section class="bg-black  lg:hidden flex  text-white  flex-col items-center justify-center md:gap-[3.125rem] md:px-6 md:py-10 md:text-center">
-  <!-- 50px -->
-  <div class="text-[2.5rem] font-medium"> <!-- 40px -->
+  <div class="text-[2.5rem] font-medium"> 
     Our <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent">App</span>roach
   </div>
 
   <div>
-    <h1 class="text-[2.188rem] font-semibold">1. Discovery</h1> <!-- 35px -->
-    <p class="font-light max-w-[33.125rem] text-[1.375rem] mt-2"> <!-- 530px, 22px -->
+    <h1 class="text-[2.188rem] font-semibold">1. Discovery</h1> 
+    <p class="font-light max-w-[33.125rem] text-[1.375rem] mt-2"> 
 During the discovery phase, we work with you to 
 understand your business goals and needs, as well as gather requirements and specifications for your hybrid app.    </p>
   </div>

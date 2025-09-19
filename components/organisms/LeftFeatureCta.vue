@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import Button from '@atoms/Button.vue'
-import { onMounted, onUnmounted, ref, computed } from 'vue'
+import rocket from '@atoms/svgs/leftsectionsvg.svg?raw'
+import bglines from '@atoms/svgs/lines.svg?raw'
+
+import { onMounted, ref } from 'vue'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -27,168 +30,116 @@ const {
 } = defineProps<Props>()
 
 const ctaSectionRef = ref<HTMLElement | null>(null)
-const isVisible = ref(true)
-const fadeClass = computed(() => (isVisible.value ? 'fade-in' : 'fade-out'))
-
 onMounted(() => {
-  // Animate CTA text
-  gsap.from('.cta-text', {
-    opacity: 0,
-    y: 60,
-    duration: 1,
-    ease: 'power3.out',
-    stagger: 0.2,
-    scrollTrigger: {
-      trigger: '.cta-section',
-      start: 'top 90%',
-      toggleActions: 'play none none reverse',
-    },
-  })
+  if (!ctaSectionRef.value) return
 
-  // Spaceship animation
-  if (spaceshipSvg) {
-    const spaceship = document.querySelector('.spaceship')
-    const section = document.querySelector('.cta-section')
+  const section = ctaSectionRef.value
+  const spaceship = section.querySelector<HTMLElement>('.spaceship-wrapper')
 
-    if (spaceship && section) {
-      const sectionRect = section.getBoundingClientRect()
-      const shipRect = spaceship.getBoundingClientRect()
+  gsap.set(spaceship, { opacity: 1, x: 0, y: 0 }) // starting from base
 
-      const deltaX = sectionRect.width - shipRect.width / 2
-      const deltaY = -(shipRect.top - sectionRect.top) - 100
+  // Rocket takes off on scroll
+  if (spaceship) {
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true,
+      onUpdate: (self) => {
+        const x = -200 * self.progress      
+        const y = 100 * self.progress    
 
-      gsap.fromTo(
-        spaceship,
-        {
-          opacity: 0,
-          x: 320,
-          y: deltaY,
-        },
-        {
-          opacity: 1,
-          x: 0,
-          y: 0,
-          ease: 'power2.out',
-          duration: 1.5,
-          scrollTrigger: {
-            trigger: '.cta-section',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-            toggleActions: 'play reverse play reverse',
-            // markers: true,
-          },
-        }
-      )
-    }
-  }
-
-  // CTA Button hover scale
-  const btn = document.querySelector('.cta-button')
-  if (btn) {
-    btn.addEventListener('mouseenter', () => {
-      gsap.to(btn, { scale: 1.05, duration: 0.2, ease: 'power1.out' })
-    })
-    btn.addEventListener('mouseleave', () => {
-      gsap.to(btn, { scale: 1, duration: 0.2, ease: 'power1.inOut' })
+        gsap.to(spaceship, {
+          x,
+          y,
+          ease: 'none',
+          overwrite: 'auto',
+          duration: 0.1,
+        })
+      }
     })
   }
-
-  // Intersection Observer for fade-in/out
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      isVisible.value = entry.isIntersecting
-    },
-    {
-      threshold: 0.1,
-    }
-  )
-
-  if (ctaSectionRef.value) {
-    observer.observe(ctaSectionRef.value)
-  }
-
-  onUnmounted(() => {
-    observer.disconnect()
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-  })
 })
+
 </script>
 
 <template>
   <section
     ref="ctaSectionRef"
-    :class="['cta-section relative h-[69.625rem] overflow-hidden w-full transition-opacity duration-700', fadeClass]"
+    class="cta-section relative h-[69.625rem] overflow-hidden w-full transition-opacity duration-700"
   >
-    <div class="absolute inset-0 left-[10rem] h-full w-full">
-      <div
-        v-if="lineSvg"
-        class="absolute top-0 w-[109.902rem] right-0 h-full bg-no-repeat bg-cover pointer-events-none select-none z-0"
-        :style="`background-image: url('${lineSvg}');`"
-      />
-    </div>
+ <div
+  class="absolute inset-0 flex justify-center pt-[5.5%] pl-[10%] pointer-events-none select-none z-0"
+  style="transform: scale(3) rotate(2.9deg); transform-origin:center ;"
+  v-html="bglines"
+></div>
+
+
 
     <div class="relative mx-auto max-w-7xl w-full z-10">
       <div class="relative flex justify-center items-center min-h-screen">
-        <div class="relative z-10 top-[15.438rem] flex flex-col gap-[1.5rem] max-w-[37.125rem] max-h-[25.375rem]">
-          <h2 class="cta-text font-bold text-[3rem] italic text-white leading-tight">
+
+        <div
+          class="relative z-10 top-[15.438rem] flex flex-col gap-[1.5rem] max-w-[37.125rem] max-h-[25.375rem]"
+        >
+          <h2
+            class=" font-bold text-[3rem] italic text-white leading-tight"
+            style="--stagger-index: 0"
+          >
             {{ title }}
           </h2>
 
           <p
             v-if="description"
-             class="font-light text-[1rem] sm:text-[1.0625rem] md:text-[1.125rem]"
+            class="font-light text-[1rem] sm:text-[1.0625rem] md:text-[1.125rem] "
+            style="--stagger-index: 1"
           >
             {{ description }}
           </p>
 
-          <div v-if="ctaLabel" class="inline-block hover:scale-105 transition w-fit rounded-[0.75rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8] ">
+          <div
+            v-if="ctaLabel"
+            class="inline-block hover:scale-105 transition w-fit rounded-[0.75rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
+          >
             <Button
               :to="ctaTo"
-              class=" px-[1.5rem] py-[0.625rem] 
-                     text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1rem] 
-                     rounded-[0.625rem] bg-black bg-opacity-90
-                     transition hover:cursor-pointer 
-                     text-white hover:text-white"
+              class="cta-button px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
             >
               <span
-                class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] 
-                       text-transparent bg-clip-text duration-300"
+                class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
               >
                 {{ ctaLabel }}
               </span>
             </Button>
           </div>
-
         </div>
 
+        <!-- Spaceship SVG -->
         <div
-          v-if="spaceshipSvg"
-          class="absolute top-0 right-[-0px] pointer-events-none z-10"
+          class="absolute top-0 right-0 pointer-events-none z-10 spaceship-wrapper"
           style="will-change: transform;"
-        >
-          <NuxtImg
-            :src="spaceshipSvg"
-            alt="Animated spaceship illustration"
-            class="spaceship w lg:w-[33.375rem]"
-          />
-        </div>
+          v-html="rocket"
+        ></div>
+
       </div>
     </div>
   </section>
 </template>
 
-
 <style scoped>
-.fade-in {
+
+
+.spaceship-wrapper {
   opacity: 1;
-  pointer-events: auto;
-  transition: opacity 0.7s ease;
+  transform: translateX(0px) translateY(0px); 
 }
 
-.fade-out {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.7s ease;
+/* Button hover scale with CSS */
+.cta-button {
+  transition: transform 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
 }
 </style>
