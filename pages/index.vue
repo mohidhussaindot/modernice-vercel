@@ -9,6 +9,7 @@ import ServicesHero from "@organisms/Serviceshero.vue";
 import ServicesSecond from "@organisms/Servicessecond.vue";
 import ServicesSlider from "@organisms/ServicesSlider.vue";
 import Servicesmain from "@organisms/Servicesmain.vue";
+import ScrollToTopButton from '@organisms/Scrolltotop.vue'
 
 const showServices = ref(false);
 
@@ -21,6 +22,8 @@ const handleShowServices = () => {
 <template>
   <div>
     <div v-if="!showServices">
+          <ScrollToTopButton />
+
       <Navbar
         :nav-links="[
           { label: 'modernice.design', to: '/' },

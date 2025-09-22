@@ -48,7 +48,7 @@
         </div>
       </div>
 
-      <!-- SeoCharacter: visible inline on small, becomes bg on lg -->
+      <!-- SeoCharacter SVG -->
       <div class="relative flex-1 w-full max-w-[31.25rem]">
         <div
           ref="seocharacter"
@@ -64,28 +64,24 @@
 import { onMounted, ref, nextTick } from "vue";
 import Button from "@atoms/Button.vue";
 import Seocharacter from "@atoms/svgs/seo-character.svg?raw";
-import { useGSAP } from "~/composables/useGSAP";
+import { gsap } from "gsap";
 
 const seocharacter = ref(null);
-const { gsap, createAnimation } = useGSAP();
 
 onMounted(async () => {
   await nextTick();
 
   if (seocharacter.value) {
     const characterElement = seocharacter.value.querySelector("#Character");
+    console.log("Character Element:", characterElement);
 
     if (characterElement) {
-      // Use the composable for better performance and cleanup
-      createAnimation(() => {
-        return gsap.to(characterElement, {
-          y: -15,
-          repeat: -1,
-          duration: 0.5,
-          yoyo: true,
-          ease: "sine.inOut",
-        });
-      });
+      gsap.set(characterElement, { transformOrigin: "50% 50%" });
+
+      const tl = gsap.timeline({ repeat: -1, yoyo: true, defaults: { ease: "sine.inOut" } });
+
+      tl.to(characterElement, { x: 10, y: -10, duration: 1 })
+        .to(characterElement, { x: -10, y: 10, duration: 1 });
     }
   }
 });

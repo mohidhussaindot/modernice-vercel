@@ -12,7 +12,7 @@
          cta-from="#01A3FF"
   cta-to-color="#25CDDA"
     />
-
+        <ScrollToTopButton />
     <SeoHero />
     <SeoSecond />
 
@@ -25,6 +25,8 @@ import Navbar from '@organisms/Navbar.vue';
 import SeoHero from '@organisms/SeoHero.vue';
 import SeoSecond from '@organisms/SeoSecond.vue';
 import SiteFooter from '@organisms/SiteFooter.vue';
+import ScrollToTopButton from '@organisms/Scrolltotop.vue'
+
 export default {
   name: 'SeoPage',
   components: {
@@ -32,6 +34,7 @@ export default {
     SeoHero,
     SeoSecond,
     SiteFooter,
+    ScrollToTopButton
    
   }
 };

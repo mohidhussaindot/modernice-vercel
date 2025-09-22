@@ -15,7 +15,7 @@
 
       <div class="flex justify-center">
         <div
-          class="absolute z-30 inset-0 flex xl:pt-[290px] lg:pt-[180px] px-4 sm:px-6 md:px-[3rem] lg:px-[5rem] xl:px-[7.1875rem]"
+          class="absolute z-30 inset-0 flex xl:pt-[290px] lg:pt-[180px] pl-4 sm:pl-6 md:pl-[3rem] lg:pl-[5rem] xl:pl-[7.1875rem]"
         >
           <div
             class="text-white flex flex-col w-full max-w-none sm:max-w-[32rem] md:max-w-[29rem] xl:max-w-[34.875rem]"
@@ -51,7 +51,8 @@
               </Button>
             </div>
           </div>
-          <div class="float-moon w-full" v-html="moonSVGRaw"></div>
+       <div class="float-moon w-full" v-html="moonSVGRaw"></div>
+
         </div>
       </div>
     </div>
@@ -60,28 +61,29 @@
     <div
       ref="cityRef"
       :class="[
-        'relative text-white w-full grid place-items-center px-1 sm:px-1.5 transition-opacity duration-700',
-        fadeClassCity,
+        'relative text-white overflow-hidden w-full grid place-items-center px-1 sm:px-1.5 transition-opacity duration-700',
+      
       ]"
     >
       <div class="w-full max-w-[65.9375rem]">
-        <div
-          ref="cityImage"
-          class="relative w-full h-[61rem] bg-no-repeat bg-contain bg-center bg-[url('/first-three-sect-img/city.png')] transition-opacity duration-1000 ease-in-out  image-fade"
-        >
+      <div
+  ref="cityImage"
+  class="relative w-full  xl:h-[61rem] lg:h-[50rem] bg-no-repeat bg-contain bg-center bg-[url('/first-three-sect-img/city.png')] transition-opacity duration-1000 ease-in-out image-fade"
+>
+
           <div class="absolute inset-0 grid place-items-center">
             <div
               ref="textContent"
               class=" items-center text-center flex flex-col  px-0.125 sm:px-0.25 max-w-full opacity-0"
             >
               <h1
-                class="text-[1.25rem]  sm:text-[1.5rem]   2xl:text-[3.45rem] lg:text-[3.25rem] font-bold mb-[0.5rem] leading-snug"
+                class="text-[1.25rem]  sm:text-[1.5rem]   2xl:text-[3.45rem] lg:text-[3rem] font-bold mb-[0.5rem] leading-snug"
               >
                 KI-gesteuerte Geschäftslösungen
               </h1>
               <div class="mx-auto grid ">
                 <p
-                  class="text-[0.95rem]  2xl:text-[1.2rem] sm:text-[1.05rem] md:text-[1.125rem] xl:max-w-[50.25rem] lg:text-[1.188rem]"
+                  class="text-[0.95rem]  2xl:text-[1.2rem] sm:text-[1.05rem] md:text-[1.125rem] xl:max-w-[50.25rem]  lg:w-[800px] lg:text-[1rem]"
                 >
                   Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz
                   (KI), Großen Sprachmodellen (LLMs) und Maschinellem Lernen
@@ -158,7 +160,10 @@
 
     <div
       ref="ctaSectionRef"
-      class="cta-section relative h-[69.625rem] overflow-hidden w-full"
+      :class="[
+      `cta-section mt-[-10rem] relative h-[69.625rem] overflow-hidden w-full`,
+      fadecta]"
+
     >
       <div
         class="absolute inset-0 flex justify-center pt-[5.5%] pl-[10%] pointer-events-none select-none z-0"
@@ -211,9 +216,10 @@
 
     <!-- fourth section -->
     <div
-      ref="cockpitRef"
-      class="cockpit-section relative w-full flex items-center justify-center overflow-hidden"
-    >
+  ref="cockpitRef"
+  :class="['cockpit-section relative w-full flex items-center justify-center overflow-hidden', fadeClassCockpit]"
+>
+
       <div
         class="relative w-full max-w-full aspect-[1437/1540] flex items-center justify-center"
       >
@@ -329,13 +335,21 @@ const lightspeedRef = ref(null);
 const isFirstPartVisible = ref(true);
 const isCityVisible = ref(true);
 const isSectionVisible = ref(true);
+const isCTAVisible = ref(false);
+const isCockpitVisible = ref(true);
 
-const fadeClassCity = computed(() =>
-  isCityVisible.value ? "fade-in" : "fade-out"
+const fadeClassCockpit = computed(() =>
+  isCockpitVisible.value ? "fade-in" : "fade-out"
 );
+
 const fadeClassSection = computed(() =>
   isSectionVisible.value ? "fade-in" : "fade-out"
 );
+
+const fadecta = computed(() =>
+  isCTAVisible.value ? "fade-in" : "fade-out"
+);
+
 
 let observers = [];
 
@@ -392,11 +406,33 @@ onMounted(() => {
         ease: "power2.out",
         scrollTrigger: {
           trigger: cityImage.value,
-          start: "top 19%",
+          start: "top 23%",
           toggleActions: "play none none reverse",
         },
       }
     );
+gsap.to(cityRef.value, {
+  opacity: 0,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: cityRef.value,
+    start: "bottom 60%", // when the bottom of element hits 60% of viewport
+    end: "bottom 100%",   // fully gone when bottom hits 90% of viewport
+    scrub: true,
+  },
+});
+
+
+ const observer = new IntersectionObserver(
+    ([entry]) => {
+      isCTAVisible.value = entry.isIntersecting;
+    },
+    {
+      threshold: 0.3,
+    }
+  );
+  if (ctaSectionRef.value) observer.observe(ctaSectionRef.value);
+
 
     const fadeObserver = new IntersectionObserver(
       ([entry]) => {
@@ -422,6 +458,24 @@ onMounted(() => {
     sectionObserver.observe(sectionRef.value);
     observers.push(sectionObserver);
   }
+
+  if (cockpitRef.value) {
+  const cockpitObserver = new IntersectionObserver(
+    ([entry]) => {
+      isCockpitVisible.value = entry.isIntersecting;
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "-100px 0px -100px 0px", // adjust sensitivity if needed
+    }
+  );
+  cockpitObserver.observe(cockpitRef.value);
+  observers.push(cockpitObserver);
+}
+
+
+
+
 
   if (ctaSectionRef.value) {
     const section = ctaSectionRef.value;
@@ -537,7 +591,8 @@ const handleClick = () => {
 }
 .float-moon {
   animation: float 3s ease-in-out infinite;
-  margin-top: -90px;
+  margin-top: -80px;
+  
 }
 
 .fade-in {
@@ -633,13 +688,13 @@ const handleClick = () => {
 /* Extra Large devices (≥1280px) */
 @media (min-width: 1280px) {
   .content-wrapper {
-    top: 400px;
+    top: 350px;
   }
 }
 
 @media (min-width: 1320px) {
   .content-wrapper {
-    top: 430px;
+    top: 370px;
   }
 }
 
@@ -653,7 +708,13 @@ const handleClick = () => {
 
 @media (min-width: 1400px) {
   .content-wrapper {
-    top: 490px;
+    top: 420px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .content-wrapper {
+    top: 450px;
   }
 }
 

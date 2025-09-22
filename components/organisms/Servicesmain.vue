@@ -23,11 +23,11 @@
     <!-- Section 1 -->
     <div class="absolute  top-[403px]">
       <div class="flex flex-col lg:gap-[14px] md:px-[3rem]  lg:px-[3rem] xl:px-[7.5rem] text-white relative">
-        <div class="flex lg:gap-0 xl:gap-[143px] items-start">
+        <div class="flex lg:gap-0 xl:gap-[143px] items-center ">
         
   <div
   class="pt-[152px] fade-left flex flex-col gap-[1.5rem]
-  md:text-center lg:text-start ,md:items-center         w-full max-w-full px-4
+  md:text-center lg:text-start         w-full max-w-full px-4
          md:max-w-[640px] md:px-6
          lg:max-w-[27.13rem] xl:max-w-[32.13rem]">
 
@@ -50,7 +50,7 @@
           </div>
         </div>
 
-        <div class="flex relative pt-[72px] justify-between lg:gap-1 xl:gap-[4rem] flex-col  md:flex-row">
+        <div class="flex relative pt-[130px] justify-between lg:gap-1 xl:gap-[4rem] flex-col  md:flex-row">
           <!-- Image -->
           <div class="w-[32.88rem] h-[30.5rem]  hidden md:hidden lg:flex" v-html="servicesfourth2" ref="servicesFourth2Container"></div>
 
@@ -76,7 +76,7 @@
     <div class="flex lg:gap-0 xl:gap-[143px] items-start">
       <div
         class="pt-[152px] flex flex-col gap-[1.5rem]
-  md:text-center lg:text-start ,md:items-center    fade-left           w-full max-w-full px-4
+  md:text-center lg:text-start ,md:items-center               w-full max-w-full px-4
                md:max-w-[640px] md:px-6
                lg:max-w-[27.13rem] xl:max-w-[32.13rem]">
         <h1 class="font-lightbold text-[2rem] font-serif">Sterne zum Leuchten bringen [WIP]</h1>
@@ -86,7 +86,7 @@
       </div>
 
       <!-- Image -->
-      <div class="relative pt-[71px] w-[34.946rem] h-[28.787rem] hidden md:hidden lg:flex">
+      <div class="relative pt-[71px] w-[34.946rem] h-[29.787rem] hidden md:hidden lg:flex">
         <NuxtImg src="/images/services5-1.png" alt="Visual representation of route planning" class="w-full h-full object-contain" />
       </div>
     </div>
@@ -99,7 +99,7 @@
       <!-- Text -->
       <div
         class="pt-[152px] flex flex-col gap-[1.5rem]
-               md:text-center lg:text-start ,md:items-center fade-right
+               md:text-center lg:text-start  fade-right
                w-full max-w-full px-4
                md:max-w-[640px] md:px-6
                lg:max-w-[27.13rem] xl:max-w-[32.13rem]">
@@ -174,11 +174,11 @@
   </section>
 <section class="relative bg-black lg:flex md:hidden lg:justify-center xl:flex xl:justify-center items-center overflow-hidden h-[37.5rem]">
   <div
-    class="absolute bg-no-repeat bg-center inset-0 bg-[length:100%]"
+    class="absolute bg-no-repeat bg-center inset-0  bg-[length:100%]"
     style="background-image: url('/images/services-last-bg.png');"
   ></div>
 
-  <div class="absolute w-[53.6875rem] bg-black h-[27.9375rem]  border border-green-500 rounded">
+  <div class="absolute w-[53.6875rem] 2xl:w-[56rem]  bg-black 2xl:h-[32rem] h-[27.9375rem]  border border-green-500 rounded">
     <div class="absolute h-[12.5rem] text-white w-[45.6875rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]">
       <h1 class="italic font-semibold text-[2.25rem]">Get in Touch</h1>
       <p class="max-w-[45.6875rem] max-h-[9rem] text-[1.25rem] font-light">
@@ -351,9 +351,17 @@ function setupObserver() {
         if (entry.isIntersecting) {
           setTimeout(() => rocketTl.restart(true), 500)
         } else {
-          rocketTl.pause(0)
-          gsap.set(rocket, { y: 100 })
-          svgburst.style.opacity = 0
+       rocketTl.pause()
+
+gsap.to(rocket, {
+  y: 100,
+  duration: 1.5,
+  ease: 'power2.inOut',
+  onComplete: () => {
+    svgburst.style.opacity = 0
+  },
+})
+
           cancelAnimationFrame(rafId)
           if (ctx && burstCanvas.value) {
             ctx.clearRect(0, 0, burstCanvas.value.width, burstCanvas.value.height)

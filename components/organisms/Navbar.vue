@@ -2,13 +2,20 @@
   <header
     ref="headerRef"
     :class="[
-      'fixed z-[9999] h-[2.8281rem] px-4 top-[3.46125rem] transition-opacity duration-500 left-1/2 -translate-x-1/2',
+      'fixed z-[9999] h-[2.8281rem]  top-[3.46125rem] transition-opacity duration-500 left-1/2 -translate-x-1/2 backdrop-blur-sm bg-black/1',
       'w-full max-w-[74.875rem]',      // Default max-width for small to xl
       '2xl:max-w-[90rem]',             // Wider max-width for 2xl
       { 'opacity-0 pointer-events-none': hidden }
     ]"
   >
-    <div class="flex bg-transparent justify-between items-center w-full">
+    <!-- Overlay for blur when dropdown open -->
+    <div
+      v-if="dropdownOpen"
+      class="fixed inset-0 z-[9998] bg-black/30 backdrop-blur-sm"
+      @click="closeDropdown"
+    ></div>
+
+    <div class="flex bg-transparent justify-between items-center w-full relative z-[9999]">
       <span>
         <NuxtLink v-if="logoSrc" to="/" aria-label="Modernise home">
           <NuxtImg
@@ -28,26 +35,43 @@
             v-if="['services', 'leistungen'].includes(link.label.toLowerCase())"
             class="relative group"
           >
-            <NuxtLink :to="link.to" class="hover:underline cursor-pointer">
-              {{ link.label }}
-            </NuxtLink>
-
-            <div
-              class="absolute left-0 mt-2 w-[13rem] bg-[#0B061F] border border-gray-700 rounded-lg shadow-lg
-                     opacity-0 invisible group-hover:opacity-100 group-hover:visible
-                     transform transition-all duration-300"
+            <button
+              @click="toggleDropdown"
+              class="hover:underline cursor-pointer focus:outline-none"
             >
-              <NuxtLink
-                v-for="service in filteredServices"
-                :key="service.to"
-                :to="service.to"
-                class="block px-4 py-2 text-sm hover:bg-gray-800 first:rounded-t-lg last:rounded-b-lg"
-              >
-                {{ service.label }}
-              </NuxtLink>
-            </div>
+              {{ link.label }}
+            </button>
+
+         <div
+  v-show="dropdownOpen"
+  class="absolute left-0 mt-2 w-[13rem] rounded-lg shadow-lg border border-gray-700 overflow-hidden"
+  :style="{ background: `linear-gradient(135deg, ${ctaFrom}, ${ctaToColor})` }"
+  @mouseenter="dropdownOpen = true"
+  @mouseleave="dropdownOpen = false"
+>
+<NuxtLink
+  v-for="service in services"
+  :key="service.to"
+  :to="service.to"
+  class="block px-4 py-2 text-sm rounded-t-lg first:rounded-t-lg last:rounded-b-lg transition-colors duration-200"
+  :class="{
+    'text-black': true,
+    'bg-[rgba(255,255,255,0.29)]': isActive(service.to),
+    'hover:bg-[rgba(255,255,255,0.29)]': true
+  }"
+>
+  {{ service.label }}
+</NuxtLink>
+
+</div>
           </div>
-          <NuxtLink v-else :to="link.to" class="hover:underline">
+
+          <NuxtLink
+            v-else
+            :to="link.to"
+            class="hover:underline"
+            :class="isActive(link.to) ? '' : ''"
+          >
             {{ link.label }}
           </NuxtLink>
         </template>
@@ -83,7 +107,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 
 type NavLink = {
@@ -103,6 +127,7 @@ defineProps<{
 
 const headerRef = ref<HTMLElement | null>(null)
 const hidden = ref(false)
+const dropdownOpen = ref(false)
 
 let lastScrollY = 0
 
@@ -136,7 +161,18 @@ const services = [
   { label: 'SEO', to: '/services/seo' }
 ]
 
-const filteredServices = computed(() => {
-  return services.filter(service => service.to !== route.path)
-})
+// Always show all services, but highlight active one
+const isActive = (path: string) => {
+  return route.path === path
+}
+
+// Toggle dropdown on click
+const toggleDropdown = () => {
+  dropdownOpen.value = !dropdownOpen.value
+}
+
+// Close dropdown when overlay is clicked
+const closeDropdown = () => {
+  dropdownOpen.value = false
+}
 </script>

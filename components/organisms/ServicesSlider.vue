@@ -1,8 +1,7 @@
 <template>
-  <section ref="wrapper" class="outer-wrapper flex items-center overflow-hidden bg-black">
+  <div ref="wrapper" class="outer-wrapper flex items-center overflow-hidden bg-black">
     <div class="relative inner-container">
       <div ref="scroller" class="scroller flex items-start gap-8">
-
         <div ref="slide1" class="slide ">
           <div class="rounded-xl shadow-2xl p-4">
             <img src="/images/slider-first.png" alt="Robuste Technologie" class="rounded-lg" />
@@ -39,10 +38,9 @@
             </p>
           </div>
         </div>
-
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
@@ -62,6 +60,7 @@ let triggers = []
 const initAnimation = async () => {
   await nextTick()
 
+  // Kill existing triggers to avoid duplicates
   triggers.forEach(t => {
     try { t.kill?.() } catch (e) {}
   })
@@ -70,21 +69,25 @@ const initAnimation = async () => {
   const slides = [slide1.value, slide2.value, slide3.value]
   if (!scroller.value || !wrapper.value) return
 
-  const scrollerWidth = scroller.value.scrollWidth
   const windowWidth = window.innerWidth
+  const scrollerWidth = slides.length * windowWidth
+
+  gsap.set(scroller.value, { width: scrollerWidth })
+
   const scrollDistance = scrollerWidth - windowWidth
 
   const horiz = gsap.to(scroller.value, {
     x: -scrollDistance,
     ease: 'none',
-    scrollTrigger: {
-      trigger: wrapper.value,
-      start: 'top top',
-      end: () => `+=${scrollDistance}`,
-      scrub: true,
-      pin: true,
-      anticipatePin: 1,
-    },
+   scrollTrigger: {
+  trigger: wrapper.value,
+  start: 'center center',
+  end: () => `+=${scrollDistance}`,
+  scrub: true,
+  pin: true,
+  anticipatePin: 1,
+},
+
   })
   triggers.push(horiz)
 
@@ -142,12 +145,13 @@ onBeforeUnmount(() => {
 <style scoped>
 .outer-wrapper {
   position: relative;
-  height: 110vh;
+  height: 130vh;
 }
 
 .scroller {
   display: flex;
   will-change: transform;
+  /* width is now set dynamically in JS */
 }
 
 .slide {
@@ -160,7 +164,6 @@ onBeforeUnmount(() => {
   opacity: 0.35;
   transform: scale(0.92);
   transform-origin: center center;
-  
 }
 
 .slide img {
@@ -169,7 +172,7 @@ onBeforeUnmount(() => {
   object-fit: contain;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
-   box-shadow: 0 0 20px rgba(255,255,255,0.15);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
 }
 
 .text-content {
@@ -189,8 +192,6 @@ onBeforeUnmount(() => {
   line-height: 1.6;
 }
 
-
-
 /* Responsive */
 @media (max-width: 768px) {
   .slide img {
@@ -206,4 +207,4 @@ onBeforeUnmount(() => {
     font-size: 0.9rem;
   }
 }
-</style> 
+</style>

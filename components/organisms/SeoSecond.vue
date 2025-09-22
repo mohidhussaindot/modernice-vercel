@@ -113,83 +113,74 @@
 
 
 
-<section
-  class="relative overflow-hidden text-white bg-[#020111] h-[824px] bg-no-repeat bg-[length:100%] "
-  style="background-image: url('/images/seo-fourth-bg.png');"
->
-  <div class="flex  xl:flex-row items-center justify-between px-6 pt-24 pb-16 gap-12 max-w-7xl mx-auto">
+<section class="relative overflow-hidden 2xl:h-[2200.495361328125px] lg:h-[2050.495361328125px] text-white bg-[#020111] bg-no-repeat bg-[length:100%]">
 
-    <div class="w-full xl:w-[32rem] fade-left flex flex-col gap-5">
-      <h1 class="text-[2.5rem] italic font-semibold">Analyse des Ist-Zustands</h1>
-      <p class="text-[1.125rem] font-light">
-        Bei jeder SEO-Strategie, die wir entwickeln, beginnen wir mit einer gründlichen Analyse des aktuellen
-        Zustands der Website. Dabei berücksichtigen wir technische Aspekte, inhaltliche Faktoren und das
-        Nutzerverhalten, um Schwachstellen und Potenziale aufzudecken.
-      </p>
-    </div>
+    <!-- Shared SVG Background -->
+<div class="absolute inset-0 pointer-events-none h-full left-[100px] z-0 w-full" v-html="svgmainlines"></div>
 
-    <div class="w-full xl:w-auto">
-      <NuxtImg
-        src="/images/seo-fourth.png"
-        alt="seo-fourth-image"
-        class="w-[30.465rem] h-[28.2281rem] object-contain"
-      />
-    </div>
+  <div class="relative z-10 flex flex-col 2xl:gap-[270px]  lg:gap-[200px]  pt-24 pb-16 max-w-[1440px] mx-auto">
 
-  </div>
-</section>
+      <!-- First Row: Analyse des Ist-Zustands -->
+      <div class="flex flex-col lg:flex-row items-center  gap-[400px]">
+        <div class="w-full xl:w-[32rem] fade-left flex flex-col gap-5">
+          <h1 class="text-[2.5rem] italic font-semibold">Analyse des Ist-Zustands</h1>
+          <p class="text-[1.125rem] font-light">
+            Bei jeder SEO-Strategie, die wir entwickeln, beginnen wir mit einer gründlichen Analyse des aktuellen
+            Zustands der Website. Dabei berücksichtigen wir technische Aspekte, inhaltliche Faktoren und das
+            Nutzerverhalten, um Schwachstellen und Potenziale aufzudecken.
+          </p>
+        </div>
 
+        <div class="w-full xl:w-auto">
+          <NuxtImg
+            src="/images/seo-fourth.png"
+            alt="seo-fourth-image"
+            class="w-[30.465rem] h-[28.2281rem] object-contain"
+          />
+        </div>
+      </div>
 
-<!-- 5th Part -->
-<section
-  class="relative overflow-hidden text-white bg-[#020111] h-[1192px] bg-no-repeat bg-[length:100%] "
-  style="background-image: url('/images/seo-fifth-bg.png');"
->
-  <div class="flex flex-col gap-24 px-6  max-w-7xl mx-auto">
+      <!-- Second Row: Technische SEO-Optimierung -->
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-12">
+        <div class="w-full max-w-[32.9375rem]" ref="SeoFifthref" v-html="seofifth"></div>
 
-    <div class="flex flex-row justify-between items-center gap-12">
+        <div class="w-full max-w-[38.1875rem] fade-right flex flex-col gap-5">
+          <h1 class="text-[2.5rem] italic font-semibold">Technische SEO-Optimierung</h1>
+          <p class="text-[1.125rem] font-light">
+            Egal ob bei der Gestaltung einer neuen Website oder der Verbesserung einer bestehenden,
+            die technische SEO steht im Zentrum unserer Arbeit. Bei neuen Projekten 
+            sorgen wir von Anfang an für eine optimale Suchmaschinenfreundlichkeit. 
+            Bei der Optimierung bestehender Websites verbessern wir die technische
+            Grundlage, um die Sichtbarkeit in den Suchergebnissen zu erhöhen.
+          </p>
+        </div>
+      </div>
 
-      <div class="w-full max-w-[32.9375rem]" ref="SeoFifthref" v-html="seofifth"></div>
+      <!-- Third Row: Keyword- und Wettbewerbsanalyse -->
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-12">
+        <div class="w-full max-w-[35.75rem] fade-right flex flex-col gap-8">
+          <h1 class="text-[2.5rem] italic font-semibold">Keyword- und Wettbewerbsanalyse</h1>
+          <p class="text-[1.125rem] font-light">
+            Im nächsten Schritt identifizieren wir die Schlüsselbegriffe, 
+            welche die Zielgruppe zur Suche nach relevanten Produkten oder Dienstleistungen verwendet.
+            Parallel dazu analysieren wir die Wettbewerbssituation, um die Marktposition zu 
+            verstehen und wirksame Strategien zur Verbesserung der Platzierung zu entwickeln.
+          </p>
+        </div>
 
-      <div class="w-full max-w-[38.1875rem] fade-right flex flex-col gap-5">
-        <h1 class="text-[2.5rem] italic font-semibold">Technische SEO-Optimierung</h1>
-        <p class="text-[1.125rem] font-light">
-          Egal ob bei der Gestaltung einer neuen Website oder der Verbesserung einer bestehenden,
-          die technische SEO steht im Zentrum unserer Arbeit. Bei neuen Projekten 
-          sorgen wir von Anfang an für eine optimale Suchmaschinenfreundlichkeit. 
-          Bei der Optimierung bestehender Websites verbessern wir die technische
-          Grundlage, um die Sichtbarkeit in den Suchergebnissen zu erhöhen.
-        </p>
+        <div class="w-full max-w-[30.9375rem] ">
+          <NuxtImg
+            src="/images/seo-fifth-second.png"
+            alt="seo-fifth-second-image"
+            class="w-full h-auto object-contain"
+          />
+        </div>
       </div>
 
     </div>
+  </section>
 
-    <!-- Second Row: Text Left / Image Right -->
-    <div class="flex flex-row justify-between items-center gap-12">
 
-      <!-- Left: Text Block -->
-      <div class="w-full max-w-[35.75rem] fade-right flex flex-col gap-8">
-        <h1 class="text-[2.5rem] italic font-semibold">Keyword- und Wettbewerbsanalyse</h1>
-        <p class="text-[1.125rem] font-light">
-          Im nächsten Schritt identifizieren wir die Schlüsselbegriffe, 
-          welche die Zielgruppe zur Suche nach relevanten Produkten oder Dienstleistungen verwendet.
-          Parallel dazu analysieren wir die Wettbewerbssituation, um die Marktposition zu 
-          verstehen und wirksame Strategien zur Verbesserung der Platzierung zu entwickeln.
-        </p>
-      </div>
-
-      <!-- Right: Image -->
-      <div class="w-full max-w-[30.9375rem] fade-right">
-        <NuxtImg
-          src="/images/seo-fifth-second.png"
-          alt="seo-fifth-second-image"
-          class="w-full h-auto object-contain"
-        />
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- 6th Section -->
 <section class="min-h-screen overflow-hidden text-white pt-5 bg-[#020111]">
@@ -268,7 +259,7 @@
     style="background-image: url('/images/seo-footer-bg.png');"
   ></div>
 
-  <div class="absolute w-[53.6875rem] bg-black h-[27.9375rem] flex justify-center  border rounded border-[#01A3FF]">
+  <div class="absolute lg:w-[53.6875rem] bg-black 2xl:w-[56rem] 2xl:h-[32rem] lg:h-[27.9375rem] flex justify-center  border rounded border-[#01A3FF]">
     
     <div class="absolute h-[12.5rem] text-white w-[45.6875rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]">
       <h1 class="italic font-semibold text-[2.25rem]">Get in Touch</h1>
@@ -309,7 +300,7 @@ import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
 import seofifth from '@atoms/svgs/seo-fifth.svg?raw'
 import seosecond from '@atoms/svgs/seo-second.svg?raw'
 import Seoquestionmark from '@atoms/svgs/seo-second-first.svg?raw'
-
+import svgmainlines from '@atoms/svgs/seomainlines.svg?raw'
 const SeoFifthref = ref(null)
 const SeoSecondref = ref(null)
 const seoquestionmarkone = ref(null)
