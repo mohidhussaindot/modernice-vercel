@@ -1,9 +1,13 @@
 <template>
-<section
-  class="relative overflow-hidden text-white bg-[#020111] bg-no-repeat bg-center bg-cover"
-  style="background-image: url('/images/seo-second-bg.png');"
->
-  <div class="flex flex-col px-6 pt-10 gap-20 xl:gap-16 max-w-7xl mx-auto">
+<section class="relative h-[1082px] overflow-x-hidden text-white bg-[#020111]">
+  <!-- Background SVG injected -->
+ <div
+  class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden"
+  v-html="responsiveBg"
+></div>
+
+
+<div class="relative z-10 flex flex-col px-6 pt-10 gap-20 xl:gap-16 max-w-7xl mx-auto">
 
     <div class="flex  items-center xl:flex-row gap-10 xl:gap-6">
       <div class="flex flex-col justify-start xl:w-1/2 gap-8 xl:gap-4 fade-left">
@@ -95,21 +99,26 @@
 
 <!-- 3rd part -->
 <section class="relative overflow-hidden text-white bg-[#020111]">
- <div class="  h-[41.5625rem] ">
-  <div class="absolute fade-left w-[37.4375rem] top-[8.75rem] left-[17.0625rem] flex flex-col gap-[1.5rem] h-[16.25rem]">
-    
-    <h1 class="italic text-[3.75rem] font-semibold">
-      Unser <span class="bg-gradient-to-r to-[#01A3FF] from-[#25CDDA] bg-clip-text text-transparent">Prozess</span>
-    </h1>
+  <div class="h-[41.5625rem] relative">
+    <!-- Background SVG injected -->
+    <div
+      class="absolute inset-0 w-full h-full pointer-events-none z-0"
+      v-html="seothirdpartlines"
+    ></div>
 
-    <p class="text-[1.125rem] font-light">
-      Durch den gezielten Einsatz von datenbasierten Analysen, technischer Expertise und innovativen Ansätzen schaffen wir maßgeschneiderte Lösungen, die deine Online-Präsenz stärken, die Sichtbarkeit erhöhen und letztlich dazu beitragen, deine Geschäftsziele zu erreichen.
-    </p>
-  </div>
+    <!-- Text Content -->
+    <div class="absolute fade-left w-[37.4375rem] top-[8.75rem]   lg:left-[14.0625rem] xl:left-[17.0625rem]flex flex-col gap-[1.5rem] h-[16.25rem] z-10">
+      <h1 class="italic text-[3.75rem] font-semibold">
+        Unser <span class="bg-gradient-to-r to-[#01A3FF] from-[#25CDDA] bg-clip-text text-transparent">Prozess</span>
+      </h1>
 
-  <div style="background-image: url('/images/seo-third-bg.png');" class="absolute inset-0  w-full bg-[length:100%] top-[15.875rem] bg-no-repeat"></div>
+      <p class="text-[1.125rem] font-light">
+        Durch den gezielten Einsatz von datenbasierten Analysen, technischer Expertise und innovativen Ansätzen schaffen wir maßgeschneiderte Lösungen, die deine Online-Präsenz stärken, die Sichtbarkeit erhöhen und letztlich dazu beitragen, deine Geschäftsziele zu erreichen.
+      </p>
+    </div>
   </div>
 </section>
+
 
 
 
@@ -299,11 +308,33 @@ import Button from '@atoms/Button.vue'
 import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
 import seofifth from '@atoms/svgs/seo-fifth.svg?raw'
 import seosecond from '@atoms/svgs/seo-second.svg?raw'
+import seosecondbg from '@atoms/svgs/seosecondbg.svg?raw'
 import Seoquestionmark from '@atoms/svgs/seo-second-first.svg?raw'
 import svgmainlines from '@atoms/svgs/seomainlines.svg?raw'
+import rawLines from '@atoms/svgs/seo3rdpartlines.svg?raw'
+
+
 const SeoFifthref = ref(null)
 const SeoSecondref = ref(null)
 const seoquestionmarkone = ref(null)
+
+const responsiveBg = seosecondbg
+  .replace(/width="[^"]*"/, 'width="100%"')
+  .replace(/height="[^"]*"/, 'height="100%"')
+  .replace(
+    /<svg([^>]*)>/,
+    '<svg$1 preserveAspectRatio="xMidYMid slice">'
+  )
+
+const seothirdpartlines = rawLines
+  .replace(/width="[^"]*"/, 'width="100%"')
+  .replace(/height="[^"]*"/, 'height="100%"')
+  .replace(
+    /<svg([^>]*)>/,
+    '<svg$1 preserveAspectRatio="xMidYMid slice">'
+  )
+
+
 
 let observer
 

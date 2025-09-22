@@ -1,21 +1,16 @@
 <template>
   <header
     ref="headerRef"
-    :class="[
-      'fixed z-[9999] h-[2.8281rem]  top-[3.46125rem] transition-opacity duration-500 left-1/2 -translate-x-1/2 backdrop-blur-sm bg-black/1',
-      'w-full max-w-[74.875rem]',      // Default max-width for small to xl
-      '2xl:max-w-[90rem]',             // Wider max-width for 2xl
+    :class="[ 
+      'fixed z-[9999] h-[2.8281rem] top-[3.46125rem] transition-opacity duration-500 left-1/2 -translate-x-1/2 backdrop-blur-sm bg-black/1',
+      'w-full max-w-[74.875rem]', // Default max-width
+      '2xl:max-w-[90rem]',        // For 2xl screens
       { 'opacity-0 pointer-events-none': hidden }
     ]"
   >
-    <!-- Overlay for blur when dropdown open -->
-    <div
-      v-if="dropdownOpen"
-      class="fixed inset-0 z-[9998] bg-black/30 backdrop-blur-sm"
-      @click="closeDropdown"
-    ></div>
-
+    <!-- Navbar Content -->
     <div class="flex bg-transparent justify-between items-center w-full relative z-[9999]">
+      <!-- Logo -->
       <span>
         <NuxtLink v-if="logoSrc" to="/" aria-label="Modernise home">
           <NuxtImg
@@ -26,46 +21,46 @@
         </NuxtLink>
       </span>
 
+      <!-- Nav Links -->
       <nav
         class="relative grid grid-flow-col auto-cols-max items-center gap-[2rem] sm:gap-[3rem] md:gap-[4rem] text-white 2xl:text-[1.3rem] xl:text-[1rem] font-light"
         aria-label="Primary"
       >
         <template v-for="(link, index) in navLinks" :key="index">
-          <div
-            v-if="['services', 'leistungen'].includes(link.label.toLowerCase())"
-            class="relative group"
-          >
-            <button
-              @click="toggleDropdown"
-              class="hover:underline cursor-pointer focus:outline-none"
-            >
+          <!-- Services Hover Dropdown -->
+        <div
+  v-if="['services', 'leistungen'].includes(link.label.toLowerCase())"
+  class="relative"
+  @mouseenter="openDropdown"
+  @mouseleave="scheduleCloseDropdown"
+>
+            <button class="hover:underline cursor-pointer focus:outline-none">
               {{ link.label }}
             </button>
 
-         <div
-  v-show="dropdownOpen"
-  class="absolute left-0 mt-2 w-[13rem] rounded-lg shadow-lg border border-gray-700 overflow-hidden"
-  :style="{ background: `linear-gradient(135deg, ${ctaFrom}, ${ctaToColor})` }"
-  @mouseenter="dropdownOpen = true"
-  @mouseleave="dropdownOpen = false"
->
-<NuxtLink
-  v-for="service in services"
-  :key="service.to"
-  :to="service.to"
-  class="block px-4 py-2 text-sm rounded-t-lg first:rounded-t-lg last:rounded-b-lg transition-colors duration-200"
-  :class="{
-    'text-black': true,
-    'bg-[rgba(255,255,255,0.29)]': isActive(service.to),
-    'hover:bg-[rgba(255,255,255,0.29)]': true
-  }"
->
-  {{ service.label }}
-</NuxtLink>
-
-</div>
+            <!-- Dropdown Menu -->
+            <div
+              v-show="dropdownOpen"
+              class="absolute left-0 mt-2 w-[13rem] rounded-lg shadow-lg border border-gray-700 overflow-hidden z-[9999]"
+              :style="{ background: `linear-gradient(135deg, ${ctaFrom}, ${ctaToColor})` }"
+            >
+              <NuxtLink
+                v-for="service in services"
+                :key="service.to"
+                :to="service.to"
+                class="block px-4 py-2 text-sm rounded-t-lg first:rounded-t-lg last:rounded-b-lg transition-colors duration-200"
+                :class="{
+                  'text-black': true,
+                  'bg-[rgba(255,255,255,0.29)]': isActive(service.to),
+                  'hover:bg-[rgba(255,255,255,0.29)]': true
+                }"
+              >
+                {{ service.label }}
+              </NuxtLink>
+            </div>
           </div>
 
+          <!-- Normal Link -->
           <NuxtLink
             v-else
             :to="link.to"
@@ -76,6 +71,7 @@
           </NuxtLink>
         </template>
 
+        <!-- CTA Button -->
         <NuxtLink
           v-if="ctaLabel"
           :to="ctaTo"
@@ -125,9 +121,22 @@ defineProps<{
   ctaToColor?: string
 }>()
 
+
 const headerRef = ref<HTMLElement | null>(null)
 const hidden = ref(false)
 const dropdownOpen = ref(false)
+let closeTimeout: ReturnType<typeof setTimeout> | null = null
+
+const openDropdown = () => {
+  if (closeTimeout) clearTimeout(closeTimeout)
+  dropdownOpen.value = true
+}
+
+const scheduleCloseDropdown = () => {
+  closeTimeout = setTimeout(() => {
+    dropdownOpen.value = false
+  }, 200) // Adjust delay as needed (e.g., 200ms)
+}
 
 let lastScrollY = 0
 

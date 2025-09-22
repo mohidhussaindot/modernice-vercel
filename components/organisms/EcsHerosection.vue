@@ -175,7 +175,7 @@
     style="background-image: url('/images/ecs-bglines.png');"
   ></div>
 
-  <div class="absolute w-[53.6875rem] bg-black h-[27.9375rem] flex justify-center border border-amber-600 rounded">
+  <div class="absolute w-[53.6875rem] 2xl:w-[56rem] 2xl:h-[32rem]   bg-black h-[27.9375rem] flex justify-center border border-amber-600 rounded">
     <div class="absolute h-[12.5rem] text-white w-[45.6875rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]">
       <h1 class="italic font-semibold text-[2.25rem]">Get in Touch</h1>
       <p class="max-w-[45.6875rem] max-h-[9rem] text-[1.25rem] font-light">
@@ -216,6 +216,8 @@ import Ecsmain2 from '@atoms/svgs/ecs-main2.svg?raw'
 import Ecsmain3 from '@atoms/svgs/ecs-main3.svg?raw'
 import Ecsmain4 from '@atoms/svgs/ecs-main4.svg?raw'
 
+
+import ecsbgline from '@atoms/svgs/ecsbgline.svg'
 const cards = [
   {
     title: '1. Discovery & Strategy',

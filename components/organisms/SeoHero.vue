@@ -1,35 +1,39 @@
 <template>
   <section
-    class="bg-[#020111] relative overflow-hidden py-24 px-6 md:px-16 lg:px-10 xl:px-23"
+    class="bg-[#020111] relative 2xl:h-[1000px] lg:h-[837px] overflow-hidden py-24 px-6 md:px-16 lg:px-10 xl:px-23"
   >
-    <!-- Background Image -->
+    <!-- Responsive Full-Width Background SVG -->
     <div
-      class="absolute inset-0 bg-no-repeat bg-cover z-0"
-      style="background-image: url('/images/seo-hero-bg.png')"
+      class="absolute inset-0 w-full h-full z-0 overflow-hidden"
+      ref="seoLinesContainer"
+      v-html="seoherolines"
+      
     ></div>
 
-    <!-- Container -->
+    <!-- Main Content -->
     <div
-      class="relative z-10 max-w-[64rem] flex flex-col lg:flex-row items-center justify-between lg:gap-3 xl:gap-12"
+      class="relative z-10 flex flex-col lg:flex-row items-center 2xl:gap-50 gap-4 xl:gap-16"
     >
-      <!-- Text Content -->
-      <div class="text-white flex-1 lg:z-10 flex flex-col gap-8">
+      <!-- Text Column -->
+      <div class="text-white max-w-[599px] flex-1 flex flex-col gap-8">
         <h1
           class="text-[2.5rem] md:text-[3rem] lg:text-[3.75rem] italic font-lightbold leading-tight"
         >
           Bereit für den
           <span
             class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent"
-            >Startschuss</span
           >
+            Startschuss
+          </span>
           nach
           <span
             class="bg-gradient-to-r from-[#25CDDA] via-[#01A3FF] to-[#1EC5E1] bg-clip-text text-transparent"
-            >Oben?</span
           >
+            Oben?
+          </span>
         </h1>
 
-        <p class="font-light text-[1.125rem] md:text-[1.25rem] max-w-[37.5rem]">
+        <p class="font-light text-[1.425rem] max-w-[37.5rem]">
           Vertraue auf einen bedachten und strategischen Prozess, der von Anfang
           an effektive SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss
           kein <em>after-thought</em> sein.
@@ -48,12 +52,12 @@
         </div>
       </div>
 
-      <!-- SeoCharacter SVG -->
-      <div class="relative flex-1 w-full max-w-[31.25rem]">
+      <!-- SVG Character Column -->
+      <div class="flex-1 w-full max-w-[28rem] xl:max-w-[32rem]">
         <div
           ref="seocharacter"
           v-html="Seocharacter"
-          class="w-full h-auto xl:relative xl:top-0 xl:left-0 lg:absolute lg:left-[-12.5rem] lg:top-[-16.875rem] lg:z-0 pointer-events-none"
+          class="w-full h-auto pointer-events-none"
         />
       </div>
     </div>
@@ -64,24 +68,44 @@
 import { onMounted, ref, nextTick } from "vue";
 import Button from "@atoms/Button.vue";
 import Seocharacter from "@atoms/svgs/seo-character.svg?raw";
+import seoherolines from "@atoms/svgs/seolines.svg?raw";
 import { gsap } from "gsap";
 
 const seocharacter = ref(null);
+const seoLinesContainer = ref(null);
 
 onMounted(async () => {
   await nextTick();
 
+  // Make SEO lines SVG responsive full width
+  if (seoLinesContainer.value) {
+    const svg = seoLinesContainer.value.querySelector("svg");
+    if (svg) {
+      svg.setAttribute("width", "100%");
+      svg.setAttribute("height", "100%");
+      svg.style.display = "block";
+      svg.style.maxWidth = "100%";
+      svg.style.width = "100%";
+      svg.style.height = "100%";
+      svg.style.objectFit = "cover";
+      svg.style.scale = '1.2'
+    }
+  }
+
+  // Animate character (rocket wiggle)
   if (seocharacter.value) {
     const characterElement = seocharacter.value.querySelector("#Character");
-    console.log("Character Element:", characterElement);
-
     if (characterElement) {
       gsap.set(characterElement, { transformOrigin: "50% 50%" });
 
-      const tl = gsap.timeline({ repeat: -1, yoyo: true, defaults: { ease: "sine.inOut" } });
+      const tl = gsap.timeline({
+        repeat: -1,
+        yoyo: true,
+        defaults: { ease: "sine.inOut" },
+      });
 
-      tl.to(characterElement, { x: 10, y: -10, duration: 1 })
-        .to(characterElement, { x: -10, y: 10, duration: 1 });
+      tl.to(characterElement, { y: -15, duration: 2 })
+        .to(characterElement, { y: 0, duration: 2 });
     }
   }
 });

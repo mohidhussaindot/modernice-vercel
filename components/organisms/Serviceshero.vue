@@ -1,44 +1,55 @@
 <template>
   <section
     id="services-top"
-    class="relative bg-black overflow-hidden h-auto md:h-auto lg:h-[56.375rem] xl:h-[56.375rem]"
+    class="relative lg:h-[800px] 2xl:h-[850px] bg-black overflow-hidden text-white"
   >
+  
+    <!-- Injected SVG Background -->
     <div
-      class="absolute inset-0 bg-no-repeat bg-cover bg-center"
-      style="background-image: url('/images/services-hero-bg.png');"
+     
+      class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden"
+      v-html="Seoherobg"
+    />
+
+    <!-- Black Overlay (fades in/out) -->
+    <div
+      class="
+        'absolute inset-0 z-10 bg-black transition-opacity duration-700',
+       
+      "
     ></div>
 
+    <!-- Flex Container -->
     <div
-      class="relative h-full w-full flex flex-col md:flex-col lg:flex-row items-center md:items-center lg:items-start"
+      class="relative z-20 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto px-6 pt-12 2xl:pt-[13rem] lg:pt-[8rem] gap-12 lg:gap-[6rem]"
     >
-      <div
-        class="flex flex-col gap-[1.5rem] px-[2rem] pt-[3rem] md:pt-[3rem] md:px-[2rem] md:items-center md:text-center lg:pt-[13rem] lg:px-[5rem] lg:items-start lg:text-left min-w-[unset] md:min-w-full lg:min-w-[32.13rem] md:w-full lg:w-auto"
-      >
-        <h1 class="text-white text-[2rem] md:text-[2.8rem] lg:text-[3.8rem] font-lightbold italic leading-[1]">
+      <!-- Text Content -->
+      <div class="flex-1 flex flex-col gap-[1.5rem] max-w-[32.13rem]">
+        <h1
+          class="text-[2rem] md:text-[2.8rem] lg:text-[3.8rem] font-lightbold italic leading-[1.2]"
+        >
           Von der ersten <span class="text-[#00FFB3]">Skizze</span><br />
           bis zum letzten <span class="text-[#00FFB3]">Pixel</span>
         </h1>
 
-        <p class="text-white text-base max-w-full md:w-[36.13rem]">
+        <p class="text-base lg:text-[1.125rem] font-light leading-relaxed">
           Du hast eine Vision und wir die Leidenschaft, sie zum Leben zu
           erwecken. Eine umfassende Website-Strategie verwandelt Deine kreativen
           Vorstellungen in einen beeindruckende digitalen Auftritt. Für ein
           ästhetisches Design und messbare Ergebnisse.
         </p>
 
+        <!-- CTA Button -->
         <div
-          class="inline-block hover:scale-105 hover:transition transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#38EF61] to-[#44E5C8]"
+          class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#38EF61] to-[#44E5C8]"
         >
           <Button
             class="px-[1.5rem] py-[0.625rem] 
-                   text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 
-                   rounded-[10px] bg-black bg-opacity-90
-                   transition hover:cursor-pointer 
-                   text-white hover:text-white"
+                   text-[1rem] sm:text-[1.125rem] lg:text-[1.25rem] 
+                   rounded-[10px] bg-black bg-opacity-90 text-white hover:text-white transition"
           >
             <span
-              class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] 
-                     text-transparent bg-clip-text duration-300"
+              class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text"
             >
               Termin vereinbaren
             </span>
@@ -46,14 +57,15 @@
         </div>
       </div>
 
+      <!-- SVG Illustration -->
       <div
-        class="w-full md:w-full lg:w-[34.5rem] pt-[3rem] md:pt-[1.5rem] lg:pt-[13.75rem] h-[45.94rem] pointer-events-auto flex justify-center"
+        class="flex-1 max-w-[34.5rem] w-full flex justify-center items-center"
       >
         <div
           ref="servicesHeroRef"
-          class="relative services-hero-svg"
+          class="w-full h-auto pointer-events-none services-hero-svg"
           v-html="ServicesHeroRaw"
-        />
+        ></div>
       </div>
     </div>
   </section>
@@ -61,19 +73,20 @@
 
 <script setup>
 import Button from '@atoms/Button.vue'
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+// Injected SVGs
 import ServicesHeroRaw from '@atoms/svgs/servicesfirst.svg?raw'
+import Seoherobg from '@atoms/svgs/seoherobg.svg?raw'
 
 const servicesHeroRef = ref(null)
 
-onMounted(async () => {
-  await nextTick()
-})
 </script>
 
 <style>
 @keyframes floatUpDown {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {

@@ -192,7 +192,7 @@
             </p>
 
              <div
-              class=" inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639]  to-[#3BE8E8] hover:from-[#6BE0FF] hover:to-[#3BB1FF]"
+              class=" inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639]  to-[#3BE8E8] hover:from-[#3BE8E8] hover:to-[#AFE639]"
             >
               <Button
                 class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"

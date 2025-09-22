@@ -1,7 +1,7 @@
 <template>
-  <section
-    class="relative bg-black overflow-hidden md:min-h-[auto] flex flex-col md:flex-col lg:flex-row items-center lg:items-start xl:px-[8rem] xl:gap-10 lg:px-[3.25rem]"
-  >
+<section class="relative bg-black overflow-hidden">
+  <div class="flex flex-col md:flex-col lg:flex-row items-center lg:items-start px-6 max-w-7xl mx-auto gap-12 lg:gap-[6rem]">
+    <!-- Content -->
     <!-- TEXT CONTENT -->
     <div
       class="text-white xl:max-w-[38rem] lg:max-w-[25rem] flex flex-col gap-[1.5rem] md:items-center md:text-center lg:items-start lg:text-left"
@@ -30,6 +30,7 @@
         v-html="servicesscond"
         class="mt-12 md:mt-16 lg:mt-0 lg:ml-16 w-full lg:w-[25rem] xl:max-w-[64rem] h-auto services-hero-svg"
       />
+    </div>
     </div>
   </section>
 </template>

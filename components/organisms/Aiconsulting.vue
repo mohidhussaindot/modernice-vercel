@@ -43,116 +43,109 @@
       </div>
     </div>
 
-    <!-- Hybrid Section -->
-    <div class="relative z-10 flex lg:flex-row md:flex-col w-full xl:px-[2rem] lg:px-0"> 
-            <div class="w-full absolute  z-[-1]" v-html="aisecondbg"></div>
-<div class="absolute bottom-0 h-[17.5rem] xl:flex md:hidden  right-0 z-[-1]" v-html="aisecondbg2"></div >
-
+  <!-- Hybrid Section -->
+  <div
+      class=" left-10 absolute w-[1750.0000768149623px] top-[41.3125rem] z-0"
+      v-html="responsiveSvg"
+    ></div>
+    <div class="relative z-10 flex lg:flex-row md:flex-col w-full xl:px-[2rem] lg:px-0">
       <div class="w-1/2 flex md:justify-center">
-        <div class="w-full max-w-[37.5rem]" v-html="aisecondimg"></div> 
+        <div class="w-full max-w-[37.5rem]" v-html="aisecondimg"></div>
       </div>
 
-      <div
-        class="w-[32.56rem]  flex flex-col md:text-center gap-[2rem] md:mx-auto md:pt-10 lg:pt-[3.125rem] xl:pt-[9.063rem]"
-      >
+      <div class="w-[32.5625rem] flex flex-col md:text-center gap-[2rem] md:mx-auto md:pt-2.5 lg:pt-[3.125rem] xl:pt-[9.0625rem]">
         <h1 class="text-[2rem] font-semibold">
-          <span class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent">
-            Hybrid?
-          </span> What does that mean?
+          <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent">Hybrid?</span> What does that mean?
         </h1>
-        <p class="text-[1.125rem] flex font-light"> 
+        <p class="text-[1.125rem] flex font-light">
           Don’t worry, the term hybrid within app development actually stands for a good thing. You see, unlike hybrid cars which combine the worst aspects of petrol and electric cars hybrid apps actually combine the best aspects of app and web development. This means you will be able to use your lightning fast apps across all devices you can think of!
         </p>
       </div>
     </div>
-  </section>
 
-<!-- Discovery + Design (One Section) -->
-<section class=" md:hidden lg:flex bg-black relative overflow-hidden">
-  <!-- Shared Background -->
-<div class="absolute top-0 h-full w-full z-[10]" v-html="aimainbg1"></div>
-<div class="absolute top-0  h-full w-full z-[10]" v-html="aimainbg"></div>
 
-  <div class="relative z-20 flex lg:flex-row xl:flex-col lg:gap-4 xl:gap-[7.5rem] lg:px-[1.875rem] xl:px-[6.813rem] pt-20 ">
-    <!-- Discovery -->
-    <div class="flex flex-col xl:flex-row items-center xl:gap-[6.5rem]">
-      <div class="text-white xl:min-w-[39.625rem] flex-shrink-0 flex flex-col gap-[2rem]">
-        <h1 class="text-[2.625rem] font-bold"> 
+
+
+
+    
+  </section><section
+  class="bg-black text-white w-full overflow-hidden relative lg:flex flex-col items-center justify-center py-[6rem] gap-y-[5rem]"
+>
+  <!-- ✅ Global Background SVG (replaces `mainbg`) -->
+  <div class="absolute top-0 left-[15rem] w-full h-full z-0" v-html="aibgmain"></div>
+
+  <!-- ✅ Content Wrapper -->
+  <div class="relative z-10 flex flex-col w-full items-center gap-y-[5rem] max-w-[1440px]">
+
+    <!-- Section 1: Discovery -->
+    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem] xl:gap-x-[6rem] w-full">
+      <div class="flex flex-col gap-[4rem] flex-shrink-0 text-white max-w-[31.625rem]">
+        <h1 class="text-[2.625rem] font-bold">
           Our <span class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent">Approach</span>
         </h1>
-        <h2 class="text-[2rem] font-semibold">1. Discovery</h2> 
-        <p class="font-light w-[30.625rem] text-[1.125rem]"> 
+        <h2 class="text-[2rem] font-semibold">1. Discovery</h2>
+        <p class="font-light text-[1.125rem]">
           During the discovery phase, we work with you to understand your business goals and needs,
           as well as gather requirements and specifications for your hybrid app.
         </p>
       </div>
-            <div class="flex-shrink-0 w-full xl:max-w-[37.5rem] pt-[2.5rem]" v-html="aiourapproach"></div> 
-
+      <div class="flex-shrink-0 pt-[5.3125rem] max-w-[37.5rem] w-full">
+        <div v-html="aiourapproach"></div>
+      </div>
     </div>
 
-    <!-- Design -->
-    <div class="flex flex-col xl:flex-row  items-center xl:gap-[6.5rem]">
-      <div class="w-full flex xl:max-w-[37.5rem] " v-html="aidesign"></div>
-      <div class="text-white xl:min-w-[39.625rem] lg:pt-10 flex-shrink-0 flex flex-col gap-[2rem]">
+    <!-- Section 2: Design -->
+    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem] xl:gap-x-[6rem] w-full">
+      <div class="w-full max-w-[37.5rem]" v-html="aidesign"></div>
+      <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
         <h2 class="text-[2rem] font-semibold">2. Design</h2>
-        <p class="font-light w-[30.625rem] text-[1.125rem]">
-          Next, our team of designers creates wireframes and mockups to visualise the user flow and layout of the app.
-          We work with you to ensure the design aligns with your brand guidelines and meets the needs of your users.
+        <p class="font-light text-[1.125rem]">
+          Our designers create wireframes and mockups to visualize the user flow and layout of the app.
+          We ensure the design aligns with your brand and meets user needs.
         </p>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- Development + Testing Section (Styled like Discovery + Design) -->
-<section class="bg-black hidden lg:flex relative overflow-hidden">
-  <!-- Shared Background -->
-  <div class="absolute top-0 left-0 h-full w-full z-[10]  xl:flex md:hidden" v-html="aimainbg2"></div>
-
-  <div class="relative z-20 flex flex-col gap-[7.5rem] w-full lg:px-[1.875rem] xl:px-[6.813rem] pt-20 pb-20">
-
-    <!-- Development -->
-    <div class="flex  xl:flex-row items-center  lg:gap-4 xl:gap-[6.5rem]">
-      <div class="text-white xl:min-w-[39.625rem] flex-shrink-0 flex flex-col gap-[2rem]">
+    <!-- Section 3: Development -->
+    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem] xl:gap-x-[6rem] w-full">
+      <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
         <h2 class="text-[2rem] font-semibold">3. Development</h2>
-        <p class="font-light w-[30.625rem] text-[1.125rem]">
+        <p class="font-light text-[1.125rem]">
           Using the latest tools and technologies, such as Flutter, we begin building the hybrid app according to the approved design.
           Our developers ensure that the app functions smoothly and provide a seamless user experience on both iOS and Android platforms.
         </p>
       </div>
-      <div class="flex-shrink-0 w-full xl:max-w-[37.5rem]" v-html="aidevelopment"></div>
+      <div class="w-full max-w-[37.5rem]" v-html="aidevelopment"></div>
     </div>
 
-    <!-- Testing -->
-    <div class="flex xl:flex-row items-center lg:gap-4 xl:gap-[6.5rem]">
-      <div class="w-full xl:max-w-[37.5rem]" v-html="aitesting"></div>
-      <div class="text-white xl:min-w-[39.625rem] flex-shrink-0 flex flex-col gap-[2rem]">
+    <!-- Section 4: Testing -->
+    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem] xl:gap-x-[6rem] w-full">
+      <div class="w-full max-w-[37.5rem]" v-html="aitesting"></div>
+      <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
         <h2 class="text-[2rem] font-semibold">4. Testing and Launch</h2>
-        <p class="font-light w-[30.625rem] text-[1.125rem]">
+        <p class="font-light text-[1.125rem]">
           Before launching the app, we conduct thorough testing to ensure that it is stable and bug-free.
           Once the app is ready, we help you with the submission process and launch it on the App Store and Google Play.
         </p>
       </div>
     </div>
 
+    <!-- Section 5: Optimize -->
+    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem] xl:gap-x-[6rem] w-full">
+      <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
+        <h2 class="text-[2rem] font-semibold">5. Optimize for Growth</h2>
+        <p class="font-light text-[1.125rem]">
+          After the app is launched, we provide ongoing support and maintenance to ensure that it continues to function smoothly
+          and meet the changing needs of your business. We also offer optimization services to help increase user engagement and drive growth.
+        </p>
+      </div>
+      <div class="w-full max-w-[37.5rem]" v-html="aioptamize"></div>
+    </div>
+
   </div>
 </section>
 
-<!-- Optimize (Own Section) -->
-<section class=" bg-black md:hidden lg:flex relative overflow-hidden">
-  <div class="absolute top-0 left-0 w-full z-0"></div>
-  <div class="absolute top-0   w-full z-[10]" v-html="ailastbg"></div>
-  <div class="relative flex flex-col lg:flex-row items-center lg:gap-30 xl:gap-[10.875rem] z-20 lg:px-[1.875rem] xl:px-[11.625rem] py-20">
-    <div class="text-white lg:w-[25rem] xl:w-[30.625rem] flex-shrink-0 flex flex-col gap-[2rem]">
-      <h2 class="text-[2rem] font-semibold">5. Optimize for Growth</h2>
-      <p class="font-light w-[30.625rem] text-[1.125rem]">
-        After the app is launched, we provide ongoing support and maintenance to ensure that it continues to function smoothly
-        and meet the changing needs of your business. We also offer optimization services to help increase user engagement and drive growth.
-      </p>
-    </div>
-    <div class="w-full flex" v-html="aioptamize"></div>
-  </div>
-</section>
+
 
 <section class="relative bg-black lg:flex lg:justify-center xl:flex xl:justify-center items-center overflow-hidden h-[37.5rem]">
   <div
@@ -241,6 +234,8 @@ import Button from '@atoms/Button.vue'
 import aiherobg from '@atoms/svgs/aiherobg (1).svg?raw'
 import aiherobg2 from '@atoms/svgs/aiherobg (2).svg?raw'
 import aiheroimg from '@atoms/svgs/aiheroimg.svg?raw'
+import aisecondb22g2 from '@atoms/svgs/ai2bg.svg?raw'
+import aibgmain from '@atoms/svgs/appdevbgmain.svg?raw'
 import aisecondbg from '@atoms/svgs/aisecondbg.svg?raw'
 import aisecondbg2 from '@atoms/svgs/aisecondbg (2).svg?raw'
 import aimainbg1 from '@atoms/svgs/aimainbg (1).svg?raw'
@@ -253,4 +248,10 @@ import aidevelopment from '@atoms/svgs/aidevelopment.svg?raw'
 import aitesting from '@atoms/svgs/aitesting.svg?raw'
 import aioptamize from '@atoms/svgs/aioptamize.svg?raw'
 import ailastbg from '@atoms/svgs/ailastbg.svg?raw'
+
+const responsiveSvg = aisecondb22g2
+  .replace(/width="[^"]*"/, 'width="100%"')
+  .replace(/height="[^"]*"/, 'height="100%"')
+  .replace(/<svg([^>]*)>/, '<svg$1 preserveAspectRatio="xMidYMid slice">');
+
 </script>

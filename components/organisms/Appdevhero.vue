@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-black text-white overflow-hidden relative w-full">
+  <section class="bg-black text-white h-[1551px]  overflow-hidden relative w-full">
 
     <div
       class="w-full absolute top-0 left-0 z-0"
@@ -27,7 +27,7 @@
     </div>
 
     <div
-      class="w-full absolute top-[41.3125rem] z-0"
+      class=" left-10 absolute w-[1750.0000768149623px] top-[41.3125rem] z-0"
       v-html="appdevbg2"
     ></div>
     <div class="relative z-10 flex lg:flex-row md:flex-col w-full xl:px-[2rem] lg:px-0">
@@ -46,128 +46,80 @@
     </div>
 
   </section>
+<section
+  class="bg-black text-white w-full overflow-hidden relative lg:flex flex-col items-center justify-center py-[6rem] gap-y-[5rem]"
+>
+  <!-- Background SVG -->
+  <div
+    class="absolute top-0 left-[15rem] w-full h-full z-0"
+    v-html="mainbg"
+  ></div>
 
-  <section class="h-[38.5625rem] sm:hidden md:hidden xl:flex lg:flex overflow-hidden w-full bg-black relative">
+  <!-- Content Wrapper -->
+  <div class="relative z-10 flex flex-col w-full items-center gap-y-[5rem]">
 
-    <div
-      class="w-full flex justify-end absolute top-0 left-0 z-0"
-      v-html="appdevsection2bg1"
-    ></div>
-
-    <div
-      class="w-full flex justify-end absolute top-0 left-0 z-10"
-      v-html="appdevsection2bg2"
-    ></div>
-
-    <div class="flex items-center h-full relative z-20 lg:px-[1.875rem] xl:px-[11.625rem]">
-
-      <div class="flex items-center w-full h-full relative z-20 xl:gap-[6.5rem]">
-
-        <div class="text-white lg:min-w-[6.25rem] md:mx-auto xl:min-w-[39.625rem] flex-shrink-0 flex flex-col gap-[4rem]">
-          <h1 class="text-[2.625rem] font-bold">
-            Our <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent">App</span>roach
-          </h1>
-
-          <h1 class="text-[2rem] font-semibold">1. Discovery</h1>
-
-          <p class="font-light w-[30.625rem] text-[1.125rem]">
-            During the discovery phase, we work with you to understand your business goals and needs,
-            as well as gather requirements and specifications for your hybrid app.
-          </p>
-        </div>
-
-        <div class="flex-shrink-0 lg:flex md:hidden max-w-[37.5rem] pt-[5.3125rem]">
-          <div v-html="appdevsection2"></div>
-        </div>
-
+    <!-- Section 1: Approach -->
+    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem]  xl:gap-x-[6rem] w-full max-w-[1440px]">
+      <div class="flex flex-col gap-[4rem] flex-shrink-0 text-white max-w-[31.625rem]">
+        <h1 class="text-[2.625rem] font-bold">
+          Our <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent">App</span>roach
+        </h1>
+        <h1 class="text-[2rem] font-semibold">1. Discovery</h1>
+        <p class="font-light text-[1.125rem]">
+          During the discovery phase, we work with you to understand your business goals and needs,
+          as well as gather requirements and specifications for your hybrid app.
+        </p>
+      </div>
+      <div class="flex-shrink-0 pt-[5.3125rem] max-w-[37.5rem]">
+        <div v-html="appdevsection2"></div>
       </div>
     </div>
 
-  </section>
-
-  <!--  -->
-
-  <section class="hidden lg:block h-[60.8125rem] bg-black relative overflow-hidden">
-
-    <div class="absolute top-0 left-0 w-full z-0 flex justify-end">
-      <div v-html="appdevmiddlebg"></div>
-    </div>
-
-    <div class="relative flex items-center lg:gap-30 xl:gap-[10.875rem] z-[99] lg:px-[1.875rem] xl:px-[11.625rem]">
-      <div class="w-full flex lg:flex md:hidden" v-html="appdevmiddle1"></div>
-
-      <div class="text-white md:mx-auto xl:min-w-[39.625rem] flex-shrink-0 flex flex-col gap-[2rem]">
-
+    <!-- Section 2: Design -->
+    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem]  xl:gap-x-[6rem] w-full max-w-[1440px]">
+      <div class="w-full max-w-[37.5rem]" v-html="appdevmiddle1"></div>
+      <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
         <h1 class="text-[2rem] font-semibold">2. Design</h1>
-
-        <p class="font-light lg:w-[27.125rem] w-[30.625rem] text-[1.125rem]">
-          Next, our team of designers creates wireframes and mockups to visualise the user flow and layout of the app. 
-          We work with you to ensure the design aligns with your brand guidelines and meets the needs of your users.
+        <p class="font-light text-[1.125rem]">
+        Next, our team of designers creates wireframes and mockups to visualise the user flow and layout of the app. We work with you to ensure the design aligns with your brand guidelines and meets the needs of your users.
         </p>
       </div>
     </div>
 
-    <!--  -->
-    <div class="relative flex items-center md:pt-[6.25rem] lg:pt-[0.625rem] lg:gap-30 xl:gap-[10.875rem] z-[99] lg:px-[1.875rem] xl:px-[11.625rem]">
-
-      <div class="text-white md:mx-auto lg:w-[25rem] xl:min-w-[39.625rem] flex-shrink-0 flex flex-col gap-[2rem]">
-
+    <!-- Section 3: Development -->
+    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem]  xl:gap-x-[6rem] w-full max-w-[1440px]">
+      <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
         <h1 class="text-[2rem] font-semibold">3. Development</h1>
-
-        <p class="font-light w-[30.625rem] text-[1.125rem]">
-          Using the latest tools and technologies, such as Flutter, we begin building the hybrid app according to the approved design. Our developers
-          ensure that the app functions smoothly and provides a seamless user experience on both iOS and Android platforms.
-        </p>
+        <p class="font-light text-[1.125rem]">
+Using the latest tools and technologies, such as Flutter, we begin building the hybrid app according to the approved design. Our developers ensure that the app functions smoothly and provides a seamless user experience on both iOS and Android platforms.        </p>
       </div>
-
-      <div class="w-full md:hidden lg:flex" v-html="appdevmiddle2"></div>
-
+      <div class="w-full max-w-[37.5rem]" v-html="appdevmiddle2"></div>
     </div>
 
-  </section>
-
-  <!--  -->
-
-  <!--  -->
-
-  <section class="h-[60.8125rem] lg:block hidden bg-black relative overflow-hidden">
-
-    <div class="absolute top-0 left-0 w-full z-0 flex justify-end">
-      <div v-html="appdevlastbg"></div>
-    </div>
-
-    <div class="relative flex items-center gap-20 xl:gap-[10.875rem] z-[99] lg:px-[1.875rem] xl:px-[11.625rem]">
-      <div class="w-full flex" v-html="appdevlast2"></div>
-
-      <div class="text-white min-w-[39.625rem] flex-shrink-0 flex flex-col gap-[2rem]">
-
+    <!-- Section 4: Testing & Launch -->
+    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem]  xl:gap-x-[6rem] w-full max-w-[1440px]">
+      <div class="w-full max-w-[37.5rem]" v-html="appdevlast2"></div>
+      <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
         <h1 class="text-[2rem] font-semibold">4. Testing and Launch</h1>
-
-        <p class="font-light lg:w-[25rem] xl:w-[30.625rem] text-[1.125rem]">
-          Before launching the app, we conduct thorough testing to ensure that it is stable and bug-free. Once the app is ready, we help
-          you with the submission process and launch it on the App Store and Google Play.
-        </p>
+        <p class="font-light text-[1.125rem]">
+Before launching the app, we conduct thorough testing to ensure that it is stable and bug-free. Once the app is ready, we help you with the submission process and launch it on the App Store and Google Play.        </p>
       </div>
     </div>
 
-    <!--  -->
-    <div class="relative flex items-center pt-[0.625rem] lg:gap-30 xl:gap-[10.875rem] z-[99] lg:px-[1.875rem] xl:px-[11.625rem]">
-
-      <div class="text-white lg:w-[25rem] xl:w-[30.625rem] flex-shrink-0 flex flex-col gap-[2rem]">
-
+    <!-- Section 5: Optimization -->
+    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem]  xl:gap-x-[6rem] w-full max-w-[1440px]">
+      <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
         <h1 class="text-[2rem] font-semibold">5. Optimize for Growth</h1>
-
-        <p class="font-light w-[30.625rem] text-[1.125rem]">
-          After the app is launched, we provide ongoing support and maintenance to ensure that it continues to function smoothly and meet the changing needs of your business.
-          We also offer optimization services to help increase user engagement and drive growth.
-        </p>
+        <p class="font-light text-[1.125rem]">
+After the app is launched, we provide ongoing support and maintenance to ensure that it continues to function smoothly and meet the changing needs of your business. We also offer optimization services to help increase user engagement and drive growth.        </p>
       </div>
-
-      <div class="w-full flex" v-html="appdevlast1"></div>
-
+      <div class="w-full max-w-[37.5rem]" v-html="appdevlast1"></div>
     </div>
 
-  </section>
+  </div>
+</section>
+
+
 
   <!-- end section aka get in touch -->
   <!-- SECTION 3 (Responsive Version) -->
@@ -177,7 +129,7 @@
       style="background-image: url('/images/appdev-bglines.png');"
     ></div>
 
-    <div class="absolute w-[53.6875rem] bg-black h-[27.9375rem] flex justify-center border border-[#A138E0] rounded">
+    <div class="absolute w-[53.6875rem] bg-black 2xl:w-[56rem] 2xl:h-[32rem] h-[27.9375rem] flex justify-center border border-[#A138E0] rounded">
       <div class="absolute h-[12.5rem] text-white w-[45.6875rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]">
         <h1 class="italic font-semibold text-[2.25rem]">Get in Touch</h1>
         <p class="max-w-[45.6875rem] max-h-[9rem] text-[1.25rem] font-light">
@@ -263,14 +215,19 @@ import appdevbg from '@atoms/svgs/appdevbg1.svg?raw'
 import appdevbg2 from '@atoms/svgs/appdevbg2.svg?raw'
 import appdevhero from '@atoms/svgs/appdevhero.svg?raw'
 import appdevhero2 from '@atoms/svgs/appdevhero2.svg?raw'
-import appdevsection2bg1 from '@atoms/svgs/appdevsection2bg1.svg?raw'
-import appdevsection2bg2 from '@atoms/svgs/appdevsection2bg2.svg?raw'
 import appdevsection2 from '@atoms/svgs/appdevsection2.svg?raw'
-import appdevmiddlebg from '@atoms/svgs/appdevmiddlebg.svg?raw'
 import appdevmiddle1 from '@atoms/svgs/appdevmiddle (1).svg?raw'
 import appdevmiddle2 from '@atoms/svgs/appdevmiddle (2).svg?raw'
-import appdevlastbg from '@atoms/svgs/appdevlastbg.svg?raw'
 import appdevlast1 from '@atoms/svgs/appdevlast (1).svg?raw'
 import appdevlast2 from '@atoms/svgs/appdevlast (2).svg?raw'
+import mainbg from '@atoms/svgs/appdevbgmain.svg?raw'
 
+
+const responsiveBg2 = appdevbg2
+  .replace(/width="[^"]*"/, 'width="100%"')
+  .replace(/height="[^"]*"/, 'height="100%"')
+  .replace(
+    /<svg([^>]*)>/,
+    '<svg$1 preserveAspectRatio="xMidYMid slice">'
+  )
 </script>
