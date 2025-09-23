@@ -1,150 +1,143 @@
 <template>
-  <section class="bg-black text-white overflow-hidden relative w-full">
+<section class="bg-black text-white overflow-hidden relative w-full">
 
-    <div class="w-full absolute top-[6.321rem]   z-0" v-html="aiherobg"></div> 
-    <div class="w-full absolute left-[34.008rem]  z-0" v-html="aiherobg2"></div> 
+  <!-- Lines background - behind everything -->
+  <div class="absolute inset-0 z-0 pointer-events-none" v-html="lines"></div>
 
-    <div class="relative z-10 flex   w-full h-[49.375rem]"> 
-      <div class=" flex items-center   w-full  xl:px-[6.438rem] lg:px-[1.188rem] "> 
-        <div class="xl:w-[40.5rem] lg:[25rem] md:text-center lg:text-start flex flex-col gap-[1.875rem]  text-left "> 
-          <h1 class="text-[2.5rem] italic font-semibold leading-tight"> 
-           
-            <span class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent">
-            Der Wegweiser zur KI-Revolution: <br/>   Strategische Beratung für dein Unternehmen
-            </span> 
-          </h1>
-          <p class="text-[1.25rem] leading-relaxed">
-            Die KI-Revolution steht vor der Tür. Bist du bereit, Künstliche Intelligenz zu deinem Vorteil zu nutzen?
-            Mit uns wird die KI-Integration zur nahtlosen Reise, von der ersten Idee bis zur vollen Umsetzung.
-            Starte jetzt. Sei innovativ. Sei effizient. Sei revolutionär.
-          </p>
-           <div class="">
+  <!-- Wrapper container with responsive horizontal padding -->
+  <div class="relative z-10 xl:mx-auto xl:px-6 2xl:px-12">
+
+    <!-- Hero Section -->
+    <div class="flex flex-col lg:flex-row 2xl:pt-50 items-center h-[49.375rem] gap-8 2xl:gap-76  xl:justify-center">
+
+      <div class="flex flex-col gap-7 text-left lg:max-w-[500px]  xl:max-w-[800px] w-full  mx-auto lg:mx-0 lg:pl-10 lg:pr-0">
+        <h1 class="text-[2.5rem] italic  font-semibold leading-tight">
+          <span class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent">
+            Der Wegweiser zur KI-Revolution: <br /> Strategische Beratung für dein Unternehmen
+          </span>
+        </h1>
+        <p class="text-[1.25rem] xl:max-w-[500px] leading-relaxed">
+          Die KI-Revolution steht vor der Tür. Bist du bereit, Künstliche Intelligenz zu deinem Vorteil zu nutzen?
+          Mit uns wird die KI-Integration zur nahtlosen Reise, von der ersten Idee bis zur vollen Umsetzung.
+          Starte jetzt. Sei innovativ. Sei effizient. Sei revolutionär.
+        </p>
+        <div>
           <Button
-            class="px-[1.5rem] py-[0.625rem] 
-                   text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 
-                   border border-[#3BE8E8] rounded 
-               transition hover:cursor-pointer 
-                   bg-transparent text-white hover:text-white"
+            class="px-6 py-2.5 text-base sm:text-lg lg:text-xl border border-[#3BE8E8] rounded transition hover:cursor-pointer bg-transparent text-white hover:text-white"
           >
-            <span
-              class="bg-gradient-to-r from-[#AFE639] via-[#3BE8E8] to-[#3BE8E8] 
-                     text-transparent bg-clip-text duration-300 
-                     hover:text-white"
-            >
+            <span class="bg-gradient-to-r from-[#AFE639] via-[#3BE8E8] to-[#3BE8E8] text-transparent bg-clip-text duration-300 hover:text-white">
               Erzähl mir mehr.
             </span>
           </Button>
         </div>
-        </div>
       </div>
 
-      <div class="w-full md:hidden lg:flex items-center">
-        <div class="w-full max-w-[37.5rem]" v-html="aiheroimg"></div> 
-      </div>
+   <div class="w-full md:hidden lg:flex justify-center xl:max-w-[500px]  lg:max-w-[100px] lg:mr-6 lg:ml-0">
+  <div class="w-full" v-html="aiheroimg"></div>
+</div>
+
+
     </div>
 
-  <!-- Hybrid Section -->
-  <div
-      class=" left-10 absolute w-[1750.0000768149623px] top-[41.3125rem] z-0"
-      v-html="responsiveSvg"
-    ></div>
-    <div class="relative z-10 flex lg:flex-row md:flex-col w-full xl:px-[2rem] lg:px-0">
-      <div class="w-1/2 flex md:justify-center">
-        <div class="w-full max-w-[37.5rem]" v-html="aisecondimg"></div>
+    <!-- Hybrid Section -->
+    <div class="flex flex-col 2xl:mt-60 lg:flex-row gap-16 lg:gap-24 mt-20 justify-center items-center">
+
+      <div class="flex justify-center w-full max-w-[600px] mx-auto lg:mx-0 lg:pr-10">
+        <div class="w-full" v-html="aisecondimg"></div>
       </div>
 
-      <div class="w-[32.5625rem] flex flex-col md:text-center gap-[2rem] md:mx-auto md:pt-2.5 lg:pt-[3.125rem] xl:pt-[9.0625rem]">
-        <h1 class="text-[2rem] font-semibold">
+      <div class="flex flex-col gap-8 max-w-[600px] text-center lg:text-left mx-auto lg:mx-0 lg:pl-10">
+        <h1 class="text-2xl font-semibold">
           <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent">Hybrid?</span> What does that mean?
         </h1>
-        <p class="text-[1.125rem] flex font-light">
+        <p class="text-lg font-light">
           Don’t worry, the term hybrid within app development actually stands for a good thing. You see, unlike hybrid cars which combine the worst aspects of petrol and electric cars hybrid apps actually combine the best aspects of app and web development. This means you will be able to use your lightning fast apps across all devices you can think of!
         </p>
       </div>
+
     </div>
 
+    <!-- Our Approach Section -->
+    <div class="flex flex-col gap-y-20 max-w-[1440px] mx-auto mt-20 px-4 md:px-6 lg:px-10">
 
+      <div class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full">
 
+        <div class="text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0 lg:pr-8">
+          <h1 class="text-[2.625rem] font-bold">
+            Our <span class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent">Approach</span>
+          </h1>
+          <h2 class="text-2xl font-semibold mt-4">1. Discovery</h2>
+          <p class="font-light text-lg mt-2">
+            During the discovery phase, we work with you to understand your business goals and needs,
+            as well as gather requirements and specifications for your hybrid app.
+          </p>
+        </div>
 
+        <div class="max-w-[600px] w-full flex-shrink-0 mx-auto lg:mx-0 lg:pl-8" v-html="aiourapproach"></div>
 
-    
-  </section><section
-  class="bg-black text-white w-full overflow-hidden relative lg:flex flex-col items-center justify-center py-[6rem] gap-y-[5rem]"
->
-  <!-- ✅ Global Background SVG (replaces `mainbg`) -->
-  <div class="absolute top-0 left-[15rem] w-full h-full z-0" v-html="aibgmain"></div>
-
-  <!-- ✅ Content Wrapper -->
-  <div class="relative z-10 flex flex-col w-full items-center gap-y-[5rem] max-w-[1440px]">
-
-    <!-- Section 1: Discovery -->
-    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem] xl:gap-x-[6rem] w-full">
-      <div class="flex flex-col gap-[4rem] flex-shrink-0 text-white max-w-[31.625rem]">
-        <h1 class="text-[2.625rem] font-bold">
-          Our <span class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent">Approach</span>
-        </h1>
-        <h2 class="text-[2rem] font-semibold">1. Discovery</h2>
-        <p class="font-light text-[1.125rem]">
-          During the discovery phase, we work with you to understand your business goals and needs,
-          as well as gather requirements and specifications for your hybrid app.
-        </p>
       </div>
-      <div class="flex-shrink-0 pt-[5.3125rem] max-w-[37.5rem] w-full">
-        <div v-html="aiourapproach"></div>
+
+      <div class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full">
+
+        <div class="max-w-[600px] w-full flex-shrink-0 mx-auto lg:mx-0 lg:pr-8" v-html="aidesign"></div>
+
+        <div class="text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0 lg:pl-8">
+          <h2 class="text-2xl font-semibold">2. Design</h2>
+          <p class="font-light text-lg mt-2">
+            Our designers create wireframes and mockups to visualize the user flow and layout of the app.
+            We ensure the design aligns with your brand and meets user needs.
+          </p>
+        </div>
+
       </div>
+
+      <div class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full">
+
+        <div class="text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0 lg:pr-8">
+          <h2 class="text-2xl font-semibold">3. Development</h2>
+          <p class="font-light text-lg mt-2">
+            Using the latest tools and technologies, such as Flutter, we begin building the hybrid app according to the approved design.
+            Our developers ensure that the app functions smoothly and provide a seamless user experience on both iOS and Android platforms.
+          </p>
+        </div>
+
+        <div class="max-w-[600px] w-full flex-shrink-0 mx-auto lg:mx-0 lg:pl-8" v-html="aidevelopment"></div>
+
+      </div>
+
+      <div class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full">
+
+        <div class="max-w-[600px] w-full flex-shrink-0 mx-auto lg:mx-0 lg:pr-8" v-html="aitesting"></div>
+
+        <div class="text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0 lg:pl-8">
+          <h2 class="text-2xl font-semibold">4. Testing and Launch</h2>
+          <p class="font-light text-lg mt-2">
+            Before launching the app, we conduct thorough testing to ensure that it is stable and bug-free.
+            Once the app is ready, we help you with the submission process and launch it on the App Store and Google Play.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full mb-20">
+
+        <div class="text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0 lg:pr-8">
+          <h2 class="text-2xl font-semibold">5. Optimize for Growth</h2>
+          <p class="font-light text-lg mt-2">
+            After the app is launched, we provide ongoing support and maintenance to ensure that it continues to function smoothly
+            and meet the changing needs of your business. We also offer optimization services to help increase user engagement and drive growth.
+          </p>
+        </div>
+
+        <div class="max-w-[600px] w-full flex-shrink-0 mx-auto lg:mx-0 lg:pl-8" v-html="aioptamize"></div>
+
+      </div>
+
     </div>
-
-    <!-- Section 2: Design -->
-    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem] xl:gap-x-[6rem] w-full">
-      <div class="w-full max-w-[37.5rem]" v-html="aidesign"></div>
-      <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
-        <h2 class="text-[2rem] font-semibold">2. Design</h2>
-        <p class="font-light text-[1.125rem]">
-          Our designers create wireframes and mockups to visualize the user flow and layout of the app.
-          We ensure the design aligns with your brand and meets user needs.
-        </p>
-      </div>
-    </div>
-
-    <!-- Section 3: Development -->
-    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem] xl:gap-x-[6rem] w-full">
-      <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
-        <h2 class="text-[2rem] font-semibold">3. Development</h2>
-        <p class="font-light text-[1.125rem]">
-          Using the latest tools and technologies, such as Flutter, we begin building the hybrid app according to the approved design.
-          Our developers ensure that the app functions smoothly and provide a seamless user experience on both iOS and Android platforms.
-        </p>
-      </div>
-      <div class="w-full max-w-[37.5rem]" v-html="aidevelopment"></div>
-    </div>
-
-    <!-- Section 4: Testing -->
-    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem] xl:gap-x-[6rem] w-full">
-      <div class="w-full max-w-[37.5rem]" v-html="aitesting"></div>
-      <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
-        <h2 class="text-[2rem] font-semibold">4. Testing and Launch</h2>
-        <p class="font-light text-[1.125rem]">
-          Before launching the app, we conduct thorough testing to ensure that it is stable and bug-free.
-          Once the app is ready, we help you with the submission process and launch it on the App Store and Google Play.
-        </p>
-      </div>
-    </div>
-
-    <!-- Section 5: Optimize -->
-    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem] xl:gap-x-[6rem] w-full">
-      <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
-        <h2 class="text-[2rem] font-semibold">5. Optimize for Growth</h2>
-        <p class="font-light text-[1.125rem]">
-          After the app is launched, we provide ongoing support and maintenance to ensure that it continues to function smoothly
-          and meet the changing needs of your business. We also offer optimization services to help increase user engagement and drive growth.
-        </p>
-      </div>
-      <div class="w-full max-w-[37.5rem]" v-html="aioptamize"></div>
-    </div>
-
   </div>
 </section>
 
+ 
 
 
 <section class="relative bg-black lg:flex lg:justify-center xl:flex xl:justify-center items-center overflow-hidden h-[37.5rem]">
@@ -248,6 +241,7 @@ import aidevelopment from '@atoms/svgs/aidevelopment.svg?raw'
 import aitesting from '@atoms/svgs/aitesting.svg?raw'
 import aioptamize from '@atoms/svgs/aioptamize.svg?raw'
 import ailastbg from '@atoms/svgs/ailastbg.svg?raw'
+import lines from '@atoms/svgs/aiconsultinglines.svg?raw'
 
 const responsiveSvg = aisecondb22g2
   .replace(/width="[^"]*"/, 'width="100%"')

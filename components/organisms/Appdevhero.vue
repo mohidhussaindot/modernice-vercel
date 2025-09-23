@@ -1,6 +1,120 @@
 <template>
-  <section class="bg-black text-white h-[1551px]  overflow-hidden relative w-full">
+ <section class="bg-black text-white relative w-full overflow-hidden ">
+    <!-- Centered max-width container -->
+    <div class="mx-auto max-w-[1440px] px-6 lg:px-12">
 
+      <!-- Background SVG lines -->
+      <div
+        class="absolute inset-0 z-0 w-full h-full pointer-events-none"
+        v-html="appdevlines"
+      ></div>
+
+      <!-- Hero Section -->
+      <div class="relative z-10 flex flex-col lg:flex-row h-[49.375rem] gap-12 lg:gap-0 mb-32">
+        <!-- Left Side -->
+        <div class="lg:w-1/2 flex items-center">
+          <div class="w-full max-w-[41.1875rem] flex flex-col gap-6 mt-36 text-left px-4 lg:px-0">
+            <h1 class="text-5xl italic font-bold leading-tight">
+              <span class="bg-gradient-to-r from-[#D539D3] to-[#D539D3] bg-clip-text text-transparent">App</span>solute Genius. Custom
+              <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent">App Development</span> Services for Your Business.
+            </h1>
+            <p class="text-lg leading-relaxed max-w-[600px]">
+              Looking for a cost-effective and convenient way to develop your hybrid app? Our hybrid app development service combines the best of both worlds – the reach of a native app with the ease of development of a web app.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="lg:w-1/2 flex items-center ">
+          <div class="w-full max-w-[37.5rem]" v-html="appdevhero"></div>
+        </div>
+      </div>
+
+<div class="relative z-10 flex flex-col 2xl:top-15    lg:flex-row gap-16 lg:gap-24 mb-32">
+  <div class="lg:w-1/2 flex justify-center">
+    <div class="w-full flex max-w-[37.5rem] 2xl:max-w-[50rem]" v-html="appdevhero2"></div>
+  </div>
+
+  <div class="lg:w-[32.5625rem] flex flex-col md:text-center gap-6 mx-auto pt-3 lg:pt-12 xl:pt-36">
+    <h1 class="text-2xl 2xl:text-4xl font-semibold">
+      <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent">Hybrid?</span> What does that mean?
+    </h1>
+    <p class="text-lg 2xl:text-xl font-light max-w-[32.5rem] 2xl:max-w-[40rem] mx-auto">
+      Don’t worry, the term hybrid within app development actually stands for a good thing. You see, unlike hybrid cars which combine the worst aspects of petrol and electric cars hybrid apps actually combine the best aspects of app and web development. This means you will be able to use your lightning fast apps across all devices you can think of!
+    </p>
+  </div>
+</div>
+
+
+      <!-- Sections 1-5: Discovery, Design, etc. -->
+      <div class="flex flex-col gap-15">
+
+        <!-- Section 1 -->
+        <div class="flex flex-col z-10  lg:flex-row justify-center items-center gap-16 lg:gap-24">
+          <div class="flex flex-col gap-10 max-w-[31.625rem] text-white">
+            <h1 class="text-3xl font-bold">
+              Our <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent">App</span>roach
+            </h1>
+            <h2 class="text-2xl font-semibold">1. Discovery</h2>
+            <p class="font-light text-lg">
+              During the discovery phase, we work with you to understand your business goals and needs, as well as gather requirements and specifications for your hybrid app.
+            </p>
+          </div>
+          <div class="max-w-[37.5rem] pt-20 lg:pt-0" v-html="appdevsection2"></div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="flex flex-col z-10  lg:flex-row justify-center items-center gap-16 lg:gap-24">
+          <div class="max-w-[37.5rem]" v-html="appdevmiddle1"></div>
+          <div class="flex flex-col gap-8 max-w-[31.625rem] text-white">
+            <h2 class="text-2xl font-semibold">2. Design</h2>
+            <p class="font-light text-lg">
+              Next, our team of designers creates wireframes and mockups to visualise the user flow and layout of the app. We work with you to ensure the design aligns with your brand guidelines and meets the needs of your users.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="flex flex-col z-10  lg:flex-row justify-center items-center gap-16 lg:gap-24">
+          <div class="flex flex-col gap-8 max-w-[31.625rem] text-white">
+            <h2 class="text-2xl font-semibold">3. Development</h2>
+            <p class="font-light text-lg">
+              Using the latest tools and technologies, such as Flutter, we begin building the hybrid app according to the approved design. Our developers ensure that the app functions smoothly and provides a seamless user experience on both iOS and Android platforms.
+            </p>
+          </div>
+          <div class="max-w-[37.5rem]" v-html="appdevmiddle2"></div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="flex flex-col z-10  lg:flex-row justify-center items-center gap-16 lg:gap-24">
+          <div class="max-w-[37.5rem]" v-html="appdevlast2"></div>
+          <div class="flex flex-col gap-8 max-w-[31.625rem] text-white">
+            <h2 class="text-2xl font-semibold">4. Testing and Launch</h2>
+            <p class="font-light text-lg">
+              Before launching the app, we conduct thorough testing to ensure that it is stable and bug-free. Once the app is ready, we help you with the submission process and launch it on the App Store and Google Play.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="flex flex-col z-10  lg:flex-row justify-center items-center gap-16 lg:gap-24">
+          <div class="flex flex-col gap-8 max-w-[31.625rem] text-white">
+            <h2 class="text-2xl font-semibold">5. Optimize for Growth</h2>
+            <p class="font-light text-lg">
+              After the app is launched, we provide ongoing support and maintenance to ensure that it continues to function smoothly and meet the changing needs of your business. We also offer optimization services to help increase user engagement and drive growth.
+            </p>
+          </div>
+          <div class="max-w-[37.5rem]" v-html="appdevlast1"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  
+  <!-- <section class="bg-black text-white h-[1551px]  overflow-hidden relative w-full"> -->
+<!-- 
     <div
       class="w-full absolute top-0 left-0 z-0"
       v-html="appdevbg"
@@ -49,16 +163,13 @@
 <section
   class="bg-black text-white w-full overflow-hidden relative lg:flex flex-col items-center justify-center py-[6rem] gap-y-[5rem]"
 >
-  <!-- Background SVG -->
   <div
     class="absolute top-0 left-[15rem] w-full h-full z-0"
     v-html="mainbg"
   ></div>
 
-  <!-- Content Wrapper -->
   <div class="relative z-10 flex flex-col w-full items-center gap-y-[5rem]">
 
-    <!-- Section 1: Approach -->
     <div class="flex flex-row justify-center items-center lg:gap-x-[2rem]  xl:gap-x-[6rem] w-full max-w-[1440px]">
       <div class="flex flex-col gap-[4rem] flex-shrink-0 text-white max-w-[31.625rem]">
         <h1 class="text-[2.625rem] font-bold">
@@ -73,10 +184,9 @@
       <div class="flex-shrink-0 pt-[5.3125rem] max-w-[37.5rem]">
         <div v-html="appdevsection2"></div>
       </div>
-    </div>
+    </div>ww
 
-    <!-- Section 2: Design -->
-    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem]  xl:gap-x-[6rem] w-full max-w-[1440px]">
+    <div class="flex flex-row relative justify-center items-center lg:gap-x-[2rem]  xl:gap-x-[6rem] w-full max-w-[1440px]">
       <div class="w-full max-w-[37.5rem]" v-html="appdevmiddle1"></div>
       <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
         <h1 class="text-[2rem] font-semibold">2. Design</h1>
@@ -86,8 +196,7 @@
       </div>
     </div>
 
-    <!-- Section 3: Development -->
-    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem]  xl:gap-x-[6rem] w-full max-w-[1440px]">
+    <div class="flex flex-row relative justify-center items-center lg:gap-x-[2rem]  xl:gap-x-[6rem] w-full max-w-[1440px]">
       <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
         <h1 class="text-[2rem] font-semibold">3. Development</h1>
         <p class="font-light text-[1.125rem]">
@@ -96,8 +205,7 @@ Using the latest tools and technologies, such as Flutter, we begin building the 
       <div class="w-full max-w-[37.5rem]" v-html="appdevmiddle2"></div>
     </div>
 
-    <!-- Section 4: Testing & Launch -->
-    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem]  xl:gap-x-[6rem] w-full max-w-[1440px]">
+    <div class="flex relative flex-row justify-center items-center lg:gap-x-[2rem]  xl:gap-x-[6rem] w-full max-w-[1440px]">
       <div class="w-full max-w-[37.5rem]" v-html="appdevlast2"></div>
       <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
         <h1 class="text-[2rem] font-semibold">4. Testing and Launch</h1>
@@ -106,8 +214,7 @@ Before launching the app, we conduct thorough testing to ensure that it is stabl
       </div>
     </div>
 
-    <!-- Section 5: Optimization -->
-    <div class="flex flex-row justify-center items-center lg:gap-x-[2rem]  xl:gap-x-[6rem] w-full max-w-[1440px]">
+    <div class="flex relative flex-row justify-center items-center lg:gap-x-[2rem]  xl:gap-x-[6rem] w-full max-w-[1440px]">
       <div class="flex flex-col gap-[2rem] text-white max-w-[31.625rem]">
         <h1 class="text-[2rem] font-semibold">5. Optimize for Growth</h1>
         <p class="font-light text-[1.125rem]">
@@ -117,7 +224,7 @@ After the app is launched, we provide ongoing support and maintenance to ensure 
     </div>
 
   </div>
-</section>
+</section> -->
 
 
 
@@ -221,7 +328,7 @@ import appdevmiddle2 from '@atoms/svgs/appdevmiddle (2).svg?raw'
 import appdevlast1 from '@atoms/svgs/appdevlast (1).svg?raw'
 import appdevlast2 from '@atoms/svgs/appdevlast (2).svg?raw'
 import mainbg from '@atoms/svgs/appdevbgmain.svg?raw'
-
+import appdevlines from '@atoms/svgs/appdevlines.svg?raw'
 
 const responsiveBg2 = appdevbg2
   .replace(/width="[^"]*"/, 'width="100%"')

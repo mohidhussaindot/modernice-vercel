@@ -39,17 +39,19 @@
           kein <em>after-thought</em> sein.
         </p>
 
-        <div>
-          <Button
-            class="px-6 py-2.5 text-[1.25rem] border border-[#3BB1FF] rounded hover:bg-[#3BB1FF] transition hover:border-none hover:cursor-pointer bg-transparent text-white hover:text-white"
-          >
-            <span
-              class="bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] text-transparent bg-clip-text duration-300 hover:text-white"
+      
+          <div
+              class=" inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#01A3FF]  to-[#25CDDA] hover:from-[#25CDDA] hover:to-[#01A3FF]"
             >
-              Startbefehl geben
-            </span>
-          </Button>
-        </div>
+              <Button
+                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+              >
+                <span
+                  class="bg-gradient-to-r from-[#01A3FF]  to-[#25CDDA] text-transparent bg-clip-text duration-300"
+                  >Startbefehl geben</span
+                >
+              </Button>
+            </div>
       </div>
 
       <!-- SVG Character Column -->

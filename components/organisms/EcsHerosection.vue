@@ -6,11 +6,11 @@
     <!-- Content -->
     <div class="relative z-10">
       <!-- Hero Section -->
-      <section class="grid grid-cols-1 lg:grid-cols-2 gap-[2rem] px-6 lg:px-[7.8125rem] pt-[10rem]">
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-[2rem] lg:items-center px-6 lg:px-[7.8125rem] pt-[10rem]">
         <div class="flex flex-col gap-[2rem] xl:w-[39.625rem]">
           <h1 class="text-4xl lg:text-5xl font-semibold leading-tight">
             Maximize online sales with our custom <br />
-            <span class="text-amber-400">E-Commerce</span> strategy service.
+            <span class="bg-gradient-to-r from-[#FFE501] to-[#FFA901] text-transparent bg-clip-text ">E-Commerce</span> strategy service.
           </h1>
           <p class="text-[1.125rem] font-light">
             Our e-commerce strategy service is designed to help businesses of all sizes and industries succeed in the world of online sales. Whether you're a B2C company looking to sell directly to consumers, or a B2B company looking to streamline your sales process, we can help you create a personalized e-commerce plan that meets your unique needs.
@@ -22,12 +22,21 @@
       <!-- "What's in store" Section -->
    <section class="pt-[6rem] px-6 lg:px-[7.8125rem] xl:px-[8rem] 2xl:px-[10rem]">
   <h2 class="text-4xl lg:text-5xl font-semibold mb-[2rem]">What's in store?</h2>
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-6 xl:gap-8 2xl:gap-10">
-    <div
-      v-for="(card, index) in cards"
-      :key="index"
-      class="p-4 lg:p-6 xl:p-8 2xl:p-10 border border-amber-500 bg-black rounded-xl flex flex-col items-center text-center gap-4"
-    >
+  <div class="grid md:grid-cols-2 lg:grid-cols-4  xl:grid-cols-4 2xl:grid-cols-4 gap-6 xl:gap-8 2xl:gap-10">
+<div
+  v-for="(card, index) in cards"
+  :key="index"
+  class="p-4 lg:p-6 xl:p-8  2xl:p-10 flex flex-col items-center text-center gap-4 bg-black"
+  :style="{
+    borderWidth: '1px',
+    borderStyle: 'solid',
+    borderImageSlice: 1,
+    borderImageSource: 'linear-gradient(to top, #FFC60108, #FFCC01)',
+    borderRadius: '1rem'
+  }"
+>
+
+
       <img
         :src="card.icon"
         :alt="card.alt"
@@ -50,14 +59,14 @@
           </div>
 
           <div
-            class="w-full max-w-[82.4375rem] rounded-[0.75rem] border border-amber-400 overflow-hidden"
-            style="background: linear-gradient(to bottom, rgba(19, 18, 30, 0.95) 0%, rgba(19, 18, 30, 0.6) 35%, rgba(0, 0, 0, 0.15) 100%);"
+            class="w-full max-w-[82.4375rem] rounded-[0.75rem] bg-gradient-to-b  from-[#FFB6013D]/24 to-[#FFB801A8]/26  border mt-10 border-amber-400 overflow-hidden"
+           
           >
             <div class="h-[2.5rem] flex items-center bg-gradient-to-b from-[#13121E] to-[#07052761] px-[0.5rem]">
               <img src="/images/ecs-circles.png" height="1.25rem" alt="ecs" />
             </div>
 
-            <div class="bg-black flex items-center justify-center gap-[3rem] px-4 py-6">
+            <div class="bg-black flex items-center justify-between gap-[3rem] px-4 py-6">
               <div class="flex items-center gap-2">
                 <img src="/images/modernice-logoecs.png" alt="modernice logo" class="h-[2.5rem]" />
                 <h1 class="text-xl font-semibold">modernice.shop</h1>
@@ -108,7 +117,7 @@
               <div
                 v-for="(card, index) in serviceCards"
                 :key="index"
-                class="bg-[#0E0D1A] border border-white/10 p-6 rounded-lg flex flex-col justify-between"
+                class="bg-[#0E0D1A] border border-[#FFA901]/50 p-6 rounded-lg flex flex-col justify-between"
               >
                 <div v-html="card.html" class="mb-4"></div>
                 <h2 class="text-2xl font-bold">{{ card.title }}</h2>
