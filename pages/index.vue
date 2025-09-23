@@ -14,10 +14,13 @@ import ScrollToTopButton from '@organisms/Scrolltotop.vue'
 const showServices = ref(false);
 
 const handleShowServices = () => {
-  setTimeout(() => {
-    showServices.value = true;
-  }, 2000);
+ 
+  showServices.value = true;
+
+
+  window.scrollTo({ top: 0, behavior: "instant" });
 };
+
 </script>
 <template>
   <div>
@@ -50,18 +53,19 @@ const handleShowServices = () => {
     </div>
 
     <div v-else class="bg-[#020111] text-white min-h-screen">
-        <Navbar
-        :nav-links="[
-          { label: 'modernice.design', to: '/' },
-          { label: 'Services', to: '' },
-          { label: 'Work', to: '/work' }
-        ]"
-        cta-label="Let’s Talk"
-        cta-to="/contact"
-        logo-src="/first-three-sect-img/navbar-img.png"
-        cta-from="#01A3FF"
-        cta-to-color="#25CDDA"
-      />
+      <ScrollToTopButton />
+       <Navbar
+      :nav-links="[
+        { label: 'modernice.design', to: '/' },
+        { label: 'Services', to: ''  },
+        { label: 'Work', to: '/work' }
+      ]"
+      cta-label="Let’s Talk"
+      cta-to="/contact"
+      logo-src="/images/services-navbar.png"
+         cta-from="#38EF61"
+  cta-to-color="#44E5C8"
+    />
       <ServicesHero />
       <ServicesSecond />
       <ServicesSlider />

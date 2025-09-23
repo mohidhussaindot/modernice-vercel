@@ -286,10 +286,7 @@
         </div>
       </div>
 
-      <div
-        ref="blackoutRef"
-        class="blackout absolute inset-0 bg-black z-40 pointer-events-none opacity-0"
-      />
+     
     </div>
   </div>
 </template>
@@ -327,7 +324,6 @@ const sectionRef = ref(null);
 const ctaSectionRef = ref(null);
 const cockpitRef = ref(null);
 const contentWrapperRef = ref(null);
-const blackoutRef = ref(null);
 const warpFxRef = ref(null);
 const lightspeedRef = ref(null);
 
@@ -370,7 +366,6 @@ onMounted(() => {
     }
   }
 
-  // City Section: Fade + GSAP Animations
   if (cityRef.value && cityImage.value && textContent.value) {
     const cssFadeObserver = new IntersectionObserver(
       ([entry]) => {
@@ -416,8 +411,8 @@ gsap.to(cityRef.value, {
   ease: "power2.out",
   scrollTrigger: {
     trigger: cityRef.value,
-    start: "bottom 60%", // when the bottom of element hits 60% of viewport
-    end: "bottom 100%",   // fully gone when bottom hits 90% of viewport
+    start: "bottom 60%", 
+    end: "bottom 100%",   
     scrub: true,
   },
 });
@@ -543,13 +538,11 @@ onUnmounted(() => {
 
 const handleClick = () => {
   const cockpitEl = cockpitRef.value;
-  const blackout = blackoutRef.value;
-  const warpFx = warpFxRef.value;
-  const lightspeed = lightspeedRef.value;
   if (!cockpitEl) return;
 
-  const originX = cockpitEl.offsetWidth / 2;
-  const originY = cockpitEl.offsetHeight / 2;
+  document.body.style.overflowX = 'hidden';
+
+  const transformOrigin = "50% 50%";
 
   const bg = cockpitEl.querySelector(".cockpit-bg");
   const card = cockpitEl.querySelector(".cockpit-card");
@@ -558,23 +551,21 @@ const handleClick = () => {
   const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
 
   tl.to(cockpitEl, {
-    scale: 1.4,
-    transformOrigin: `${originX}px ${originY}px`,
+    scale: 1.5,
+    opacity: 0,
+    transformOrigin,
     duration: 2,
-    force3D: true,
   })
-    .to(cockpitEl, { scale: 1.4, duration: 1 })
-    .to(cockpitEl, { scale: 1.7, duration: 2, ease: "power3.inOut" })
-    .to([cockpitEl, bg, card, text], {
-      scale: 0,
-      autoAlpha: 0,
-      duration: 0.6,
-      ease: "power2.out",
-    })
-    .add(() => {
-      emit("show-services");
-    }, "+=0.1");
+  .to([bg, card, text], { opacity: 0, duration: 0.5 }, 1.9)
+  .add(() => {
+    document.body.style.overflowX = '';
+
+    window.scrollTo({ top: 0, behavior: "instant" });
+    emit("show-services");
+  });
 };
+
+
 </script>
 
 <style scoped>
@@ -705,6 +696,12 @@ const handleClick = () => {
     top: 460px;
   }
 }
+.cockpit-section {
+  overflow-x: hidden; /* Hide horizontal overflow */
+  position: relative; /* Ensure stacking context for scale */
+  perspective: 2000px;
+}
+
 
 @media (min-width: 1400px) {
   .content-wrapper {

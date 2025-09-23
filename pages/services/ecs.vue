@@ -13,6 +13,7 @@
   cta-to-color="#FFA901"
     />
          <ScrollToTopButton />
+         <component/>
     <EcsHerosection/>
         <SiteFooter bg-color="#020111"  textcolor="#FFB401"  quote="Stop putting my name under  quotes
 I didn’t say." author="- Sun Tzu, the art of war"/>
