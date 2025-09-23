@@ -9,7 +9,6 @@
       <div v-html="servicesMainBg"></div>
     </div>
 
-    <!-- Header -->
     <div class="fade-left absolute flex flex-col top-0 left-[273px] text-white max-w-[42.125rem] 
                 text-center md:text-left mx-auto md:mx-0">
       <h1 class="text-[2.5rem] font-serif font-lightbold">Phasen des Erfolgs</h1>
@@ -20,7 +19,6 @@
       </div>
     </div>
 
-    <!-- Section 1 -->
     <div class="absolute  top-[403px]">
       <div class="flex flex-col lg:gap-[14px] md:px-[3rem]  lg:px-[3rem] xl:px-[7.5rem] text-white relative">
         <div class="flex lg:gap-0 xl:gap-[143px] items-center ">

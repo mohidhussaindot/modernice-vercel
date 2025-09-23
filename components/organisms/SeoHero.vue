@@ -2,7 +2,6 @@
   <section
     class="bg-[#020111] relative 2xl:h-[1000px] lg:h-[837px] overflow-hidden py-24 px-6 md:px-16 lg:px-10 xl:px-23"
   >
-    <!-- Responsive Full-Width Background SVG -->
     <div
       class="absolute inset-0 w-full h-full z-0 overflow-hidden"
       ref="seoLinesContainer"
@@ -10,11 +9,9 @@
       
     ></div>
 
-    <!-- Main Content -->
     <div
       class="relative z-10 flex flex-col lg:flex-row items-center 2xl:gap-50 gap-4 xl:gap-16"
     >
-      <!-- Text Column -->
       <div class="text-white max-w-[599px] flex-1 flex flex-col gap-8">
         <h1
           class="text-[2.5rem] md:text-[3rem] lg:text-[3.75rem] italic font-lightbold leading-tight"
@@ -54,7 +51,6 @@
             </div>
       </div>
 
-      <!-- SVG Character Column -->
       <div class="flex-1 w-full max-w-[28rem] xl:max-w-[32rem]">
         <div
           ref="seocharacter"

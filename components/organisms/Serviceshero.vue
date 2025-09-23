@@ -4,14 +4,12 @@
     class="relative lg:h-[800px] 2xl:h-[850px] bg-black overflow-hidden text-white"
   >
   
-    <!-- Injected SVG Background -->
     <div
      
       class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden"
       v-html="Seoherobg"
     />
 
-    <!-- Black Overlay (fades in/out) -->
     <div
       class="
         'absolute inset-0 z-10 bg-black transition-opacity duration-700',
@@ -19,11 +17,9 @@
       "
     ></div>
 
-    <!-- Flex Container -->
     <div
       class="relative z-20 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto px-6 pt-12 2xl:pt-[13rem] lg:pt-[8rem] gap-12 lg:gap-[6rem]"
     >
-      <!-- Text Content -->
       <div class="flex-1 flex flex-col gap-[1.5rem] max-w-[32.13rem]">
         <h1
           class="text-[2rem] md:text-[2.8rem] lg:text-[3.8rem] font-lightbold italic leading-[1.2]"
@@ -39,7 +35,6 @@
           ästhetisches Design und messbare Ergebnisse.
         </p>
 
-        <!-- CTA Button -->
         <div
           class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#38EF61] to-[#44E5C8]"
         >
@@ -57,7 +52,6 @@
         </div>
       </div>
 
-      <!-- SVG Illustration -->
       <div
         class="flex-1 max-w-[34.5rem] w-full flex justify-center items-center"
       >
@@ -73,9 +67,8 @@
 
 <script setup>
 import Button from '@atoms/Button.vue'
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref } from 'vue'
 
-// Injected SVGs
 import ServicesHeroRaw from '@atoms/svgs/servicesfirst.svg?raw'
 import Seoherobg from '@atoms/svgs/seoherobg.svg?raw'
 
