@@ -1,4 +1,4 @@
-import { date } from "quasar";
+import { date } from 'quasar'
 
 const generalUtils = {
   notify(color, message, icon, $q) {
@@ -6,48 +6,48 @@ const generalUtils = {
       message,
       color,
       icon,
-      position: "top-right",
+      position: 'top-right',
       html: true,
       progress: true,
       timeout: 2000,
       multiLine: false,
-      classes: "text-weight-regular font-16",
-    });
+      classes: 'text-weight-regular font-16'
+    })
   },
 
   empty(data) {
     if (
-      typeof data === "undefined" ||
+      typeof data === 'undefined' ||
       data === null ||
-      data === "" ||
-      data === "null" ||
-      data === "undefined"
+      data === '' ||
+      data === 'null' ||
+      data === 'undefined'
     ) {
-      return true;
+      return true
     }
-    return false;
+    return false
   },
 
   showLoadingBox(message, $q) {
     $q.loading.show({
       message,
-      boxClass: "bg-white text-dark",
-      spinnerColor: "grey-4",
-      spinnerSize: "30",
-      html: true,
-    });
+      boxClass: 'bg-white text-dark',
+      spinnerColor: 'grey-4',
+      spinnerSize: '30',
+      html: true
+    })
   },
 
   hideLoadingBox($q) {
-    $q.loading.hide();
+    $q.loading.hide()
   },
 
   getDateString(payload) {
-    return date.formatDate(payload, "MMM DD, YYYY. hh:mm A");
+    return date.formatDate(payload, 'MMM DD, YYYY. hh:mm A')
   },
 
   getUserId() {
-    return JSON.parse(localStorage.getItem("userInfo")).id;
-  },
-};
-export default generalUtils;
+    return JSON.parse(localStorage.getItem('userInfo')).id
+  }
+}
+export default generalUtils

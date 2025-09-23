@@ -5,15 +5,15 @@ module.exports = {
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
-    './app.vue',
+    './app.vue'
   ],
   theme: {
     container: {
-      center: true,
+      center: true
     },
     extend: {
       fontFamily: {
-        rajdhani: ["Rajdhani", "sans-serif"],
+        rajdhani: ['Rajdhani', 'sans-serif']
       },
       colors: {
         primary: '#5C18A3',
@@ -21,13 +21,9 @@ module.exports = {
         'base-dark': '#111827',
         'base-light': '#EAEBF4',
         'text-dark': '#1F2937',
-        'yellowish': 'var(--yellowish)'
-      },
-    },
+        yellowish: 'var(--yellowish)'
+      }
+    }
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-    require('daisyui'),
-  ],
-};
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('daisyui')]
+}

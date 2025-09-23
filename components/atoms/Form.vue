@@ -4,43 +4,43 @@
   </form>
 </template>
 <script setup>
-import { useForm } from './formContext.js'
-import { useVuelidate } from '@vuelidate/core'
-import { reactive } from 'vue'
+  import { useForm } from './formContext.js'
+  import { useVuelidate } from '@vuelidate/core'
+  import { reactive } from 'vue'
 
-const props = defineProps({
-  initialValues: {
-    type: Object
-  },
-  schema: {
-    type: Object
-  },
-  onSubmit: {
-    type: Function
+  const props = defineProps({
+    initialValues: {
+      type: Object
+    },
+    schema: {
+      type: Object
+    },
+    onSubmit: {
+      type: Function
+    }
+  })
+
+  const state = reactive(props.initialValues)
+  const v = useVuelidate(props.schema, state, { $lazy: true })
+
+  const handleSubmit = async () => {
+    const isValid = await v.value.$validate()
+    if (isValid && props.onSubmit) {
+      props.onSubmit(state)
+    }
   }
-})
 
-const state = reactive(props.initialValues)
-const v = useVuelidate(props.schema, state, {$lazy: true})
-
-const handleSubmit = async () => {
-  const isValid = await v.value.$validate()
-  if (isValid && props.onSubmit) {
-    props.onSubmit(state)
+  const reset = () => {
+    v.value.$reset
   }
-}
 
-const reset = () => {
-  v.value.$reset
-}
+  defineExpose({
+    reset,
+    v
+  })
 
-defineExpose({
-  reset,
-  v
-})
-
-useForm({
-  schema: props.schema,
-  v: v.value
-})
+  useForm({
+    schema: props.schema,
+    v: v.value
+  })
 </script>

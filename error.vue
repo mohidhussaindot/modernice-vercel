@@ -22,15 +22,8 @@
             Coming Soon
           </h1>
 
-          <p
-            class="text-lg md:text-xl mt-4 md:mt-6 px-9 font-mono text-center text-gray-300"
-          >
-            <span
-              v-for="(char, i) in textChars"
-              :key="i"
-              ref="chars"
-              class="inline-block"
-            >
+          <p class="text-lg md:text-xl mt-4 md:mt-6 px-9 font-mono text-center text-gray-300">
+            <span v-for="(char, i) in textChars" :key="i" ref="chars" class="inline-block">
               {{ char }}
             </span>
           </p>
@@ -65,80 +58,80 @@
 </template>
 
 <script setup>
-import { BaseButton } from '@atoms'
-//import { FilledLogo } from '@organisms'
-import { onMounted, ref, nextTick } from 'vue'
-import { useRouter, useRoute, useError } from 'nuxt/app'
-import { gsap } from 'gsap'
+  import { BaseButton } from '@atoms'
+  //import { FilledLogo } from '@organisms'
+  import { onMounted, ref, nextTick } from 'vue'
+  import { useRouter, useRoute, useError } from 'nuxt/app'
+  import { gsap } from 'gsap'
 
-const router = useRouter()
-const route = useRoute()
-const error = useError()
+  const router = useRouter()
+  const route = useRoute()
+  const error = useError()
 
-const goBack = () => {
-  if (route.params === 'buy') {
-    router.push('/')
-  } else {
-    router.back()
+  const goBack = () => {
+    if (route.params === 'buy') {
+      router.push('/')
+    } else {
+      router.back()
+    }
   }
-}
 
-const title = ref(null)
-const chars = ref([])
-const button = ref(null)
-const circles = ref([])
+  const title = ref(null)
+  const chars = ref([])
+  const button = ref(null)
+  const circles = ref([])
 
-// 404 animation text
-const fullText = "We're building something amazing - Stay tuned!"
-const textChars = fullText.split("").map((c) => (c === " " ? "\u00A0" : c))
+  // 404 animation text
+  const fullText = "We're building something amazing - Stay tuned!"
+  const textChars = fullText.split('').map(c => (c === ' ' ? '\u00A0' : c))
 
-onMounted(async () => {
-  if (error?.statusCode !== 404) return
+  onMounted(async () => {
+    if (error?.statusCode !== 404) return
 
-  await nextTick()
+    await nextTick()
 
-  // Heading glow pulse
-  gsap.to(title.value, {
-    textShadow: "0px 0px 20px #00f7ff, 0px 0px 40px #00f7ff",
-    repeat: -1,
-    yoyo: true,
-    duration: 1.5,
-    ease: "power2.inOut",
+    // Heading glow pulse
+    gsap.to(title.value, {
+      textShadow: '0px 0px 20px #00f7ff, 0px 0px 40px #00f7ff',
+      repeat: -1,
+      yoyo: true,
+      duration: 1.5,
+      ease: 'power2.inOut'
+    })
+
+    // Animate each char
+    gsap.from(chars.value, {
+      opacity: 0,
+      y: 20,
+      stagger: 0.04,
+      delay: 0.5,
+      duration: 0.5,
+      ease: 'power2.out'
+    })
+
+    // Animate button
+    gsap.from(button.value, {
+      opacity: 0,
+      y: 40,
+      delay: 1,
+      duration: 0.6,
+      ease: 'back.out(1.7)'
+    })
+
+    // Floating background circles
+    gsap.to(circles.value, {
+      y: 20,
+      repeat: -1,
+      yoyo: true,
+      duration: 3,
+      ease: 'sine.inOut',
+      stagger: 0.5
+    })
   })
-
-  // Animate each char
-  gsap.from(chars.value, {
-    opacity: 0,
-    y: 20,
-    stagger: 0.04,
-    delay: 0.5,
-    duration: 0.5,
-    ease: "power2.out",
-  })
-
-  // Animate button
-  gsap.from(button.value, {
-    opacity: 0,
-    y: 40,
-    delay: 1,
-    duration: 0.6,
-    ease: "back.out(1.7)",
-  })
-
-  // Floating background circles
-  gsap.to(circles.value, {
-    y: 20,
-    repeat: -1,
-    yoyo: true,
-    duration: 3,
-    ease: "sine.inOut",
-    stagger: 0.5,
-  })
-})
 </script>
 
 <style scoped>
-h1 {
-  text-shadow: 0 0 5px #00f7ff;
-}
+  h1 {
+    text-shadow: 0 0 5px #00f7ff;
+  }
 </style>

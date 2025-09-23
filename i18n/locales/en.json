@@ -20,21 +20,11 @@
   "footer": {
     "resources": {
       "title": "Resources",
-      "items": [
-        "Help Center",
-        "Privacy Policy",
-        "Roadmap",
-        "Changelog"
-      ]
+      "items": ["Help Center", "Privacy Policy", "Roadmap", "Changelog"]
     },
     "features": {
       "title": "Features",
-      "items": [
-        "Affiliates",
-        "Anti Cheat",
-        "Contact us",
-        "Sponsors"
-      ]
+      "items": ["Affiliates", "Anti Cheat", "Contact us", "Sponsors"]
     },
     "company": {
       "title": "Company",
@@ -552,11 +542,7 @@
       "ctaDescription": "We stream. You sponsor. Players win.",
       "ctaSponsorButton": "Sponsor a Tournament Now",
       "ctaInfoButton": "Request Sponsorship Info",
-      "footerStats": [
-        "Trusted by 50+ Brands",
-        "Streamed on Twitch",
-        "EPASS Verified"
-      ]
+      "footerStats": ["Trusted by 50+ Brands", "Streamed on Twitch", "EPASS Verified"]
     },
     "whereGoes": {
       "title": "Where Your",
@@ -1415,12 +1401,7 @@
         "Outcome determined within 24–72 hours",
         "Sanctions (if any) are applied:"
       ],
-      "sanctions": [
-        "No action",
-        "Warning",
-        "Temporary restriction",
-        "Ban and XP removal"
-      ]
+      "sanctions": ["No action", "Warning", "Temporary restriction", "Ban and XP removal"]
     },
     "reportTypes": {
       "cheating": "Cheating",

@@ -6,10 +6,15 @@
     "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.0.3",
+    "prettier": "^3.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
     "@nuxt/icon": "^1.12.0",
     "@nuxt/image": "^1.10.0",
     "@types/axios": "^0.9.36",

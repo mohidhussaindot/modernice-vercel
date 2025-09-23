@@ -20,21 +20,11 @@
   "footer": {
     "resources": {
       "title": "Recursos",
-      "items": [
-        "Centro de Ayuda",
-        "Política de privacidad",
-        "Hoja de Ruta",
-        "Registro de Cambios"
-      ]
+      "items": ["Centro de Ayuda", "Política de privacidad", "Hoja de Ruta", "Registro de Cambios"]
     },
     "features": {
       "title": "Funcionalidades",
-      "items": [
-        "Afiliados",
-        "Portal",
-        "Contáctanos",
-        "Patrocinadores"
-      ]
+      "items": ["Afiliados", "Portal", "Contáctanos", "Patrocinadores"]
     },
     "company": {
       "title": "Empresa",

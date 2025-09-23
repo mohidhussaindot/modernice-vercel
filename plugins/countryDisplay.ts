@@ -4,8 +4,8 @@ export default defineNuxtPlugin(() => {
   if (process.server) {
     return {
       provide: {
-        getCountryNameByCode: (code: string) => code,
-      },
+        getCountryNameByCode: (code: string) => code
+      }
     }
   }
 
@@ -208,7 +208,7 @@ export default defineNuxtPlugin(() => {
     { name: 'South America', code: 'SA' },
     { name: 'Asia', code: 'AS' },
     { name: 'Africa', code: 'AF' },
-    { name: 'Oceania', code: 'OC' },
+    { name: 'Oceania', code: 'OC' }
   ]
 
   const getCountryNameByCode = (code: string) => {
@@ -218,7 +218,7 @@ export default defineNuxtPlugin(() => {
 
   return {
     provide: {
-      getCountryNameByCode,
-    },
+      getCountryNameByCode
+    }
   }
 })

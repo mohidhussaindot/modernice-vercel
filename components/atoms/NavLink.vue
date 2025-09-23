@@ -1,8 +1,11 @@
 <script setup lang="ts">
-const props = withDefaults(defineProps<{
-  to: string
-  label: string
-}>(), {})
+  const props = withDefaults(
+    defineProps<{
+      to: string
+      label: string
+    }>(),
+    {}
+  )
 </script>
 
 <template>

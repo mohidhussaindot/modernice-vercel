@@ -1,5 +1,3 @@
 <template>
-  <div>
-    header
-  </div>
-  </template>
+  <div> header </div>
+</template>

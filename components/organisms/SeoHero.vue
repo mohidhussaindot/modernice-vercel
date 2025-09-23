@@ -6,20 +6,17 @@
       class="absolute inset-0 w-full h-full z-0 overflow-hidden"
       ref="seoLinesContainer"
       v-html="seoherolines"
-      
     ></div>
 
-    <div
-      class="relative z-10 flex flex-col lg:flex-row items-center 2xl:gap-50 gap-4 xl:gap-16"
-    >
+    <!-- Main Content -->
+    <div class="relative z-10 flex flex-col lg:flex-row items-center 2xl:gap-50 gap-4 xl:gap-16">
+      <!-- Text Column -->
       <div class="text-white max-w-[599px] flex-1 flex flex-col gap-8">
         <h1
           class="text-[2.5rem] md:text-[3rem] lg:text-[3.75rem] italic font-lightbold leading-tight"
         >
           Bereit für den
-          <span
-            class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent"
-          >
+          <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
             Startschuss
           </span>
           nach
@@ -31,80 +28,74 @@
         </h1>
 
         <p class="font-light text-[1.425rem] max-w-[37.5rem]">
-          Vertraue auf einen bedachten und strategischen Prozess, der von Anfang
-          an effektive SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss
-          kein <em>after-thought</em> sein.
+          Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive
+          SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein
+          <em>after-thought</em> sein.
         </p>
 
-      
-          <div
-              class=" inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#01A3FF]  to-[#25CDDA] hover:from-[#25CDDA] hover:to-[#01A3FF]"
+        <div
+          class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] hover:from-[#25CDDA] hover:to-[#01A3FF]"
+        >
+          <Button
+            class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+          >
+            <span
+              class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] text-transparent bg-clip-text duration-300"
+              >Startbefehl geben</span
             >
-              <Button
-                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-              >
-                <span
-                  class="bg-gradient-to-r from-[#01A3FF]  to-[#25CDDA] text-transparent bg-clip-text duration-300"
-                  >Startbefehl geben</span
-                >
-              </Button>
-            </div>
+          </Button>
+        </div>
       </div>
 
       <div class="flex-1 w-full max-w-[28rem] xl:max-w-[32rem]">
-        <div
-          ref="seocharacter"
-          v-html="Seocharacter"
-          class="w-full h-auto pointer-events-none"
-        />
+        <div ref="seocharacter" v-html="Seocharacter" class="w-full h-auto pointer-events-none" />
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { onMounted, ref, nextTick } from "vue";
-import Button from "@atoms/Button.vue";
-import Seocharacter from "@atoms/svgs/seo-character.svg?raw";
-import seoherolines from "@atoms/svgs/seolines.svg?raw";
-import { gsap } from "gsap";
+  import { onMounted, ref, nextTick } from 'vue'
+  import Button from '@atoms/Button.vue'
+  import Seocharacter from '@atoms/svgs/seo-character.svg?raw'
+  import seoherolines from '@atoms/svgs/seolines.svg?raw'
+  import { gsap } from 'gsap'
 
-const seocharacter = ref(null);
-const seoLinesContainer = ref(null);
+  const seocharacter = ref(null)
+  const seoLinesContainer = ref(null)
 
-onMounted(async () => {
-  await nextTick();
+  onMounted(async () => {
+    await nextTick()
 
-  // Make SEO lines SVG responsive full width
-  if (seoLinesContainer.value) {
-    const svg = seoLinesContainer.value.querySelector("svg");
-    if (svg) {
-      svg.setAttribute("width", "100%");
-      svg.setAttribute("height", "100%");
-      svg.style.display = "block";
-      svg.style.maxWidth = "100%";
-      svg.style.width = "100%";
-      svg.style.height = "100%";
-      svg.style.objectFit = "cover";
-      svg.style.scale = '1.2'
+    // Make SEO lines SVG responsive full width
+    if (seoLinesContainer.value) {
+      const svg = seoLinesContainer.value.querySelector('svg')
+      if (svg) {
+        svg.setAttribute('width', '100%')
+        svg.setAttribute('height', '100%')
+        svg.style.display = 'block'
+        svg.style.maxWidth = '100%'
+        svg.style.width = '100%'
+        svg.style.height = '100%'
+        svg.style.objectFit = 'cover'
+        svg.style.scale = '1.2'
+      }
     }
-  }
 
-  // Animate character (rocket wiggle)
-  if (seocharacter.value) {
-    const characterElement = seocharacter.value.querySelector("#Character");
-    if (characterElement) {
-      gsap.set(characterElement, { transformOrigin: "50% 50%" });
+    // Animate character (rocket wiggle)
+    if (seocharacter.value) {
+      const characterElement = seocharacter.value.querySelector('#Character')
+      if (characterElement) {
+        gsap.set(characterElement, { transformOrigin: '50% 50%' })
 
-      const tl = gsap.timeline({
-        repeat: -1,
-        yoyo: true,
-        defaults: { ease: "sine.inOut" },
-      });
+        const tl = gsap.timeline({
+          repeat: -1,
+          yoyo: true,
+          defaults: { ease: 'sine.inOut' }
+        })
 
-      tl.to(characterElement, { y: -15, duration: 2 })
-        .to(characterElement, { y: 0, duration: 2 });
+        tl.to(characterElement, { y: -15, duration: 2 }).to(characterElement, { y: 0, duration: 2 })
+      }
     }
-  }
-});
+  })
 </script>

@@ -8,14 +8,14 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  value?: string;
-  options: { value: string; label: string }[];
-  selectClass?: string;
-  innerColor?: string;
-}>();
+  defineProps<{
+    value?: string
+    options: { value: string; label: string }[]
+    selectClass?: string
+    innerColor?: string
+  }>()
 
-defineEmits<{
-  (e: 'update:value', value: string): void;
-}>();
+  defineEmits<{
+    (e: 'update:value', value: string): void
+  }>()
 </script>

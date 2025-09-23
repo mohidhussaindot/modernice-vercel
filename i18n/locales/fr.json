@@ -29,12 +29,7 @@
     },
     "features": {
       "title": "Fonctionnalités",
-      "items": [
-        "Affiliés",
-        "Portail",
-        "Contactez-nous",
-        "Sponsors"
-      ]
+      "items": ["Affiliés", "Portail", "Contactez-nous", "Sponsors"]
     },
     "company": {
       "title": "Entreprise",
@@ -552,11 +547,7 @@
       "ctaDescription": "Nous streamons. Vous sponsorisez. Les joueurs gagnent.",
       "ctaSponsorButton": "Sponsoriser un tournoi maintenant",
       "ctaInfoButton": "Demander des infos",
-      "footerStats": [
-        "Fiable par 50+ marques",
-        "Diffusé en direct sur Twitch",
-        "Vérifié par EPASS"
-      ]
+      "footerStats": ["Fiable par 50+ marques", "Diffusé en direct sur Twitch", "Vérifié par EPASS"]
     },
     "whereGoes": {
       "title": "Où va votre",

@@ -47,19 +47,19 @@ This project uses GSAP (GreenSock Animation Platform) with optimized configurati
 
 ```vue
 <script setup>
-import { useGSAP } from "~/composables/useGSAP";
+  import { useGSAP } from '~/composables/useGSAP'
 
-const { gsap, createAnimation } = useGSAP();
+  const { gsap, createAnimation } = useGSAP()
 
-onMounted(() => {
-  createAnimation(() => {
-    return gsap.to(".my-element", {
-      x: 100,
-      duration: 1,
-      ease: "power2.out",
-    });
-  });
-});
+  onMounted(() => {
+    createAnimation(() => {
+      return gsap.to('.my-element', {
+        x: 100,
+        duration: 1,
+        ease: 'power2.out'
+      })
+    })
+  })
 </script>
 ```
 
@@ -67,17 +67,17 @@ onMounted(() => {
 
 ```vue
 <script setup>
-import { useGSAPAnimations } from "~/composables/useGSAP";
+  import { useGSAPAnimations } from '~/composables/useGSAP'
 
-const { fadeIn, onScroll } = useGSAPAnimations();
+  const { fadeIn, onScroll } = useGSAPAnimations()
 
-onMounted(() => {
-  // Fade in on scroll
-  onScroll(".my-element", {
-    from: { opacity: 0, y: 50 },
-    to: { opacity: 1, y: 0 },
-  });
-});
+  onMounted(() => {
+    // Fade in on scroll
+    onScroll('.my-element', {
+      from: { opacity: 0, y: 50 },
+      to: { opacity: 1, y: 0 }
+    })
+  })
 </script>
 ```
 
@@ -85,18 +85,18 @@ onMounted(() => {
 
 ```vue
 <script setup>
-import { useGSAP } from "~/composables/useGSAP";
+  import { useGSAP } from '~/composables/useGSAP'
 
-const { batchAnimate } = useGSAP();
+  const { batchAnimate } = useGSAP()
 
-onMounted(() => {
-  const elements = document.querySelectorAll(".stagger-item");
-  batchAnimate(elements, {
-    opacity: 1,
-    y: 0,
-    stagger: 0.1,
-  });
-});
+  onMounted(() => {
+    const elements = document.querySelectorAll('.stagger-item')
+    batchAnimate(elements, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.1
+    })
+  })
 </script>
 ```
 
@@ -124,29 +124,29 @@ onMounted(() => {
 ### 1. Fade In
 
 ```javascript
-const { fadeIn } = useGSAPAnimations();
-fadeIn(".element", { duration: 0.8 });
+const { fadeIn } = useGSAPAnimations()
+fadeIn('.element', { duration: 0.8 })
 ```
 
 ### 2. Slide In
 
 ```javascript
-const { slideInLeft, slideInRight } = useGSAPAnimations();
-slideInLeft(".element", { duration: 1 });
+const { slideInLeft, slideInRight } = useGSAPAnimations()
+slideInLeft('.element', { duration: 1 })
 ```
 
 ### 3. Scale In
 
 ```javascript
-const { scaleIn } = useGSAPAnimations();
-scaleIn(".element", { duration: 0.6 });
+const { scaleIn } = useGSAPAnimations()
+scaleIn('.element', { duration: 0.6 })
 ```
 
 ### 4. Parallax
 
 ```javascript
-const { parallax } = useGSAPAnimations();
-parallax(".element", 0.5); // 50% parallax speed
+const { parallax } = useGSAPAnimations()
+parallax('.element', 0.5) // 50% parallax speed
 ```
 
 ## Troubleshooting
@@ -163,8 +163,8 @@ parallax(".element", 0.5); // 50% parallax speed
 ```javascript
 // Enable ScrollTrigger markers for debugging
 ScrollTrigger.config({
-  markers: true,
-});
+  markers: true
+})
 ```
 
 ## Migration Guide
@@ -173,23 +173,23 @@ ScrollTrigger.config({
 
 ```javascript
 // ❌ Old way
-import gsap from "gsap";
-gsap.to(".element", { x: 100 });
+import gsap from 'gsap'
+gsap.to('.element', { x: 100 })
 
 // ✅ New way
-const { gsap, createAnimation } = useGSAP();
-createAnimation(() => gsap.to(".element", { x: 100 }));
+const { gsap, createAnimation } = useGSAP()
+createAnimation(() => gsap.to('.element', { x: 100 }))
 ```
 
 ### From Manual Plugin Registration:
 
 ```javascript
 // ❌ Old way
-import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 // ✅ New way - handled automatically by plugin
-const { ScrollTrigger } = useGSAP();
+const { ScrollTrigger } = useGSAP()
 ```
 
 ## Resources

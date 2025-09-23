@@ -33,9 +33,8 @@
             <p
               class="mt-[1.5rem] font-light leading-relaxed text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.5rem] w-full xl:w-[34.875rem]"
             >
-              Kreatives Webdesign, meisterhafte Softwareentwicklung und
-              bahnbrechende AI-Technologien, die dein Geschäft auf die
-              Überholspur bringen.
+              Kreatives Webdesign, meisterhafte Softwareentwicklung und bahnbrechende
+              AI-Technologien, die dein Geschäft auf die Überholspur bringen.
             </p>
 
             <div
@@ -51,8 +50,7 @@
               </Button>
             </div>
           </div>
-       <div class="float-moon w-full" v-html="moonSVGRaw"></div>
-
+          <div class="float-moon w-full" v-html="moonSVGRaw"></div>
         </div>
       </div>
     </div>
@@ -61,48 +59,45 @@
     <div
       ref="cityRef"
       :class="[
-        'relative text-white overflow-hidden w-full grid place-items-center px-1 sm:px-1.5 transition-opacity duration-700',
-      
+        'relative text-white overflow-hidden w-full grid place-items-center px-1 sm:px-1.5 transition-opacity duration-700'
       ]"
     >
       <div class="w-full max-w-[65.9375rem]">
-      <div
-  ref="cityImage"
-  class="relative w-full  xl:h-[61rem] lg:h-[50rem] bg-no-repeat bg-contain bg-center bg-[url('/first-three-sect-img/city.png')] transition-opacity duration-1000 ease-in-out image-fade"
->
-
+        <div
+          ref="cityImage"
+          class="relative w-full xl:h-[61rem] lg:h-[50rem] bg-no-repeat bg-contain bg-center bg-[url('/first-three-sect-img/city.png')] transition-opacity duration-1000 ease-in-out image-fade"
+        >
           <div class="absolute inset-0 grid place-items-center">
             <div
               ref="textContent"
-              class=" items-center text-center flex flex-col  px-0.125 sm:px-0.25 max-w-full opacity-0"
+              class="items-center text-center flex flex-col px-0.125 sm:px-0.25 max-w-full opacity-0"
             >
               <h1
-                class="text-[1.25rem]  sm:text-[1.5rem]   2xl:text-[3.45rem] lg:text-[3rem] font-bold mb-[0.5rem] leading-snug"
+                class="text-[1.25rem] sm:text-[1.5rem] 2xl:text-[3.45rem] lg:text-[3rem] font-bold mb-[0.5rem] leading-snug"
               >
                 KI-gesteuerte Geschäftslösungen
               </h1>
-              <div class="mx-auto grid ">
+              <div class="mx-auto grid">
                 <p
-                  class="text-[0.95rem]  2xl:text-[1.2rem] sm:text-[1.05rem] md:text-[1.125rem] xl:max-w-[50.25rem]  lg:w-[800px] lg:text-[1rem]"
+                  class="text-[0.95rem] 2xl:text-[1.2rem] sm:text-[1.05rem] md:text-[1.125rem] xl:max-w-[50.25rem] lg:w-[800px] lg:text-[1rem]"
                 >
-                  Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz
-                  (KI), Großen Sprachmodellen (LLMs) und Maschinellem Lernen
-                  (ML). Diese Technologien verändern die Art und Weise, wie wir
-                  arbeiten und wachsen.
+                  Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz (KI), Großen
+                  Sprachmodellen (LLMs) und Maschinellem Lernen (ML). Diese Technologien verändern
+                  die Art und Weise, wie wir arbeiten und wachsen.
                 </p>
-                   <div
-              class=" inline-block mx-auto mt-[2rem]  hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8]  to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
-            >
-              <Button
-                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-              >
-                <span
-                  class="bg-gradient-to-r from-[#3BE8E8]  to-[#AFE639] text-transparent bg-clip-text duration-300"
-                  >Prozessoptimierung durch KI</span
+                <div
+                  class="inline-block mx-auto mt-[2rem] hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
                 >
-              </Button>
-            </div>
-          </div>
+                  <Button
+                    class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+                  >
+                    <span
+                      class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
+                      >Prozessoptimierung durch KI</span
+                    >
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -113,7 +108,7 @@
       ref="sectionRef"
       :class="[
         'flex 2xl:mt-[-10rem] xl:mt-[-15rem] overflow-visible xl:px-[7.1875rem] px-4  md:pl-10  gap-12 md:gap-0 lg:gap-0 transition-opacity duration-700 relative z-20',
-        fadeClassSection,
+        fadeClassSection
       ]"
     >
       <div
@@ -126,44 +121,39 @@
           durch Design und Technologie
         </h1>
         <p
-          class="font-light  2xl:text-[1.2rem]  lg:text-[1rem] sm:text-[1.0625rem] md:text-[1.125rem]"
+          class="font-light 2xl:text-[1.2rem] lg:text-[1rem] sm:text-[1.0625rem] md:text-[1.125rem]"
         >
-          In einer erfolgreichen Web-Lösung verschmelzen Design und Entwicklung
-          zu einem harmonischen Ganzen. Die nahtlose Integration von Frontend
-          und Backend, ergänzt durch den Einsatz modernster Technologien wie
-          Künstlicher Intelligenz, Großen Sprachmodellen (LLM) und Machine
-          Learning, ermöglicht die Schaffung von Produkten, die den Horizont des
-          Möglichen erweitern und das Nutzererlebnis auf ein ungekanntes Niveau
-          heben.
+          In einer erfolgreichen Web-Lösung verschmelzen Design und Entwicklung zu einem
+          harmonischen Ganzen. Die nahtlose Integration von Frontend und Backend, ergänzt durch den
+          Einsatz modernster Technologien wie Künstlicher Intelligenz, Großen Sprachmodellen (LLM)
+          und Machine Learning, ermöglicht die Schaffung von Produkten, die den Horizont des
+          Möglichen erweitern und das Nutzererlebnis auf ein ungekanntes Niveau heben.
         </p>
-         <div
-              class=" inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#FFE501]  to-[#FFA901] hover:from-[#FFA901] hover:to-[#FFE501]"
+        <div
+          class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#FFE501] to-[#FFA901] hover:from-[#FFA901] hover:to-[#FFE501]"
+        >
+          <Button
+            class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+          >
+            <span
+              class="bg-gradient-to-r from-[#FFA901] to-[#FFE501] text-transparent bg-clip-text duration-300"
+              >Schaffe Außergewöhnliches</span
             >
-              <Button
-                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-              >
-                <span
-                  class="bg-gradient-to-r from-[#FFA901]  to-[#FFE501] text-transparent bg-clip-text duration-300"
-                  >Schaffe Außergewöhnliches</span
-                >
-              </Button>
-            </div>
-          </div>
+          </Button>
+        </div>
+      </div>
       <div class="w-full flex justify-center items-center">
         <img
           src="/images/rocketmoon.png"
           alt="Rocket Moon"
-          class="xl:w-[650.4355025557797px] 2xl:w-[750.4355025557797px]  w-full h-full right-left object-contain select-none pointer-events-none"
+          class="xl:w-[650.4355025557797px] 2xl:w-[750.4355025557797px] w-full h-full right-left object-contain select-none pointer-events-none"
         />
       </div>
     </div>
 
     <div
       ref="ctaSectionRef"
-      :class="[
-      `cta-section mt-[-10rem] relative h-[69.625rem] overflow-hidden w-full`,
-      fadecta]"
-
+      :class="[`cta-section mt-[-10rem] relative h-[69.625rem] overflow-hidden w-full`, fadecta]"
     >
       <div
         class="absolute inset-0 flex justify-center pt-[5.5%] pl-[10%] pointer-events-none select-none z-0"
@@ -174,7 +164,7 @@
       <div class="relative mx-auto max-w-7xl w-full z-10">
         <div class="relative flex justify-center items-center">
           <div
-            class="relative z-10 md:top-[19.438rem]  xl:top-[23.438rem] 2xl:top-[25.438rem]  flex flex-col gap-[1.5rem] xl:w-[37.125rem] lg:w-[30rem] max-h-[25.375rem]"
+            class="relative z-10 md:top-[19.438rem] xl:top-[23.438rem] 2xl:top-[25.438rem] flex flex-col gap-[1.5rem] xl:w-[37.125rem] lg:w-[30rem] max-h-[25.375rem]"
           >
             <h2
               class="font-bold italic text-white leading-tight text-[2.25rem] sm:text-[2.5rem] md:text-[2rem] lg:text-[2.2rem] 2xl:text-[3rem] xl:text-[2.7rem]"
@@ -183,22 +173,21 @@
             </h2>
 
             <p
-              class="font-light   2xl:text-[1.2rem] md:text-[1rem] lg:text-[1.2rem] xl:text-[1.24rem]"
+              class="font-light 2xl:text-[1.2rem] md:text-[1rem] lg:text-[1.2rem] xl:text-[1.24rem]"
             >
-              Wir transformieren Daten in Einblicke, Herausforderungen in
-              Chancen. Mit unserer Strategie werden Künstliche Intelligenz und
-              deine Ambitionen zu treibenden Kräften. Lass die Zukunft nicht
-              warten.
+              Wir transformieren Daten in Einblicke, Herausforderungen in Chancen. Mit unserer
+              Strategie werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften.
+              Lass die Zukunft nicht warten.
             </p>
 
-             <div
-              class=" inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639]  to-[#3BE8E8] hover:from-[#3BE8E8] hover:to-[#AFE639]"
+            <div
+              class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] hover:from-[#3BE8E8] hover:to-[#AFE639]"
             >
               <Button
                 class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
               >
                 <span
-                  class="bg-gradient-to-r from-[#AFE639]  to-[#3BE8E8] text-transparent bg-clip-text duration-300"
+                  class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text duration-300"
                   >KI-Beratung</span
                 >
               </Button>
@@ -216,13 +205,13 @@
 
     <!-- fourth section -->
     <div
-  ref="cockpitRef"
-  :class="['cockpit-section relative w-full flex items-center justify-center overflow-hidden', fadeClassCockpit]"
->
-
-      <div
-        class="relative w-full max-w-full aspect-[1437/1540] flex items-center justify-center"
-      >
+      ref="cockpitRef"
+      :class="[
+        'cockpit-section relative w-full flex items-center justify-center overflow-hidden',
+        fadeClassCockpit
+      ]"
+    >
+      <div class="relative w-full max-w-full aspect-[1437/1540] flex items-center justify-center">
         <div
           class="cockpit-bg absolute inset-0 pointer-events-none select-none will-change-transform h-[1557px]"
           v-html="cockpit"
@@ -231,18 +220,13 @@
           ref="warpFxRef"
           class="warpfx absolute inset-0 z-30 pointer-events-none will-change-transform"
         ></div>
-        <div
-          ref="lightspeedRef"
-          class="lightspeed absolute inset-0 will-change-transform"
-        ></div>
+        <div ref="lightspeedRef" class="lightspeed absolute inset-0 will-change-transform"></div>
 
         <div
           ref="contentWrapperRef"
-          class="content-wrapper  absolute mx-auto w-[72.9375rem] flex top-[374px]"
+          class="content-wrapper absolute mx-auto w-[72.9375rem] flex top-[374px]"
         >
-          <div
-            class="flex justify-center gap-6 md:gap-10 lg:gap-14 w-full px-4"
-          >
+          <div class="flex justify-center gap-6 md:gap-10 lg:gap-14 w-full px-4">
             <div class="flex-shrink-0">
               <NuxtImg
                 src="/images/Hero - Illustration.svg"
@@ -262,462 +246,533 @@
               <p
                 class="text-white font-light text-xs sm:text-sm md:text-base lg:text-sm leading-relaxed"
               >
-                We'll work with you to plan and create a website that aligns
-                with your business goals and resonates with your target
-                audience. Only if we become friends of course!
+                We'll work with you to plan and create a website that aligns with your business
+                goals and resonates with your target audience. Only if we become friends of course!
               </p>
 
-            <div
-              class=" inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#38EF61]  to-[#44E5C8] hover:from-[#44E5C8] hover:to-[#38EF61]"
-            >
-              <Button
-              @click="handleClick"
-                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+              <div
+                class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#38EF61] to-[#44E5C8] hover:from-[#44E5C8] hover:to-[#38EF61]"
               >
-                <span
-                  class="bg-gradient-to-r from-[#38EF61]  to-[#44E5C8] text-transparent bg-clip-text duration-300"
-                  >Get a Website Strategy</span
+                <Button
+                  @click="handleClick"
+                  class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
                 >
-              </Button>
+                  <span
+                    class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text duration-300"
+                    >Get a Website Strategy</span
+                  >
+                </Button>
+              </div>
             </div>
-          </div>
-
           </div>
         </div>
       </div>
-
-     
     </div>
   </div>
 </template>
 
 <script setup>
-import {
-  ref,
-  computed,
-  onMounted,
-  onUnmounted,
-  nextTick,
-  defineEmits,
-} from "vue";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+  import { ref, computed, onMounted, onUnmounted, nextTick, defineEmits } from 'vue'
+  import gsap from 'gsap'
+  import ScrollTrigger from 'gsap/ScrollTrigger'
 
-import Button from "@atoms/Button.vue";
-import moonSVGRaw from "@atoms/svgs/rocket-moon-hero.svg?raw";
-import stripessvg from "@atoms/svgs/herosectionstripes.svg?raw";
-import bghero from "@atoms/svgs/bghero.svg?raw";
-import rocket from "@atoms/svgs/leftsectionsvg.svg?raw";
-import bglines from "@atoms/svgs/Lines.svg?raw";
-import cockpit from "@atoms/svgs/cockpit.svg?raw";
+  import Button from '@atoms/Button.vue'
+  import moonSVGRaw from '@atoms/svgs/rocket-moon-hero.svg?raw'
+  import stripessvg from '@atoms/svgs/herosectionstripes.svg?raw'
+  import bghero from '@atoms/svgs/bghero.svg?raw'
+  import rocket from '@atoms/svgs/leftsectionsvg.svg?raw'
+  import bglines from '@atoms/svgs/Lines.svg?raw'
+  import cockpit from '@atoms/svgs/cockpit.svg?raw'
 
-gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger)
 
-const emit = defineEmits(["show-services"]);
+  const emit = defineEmits(['show-services'])
 
-const firstPart = ref(null);
-const stripesDiv = ref(null);
-const cityRef = ref(null);
-const cityImage = ref(null);
-const textContent = ref(null);
-const sectionRef = ref(null);
-const ctaSectionRef = ref(null);
-const cockpitRef = ref(null);
-const contentWrapperRef = ref(null);
-const warpFxRef = ref(null);
-const lightspeedRef = ref(null);
+  const firstPart = ref(null)
+  const stripesDiv = ref(null)
+  const cityRef = ref(null)
+  const cityImage = ref(null)
+  const textContent = ref(null)
+  const sectionRef = ref(null)
+  const ctaSectionRef = ref(null)
+  const cockpitRef = ref(null)
+  const contentWrapperRef = ref(null)
+  const warpFxRef = ref(null)
+  const lightspeedRef = ref(null)
 
-// Reactive states for fade classes
-const isFirstPartVisible = ref(true);
-const isCityVisible = ref(true);
-const isSectionVisible = ref(true);
-const isCTAVisible = ref(false);
-const isCockpitVisible = ref(true);
+  // Reactive states for fade classes
+  const isFirstPartVisible = ref(true)
+  const isCityVisible = ref(true)
+  const isSectionVisible = ref(true)
+  const isCTAVisible = ref(false)
+  const isCockpitVisible = ref(true)
 
-const fadeClassCockpit = computed(() =>
-  isCockpitVisible.value ? "fade-in" : "fade-out"
-);
+  const fadeClassCockpit = computed(() => (isCockpitVisible.value ? 'fade-in' : 'fade-out'))
 
-const fadeClassSection = computed(() =>
-  isSectionVisible.value ? "fade-in" : "fade-out"
-);
+  const fadeClassSection = computed(() => (isSectionVisible.value ? 'fade-in' : 'fade-out'))
 
-const fadecta = computed(() =>
-  isCTAVisible.value ? "fade-in" : "fade-out"
-);
+  const fadecta = computed(() => (isCTAVisible.value ? 'fade-in' : 'fade-out'))
 
+  let observers = []
 
-let observers = [];
+  onMounted(() => {
+    if (firstPart.value && stripesDiv.value) {
+      const vector343 =
+        stripesDiv.value.querySelector('#Vector\\ 343') ||
+        stripesDiv.value.querySelector('#Vector343')
+      if (vector343) {
+        const vectorObserver = new IntersectionObserver(
+          ([entry]) => {
+            isFirstPartVisible.value = entry.isIntersecting
+          },
+          { threshold: 0.1 }
+        )
+        vectorObserver.observe(vector343)
+        observers.push(vectorObserver)
+      }
+    }
 
-onMounted(() => {
-  if (firstPart.value && stripesDiv.value) {
-    const vector343 =
-      stripesDiv.value.querySelector("#Vector\\ 343") ||
-      stripesDiv.value.querySelector("#Vector343");
-    if (vector343) {
-      const vectorObserver = new IntersectionObserver(
+    if (cityRef.value && cityImage.value && textContent.value) {
+      const cssFadeObserver = new IntersectionObserver(
         ([entry]) => {
-          isFirstPartVisible.value = entry.isIntersecting;
+          if (entry.isIntersecting) cityImage.value.classList.add('opacity-100')
+        },
+        { threshold: 0.01 }
+      )
+      cssFadeObserver.observe(cityImage.value)
+      observers.push(cssFadeObserver)
+
+      gsap.fromTo(
+        cityImage.value,
+        { scale: 0.86 },
+        {
+          scale: 1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: cityImage.value,
+            start: 'top bottom',
+            end: 'top 40%',
+            scrub: 1
+          }
+        }
+      )
+
+      gsap.fromTo(
+        textContent.value,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: cityImage.value,
+            start: 'top 23%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      )
+      gsap.to(cityRef.value, {
+        opacity: 0,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: cityRef.value,
+          start: 'bottom 60%',
+          end: 'bottom 100%',
+          scrub: true
+        }
+      })
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          isCTAVisible.value = entry.isIntersecting
+        },
+        {
+          threshold: 0.3
+        }
+      )
+      if (ctaSectionRef.value) observer.observe(ctaSectionRef.value)
+
+      const fadeObserver = new IntersectionObserver(
+        ([entry]) => {
+          isCityVisible.value = entry.isIntersecting
         },
         { threshold: 0.1 }
-      );
-      vectorObserver.observe(vector343);
-      observers.push(vectorObserver);
+      )
+      fadeObserver.observe(cityRef.value)
+      observers.push(fadeObserver)
     }
-  }
 
-  if (cityRef.value && cityImage.value && textContent.value) {
-    const cssFadeObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) cityImage.value.classList.add("opacity-100");
-      },
-      { threshold: 0.01 }
-    );
-    cssFadeObserver.observe(cityImage.value);
-    observers.push(cssFadeObserver);
-
-    gsap.fromTo(
-      cityImage.value,
-      { scale: 0.86 },
-      {
-        scale: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: cityImage.value,
-          start: "top bottom",
-          end: "top 40%",
-          scrub: 1,
+    // Section fade in/out
+    if (sectionRef.value) {
+      const sectionObserver = new IntersectionObserver(
+        ([entry]) => {
+          isSectionVisible.value = entry.isIntersecting
         },
+        {
+          threshold: 0.1,
+          rootMargin: '-100px 0px -100px 0px'
+        }
+      )
+      sectionObserver.observe(sectionRef.value)
+      observers.push(sectionObserver)
+    }
+
+    if (cockpitRef.value) {
+      const cockpitObserver = new IntersectionObserver(
+        ([entry]) => {
+          isCockpitVisible.value = entry.isIntersecting
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '-100px 0px -100px 0px' // adjust sensitivity if needed
+        }
+      )
+      cockpitObserver.observe(cockpitRef.value)
+      observers.push(cockpitObserver)
+    }
+
+    if (ctaSectionRef.value) {
+      const section = ctaSectionRef.value
+      const spaceship = section.querySelector('.spaceship-wrapper')
+      if (spaceship) {
+        gsap.set(spaceship, { opacity: 1, x: 0, y: 0 })
+
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+          onUpdate: self => {
+            const x = -200 * self.progress
+            const y = 100 * self.progress
+            gsap.to(spaceship, {
+              x,
+              y,
+              ease: 'none',
+              overwrite: 'auto',
+              duration: 0.1
+            })
+          }
+        })
       }
-    );
+    }
 
-    gsap.fromTo(
-      textContent.value,
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: cityImage.value,
-          start: "top 23%",
-          toggleActions: "play none none reverse",
-        },
+    nextTick(() => {
+      const cockpitEl = cockpitRef.value
+      const contentWrapper = contentWrapperRef.value
+      if (!cockpitEl || !contentWrapper) return
+
+      const bg = cockpitEl.querySelector('.cockpit-bg')
+      const textContentEl = cockpitEl.querySelector('.cockpit-text')
+      const card = cockpitEl.querySelector('.cockpit-card')
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: contentWrapper,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            scrub: 1
+          }
+        })
+        .fromTo(
+          bg,
+          { scale: 1 },
+          { scale: 1.15, transformOrigin: 'center center', ease: 'none' },
+          0
+        )
+        .fromTo(
+          [textContentEl, card],
+          { scale: 0.9, autoAlpha: 0 },
+          { scale: 1, autoAlpha: 1, duration: 1, ease: 'power3.out' },
+          0
+        )
+    })
+  })
+
+  onUnmounted(() => {
+    observers.forEach(obs => obs.disconnect())
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+  })
+
+  const handleClick = () => {
+    const cockpitEl = cockpitRef.value
+    if (!cockpitEl) return
+
+    document.body.style.overflowX = 'hidden'
+
+    const transformOrigin = '50% 50%'
+
+    const bg = cockpitEl.querySelector('.cockpit-bg')
+    const card = cockpitEl.querySelector('.cockpit-card')
+    const text = cockpitEl.querySelector('.cockpit-text')
+    const warpFx = warpFxRef.value
+    const lightspeed = lightspeedRef.value
+
+    // Create warp effect elements
+    if (warpFx) {
+      for (let i = 0; i < 50; i++) {
+        const star = document.createElement('div')
+        star.className = 'star'
+        star.style.setProperty('--star-left', `${Math.random() * 100}%`)
+        star.style.setProperty('--star-top', `${Math.random() * 100}%`)
+        warpFx.appendChild(star)
       }
-    );
-gsap.to(cityRef.value, {
-  opacity: 0,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: cityRef.value,
-    start: "bottom 60%", 
-    end: "bottom 100%",   
-    scrub: true,
-  },
-});
-
-
- const observer = new IntersectionObserver(
-    ([entry]) => {
-      isCTAVisible.value = entry.isIntersecting;
-    },
-    {
-      threshold: 0.3,
     }
-  );
-  if (ctaSectionRef.value) observer.observe(ctaSectionRef.value);
 
-
-    const fadeObserver = new IntersectionObserver(
-      ([entry]) => {
-        isCityVisible.value = entry.isIntersecting;
-      },
-      { threshold: 0.1 }
-    );
-    fadeObserver.observe(cityRef.value);
-    observers.push(fadeObserver);
-  }
-
-  // Section fade in/out
-  if (sectionRef.value) {
-    const sectionObserver = new IntersectionObserver(
-      ([entry]) => {
-        isSectionVisible.value = entry.isIntersecting;
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "-100px 0px -100px 0px",
+    const tl = gsap.timeline({
+      defaults: { ease: 'power2.inOut' },
+      onComplete: () => {
+        document.body.style.overflowX = ''
+        if (warpFx) warpFx.innerHTML = '' // Clean up stars
+        window.scrollTo({ top: 0, behavior: 'instant' })
+        emit('show-services')
       }
-    );
-    sectionObserver.observe(sectionRef.value);
-    observers.push(sectionObserver);
-  }
+    })
 
-  if (cockpitRef.value) {
-  const cockpitObserver = new IntersectionObserver(
-    ([entry]) => {
-      isCockpitVisible.value = entry.isIntersecting;
-    },
-    {
-      threshold: 0.1,
-      rootMargin: "-100px 0px -100px 0px", // adjust sensitivity if needed
-    }
-  );
-  cockpitObserver.observe(cockpitRef.value);
-  observers.push(cockpitObserver);
-}
-
-
-
-
-
-  if (ctaSectionRef.value) {
-    const section = ctaSectionRef.value;
-    const spaceship = section.querySelector(".spaceship-wrapper");
-    if (spaceship) {
-      gsap.set(spaceship, { opacity: 1, x: 0, y: 0 });
-
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-        onUpdate: (self) => {
-          const x = -200 * self.progress;
-          const y = 100 * self.progress;
-          gsap.to(spaceship, {
-            x,
-            y,
-            ease: "none",
-            overwrite: "auto",
-            duration: 0.1,
-          });
+    // Initial zoom effect
+    tl.to(cockpitEl, {
+      scale: 1.2,
+      duration: 1
+    })
+      .to(
+        [card, text],
+        {
+          scale: 0.8,
+          opacity: 0,
+          duration: 0.5
         },
-      });
-    }
-  }
-
-  nextTick(() => {
-    const cockpitEl = cockpitRef.value;
-    const contentWrapper = contentWrapperRef.value;
-    if (!cockpitEl || !contentWrapper) return;
-
-    const bg = cockpitEl.querySelector(".cockpit-bg");
-    const textContentEl = cockpitEl.querySelector(".cockpit-text");
-    const card = cockpitEl.querySelector(".cockpit-card");
-
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: contentWrapper,
-          start: "top 80%",
-          end: "bottom 20%",
-          scrub: 1,
-        },
-      })
-      .fromTo(
-        bg,
-        { scale: 1 },
-        { scale: 1.15, transformOrigin: "center center", ease: "none" },
         0
       )
-      .fromTo(
-        [textContentEl, card],
-        { scale: 0.9, autoAlpha: 0 },
-        { scale: 1, autoAlpha: 1, duration: 1, ease: "power3.out" },
-        0
-      );
-  });
-});
 
-onUnmounted(() => {
-  observers.forEach((obs) => obs.disconnect());
-  ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-});
+      // Warp speed effect
+      .to(
+        bg,
+        {
+          scale: 2,
+          filter: 'brightness(1.5)',
+          duration: 1
+        },
+        1
+      )
 
-const handleClick = () => {
-  const cockpitEl = cockpitRef.value;
-  if (!cockpitEl) return;
+      // Stars streaking effect
+      .to(
+        '.star',
+        {
+          scaleX: 15,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.02
+        },
+        1
+      )
 
-  document.body.style.overflowX = 'hidden';
+      // Final zoom and fade
+      .to(
+        cockpitEl,
+        {
+          scale: 3,
+          opacity: 0,
+          duration: 1
+        },
+        1.5
+      )
 
-  const transformOrigin = "50% 50%";
-
-  const bg = cockpitEl.querySelector(".cockpit-bg");
-  const card = cockpitEl.querySelector(".cockpit-card");
-  const text = cockpitEl.querySelector(".cockpit-text");
-
-  const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
-
-  tl.to(cockpitEl, {
-    scale: 1.5,
-    opacity: 0,
-    transformOrigin,
-    duration: 2,
-  })
-  .to([bg, card, text], { opacity: 0, duration: 0.5 }, 1.9)
-  .add(() => {
-    document.body.style.overflowX = '';
-
-    window.scrollTo({ top: 0, behavior: "instant" });
-    emit("show-services");
-  });
-};
-
-
+    if (lightspeed) {
+      tl.to(
+        lightspeed,
+        {
+          opacity: 0.8,
+          duration: 0.5
+        },
+        1
+      )
+    }
+  }
 </script>
 
 <style scoped>
-@keyframes float {
-  0% {
-    transform: translateY(0);
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(30px);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
-  50% {
-    transform: translateY(30px);
+  .float-moon {
+    animation: float 3s ease-in-out infinite;
+    margin-top: -80px;
   }
-  100% {
-    transform: translateY(0);
+
+  .fade-in {
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
   }
-}
-.float-moon {
-  animation: float 3s ease-in-out infinite;
-  margin-top: -80px;
-  
-}
-
-.fade-in {
-  opacity: 1;
-  transition: opacity 0.8s ease-in-out;
-}
-.fade-out {
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-}
-
-.cockpit-section {
-  perspective: 2000px;
-}
-
-.cockpit-bg {
-  transition: transform 0.8s ease-out;
-}
-
-.cockpit-card {
-  will-change: transform, opacity;
-}
-
-.cockpit-text {
-  will-change: transform, opacity;
-}
-
-.spaceship-wrapper {
-  will-change: transform;
-}
-
-.image-fade {
-  transition: opacity 1s ease-in-out;
-}
-
-@keyframes floatAndRotate {
-  0% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
   }
-  50% {
-    transform: translate3d(5px, 3px, 0) rotate(4deg);
+
+  .cockpit-section {
+    perspective: 2000px;
   }
-  100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
+
+  .cockpit-bg {
+    transition: transform 0.8s ease-out;
   }
-}
 
-.right-left {
-  animation: floatAndRotate 3s ease-in-out infinite;
-  display: inline-block;
-  will-change: transform;
-  transform-origin: center center;
-}
-
-/* Base (Mobile) */
-.content-wrapper {
-  top: 300px;
-}
-
-/* Small devices (≥640px) */
-
-/* Large devices (≥1024px) */
-@media (min-width: 1024px) {
-  .content-wrapper {
-    top: 260px;
+  .cockpit-card {
+    will-change: transform, opacity;
   }
-}
 
-@media (min-width: 1060px) {
-  .content-wrapper {
-    top: 280px;
+  .cockpit-text {
+    will-change: transform, opacity;
   }
-}
 
-@media (min-width: 1130px) {
+  .spaceship-wrapper {
+    will-change: transform;
+  }
+
+  .image-fade {
+    transition: opacity 1s ease-in-out;
+  }
+
+  @keyframes floatAndRotate {
+    0% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate3d(5px, 3px, 0) rotate(4deg);
+    }
+    100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+  }
+
+  .right-left {
+    animation: floatAndRotate 3s ease-in-out infinite;
+    display: inline-block;
+    will-change: transform;
+    transform-origin: center center;
+  }
+
+  /* Base (Mobile) */
   .content-wrapper {
     top: 300px;
   }
-}
 
-@media (min-width: 1120px) {
-  .content-wrapper {
-    top: 325px;
+  /* Small devices (≥640px) */
+
+  /* Large devices (≥1024px) */
+  @media (min-width: 1024px) {
+    .content-wrapper {
+      top: 260px;
+    }
   }
-}
 
-@media (min-width: 1240px) {
-  .content-wrapper {
-    top: 350px;
+  @media (min-width: 1060px) {
+    .content-wrapper {
+      top: 280px;
+    }
   }
-}
 
-/* Extra Large devices (≥1280px) */
-@media (min-width: 1280px) {
-  .content-wrapper {
-    top: 350px;
+  @media (min-width: 1130px) {
+    .content-wrapper {
+      top: 300px;
+    }
   }
-}
 
-@media (min-width: 1320px) {
-  .content-wrapper {
-    top: 370px;
+  @media (min-width: 1120px) {
+    .content-wrapper {
+      top: 325px;
+    }
   }
-}
 
-
-@media (min-width: 1360px) {
-  .content-wrapper {
-    
-    top: 460px;
+  @media (min-width: 1240px) {
+    .content-wrapper {
+      top: 350px;
+    }
   }
-}
-.cockpit-section {
-  overflow-x: hidden; /* Hide horizontal overflow */
-  position: relative; /* Ensure stacking context for scale */
-  perspective: 2000px;
-}
 
-
-@media (min-width: 1400px) {
-  .content-wrapper {
-    top: 420px;
+  /* Extra Large devices (≥1280px) */
+  @media (min-width: 1280px) {
+    .content-wrapper {
+      top: 350px;
+    }
   }
-}
 
-@media (min-width: 1500px) {
-  .content-wrapper {
-    top: 450px;
+  @media (min-width: 1320px) {
+    .content-wrapper {
+      top: 370px;
+    }
   }
-}
 
-@media (min-width: 1700px) {
-  .content-wrapper {
-    top: 560px;
+  @media (min-width: 1360px) {
+    .content-wrapper {
+      top: 460px;
+    }
   }
-}
+  .cockpit-section {
+    overflow-x: hidden; /* Hide horizontal overflow */
+    position: relative; /* Ensure stacking context for scale */
+    perspective: 2000px;
+  }
+
+  @media (min-width: 1400px) {
+    .content-wrapper {
+      top: 420px;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    .content-wrapper {
+      top: 450px;
+    }
+  }
+
+  @media (min-width: 1700px) {
+    .content-wrapper {
+      top: 560px;
+    }
+  }
+
+  .warpfx {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 40;
+  }
+
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    left: var(--star-left);
+    top: var(--star-top);
+    opacity: 0;
+    transform-origin: left;
+    will-change: transform, opacity;
+  }
+
+  .lightspeed {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0.4) 20%,
+      rgba(255, 255, 255, 0.2) 40%,
+      transparent 60%
+    );
+    opacity: 0;
+    pointer-events: none;
+    z-index: 35;
+  }
 </style>

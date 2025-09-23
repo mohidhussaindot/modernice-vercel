@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const links = [
-  { to: '#features', label: 'Features' },
-  { to: '#solutions', label: 'Solutions' },
-  { to: '#insights',  label: 'Insights'  },
-  { to: '#contact',   label: 'Contact'   },
-]
+  const links = [
+    { to: '#features', label: 'Features' },
+    { to: '#solutions', label: 'Solutions' },
+    { to: '#insights', label: 'Insights' },
+    { to: '#contact', label: 'Contact' }
+  ]
 </script>
 
 <template>

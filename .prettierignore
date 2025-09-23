@@ -1,0 +1,33 @@
+# Dependencies
+node_modules
+.nuxt
+.output
+dist
+
+# Logs
+logs
+*.log
+
+# Cache
+.cache
+.temp
+
+# Misc
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Generated files
+public/_nuxt/
+.nuxt/
+.output/
+dist/
+
+# Coverage directory
+coverage/

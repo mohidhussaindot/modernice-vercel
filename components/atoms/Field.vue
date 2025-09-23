@@ -11,14 +11,14 @@
   </div>
 </template>
 <script setup>
-const props = defineProps({
-  label: {
-    type: String,
-    default: ''
-  },
-  required: {
-    type: Boolean,
-    default: false
-  }
-})
+  const props = defineProps({
+    label: {
+      type: String,
+      default: ''
+    },
+    required: {
+      type: Boolean,
+      default: false
+    }
+  })
 </script>

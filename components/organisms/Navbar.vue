@@ -1,10 +1,10 @@
 <template>
   <header
     ref="headerRef"
-    :class="[ 
+    :class="[
       'fixed z-[9999] h-[2.8281rem] top-[3.46125rem] transition-opacity duration-500 left-1/2 -translate-x-1/2 backdrop-blur-sm bg-black/1',
       'w-full max-w-[74.875rem]', // Default max-width
-      '2xl:max-w-[90rem]',        // For 2xl screens
+      '2xl:max-w-[90rem]', // For 2xl screens
       { 'opacity-0 pointer-events-none': hidden }
     ]"
   >
@@ -13,11 +13,7 @@
       <!-- Logo -->
       <span>
         <NuxtLink v-if="logoSrc" to="/" aria-label="Modernise home">
-          <NuxtImg
-            :src="logoSrc"
-            alt="Logo"
-            class="select-none w-[2.8306rem] h-[2.8306rem]"
-          />
+          <NuxtImg :src="logoSrc" alt="Logo" class="select-none w-[2.8306rem] h-[2.8306rem]" />
         </NuxtLink>
       </span>
 
@@ -28,12 +24,12 @@
       >
         <template v-for="(link, index) in navLinks" :key="index">
           <!-- Services Hover Dropdown -->
-        <div
-  v-if="['services', 'leistungen'].includes(link.label.toLowerCase())"
-  class="relative"
-  @mouseenter="openDropdown"
-  @mouseleave="scheduleCloseDropdown"
->
+          <div
+            v-if="['services', 'leistungen'].includes(link.label.toLowerCase())"
+            class="relative"
+            @mouseenter="openDropdown"
+            @mouseleave="scheduleCloseDropdown"
+          >
             <button class="hover:underline cursor-pointer focus:outline-none">
               {{ link.label }}
             </button>
@@ -103,82 +99,84 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-import { useRoute } from 'vue-router'
+  import { ref, onMounted, onUnmounted } from 'vue'
+  import { useRoute } from 'vue-router'
 
-type NavLink = {
-  label: string
-  to: string
-}
-
-defineProps<{
-  navLinks: NavLink[]
-  ctaLabel?: string
-  ctaTo?: string
-  logoSrc: string
-  ctaFrom?: string
-  ctaVia?: string
-  ctaToColor?: string
-}>()
-
-
-const headerRef = ref<HTMLElement | null>(null)
-const hidden = ref(false)
-const dropdownOpen = ref(false)
-let closeTimeout: ReturnType<typeof setTimeout> | null = null
-
-const openDropdown = () => {
-  if (closeTimeout) clearTimeout(closeTimeout)
-  dropdownOpen.value = true
-}
-
-const scheduleCloseDropdown = () => {
-  closeTimeout = setTimeout(() => {
-    dropdownOpen.value = false
-  }, 200) // Adjust delay as needed (e.g., 200ms)
-}
-
-let lastScrollY = 0
-
-const onScroll = () => {
-  const currentScrollY = window.scrollY || window.pageYOffset
-
-  if (currentScrollY > lastScrollY && currentScrollY > 100) {
-    hidden.value = true
-  } else {
-    hidden.value = false
+  type NavLink = {
+    label: string
+    to: string
   }
 
-  lastScrollY = currentScrollY
-}
+  defineProps<{
+    navLinks: NavLink[]
+    ctaLabel?: string
+    ctaTo?: string
+    logoSrc: string
+    ctaFrom?: string
+    ctaVia?: string
+    ctaToColor?: string
+  }>()
 
-onMounted(() => {
-  window.addEventListener('scroll', onScroll, { passive: true })
-})
+  const headerRef = ref<HTMLElement | null>(null)
+  const hidden = ref(false)
+  const dropdownOpen = ref(false)
+  let closeTimeout: ReturnType<typeof setTimeout> | null = null
 
-onUnmounted(() => {
-  window.removeEventListener('scroll', onScroll)
-})
+  const openDropdown = () => {
+    if (closeTimeout) clearTimeout(closeTimeout)
+    dropdownOpen.value = true
+  }
 
-const route = useRoute()
+  const scheduleCloseDropdown = () => {
+    closeTimeout = setTimeout(() => {
+      dropdownOpen.value = false
+    }, 200) // Adjust delay as needed (e.g., 200ms)
+  }
 
-const services = [
-  { label: 'App Development', to: '/services/appdevelopment' },
-  { label: 'AI Consulting', to: '/services/aiconsulting' },
-  { label: 'E-commerce', to: '/services/ecs' },
-  { label: 'Website Strategy', to: '/services/website-strategy' },
-  { label: 'SEO', to: '/services/seo' }
-]
+  let lastScrollY = 0
 
-const isActive = (path: string) => {
-  return route.path === path
-}
+  const onScroll = () => {
+    const currentScrollY = window.scrollY || window.pageYOffset
 
-const toggleDropdown = () => {
-  dropdownOpen.value = !dropdownOpen.value
-}
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      hidden.value = true
+    } else {
+      hidden.value = false
+    }
 
-const closeDropdown = () => {
-  dropdownOpen.value = false
-}
+    lastScrollY = currentScrollY
+  }
+
+  onMounted(() => {
+    window.addEventListener('scroll', onScroll, { passive: true })
+  })
+
+  onUnmounted(() => {
+    window.removeEventListener('scroll', onScroll)
+  })
+
+  const route = useRoute()
+
+  const services = [
+    { label: 'App Development', to: '/services/appdevelopment' },
+    { label: 'AI Consulting', to: '/services/aiconsulting' },
+    { label: 'E-commerce', to: '/services/ecs' },
+    { label: 'Website Strategy', to: '/services/website-strategy' },
+    { label: 'SEO', to: '/services/seo' }
+  ]
+
+  // Always show all services, but highlight active one
+  const isActive = (path: string) => {
+    return route.path === path
+  }
+
+  // Toggle dropdown on click
+  const toggleDropdown = () => {
+    dropdownOpen.value = !dropdownOpen.value
+  }
+
+  // Close dropdown when overlay is clicked
+  const closeDropdown = () => {
+    dropdownOpen.value = false
+  }
 </script>

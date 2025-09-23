@@ -20,21 +20,11 @@
   "footer": {
     "resources": {
       "title": "Ressourcen",
-      "items": [
-        "Hilfe-Center",
-        "Datenschutzrichtlinie",
-        "Roadmap",
-        "Änderungsprotokoll"
-      ]
+      "items": ["Hilfe-Center", "Datenschutzrichtlinie", "Roadmap", "Änderungsprotokoll"]
     },
     "features": {
       "title": "Funktionen",
-      "items": [
-        "Partnerprogramm",
-        "Portal",
-        "Kontakt",
-        "Sponsoren"
-      ]
+      "items": ["Partnerprogramm", "Portal", "Kontakt", "Sponsoren"]
     },
     "company": {
       "title": "Unternehmen",

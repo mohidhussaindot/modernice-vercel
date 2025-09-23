@@ -1,12 +1,12 @@
-export {default as Card} from './Card.vue'
-export {default as ButtonWithIcon} from './ButtonWithIcon.vue'
-export {default as SearchBar} from './SearchBar.vue'
-export {default as TextIcon} from "./TextIcon.vue"
-export {default as Tabs} from "./Tabs.vue"
-export {default as LabelInput} from "./LabelInput.vue"
-export {default as LabelSelect} from "./LabelSelect.vue"
-export {default as TagInput} from "./TagInput.vue"
-export {default as LabelCheckbox} from "./LabelCheckbox.vue"
-export {default as DragDropUpload} from "./DragDropUpload.vue"
-export {default as CountrySelector} from "./CountrySelector.vue"
-export {default as Carousel} from "./Carousel.vue"
+export { default as Card } from './Card.vue'
+export { default as ButtonWithIcon } from './ButtonWithIcon.vue'
+export { default as SearchBar } from './SearchBar.vue'
+export { default as TextIcon } from './TextIcon.vue'
+export { default as Tabs } from './Tabs.vue'
+export { default as LabelInput } from './LabelInput.vue'
+export { default as LabelSelect } from './LabelSelect.vue'
+export { default as TagInput } from './TagInput.vue'
+export { default as LabelCheckbox } from './LabelCheckbox.vue'
+export { default as DragDropUpload } from './DragDropUpload.vue'
+export { default as CountrySelector } from './CountrySelector.vue'
+export { default as Carousel } from './Carousel.vue'

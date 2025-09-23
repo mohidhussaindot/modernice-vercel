@@ -1,8 +1,8 @@
 export default {
-  BASE_URL: "<EXAMPLE>",
+  BASE_URL: '<EXAMPLE>',
   AUTH: {
-    LOGIN: "</login>",
-    LOGOUT: "</logout>",
-    REFRESH: "</refresh>",
-  },
-};
+    LOGIN: '</login>',
+    LOGOUT: '</logout>',
+    REFRESH: '</refresh>'
+  }
+}

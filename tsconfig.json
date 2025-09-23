@@ -15,19 +15,7 @@
       "#app": [".nuxt/types/app"],
       "#app/*": [".nuxt/types/app/*"]
     },
-    "types": [
-      "node",
-      "vue",
-      "@vue/runtime-dom",
-      "@nuxt/types",
-      "@nuxtjs/i18n",
-      "nuxt"
-    ]
+    "types": ["node", "vue", "@vue/runtime-dom", "@nuxt/types", "@nuxtjs/i18n", "nuxt"]
   },
-  "include": [
-    "./**/*.ts",
-    "./**/*.vue",
-    "types/**/*.ts",
-    ".nuxt/types/**/*.d.ts"
-  ]
+  "include": ["./**/*.ts", "./**/*.vue", "types/**/*.ts", ".nuxt/types/**/*.d.ts"]
 }
