@@ -67,7 +67,6 @@
   onMounted(async () => {
     await nextTick()
 
-    // Make SEO lines SVG responsive full width
     if (seoLinesContainer.value) {
       const svg = seoLinesContainer.value.querySelector('svg')
       if (svg) {

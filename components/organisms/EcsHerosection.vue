@@ -227,7 +227,6 @@
 
 <script setup>
   import Ecshero from '@atoms/svgs/ecs-hero.svg?raw'
-  import Ecssecondbg from '@atoms/svgs/ecs-secondbg.svg?raw'
   import Ecsmain1 from '@atoms/svgs/ecs-main1.svg?raw'
   import Ecsmain2 from '@atoms/svgs/ecs-main2.svg?raw'
   import Ecsmain3 from '@atoms/svgs/ecs-main3.svg?raw'

@@ -1,11 +1,8 @@
 <template>
   <section class="bg-black text-white overflow-hidden relative w-full">
-    <!-- Lines background - behind everything -->
     <div class="absolute inset-0 z-0 pointer-events-none" v-html="lines"></div>
 
-    <!-- Wrapper container with responsive horizontal padding -->
     <div class="relative z-10 xl:mx-auto xl:px-6 2xl:px-12">
-      <!-- Hero Section -->
       <div
         class="flex flex-col lg:flex-row 2xl:pt-50 items-center h-[49.375rem] gap-8 2xl:gap-76 xl:justify-center"
       >
@@ -276,27 +273,16 @@
 
 <script setup>
   import Button from '@atoms/Button.vue'
-  import aiherobg from '@atoms/svgs/aiherobg (1).svg?raw'
-  import aiherobg2 from '@atoms/svgs/aiherobg (2).svg?raw'
+
   import aiheroimg from '@atoms/svgs/aiheroimg.svg?raw'
-  import aisecondb22g2 from '@atoms/svgs/ai2bg.svg?raw'
-  import aibgmain from '@atoms/svgs/appdevbgmain.svg?raw'
-  import aisecondbg from '@atoms/svgs/aisecondbg.svg?raw'
-  import aisecondbg2 from '@atoms/svgs/aisecondbg (2).svg?raw'
-  import aimainbg1 from '@atoms/svgs/aimainbg (1).svg?raw'
-  import aimainbg2 from '@atoms/svgs/aimainbg (2).svg?raw'
-  import aimainbg from '@atoms/svgs/aimainbg.svg?raw'
+
   import aisecondimg from '@atoms/svgs/aisecondimg.svg?raw'
   import aiourapproach from '@atoms/svgs/aiourapproach.svg?raw'
   import aidesign from '@atoms/svgs/aidesign.svg?raw'
   import aidevelopment from '@atoms/svgs/aidevelopment.svg?raw'
   import aitesting from '@atoms/svgs/aitesting.svg?raw'
   import aioptamize from '@atoms/svgs/aioptamize.svg?raw'
-  import ailastbg from '@atoms/svgs/ailastbg.svg?raw'
   import lines from '@atoms/svgs/aiconsultinglines.svg?raw'
 
-  const responsiveSvg = aisecondb22g2
-    .replace(/width="[^"]*"/, 'width="100%"')
-    .replace(/height="[^"]*"/, 'height="100%"')
-    .replace(/<svg([^>]*)>/, '<svg$1 preserveAspectRatio="xMidYMid slice">')
+
 </script>

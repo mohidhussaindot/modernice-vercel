@@ -142,7 +142,7 @@
       class="relative z-10 flex flex-col 2xl:gap-[270px] lg:gap-[200px] pt-24 pb-16 max-w-[1440px] mx-auto"
     >
       <!-- First Row: Analyse des Ist-Zustands -->
-      <div class="flex flex-col lg:flex-row items-center gap-[400px]">
+      <div class="flex flex-col lg:px-5 lg:flex-row items-center gap-[400px]">
         <div class="w-full xl:w-[32rem] fade-left flex flex-col gap-5">
           <h1 class="text-[2.5rem] italic font-semibold">Analyse des Ist-Zustands</h1>
           <p class="text-[1.125rem] font-light">
@@ -163,7 +163,7 @@
       </div>
 
       <!-- Second Row: Technische SEO-Optimierung -->
-      <div class="flex flex-col lg:flex-row justify-between items-center gap-12">
+      <div class="flex flex-col  lg:px-5 lg:flex-row justify-between items-center gap-12">
         <div class="w-full max-w-[32.9375rem]" ref="SeoFifthref" v-html="seofifth"></div>
 
         <div class="w-full max-w-[38.1875rem] fade-right flex flex-col gap-5">
@@ -179,8 +179,8 @@
       </div>
 
       <!-- Third Row: Keyword- und Wettbewerbsanalyse -->
-      <div class="flex flex-col lg:flex-row justify-between items-center gap-12">
-        <div class="w-full max-w-[35.75rem] fade-right flex flex-col gap-8">
+      <div class="flex flex-col  lg:px-5 lg:flex-row justify-between items-center gap-12">
+        <div class="w-full max-w-[35.75rem] fade-left flex flex-col gap-8">
           <h1 class="text-[2.5rem] italic font-semibold">Keyword- und Wettbewerbsanalyse</h1>
           <p class="text-[1.125rem] font-light">
             Im nächsten Schritt identifizieren wir die Schlüsselbegriffe, welche die Zielgruppe zur

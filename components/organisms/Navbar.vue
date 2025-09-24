@@ -67,7 +67,6 @@
           </NuxtLink>
         </template>
 
-        <!-- CTA Button -->
         <NuxtLink
           v-if="ctaLabel"
           :to="ctaTo"
@@ -165,17 +164,14 @@
     { label: 'SEO', to: '/services/seo' }
   ]
 
-  // Always show all services, but highlight active one
   const isActive = (path: string) => {
     return route.path === path
   }
 
-  // Toggle dropdown on click
   const toggleDropdown = () => {
     dropdownOpen.value = !dropdownOpen.value
   }
 
-  // Close dropdown when overlay is clicked
   const closeDropdown = () => {
     dropdownOpen.value = false
   }

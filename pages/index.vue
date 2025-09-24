@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import { ref } from 'vue'
-  import gsap from 'gsap'
 
   import Navbar from '@organisms/Navbar.vue'
   import HeroSection from '@organisms/Herosection.vue'
@@ -65,7 +64,6 @@
             cta-from="#38EF61"
             cta-to-color="#44E5C8"
           />
-          <Herosection @show-services="handleShowServices" />
           <SiteFooter
             bg-color="#020111"
             textcolor="#38EF61"
