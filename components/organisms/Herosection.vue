@@ -274,8 +274,10 @@
       </div>
     </div>
   </div>
+
+  
 <section class="text-white block md:hidden overflow-hidden bg-[#020111]">
-  <div class="relative pt-30">
+  <div class="relative mt-30">
     <!-- Rocket image: visible only on mobile -->
     <img
       alt="rocketmoonhero"
@@ -284,10 +286,10 @@
     />
 
     <!-- Text Content -->
-    <div class="relative px-3 pt-40 flex flex-col">
+    <div class="relative px-3 pt-50  flex flex-col">
       <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug">
         <span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE]"
+          class="text-transparent  bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE]"
         >
           Entdecke<br />Neue Horizonte
         </span>

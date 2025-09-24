@@ -10,6 +10,7 @@
   import ServicesSlider from '@organisms/ServicesSlider.vue'
   import Servicesmain from '@organisms/Servicesmain.vue'
   import ScrollToTopButton from '@organisms/Scrolltotop.vue'
+import HerosectionCopy from '@organisms/Herosection copy.vue'
 
   const showServices = ref(false)
 
@@ -36,7 +37,7 @@
         cta-to-color="#25CDDA"
       />
 
-      <HeroSection @show-services="handleShowServices" />
+      <HerosectionCopy @show-services="handleShowServices" />
 
       <div class="bg-[#020111] text-white">
         <SiteFooter
