@@ -230,7 +230,7 @@
   >
     <!-- Cockpit SVG -->
     <img
-      src="@atoms/svgs/cockpitsvg.svg"
+      src="@atoms/svgs/cockpit.svg"
       alt="cockpit"
       style="transform: scale(0.99); transform-origin: center center;"
       class="w-full h-auto object-contain"
@@ -284,13 +284,13 @@
 
  
 
-  <!-- Scrollable components -->
-  <div class="relative z-0">
-    <ServicesHero />
-    <Servicessecond />
-    <ServicesSlider />
-    <Servicesmain />
-  </div>
+ <!-- Scrollable components -->
+<div id="services-section" class="relative z-0">
+  <ServicesHero />
+  <Servicessecond />
+  <ServicesSlider />
+  <Servicesmain />
+</div>
 </div>
 </div>
 
@@ -506,23 +506,39 @@ gsap.registerPlugin(ScrollTrigger)
 const cockpitRef = ref(null)
 
 onMounted(() => {
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: cockpitRef.value,
-   start: 'center 90%'
-,
-      end: '+=800',
+      start: "center 90%",
+      end: "+=700",
       scrub: 1,
       pin: true,
       pinSpacing: true,
-      anticipatePin: 0.5,
+      anticipatePin: 0.3,
       invalidateOnRefresh: true,
       markers: false,
     },
-  })
+  });
 
-  tl.to(cockpitRef.value, { scale: 2, ease: 'power1.out', duration: 1 }, 0)
-    .to(cockpitRef.value, { autoAlpha: 0, ease: 'power1.out', duration: 1 }, 0.5)
+  tl.to(cockpitRef.value, { 
+      scale: 1.4, 
+      ease: "power1.out", 
+      duration: 0.7 
+    }, 0)
+    .to(cockpitRef.value, { 
+      autoAlpha: 0, 
+      ease: "power1.out", 
+      duration: 0.7,
+      onComplete: () => {
+        const nextSection = document.querySelector("#services-section");
+        if (nextSection) {
+          nextSection.scrollIntoView({ behavior: "instant" });
+        }
+      }
+    }, 0.3);
+
+
      if (firstPart.value && stripesDiv.value) {
       const vector343 =
         stripesDiv.value.querySelector('#Vector\\ 343') ||
