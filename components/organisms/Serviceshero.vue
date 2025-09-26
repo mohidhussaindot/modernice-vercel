@@ -1,7 +1,7 @@
 <template>
-  <section
+  <div
     id="services-top"
-    class="relative lg:h-[800px] 2xl:h-[850px] bg-black overflow-hidden text-white"
+    class="relative min-h-screen  bg-black overflow-hidden text-white"
   >
     <!-- Injected SVG Background -->
     <div
@@ -53,7 +53,7 @@
         ></div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>

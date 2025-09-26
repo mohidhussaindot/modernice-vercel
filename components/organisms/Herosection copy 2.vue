@@ -1,6 +1,5 @@
 <template>
     <div class="text-white sm:block hidden bg-[#020111]">
-    <!-- First Part -->
     <div
       ref="firstPart"
       :class="[isFirstPartVisible ? 'fade-in' : 'fade-out']"
@@ -55,7 +54,6 @@
       </div>
     </div>
 
-    <!-- Second Part: City -->
     <div
       ref="cityRef"
       :class="[
@@ -206,19 +204,18 @@
 
 </div>
 
-<div class="wrapper">
-  <!-- Position hero below cockpit -->
+<div class="sm:block hidden">
+
+  <div class="wrapper">
   <section class="section hero">
     <ServicesHero />
   </section>
 
-  <!-- Cockpit on top -->
   <div class="image-container">
     <img src="@atoms/svgs/cockpit.svg" alt="Cockpit" />
   </div>
 </div>
 
-<!-- SCROLLABLE CONTENT STARTS HERE -->
 <div class="sections">
   <section class="section">
     <Servicessecond />
@@ -230,6 +227,8 @@
     <Servicesmain />
   </section>
 </div>
+</div>
+
 
 
 
@@ -421,8 +420,6 @@ import Servicessecond from '@organisms/Servicessecond.vue'
   const sectionRef = ref(null)
   const ctaSectionRef = ref(null)
   const contentWrapperRef = ref(null)
-  const warpFxRef = ref(null)
-  const lightspeedRef = ref(null)
 
   const isFirstPartVisible = ref(true)
   const isCityVisible = ref(true)
@@ -447,7 +444,7 @@ onMounted(() => {
  const tl = gsap.timeline({
   scrollTrigger: {
     trigger: '.wrapper',
-    start: 'top top',
+    start: 'top top ',
     end: '+=800',
     scrub: 0.3,
     pin: true,
@@ -464,7 +461,7 @@ onMounted(() => {
       ease: 'power2.out',
     }, 'start')
 
-    .addLabel('fade', 'start+=0.7') // fade later = smoother experience
+    .addLabel('fade', 'start+=0.7') 
     .to('.image-container img', {
       scale: 2,
       opacity: 0,
@@ -723,117 +720,6 @@ onMounted(() => {
     transform-origin: center center;
   }
 
-  /* Base (Mobile) */
-  .content-wrapper {
-    top: 300px;
-  }
-
-  /* Small devices (≥640px) */
-
-  /* Large devices (≥1024px) */
-  @media (min-width: 1024px) {
-    .content-wrapper {
-      top: 260px;
-    }
-  }
-
-  @media (min-width: 1060px) {
-    .content-wrapper {
-      top: 280px;
-    }
-  }
-
-  @media (min-width: 1130px) {
-    .content-wrapper {
-      top: 300px;
-    }
-  }
-
-  @media (min-width: 1120px) {
-    .content-wrapper {
-      top: 325px;
-    }
-  }
-
-  @media (min-width: 1240px) {
-    .content-wrapper {
-      top: 350px;
-    }
-  }
-
-  /* Extra Large devices (≥1280px) */
-  @media (min-width: 1280px) {
-    .content-wrapper {
-      top: 350px;
-    }
-  }
-
-  @media (min-width: 1320px) {
-    .content-wrapper {
-      top: 370px;
-    }
-  }
-
-  @media (min-width: 1360px) {
-    .content-wrapper {
-      top: 460px;
-    }
-  }
-  .cockpit-section {
-    overflow-x: hidden; /* Hide horizontal overflow */
-    position: relative; /* Ensure stacking context for scale */
-    perspective: 2000px;
-  }
-
-  @media (min-width: 1400px) {
-    .content-wrapper {
-      top: 420px;
-    }
-  }
-
-  @media (min-width: 1500px) {
-    .content-wrapper {
-      top: 450px;
-    }
-  }
-
-  @media (min-width: 1700px) {
-    .content-wrapper {
-      top: 560px;
-    }
-  }
-
-  .warpfx {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 40;
-  }
-/* 
-  .star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    left: var(--star-left);
-    top: var(--star-top);
-    opacity: 0;
-    transform-origin: left;
-    will-change: transform, opacity;
-  }
-
-.lightspeed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;      
-  height: 800px;    
-  pointer-events: none;
-  z-index: -10;
-  opacity: 0.8;
-  margin-top: 25%;
-} */
-
 .content {
   position: relative;
   width: 100%;
@@ -849,7 +735,7 @@ onMounted(() => {
 
 .section.hero {
   position: relative;
-  z-index: 1; /* Background layer */
+  z-index: 1; 
 }
 
 .image-container {
@@ -857,9 +743,9 @@ onMounted(() => {
   top: 0;
   left: 0;
   width: 100%;
- 
-  z-index: 10; /* Foreground layer */
-  pointer-events: none; /* So hero remains interactive */
+  height: 1000px;
+  z-index: 10; 
+  pointer-events: none; 
 }
 
 .image-container img {
@@ -877,12 +763,7 @@ onMounted(() => {
   height: 100vh;
 }
 
-.content .section.hero {
-  background-image: url('/path/to/bg.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 
 
 
