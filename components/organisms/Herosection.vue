@@ -4,12 +4,12 @@
     <div
       ref="firstPart"
       :class="[isFirstPartVisible ? 'fade-in' : 'fade-out']"
-      class="relative  w-full overflow-hidden"
+      class="relative w-full overflow-hidden"
     >
-      <div class="w-full " v-html="bghero"></div>
+      <div class="w-full" v-html="bghero"></div>
       <div
         ref="stripesDiv"
-        class="absolute  inset-0 pointer-events-none z-10"
+        class="absolute inset-0 pointer-events-none z-10"
         v-html="stripessvg"
       ></div>
 
@@ -220,12 +220,9 @@
           ref="warpFxRef"
           class="warpfx absolute inset-0 z-30 pointer-events-none will-change-transform"
         ></div>
-       <div
-  ref="lightspeedRef"
-  class="lightspeed absolute inset-0 pointer-events-none z-30"
->
-  <canvas ref="lightspeedCanvas"></canvas>
-</div>
+        <div ref="lightspeedRef" class="lightspeed absolute inset-0 pointer-events-none z-30">
+          <canvas ref="lightspeedCanvas"></canvas>
+        </div>
 
         <div
           ref="contentWrapperRef"
@@ -275,163 +272,153 @@
     </div>
   </div>
 
-  
-<section class="text-white block md:hidden overflow-hidden bg-[#020111]">
-  <div class="relative mt-30">
-    <!-- Rocket image: visible only on mobile -->
-    <img
-      alt="rocketmoonhero"
-      class="block md:hidden absolute right-[-85%] top-12 w-[200%] max-w-none"
-      src="@atoms/svgs/rocket-moon-hero.svg"
-    />
+  <section class="text-white block md:hidden overflow-hidden bg-[#020111]">
+    <div class="relative mt-30">
+      <!-- Rocket image: visible only on mobile -->
+      <img
+        alt="rocketmoonhero"
+        class="block md:hidden absolute right-[-85%] top-12 w-[200%] max-w-none"
+        src="@atoms/svgs/rocket-moon-hero.svg"
+      />
 
-    <!-- Text Content -->
-    <div class="relative px-3 pt-50  flex flex-col">
-      <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug">
-        <span
-          class="text-transparent  bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE]"
-        >
-          Entdecke<br />Neue Horizonte
-        </span>
-      </h1>
-
-      <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
-        Kreatives Webdesign, meisterhafte Softwareentwicklung und bahnbrechende
-        AI-Technologien, die dein Geschäft auf die Überholspur bringen.
-      </p>
-
-      <div
-        class="mt-8 inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] hover:from-[#6BE0FF] hover:to-[#3BB1FF]"
-      >
-        <Button
-          class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-        >
+      <!-- Text Content -->
+      <div class="relative px-3 pt-50 flex flex-col">
+        <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug">
           <span
-            class="bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] text-transparent bg-clip-text duration-300"
-            >Erzähl mir mehr.</span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE]"
           >
-        </Button>
+            Entdecke<br />Neue Horizonte
+          </span>
+        </h1>
+
+        <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
+          Kreatives Webdesign, meisterhafte Softwareentwicklung und bahnbrechende AI-Technologien,
+          die dein Geschäft auf die Überholspur bringen.
+        </p>
+
+        <div
+          class="mt-8 inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] hover:from-[#6BE0FF] hover:to-[#3BB1FF]"
+        >
+          <Button
+            class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+          >
+            <span
+              class="bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] text-transparent bg-clip-text duration-300"
+              >Erzähl mir mehr.</span
+            >
+          </Button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="relative mt-80 h-[40rem] bg-black">
-    <img
-      src="/first-three-sect-img/city.png"
-      class="w-full h-full object-cover"
-      alt="City"
-    />
+    <div class="relative mt-80 h-[40rem] bg-black">
+      <img src="/first-three-sect-img/city.png" class="w-full h-full object-cover" alt="City" />
 
-    <!-- Text overlay -->
-    <div class="absolute inset-0 flex flex-col mt-40 px-4 sm:px-8 text-white bg-opacity-40">
-      <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug">
-        KI-gesteuerte Geschäftslösungen
-      </h1>
-      <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
-        Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz (KI), Großen
-        Sprachmodellen (LLMs) und Maschinellem Lernen (ML). Diese Technologien verändern
-        die Art und Weise, wie wir arbeiten und wachsen.
-      </p>
-      <div
-        class="inline-block mt-8 hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
-      >
-        <Button
-          class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+      <!-- Text overlay -->
+      <div class="absolute inset-0 flex flex-col mt-40 px-4 sm:px-8 text-white bg-opacity-40">
+        <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug">
+          KI-gesteuerte Geschäftslösungen
+        </h1>
+        <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
+          Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz (KI), Großen Sprachmodellen
+          (LLMs) und Maschinellem Lernen (ML). Diese Technologien verändern die Art und Weise, wie
+          wir arbeiten und wachsen.
+        </p>
+        <div
+          class="inline-block mt-8 hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
         >
-          <span
-            class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
-            >Prozessoptimierung durch KI</span
+          <Button
+            class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
           >
-        </Button>
+            <span
+              class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
+              >Prozessoptimierung durch KI</span
+            >
+          </Button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- 3rd div -->
-  <div class="h-[40rem] flex items-center px-5">
-    <div class="flex flex-col gap-6 max-w-full">
-      <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug italic">
-        Innovation <br />
-        durch Design und Technologie
-      </h1>
-      <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
-        In einer erfolgreichen Web-Lösung verschmelzen Design und Entwicklung zu einem
-        harmonischen Ganzen. Die nahtlose Integration von Frontend und Backend, ergänzt durch den
-        Einsatz modernster Technologien wie Künstlicher Intelligenz, Großen Sprachmodellen (LLM)
-        und Machine Learning, ermöglicht die Schaffung von Produkten, die den Horizont des
-        Möglichen erweitern und das Nutzererlebnis auf ein ungekanntes Niveau heben.
-      </p>
-      <div
-        class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#FFE501] to-[#FFA901] hover:from-[#FFA901] hover:to-[#FFE501]"
-      >
-        <Button
-          class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+    <!-- 3rd div -->
+    <div class="h-[40rem] flex items-center px-5">
+      <div class="flex flex-col gap-6 max-w-full">
+        <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug italic">
+          Innovation <br />
+          durch Design und Technologie
+        </h1>
+        <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
+          In einer erfolgreichen Web-Lösung verschmelzen Design und Entwicklung zu einem
+          harmonischen Ganzen. Die nahtlose Integration von Frontend und Backend, ergänzt durch den
+          Einsatz modernster Technologien wie Künstlicher Intelligenz, Großen Sprachmodellen (LLM)
+          und Machine Learning, ermöglicht die Schaffung von Produkten, die den Horizont des
+          Möglichen erweitern und das Nutzererlebnis auf ein ungekanntes Niveau heben.
+        </p>
+        <div
+          class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#FFE501] to-[#FFA901] hover:from-[#FFA901] hover:to-[#FFE501]"
         >
-          <span
-            class="bg-gradient-to-r from-[#FFA901] to-[#FFE501] text-transparent bg-clip-text duration-300"
-            >Schaffe Außergewöhnliches</span
+          <Button
+            class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
           >
-        </Button>
+            <span
+              class="bg-gradient-to-r from-[#FFA901] to-[#FFE501] text-transparent bg-clip-text duration-300"
+              >Schaffe Außergewöhnliches</span
+            >
+          </Button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- 4th div -->
-  <div class="h-[40rem] flex items-center px-5">
-    <div
-      class="relative z-10 flex flex-col gap-6 max-w-full"
-      style="margin-top: 0;"
-    >
-      <h2 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug italic">
-        Sei der Wandel, den du in deiner Branche sehen möchtest.
-      </h2>
-      <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
-        Wir transformieren Daten in Einblicke, Herausforderungen in Chancen. Mit unserer
-        Strategie werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften.
-        Lass die Zukunft nicht warten.
-      </p>
-      <div
-        class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] hover:from-[#3BE8E8] hover:to-[#AFE639]"
-      >
-        <Button
-          class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+    <!-- 4th div -->
+    <div class="h-[40rem] flex items-center px-5">
+      <div class="relative z-10 flex flex-col gap-6 max-w-full" style="margin-top: 0">
+        <h2 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug italic">
+          Sei der Wandel, den du in deiner Branche sehen möchtest.
+        </h2>
+        <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
+          Wir transformieren Daten in Einblicke, Herausforderungen in Chancen. Mit unserer Strategie
+          werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften. Lass die Zukunft
+          nicht warten.
+        </p>
+        <div
+          class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] hover:from-[#3BE8E8] hover:to-[#AFE639]"
         >
-          <span
-            class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text duration-300"
-            >KI-Beratung</span
+          <Button
+            class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
           >
-        </Button>
+            <span
+              class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text duration-300"
+              >KI-Beratung</span
+            >
+          </Button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- 5th div -->
-  <div class="h-[40rem] flex items-center px-5">
-    <div class="flex flex-col gap-6 max-w-full">
-      <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug italic">
-        Ready to take your Online Presence to the next level?
-      </h1>
-      <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
-        We'll work with you to plan and create a website that aligns with your business
-        goals and resonates with your target audience. Only if we become friends of course!
-      </p>
-      <div
-        class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#38EF61] to-[#44E5C8] hover:from-[#44E5C8] hover:to-[#38EF61]"
-      >
-        <Button
-          class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+    <!-- 5th div -->
+    <div class="h-[40rem] flex items-center px-5">
+      <div class="flex flex-col gap-6 max-w-full">
+        <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug italic">
+          Ready to take your Online Presence to the next level?
+        </h1>
+        <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
+          We'll work with you to plan and create a website that aligns with your business goals and
+          resonates with your target audience. Only if we become friends of course!
+        </p>
+        <div
+          class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#38EF61] to-[#44E5C8] hover:from-[#44E5C8] hover:to-[#38EF61]"
         >
-          <span
-            class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text duration-300"
-            >Get a Website Strategy</span
+          <Button
+            class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
           >
-        </Button>
+            <span
+              class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text duration-300"
+              >Get a Website Strategy</span
+            >
+          </Button>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-
+  </section>
 </template>
 
 <script setup>
@@ -478,58 +465,57 @@
   let observers = []
 
   onMounted(() => {
+    //   const canvas = lightspeedRef.value.querySelector('canvas');
+    // const ctx = canvas.getContext('2d');
 
-  //   const canvas = lightspeedRef.value.querySelector('canvas');
-  // const ctx = canvas.getContext('2d');
+    // function resize() {
+    //   canvas.width = lightspeedRef.value.offsetWidth;
+    //   canvas.height = lightspeedRef.value.offsetHeight;
+    // }
+    // window.addEventListener('resize', resize);
+    // resize();
 
-  // function resize() {
-  //   canvas.width = lightspeedRef.value.offsetWidth;
-  //   canvas.height = lightspeedRef.value.offsetHeight;
-  // }
-  // window.addEventListener('resize', resize);
-  // resize();
+    // class Star {
+    //   constructor() { this.reset(true); }
+    //   reset(initial=false) {
+    //     this.angle = Math.random() * 2 * Math.PI;
+    //     this.distance = initial ? Math.random() * Math.max(canvas.width, canvas.height) : 0;
+    //     this.speed = 2 + Math.random() * 4;
+    //     this.length = 20 + Math.random() * 50;
+    //     this.opacity = 0.3 + Math.random() * 0.7;
+    //     this.x = canvas.width / 2;
+    //     this.y = canvas.height / 2;
+    //   }
+    //   update() {
+    //     this.distance += this.speed;
+    //     if (this.distance > Math.max(canvas.width, canvas.height)) this.reset();
+    //   }
+    //   draw() {
+    //     const x1 = canvas.width / 2 + Math.cos(this.angle) * this.distance;
+    //     const y1 = canvas.height / 2 + Math.sin(this.angle) * this.distance;
+    //     const len = this.length * (this.distance / (canvas.width / 2));
+    //     const x2 = canvas.width / 2 + Math.cos(this.angle) * (this.distance - len);
+    //     const y2 = canvas.height / 2 + Math.sin(this.angle) * (this.distance - len);
+    //     ctx.strokeStyle = `rgba(255,255,255,${this.opacity})`;
+    //     ctx.lineWidth = 2;
+    //     ctx.beginPath();
+    //     ctx.moveTo(x1, y1);
+    //     ctx.lineTo(x2, y2);
+    //     ctx.stroke();
+    //   }
+    // }
 
-  // class Star {
-  //   constructor() { this.reset(true); }
-  //   reset(initial=false) {
-  //     this.angle = Math.random() * 2 * Math.PI;
-  //     this.distance = initial ? Math.random() * Math.max(canvas.width, canvas.height) : 0;
-  //     this.speed = 2 + Math.random() * 4;
-  //     this.length = 20 + Math.random() * 50;
-  //     this.opacity = 0.3 + Math.random() * 0.7;
-  //     this.x = canvas.width / 2;
-  //     this.y = canvas.height / 2;
-  //   }
-  //   update() {
-  //     this.distance += this.speed;
-  //     if (this.distance > Math.max(canvas.width, canvas.height)) this.reset();
-  //   }
-  //   draw() {
-  //     const x1 = canvas.width / 2 + Math.cos(this.angle) * this.distance;
-  //     const y1 = canvas.height / 2 + Math.sin(this.angle) * this.distance;
-  //     const len = this.length * (this.distance / (canvas.width / 2));
-  //     const x2 = canvas.width / 2 + Math.cos(this.angle) * (this.distance - len);
-  //     const y2 = canvas.height / 2 + Math.sin(this.angle) * (this.distance - len);
-  //     ctx.strokeStyle = `rgba(255,255,255,${this.opacity})`;
-  //     ctx.lineWidth = 2;
-  //     ctx.beginPath();
-  //     ctx.moveTo(x1, y1);
-  //     ctx.lineTo(x2, y2);
-  //     ctx.stroke();
-  //   }
-  // }
+    // const stars = [];
+    // const STAR_COUNT = 500;
+    // for (let i = 0; i < STAR_COUNT; i++) stars.push(new Star(true));
 
-  // const stars = [];
-  // const STAR_COUNT = 500;
-  // for (let i = 0; i < STAR_COUNT; i++) stars.push(new Star(true));
-
-  // function animate() {
-  //   ctx.fillStyle = 'rgba(0,0,0,0.2)';
-  //   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  //   stars.forEach(star => { star.update(); star.draw(); });
-  //   requestAnimationFrame(animate);
-  // }
-  // animate();
+    // function animate() {
+    //   ctx.fillStyle = 'rgba(0,0,0,0.2)';
+    //   ctx.fillRect(0, 0, canvas.width, canvas.height);
+    //   stars.forEach(star => { star.update(); star.draw(); });
+    //   requestAnimationFrame(animate);
+    // }
+    // animate();
 
     if (firstPart.value && stripesDiv.value) {
       const vector343 =
@@ -739,7 +725,7 @@
       defaults: { ease: 'power2.inOut' },
       onComplete: () => {
         document.body.style.overflowX = ''
-        if (warpFx) warpFx.innerHTML = '' 
+        if (warpFx) warpFx.innerHTML = ''
         window.scrollTo({ top: 0, behavior: 'instant' })
         emit('show-services')
       }
@@ -960,7 +946,7 @@
     overflow: hidden;
     z-index: 40;
   }
-/* 
+  /* 
   .star {
     position: absolute;
     width: 2px;
@@ -984,6 +970,4 @@
   opacity: 0.8;
   margin-top: 25%;
 } */
-
-
 </style>

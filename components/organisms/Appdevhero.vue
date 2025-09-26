@@ -1,18 +1,18 @@
 <template>
   <section class="bg-black text-white relative w-full overflow-hidden">
-    <!-- Centered max-width container -->
     <div class="mx-auto max-w-[1440px] px-6 lg:px-12">
-      <!-- Background SVG lines -->
       <div
-        class="absolute inset-0 z-0 w-full h-full pointer-events-none"
+        class="absolute inset-0 hidden md:flex z-0 w-full h-full pointer-events-none"
         v-html="appdevlines"
       ></div>
 
-      <!-- Hero Section -->
-      <div class="relative z-10 flex flex-col lg:flex-row h-[49.375rem] gap-12 lg:gap-0 mb-32">
-        <!-- Left Side -->
+      <div
+        class="relative z-10 flex flex-col items-center lg:flex-row h-[49.375rem] gap-12 lg:gap-0 mb-32"
+      >
         <div class="lg:w-1/2 flex items-center">
-          <div class="w-full max-w-[41.1875rem] flex flex-col gap-6 mt-36 text-left px-4 lg:px-0">
+          <div
+            class="w-full text-center max-w-[41.1875rem] flex flex-col gap-6 mt-36 lg:text-start px-4 lg:px-0"
+          >
             <h1 class="text-5xl italic font-bold leading-tight">
               <span
                 class="bg-gradient-to-r from-[#D539D3] to-[#D539D3] bg-clip-text text-transparent"
@@ -33,18 +33,18 @@
         </div>
 
         <!-- Right Side -->
-        <div class="lg:w-1/2 flex items-center">
+        <div class="lg:w-1/2 items-center">
           <div class="w-full max-w-[37.5rem]" v-html="appdevhero"></div>
         </div>
       </div>
 
       <div class="relative z-10 flex flex-col 2xl:top-15 lg:flex-row gap-16 lg:gap-24 mb-32">
-        <div class="lg:w-1/2 flex justify-center">
+        <div class="lg:w-1/2 hidden lg:flex justify-center">
           <div class="w-full flex max-w-[37.5rem] 2xl:max-w-[50rem]" v-html="appdevhero2"></div>
         </div>
 
         <div
-          class="lg:w-[32.5625rem] flex flex-col md:text-center gap-6 mx-auto pt-3 lg:pt-12 xl:pt-36"
+          class="lg:w-[32.5625rem] mt-[40rem] md:mt-0 flex flex-col text-center gap-6 mx-auto pt-3 lg:pt-12 xl:pt-36"
         >
           <h1 class="text-2xl 2xl:text-4xl font-semibold">
             <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent"
@@ -84,7 +84,7 @@
 
         <!-- Section 2 -->
         <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
-          <div class="max-w-[37.5rem]" v-html="appdevmiddle1"></div>
+          <div class="max-w-[37.5rem] hidden lg:flex" v-html="appdevmiddle1"></div>
           <div class="flex flex-col gap-8 max-w-[31.625rem] text-white">
             <h2 class="text-2xl font-semibold">2. Design</h2>
             <p class="font-light text-lg">
@@ -92,6 +92,9 @@
               and layout of the app. We work with you to ensure the design aligns with your brand
               guidelines and meets the needs of your users.
             </p>
+          </div>
+          <div>
+            <img src="@atoms/svgs/appdevmiddle (1).svg" alt="" />
           </div>
         </div>
 
@@ -105,7 +108,7 @@
               smoothly and provides a seamless user experience on both iOS and Android platforms.
             </p>
           </div>
-          <div class="max-w-[37.5rem]" v-html="appdevmiddle2"></div>
+          <div class="max-w-[37.5rem] hidden md:flex" v-html="appdevmiddle2"></div>
         </div>
 
         <!-- Section 4 -->
@@ -137,11 +140,10 @@
     </div>
   </section>
 
-
   <!-- end section aka get in touch -->
   <!-- SECTION 3 (Responsive Version) -->
   <section
-    class="relative bg-black lg:flex md:hidden lg:justify-center items-center overflow-hidden h-[37.5rem]"
+    class="relative bg-black lg:flex hidden lg:justify-center items-center overflow-hidden h-[37.5rem]"
   >
     <div
       class="absolute bg-no-repeat bg-center inset-0 bg-[length:100%]"
@@ -185,61 +187,6 @@
       </div>
     </div>
   </section>
-
-  <section
-    class="bg-black lg:hidden flex text-white flex-col items-center justify-center md:gap-[3.125rem] md:px-6 md:py-10 text-center"
-  >
-    <div class="text-[2.5rem] font-medium">
-      Our
-      <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent"
-        >App</span
-      >roach
-    </div>
-
-    <div>
-      <h1 class="text-[2.1875rem] font-semibold">1. Discovery</h1>
-      <p class="font-light max-w-[33.125rem] text-[1.375rem] mt-2">
-        During the discovery phase, we work with you to understand your business goals and needs, as
-        well as gather requirements and specifications for your hybrid app.
-      </p>
-    </div>
-
-    <div>
-      <h1 class="text-[2.1875rem] font-semibold">2. Design</h1>
-      <p class="font-light max-w-[33.125rem] text-[1.375rem] mt-2">
-        Next, our team of designers creates wireframes and mockups to visualise the user flow and
-        layout of the app. We work with you to ensure the design aligns with your brand guidelines
-        and meets the needs of your users.
-      </p>
-    </div>
-
-    <div>
-      <h1 class="text-[2.1875rem] font-semibold">3. Development</h1>
-      <p class="font-light max-w-[33.125rem] text-[1.375rem] mt-2">
-        Using the latest tools and technologies, such as Flutter, we begin building the hybrid app
-        according to the approved design. Our developers ensure that the app functions smoothly and
-        provides a seamless user experience on both iOS and Android platforms.
-      </p>
-    </div>
-
-    <div>
-      <h1 class="text-[2.1875rem] font-semibold">4. Testing and Launch</h1>
-      <p class="font-light max-w-[33.125rem] text-[1.375rem] mt-2">
-        Before launching the app, we conduct thorough testing to ensure that it is stable and
-        bug-free. Once the app is ready, we help you with the submission process and launch it on
-        the App Store and Google Play.
-      </p>
-    </div>
-
-    <div>
-      <h1 class="text-[2.1875rem] font-semibold">5. Optimize for Growth</h1>
-      <p class="font-light max-w-[33.125rem] text-[1.375rem] mt-2">
-        After the app is launched, we provide ongoing support and maintenance to ensure that it
-        continues to function smoothly and meet the changing needs of your business. We also offer
-        optimization services to help increase user engagement and drive growth.
-      </p>
-    </div>
-  </section>
 </template>
 
 <script setup>
@@ -251,5 +198,4 @@
   import appdevlast1 from '@atoms/svgs/appdevlast (1).svg?raw'
   import appdevlast2 from '@atoms/svgs/appdevlast (2).svg?raw'
   import appdevlines from '@atoms/svgs/appdevlines.svg?raw'
-
 </script>

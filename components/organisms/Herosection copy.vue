@@ -1,15 +1,15 @@
 <template>
-    <div class="text-white sm:block hidden bg-[#020111]">
+  <div class="text-white sm:block hidden bg-[#020111]">
     <!-- First Part -->
     <div
       ref="firstPart"
       :class="[isFirstPartVisible ? 'fade-in' : 'fade-out']"
-      class="relative  w-full overflow-hidden"
+      class="relative w-full overflow-hidden"
     >
-      <div class="w-full " v-html="bghero"></div>
+      <div class="w-full" v-html="bghero"></div>
       <div
         ref="stripesDiv"
-        class="absolute  inset-0 pointer-events-none z-10"
+        class="absolute inset-0 pointer-events-none z-10"
         v-html="stripessvg"
       ></div>
 
@@ -202,41 +202,38 @@
         </div>
       </div>
     </div>
+  </div>
 
-
-</div>
-
-
-    <div class="relative overflow-hidden">
+  <div class="relative overflow-hidden">
     <!-- Fixed black background behind everything -->
     <div
       class="fixed inset-0 -z-10 bg-black"
       :style="{ opacity: 1, transition: 'opacity 0.5s ease' }"
     ></div>
 
-<!-- Main wrapper -->
-<div class="relative overflow-hidden">
-  <!-- Fixed black background behind everything -->
-  <div
-    class="fixed inset-0 -z-10 bg-black"
-    :style="{ opacity: 1, transition: 'opacity 0.5s ease' }"
-  ></div>
-
-  <!-- Pinned SVG container (cockpit) -->
-  <div
-    ref="cockpitRef"
-    class="relative w-full max-w-full aspect-[1437/1540] z-10 flex items-center justify-center"
-    style="transform-origin: center center; will-change: transform;"
-  >
-    <!-- Cockpit SVG -->
-    <img
-      src="@atoms/svgs/cockpit.svg"
-      alt="cockpit"
-      style="transform: scale(0.99); transform-origin: center center;"
-      class="w-full h-auto object-contain"
-    />
-
+    <!-- Main wrapper -->
+    <div class="relative overflow-hidden">
+      <!-- Fixed black background behind everything -->
       <div
+        class="fixed inset-0 -z-10 bg-black"
+        :style="{ opacity: 1, transition: 'opacity 0.5s ease' }"
+      ></div>
+
+      <!-- Pinned SVG container (cockpit) -->
+      <div
+        ref="cockpitRef"
+        class="relative w-full max-w-full aspect-[1437/1540] z-10 flex items-center justify-center"
+        style="transform-origin: center center; will-change: transform"
+      >
+        <!-- Cockpit SVG -->
+        <img
+          src="@atoms/svgs/cockpit.svg"
+          alt="cockpit"
+          style="transform: scale(0.99); transform-origin: center center"
+          class="w-full h-auto object-contain"
+        />
+
+        <div
           ref="contentWrapperRef"
           class="content-wrapper absolute mx-auto w-[72.9375rem] flex top-[374px]"
         >
@@ -277,189 +274,177 @@
                   >
                 </Button>
               </div>
+            </div>
           </div>
-          </div>
-    </div>
-  </div>
+        </div>
+      </div>
 
- 
-
- <!-- Scrollable components -->
-<div id="services-section" class="relative z-0">
-  <ServicesHero />
-  <Servicessecond />
-  <ServicesSlider />
-  <Servicesmain />
-</div>
-</div>
-</div>
-
-
-
-<!--  -->
-  
-<section class="text-white block md:hidden overflow-hidden bg-[#020111]">
-  <div class="relative mt-30">
-    <img
-      alt="rocketmoonhero"
-      class="block md:hidden absolute right-[-85%] top-12 w-[200%] max-w-none"
-      src="@atoms/svgs/rocket-moon-hero.svg"
-    />
-
-    <!-- Text Content -->
-    <div class="relative px-3 pt-50  flex flex-col">
-      <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug">
-        <span
-          class="text-transparent  bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE]"
-        >
-          Entdecke<br />Neue Horizonte
-        </span>
-      </h1>
-
-      <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
-        Kreatives Webdesign, meisterhafte Softwareentwicklung und bahnbrechende
-        AI-Technologien, die dein Geschäft auf die Überholspur bringen.
-      </p>
-
-      <div
-        class="mt-8 inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] hover:from-[#6BE0FF] hover:to-[#3BB1FF]"
-      >
-        <Button
-          class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-        >
-          <span
-            class="bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] text-transparent bg-clip-text duration-300"
-            >Erzähl mir mehr.</span
-          >
-        </Button>
+      <!-- Scrollable components -->
+      <div id="services-section" class="relative z-0">
+        <ServicesHero />
+        <Servicessecond />
+        <ServicesSlider />
+        <Servicesmain />
       </div>
     </div>
   </div>
 
-  <div class="relative mt-80 h-[40rem] bg-black">
-    <img
-      src="/first-three-sect-img/city.png"
-      class="w-full h-full object-cover"
-      alt="City"
-    />
+  <!--  -->
 
-    <!-- Text overlay -->
-    <div class="absolute inset-0 flex flex-col mt-40 px-4 sm:px-8 text-white bg-opacity-40">
-      <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug">
-        KI-gesteuerte Geschäftslösungen
-      </h1>
-      <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
-        Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz (KI), Großen
-        Sprachmodellen (LLMs) und Maschinellem Lernen (ML). Diese Technologien verändern
-        die Art und Weise, wie wir arbeiten und wachsen.
-      </p>
-      <div
-        class="inline-block mt-8 hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
-      >
-        <Button
-          class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-        >
+  <section class="text-white block md:hidden overflow-hidden bg-[#020111]">
+    <div class="relative mt-30">
+      <img
+        alt="rocketmoonhero"
+        class="block md:hidden absolute right-[-85%] top-12 w-[200%] max-w-none"
+        src="@atoms/svgs/rocket-moon-hero.svg"
+      />
+
+      <!-- Text Content -->
+      <div class="relative px-3 pt-50 flex flex-col">
+        <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug">
           <span
-            class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
-            >Prozessoptimierung durch KI</span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE]"
           >
-        </Button>
+            Entdecke<br />Neue Horizonte
+          </span>
+        </h1>
+
+        <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
+          Kreatives Webdesign, meisterhafte Softwareentwicklung und bahnbrechende AI-Technologien,
+          die dein Geschäft auf die Überholspur bringen.
+        </p>
+
+        <div
+          class="mt-8 inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] hover:from-[#6BE0FF] hover:to-[#3BB1FF]"
+        >
+          <Button
+            class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+          >
+            <span
+              class="bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] text-transparent bg-clip-text duration-300"
+              >Erzähl mir mehr.</span
+            >
+          </Button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- 3rd div -->
-  <div class="h-[40rem] flex items-center px-5">
-    <div class="flex flex-col gap-6 max-w-full">
-      <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug italic">
-        Innovation <br />
-        durch Design und Technologie
-      </h1>
-      <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
-        In einer erfolgreichen Web-Lösung verschmelzen Design und Entwicklung zu einem
-        harmonischen Ganzen. Die nahtlose Integration von Frontend und Backend, ergänzt durch den
-        Einsatz modernster Technologien wie Künstlicher Intelligenz, Großen Sprachmodellen (LLM)
-        und Machine Learning, ermöglicht die Schaffung von Produkten, die den Horizont des
-        Möglichen erweitern und das Nutzererlebnis auf ein ungekanntes Niveau heben.
-      </p>
-      <div
-        class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#FFE501] to-[#FFA901] hover:from-[#FFA901] hover:to-[#FFE501]"
-      >
-        <Button
-          class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+    <div class="relative mt-80 h-[40rem] bg-black">
+      <img src="/first-three-sect-img/city.png" class="w-full h-full object-cover" alt="City" />
+
+      <!-- Text overlay -->
+      <div class="absolute inset-0 flex flex-col mt-40 px-4 sm:px-8 text-white bg-opacity-40">
+        <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug">
+          KI-gesteuerte Geschäftslösungen
+        </h1>
+        <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
+          Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz (KI), Großen Sprachmodellen
+          (LLMs) und Maschinellem Lernen (ML). Diese Technologien verändern die Art und Weise, wie
+          wir arbeiten und wachsen.
+        </p>
+        <div
+          class="inline-block mt-8 hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
         >
-          <span
-            class="bg-gradient-to-r from-[#FFA901] to-[#FFE501] text-transparent bg-clip-text duration-300"
-            >Schaffe Außergewöhnliches</span
+          <Button
+            class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
           >
-        </Button>
+            <span
+              class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
+              >Prozessoptimierung durch KI</span
+            >
+          </Button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- 4th div -->
-  <div class="h-[40rem] flex items-center px-5">
-    <div
-      class="relative z-10 flex flex-col gap-6 max-w-full"
-      style="margin-top: 0;"
-    >
-      <h2 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug italic">
-        Sei der Wandel, den du in deiner Branche sehen möchtest.
-      </h2>
-      <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
-        Wir transformieren Daten in Einblicke, Herausforderungen in Chancen. Mit unserer
-        Strategie werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften.
-        Lass die Zukunft nicht warten.
-      </p>
-      <div
-        class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] hover:from-[#3BE8E8] hover:to-[#AFE639]"
-      >
-        <Button
-          class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+    <!-- 3rd div -->
+    <div class="h-[40rem] flex items-center px-5">
+      <div class="flex flex-col gap-6 max-w-full">
+        <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug italic">
+          Innovation <br />
+          durch Design und Technologie
+        </h1>
+        <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
+          In einer erfolgreichen Web-Lösung verschmelzen Design und Entwicklung zu einem
+          harmonischen Ganzen. Die nahtlose Integration von Frontend und Backend, ergänzt durch den
+          Einsatz modernster Technologien wie Künstlicher Intelligenz, Großen Sprachmodellen (LLM)
+          und Machine Learning, ermöglicht die Schaffung von Produkten, die den Horizont des
+          Möglichen erweitern und das Nutzererlebnis auf ein ungekanntes Niveau heben.
+        </p>
+        <div
+          class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#FFE501] to-[#FFA901] hover:from-[#FFA901] hover:to-[#FFE501]"
         >
-          <span
-            class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text duration-300"
-            >KI-Beratung</span
+          <Button
+            class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
           >
-        </Button>
+            <span
+              class="bg-gradient-to-r from-[#FFA901] to-[#FFE501] text-transparent bg-clip-text duration-300"
+              >Schaffe Außergewöhnliches</span
+            >
+          </Button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- 5th div -->
-  <div class="h-[40rem] flex items-center px-5">
-    <div class="flex flex-col gap-6 max-w-full">
-      <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug italic">
-        Ready to take your Online Presence to the next level?
-      </h1>
-      <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
-        We'll work with you to plan and create a website that aligns with your business
-        goals and resonates with your target audience. Only if we become friends of course!
-      </p>
-      <div
-        class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#38EF61] to-[#44E5C8] hover:from-[#44E5C8] hover:to-[#38EF61]"
-      >
-        <Button
-          class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+    <!-- 4th div -->
+    <div class="h-[40rem] flex items-center px-5">
+      <div class="relative z-10 flex flex-col gap-6 max-w-full" style="margin-top: 0">
+        <h2 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug italic">
+          Sei der Wandel, den du in deiner Branche sehen möchtest.
+        </h2>
+        <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
+          Wir transformieren Daten in Einblicke, Herausforderungen in Chancen. Mit unserer Strategie
+          werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften. Lass die Zukunft
+          nicht warten.
+        </p>
+        <div
+          class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] hover:from-[#3BE8E8] hover:to-[#AFE639]"
         >
-          <span
-            class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text duration-300"
-            >Get a Website Strategy</span
+          <Button
+            class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
           >
-        </Button>
+            <span
+              class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text duration-300"
+              >KI-Beratung</span
+            >
+          </Button>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
+    <!-- 5th div -->
+    <div class="h-[40rem] flex items-center px-5">
+      <div class="flex flex-col gap-6 max-w-full">
+        <h1 class="text-[2.5rem] font-bold mb-[0.5rem] leading-snug italic">
+          Ready to take your Online Presence to the next level?
+        </h1>
+        <p class="max-w-3xl text-[1rem] font-light leading-relaxed">
+          We'll work with you to plan and create a website that aligns with your business goals and
+          resonates with your target audience. Only if we become friends of course!
+        </p>
+        <div
+          class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#38EF61] to-[#44E5C8] hover:from-[#44E5C8] hover:to-[#38EF61]"
+        >
+          <Button
+            class="px-[1.9rem] py-[0.925rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+          >
+            <span
+              class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text duration-300"
+              >Get a Website Strategy</span
+            >
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup>
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
- import { ref, computed, onMounted, onUnmounted, nextTick, defineEmits } from 'vue'
-import ServicesHero from '@organisms/Serviceshero.vue'
-import Servicessecond from '@organisms/Servicessecond.vue'
+  import { gsap } from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+  import { ref, computed, onMounted, onUnmounted, nextTick, defineEmits } from 'vue'
+  import ServicesHero from '@organisms/Serviceshero.vue'
+  import Servicessecond from '@organisms/Servicessecond.vue'
 
   import Button from '@atoms/Button.vue'
   import moonSVGRaw from '@atoms/svgs/rocket-moon-hero.svg?raw'
@@ -468,8 +453,8 @@ import Servicessecond from '@organisms/Servicessecond.vue'
   import rocket from '@atoms/svgs/leftsectionsvg.svg?raw'
   import bglines from '@atoms/svgs/Lines.svg?raw'
   import cockpit from '@atoms/svgs/cockpit.svg?raw'
-import ServicesSlider from './ServicesSlider.vue'
-import Servicesmain from './Servicesmain.vue'
+  import ServicesSlider from './ServicesSlider.vue'
+  import Servicesmain from './Servicesmain.vue'
 
   gsap.registerPlugin(ScrollTrigger)
 
@@ -500,46 +485,50 @@ import Servicesmain from './Servicesmain.vue'
 
   let observers = []
 
+  gsap.registerPlugin(ScrollTrigger)
 
-gsap.registerPlugin(ScrollTrigger)
+  const cockpitRef = ref(null)
 
-const cockpitRef = ref(null)
-
-onMounted(() => {
-
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: cockpitRef.value,
-      start: "center 90%",
-      end: "+=700",
-      scrub: 1,
-      pin: true,
-      pinSpacing: true,
-      anticipatePin: 0.3,
-      invalidateOnRefresh: true,
-      markers: false,
-    },
-  });
-
-  tl.to(cockpitRef.value, { 
-      scale: 1.4, 
-      ease: "power1.out", 
-      duration: 0.7 
-    }, 0)
-    .to(cockpitRef.value, { 
-      autoAlpha: 0, 
-      ease: "power1.out", 
-      duration: 0.7,
-      onComplete: () => {
-        const nextSection = document.querySelector("#services-section");
-        if (nextSection) {
-          nextSection.scrollIntoView({ behavior: "instant" });
-        }
+  onMounted(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: cockpitRef.value,
+        start: 'center 90%',
+        end: '+=700',
+        scrub: 1,
+        pin: true,
+        pinSpacing: true,
+        anticipatePin: 0.3,
+        invalidateOnRefresh: true,
+        markers: false
       }
-    }, 0.3);
+    })
 
+    tl.to(
+      cockpitRef.value,
+      {
+        scale: 1.4,
+        ease: 'power1.out',
+        duration: 0.7
+      },
+      0
+    ).to(
+      cockpitRef.value,
+      {
+        autoAlpha: 0,
+        ease: 'power1.out',
+        duration: 0.7,
+        onComplete: () => {
+          const nextSection = document.querySelector('#services-section')
+          if (nextSection) {
+            nextSection.scrollIntoView({ behavior: 'instant' })
+          }
+        }
+      },
+      0.3
+    )
 
-     if (firstPart.value && stripesDiv.value) {
+    if (firstPart.value && stripesDiv.value) {
       const vector343 =
         stripesDiv.value.querySelector('#Vector\\ 343') ||
         stripesDiv.value.querySelector('#Vector343')
@@ -716,10 +705,8 @@ onMounted(() => {
   onUnmounted(() => {
     observers.forEach(obs => obs.disconnect())
     ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-
-})
+  })
 </script>
-
 
 <style scoped>
   @keyframes float {
@@ -876,7 +863,7 @@ onMounted(() => {
     overflow: hidden;
     z-index: 40;
   }
-/* 
+  /* 
   .star {
     position: absolute;
     width: 2px;
@@ -900,6 +887,4 @@ onMounted(() => {
   opacity: 0.8;
   margin-top: 25%;
 } */
-
-
 </style>

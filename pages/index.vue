@@ -10,8 +10,8 @@
   import ServicesSlider from '@organisms/ServicesSlider.vue'
   import Servicesmain from '@organisms/Servicesmain.vue'
   import ScrollToTopButton from '@organisms/Scrolltotop.vue'
-import HerosectionCopy from '@organisms/Herosection copy.vue'
-import HerosectionCopy2 from '@organisms/Herosection copy 2.vue'
+  import HerosectionCopy from '@organisms/Herosection copy.vue'
+  import HerosectionCopy2 from '@organisms/Herosection copy 2.vue'
 
   const showServices = ref(false)
 

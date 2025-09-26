@@ -1,5 +1,5 @@
 <template>
-  <div ref="wrapper" class="outer-wrapper flex items-center overflow-hidden bg-black">
+  <div ref="wrapper" class="outer-wrapper hidden lg:flex items-center overflow-hidden bg-black">
     <div class="relative inner-container">
       <div ref="scroller" class="scroller flex items-start gap-8">
         <div ref="slide1" class="slide">

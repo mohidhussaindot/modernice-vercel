@@ -1,5 +1,5 @@
 <template>
-  <section class="relative h-[1082px] overflow-x-hidden text-white bg-[#020111]">
+  <section class="relative h-[1082px] hidden md:flex overflow-x-hidden text-white bg-[#020111]">
     <!-- Background SVG injected -->
     <div
       class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden"
@@ -33,12 +33,9 @@
         ></div>
       </div>
 
-      <!-- Second Row -->
       <div class="flex xl:flex-row gap-10 xl:gap-[13.5625rem]">
-        <!-- Second Graphic -->
         <div class="xl:w-[25.375rem] xl:h-[24.125rem]" ref="SeoSecondref" v-html="seosecond"></div>
 
-        <!-- Text Block -->
         <div class="font-light text-[1.25rem] flex items-center w-[599px] fade-right">
           <p>
             Die besten SEO-Maßnahmen basieren auf einer starken technischen Infrastruktur, die sich
@@ -50,9 +47,8 @@
     </div>
   </section>
 
-  <!-- 2nd part -->
-  <section class="relative overflow-hidden text-white bg-[#020111] h-[52.3125rem]">
-    <div class="flex justify-center items-center fade-element h-full">
+  <section class="relative hidden md:flex overflow-hidden text-white bg-[#020111] h-[52.3125rem]">
+    <div class="flex mx-auto items-center fade-element h-full">
       <div
         class="relative p-[0.0625rem] bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] rounded shadow-[0_0_0.9375rem_0.25rem_#25CDDA]"
       >
@@ -100,7 +96,7 @@
   </section>
 
   <!-- 3rd part -->
-  <section class="relative overflow-hidden text-white bg-[#020111]">
+  <section class="relative hidden lg:block overflow-hidden text-white bg-[#020111]">
     <div class="h-[41.5625rem] relative">
       <!-- Background SVG injected -->
       <div
@@ -120,17 +116,16 @@
         </h1>
 
         <p class="text-[1.125rem] font-light">
-          Durch den gezielten Einsatz von datenbasierten Analysen, technischer Expertise und
-          innovativen Ansätzen schaffen wir maßgeschneiderte Lösungen, die deine Online-Präsenz
-          stärken, die Sichtbarkeit erhöhen und letztlich dazu beitragen, deine Geschäftsziele zu
-          erreichen.
+          e den gezielten Einsatz von datenbasierten Analysen, technischer Expertise und innovativen
+          Ansätzen schaffen wir maßgeschneiderte Lösungen, die deine Online-Präsenz stärken, die
+          Sichtbarkeit erhöhen und letztlich dazu beitragen, deine Geschäftsziele zu erreichen.
         </p>
       </div>
     </div>
   </section>
 
   <section
-    class="relative overflow-hidden 2xl:h-[2200.495361328125px] lg:h-[2050.495361328125px] text-white bg-[#020111] bg-no-repeat bg-[length:100%]"
+    class="relative overflow-hidden hidden md:flex 2xl:h-[2200.495361328125px] lg:h-[2050.495361328125px] text-white bg-[#020111] bg-no-repeat bg-[length:100%]"
   >
     <!-- Shared SVG Background -->
     <div
@@ -163,7 +158,7 @@
       </div>
 
       <!-- Second Row: Technische SEO-Optimierung -->
-      <div class="flex flex-col  lg:px-5 lg:flex-row justify-between items-center gap-12">
+      <div class="flex flex-col lg:px-5 lg:flex-row justify-between items-center gap-12">
         <div class="w-full max-w-[32.9375rem]" ref="SeoFifthref" v-html="seofifth"></div>
 
         <div class="w-full max-w-[38.1875rem] fade-right flex flex-col gap-5">
@@ -179,7 +174,7 @@
       </div>
 
       <!-- Third Row: Keyword- und Wettbewerbsanalyse -->
-      <div class="flex flex-col  lg:px-5 lg:flex-row justify-between items-center gap-12">
+      <div class="flex flex-col lg:px-5 lg:flex-row justify-between items-center gap-12">
         <div class="w-full max-w-[35.75rem] fade-left flex flex-col gap-8">
           <h1 class="text-[2.5rem] italic font-semibold">Keyword- und Wettbewerbsanalyse</h1>
           <p class="text-[1.125rem] font-light">
@@ -202,7 +197,7 @@
   </section>
 
   <!-- 6th Section -->
-  <section class="min-h-screen overflow-hidden text-white pt-5 bg-[#020111]">
+  <section class="min-h-screen hidden md:flex overflow-hidden text-white pt-5 bg-[#020111]">
     <div class="flex flex-col gap-24 max-w-7xl mx-auto px-6">
       <!-- Row 1: Text left / Image right -->
       <div class="flex flex-row justify-between items-center gap-12 fade-left">
@@ -259,10 +254,8 @@
     </div>
   </section>
 
-  <div class="relative h-[27.6875rem] w-full text-white bg-[#020111]">
-    <div
-      class="flex lg:items-center max-w-7xl pt-10 mx-auto xl:justify-start xl:items-start lg:justify-center h-full"
-    >
+  <div class="relative pl-[7.4375rem] hidden md:flex h-[27.6875rem] w-full text-white bg-[#020111]">
+    <div class="flex pt-10 h-full">
       <div class="fade-element w-full max-w-[35.75rem] px-6 text-center lg:text-left">
         <p class="text-[1.125rem] font-light">
           Durch die Kombination aus Datenanalyse, technischer Expertise und kreativer Arbeit streben
@@ -274,7 +267,7 @@
   </div>
 
   <section
-    class="relative bg-black lg:flex lg:justify-center xl:flex md:hidden xl:justify-center items-center overflow-hidden h-[37.5rem]"
+    class="relative bg-black hidden lg:flex lg:justify-center xl:flex md:hidden xl:justify-center items-center overflow-hidden h-[37.5rem]"
   >
     <div
       class="absolute bg-no-repeat bg-center inset-0 bg-[length:100%]"
@@ -318,6 +311,189 @@
       </div>
     </div>
   </section>
+
+  <!-- mobile -->
+
+  <div class="block lg:hidden bg-[#020111] text-white overflow-hidden">
+    <!-- Section 1 -->
+    <section class="relative py-16 px-6 overflow-hidden">
+      <div class="flex flex-col items-center gap-6">
+        <h1 class="italic font-semibold text-[2rem] leading-snug text-center px-4">
+          <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
+            Fundament des Erfolgs:
+          </span>
+          <br />
+          Warum technische SEO entscheidend ist
+        </h1>
+        <p class="text-[1rem] font-light leading-relaxed text-center px-4">
+          SEO ist mehr als kurzfristige Taktiken; es ist ein solides technisches Fundament, das
+          nachhaltiges Wachstum ermöglicht.
+        </p>
+        <div class="mt-8">
+          <img
+            src="@atoms/svgs/seo-second-first.svg"
+            alt="Question Mark Graphic"
+            class="w-40 h-auto object-contain"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="py-16 px-6 overflow-hidden">
+      <div class="flex flex-col items-center gap-6">
+        <h1 class="italic font-semibold text-[2rem] text-center px-4">
+          <span class="bg-gradient-to-r to-[#01A3FF] from-[#25CDDA] bg-clip-text text-transparent">
+            Kostenfreie
+          </span>
+          Suchmaschinenoptimierung
+        </h1>
+        <p class="text-[1rem] font-light leading-relaxed text-center px-4">
+          Für optimale SEO-Ergebnisse muss das technische SEO stets integraler Bestandteil des
+          Webdesign- und Entwicklungsprozesses sein. Es darf nicht als optionales Extra angesehen
+          werden, sondern als Grundpfeiler einer erfolgreichen Webseite.
+        </p>
+        <p class="text-[1rem] font-light leading-relaxed text-center px-4">
+          Daher ist die technische SEO ein fundamentaler Teil unserer Website‑Design- und
+          ‑Strategieangebote. Jede von uns gestaltete und entwickelte Webseite profitiert
+          automatisch von einer umfassenden technischen SEO-Optimierung. Hierbei nehmen wir alle
+          Facetten des technischen SEO in den Blick, von der Verbesserung der
+          Website‑Geschwindigkeit bis zur effizienten Strukturierung von Daten.
+        </p>
+        <div
+          class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#01A3FF] to-[#25CDDA]"
+        >
+          <Button
+            class="px-[1.5rem] py-[0.625rem] text-[1rem] rounded-[10px] bg-black bg-opacity-90 text-white hover:text-white transition"
+          >
+            <span
+              class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] text-transparent bg-clip-text"
+            >
+              Website Strategie planen
+            </span>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="py-16 px-6 overflow-hidden">
+      <div class="flex flex-col items-center gap-6">
+        <h1 class="italic font-semibold text-[2rem] text-center px-4">
+          Unser
+          <span class="bg-gradient-to-r to-[#01A3FF] from-[#25CDDA] bg-clip-text text-transparent">
+            Prozess
+          </span>
+        </h1>
+        <p class="text-[1rem] font-light leading-relaxed text-center px-4">
+          Durch den gezielten Einsatz von datenbasierten Analysen, technischer Expertise und
+          innovativen Ansätzen schaffen wir maßgeschneiderte Lösungen, die deine Online‑Präsenz
+          stärken, die Sichtbarkeit erhöhen und letztlich dazu beitragen, deine Geschäftsziele zu
+          erreichen.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="py-16 px-6 overflow-hidden">
+      <div class="flex flex-col items-center gap-6">
+        <h1 class="italic font-semibold text-[2rem] text-center px-4">
+          Analyse des Ist‑Zustands
+        </h1>
+        <p class="text-[1rem] font-light leading-relaxed text-center px-4">
+          Bei jeder SEO‑Strategie, die wir entwickeln, beginnen wir mit einer gründlichen Analyse
+          des aktuellen Zustands der Website. Dabei berücksichtigen wir technische Aspekte,
+          inhaltliche Faktoren und das Nutzerverhalten, um Schwachstellen und Potenziale
+          aufzudecken.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="py-16 px-6 overflow-hidden">
+      <div class="flex flex-col items-center gap-6">
+        <h1 class="italic font-semibold text-[2rem] text-center px-4">
+          Technische SEO‑Optimierung
+        </h1>
+        <p class="text-[1rem] font-light leading-relaxed text-center px-4">
+          Egal ob bei der Gestaltung einer neuen Website oder der Verbesserung einer bestehenden,
+          die technische SEO steht im Zentrum unserer Arbeit. Bei neuen Projekten sorgen wir von
+          Anfang an für eine optimale Suchmaschinenfreundlichkeit. Bei der Optimierung bestehender
+          Websites verbessern wir die technische Grundlage, um die Sichtbarkeit in den
+          Suchergebnissen zu erhöhen.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="py-16 px-6 overflow-hidden">
+      <div class="flex flex-col items-center gap-6">
+        <h1 class="italic font-semibold text-[2rem] text-center px-4">
+          Keyword‑ und Wettbewerbsanalyse
+        </h1>
+        <p class="text-[1rem] font-light leading-relaxed text-center px-4">
+          Im nächsten Schritt identifizieren wir die Schlüsselbegriffe, welche die Zielgruppe zur
+          Suche nach relevanten Produkten oder Dienstleistungen verwendet. Parallel dazu analysieren
+          wir die Wettbewerbssituation, um die Marktposition zu verstehen und wirksame Strategien
+          zur Verbesserung der Platzierung zu entwickeln.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 7 -->
+    <section class="py-16 px-6 overflow-hidden">
+      <div class="flex flex-col items-center gap-6">
+        <h1 class="italic font-semibold text-[2rem] text-center px-4"> Strategieentwicklung </h1>
+        <p class="text-[1rem] font-light leading-relaxed text-center px-4">
+          Basierend auf unseren umfangreichen Analysen erstellen wir eine maßgeschneiderte
+          SEO‑Strategie, die genau auf die Ziele und das Publikum des Unternehmens zugeschnitten
+          ist. In diesem Stadium legen wir Ziele fest, planen Maßnahmen und definieren KPIs, um den
+          Erfolg unserer Bemühungen messbar zu machen.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 8 -->
+    <section class="py-16 px-6 overflow-hidden">
+      <div class="flex flex-col items-center gap-6">
+        <h1 class="italic font-semibold text-[2rem] text-center px-4"> Umsetzung </h1>
+        <p class="text-[1rem] font-light leading-relaxed text-center px-4">
+          Mit der entwickelten Strategie geht es in die Umsetzungsphase. Dabei umfasst unsere Arbeit
+          sowohl technische Optimierungen an der Website als auch die Erstellung von qualitativ
+          hochwertigem Content, der sowohl die Zielgruppe anspricht als auch von den Suchmaschinen
+          positiv bewertet wird.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 9 -->
+    <section class="py-16 px-6 overflow-hidden">
+      <div class="flex flex-col items-center gap-6">
+        <h1 class="italic font-semibold text-[2rem] text-center px-4">
+          Monitoring &amp;
+          <span class="bg-gradient-to-r to-[#01A3FF] from-[#25CDDA] bg-clip-text text-transparent">
+            Optimierung
+          </span>
+        </h1>
+        <p class="text-[1rem] font-light leading-relaxed text-center px-4">
+          Da SEO ein dynamischer Prozess ist, überwachen wir ständig die Performance der Website,
+          analysieren die gewonnenen Daten und nehmen bei Bedarf Anpassungen vor. Durch unser
+          kontinuierliches Monitoring und die gezielte Optimierung stellen wir sicher, dass die
+          Website stets den aktuellen SEO‑Best Practices entspricht und bestmögliche Ergebnisse
+          liefert.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 10: Final Note -->
+    <section class="py-16 px-6 overflow-hidden">
+      <p class="text-[1rem] font-light leading-relaxed text-center px-4">
+        Durch die Kombination aus Datenanalyse, technischer Expertise und kreativer Arbeit streben
+        wir an, die Online‑Präsenz unserer Kunden zu verbessern und deren Geschäftsziele zu
+        erreichen.
+      </p>
+    </section>
+  </div>
 </template>
 
 <script setup>

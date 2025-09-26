@@ -1,16 +1,15 @@
 <template>
+  <!-- Desktop / Tablet Hero Section -->
   <div
     id="services-top"
-    class="relative min-h-screen  bg-black overflow-hidden text-white"
+    class="relative min-h-screen bg-black overflow-hidden text-white hidden sm:block"
   >
-    <!-- Injected SVG Background -->
     <div
       class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden"
       v-html="Seoherobg"
     />
 
-    <!-- Black Overlay (fades in/out) -->
-    <div class="'absolute inset-0 z-10 bg-black transition-opacity duration-700',"></div>
+    <div class="absolute inset-0 z-10 bg-black transition-opacity duration-700"></div>
 
     <div
       class="relative z-20 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto px-6 pt-12 2xl:pt-[13rem] lg:pt-[8rem] gap-12 lg:gap-[6rem]"
@@ -44,7 +43,6 @@
         </div>
       </div>
 
-      <!-- SVG Illustration -->
       <div class="flex-1 max-w-[34.5rem] w-full flex justify-center items-center">
         <div
           ref="servicesHeroRef"
@@ -54,13 +52,51 @@
       </div>
     </div>
   </div>
+
+  <!-- ✅ Mobile-only Hero Section -->
+
+  <div class="block bg-black sm:hidden">
+    <div class="text-white px-6 text-center py-36">
+      <div class="flex flex-col gap-6 items-center">
+        <!-- ✅ Updated H1 -->
+        <h1 class="text-5xl leading-tight italic font-semibold max-w-[20rem]">
+          Von der ersten <span class="text-[#00FFB3]">Skizze</span><br />
+          bis zum letzten <span class="text-[#00FFB3]">Pixel</span>
+        </h1>
+
+        <p class="text-base font-light leading-relaxed max-w-[22rem]">
+          Du hast eine Vision und wir die Leidenschaft, sie zum Leben zu erwecken. Eine umfassende
+          Website-Strategie verwandelt Deine kreativen Vorstellungen in einen beeindruckenden
+          digitalen Auftritt. Für ein ästhetisches Design und messbare Ergebnisse.
+        </p>
+
+        <div
+          class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#38EF61] to-[#44E5C8]"
+        >
+          <Button
+            class="px-[1.5rem] py-[0.625rem] text-[1rem] rounded-[10px] bg-black bg-opacity-90 text-white hover:text-white transition"
+          >
+            <span
+              class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text"
+            >
+              Termin vereinbaren
+            </span>
+          </Button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image -->
+    <div class="flex justify-center">
+      <img src="@atoms/svgs/servicesfirst.svg" alt="Illustration" class="w-full max-w-xs" />
+    </div>
+  </div>
 </template>
 
 <script setup>
   import Button from '@atoms/Button.vue'
-  import { ref, onMounted, onBeforeUnmount } from 'vue'
+  import { ref } from 'vue'
 
-  // Injected SVGs
   import ServicesHeroRaw from '@atoms/svgs/servicesfirst.svg?raw'
   import Seoherobg from '@atoms/svgs/seoherobg.svg?raw'
 

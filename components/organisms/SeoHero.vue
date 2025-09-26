@@ -1,6 +1,6 @@
 <template>
   <section
-    class="bg-[#020111] relative 2xl:h-[1000px] lg:h-[837px] overflow-hidden py-24 px-6 md:px-16 lg:px-10 xl:px-23"
+    class="bg-[#020111] hidden lg:flex relative 2xl:h-[1000px] lg:h-[837px] overflow-hidden py-24 px-6 md:px-16 lg:px-10 xl:px-23"
   >
     <div
       class="absolute inset-0 w-full h-full z-0 overflow-hidden"
@@ -29,8 +29,7 @@
 
         <p class="font-light text-[1.425rem] max-w-[37.5rem]">
           Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive
-          SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein
-          <em>after-thought</em> sein.
+          SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein [after-thought] sein.
         </p>
 
         <div
@@ -49,6 +48,52 @@
 
       <div class="flex-1 w-full max-w-[28rem] xl:max-w-[32rem]">
         <div ref="seocharacter" v-html="Seocharacter" class="w-full h-auto pointer-events-none" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile version, hidden on lg and above -->
+  <section class="block lg:hidden bg-[#020111] text-white py-16 px-6 relative">
+    <!-- Image at top -->
+    <div class="w-full flex justify-center mb-10">
+      <img
+        src="@atoms/svgs/seo-character.svg"
+        alt="SEO Character"
+        class="w-[16rem] h-auto object-contain"
+      />
+    </div>
+
+    <!-- Text content -->
+    <div class="flex flex-col items-center gap-6 text-center">
+      <h1 class="text-[2rem] font-lightbold italic leading-snug">
+        Bereit für den
+        <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
+          Startschuss
+        </span>
+        nach
+        <span
+          class="bg-gradient-to-r from-[#25CDDA] via-[#01A3FF] to-[#1EC5E1] bg-clip-text text-transparent"
+        >
+          Oben?
+        </span>
+      </h1>
+
+      <p class="text-[1.125rem] font-light leading-relaxed">
+        Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive
+        SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein [after-thought] sein.
+      </p>
+
+      <!-- Button -->
+      <div
+        class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#01A3FF] to-[#25CDDA]"
+      >
+        <Button
+          class="px-[1.5rem] py-[0.625rem] text-[1rem] rounded-[10px] bg-black bg-opacity-90 text-white hover:text-white transition"
+        >
+          <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] text-transparent bg-clip-text">
+            Startbefehl geben
+          </span>
+        </Button>
       </div>
     </div>
   </section>

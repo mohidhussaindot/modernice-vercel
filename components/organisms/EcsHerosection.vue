@@ -146,10 +146,10 @@
               <div
                 v-for="(card, index) in serviceCards"
                 :key="index"
-                class="bg-[#0E0D1A] border border-[#FFA901]/50 p-6 rounded-lg flex flex-col justify-between"
+                class="bg-[#0E0D1A] border text-start border-[#FFA901]/50 p-6 rounded-lg overflow-hidden flex flex-col justify-between"
               >
-                <div v-html="card.html" class="mb-4"></div>
-                <h2 class="text-2xl font-bold">{{ card.title }}</h2>
+                <div v-html="card.html" class="mx-auto mb-4"></div>
+                <h2 class="text-2xl flex font-bold">{{ card.title }}</h2>
                 <p class="text-sm opacity-70">{{ card.description }}</p>
                 <div class="flex justify-between items-center mt-4">
                   <span class="text-xl font-medium"
@@ -177,7 +177,7 @@
       </section>
 
       <section
-        class="relative bg-black flex md:hidden lg:flex lg:justify-center items-center overflow-hidden h-[37.5rem]"
+        class="hidden lg:flex relative bg-black justify-center items-center overflow-hidden h-[37.5rem]"
       >
         <div
           class="absolute bg-no-repeat bg-center inset-0 bg-[length:100%]"
@@ -259,23 +259,27 @@
 
   const serviceCards = [
     {
-      title: 'Conversion Optimization',
-      description: 'Improve your sales funnel through tailored design and performance strategies.',
+      title: '1. Discovery & Strategy',
+      description:
+        'The first step in our e-commerce strategy process is to gain a thorough understanding of your business goals and target audience. This includes conducting market research and analyzing your competitors to determine the most effective e-commerce strategy for your business.',
       html: Ecsmain1
     },
     {
-      title: 'Payment Integration',
-      description: 'We integrate modern, secure, and flexible payment gateways for global reach.',
+      title: '2. Design & Development',
+      description:
+        'Once we have developed a personalized e-commerce strategy for your business, our team will begin working on the design and development of your online store. This includes creating a visually appealing and user-friendly website, as well as implementing the necessary e-commerce tools and technologies.',
       html: Ecsmain2
     },
     {
-      title: 'Custom UX/UI Design',
-      description: 'Unique and user-focused design that drives engagement and brand trust.',
+      title: '3. Testing & Launch',
+      description:
+        'Before launching your online store, we will conduct thorough testing to ensure that everything is functioning properly. This includes testing the user experience, payment processes, and overall functionality of your website. Once we are confident that your online store is ready for launch, we will help you get your business up and running in the digital world.',
       html: Ecsmain3
     },
     {
-      title: 'Analytics & Support',
-      description: 'Track sales and behavior, with ongoing support and improvements.',
+      title: '4. Optimize for Growth',
+      description:
+        'Our work doesnt end once your online store is launched. We will continue to monitor and analyze the performance of your e-commerce platform, making ongoing adjustments and optimizations as needed. We also provide ongoing support and maintenance to ensure that your online store continues to function smoothly and effectively',
       html: Ecsmain4
     }
   ]

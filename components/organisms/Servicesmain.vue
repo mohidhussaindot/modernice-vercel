@@ -1,17 +1,19 @@
 <template>
   <div
-    class="w-full h-[400px] bg-black bg-no-repeat bg-cover bg-center"
+    class="w-full h-[400px] bg-black hidden lg:flex bg-no-repeat bg-cover bg-center"
     style="background-image: url('/images/services-third.png')"
   ></div>
 
-  <section ref="containerRef" class="bg-black lg:h-[3717px] relative text-white overflow-hidden">
+  <section
+    ref="containerRef"
+    class="bg-black hidden lg:flex lg:h-[3717px] relative text-white overflow-hidden"
+  >
     <div
       class="svg-wrapper w-full h-full pointer-events-none select-none transition-all duration-300"
     >
       <div v-html="servicesMainBg"></div>
     </div>
 
-    <!-- Header -->
     <div
       class="fade-left absolute flex flex-col top-0 left-[273px] text-white max-w-[42.125rem] text-center md:text-left mx-auto md:mx-0"
     >
@@ -193,8 +195,9 @@
       </div>
     </div>
   </section>
+
   <section
-    class="relative bg-black lg:flex md:hidden lg:justify-center xl:flex xl:justify-center items-center overflow-hidden h-[37.5rem]"
+    class="relative hidden lg:flex bg-black md:hidden lg:justify-center xl:flex xl:justify-center items-center overflow-hidden h-[37.5rem]"
   >
     <div
       class="absolute bg-no-repeat bg-center inset-0 bg-[length:100%]"
@@ -236,6 +239,95 @@
           </h2>
         </span>
       </div>
+    </div>
+  </section>
+
+  <!-- ✅ Mobile-Only Version -->
+  <section class="block sm:hidden bg-black text-white px-6">
+    <!-- Section Header -->
+    <div class="py-[7.5rem] text-center">
+      <h1 class="text-[2rem] font-serif font-lightbold">
+        Phasen des <span class="text-[#00FFB3]">Erfolgs</span>
+      </h1>
+      <p class="mt-6 text-[1rem] font-light leading-relaxed">
+        Wir lassen uns nicht von vorgefertigten Abläufen leiten, sondern gestalten den Weg gemeinsam
+        mit Dir – so vielseitig und einzigartig wie Dein Projekt es erfordert. Dabei durchlaufen wir
+        verschiedene Stationen, um sicherzustellen, dass Deine Website funktional und wirkungsvoll
+        ist.
+      </p>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="py-[7.5rem] text-center">
+      <h1 class="text-[2rem] font-serif font-lightbold">
+        <span class="text-[#00FFB3]">Quellen</span> der Inspiration
+      </h1>
+      <p class="mt-6 text-[1rem] font-light leading-relaxed">
+        Hinter jeder beeindruckenden Website steht eine kraftvolle Idee. In der Anfangsphase werden
+        die Visionen und Ziele ausgelotet und so der Grundstein für ein kreatives und zielführendes
+        Webkonzept gelegt.
+      </p>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="py-[7.5rem] text-center">
+      <h1 class="text-[2rem] font-serif font-lightbold">
+        <span class="text-[#00FFB3]">Routen</span>planung
+      </h1>
+      <p class="mt-6 text-[1rem] font-light leading-relaxed">
+        Mit den definierten Zielen und Anforderungen wird eine klare Roadmap erstellt, die sowohl
+        das Nutzererlebnis als auch die technischen Aspekte berücksichtigt und somit eine
+        zielgerichtete Entwicklung ermöglicht.
+      </p>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="py-[7.5rem] text-center">
+      <h1 class="text-[2rem] font-serif font-lightbold">
+        Sterne zum <span class="text-[#00FFB3]">Leuchten</span> bringen
+      </h1>
+      <p class="mt-6 text-[1rem] font-light leading-relaxed">
+        In dieser Phase kommt unsere kreative und technische Expertise zum Einsatz, um eine
+        lebendige und funktionale Website zu gestalten. Hierbei steht die Verbindung von
+        ästhetischer Erscheinung und solider technischer Basis im Vordergrund.
+      </p>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="py-[7.5rem] text-center">
+      <h1 class="text-[2rem] font-serif font-lightbold">
+        <span class="text-[#00FFB3]">Qualität</span> im Fokus
+      </h1>
+      <p class="mt-6 text-[1rem] font-light leading-relaxed">
+        Durch ausgiebige Tests wird sichergestellt, dass Deine Website in allen Bereichen - von der
+        Nutzererfahrung bis hin zur Performance und Darstellung auf verschiedenen Endgeräten -
+        reibungslos funktioniert. Gezielte Optimierungen gewährleisten hierbei die bestmögliche
+        Umsetzung.
+      </p>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="py-[7.5rem] text-center">
+      <h1 class="text-[2rem] font-serif font-lightbold">
+        <span class="text-[#00FFB3]">Live-</span>Schaltung <span class="text-[#00FFB3]">[WIP]</span>
+      </h1>
+      <p class="mt-6 text-[1rem] font-light leading-relaxed">
+        Nach sorgfältiger Vorbereitung und Optimierung geht sie live und nimmt ihren Platz in der
+        digitalen Landschaft ein. Von diesem Moment an beginnt sie, die Nutzer zu begeistern,
+        wichtige Verbindungen zu knüpfen und Deine Botschaft effektiv zu kommunizieren.
+      </p>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="py-[7.5rem] text-center">
+      <h1 class="text-[2rem] font-serif font-lightbold">
+        Perfektion durch <span class="text-[#00FFB3]">Iteration</span>
+      </h1>
+      <p class="mt-6 text-[1rem] font-light leading-relaxed">
+        Mit der erfolgreichen Veröffentlichung muss die Reise nicht enden. Kontinuierliche
+        Optimierungen und datenbasierte Analysen können dafür sorgen, dass Deine Website stets eine
+        hohe Sichtbarkeit und Leistungsfähigkeit aufweist, um ihr Wachstum weiter voranzutreiben.
+      </p>
     </div>
   </section>
 </template>
