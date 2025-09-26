@@ -6,9 +6,9 @@
       <!-- Content -->
       <!-- TEXT CONTENT -->
       <div
-        class="text-white xl:max-w-[38rem] lg:max-w-[25rem] flex flex-col gap-[1.5rem] md:items-center md:text-center lg:items-start lg:text-left"
+        class="text-white xl:max-w-[38rem] lg:max-w-[25rem] flex flex-col gap-[1.5rem] md:items-center text-center lg:items-start lg:text-left"
       >
-        <h1 class="text-[3.75rem] font-semibold italic">
+        <h1 class="lg:text-[3.75rem] text-4xl font-semibold italic">
           <span class="text-green-500">Form</span> folgt
           <span class="text-green-500">Funktion</span>
         </h1>

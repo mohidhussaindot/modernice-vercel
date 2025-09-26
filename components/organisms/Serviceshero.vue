@@ -1,7 +1,7 @@
 <template>
   <div
     id="services-top"
-    class="relative min-h-screen hidden lg:flex bg-black overflow-hidden text-white"
+    class="relative min-h-screen hidden lg:flex  bg-black overflow-hidden text-white"
   >
     <div
       class="absolute inset-0 w-full h-[800px] pointer-events-none z-0 overflow-hidden"
@@ -51,6 +51,50 @@
       </div>
     </div>
   </div>
+
+
+  <!-- mobile -->
+  <div id="services-top-mobile" class="relative block md:hidden bg-black text-white overflow-hidden">
+  <!-- Background SVG as <img> -->
+  <div class="absolute inset-0 w-full h-[800px] pointer-events-none z-0 overflow-hidden">
+    <img src="@atoms/svgs/seoherobg.svg" alt="Background SVG" class="w-full h-full object-cover" />
+  </div>
+
+  <!-- Black overlay -->
+  <div class="absolute inset-0 z-10 bg-black opacity-80"></div>
+
+  <!-- Content -->
+  <div class="relative z-20 flex flex-col items-center text-center px-6 pt-24 pb-16 gap-8">
+    <h1 class="text-5xl font-semibold italic leading-tight">
+      Von der ersten <span class="text-[#00FFB3]">Skizze</span><br />
+      bis zum letzten <span class="text-[#00FFB3]">Pixel</span>
+    </h1>
+
+    <p class="text-base font-light leading-relaxed">
+      Du hast eine Vision und wir die Leidenschaft, sie zum Leben zu erwecken. Eine umfassende
+      Website-Strategie verwandelt Deine kreativen Vorstellungen in einen beeindruckenden
+      digitalen Auftritt. Für ein ästhetisches Design und messbare Ergebnisse.
+    </p>
+
+    <!-- CTA Button -->
+    <div
+      class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#38EF61] to-[#44E5C8]"
+    >
+      <Button
+        class="px-[1.5rem] py-[0.625rem] text-[1rem] rounded-[10px] bg-black bg-opacity-90 text-white transition"
+      >
+        <span class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text">
+          Termin vereinbaren
+        </span>
+      </Button>
+    </div>
+
+    <!-- Hero SVG as <img> -->
+    <div class="w-full max-w-[20rem] mt-8">
+      <img src="@atoms/svgs/servicesfirst.svg" alt="Services Hero" class="w-full h-auto" />
+    </div>
+  </div>
+</div>
 </template>
 
 <script setup>
