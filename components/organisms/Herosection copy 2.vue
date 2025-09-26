@@ -388,7 +388,6 @@
   import bghero from '@atoms/svgs/bghero.svg?raw'
   import rocket from '@atoms/svgs/leftsectionsvg.svg?raw'
   import bglines from '@atoms/svgs/Lines.svg?raw'
-  import cockpit from '@atoms/svgs/cockpit.svg?raw'
   import ServicesSlider from './ServicesSlider.vue'
   import Servicesmain from './Servicesmain.vue'
   import Servicessecond from '@organisms/Servicessecond.vue'
@@ -429,7 +428,7 @@
       scrollTrigger: {
         trigger: '.wrapper',
         start: 'top top ',
-        end: '+=800',
+        end: '+=1200',
         scrub: 0.3,
         pin: true,
         pinSpacing: true,
@@ -442,7 +441,7 @@
       .to(
         '.image-container img',
         {
-          scale: 1.5,
+          scale: 1.3,
           transformOrigin: 'center center',
           ease: 'power2.out'
         },

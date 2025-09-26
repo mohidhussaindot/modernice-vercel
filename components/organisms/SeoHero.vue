@@ -28,8 +28,7 @@
         </h1>
 
         <p class="font-light text-[1.425rem] max-w-[37.5rem]">
-          Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive
-          SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein [after-thought] sein.
+        Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein [after-thought] sein.
         </p>
 
         <div
@@ -52,7 +51,7 @@
     </div>
   </section>
 
-  <!-- Mobile version, hidden on lg and above -->
+    <!-- Mobile version, hidden on lg and above -->
   <section class="block lg:hidden bg-[#020111] text-white py-16 px-6 relative">
     <!-- Image at top -->
     <div class="w-full flex justify-center mb-10">
@@ -71,16 +70,13 @@
           Startschuss
         </span>
         nach
-        <span
-          class="bg-gradient-to-r from-[#25CDDA] via-[#01A3FF] to-[#1EC5E1] bg-clip-text text-transparent"
-        >
+        <span class="bg-gradient-to-r from-[#25CDDA] via-[#01A3FF] to-[#1EC5E1] bg-clip-text text-transparent">
           Oben?
         </span>
       </h1>
 
       <p class="text-[1.125rem] font-light leading-relaxed">
-        Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive
-        SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein [after-thought] sein.
+       Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein [after-thought] sein.
       </p>
 
       <!-- Button -->
