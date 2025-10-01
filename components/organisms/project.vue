@@ -128,12 +128,17 @@
   >
     ✕
   </button>
-
-  <img
+<a
+      :href="selectedImage.url"
+      target="_blank"
+      class="mt-4 inline-block  rounded-xl bg-white/20  hover:bg-white/30 "
+    >
+   <img
     :src="selectedImage.src"
     alt="Selected Image"
     class="max-w-[80vw] max-h-[70vh] rounded-xl shadow-lg"
-  />
+  /></a>
+ 
 
   <div class="text-center text-white mt-6 max-w-[600px]">
     <h2 class="text-2xl font-bold">{{ selectedImage.info }}</h2>
