@@ -28,6 +28,7 @@
                 Entdecke<br />Neue Horizonte
               </span>
             </h1>
+            
 
             <p
               class="mt-[1.5rem] font-light leading-relaxed text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.5rem] w-full xl:w-[34.875rem]"
