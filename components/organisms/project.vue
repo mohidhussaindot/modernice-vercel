@@ -267,9 +267,9 @@ scene.add(dirLight)
     { name: 'tzone.png', url: 'https://T.zone', info: 'T.Zone Platform', description: 'Organize your tournament and earn money' },
   ]
 
-  // ---------- New: carousel of 3 GLB models ----------
-  const glbPaths = ['/work/Spaceship.glb', '/work/moon.glb', '/work/ufo.glb ', '/work/satelite.glb']
-  const glbNames = ['Spaceship', 'Spaceship2', 'paper' , 'satelite']
+  //  New: carousel of 3 GLB models 
+  const glbPaths = ['/work/Spaceship.glb', '/work/moon.glb', '/work/satelite.glb']
+  const glbNames = ['Spaceship', 'moon' , 'satelite']
   const gltfLoader = new GLTFLoader()
 const SLOT_BASE_Z = 1250
 const SLOT_GAP = 2000
@@ -301,7 +301,7 @@ let targetWidth = 500
 if (sceneModel.name === 'satelite') {
   targetWidth = 400 // make satellite smaller
 }
-if (sceneModel.name === 'paper') {
+if (sceneModel.name === 'moon') {
   targetWidth = 400
 }
 
