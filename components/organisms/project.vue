@@ -158,8 +158,9 @@ import { ref, onMounted, nextTick } from 'vue'
 import * as THREE from 'three'
 import gsap from 'gsap'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { Box3, Vector3 } from 'three'
 
-// Dropdown
+// ---------- Dropdown ----------
 const dropdownOpen = ref(false)
 const services = [
   { label: 'App Development', to: '/services/appdevelopment' },
@@ -201,6 +202,14 @@ onMounted(async () => {
   // Ensure DOM refs are ready
   await nextTick()
 
+  // --- Loading orchestration: keep loading screen until both progress animation and assets are ready ---
+  let assetsLoaded = false
+  let progressDone = false
+
+  const checkFinishLoading = () => {
+    if (assetsLoaded && progressDone) loading.value = false
+  }
+
   // Smooth loading bar animation using a plain object (gsap animates plain objects reliably)
   const progress = { value: 0 }
   gsap.to(progress, {
@@ -211,12 +220,12 @@ onMounted(async () => {
       loadingProgress.value = Math.round(progress.value)
       if (loadingBar.value) loadingBar.value.style.width = loadingProgress.value + '%'
     },
-    onComplete: () => { loading.value = false }
+    onComplete: () => { progressDone = true; checkFinishLoading() }
   })
 
-  // Three.js scene setup (only after canvas ref exists)
+  // --- Three.js scene setup ---
   const scene = new THREE.Scene()
-  const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 10000)
+  const camera = new THREE.PerspectiveCamera(26, window.innerWidth / window.innerHeight, 0.1, 10000)
   camera.position.set(850, 830, 3200)
   camera.lookAt(-100, -100, 1550)
 
@@ -227,9 +236,24 @@ onMounted(async () => {
   })
   renderer.setSize(window.innerWidth, window.innerHeight)
   renderer.setClearColor(0x000000, 0)
+  renderer.outputEncoding = THREE.sRGBEncoding
+renderer.toneMapping = THREE.ACESFilmicToneMapping
+renderer.toneMappingExposure = 1.2
+const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.6)
+hemiLight.position.set(0, 200, 0)
+scene.add(hemiLight)
+const dirLight = new THREE.DirectionalLight(0xffffff, 2)
+dirLight.position.set(5, 10, 7.5)
+scene.add(dirLight)
 
-  const group = new THREE.Group()
-  scene.add(group)
+
+  // Groups
+  const planesGroup = new THREE.Group()
+  scene.add(planesGroup)
+  const modelsGroup = new THREE.Group()
+  scene.add(modelsGroup)
+
+  // Keep original plane logic variables (unchanged) - we'll reuse planesGroup for planes only
   const textureLoader = new THREE.TextureLoader()
   const spacingZ = 1000
 
@@ -241,72 +265,173 @@ onMounted(async () => {
     { name: 'epass.png', url: 'https://Epass.gg', info: 'Epass Game', description: 'Platform for identity verification and digital KYC services.' },
     { name: 'prestige-cars.png', url: 'https://prestige.cars', info: 'Prestige Cars', description: 'A luxury and exotic car rental platform offering elite sports and supercars.' },
     { name: 'tzone.png', url: 'https://T.zone', info: 'T.Zone Platform', description: 'Organize your tournament and earn money' },
-    // repeated entries were present in original; keep them intentionally if desired. (preserved)
-   
   ]
 
+  // ---------- New: carousel of 3 GLB models ----------
+  const glbPaths = ['/work/Spaceship.glb', '/work/ufo (1).glb', '/work/paper.glb']
+  const glbNames = ['Spaceship', 'Spaceship2', 'paper']
+  const gltfLoader = new GLTFLoader()
+
+  // Slots -> these are the Z positions relative to the scene where slot 0 is "front" (closest to camera), 1 = middle, 2 = back
+  const SLOT_BASE_Z = 1550 // camera look target is ~1550 in your current setup, keep around there
+  const SLOT_GAP = 2000 // "huge gap" between models
+  const slots = [SLOT_BASE_Z, SLOT_BASE_Z - SLOT_GAP, SLOT_BASE_Z - SLOT_GAP * 2]
+  const slotScales = [1.1, 0.9, 0.8] // scale for front, middle, back
+
+  const models = [] // three loaded GLTF scenes
+  const modelSlot = new Map() // model -> current slot index (0,1,2)
+  let isCarouselAnimating = false
+
+  const loadGLB = (url) => new Promise((resolve, reject) => {
+    gltfLoader.load(url, (gltf) => resolve(gltf.scene), undefined, reject)
+  })
+Promise.all(glbPaths.map(loadGLB)).then((scenes) => {
+  scenes.forEach((sceneModel, i) => {
+    sceneModel.name = glbNames[i] || ('model-' + i)
+    sceneModel.traverse((c) => { if (c.isMesh) c.castShadow = true })
+
+    // --- Normalize size ---
+    const box = new Box3().setFromObject(sceneModel)
+    const size = new Vector3()
+    box.getSize(size)
+
+    // target width (adjust this to what looks right in your scene)
+    const targetWidth = sceneModel.name === 'paper' ? 500 : 500
+
+    const scaleFactor = targetWidth / size.x
+    sceneModel.scale.setScalar(scaleFactor)
+
+    // Save base scale for carousel slot adjustments
+    sceneModel.userData.baseScale = scaleFactor
+
+    // initial slot assignment
+    const slotIndex = i % 3
+    sceneModel.position.set(-1000 + i * 200, 0, slots[slotIndex])
+
+    // apply slot scale
+    const s = slotScales[slotIndex] * scaleFactor
+    sceneModel.scale.set(s, s, s)
+
+    modelsGroup.add(sceneModel)
+    models.push(sceneModel)
+    modelSlot.set(sceneModel, slotIndex)
+  })
+
+  assetsLoaded = true
+  checkFinishLoading()
+})
+
+  // Reuse original spaceship bobbing animation idea for any loaded model that was originally spaceship
+  const bobbingModels = new Set()
+
+  // Utility to animate each model to a given slot
+  const animateModelToSlot = (model, targetSlot, opts = {}) => {
+  const duration = opts.duration ?? 1.0
+  const ease = opts.ease ?? 'power2.inOut'
+  const onComplete = opts.onComplete
+
+  gsap.to(model.position, {
+    z: slots[targetSlot],
+    duration,
+    ease,
+    onComplete: () => { if (onComplete) onComplete() }
+  })
+
+  const baseScale = model.userData.baseScale || 1
+  gsap.to(model.scale, {
+    x: slotScales[targetSlot] * baseScale,
+    y: slotScales[targetSlot] * baseScale,
+    z: slotScales[targetSlot] * baseScale,
+    duration,
+    ease
+  })
+
+  if (targetSlot === 0) {
+    gsap.to(model.rotation, { x: 0, y: 0, z: 0, duration })
+  }
+}
+
+
+  // Rotate carousel forward (middle -> front, front -> back, back -> middle)
+  const rotateCarouselForward = () => {
+    if (isCarouselAnimating || models.length < 3) return
+    isCarouselAnimating = true
+
+    let completed = 0
+    models.forEach((m) => {
+      const current = modelSlot.get(m)
+      const next = (current + 2) % 3 // move each model "one slot forward" toward camera
+      animateModelToSlot(m, next, {
+        duration: 1.1,
+        onComplete: () => {
+          completed++
+          if (completed === models.length) {
+            // commit new slot indices
+            models.forEach((mm) => {
+              const c = modelSlot.get(mm)
+              modelSlot.set(mm, (c + 2) % 3)
+            })
+            isCarouselAnimating = false
+          }
+        }
+      })
+    })
+  }
+
+  // Rotate carousel backward (reverse direction)
+  const rotateCarouselBackward = () => {
+    if (isCarouselAnimating || models.length < 3) return
+    isCarouselAnimating = true
+
+    let completed = 0
+    models.forEach((m) => {
+      const current = modelSlot.get(m)
+      const next = (current + 1) % 3 // reverse rotation
+      animateModelToSlot(m, next, {
+        duration: 1.1,
+        onComplete: () => {
+          completed++
+          if (completed === models.length) {
+            models.forEach((mm) => {
+              const c = modelSlot.get(mm)
+              modelSlot.set(mm, (c + 1) % 3)
+            })
+            isCarouselAnimating = false
+          }
+        }
+      })
+    })
+  }
+
+  // Scroll counting: trigger carousel after two consecutive scroll events in same direction
+  let scrollCount = 0
+  let lastDir = 0
+  const SCROLL_TRIGGER_COUNT = 14
+  window.addEventListener('wheel', (e) => {
+    if (loading.value) return
+    if (isNavbarHovered.value || selectedImage.value) { scrollCount = 0; lastDir = 0; return }
+
+    const dir = e.deltaY > 0 ? 1 : -1
+    if (dir !== lastDir) { scrollCount = 0; lastDir = dir }
+    scrollCount += 1
+
+    if (scrollCount >= SCROLL_TRIGGER_COUNT) {
+      if (dir > 0) rotateCarouselForward()
+      else rotateCarouselBackward()
+      scrollCount = 0
+      lastDir = 0
+    }
+  }, { passive: true })
+
+  // ---------- End of carousel setup ----------
+
+  // --- Original plane / texture loading (kept largely as you had it) ---
   const planes = []
   const clickablePlanes = new Map()
   const shadowPlanes = new Map()
   const planeLabels = new Map()
   const planeInfos = new Map()
   const hoverTriggers = []
-
-   const loader2 = new GLTFLoader()
-  let spaceshipModel2 = null
-
-   loader2.load(
-    '/work/paper.glb',
-    (gltf) => {
-      spaceshipModel2 = gltf.scene
-      spaceshipModel2.scale.set(100, 100, 100)
-      spaceshipModel2.position.set(800, 0, 1400)
-      scene.add(spaceshipModel2)
-      console.log('paper plane model loaded')
-      spaceshipModel2.traverse((child) => {
-  
-})
-    },
-    undefined,
-    (error) => {
-      console.error('Error loading paperplane model:', error)
-    }
-    
-  )
-
-
-  const loader = new GLTFLoader()
-  let spaceshipModel = null
-
-
-
-  loader.load(
-    '/work/Spaceship.glb',
-    (gltf) => {
-      spaceshipModel = gltf.scene
-      spaceshipModel.scale.set(0.8, 0.8, 0.8)
-      spaceshipModel.position.set(-800, 0, 1400)
-      scene.add(spaceshipModel)
-      console.log('paper plane model loaded')
-      spaceshipModel.traverse((child) => {
-  
-})
-    },
-    undefined,
-    (error) => {
-      console.error('Error loading paperplane model:', error)
-    }
-    
-  )
-
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.6)
-  scene.add(ambientLight)
-  const dirLight = new THREE.DirectionalLight(0xffffff, 1.2)
-dirLight.position.set(1000, 500, 1000) // adjust position
-dirLight.castShadow = true
-scene.add(dirLight)
-
- 
 
   const loadTexture = (image) =>
     new Promise((resolve) => {
@@ -322,7 +447,7 @@ scene.add(dirLight)
       const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide, transparent: true, opacity: 0.9  })
       const plane = new THREE.Mesh(geometry, material)
       plane.position.set(0, 0, -i * spacingZ)
-      group.add(plane)
+      planesGroup.add(plane)
       planes.push(plane)
       clickablePlanes.set(plane, imageLinks[i].url)
       planeLabels.set(plane, imageLinks[i].name.replace('.png', ''))
@@ -335,13 +460,13 @@ scene.add(dirLight)
       const hoverMaterial = new THREE.MeshBasicMaterial({ visible: false, side: THREE.DoubleSide })
       const hoverPlane = new THREE.Mesh(geometry.clone(), hoverMaterial)
       hoverPlane.position.set(0, 0, -i * spacingZ)
-      group.add(hoverPlane)
+      planesGroup.add(hoverPlane)
       hoverTriggers.push({ plane, hoverPlane })
 
       const shadowMaterial = new THREE.MeshBasicMaterial({ visible: false, side: THREE.DoubleSide })
       const shadowPlane = new THREE.Mesh(geometry.clone(), shadowMaterial)
       shadowPlane.position.set(0, 0, -i * spacingZ)
-      group.add(shadowPlane)
+      planesGroup.add(shadowPlane)
       shadowPlanes.set(plane, shadowPlane)
     })
     animate()
@@ -378,12 +503,13 @@ scene.add(dirLight)
     requestAnimationFrame(animate)
     if (loading.value) return
 
-    group.position.z += scrollSpeed
+    // original planes group movement (keeps current behaviour intact)
+    planesGroup.position.z += scrollSpeed
     scrollSpeed *= scrollDamp
     const cameraZ = camera.position.z
 
     hoverTriggers.forEach(({ plane, hoverPlane }) => {
-      const worldZ = group.position.z + plane.position.z
+      const worldZ = planesGroup.position.z + plane.position.z
       if (worldZ > cameraZ + spacingZ) {
         plane.position.z -= planes.length * spacingZ
         hoverPlane.position.z -= planes.length * spacingZ
@@ -416,7 +542,6 @@ scene.add(dirLight)
           currentHoveredPlane = intersectedPlane
           isAnimating = true
 
-          // gsap.to(currentHoveredPlane.position, { x: 400, duration: 0.9, onComplete: () => { isAnimating = false } })
           gsap.to(shadowPlanes.get(currentHoveredPlane).scale, { x: 1.01, duration: 0.9 })
 
           hoveredLabel.value = planeLabels.get(currentHoveredPlane)
@@ -470,12 +595,12 @@ scene.add(dirLight)
       document.body.style.cursor = 'default'
     }
 
-    if (spaceshipModel) {
-      const time = Date.now() * 0.001
-     
-      spaceshipModel.position.y = Math.sin(time * 1.5) * 10
-      spaceshipModel.rotation.z = Math.sin(time * 2.5) * 0.03
-    }
+    // bobbing for any models (subtle)
+    models.forEach((m) => {
+      const t = Date.now() * 0.001
+      m.position.y = Math.sin(t * 1.2 + (modelSlot.get(m) || 0) * 0.7) * 10
+      m.rotation.z = Math.sin(t * 0.9) * 0.02
+    })
 
     renderer.render(scene, camera)
   }
@@ -523,4 +648,4 @@ canvas {
   display: block;
 }
 
-</style>
+</style> 
