@@ -225,7 +225,7 @@ onMounted(async () => {
 
   // --- Three.js scene setup ---
   const scene = new THREE.Scene()
-  const camera = new THREE.PerspectiveCamera(26, window.innerWidth / window.innerHeight, 0.1, 10000)
+  const camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 10000)
   camera.position.set(850, 830, 3200)
   camera.lookAt(-100, -100, 1550)
 
@@ -268,15 +268,15 @@ scene.add(dirLight)
   ]
 
   // ---------- New: carousel of 3 GLB models ----------
-  const glbPaths = ['/work/Spaceship.glb', '/work/ufo (1).glb', '/work/paper.glb']
-  const glbNames = ['Spaceship', 'Spaceship2', 'paper']
+  const glbPaths = ['/work/Spaceship.glb', '/work/moon.glb', '/work/ufo.glb ', '/work/satelite.glb']
+  const glbNames = ['Spaceship', 'Spaceship2', 'paper' , 'satelite']
   const gltfLoader = new GLTFLoader()
+const SLOT_BASE_Z = 1250
+const SLOT_GAP = 2000
 
-  // Slots -> these are the Z positions relative to the scene where slot 0 is "front" (closest to camera), 1 = middle, 2 = back
-  const SLOT_BASE_Z = 1550 // camera look target is ~1550 in your current setup, keep around there
-  const SLOT_GAP = 2000 // "huge gap" between models
-  const slots = [SLOT_BASE_Z, SLOT_BASE_Z - SLOT_GAP, SLOT_BASE_Z - SLOT_GAP * 2]
-  const slotScales = [1.1, 0.9, 0.8] // scale for front, middle, back
+const slots = Array.from({ length: glbPaths.length }, (_, i) => SLOT_BASE_Z - i * SLOT_GAP)
+const slotScales = Array.from({ length: glbPaths.length }, (_, i) => 1 - i * 0.1) // 1.0, 0.9, 0.8, 0.7 ...
+
 
   const models = [] // three loaded GLTF scenes
   const modelSlot = new Map() // model -> current slot index (0,1,2)
@@ -290,23 +290,27 @@ Promise.all(glbPaths.map(loadGLB)).then((scenes) => {
     sceneModel.name = glbNames[i] || ('model-' + i)
     sceneModel.traverse((c) => { if (c.isMesh) c.castShadow = true })
 
-    // --- Normalize size ---
-    const box = new Box3().setFromObject(sceneModel)
-    const size = new Vector3()
-    box.getSize(size)
+   const box = new Box3().setFromObject(sceneModel)
+const size = new Vector3()
+box.getSize(size)
 
-    // target width (adjust this to what looks right in your scene)
-    const targetWidth = sceneModel.name === 'paper' ? 500 : 500
+// Default width target
+let targetWidth = 500
 
-    const scaleFactor = targetWidth / size.x
-    sceneModel.scale.setScalar(scaleFactor)
+// Per-model overrides
+if (sceneModel.name === 'satelite') {
+  targetWidth = 400 // make satellite smaller
+}
+if (sceneModel.name === 'paper') {
+  targetWidth = 400
+}
 
-    // Save base scale for carousel slot adjustments
-    sceneModel.userData.baseScale = scaleFactor
-
+const scaleFactor = targetWidth / size.x
+sceneModel.scale.setScalar(scaleFactor)
+sceneModel.userData.baseScale = scaleFactor
     // initial slot assignment
-    const slotIndex = i % 3
-    sceneModel.position.set(-1000 + i * 200, 0, slots[slotIndex])
+const slotIndex = i % slots.length
+    sceneModel.position.set(-1200 + i * 200, 0, slots[slotIndex])
 
     // apply slot scale
     const s = slotScales[slotIndex] * scaleFactor
@@ -354,66 +358,81 @@ Promise.all(glbPaths.map(loadGLB)).then((scenes) => {
 
   // Rotate carousel forward (middle -> front, front -> back, back -> middle)
   const rotateCarouselForward = () => {
-    if (isCarouselAnimating || models.length < 3) return
-    isCarouselAnimating = true
+  if (isCarouselAnimating || models.length < slots.length) return
+  isCarouselAnimating = true
 
-    let completed = 0
-    models.forEach((m) => {
-      const current = modelSlot.get(m)
-      const next = (current + 2) % 3 // move each model "one slot forward" toward camera
-      animateModelToSlot(m, next, {
-        duration: 1.1,
-        onComplete: () => {
-          completed++
-          if (completed === models.length) {
-            // commit new slot indices
-            models.forEach((mm) => {
-              const c = modelSlot.get(mm)
-              modelSlot.set(mm, (c + 2) % 3)
-            })
-            isCarouselAnimating = false
-          }
+  let completed = 0
+  models.forEach((m) => {
+    const current = modelSlot.get(m)
+    const next = (current + 1) % slots.length // <-- instead of (current + 2) % 3
+    animateModelToSlot(m, next, {
+      duration: 1.1,
+      onComplete: () => {
+        completed++
+        if (completed === models.length) {
+          models.forEach((mm) => {
+            const c = modelSlot.get(mm)
+            modelSlot.set(mm, (c + 1) % slots.length) // <-- wrap correctly
+          })
+          isCarouselAnimating = false
         }
-      })
+      }
     })
-  }
+  })
+}
 
-  // Rotate carousel backward (reverse direction)
-  const rotateCarouselBackward = () => {
-    if (isCarouselAnimating || models.length < 3) return
-    isCarouselAnimating = true
+// Rotate carousel backward
+const rotateCarouselBackward = () => {
+  if (isCarouselAnimating || models.length < slots.length) return
+  isCarouselAnimating = true
 
-    let completed = 0
-    models.forEach((m) => {
-      const current = modelSlot.get(m)
-      const next = (current + 1) % 3 // reverse rotation
-      animateModelToSlot(m, next, {
-        duration: 1.1,
-        onComplete: () => {
-          completed++
-          if (completed === models.length) {
-            models.forEach((mm) => {
-              const c = modelSlot.get(mm)
-              modelSlot.set(mm, (c + 1) % 3)
-            })
-            isCarouselAnimating = false
-          }
+  let completed = 0
+  models.forEach((m) => {
+    const current = modelSlot.get(m)
+    const next = (current - 1 + slots.length) % slots.length // <-- wrap backwards
+    animateModelToSlot(m, next, {
+      duration: 1.1,
+      onComplete: () => {
+        completed++
+        if (completed === models.length) {
+          models.forEach((mm) => {
+            const c = modelSlot.get(mm)
+            modelSlot.set(mm, (c - 1 + slots.length) % slots.length) // <-- wrap correctly
+          })
+          isCarouselAnimating = false
         }
-      })
+      }
     })
-  }
+  })
+}
 
-  // Scroll counting: trigger carousel after two consecutive scroll events in same direction
-  let scrollCount = 0
-  let lastDir = 0
-  const SCROLL_TRIGGER_COUNT = 14
-  window.addEventListener('wheel', (e) => {
+ let scrollCount = 0
+let lastDir = 0
+let lastScrollTime = 0
+const SCROLL_TRIGGER_COUNT = 9
+const SCROLL_DELAY = 290 // ms between valid scrolls
+
+window.addEventListener(
+  "wheel",
+  (e) => {
     if (loading.value) return
-    if (isNavbarHovered.value || selectedImage.value) { scrollCount = 0; lastDir = 0; return }
+    if (isNavbarHovered.value || selectedImage.value) {
+      scrollCount = 0
+      lastDir = 0
+      return
+    }
+
+    const now = Date.now()
+    if (now - lastScrollTime < SCROLL_DELAY) return // ignore bursts
+    lastScrollTime = now
 
     const dir = e.deltaY > 0 ? 1 : -1
-    if (dir !== lastDir) { scrollCount = 0; lastDir = dir }
-    scrollCount += 1
+    if (dir !== lastDir) {
+      scrollCount = 0
+      lastDir = dir
+    }
+
+    scrollCount++
 
     if (scrollCount >= SCROLL_TRIGGER_COUNT) {
       if (dir > 0) rotateCarouselForward()
@@ -421,7 +440,10 @@ Promise.all(glbPaths.map(loadGLB)).then((scenes) => {
       scrollCount = 0
       lastDir = 0
     }
-  }, { passive: true })
+  },
+  { passive: true }
+)
+
 
   // ---------- End of carousel setup ----------
 
