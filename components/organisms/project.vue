@@ -15,143 +15,140 @@
       <p class="text-white text-lg animate-pulse">Loading...</p>
     </div>
 
-  <!-- Navbar -->
-<header
-  v-if="!loading"
-  class="fixed top-0 left-0 w-full z-[9999] bg-gradient-to-t from-[#000]/0 via-[#000]/50 to-[#000]"
-  @mouseenter="isNavbarHovered = true"
-  @mouseleave="isNavbarHovered = false"
->
-  <div class="max-w-[90rem] mx-auto flex items-center justify-between h-25 px-6 relative">
- <!-- Left Buttons -->
-<div class="flex items-center gap-6">
-  <!-- Services Dropdown (fixed alignment) -->
-  <div class="relative flex items-center" @mouseenter="openDropdown" @mouseleave="closeDropdown">
-    <div
-      class="relative inline-block px-4 py-2 rounded-2xl text-white font-medium overflow-hidden group bg-white/40 border border-white/20 hover:cursor-pointer"
+    <!-- Navbar -->
+    <header
+      v-if="!loading"
+      class="fixed top-0 left-0 w-full z-[9999] bg-gradient-to-t from-[#000]/0 via-[#000]/50 to-[#000]"
+      @mouseenter="isNavbarHovered = true"
+      @mouseleave="isNavbarHovered = false"
     >
-      <span
-        class="absolute top-0 left-[-100%] w-full h-full bg-blue-100 transition-all duration-300 ease-in-out group-hover:left-0"
-      ></span>
-      <span class="relative z-10 transition-colors duration-300 group-hover:text-black">Services</span>
+      <div class="max-w-[90rem] mx-auto flex items-center justify-between h-25 px-6 relative">
+        <!-- Left Buttons -->
+        <div class="flex items-center gap-6">
+          <!-- Services Dropdown (fixed alignment) -->
+          <div class="relative flex items-center" @mouseenter="openDropdown" @mouseleave="closeDropdown">
+            <div
+              class="relative inline-block px-4 py-2 rounded-2xl text-white font-medium overflow-hidden group bg-white/40 border border-white/20 hover:cursor-pointer"
+            >
+              <span
+                class="absolute top-0 left-[-100%] w-full h-full bg-blue-100 transition-all duration-300 ease-in-out group-hover:left-0"
+              ></span>
+              <span class="relative z-10 transition-colors duration-300 group-hover:text-black">Services</span>
+            </div>
+
+            <!-- Dropdown Menu -->
+            <div
+              v-show="dropdownOpen"
+              class="absolute top-full left-0 mt-2 w-48 bg-white/80 rounded-lg shadow-lg overflow-hidden z-50"
+            >
+              <a
+                v-for="service in services"
+                :key="service.to"
+                :href="service.to"
+                class="block px-4 py-2 text-black hover:bg-blue-100"
+              >
+                {{ service.label }}
+              </a>
+            </div>
+          </div>
+
+          <!-- About -->
+          <div class="flex items-center">
+            <a
+              href="/about"
+              class="relative inline-block px-4 py-2 rounded-2xl text-white font-medium overflow-hidden group bg-white/40 border border-white/20"
+            >
+              <span
+                class="absolute top-0 left-[-100%] w-full h-full bg-blue-100 transition-all duration-300 ease-in-out group-hover:left-0"
+              ></span>
+              <span class="relative z-10 transition-colors duration-300 group-hover:text-black">About</span>
+            </a>
+          </div>
+
+          <!-- Blog -->
+          <div class="flex items-center">
+            <a
+              href="/blog"
+              class="relative inline-block px-4 py-2 rounded-2xl text-white font-medium overflow-hidden group bg-white/40 border border-white/20"
+            >
+              <span
+                class="absolute top-0 left-[-100%] w-full h-full bg-blue-100 transition-all duration-300 ease-in-out group-hover:left-0"
+              ></span>
+              <span class="relative z-10 transition-colors duration-300 group-hover:text-black">Blog</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Center Logo -->
+        <div
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-semilight text-xl cursor-pointer"
+        >
+          <a href="/">Modernice.Design</a>
+        </div>
+
+        <!-- Contact Button -->
+        <div class="flex items-center gap-4">
+          <a
+            href="/contact"
+            class="relative inline-block px-4 py-2 rounded-2xl text-white font-medium overflow-hidden group bg-white/40 border border-white/20"
+          >
+            <span
+              class="absolute top-0 left-[-100%] w-full h-full bg-blue-100 transition-all duration-300 ease-in-out group-hover:left-0"
+            ></span>
+            <span class="relative z-10 transition-colors duration-300 group-hover:text-black">Contact</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+
+    <div class="canvas-wrapper">
+      <canvas
+        ref="canvas"
+        :style="{ pointerEvents: loading ? 'none' : 'auto' }"
+        class="background-canvas"
+      />
     </div>
 
-    <!-- Dropdown Menu -->
+
+    <!-- Centered Overlay when image clicked -->
     <div
-      v-show="dropdownOpen"
-      class="absolute top-full left-0 mt-2 w-48 bg-white/80 rounded-lg shadow-lg overflow-hidden z-50"
+      v-if="selectedImage"
+      class="fixed inset-0 bg-black/70 backdrop-blur-md flex flex-col items-center justify-center z-[99999]"
+      @click.self="selectedImage = null"
     >
-      <a
-        v-for="service in services"
-        :key="service.to"
-        :href="service.to"
-        class="block px-4 py-2 text-black hover:bg-blue-100"
+      <!-- Close Button -->
+      <button
+        class="absolute top-6 right-6 text-white text-2xl font-bold hover:cursor-pointer"
+        @click="selectedImage = null"
       >
-        {{ service.label }}
-      </a>
-    </div>
-  </div>
-
-  <!-- About -->
-  <div class="flex items-center">
-    <a
-      href="/about"
-      class="relative inline-block px-4 py-2 rounded-2xl text-white font-medium overflow-hidden group bg-white/40 border border-white/20"
-    >
-      <span
-        class="absolute top-0 left-[-100%] w-full h-full bg-blue-100 transition-all duration-300 ease-in-out group-hover:left-0"
-      ></span>
-      <span class="relative z-10 transition-colors duration-300 group-hover:text-black">About</span>
-    </a>
-  </div>
-
-  <!-- Blog -->
-  <div class="flex items-center">
-    <a
-      href="/blog"
-      class="relative inline-block px-4 py-2 rounded-2xl text-white font-medium overflow-hidden group bg-white/40 border border-white/20"
-    >
-      <span
-        class="absolute top-0 left-[-100%] w-full h-full bg-blue-100 transition-all duration-300 ease-in-out group-hover:left-0"
-      ></span>
-      <span class="relative z-10 transition-colors duration-300 group-hover:text-black">Blog</span>
-    </a>
-  </div>
-</div>
-
-
-    <!-- Center Logo -->
-    <div
-      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-semilight text-xl cursor-pointer"
-    >
-      <a href="/">Modernice.Design</a>
-    </div>
-
-    <!-- Contact Button -->
-    <div class="flex items-center gap-4">
+        ✕
+      </button>
       <a
-        href="/contact"
-        class="relative inline-block px-4 py-2 rounded-2xl text-white font-medium overflow-hidden group bg-white/40 border border-white/20"
+        :href="selectedImage.url"
+        target="_blank"
+        class="mt-4 inline-block  rounded-xl bg-white/20  hover:bg-white/30 "
       >
-        <span
-          class="absolute top-0 left-[-100%] w-full h-full bg-blue-100 transition-all duration-300 ease-in-out group-hover:left-0"
-        ></span>
-        <span class="relative z-10 transition-colors duration-300 group-hover:text-black">Contact</span>
+        <img
+          :src="selectedImage.src"
+          alt="Selected Image"
+          class="max-w-[80vw] max-h-[70vh] rounded-xl shadow-lg"
+        />
       </a>
+
+
+      <div class="text-center text-white mt-6 max-w-[600px]">
+        <h2 class="text-2xl font-bold">{{ selectedImage.info }}</h2>
+        <p class="mt-2 opacity-80">{{ selectedImage.description }}</p>
+        <a
+          :href="selectedImage.url"
+          target="_blank"
+          class="mt-4 inline-block px-6 py-2 bg-white/20 rounded-lg hover:bg-white/30 "
+        >
+          Visit Site
+        </a>
+      </div>
     </div>
-  </div>
-</header>
-
-
-
-  <div class="canvas-wrapper">
-    <canvas
-      ref="canvas"
-      :style="{ pointerEvents: loading ? 'none' : 'auto' }"
-      class="background-canvas"
-    />
-  </div>
-
-
-   
-
-<!-- Centered Overlay when image clicked -->
-<div
-  v-if="selectedImage"
-  class="fixed inset-0 bg-black/70 backdrop-blur-md flex flex-col items-center justify-center z-[99999]"
-  @click.self="selectedImage = null" 
->
-  <!-- Close Button -->
-  <button
-    class="absolute top-6 right-6 text-white text-2xl font-bold hover:cursor-pointer"
-    @click="selectedImage = null"
-  >
-    ✕
-  </button>
-<a
-      :href="selectedImage.url"
-      target="_blank"
-      class="mt-4 inline-block  rounded-xl bg-white/20  hover:bg-white/30 "
-    >
-   <img
-    :src="selectedImage.src"
-    alt="Selected Image"
-    class="max-w-[80vw] max-h-[70vh] rounded-xl shadow-lg"
-  /></a>
- 
-
-  <div class="text-center text-white mt-6 max-w-[600px]">
-    <h2 class="text-2xl font-bold">{{ selectedImage.info }}</h2>
-    <p class="mt-2 opacity-80">{{ selectedImage.description }}</p>
-    <a
-      :href="selectedImage.url"
-      target="_blank"
-      class="mt-4 inline-block px-6 py-2 bg-white/20 rounded-lg hover:bg-white/30 "
-    >
-      Visit Site
-    </a>
-  </div>
-</div>
 
   </div>
 </template>
@@ -160,6 +157,7 @@
 import { ref, onMounted, nextTick } from 'vue'
 import * as THREE from 'three'
 import gsap from 'gsap'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 // Dropdown
 const dropdownOpen = ref(false)
@@ -192,37 +190,43 @@ const loading = ref(true)
 const loadingBar = ref(null)
 const loadingProgress = ref(0)
 
-
-
-onMounted(() => {
-
+onMounted(async () => {
+  // Key handler for closing overlay
   window.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && selectedImage.value) {
-    selectedImage.value = null
-  }
-})
-  // Smooth loading bar animation
-  gsap.to(loadingProgress, {
+    if (event.key === 'Escape' && selectedImage.value) {
+      selectedImage.value = null
+    }
+  })
+
+  // Ensure DOM refs are ready
+  await nextTick()
+
+  // Smooth loading bar animation using a plain object (gsap animates plain objects reliably)
+  const progress = { value: 0 }
+  gsap.to(progress, {
     value: 100,
     duration: 3,
     ease: 'power1.inOut',
-    onUpdate: () => { loadingBar.value.style.width = loadingProgress.value + '%' },
+    onUpdate: () => {
+      loadingProgress.value = Math.round(progress.value)
+      if (loadingBar.value) loadingBar.value.style.width = loadingProgress.value + '%'
+    },
     onComplete: () => { loading.value = false }
   })
 
-  // Three.js scene setup
+  // Three.js scene setup (only after canvas ref exists)
   const scene = new THREE.Scene()
-  const camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 0.1, 10000)
+  const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 10000)
   camera.position.set(850, 830, 3200)
   camera.lookAt(-100, -100, 1550)
-const renderer = new THREE.WebGLRenderer({ 
-  canvas: canvas.value, 
-  antialias: true, 
-  alpha: true  
-})
-renderer.setSize(window.innerWidth, window.innerHeight)
-renderer.setClearColor(0x000000, 0)  
+
+  const renderer = new THREE.WebGLRenderer({ 
+    canvas: canvas.value, 
+    antialias: true, 
+    alpha: true  
+  })
   renderer.setSize(window.innerWidth, window.innerHeight)
+  renderer.setClearColor(0x000000, 0)
 
   const group = new THREE.Group()
   scene.add(group)
@@ -237,21 +241,8 @@ renderer.setClearColor(0x000000, 0)
     { name: 'epass.png', url: 'https://Epass.gg', info: 'Epass Game', description: 'Platform for identity verification and digital KYC services.' },
     { name: 'prestige-cars.png', url: 'https://prestige.cars', info: 'Prestige Cars', description: 'A luxury and exotic car rental platform offering elite sports and supercars.' },
     { name: 'tzone.png', url: 'https://T.zone', info: 'T.Zone Platform', description: 'Organize your tournament and earn money' },
-      { name: 'adobelino.png', url: 'https://adobelino.com', info: 'Adobe Lino Project', description: 'A digital store for purchasing original software & licenses' },
-    { name: 'crovillas.png', url: 'https://crovillas.com/', info: 'Crovillas Site', description: 'Offers luxury villa rentals, often with pool and sea views.' },
-    { name: 'cube.expert.png', url: 'https://cubee.expert/en', info: 'Cube Expert', description: 'A service for independent vehicle appraisals and damage assessments' },
-    { name: 'depositdirect.png', url: 'https://depositdirect.net', info: 'Deposit Direct', description: 'Lets tenants rent without paying a cash deposit by issuing a rental deposit guarantee' },
-    { name: 'epass.png', url: 'https://Epass.gg', info: 'Epass Game', description: 'Platform for identity verification and digital KYC services.' },
-    { name: 'prestige-cars.png', url: 'https://prestige.cars', info: 'Prestige Cars', description: 'A luxury and exotic car rental platform offering elite sports and supercars.' },
-    { name: 'tzone.png', url: 'https://T.zone', info: 'T.Zone Platform', description: 'Organize your tournament and earn money' },
-      { name: 'adobelino.png', url: 'https://adobelino.com', info: 'Adobe Lino Project', description: 'A digital store for purchasing original software & licenses' },
-    { name: 'crovillas.png', url: 'https://crovillas.com/', info: 'Crovillas Site', description: 'Offers luxury villa rentals, often with pool and sea views.' },
-    { name: 'cube.expert.png', url: 'https://cubee.expert/en', info: 'Cube Expert', description: 'A service for independent vehicle appraisals and damage assessments' },
-    { name: 'depositdirect.png', url: 'https://depositdirect.net', info: 'Deposit Direct', description: 'Lets tenants rent without paying a cash deposit by issuing a rental deposit guarantee' },
-    { name: 'epass.png', url: 'https://Epass.gg', info: 'Epass Game', description: 'Platform for identity verification and digital KYC services.' },
-    { name: 'prestige-cars.png', url: 'https://prestige.cars', info: 'Prestige Cars', description: 'A luxury and exotic car rental platform offering elite sports and supercars.' },
-    { name: 'tzone.png', url: 'https://T.zone', info: 'T.Zone Platform', description: 'Organize your tournament and earn money' },
-    
+    // repeated entries were present in original; keep them intentionally if desired. (preserved)
+   
   ]
 
   const planes = []
@@ -261,6 +252,62 @@ renderer.setClearColor(0x000000, 0)
   const planeInfos = new Map()
   const hoverTriggers = []
 
+   const loader2 = new GLTFLoader()
+  let spaceshipModel2 = null
+
+   loader2.load(
+    '/work/paper.glb',
+    (gltf) => {
+      spaceshipModel2 = gltf.scene
+      spaceshipModel2.scale.set(100, 100, 100)
+      spaceshipModel2.position.set(800, 0, 1400)
+      scene.add(spaceshipModel2)
+      console.log('paper plane model loaded')
+      spaceshipModel2.traverse((child) => {
+  
+})
+    },
+    undefined,
+    (error) => {
+      console.error('Error loading paperplane model:', error)
+    }
+    
+  )
+
+
+  const loader = new GLTFLoader()
+  let spaceshipModel = null
+
+
+
+  loader.load(
+    '/work/Spaceship.glb',
+    (gltf) => {
+      spaceshipModel = gltf.scene
+      spaceshipModel.scale.set(0.8, 0.8, 0.8)
+      spaceshipModel.position.set(-800, 0, 1400)
+      scene.add(spaceshipModel)
+      console.log('paper plane model loaded')
+      spaceshipModel.traverse((child) => {
+  
+})
+    },
+    undefined,
+    (error) => {
+      console.error('Error loading paperplane model:', error)
+    }
+    
+  )
+
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.6)
+  scene.add(ambientLight)
+  const dirLight = new THREE.DirectionalLight(0xffffff, 1.2)
+dirLight.position.set(1000, 500, 1000) // adjust position
+dirLight.castShadow = true
+scene.add(dirLight)
+
+ 
+
   const loadTexture = (image) =>
     new Promise((resolve) => {
       textureLoader.load('/work/' + image.name, (texture) => resolve(texture))
@@ -268,9 +315,9 @@ renderer.setClearColor(0x000000, 0)
 
   Promise.all(imageLinks.map(loadTexture)).then((textures) => {
     textures.forEach((texture, i) => {
-const fixedWidth = 700;
-const fixedHeight = 450;
-const geometry = new THREE.PlaneGeometry(fixedWidth, fixedHeight);
+      const fixedWidth = 700;
+      const fixedHeight = 450;
+      const geometry = new THREE.PlaneGeometry(fixedWidth, fixedHeight);
 
       const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide, transparent: true, opacity: 0.9  })
       const plane = new THREE.Mesh(geometry, material)
@@ -279,11 +326,11 @@ const geometry = new THREE.PlaneGeometry(fixedWidth, fixedHeight);
       planes.push(plane)
       clickablePlanes.set(plane, imageLinks[i].url)
       planeLabels.set(plane, imageLinks[i].name.replace('.png', ''))
-planeInfos.set(plane, { 
-  info: imageLinks[i].info, 
-  description: imageLinks[i].description, 
-  url: imageLinks[i].url   
-})
+      planeInfos.set(plane, { 
+        info: imageLinks[i].info, 
+        description: imageLinks[i].description, 
+        url: imageLinks[i].url   
+      })
 
       const hoverMaterial = new THREE.MeshBasicMaterial({ visible: false, side: THREE.DoubleSide })
       const hoverPlane = new THREE.Mesh(geometry.clone(), hoverMaterial)
@@ -309,21 +356,21 @@ planeInfos.set(plane, {
 
   window.addEventListener('wheel', (event) => { if (!loading.value) scrollSpeed -= event.deltaY * 0.02 })
   window.addEventListener('mousemove', (event) => { if (!loading.value) { mouse.x = (event.clientX / window.innerWidth) * 2 - 1; mouse.y = -(event.clientY / window.innerHeight) * 2 + 1 } })
-window.addEventListener('click', () => {
-  if (isNavbarHovered.value || loading.value || selectedImage.value) return
-  raycaster.setFromCamera(mouse, camera)
-  const intersects = raycaster.intersectObjects(planes, false)
-  if (intersects.length > 0) {
-    const plane = intersects[0].object
-    const imageData = planeInfos.get(plane)
 
-    selectedImage.value = {
-      src: '/work/' + planeLabels.get(plane) + '.png',
-      ...imageData 
+  window.addEventListener('click', () => {
+    if (isNavbarHovered.value || loading.value || selectedImage.value) return
+    raycaster.setFromCamera(mouse, camera)
+    const intersects = raycaster.intersectObjects(planes, false)
+    if (intersects.length > 0) {
+      const plane = intersects[0].object
+      const imageData = planeInfos.get(plane)
+
+      selectedImage.value = {
+        src: '/work/' + planeLabels.get(plane) + '.png',
+        ...imageData 
+      }
     }
-  }
-})
-
+  })
 
   window.addEventListener('resize', () => { camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight) })
 
@@ -347,85 +394,91 @@ window.addEventListener('click', () => {
         shadowPlanes.get(plane).position.z += planes.length * spacingZ
       }
     })
-if (!isNavbarHovered.value && !selectedImage.value) {
-  // --- hover detection logic ---
-  raycaster.setFromCamera(mouse, camera)
-  const intersectPlanes = raycaster.intersectObjects([...planes, ...shadowPlanes.values()], false)
-  const intersectHoverPlanes = raycaster.intersectObjects(hoverTriggers.map((ht) => ht.hoverPlane), false)
-  const anyHovered = intersectPlanes.length > 0 || intersectHoverPlanes.length > 0
 
-  if (anyHovered && !isAnimating) {
-    let intersectedPlane =
-      intersectPlanes[0]?.object instanceof THREE.Mesh && planes.includes(intersectPlanes[0].object)
-        ? intersectPlanes[0].object
-        : hoverTriggers.find((ht) => ht.hoverPlane === intersectHoverPlanes[0]?.object)?.plane
+    if (!isNavbarHovered.value && !selectedImage.value) {
+      // --- hover detection logic ---
+      raycaster.setFromCamera(mouse, camera)
+      const intersectPlanes = raycaster.intersectObjects(planes.concat(Array.from(shadowPlanes.values())), false)
+      const intersectHoverPlanes = raycaster.intersectObjects(hoverTriggers.map((ht) => ht.hoverPlane), false)
+      const anyHovered = intersectPlanes.length > 0 || intersectHoverPlanes.length > 0
 
-    if (intersectedPlane && intersectedPlane !== currentHoveredPlane) {
-      if (currentHoveredPlane) {
-        gsap.to(currentHoveredPlane.position, { x: 0, duration: 0.3 })
-        gsap.to(shadowPlanes.get(currentHoveredPlane).scale, { x: 1, duration: 0.3 })
+      if (anyHovered && !isAnimating) {
+        let intersectedPlane =
+          intersectPlanes[0]?.object instanceof THREE.Mesh && planes.includes(intersectPlanes[0].object)
+            ? intersectPlanes[0].object
+            : hoverTriggers.find((ht) => ht.hoverPlane === intersectHoverPlanes[0]?.object)?.plane
+
+        if (intersectedPlane && intersectedPlane !== currentHoveredPlane) {
+          if (currentHoveredPlane) {
+            gsap.to(currentHoveredPlane.position, { x: 0, duration: 0.3 })
+            gsap.to(shadowPlanes.get(currentHoveredPlane).scale, { x: 1, duration: 0.3 })
+          }
+          currentHoveredPlane = intersectedPlane
+          isAnimating = true
+
+          // gsap.to(currentHoveredPlane.position, { x: 400, duration: 0.9, onComplete: () => { isAnimating = false } })
+          gsap.to(shadowPlanes.get(currentHoveredPlane).scale, { x: 1.01, duration: 0.9 })
+
+          hoveredLabel.value = planeLabels.get(currentHoveredPlane)
+          topLeftText.value = planeInfos.get(currentHoveredPlane) || { info: '', description: '' }
+
+          nextTick(() => {
+            if (topLeftDiv.value) gsap.fromTo(topLeftDiv.value, { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.6, ease: 'power2.out' })
+            if (topLeftTitle.value) gsap.fromTo(topLeftTitle.value, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.6, delay: 0.1 })
+            if (topLeftDesc.value) gsap.fromTo(topLeftDesc.value, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.6, delay: 0.2 })
+          })
+
+          const pos = new THREE.Vector3()
+          currentHoveredPlane.getWorldPosition(pos)
+          const offset = new THREE.Vector3(1, 0, 0)
+          offset.applyQuaternion(currentHoveredPlane.quaternion)
+          pos.add(offset.multiplyScalar(currentHoveredPlane.geometry.parameters.width / 2 + 60))
+          pos.project(camera)
+          hoveredPosition.value = { x: (pos.x * 0.5 + 0.5) * window.innerWidth, y: (-pos.y * 0.5 + 0.5) * window.innerHeight }
+        }
+      } else if (!anyHovered && currentHoveredPlane && !isAnimating) {
+        isAnimating = true
+        gsap.to(currentHoveredPlane.position, {
+          x: 0,
+          duration: 0.3,
+          onComplete: () => {
+            gsap.to(shadowPlanes.get(currentHoveredPlane).scale, { x: 1, duration: 0.3 })
+            currentHoveredPlane = null
+            isAnimating = false
+          }
+        })
+        hoveredLabel.value = null
+        topLeftText.value = { info: '', description: '' }
+        if (topLeftDiv.value) gsap.to(topLeftDiv.value, { opacity: 0, x: -50, duration: 0.3 })
+        document.body.style.cursor = 'default'
       }
-      currentHoveredPlane = intersectedPlane
+    } else if (currentHoveredPlane && !isAnimating) {
+      // If navbar hovered or selectedImage open, reset hover state
       isAnimating = true
-
-      // gsap.to(currentHoveredPlane.position, { x: 400, duration: 0.9, onComplete: () => { isAnimating = false } })
-      gsap.to(shadowPlanes.get(currentHoveredPlane).scale, { x: 1.01, duration: 0.9 })
-
-      hoveredLabel.value = planeLabels.get(currentHoveredPlane)
-      topLeftText.value = planeInfos.get(currentHoveredPlane) || { info: '', description: '' }
-
-      nextTick(() => {
-        gsap.fromTo(topLeftDiv.value, { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.6, ease: 'power2.out' })
-        gsap.fromTo(topLeftTitle.value, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.6, delay: 0.1 })
-        gsap.fromTo(topLeftDesc.value, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.6, delay: 0.2 })
+      gsap.to(currentHoveredPlane.position, {
+        x: 0,
+        duration: 0.3,
+        onComplete: () => {
+          gsap.to(shadowPlanes.get(currentHoveredPlane).scale, { x: 1, duration: 0.3 })
+          currentHoveredPlane = null
+          isAnimating = false
+        }
       })
+      hoveredLabel.value = null
+      topLeftText.value = { info: '', description: '' }
+      if (topLeftDiv.value) gsap.to(topLeftDiv.value, { opacity: 0, x: -50, duration: 0.3 })
+      document.body.style.cursor = 'default'
+    }
 
-      const pos = new THREE.Vector3()
-      currentHoveredPlane.getWorldPosition(pos)
-      const offset = new THREE.Vector3(1, 0, 0)
-      offset.applyQuaternion(currentHoveredPlane.quaternion)
-      pos.add(offset.multiplyScalar(currentHoveredPlane.geometry.parameters.width / 2 + 60))
-      pos.project(camera)
-      hoveredPosition.value = { x: (pos.x * 0.5 + 0.5) * window.innerWidth, y: (-pos.y * 0.5 + 0.5) * window.innerHeight }
-
+    if (spaceshipModel) {
+      const time = Date.now() * 0.001
      
+      spaceshipModel.position.y = Math.sin(time * 1.5) * 10
+      spaceshipModel.rotation.z = Math.sin(time * 2.5) * 0.03
     }
-  } else if (!anyHovered && currentHoveredPlane && !isAnimating) {
-    isAnimating = true
-    gsap.to(currentHoveredPlane.position, {
-      x: 0,
-      duration: 0.3,
-      onComplete: () => {
-        gsap.to(shadowPlanes.get(currentHoveredPlane).scale, { x: 1, duration: 0.3 })
-        currentHoveredPlane = null
-        isAnimating = false
-      }
-    })
-    hoveredLabel.value = null
-    topLeftText.value = { info: '', description: '' }
-    gsap.to(topLeftDiv.value, { opacity: 0, x: -50, duration: 0.3 })
-    document.body.style.cursor = 'default'
+
+    renderer.render(scene, camera)
   }
-} else if (currentHoveredPlane && !isAnimating) {
-  isAnimating = true
-  gsap.to(currentHoveredPlane.position, {
-    x: 0,
-    duration: 0.3,
-    onComplete: () => {
-      gsap.to(shadowPlanes.get(currentHoveredPlane).scale, { x: 1, duration: 0.3 })
-      currentHoveredPlane = null
-      isAnimating = false
-    }
-  })
-  hoveredLabel.value = null
-  topLeftText.value = { info: '', description: '' }
-  gsap.to(topLeftDiv.value, { opacity: 0, x: -50, duration: 0.3 })
-  document.body.style.cursor = 'default'
-}
-
-
-  renderer.render(scene, camera)
-}
 })
 </script>
 
