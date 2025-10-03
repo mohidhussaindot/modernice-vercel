@@ -227,7 +227,7 @@ onMounted(async () => {
   const scene = new THREE.Scene()
   const camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 10000)
   camera.position.set(850, 830, 3200)
-  camera.lookAt(-100, -100, 1550)
+  camera.lookAt(-100, -100, 1350)
 
   const renderer = new THREE.WebGLRenderer({ 
     canvas: canvas.value, 
@@ -255,7 +255,7 @@ scene.add(dirLight)
 
   // Keep original plane logic variables (unchanged) - we'll reuse planesGroup for planes only
   const textureLoader = new THREE.TextureLoader()
-  const spacingZ = 1000
+  const spacingZ = 1900
 
   const imageLinks = [
     { name: 'adobelino.png', url: 'https://adobelino.com', info: 'Adobe Lino Project', description: 'A digital store for purchasing original software & licenses' },
@@ -271,7 +271,7 @@ scene.add(dirLight)
   const glbPaths = ['/work/Spaceship.glb', '/work/moon.glb', '/work/satelite.glb']
   const glbNames = ['Spaceship', 'moon' , 'satelite']
   const gltfLoader = new GLTFLoader()
-const SLOT_BASE_Z = 1250
+const SLOT_BASE_Z = 1450
 const SLOT_GAP = 2000
 
 const slots = Array.from({ length: glbPaths.length }, (_, i) => SLOT_BASE_Z - i * SLOT_GAP)
@@ -310,7 +310,14 @@ sceneModel.scale.setScalar(scaleFactor)
 sceneModel.userData.baseScale = scaleFactor
     // initial slot assignment
 const slotIndex = i % slots.length
-    sceneModel.position.set(-1200 + i * 200, 0, slots[slotIndex])
+// Set individual positions
+if (sceneModel.name === 'Spaceship') {
+  sceneModel.position.set(-800, 0, slots[slotIndex])
+} else if (sceneModel.name === 'moon') {
+  sceneModel.position.set(-800, 0, slots[slotIndex])
+} else if (sceneModel.name === 'satelite') {
+  sceneModel.position.set(-800, 0, slots[slotIndex])
+}
 
     // apply slot scale
     const s = slotScales[slotIndex] * scaleFactor
@@ -462,8 +469,8 @@ window.addEventListener(
 
   Promise.all(imageLinks.map(loadTexture)).then((textures) => {
     textures.forEach((texture, i) => {
-      const fixedWidth = 700;
-      const fixedHeight = 450;
+      const fixedWidth = 950;
+      const fixedHeight = 550;
       const geometry = new THREE.PlaneGeometry(fixedWidth, fixedHeight);
 
       const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide, transparent: true, opacity: 0.9  })
@@ -498,7 +505,7 @@ window.addEventListener(
   const mouse = new THREE.Vector2()
   let currentHoveredPlane = null
   let isAnimating = false
-  let scrollSpeed = 250
+  let scrollSpeed = 350
   const scrollDamp = 0.95
 
   window.addEventListener('wheel', (event) => { if (!loading.value) scrollSpeed -= event.deltaY * 0.02 })
@@ -617,11 +624,10 @@ window.addEventListener(
       document.body.style.cursor = 'default'
     }
 
-    // bobbing for any models (subtle)
     models.forEach((m) => {
-      const t = Date.now() * 0.001
-      m.position.y = Math.sin(t * 1.2 + (modelSlot.get(m) || 0) * 0.7) * 10
-      m.rotation.z = Math.sin(t * 0.9) * 0.02
+      // const t = Date.now() * 0.001
+      // m.position.y = Math.sin(t * 1.2 + (modelSlot.get(m) || 0) * 0.7) * 10
+      // m.rotation.z = Math.sin(t * 0.9) * 0.02
     })
 
     renderer.render(scene, camera)
