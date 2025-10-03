@@ -50,7 +50,6 @@
               >
                 {{ service.label }}
               </NuxtLink>
-              
             </div>
           </div>
 
@@ -72,7 +71,6 @@
           >
             <div class="w-full h-full rounded-[0.625rem] bg-[#0B061F]"></div>
           </div>
-          
 
           <span
             class="relative 2xl:text-[1.3rem] z-10"

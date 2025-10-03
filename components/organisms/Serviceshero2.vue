@@ -1,24 +1,15 @@
 <template>
   <div
-    ref="servicesTopRef"
     id="services-top"
-    class="relative h-[800px] hidden lg:flex bg-black overflow-hidden text-white"
+    class="relative min-h-screen hidden lg:flex bg-black overflow-hidden text-white"
   >
-    <!-- Background SVG -->
     <div
-      class="absolute inset-0 w-full pointer-events-none z-0 overflow-hidden"
+      class="absolute inset-0 w-full h-[800px] pointer-events-none z-0 overflow-hidden"
       v-html="Seoherobg"
     />
 
-    <!-- Black overlay -->
-    <!-- Black overlay with transparency -->
+    <div class="'absolute inset-0 z-10 bg-black transition-opacity duration-700',"></div>
 
-    <!-- COCKPIT IMAGE OVERLAY -->
-    <div ref="cockpitRef" class="cockpit-container">
-      <img src="@atoms/svgs/cockpit.svg" alt="Cockpit" class="cockpit-img" />
-    </div>
-
-    <!-- HERO CONTENT -->
     <div
       class="relative z-20 flex flex-col lg:flex-row justify-between max-w-7xl mx-auto px-6 pt-12 2xl:pt-[13rem] lg:pt-[8rem] gap-12 lg:gap-[6rem]"
     >
@@ -32,7 +23,7 @@
 
         <p class="text-base lg:text-[1.125rem] font-light leading-relaxed">
           Du hast eine Vision und wir die Leidenschaft, sie zum Leben zu erwecken. Eine umfassende
-          Website-Strategie verwandelt Deine kreativen Vorstellungen in einen beeindruckenden
+          Website-Strategie verwandelt Deine kreativen Vorstellungen in einen beeindruckende
           digitalen Auftritt. Für ein ästhetisches Design und messbare Ergebnisse.
         </p>
 
@@ -51,7 +42,7 @@
         </div>
       </div>
 
-      <div class="flex-1 max-w-[34.5rem] w-full flex justify-center">
+      <div class="flex-1 max-w-[34.5rem] w-full flex justify-center items-center">
         <div
           ref="servicesHeroRef"
           class="w-full h-auto pointer-events-none services-hero-svg"
@@ -61,12 +52,12 @@
     </div>
   </div>
 
-  <!-- MOBILE -->
+  <!-- mobile -->
   <div
     id="services-top-mobile"
     class="relative block md:hidden bg-black text-white overflow-hidden"
   >
-    <!-- Background SVG -->
+    <!-- Background SVG as <img> -->
     <div class="absolute inset-0 w-full h-[800px] pointer-events-none z-0 overflow-hidden">
       <img
         src="@atoms/svgs/seoherobg.svg"
@@ -91,7 +82,7 @@
         digitalen Auftritt. Für ein ästhetisches Design und messbare Ergebnisse.
       </p>
 
-      <!-- CTA -->
+      <!-- CTA Button -->
       <div
         class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#38EF61] to-[#44E5C8]"
       >
@@ -104,7 +95,7 @@
         </Button>
       </div>
 
-      <!-- Hero -->
+      <!-- Hero SVG as <img> -->
       <div class="w-full max-w-[20rem] mt-8">
         <img src="@atoms/svgs/servicesfirst.svg" alt="Services Hero" class="w-full h-auto" />
       </div>
@@ -114,73 +105,15 @@
 
 <script setup>
   import Button from '@atoms/Button.vue'
-  import { ref, onMounted, onUnmounted } from 'vue'
+  import { ref } from 'vue'
 
   import ServicesHeroRaw from '@atoms/svgs/servicesfirst.svg?raw'
   import Seoherobg from '@atoms/svgs/seoherobg.svg?raw'
 
-  /* GSAP */
-  import gsap from 'gsap'
-  import { ScrollTrigger } from 'gsap/ScrollTrigger'
-  gsap.registerPlugin(ScrollTrigger)
-
   const servicesHeroRef = ref(null)
-  const servicesTopRef = ref(null)
-  const cockpitRef = ref(null)
-
-  let mm = null
-
-  onMounted(() => {
-    mm = gsap.matchMedia()
-
-    mm.add('(min-width: 1024px)', () => {
-      if (!cockpitRef.value || !servicesTopRef.value) return
-
-      gsap.set(cockpitRef.value, {
-        scale: 1,
-        opacity: 1,
-        transformOrigin: 'center top',
-        force3D: true,
-        willChange: 'transform, opacity'
-      })
-
-      const elementHeight = servicesTopRef.value.offsetHeight || window.innerHeight
-      const maxScroll = Math.max(350, elementHeight * 0.7)
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: servicesTopRef.value,
-          start: 'top top',
-          end: () => '+=' + maxScroll,
-          scrub: 0.6,
-          pin: true
-        }
-      })
-
-      tl.to(cockpitRef.value, {
-        scale: 1.2,
-        opacity: 0,
-        ease: 'none'
-      })
-
-      return () => {
-        tl.kill()
-        ScrollTrigger.getAll().forEach(st => st.kill && st.kill())
-      }
-    })
-  })
-
-  onUnmounted(() => {
-    if (mm) {
-      mm.revert()
-      mm = null
-    } else {
-      ScrollTrigger.getAll().forEach(st => st.kill && st.kill())
-    }
-  })
 </script>
 
-<style scoped>
+<style>
   @keyframes floatUpDown {
     0%,
     100% {
@@ -194,26 +127,5 @@
   .services-hero-svg #coin1,
   .services-hero-svg #coin2 {
     animation: floatUpDown 3s ease-in-out infinite;
-  }
-
-  /* cockpit overlay */
-  .cockpit-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 40;
-    pointer-events: none;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    will-change: transform, opacity;
-  }
-
-  .cockpit-img {
-    width: 100%;
-    height: 1000px; /* adjust for proper framing */
-    object-fit: cover;
-    pointer-events: none;
   }
 </style>

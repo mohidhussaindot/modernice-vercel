@@ -5,5 +5,5 @@
 </template>
 
 <script setup>
-import Project from '@organisms/project.vue'
+  import Project from '@organisms/project.vue'
 </script>

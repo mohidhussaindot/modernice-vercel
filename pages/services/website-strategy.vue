@@ -13,7 +13,7 @@
       cta-to-color="#44E5C8"
     />
     <ScrollToTopButton />
-    <ServicesHero />
+    <Serviceshero2 />
     <ServicesSecond />
 
     <ServicesSlider />
@@ -30,10 +30,10 @@
 
 <script setup>
   import Navbar from '@organisms/Navbar.vue'
-  import ServicesHero from '@organisms/Serviceshero.vue'
   import ServicesSecond from '@organisms/Servicessecond.vue'
   import ServicesSlider from '@organisms/ServicesSlider.vue'
   import Servicesmain from '@organisms/Servicesmain.vue'
   import ScrollToTopButton from '@organisms/Scrolltotop.vue'
   import SiteFooter from '@organisms/SiteFooter.vue'
+  import Serviceshero2 from '@organisms/Serviceshero2.vue'
 </script>
