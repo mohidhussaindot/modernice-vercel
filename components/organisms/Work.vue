@@ -104,15 +104,18 @@
         class="background-canvas"
       />
     </div>
-     <div v-if="!loading" class="absolute bottom-10 flex  items-center gap-3 text-white/70 right-22 z-[9999]">
+    <div
+      v-if="!loading"
+      class="absolute bottom-10 flex items-center gap-3 text-white/70 right-22 z-[9999]"
+    >
       Overview
- <Button
-  @click="startTransition"
-  class="inline-block px-3  hover:cursor-pointer py-1 text-white bg-white/20 backdrop-blur-xl rounded-xl border border-white/20 hover:bg-white/30 transition"
->
-  Index
-</Button>
-  </div>
+      <Button
+        @click="startTransition"
+        class="inline-block px-3 hover:cursor-pointer py-1 text-white bg-white/20 backdrop-blur-xl rounded-xl border border-white/20 hover:bg-white/30 transition"
+      >
+        Index
+      </Button>
+    </div>
     <div
       v-if="selectedImage"
       class="fixed inset-0 bg-black/70 backdrop-blur-md flex flex-col items-center justify-center z-[99999]"
@@ -148,14 +151,14 @@
       </div>
     </div>
   </div>
-<div
-  ref="greenLayer"
-  class="fixed inset-0 bg-blue-100 z-[999998] transform translate-y-full transition-transform duration-600 ease-in-out"
-></div>
-<div
-  ref="blackLayer"
-  class="fixed inset-0 bg-black z-[999999] transform translate-y-full transition-transform duration-600 ease-in-out"
-></div>
+  <div
+    ref="greenLayer"
+    class="fixed inset-0 bg-blue-100 z-[999998] transform translate-y-full transition-transform duration-600 ease-in-out"
+  ></div>
+  <div
+    ref="blackLayer"
+    class="fixed inset-0 bg-black z-[999999] transform translate-y-full transition-transform duration-600 ease-in-out"
+  ></div>
 </template>
 <script setup>
   import { ref, onMounted, nextTick } from 'vue'
@@ -183,22 +186,22 @@
     }, 150)
   }
   const isNavbarHovered = ref(false)
-const transitionOverlay = ref(null)
-const greenLayer = ref(null)
-const blackLayer = ref(null)
-const router = useRouter()
-const startTransition = () => {
-  if (!greenLayer.value || !blackLayer.value) return
-  greenLayer.value.classList.remove('translate-y-full')
-  greenLayer.value.classList.add('translate-y-0')
-  setTimeout(() => {
-    blackLayer.value.classList.remove('translate-y-full')
-    blackLayer.value.classList.add('translate-y-0')
-  }, 600) 
-  setTimeout(() => {
-    router.push('/work/projects')
-  }, 1200) 
-}
+  const transitionOverlay = ref(null)
+  const greenLayer = ref(null)
+  const blackLayer = ref(null)
+  const router = useRouter()
+  const startTransition = () => {
+    if (!greenLayer.value || !blackLayer.value) return
+    greenLayer.value.classList.remove('translate-y-full')
+    greenLayer.value.classList.add('translate-y-0')
+    setTimeout(() => {
+      blackLayer.value.classList.remove('translate-y-full')
+      blackLayer.value.classList.add('translate-y-0')
+    }, 600)
+    setTimeout(() => {
+      router.push('/work/projects')
+    }, 1200)
+  }
   const canvas = ref(null)
   const hoveredLabel = ref(null)
   const hoveredPosition = ref({ x: 0, y: 0 })
@@ -206,7 +209,7 @@ const startTransition = () => {
   const topLeftDiv = ref(null)
   const topLeftTitle = ref(null)
   const topLeftDesc = ref(null)
-  const selectedImage = ref(null) 
+  const selectedImage = ref(null)
   const loading = ref(true)
   const loadingBar = ref(null)
   const loadingProgress = ref(0)
@@ -318,9 +321,9 @@ const startTransition = () => {
     const SLOT_BASE_Z = 1450
     const SLOT_GAP = 2000
     const slots = Array.from({ length: glbPaths.length }, (_, i) => SLOT_BASE_Z - i * SLOT_GAP)
-    const slotScales = Array.from({ length: glbPaths.length }, (_, i) => 1 - i * 0.1) 
-    const models = [] 
-    const modelSlot = new Map() 
+    const slotScales = Array.from({ length: glbPaths.length }, (_, i) => 1 - i * 0.1)
+    const models = []
+    const modelSlot = new Map()
     let isCarouselAnimating = false
     const loadGLB = url =>
       new Promise((resolve, reject) => {
@@ -337,7 +340,7 @@ const startTransition = () => {
         box.getSize(size)
         let targetWidth = 500
         if (sceneModel.name === 'satelite') {
-          targetWidth = 400 
+          targetWidth = 400
         }
         if (sceneModel.name === 'moon') {
           targetWidth = 400
@@ -393,7 +396,7 @@ const startTransition = () => {
       let completed = 0
       models.forEach(m => {
         const current = modelSlot.get(m)
-        const next = (current + 1) % slots.length 
+        const next = (current + 1) % slots.length
         animateModelToSlot(m, next, {
           duration: 1.1,
           onComplete: () => {
@@ -401,7 +404,7 @@ const startTransition = () => {
             if (completed === models.length) {
               models.forEach(mm => {
                 const c = modelSlot.get(mm)
-                modelSlot.set(mm, (c + 1) % slots.length) 
+                modelSlot.set(mm, (c + 1) % slots.length)
               })
               isCarouselAnimating = false
             }
@@ -415,7 +418,7 @@ const startTransition = () => {
       let completed = 0
       models.forEach(m => {
         const current = modelSlot.get(m)
-        const next = (current - 1 + slots.length) % slots.length 
+        const next = (current - 1 + slots.length) % slots.length
         animateModelToSlot(m, next, {
           duration: 1.1,
           onComplete: () => {
@@ -423,7 +426,7 @@ const startTransition = () => {
             if (completed === models.length) {
               models.forEach(mm => {
                 const c = modelSlot.get(mm)
-                modelSlot.set(mm, (c - 1 + slots.length) % slots.length) 
+                modelSlot.set(mm, (c - 1 + slots.length) % slots.length)
               })
               isCarouselAnimating = false
             }
@@ -435,7 +438,7 @@ const startTransition = () => {
     let lastDir = 0
     let lastScrollTime = 0
     const SCROLL_TRIGGER_COUNT = 9
-    const SCROLL_DELAY = 290 
+    const SCROLL_DELAY = 290
     window.addEventListener(
       'wheel',
       e => {
@@ -446,7 +449,7 @@ const startTransition = () => {
           return
         }
         const now = Date.now()
-        if (now - lastScrollTime < SCROLL_DELAY) return 
+        if (now - lastScrollTime < SCROLL_DELAY) return
         lastScrollTime = now
         const dir = e.deltaY > 0 ? 1 : -1
         if (dir !== lastDir) {
@@ -655,8 +658,7 @@ const startTransition = () => {
         if (topLeftDiv.value) gsap.to(topLeftDiv.value, { opacity: 0, x: -50, duration: 0.3 })
         document.body.style.cursor = 'default'
       }
-      models.forEach(m => {
-      })
+      models.forEach(m => {})
       renderer.render(scene, camera)
     }
   })
@@ -700,14 +702,14 @@ const startTransition = () => {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; 
+    z-index: 1;
     display: block;
   }
-.transition-overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 2rem;
-}
+  .transition-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+  }
 </style>

@@ -79,7 +79,7 @@
       </div>
     </header>
     <div
-      class="bg-black min-h-screen text-white flex justify-center items-center  px-8 mt-10 "
+      class="bg-black min-h-screen text-white flex justify-center items-center px-8 mt-10"
       @mousemove="updateMouse"
     >
       <div
@@ -101,7 +101,7 @@
           @click="goToProject(project.url)"
           @mouseenter="hoveredProject = project"
           @mouseleave="hoveredProject = null"
-          style="cursor: pointer;"
+          style="cursor: pointer"
         >
           <div
             class="grid grid-cols-4 items-center gap-x-60 px-4 rounded py-4 border-b border-white/10 hover:bg-blue-100 hover:text-black transition duration-300 ease-in-out"
@@ -114,157 +114,162 @@
         </div>
       </div>
       <transition name="fade">
-       <img
-  v-if="hoveredProject"
-  :src="'/work/' + hoveredProject.name"
-  alt="Preview"
-  class="fixed w-[300px]  rounded-xl shadow-lg object-cover pointer-events-none transition-all duration-500 ease-out"
-  :style="{ top: mouseY + 'px', left: mouseX + 'px' }"
-/>
-
+        <img
+          v-if="hoveredProject"
+          :src="'/work/' + hoveredProject.image"
+          alt="Preview"
+          class="fixed w-[300px] rounded-xl shadow-lg object-cover pointer-events-none transition-all duration-500 ease-out"
+          :style="{ top: mouseY + 'px', left: mouseX + 'px' }"
+        />
       </transition>
     </div>
   </div>
 </template>
 <script setup>
-import { ref, onMounted } from 'vue'
+  import { ref, onMounted } from 'vue'
 
-const isNavbarHovered = ref(false)
-const dropdownOpen = ref(false)
-let dropdownTimeout = null
+  const isNavbarHovered = ref(false)
+  const dropdownOpen = ref(false)
+  let dropdownTimeout = null
 
-const services = [
-  { label: 'App Development', to: '/services/appdevelopment' },
-  { label: 'AI Consulting', to: '/services/aiconsulting' },
-  { label: 'E-commerce', to: '/services/ecs' },
-  { label: 'Website Strategy', to: '/services/website-strategy' },
-  { label: 'SEO', to: '/services/seo' }
-]
+  const services = [
+    { label: 'App Development', to: '/services/appdevelopment' },
+    { label: 'AI Consulting', to: '/services/aiconsulting' },
+    { label: 'E-commerce', to: '/services/ecs' },
+    { label: 'Website Strategy', to: '/services/website-strategy' },
+    { label: 'SEO', to: '/services/seo' }
+  ]
 
-const openDropdown = () => {
-  clearTimeout(dropdownTimeout)
-  dropdownOpen.value = true
-}
-const closeDropdown = () => {
-  dropdownTimeout = setTimeout(() => {
-    dropdownOpen.value = false
-  }, 150)
-}
-
-// Hover + Mouse tracking
-const hoveredProject = ref(null)
-const mouseX = ref(0)
-const mouseY = ref(0)
-const imageWidth = 300
-const imageHeight = 200
-const padding = 20
-
-const updateMouse = (e) => {
-  const vw = window.innerWidth
-  const vh = window.innerHeight
-
-  let x = e.clientX + padding
-  let y = e.clientY
-
-  // Clamp horizontally so image doesn’t go off screen
-  if (x + imageWidth > vw - padding) {
-    x = e.clientX - imageWidth - padding
+  const openDropdown = () => {
+    clearTimeout(dropdownTimeout)
+    dropdownOpen.value = true
   }
-  if (x < padding) x = padding
-
-  // Clamp vertically
-  if (y + imageHeight / 2 > vh - padding) {
-    y = vh - imageHeight / 2 - padding
-  }
-  if (y - imageHeight / 2 < padding) {
-    y = imageHeight / 2 + padding
+  const closeDropdown = () => {
+    dropdownTimeout = setTimeout(() => {
+      dropdownOpen.value = false
+    }, 150)
   }
 
-  mouseX.value = x
-  mouseY.value = y - imageHeight / 2
-}
+  // Hover + Mouse tracking
+  const hoveredProject = ref(null)
+  const mouseX = ref(0)
+  const mouseY = ref(0)
+  const imageWidth = 300
+  const imageHeight = 200
+  const padding = 20
 
-// Projects
-const imageLinks = [
-  {
-    name: 'Adobelino.png',
-    url: 'https://adobelino.com',
-    description: 'A digital store for purchasing original software & licenses',
-    role: 'Fullstack',
-    year: 2023
-  },
-  {
-    name: 'Crovillas.png',
-    url: 'https://crovillas.com/',
-    description: 'Luxury villa rentals with pool and sea views.',
-    role: 'Fullstack',
-    year: 2024
-  },
-  {
-    name: 'Cube.expert.png',
-    url: 'https://cubee.expert/en',
-    description: 'Vehicle appraisals and damage assessments',
-    role: 'Fullstack',
-    year: 2022
-  },
-  {
-    name: 'Depositdirect.png',
-    url: 'https://depositdirect.net',
-    description: 'Rent without a cash deposit with a rental guarantee',
-    role: 'Fullstack',
-    year: 2023
-  },
-  {
-    name: 'Epass.png',
-    url: 'https://Epass.gg',
-    description: 'Identity verification and KYC platform',
-    role: 'Fullstack',
-    year: 2025
-  },
-  {
-    name: 'Prestige-cars.png',
-    url: 'https://prestige.cars',
-    description: 'Luxury & exotic car rental platform',
-    role: 'Fullstack',
-    year: 2024
-  },
-  {
-    name: 'Tzone.png',
-    url: 'https://T.zone',
-    description: 'Tournament organizer and monetization platform',
-    role: 'Fullstack',
-    year: 2023
-  }
-]
+  const updateMouse = e => {
+    const vw = window.innerWidth
+    const vh = window.innerHeight
 
-const goToProject = (url) => {
-  if (url) window.open(url, '_blank')
-}
+    let x = e.clientX + padding
+    let y = e.clientY
 
-
-const mainContent = ref(null)
-onMounted(() => {
-  setTimeout(() => {
-    if (mainContent.value) {
-      mainContent.value.classList.remove('opacity-0', 'translate-y-8')
-      mainContent.value.classList.add('opacity-100', 'translate-y-0')
+    // Clamp horizontally so image doesn’t go off screen
+    if (x + imageWidth > vw - padding) {
+      x = e.clientX - imageWidth - padding
     }
-  }, 50)
-})
+    if (x < padding) x = padding
+
+    // Clamp vertically
+    if (y + imageHeight / 2 > vh - padding) {
+      y = vh - imageHeight / 2 - padding
+    }
+    if (y - imageHeight / 2 < padding) {
+      y = imageHeight / 2 + padding
+    }
+
+    mouseX.value = x
+    mouseY.value = y - imageHeight / 2
+  }
+
+  // Projects
+  const imageLinks = [
+    {
+      image: 'adobelino.png',
+      name: 'adobelino.png',
+      url: 'https://adobelino.com',
+      description: 'A digital store for purchasing original software & licenses',
+      role: 'Fullstack',
+      year: 2023
+    },
+    {
+      image: 'crovillas.png',
+      name: 'crovillas.png',
+      url: 'https://crovillas.com/',
+      description: 'Luxury villa rentals with pool and sea views.',
+      role: 'Fullstack',
+      year: 2024
+    },
+    {
+      image: 'cube.expert.png',
+      name: 'cube.expert.png',
+      url: 'https://cubee.expert/en',
+      description: 'Vehicle appraisals and damage assessments',
+      role: 'Fullstack',
+      year: 2022
+    },
+    {
+      image: 'depositdirect.png',
+      name: 'depositdirect.png',
+      url: 'https://depositdirect.net',
+      description: 'Rent without a cash deposit with a rental guarantee',
+      role: 'Fullstack',
+      year: 2023
+    },
+    {
+      image: 'epass.png',
+      name: 'epass.png',
+      url: 'https://Epass.gg',
+      description: 'Identity verification and KYC platform',
+      role: 'Fullstack',
+      year: 2025
+    },
+    {
+      image: 'prestige-cars.png',
+      name: 'prestige-cars.png',
+      url: 'https://prestige.cars',
+      description: 'Luxury & exotic car rental platform',
+      role: 'Fullstack',
+      year: 2024
+    },
+    {
+      image: 'tzone.png',
+      name: 'tzone.png',
+      url: 'https://T.zone',
+      description: 'Tournament organizer and monetization platform',
+      role: 'Fullstack',
+      year: 2023
+    }
+  ]
+
+  const goToProject = url => {
+    if (url) window.open(url, '_blank')
+  }
+
+  const mainContent = ref(null)
+  onMounted(() => {
+    setTimeout(() => {
+      if (mainContent.value) {
+        mainContent.value.classList.remove('opacity-0', 'translate-y-8')
+        mainContent.value.classList.add('opacity-100', 'translate-y-0')
+      }
+    }, 50)
+  })
 </script>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s ease;
+  }
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
 </style>
 <style>
-body {
-  background-color: #000;
-}
+  body {
+    background-color: #000;
+  }
 </style>

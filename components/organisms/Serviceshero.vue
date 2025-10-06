@@ -13,7 +13,7 @@
     <!-- Black overlay (will fade out with cockpit) -->
     <div
       ref="overlayRef"
-      class="absolute inset-0 z-10  transition-opacity duration-700 pointer-events-none"
+      class="absolute inset-0 z-10 transition-opacity duration-700 pointer-events-none"
     ></div>
 
     <!-- COCKPIT IMAGE OVERLAY (fixed) -->
@@ -142,7 +142,7 @@
       gsap.set(cockpitRef.value, {
         scale: 1,
         opacity: 1,
-        transformOrigin: 'center top',
+        transformOrigin: 'center top'
       })
       if (overlayRef.value) {
         gsap.set(overlayRef.value, { opacity: 1, willChange: 'opacity' })
@@ -157,20 +157,20 @@
 
       // Create timeline that will run while pinning the component
       const tl = gsap.timeline({
-      scrollTrigger: {
-  trigger: servicesTopRef.value,
-  start: 'top +=150',
-  end: () => '+=' + computeScrollDistance(),
-  scrub: 0.8,
-  fastScrollEnd: true
-}
+        scrollTrigger: {
+          trigger: servicesTopRef.value,
+          start: 'top +=150',
+          end: () => '+=' + computeScrollDistance(),
+          scrub: 0.8,
+          fastScrollEnd: true
+        }
       })
 
       tl.to(
         cockpitRef.value,
         {
           scale: 1.9,
-       
+
           opacity: 0,
           ease: 'power1.out'
         },
@@ -182,7 +182,7 @@
           overlayRef.value,
           {
             opacity: 0,
-     
+
             ease: 'power1.out'
           },
           0
@@ -232,16 +232,16 @@
   }
 
   /* cockpit overlay (fixed) — top of stacking order so it visually sits above the hero content */
-.cockpit-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 30; /* higher than hero text (20) */
-  pointer-events: none;
-  will-change: transform, opacity;
-}
+  .cockpit-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 30; /* higher than hero text (20) */
+    pointer-events: none;
+    will-change: transform, opacity;
+  }
 
   /* Adjust cockpit image height/cover as needed — this combo keeps aspect and prevents sudden reflows */
   .cockpit-img {

@@ -1,9 +1,9 @@
 <template>
-    <div>
-       <Project/>
-    </div>
+  <div>
+    <Project />
+  </div>
 </template>
 
 <script setup>
-import Project from '@organisms/Project.vue';
+  import Project from '@organisms/Project.vue'
 </script>
