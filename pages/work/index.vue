@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Project />
+    <Work />
   </div>
 </template>
 
 <script setup>
-  import Project from '@organisms/project.vue'
+  import Work from '@organisms/Work.vue'
 </script>
