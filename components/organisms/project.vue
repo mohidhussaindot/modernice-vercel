@@ -241,7 +241,7 @@ const goToProject = (url) => {
   if (url) window.open(url, '_blank')
 }
 
-// Fade-in
+
 const mainContent = ref(null)
 onMounted(() => {
   setTimeout(() => {
