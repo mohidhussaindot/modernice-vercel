@@ -1,7 +1,7 @@
 <template>
   <div>
     <header
-      v-if="!loading"
+    
       class="fixed top-0 left-0 w-full z-[9999] bg-gradient-to-t from-[#000]/0 via-[#000]/50 to-[#000]"
       @mouseenter="isNavbarHovered = true"
       @mouseleave="isNavbarHovered = false"
