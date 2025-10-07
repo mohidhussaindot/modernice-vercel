@@ -98,12 +98,13 @@
       </div>
     </header>
     <div class="canvas-wrapper">
-      <canvas
-        ref="canvas"
-        :style="{ pointerEvents: loading ? 'none' : 'auto' }"
-        class="background-canvas"
-      />
+    <canvas
+  ref="canvas"
+  :style="{ pointerEvents: loading || selectedImage ? 'none' : 'auto' }"
+  class="background-canvas"
+/>
     </div>
+
     <div
       v-if="!loading"
       class="absolute bottom-10 flex items-center gap-3 text-white/70 right-22 z-[9999]"
@@ -116,40 +117,45 @@
         Index
       </Button>
     </div>
-    <div
-      v-if="selectedImage"
-      class="fixed inset-0 bg-black/70 backdrop-blur-md flex flex-col items-center justify-center z-[99999]"
-      @click.self="selectedImage = null"
+   <div
+  v-if="selectedImage"
+  class="fixed inset-0 bg-black/70 backdrop-blur-md flex flex-col items-center justify-center z-[99999]"
+  @click.self="closeOverlay"
+>
+  <Button
+    class="absolute top-6 right-6 text-white text-2xl font-bold hover:cursor-pointer"
+    @click.stop="closeOverlay"
+  >
+    ✕
+  </Button>
+
+  <a
+    :href="selectedImage.url"
+    target="_blank"
+    class="mt-4 inline-block rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/30"
+    @click.stop
+  >
+    <img
+      :src="selectedImage.src"
+      alt="Selected Image"
+      class="max-w-[80vw] max-h-[70vh] rounded-xl shadow-lg"
+      @click.stop
+    />
+  </a>
+
+  <div class="text-center text-white mt-6 max-w-[600px]" @click.stop>
+    <h2 class="text-2xl font-bold">{{ selectedImage.info }}</h2>
+    <p class="mt-2 opacity-80">{{ selectedImage.description }}</p>
+    <a
+      :href="selectedImage.url"
+      target="_blank"
+      class="mt-4 inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/30"
+      @click.stop
     >
-      <Button
-        class="absolute top-6 right-6 text-white text-2xl font-bold hover:cursor-pointer"
-        @click="selectedImage = null"
-      >
-        ✕
-      </Button>
-      <a
-        :href="selectedImage.url"
-        target="_blank"
-        class="mt-4 inline-block rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/30"
-      >
-        <img
-          :src="selectedImage.src"
-          alt="Selected Image"
-          class="max-w-[80vw] max-h-[70vh] rounded-xl shadow-lg"
-        />
-      </a>
-      <div class="text-center text-white mt-6 max-w-[600px]">
-        <h2 class="text-2xl font-bold">{{ selectedImage.info }}</h2>
-        <p class="mt-2 opacity-80">{{ selectedImage.description }}</p>
-        <a
-          :href="selectedImage.url"
-          target="_blank"
-          class="mt-4 inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/30"
-        >
-          Visit Site
-        </a>
-      </div>
-    </div>
+      Visit Site
+    </a>
+  </div>
+</div>
   </div>
   <div
     ref="greenLayer"
@@ -213,6 +219,12 @@
   const loading = ref(true)
   const loadingBar = ref(null)
   const loadingProgress = ref(0)
+
+  const closeOverlay = (e) => {
+  e?.stopPropagation?.() 
+  selectedImage.value = null
+}
+
   onMounted(async () => {
     window.addEventListener('keydown', event => {
       if (event.key === 'Escape' && selectedImage.value) {

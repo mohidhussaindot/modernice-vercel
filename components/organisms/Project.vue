@@ -1,5 +1,27 @@
 <template>
   <div>
+  
+   <div class="fixed bottom-10 right-12 z-[9999] flex items-center gap-3 text-white/70">
+    <RouterLink to="/work">
+      <Button
+        aria-label="Go to Work"
+        class="p-2 rounded-md bg-white/20 border border-white/20 hover:bg-white/30 transition hover:cursor-pointer backdrop-blur-xl"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 text-white"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 15l7-7 7 7" />
+        </svg>
+      </Button>
+    </RouterLink>
+  </div>
     <header
     
       class="fixed top-0 left-0 w-full z-[9999] bg-gradient-to-t from-[#000]/0 via-[#000]/50 to-[#000]"
@@ -78,13 +100,15 @@
         </a>
       </div>
     </header>
+
+
     <div
       class="bg-black min-h-screen text-white flex justify-center items-center px-8 mt-10"
       @mousemove="updateMouse"
     >
       <div
         ref="mainContent"
-        class="w-full max-w-8xl overflow-hidden relative opacity-0 translate-y-8 transition-all duration-700 ease-out"
+        class="w-full max-w-7xl overflow-hidden relative opacity-0 translate-y-8 transition-all duration-700 ease-out"
       >
         <div
           class="grid grid-cols-4 px-4 gap-x-60 text-lg border-b border-white/20 pb-2 mb-4 font-semibold uppercase tracking-wider"
@@ -104,9 +128,9 @@
           style="cursor: pointer"
         >
           <div
-            class="grid grid-cols-4 items-center gap-x-60 px-4 rounded py-4 border-b border-white/10 hover:bg-blue-100 hover:text-black transition duration-300 ease-in-out"
+            class="grid grid-cols-4 items-center gap-x-60 px-4 rounded py-4 border-b border-white/20 hover:bg-blue-100 hover:text-black transition duration-300 ease-in-out"
           >
-            <div>{{ project.name.replace('.png', '').replace(/-/g, ' ') }}</div>
+            <div>{{ project.name }}</div>
             <div>{{ project.role }}</div>
             <div class="w-[220px]">{{ project.description }}</div>
             <div>{{ project.year }}</div>
@@ -126,6 +150,7 @@
   </div>
 </template>
 <script setup>
+import Button from '@atoms/Button.vue'
   import { ref, onMounted } from 'vue'
 
   const isNavbarHovered = ref(false)
@@ -187,7 +212,7 @@
   const imageLinks = [
     {
       image: 'adobelino.png',
-      name: 'adobelino.png',
+      name: 'Adobelino',
       url: 'https://adobelino.com',
       description: 'A digital store for purchasing original software & licenses',
       role: 'Fullstack',
@@ -195,7 +220,7 @@
     },
     {
       image: 'crovillas.png',
-      name: 'crovillas.png',
+      name: 'Crovillas',
       url: 'https://crovillas.com/',
       description: 'Luxury villa rentals with pool and sea views.',
       role: 'Fullstack',
@@ -203,7 +228,7 @@
     },
     {
       image: 'cube.expert.png',
-      name: 'cube.expert.png',
+      name: 'Cube.expert',
       url: 'https://cubee.expert/en',
       description: 'Vehicle appraisals and damage assessments',
       role: 'Fullstack',
@@ -211,7 +236,7 @@
     },
     {
       image: 'depositdirect.png',
-      name: 'depositdirect.png',
+      name: 'Depositdirect',
       url: 'https://depositdirect.net',
       description: 'Rent without a cash deposit with a rental guarantee',
       role: 'Fullstack',
@@ -219,7 +244,7 @@
     },
     {
       image: 'epass.png',
-      name: 'epass.png',
+      name: 'Epass.png',
       url: 'https://Epass.gg',
       description: 'Identity verification and KYC platform',
       role: 'Fullstack',
@@ -227,7 +252,7 @@
     },
     {
       image: 'prestige-cars.png',
-      name: 'prestige-cars.png',
+      name: 'Prestige-cars',
       url: 'https://prestige.cars',
       description: 'Luxury & exotic car rental platform',
       role: 'Fullstack',
@@ -235,7 +260,7 @@
     },
     {
       image: 'tzone.png',
-      name: 'tzone.png',
+      name: 'Tzone',
       url: 'https://T.zone',
       description: 'Tournament organizer and monetization platform',
       role: 'Fullstack',
