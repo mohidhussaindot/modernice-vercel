@@ -18,7 +18,7 @@
           class="text-[2rem] md:text-[2.8rem] lg:text-[3.8rem] font-lightbold italic leading-[1.2]"
         >
           Von der ersten <span class="text-[#00FFB3]">Skizze</span><br />
-          bis zum letzten <span class="text-[#00FFB3]">Pixel</span>
+          bis zum 3etzten <span class="text-[#00FFB3]">Pixel</span>
         </h1>
 
         <p class="text-base lg:text-[1.125rem] font-light leading-relaxed">

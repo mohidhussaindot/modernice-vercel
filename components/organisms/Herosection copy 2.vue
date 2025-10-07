@@ -202,35 +202,8 @@
     </div>
   </div>
 
-  <ServicesHero />
-  <Servicessecond />
-  <ServicesSlider />
-  <Servicesmain />
-  <!-- 
-  <div class="sm:block hidden">
-    <div class="wrapper">
-      <section class="section hero">
-        <ServicesHero />
-      </section>
 
-      <div class="image-container">
-        <img src="@atoms/svgs/cockpit.svg" alt="Cockpit" />
-      </div>
-    </div>
-
-    <div class="sections">
-      <section class="section">
-        <Servicessecond />
-      </section>
-      <section class="section">
-        <ServicesSlider />
-      </section>
-      <section class="section">
-        <Servicesmain />
-      </section>
-    </div>
-  </div> -->
-  <!--  -->
+  
 
   <section class="text-white block md:hidden overflow-hidden bg-[#020111]">
     <div class="relative mt-30">
@@ -381,266 +354,202 @@
 </template>
 
 <script setup>
-  import { gsap } from 'gsap'
-  import { ScrollTrigger } from 'gsap/ScrollTrigger'
-  import { ref, computed, onMounted, onUnmounted, nextTick, defineEmits } from 'vue'
-  import ServicesHero from '@organisms/Serviceshero.vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
-  import Button from '@atoms/Button.vue'
-  import moonSVGRaw from '@atoms/svgs/rocket-moon-hero.svg?raw'
-  import stripessvg from '@atoms/svgs/herosectionstripes.svg?raw'
-  import bghero from '@atoms/svgs/bghero.svg?raw'
-  import rocket from '@atoms/svgs/leftsectionsvg.svg?raw'
-  import bglines from '@atoms/svgs/Lines.svg?raw'
-  import ServicesSlider from './ServicesSlider.vue'
-  import Servicesmain from './Servicesmain.vue'
-  import Servicessecond from '@organisms/Servicessecond.vue'
+import ServicesHero from '@organisms/Serviceshero.vue'
+import Button from '@atoms/Button.vue'
+import moonSVGRaw from '@atoms/svgs/rocket-moon-hero.svg?raw'
+import stripessvg from '@atoms/svgs/herosectionstripes.svg?raw'
+import bghero from '@atoms/svgs/bghero.svg?raw'
+import rocket from '@atoms/svgs/leftsectionsvg.svg?raw'
+import bglines from '@atoms/svgs/Lines.svg?raw'
+import ServicesSlider from './ServicesSlider.vue'
+import Servicesmain from './Servicesmain.vue'
+import Servicessecond from '@organisms/Servicessecond.vue'
 
-  gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger)
 
-  const emit = defineEmits(['show-services'])
+const route = useRoute() // 👈 Track route changes
 
-  const firstPart = ref(null)
-  const stripesDiv = ref(null)
-  const cityRef = ref(null)
-  const cityImage = ref(null)
-  const textContent = ref(null)
-  const sectionRef = ref(null)
-  const ctaSectionRef = ref(null)
-  const contentWrapperRef = ref(null)
+const firstPart = ref(null)
+const stripesDiv = ref(null)
+const cityRef = ref(null)
+const cityImage = ref(null)
+const textContent = ref(null)
+const sectionRef = ref(null)
+const ctaSectionRef = ref(null)
+const contentWrapperRef = ref(null)
 
-  const isFirstPartVisible = ref(true)
-  const isCityVisible = ref(true)
-  const isSectionVisible = ref(true)
-  const isCTAVisible = ref(false)
-  const isCockpitVisible = ref(true)
+const isFirstPartVisible = ref(true)
+const isCityVisible = ref(true)
+const isSectionVisible = ref(true)
+const isCTAVisible = ref(false)
 
-  const fadeClassCockpit = computed(() => (isCockpitVisible.value ? 'fade-in' : 'fade-out'))
+const fadeClassSection = computed(() => (isSectionVisible.value ? 'fade-in' : 'fade-out'))
+const fadecta = computed(() => (isCTAVisible.value ? 'fade-in' : 'fade-out'))
 
-  const fadeClassSection = computed(() => (isSectionVisible.value ? 'fade-in' : 'fade-out'))
+let observers = []
 
-  const fadecta = computed(() => (isCTAVisible.value ? 'fade-in' : 'fade-out'))
+function runGSAPAnimations() {
+  ScrollTrigger.getAll().forEach(trigger => trigger.kill()) // Kill existing triggers
 
-  let observers = []
+  observers.forEach(obs => obs.disconnect()) // Disconnect any old observers
+  observers = []
 
-  gsap.registerPlugin(ScrollTrigger)
-
-  const cockpitRef = ref(null)
-
-  onMounted(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.wrapper',
-        start: 'top top ',
-        end: '+=1200',
-        scrub: 0.3,
-        pin: true,
-        pinSpacing: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true
-      }
-    })
-
-    tl.addLabel('start')
-      .to(
-        '.image-container img',
-        {
-          scale: 1.3,
-          transformOrigin: 'center center',
-          ease: 'power2.out'
-        },
-        'start'
-      )
-
-      .addLabel('fade', 'start+=0.7')
-      .to(
-        '.image-container img',
-        {
-          scale: 2,
-          opacity: 0,
-          ease: 'power2.inOut'
-        },
-        'fade'
-      )
-
-    if (firstPart.value && stripesDiv.value) {
-      const vector343 =
-        stripesDiv.value.querySelector('#Vector\\ 343') ||
-        stripesDiv.value.querySelector('#Vector343')
-      if (vector343) {
-        const vectorObserver = new IntersectionObserver(
-          ([entry]) => {
-            isFirstPartVisible.value = entry.isIntersecting
-          },
-          { threshold: 0.1 }
-        )
-        vectorObserver.observe(vector343)
-        observers.push(vectorObserver)
-      }
-    }
-
-    if (cityRef.value && cityImage.value && textContent.value) {
-      const cssFadeObserver = new IntersectionObserver(
+  // === HERO STRIPES OBSERVER ===
+  if (firstPart.value && stripesDiv.value) {
+    const vector343 =
+      stripesDiv.value.querySelector('#Vector\\ 343') ||
+      stripesDiv.value.querySelector('#Vector343')
+    if (vector343) {
+      const vectorObserver = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) cityImage.value.classList.add('opacity-100')
-        },
-        { threshold: 0.01 }
-      )
-      cssFadeObserver.observe(cityImage.value)
-      observers.push(cssFadeObserver)
-
-      gsap.fromTo(
-        cityImage.value,
-        { scale: 0.86 },
-        {
-          scale: 1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: cityImage.value,
-            start: 'top bottom',
-            end: 'top 40%',
-            scrub: 1
-          }
-        }
-      )
-
-      gsap.fromTo(
-        textContent.value,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: cityImage.value,
-            start: 'top 23%',
-            toggleActions: 'play none none reverse'
-          }
-        }
-      )
-      gsap.to(cityRef.value, {
-        opacity: 0,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: cityRef.value,
-          start: 'bottom 60%',
-          end: 'bottom 100%',
-          scrub: true
-        }
-      })
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          isCTAVisible.value = entry.isIntersecting
-        },
-        {
-          threshold: 0.3
-        }
-      )
-      if (ctaSectionRef.value) observer.observe(ctaSectionRef.value)
-
-      const fadeObserver = new IntersectionObserver(
-        ([entry]) => {
-          isCityVisible.value = entry.isIntersecting
+          isFirstPartVisible.value = entry.isIntersecting
         },
         { threshold: 0.1 }
       )
-      fadeObserver.observe(cityRef.value)
-      observers.push(fadeObserver)
+      vectorObserver.observe(vector343)
+      observers.push(vectorObserver)
     }
+  }
 
-    if (sectionRef.value) {
-      const sectionObserver = new IntersectionObserver(
-        ([entry]) => {
-          isSectionVisible.value = entry.isIntersecting
-        },
-        {
-          threshold: 0.1,
-          rootMargin: '-100px 0px -100px 0px'
-        }
-      )
-      sectionObserver.observe(sectionRef.value)
-      observers.push(sectionObserver)
-    }
+  // === CITY SECTION ANIMATIONS ===
+  if (cityRef.value && cityImage.value && textContent.value) {
+    const cssFadeObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) cityImage.value.classList.add('opacity-100')
+      },
+      { threshold: 0.01 }
+    )
+    cssFadeObserver.observe(cityImage.value)
+    observers.push(cssFadeObserver)
 
-    if (cockpitRef.value) {
-      const cockpitObserver = new IntersectionObserver(
-        ([entry]) => {
-          isCockpitVisible.value = entry.isIntersecting
-        },
-        {
-          threshold: 0.1,
-          rootMargin: '-100px 0px -100px 0px' // adjust sensitivity if needed
-        }
-      )
-      cockpitObserver.observe(cockpitRef.value)
-      observers.push(cockpitObserver)
-    }
-
-    if (ctaSectionRef.value) {
-      const section = ctaSectionRef.value
-      const spaceship = section.querySelector('.spaceship-wrapper')
-      if (spaceship) {
-        gsap.set(spaceship, { opacity: 1, x: 0, y: 0 })
-
-        ScrollTrigger.create({
-          trigger: section,
+    gsap.fromTo(
+      cityImage.value,
+      { scale: 0.86 },
+      {
+        scale: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: cityImage.value,
           start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-          onUpdate: self => {
-            const x = -200 * self.progress
-            const y = 100 * self.progress
-            gsap.to(spaceship, {
-              x,
-              y,
-              ease: 'none',
-              overwrite: 'auto',
-              duration: 0.1
-            })
-          }
-        })
+          end: 'top 40%',
+          scrub: 1
+        }
       }
-    }
+    )
 
-    nextTick(() => {
-      const cockpitEl = cockpitRef.value
-      const contentWrapper = contentWrapperRef.value
-      if (!cockpitEl || !contentWrapper) return
+    gsap.fromTo(
+      textContent.value,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: cityImage.value,
+          start: 'top 23%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    )
 
-      const bg = cockpitEl.querySelector('.cockpit-bg')
-      const textContentEl = cockpitEl.querySelector('.cockpit-text')
-      const card = cockpitEl.querySelector('.cockpit-card')
-
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: contentWrapper,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            scrub: 1
-          }
-        })
-        .fromTo(
-          bg,
-          { scale: 1 },
-          { scale: 1.15, transformOrigin: 'center center', ease: 'none' },
-          0
-        )
-        .fromTo(
-          [textContentEl, card],
-          { scale: 0.9, autoAlpha: 0 },
-          { scale: 1, autoAlpha: 1, duration: 1, ease: 'power3.out' },
-          0
-        )
+    gsap.to(cityRef.value, {
+      opacity: 0,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: cityRef.value,
+        start: 'bottom 60%',
+        end: 'bottom 100%',
+        scrub: true
+      }
     })
-  })
 
-  onUnmounted(() => {
-    observers.forEach(obs => obs.disconnect())
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-  })
+    const fadeObserver = new IntersectionObserver(
+      ([entry]) => {
+        isCityVisible.value = entry.isIntersecting
+      },
+      { threshold: 0.1 }
+    )
+    fadeObserver.observe(cityRef.value)
+    observers.push(fadeObserver)
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isCTAVisible.value = entry.isIntersecting
+      },
+      { threshold: 0.3 }
+    )
+    if (ctaSectionRef.value) observer.observe(ctaSectionRef.value)
+  }
+
+  // === SECTION OBSERVER ===
+  if (sectionRef.value) {
+    const sectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        isSectionVisible.value = entry.isIntersecting
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '-100px 0px -100px 0px'
+      }
+    )
+    sectionObserver.observe(sectionRef.value)
+    observers.push(sectionObserver)
+  }
+
+
+  // === SPACESHIP ANIMATION ===
+  if (ctaSectionRef.value) {
+    const section = ctaSectionRef.value
+    const spaceship = section.querySelector('.spaceship-wrapper')
+    if (spaceship) {
+      gsap.set(spaceship, { opacity: 1, x: 0, y: 0 })
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+        onUpdate: self => {
+          const x = -200 * self.progress
+          const y = 100 * self.progress
+          gsap.to(spaceship, {
+            x,
+            y,
+            ease: 'none',
+            overwrite: 'auto',
+            duration: 0.1
+          })
+        }
+      })
+    }
+  }
+
+}
+
+// Run once on mount
+onMounted(() => {
+  runGSAPAnimations()
+})
+
+// Re-run when route changes (e.g., coming from another page)
+watch(
+  () => route.fullPath,
+  () => {
+    nextTick(() => {
+      runGSAPAnimations()
+    })
+  }
+)
+
+onUnmounted(() => {
+  observers.forEach(obs => obs.disconnect())
+  ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+})
 </script>
 
 <style scoped>
@@ -669,21 +578,8 @@
     transition: opacity 0.8s ease-in-out;
   }
 
-  .cockpit-section {
-    perspective: 2000px;
-  }
 
-  .cockpit-bg {
-    transition: transform 0.8s ease-out;
-  }
-
-  .cockpit-card {
-    will-change: transform, opacity;
-  }
-
-  .cockpit-text {
-    will-change: transform, opacity;
-  }
+  
 
   .spaceship-wrapper {
     will-change: transform;
