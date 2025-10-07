@@ -1,7 +1,7 @@
 <template>
   <div ref="wrapper" class="outer-wrapper hidden lg:flex items-center overflow-hidden bg-black">
     <div class="relative inner-container">
-      <div ref="scroller" class="scroller flex items-start gap-8">
+      <div ref="scroller" class="scroller flex items-start ">
         <div ref="slide1" class="slide">
           <div class="rounded-xl shadow-2xl p-4">
             <img src="/images/slider-first.png" alt="Robuste Technologie" class="rounded-lg" />
@@ -166,28 +166,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    opacity: 0.35;
+    opacity: 1;
     transform: scale(0.92);
     transform-origin: center center;
   }
 
   .slide img {
-    height: 16rem;
-    width: 22rem;
+    height: 18rem;
+    width: 24rem;
     object-fit: contain;
     border-radius: 0.5rem;
     margin-bottom: 2rem;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
   }
 
   .text-content {
-    max-width: 28rem;
+    max-width: 29rem;
     text-align: center;
     color: white;
   }
 
   .text-content h1 {
-    font-size: 1.75rem;
+    font-size: 1.95rem;
     font-weight: bold;
     margin-bottom: 1rem;
   }
