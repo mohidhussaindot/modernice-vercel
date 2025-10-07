@@ -94,7 +94,6 @@
             </p>
           </div>
           <div>
-            <img src="@atoms/svgs/appdevmiddle (1).svg" alt="" />
           </div>
         </div>
 
@@ -111,19 +110,27 @@
           <div class="max-w-[37.5rem] hidden md:flex" v-html="appdevmiddle2"></div>
         </div>
 
-        <!-- Section 4 -->
-        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
-          <div class="max-w-[37.5rem]" v-html="appdevlast2"></div>
-          <div class="flex flex-col gap-8 max-w-[31.625rem] text-white">
-            <h2 class="text-2xl font-semibold">4. Testing and Launch</h2>
-            <p class="font-light text-lg">
-              Before launching the app, we conduct thorough testing to ensure that it is stable and
-              bug-free. Once the app is ready, we help you with the submission process and launch it
-              on the App Store and Google Play.
-            </p>
-          </div>
-        </div>
+      <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
+  <div class="relative max-w-[37.5rem]" ref="rocketContainer">
+    <!-- Rocket SVG -->
+    <div v-html="appdevlast2"></div>
 
+    <!-- Burst Canvas Overlay -->
+    <!-- <canvas
+      ref="burstCanvas"
+      class="absolute top-0 z-10 inset-0 w-full h-full pointer-events-none"
+    ></canvas> -->
+  </div>
+
+  <div class="flex flex-col gap-8 max-w-[31.625rem] text-white">
+    <h2 class="text-2xl font-semibold">4. Testing and Launch</h2>
+    <p class="font-light text-lg">
+      Before launching the app, we conduct thorough testing to ensure that it is stable and
+      bug-free. Once the app is ready, we help you with the submission process and launch it
+      on the App Store and Google Play.
+    </p>
+  </div>
+</div>
         <!-- Section 5 -->
         <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
           <div class="flex flex-col gap-8 max-w-[31.625rem] text-white">
@@ -195,7 +202,118 @@
   import appdevsection2 from '@atoms/svgs/appdevsection2.svg?raw'
   import appdevmiddle1 from '@atoms/svgs/appdevmiddle (1).svg?raw'
   import appdevmiddle2 from '@atoms/svgs/appdevmiddle (2).svg?raw'
-  import appdevlast1 from '@atoms/svgs/appdevlast (1).svg?raw'
-  import appdevlast2 from '@atoms/svgs/appdevlast (2).svg?raw'
+  import appdevlast1 from '@atoms/svgs/appdev/appdevlast (1).svg?raw'
+  import appdevlast2 from '@atoms/svgs/appdev/appdevlast (2).svg?raw'
   import appdevlines from '@atoms/svgs/appdevlines.svg?raw'
+  import { onMounted, onBeforeUnmount, ref } from "vue";
+
+const rocketContainer = ref(null);
+const burstCanvas = ref(null);
+let rocket, svgburst, ctx, rafId, last;
+let particles = [];
+let rocketTl;
+let observer;
+
+function fitCanvas(canvas) {
+  const ratio = window.devicePixelRatio || 1;
+  canvas.width = canvas.clientWidth * ratio;
+  canvas.height = canvas.clientHeight * ratio;
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+}
+
+function spawn(dt, canvas) {
+  const perSec = 25;
+  let toSpawn = perSec * dt;
+  while (toSpawn-- > 0) {
+    particles.push({
+      x: canvas.width / 2 / devicePixelRatio,
+      y: (canvas.height * 0.7) / devicePixelRatio,
+      vx: (Math.random() - 0.5) * 0.5,
+      vy: 1 + Math.random() * 0.5,
+      life: 700 + Math.random() * 400,
+      age: 0,
+      r: 2 + Math.random() * 2,
+    });
+  }
+}
+
+function tick(t, canvas) {
+  const dt = t - last;
+  last = t;
+
+  spawn(dt / 1000, canvas);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = particles.length - 1; i >= 0; i--) {
+    const p = particles[i];
+    p.age += dt;
+    if (p.age > p.life) {
+      particles.splice(i, 1);
+      continue;
+    }
+
+    p.x += p.vx * dt * 0.05;
+    p.y += p.vy * dt * 0.05;
+
+    const alpha = 1 - p.age / p.life;
+    const r = p.r * (1 + 0.5 * alpha);
+
+    const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 6);
+    g.addColorStop(0, `rgba(80,255,160,${0.6 * alpha})`);
+    g.addColorStop(1, "transparent");
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, r * 6, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = `rgba(120,255,180,${0.8 * alpha})`;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  rafId = requestAnimationFrame((time) => tick(time, canvas));
+}
+
+onMounted(() => {
+  const canvas = burstCanvas.value;
+  if (!canvas) return;
+
+  ctx = canvas.getContext("2d");
+  fitCanvas(canvas);
+  last = performance.now();
+  rafId = requestAnimationFrame((time) => tick(time, canvas));
+});
+
+onBeforeUnmount(() => {
+  if (rafId) cancelAnimationFrame(rafId);
+});
 </script>
+
+
+<style >
+
+@keyframes floatRocket {
+  0% {
+    transform: translateY(-25px);
+  }
+  50% {
+    transform: translateY(-10px); /* float down slightly */
+  }
+  100% {
+    transform: translateY(-25px);
+  }
+}
+
+/* Apply to both rockets */
+#optamizerocket,
+#designrocket {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: floatRocket 3s ease-in-out infinite;
+}
+canvas {
+  display: block;
+}
+
+</style>
