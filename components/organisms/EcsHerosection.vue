@@ -121,17 +121,39 @@
               <div
                 class="flex justify-between items-center w-full max-w-[75rem] px-6 py-2 bg-[#020111] rounded"
               >
-                <div class="flex gap-2">
-                  <div class="bg-[#0E0D1A] border border-[#F2C94C] p-1 rounded">
-                    <Icon name="mdi:view-grid" class="w-5 h-5 text-[#F2C94C]" />
-                  </div>
-                  <div class="bg-[#0E0D1A] p-1 rounded hover:opacity-100 opacity-50">
-                    <Icon name="mdi:view-list" class="w-5 h-5 text-white" />
-                  </div>
-                  <div class="bg-[#0E0D1A] p-1 rounded hover:opacity-100 opacity-50">
-                    <Icon name="gridicons:grid" class="w-5 h-5 text-white" />
-                  </div>
+                <!-- View mode buttons (grid / list / compact) -->
+                <div class="flex gap-2" role="tablist" aria-label="View mode">
+                  <button
+                    @click="setView('grid')"
+                    :aria-pressed="viewMode === 'grid'"
+                    :class="viewButtonClass('grid')"
+                    class="rounded"
+                    title="Grid view"
+                  >
+                    <Icon name="mdi:view-grid" class="w-5 h-5" />
+                  </button>
+
+                  <button
+                    @click="setView('list')"
+                    :aria-pressed="viewMode === 'list'"
+                    :class="viewButtonClass('list')"
+                    class="rounded"
+                    title="List view"
+                  >
+                    <Icon name="mdi:view-list" class="w-5 h-5" />
+                  </button>
+
+                  <button
+                    @click="setView('masonry')"
+                    :aria-pressed="viewMode === 'masonry'"
+                    :class="viewButtonClass('masonry')"
+                    class="rounded"
+                    title="Compact grid"
+                  >
+                    <Icon name="gridicons:grid" class="w-5 h-5" />
+                  </button>
                 </div>
+
                 <div
                   class="flex items-center gap-2 bg-[#0E0D1A] border border-[#F2C94C] px-3 py-1 rounded cursor-pointer"
                 >
@@ -142,35 +164,67 @@
             </div>
 
             <!-- Product Cards -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center px-6 py-10">
-              <div
-                v-for="(card, index) in serviceCards"
-                :key="index"
-                class="bg-[#0E0D1A] border text-start border-[#FFA901]/50 p-6 rounded-lg overflow-hidden flex flex-col justify-between"
-              >
-                <div v-html="card.html" class="mx-auto mb-4"></div>
-                <h2 class="text-2xl flex font-bold">{{ card.title }}</h2>
-                <p class="text-sm opacity-70">{{ card.description }}</p>
-                <div class="flex justify-between items-center mt-4">
-                  <span class="text-xl font-medium"
-                    >420,00 <span class="text-amber-400">€</span></span
-                  >
-                  <div class="flex items-center gap-2">
-                    <button
-                      class="flex items-center gap-1 px-3 py-1 text-sm border border-white/10 bg-[#0E0D1A] rounded"
+            <div class="mt-6">
+              <!-- GRID / MASONRY VIEW -->
+              <div v-if="viewMode === 'grid' || viewMode === 'masonry'" class="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center px-6 py-10">
+                <div
+                  v-for="(card, index) in serviceCards"
+                  :key="index"
+                  class="bg-[#0E0D1A] border text-start border-[#FFA901]/50 p-6 rounded-lg overflow-hidden flex flex-col justify-between"
+                >
+                  <div v-html="card.html" class="mx-auto mb-4"></div>
+                  <h2 class="text-2xl flex font-bold">{{ card.title }}</h2>
+                  <p class="text-sm opacity-70">{{ card.description }}</p>
+                  <div class="flex justify-between items-center mt-4">
+                    <span class="text-xl font-medium"
+                      >420,00 <span class="text-amber-400">€</span></span
                     >
-                      <Icon name="mdi:cart-outline" class="w-4 h-4" />
-                      Add to Cart
-                    </button>
-                    <button>
-                      <Icon
-                        name="mdi:heart-outline"
-                        class="w-5 h-5 text-white opacity-60 hover:opacity-100 transition"
-                      />
-                    </button>
+                    <div class="flex items-center gap-2">
+                      <button
+                        class="flex items-center gap-1 px-3 py-1 text-sm border border-white/10 bg-[#0E0D1A] rounded"
+                      >
+                        <Icon name="mdi:cart-outline" class="w-4 h-4" />
+                        Add to Cart
+                      </button>
+                      <button>
+                        <Icon
+                          name="mdi:heart-outline"
+                          class="w-5 h-5 text-white opacity-60 hover:opacity-100 transition"
+                        />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <div v-else-if="viewMode === 'list'" class="flex flex-col gap-6 px-6 py-10">
+                <div
+                  v-for="(card, index) in serviceCards"
+                  :key="index"
+                  class="bg-[#0E0D1A] border border-[#FFA901]/50 rounded-lg overflow-hidden p-6 flex gap-6 items-start"
+                >
+                  <div class="w-36 flex-shrink-0  " v-html="card.html"></div>
+                  
+                  <div class="flex-1 pl-100  flex flex-col max-w-[900px]">
+                    <h2 class="text-4xl font-bold pt-10 mb-1">{{ card.title }}</h2>
+                    <p class="text-xl opacity-70 mb-4">{{ card.description }}</p>
+
+                    <div class="flex justify-between items-center">
+                      <span class="text-xl font-medium">420,00 <span class="text-amber-400">€</span></span>
+                      <div class="flex items-center gap-2">
+                        <button class="flex items-center gap-1 px-3 py-1 text-sm border border-white/10 bg-[#0E0D1A] rounded">
+                          <Icon name="mdi:cart-outline" class="w-4 h-4" />
+                          Add to Cart
+                        </button>
+                        <button>
+                          <Icon name="mdi:heart-outline" class="w-5 h-5 text-white opacity-60 hover:opacity-100 transition" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -226,61 +280,92 @@
 </template>
 
 <script setup>
-  import Ecshero from '@atoms/svgs/ecs-hero.svg?raw'
-  import Ecsmain1 from '@atoms/svgs/ecs-main1.svg?raw'
-  import Ecsmain2 from '@atoms/svgs/ecs-main2.svg?raw'
-  import Ecsmain3 from '@atoms/svgs/ecs-main3.svg?raw'
-  import Ecsmain4 from '@atoms/svgs/ecs-main4.svg?raw'
+import { ref } from 'vue'
+import Ecshero from '@atoms/svgs/ecs-hero.svg?raw'
+import Ecsmain1 from '@atoms/svgs/ecs-main1.svg?raw'
+import Ecsmain2 from '@atoms/svgs/ecs-main2.svg?raw'
+import Ecsmain3 from '@atoms/svgs/ecs-main3.svg?raw'
+import Ecsmain4 from '@atoms/svgs/ecs-main4.svg?raw'
+import svgbg from '@atoms/svgs/ecsbgline.svg?raw'
 
-  import svgbg from '@atoms/svgs/ecsbgline.svg?raw'
+// --- static data (copied from your original file) ---
+const cards = [
+  {
+    icon: '/images/map.png',
+    alt: 'Map icon',
+    text: 'A Personalized plan tailored to your business'
+  },
+  {
+    icon: '/images/Store.png',
+    alt: 'Store icon',
+    text: 'A user friendly appealing online store'
+  },
+  {
+    icon: '/images/microchip.png',
+    alt: 'Chip icon',
+    text: 'The most up to date e-commerce technologies'
+  },
+  {
+    icon: '/images/comments.png',
+    alt: 'Comments icon',
+    text: 'Ongoing support to ensure success of your store'
+  }
+]
 
-  const cards = [
-    {
-      icon: '/images/map.png',
-      alt: 'Map icon',
-      text: 'A Personalized plan tailored to your business'
-    },
-    {
-      icon: '/images/Store.png',
-      alt: 'Store icon',
-      text: 'A user friendly appealing online store'
-    },
-    {
-      icon: '/images/microchip.png',
-      alt: 'Chip icon',
-      text: 'The most up to date e-commerce technologies'
-    },
-    {
-      icon: '/images/comments.png',
-      alt: 'Comments icon',
-      text: 'Ongoing support to ensure success of your store'
-    }
-  ]
+const serviceCards = [
+  {
+    title: '1. Discovery & Strategy',
+    description:
+      'The first step in our e-commerce strategy process is to gain a thorough understanding of your business goals and target audience. This includes conducting market research and analyzing your competitors to determine the most effective e-commerce strategy for your business.',
+    html: Ecsmain1
+  },
+  {
+    title: '2. Design & Development',
+    description:
+      "Once we have developed a personalized e-commerce strategy for your business, our team will begin working on the design and development of your online store. This includes creating a visually appealing and user-friendly website, as well as implementing the necessary e-commerce tools and technologies.",
+    html: Ecsmain2
+  },
+  {
+    title: '3. Testing & Launch',
+    description:
+      'Before launching your online store, we will conduct thorough testing to ensure that everything is functioning properly. This includes testing the user experience, payment processes, and overall functionality of your website. Once we are confident that your online store is ready for launch, we will help you get your business up and running in the digital world.',
+    html: Ecsmain3
+  },
+  {
+    title: '4. Optimize for Growth',
+    description:
+      "Our work doesnt end once your online store is launched. We will continue to monitor and analyze the performance of your e-commerce platform, making ongoing adjustments and optimizations as needed. We also provide ongoing support and maintenance to ensure that your online store continues to function smoothly and effectively",
+    html: Ecsmain4
+  }
+]
 
-  const serviceCards = [
-    {
-      title: '1. Discovery & Strategy',
-      description:
-        'The first step in our e-commerce strategy process is to gain a thorough understanding of your business goals and target audience. This includes conducting market research and analyzing your competitors to determine the most effective e-commerce strategy for your business.',
-      html: Ecsmain1
-    },
-    {
-      title: '2. Design & Development',
-      description:
-        'Once we have developed a personalized e-commerce strategy for your business, our team will begin working on the design and development of your online store. This includes creating a visually appealing and user-friendly website, as well as implementing the necessary e-commerce tools and technologies.',
-      html: Ecsmain2
-    },
-    {
-      title: '3. Testing & Launch',
-      description:
-        'Before launching your online store, we will conduct thorough testing to ensure that everything is functioning properly. This includes testing the user experience, payment processes, and overall functionality of your website. Once we are confident that your online store is ready for launch, we will help you get your business up and running in the digital world.',
-      html: Ecsmain3
-    },
-    {
-      title: '4. Optimize for Growth',
-      description:
-        'Our work doesnt end once your online store is launched. We will continue to monitor and analyze the performance of your e-commerce platform, making ongoing adjustments and optimizations as needed. We also provide ongoing support and maintenance to ensure that your online store continues to function smoothly and effectively',
-      html: Ecsmain4
-    }
-  ]
+const viewMode = ref('grid') 
+
+function setView(mode) {
+  viewMode.value = mode
+}
+
+function viewButtonClass(mode) {
+  return {
+    'flex items-center justify-center w-9 h-9': true,
+    'bg-[#0E0D1A] border border-[#F2C94C] text-[#F2C94C] shadow-sm': viewMode.value === mode,
+    'bg-[#0E0D1A] text-white opacity-60 hover:opacity-100': viewMode.value !== mode
+  }
+}
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.18s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(6px);
+}
+/* small helper to make the toggle feel snappy */
+button.rounded {
+  transition: box-shadow .12s ease, transform .08s ease;
+}
+</style>

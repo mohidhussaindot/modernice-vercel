@@ -44,7 +44,7 @@
         </div>
 
         <div
-          class="lg:w-[32.5625rem] mt-[40rem] md:mt-0 flex flex-col text-center gap-6 mx-auto pt-3 lg:pt-12 xl:pt-36"
+          class="fade-up lg:w-[32.5625rem] mt-[40rem] md:mt-0 flex flex-col text-center gap-6 mx-auto pt-3 lg:pt-12 xl:pt-36"
         >
           <h1 class="text-2xl 2xl:text-4xl font-semibold">
             <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent"
@@ -65,7 +65,7 @@
       <div class="flex flex-col gap-15">
         <!-- Section 1 -->
         <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
-          <div class="flex flex-col gap-10 max-w-[31.625rem] text-white">
+          <div class="fade-left flex flex-col gap-10 max-w-[31.625rem] text-white">
             <h1 class="text-3xl font-bold">
               Our
               <span
@@ -85,7 +85,7 @@
         <!-- Section 2 -->
         <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
           <div class="max-w-[37.5rem] hidden lg:flex" v-html="appdevmiddle1"></div>
-          <div class="flex flex-col gap-8 max-w-[31.625rem] text-white">
+          <div class="fade-right flex flex-col gap-8 max-w-[31.625rem] text-white">
             <h2 class="text-2xl font-semibold">2. Design</h2>
             <p class="font-light text-lg">
               Next, our team of designers creates wireframes and mockups to visualise the user flow
@@ -99,7 +99,7 @@
 
         <!-- Section 3 -->
         <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
-          <div class="flex flex-col gap-8 max-w-[31.625rem] text-white">
+          <div class="fade-left flex flex-col gap-8 max-w-[31.625rem] text-white">
             <h2 class="text-2xl font-semibold">3. Development</h2>
             <p class="font-light text-lg">
               Using the latest tools and technologies, such as Flutter, we begin building the hybrid
@@ -111,19 +111,13 @@
         </div>
 
       <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
-  <div class="relative max-w-[37.5rem]" ref="rocketContainer">
     <!-- Rocket SVG -->
     <div v-html="appdevlast2"></div>
 
-    <!-- Burst Canvas Overlay -->
-    <!-- <canvas
-      ref="burstCanvas"
-      class="absolute top-0 z-10 inset-0 w-full h-full pointer-events-none"
-    ></canvas> -->
-  </div>
+  
 
-  <div class="flex flex-col gap-8 max-w-[31.625rem] text-white">
-    <h2 class="text-2xl font-semibold">4. Testing and Launch</h2>
+  <div class="fade-right flex flex-col gap-8 max-w-[31.625rem] text-white">
+    <h2 class=" text-2xl font-semibold">4. Testing and Launch</h2>
     <p class="font-light text-lg">
       Before launching the app, we conduct thorough testing to ensure that it is stable and
       bug-free. Once the app is ready, we help you with the submission process and launch it
@@ -133,7 +127,7 @@
 </div>
         <!-- Section 5 -->
         <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
-          <div class="flex flex-col gap-8 max-w-[31.625rem] text-white">
+          <div class="fade-right flex flex-col gap-8 max-w-[31.625rem] text-white">
             <h2 class="text-2xl font-semibold">5. Optimize for Growth</h2>
             <p class="font-light text-lg">
               After the app is launched, we provide ongoing support and maintenance to ensure that
@@ -141,7 +135,15 @@
               also offer optimization services to help increase user engagement and drive growth.
             </p>
           </div>
+            <div class="relative max-w-[37.5rem]" ref="rocketContainer">
+
           <div class="max-w-[37.5rem]" v-html="appdevlast1"></div>
+            <!-- Burst Canvas Overlay -->
+    <canvas
+      ref="burstCanvas"
+      class="absolute top-0 z-10 pl-37 pt-5 inset-0 w-full h-full pointer-events-none"
+    ></canvas>
+    </div>
         </div>
       </div>
     </div>
@@ -209,18 +211,23 @@
 
 const rocketContainer = ref(null);
 const burstCanvas = ref(null);
-let rocket, svgburst, ctx, rafId, last;
-let particles = [];
-let rocketTl;
-let observer;
 
+let ctx, rafId, last
+let particles = []
+let rocketEl = null
+let isVisible = false
+let isBursting = false
+let burstTimeout = null
+let landingTimeout = null
+const lowerPosition = '40px'
+
+// Make canvas retina-safe
 function fitCanvas(canvas) {
-  const ratio = window.devicePixelRatio || 1;
-  canvas.width = canvas.clientWidth * ratio;
-  canvas.height = canvas.clientHeight * ratio;
-  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+  const ratio = window.devicePixelRatio || 1
+  canvas.width = canvas.clientWidth * ratio
+  canvas.height = canvas.clientHeight * ratio
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0)
 }
-
 function spawn(dt, canvas) {
   const perSec = 25;
   let toSpawn = perSec * dt;
@@ -236,12 +243,15 @@ function spawn(dt, canvas) {
     });
   }
 }
-
 function tick(t, canvas) {
   const dt = t - last;
   last = t;
 
-  spawn(dt / 1000, canvas);
+  if (isBursting) {
+    spawn(dt / 1000, canvas);
+  }
+
+  // Optional: fill canvas with transparent background if needed
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   for (let i = particles.length - 1; i >= 0; i--) {
@@ -258,36 +268,128 @@ function tick(t, canvas) {
     const alpha = 1 - p.age / p.life;
     const r = p.r * (1 + 0.5 * alpha);
 
+    // PINK PARTICLE GLOW
     const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 6);
-    g.addColorStop(0, `rgba(80,255,160,${0.6 * alpha})`);
+    g.addColorStop(0, `rgba(213,57,211,${0.6 * alpha})`); // #D539D3
     g.addColorStop(1, "transparent");
     ctx.fillStyle = g;
     ctx.beginPath();
     ctx.arc(p.x, p.y, r * 6, 0, Math.PI * 2);
     ctx.fill();
 
-    ctx.fillStyle = `rgba(120,255,180,${0.8 * alpha})`;
+    // PINK PARTICLE CORE
+    ctx.fillStyle = `rgba(213,57,211,${0.8 * alpha})`;
     ctx.beginPath();
     ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
     ctx.fill();
   }
 
-  rafId = requestAnimationFrame((time) => tick(time, canvas));
+  if (isVisible || particles.length > 0) {
+    rafId = requestAnimationFrame((time) => tick(time, canvas));
+  }
+}
+
+function stopBurst(canvas) {
+  if (ctx && canvas) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+  particles = []
+  isBursting = false
 }
 
 onMounted(() => {
-  const canvas = burstCanvas.value;
-  if (!canvas) return;
+  // Fade in observer
+  const fadeElements = document.querySelectorAll('.fade-left, .fade-right, .fade-up')
+  const fadeObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in')
+          entry.target.classList.remove('fade-out')
+        } else {
+          entry.target.classList.remove('fade-in')
+          entry.target.classList.add('fade-out')
+        }
+      })
+    },
+    { threshold: 0.2 }
+  )
+  fadeElements.forEach(el => fadeObserver.observe(el))
 
-  ctx = canvas.getContext("2d");
-  fitCanvas(canvas);
-  last = performance.now();
-  rafId = requestAnimationFrame((time) => tick(time, canvas));
-});
+  // Canvas and rocket setup
+  const canvas = burstCanvas.value
+  const container = rocketContainer.value
+  if (canvas && container) {
+    ctx = canvas.getContext("2d")
+    fitCanvas(canvas)
+
+    rocketEl = container.querySelector('#optamizerocket')
+    if (rocketEl) {
+      rocketEl.style.animation = 'none'
+      rocketEl.style.transform = `translateY(${lowerPosition})`
+    }
+
+    last = performance.now()
+    rafId = requestAnimationFrame((time) => tick(time, canvas))
+
+    // Visibility observer for rocket container
+    const containerObserver = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0]
+        if (entry.isIntersecting) {
+          // Enter view
+          if (!isVisible) {
+            isVisible = true
+            if (rocketEl) {
+              rocketEl.style.animation = 'none'
+              rocketEl.style.transform = 'translateY(0px)'
+            }
+            burstTimeout = setTimeout(() => {
+              if (isVisible && rocketEl) {
+                rocketEl.style.animation = 'floatRocket 3s ease-in-out infinite'
+                isBursting = true
+                particles = []
+                last = performance.now()
+                rafId = requestAnimationFrame((time) => tick(time, canvas))
+              }
+            }, 2000)
+          }
+        } else {
+          // Exit view
+          if (isVisible) {
+            isBursting = false
+            isVisible = false
+            clearTimeout(burstTimeout)
+            clearTimeout(landingTimeout)
+            if (rocketEl) {
+              rocketEl.style.animation = 'none'
+            }
+            landingTimeout = setTimeout(() => {
+              if (rocketEl) {
+                rocketEl.style.transform = `translateY(${lowerPosition})`
+              }
+            }, 500)
+          }
+        }
+      },
+      { threshold: 0.5 }
+    )
+    containerObserver.observe(container)
+  }
+})
 
 onBeforeUnmount(() => {
-  if (rafId) cancelAnimationFrame(rafId);
-});
+  if (rafId) cancelAnimationFrame(rafId)
+  clearTimeout(burstTimeout)
+  clearTimeout(landingTimeout)
+  const canvas = burstCanvas.value
+  stopBurst(canvas)
+  isVisible = false
+  if (rocketEl) {
+    rocketEl.style.animation = 'none'
+    rocketEl.style.transform = `translateY(${lowerPosition})`
+  }
+})
 </script>
 
 
@@ -295,25 +397,63 @@ onBeforeUnmount(() => {
 
 @keyframes floatRocket {
   0% {
-    transform: translateY(-25px);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px); /* float down slightly */
+    transform: translateY(-20px);
   }
   100% {
-    transform: translateY(-25px);
+    transform: translateY(0px);
   }
 }
 
-/* Apply to both rockets */
-#optamizerocket,
-#designrocket {
+
+
+#optamizerocket {
   transform-box: fill-box;
   transform-origin: center;
-  animation: floatRocket 3s ease-in-out infinite;
+  transition: transform 2s ease-out;
 }
 canvas {
   display: block;
 }
 
+
+  .fade-left,
+  .fade-right,
+  .fade-up {
+    opacity: 0;
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+  }
+
+  .fade-left {
+    transform: translateX(-40px);
+  }
+  .fade-right {
+    transform: translateX(40px);
+  }
+  .fade-up {
+    transform: translateY(40px);
+  }
+
+  .fade-in {
+    opacity: 1 !important;
+    transform: translateX(0) translateY(0) !important;
+  }
+
+  .fade-out.fade-left {
+    transform: translateX(-40px);
+  }
+  .fade-out.fade-right {
+    transform: translateX(40px);
+  }
+  .fade-out.fade-up {
+    transform: translateY(40px);
+  }
+
+  .fade-out {
+    opacity: 0 !important;
+  }
 </style>

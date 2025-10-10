@@ -1,6 +1,9 @@
 <template>
   <section class="bg-black text-white overflow-hidden relative w-full">
-    <div class="absolute inset-0 md:flex hidden z-0 pointer-events-none" v-html="lines"></div>
+<div
+  class="absolute inset-0 md:flex hidden z-0 bg-no-repeat bg-cover pointer-events-none"
+  :style="{ backgroundImage: `url('${lines}')` } "
+></div>
     <!-- mobile version -->
     <div class="block lg:hidden bg-[#020111] text-white overflow-hidden my-36 px-6">
       <div class="flex flex-col items-center gap-8 text-center">
@@ -34,7 +37,7 @@
         <!-- Image -->
         <div class="w-full max-w-[20rem] mt-6">
           <img
-            src="@atoms/svgs/aiheroimg.svg"
+            src="@atoms/svgs/aidev/aiheroimg.svg"
             alt="AI Hero Graphic"
             class="w-full h-auto object-contain"
           />
@@ -64,17 +67,18 @@
             Idee bis zur vollen Umsetzung. Starte jetzt. Sei innovativ. Sei effizient. Sei
             revolutionär.
           </p>
-          <div>
-            <Button
-              class="px-6 py-2.5 text-base sm:text-lg lg:text-xl border border-[#3BE8E8] rounded transition hover:cursor-pointer bg-transparent text-white hover:text-white"
+          <div
+              class=" inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8]  to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
             >
-              <span
-                class="bg-gradient-to-r from-[#AFE639] via-[#3BE8E8] to-[#3BE8E8] text-transparent bg-clip-text duration-300 hover:text-white"
+              <Button
+                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
               >
-                KI-Beratung starten.
-              </span>
-            </Button>
-          </div>
+                <span
+                  class="bg-gradient-to-r from-[#3BE8E8]  to-[#AFE639] text-transparent bg-clip-text duration-300"
+                  >KI-Beratung starten.</span
+                >
+              </Button>
+            </div>
         </div>
 
         <div
@@ -93,7 +97,7 @@
         </div>
 
         <div
-          class="flex flex-col gap-8 max-w-[600px] text-center lg:text-left mx-auto lg:mx-0 lg:pl-10"
+          class="flex fade-up text-center flex-col gap-8 max-w-[600px]  text-center mx-auto lg:mx-0 lg:pl-10"
         >
           <h1 class="text-2xl font-semibold">
             <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent"
@@ -113,9 +117,9 @@
       <!-- Our Approach Section -->
       <div class="flex flex-col gap-y-20 max-w-[1440px] mx-auto mt-20 px-4 md:px-6 lg:px-10">
         <div
-          class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full"
+          class=" flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full"
         >
-          <div class="text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0 lg:pr-8">
+          <div class="fade-left text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0 lg:pr-8">
             <h1 class="text-[2.625rem] font-bold">
               Our
               <span
@@ -144,7 +148,7 @@
             v-html="aidesign"
           ></div>
 
-          <div class="text-white max-w-[600px] pt-10 lg:pt-0 flex-shrink-0 mx-auto lg:mx-0 lg:pl-8">
+          <div class="fade-right text-white max-w-[600px] pt-10 lg:pt-0 flex-shrink-0 mx-auto lg:mx-0 lg:pl-8">
             <h2 class="text-2xl font-semibold">2. Design</h2>
             <p class="font-light text-lg mt-2">
               Next, our team of designers creates wireframes and mockups to visualise the user flow
@@ -157,7 +161,7 @@
         <div
           class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full"
         >
-          <div class="text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0 lg:pr-8">
+          <div class="fade-left text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0 lg:pr-8">
             <h2 class="text-2xl font-semibold">3. Development</h2>
             <p class="font-light text-lg mt-2">
               Using the latest tools and technologies, such as Flutter, we begin building the hybrid
@@ -180,7 +184,7 @@
             v-html="aitesting"
           ></div>
 
-          <div class="text-white max-w-[600px] pt-10 lg:pt-0 flex-shrink-0 mx-auto lg:mx-0 lg:pl-8">
+          <div class="text-white max-w-[600px] fade-right pt-10 lg:pt-0 flex-shrink-0 mx-auto lg:mx-0 lg:pl-8">
             <h2 class="text-2xl font-semibold">4. Testing and Launch</h2>
             <p class="font-light text-lg mt-2">
               Before launching the app, we conduct thorough testing to ensure that it is stable and
@@ -191,9 +195,9 @@
         </div>
 
         <div
-          class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full mb-20"
+          class="  flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full mb-20"
         >
-          <div class="text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0 lg:pr-8">
+          <div class="fade-left text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0 lg:pr-8">
             <h2 class="text-2xl font-semibold">5. Optimize for Growth</h2>
             <p class="font-light text-lg mt-2">
               After the app is launched, we provide ongoing support and maintenance to ensure that
@@ -201,11 +205,17 @@
               also offer optimization services to help increase user engagement and drive growth.
             </p>
           </div>
+            <div class="relative max-w-[37.5rem]" ref="rocketContainer">
 
           <div
             class="max-w-[600px] hidden lg:flex w-full flex-shrink-0 mx-auto lg:mx-0 lg:pl-8"
             v-html="aioptamize"
           ></div>
+              <canvas
+      ref="burstCanvas"
+      class="absolute top-0 z-10 pl-45 pt-5 inset-0 w-full h-full pointer-events-none"
+    ></canvas>
+          </div>
         </div>
       </div>
     </div>
@@ -259,15 +269,270 @@
 </template>
 
 <script setup>
-  import Button from '@atoms/Button.vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import Button from '@atoms/Button.vue'
 
-  import aiheroimg from '@atoms/svgs/aiheroimg.svg?raw'
+// SVGs as raw HTML for inline injection
+import aiheroimg from '@atoms/svgs/aidev/aiheroimg.svg?raw'
+import aisecondimg from '@atoms/svgs/aidev/aisecondimg.svg?raw'
+import aiourapproach from '@atoms/svgs/aidev/aiourapproach.svg?raw'
+import aidesign from '@atoms/svgs/aidev/aidesign.svg?raw'
+import aidevelopment from '@atoms/svgs/aidev/aidevelopment.svg?raw'
+import aitesting from '@atoms/svgs/aidev/aitesting.svg?raw'
+import aioptamize from '@atoms/svgs/aidev/aioptamize.svg?raw'
+import lines from '@atoms/svgs/aidev/aiconsultinglines.svg'
 
-  import aisecondimg from '@atoms/svgs/aisecondimg.svg?raw'
-  import aiourapproach from '@atoms/svgs/aiourapproach.svg?raw'
-  import aidesign from '@atoms/svgs/aidesign.svg?raw'
-  import aidevelopment from '@atoms/svgs/aidevelopment.svg?raw'
-  import aitesting from '@atoms/svgs/aitesting.svg?raw'
-  import aioptamize from '@atoms/svgs/aioptamize.svg?raw'
-  import lines from '@atoms/svgs/aiconsultinglines.svg?raw'
+// Refs
+const burstCanvas = ref(null)
+const rocketContainer = ref(null)
+
+let ctx, rafId, last
+let particles = []
+let rocketEl = null
+let isVisible = false
+let isBursting = false
+let burstTimeout = null
+let landingTimeout = null
+const lowerPosition = '40px'
+
+// Make canvas retina-safe
+function fitCanvas(canvas) {
+  const ratio = window.devicePixelRatio || 1
+  canvas.width = canvas.clientWidth * ratio
+  canvas.height = canvas.clientHeight * ratio
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0)
+}
+function spawn(dt, canvas) {
+  const perSec = 25;
+  let toSpawn = perSec * dt;
+  while (toSpawn-- > 0) {
+    particles.push({
+      x: canvas.width / 2 / devicePixelRatio,
+      y: (canvas.height * 0.7) / devicePixelRatio,
+      vx: (Math.random() - 0.5) * 0.5,
+      vy: 1 + Math.random() * 0.5,
+      life: 700 + Math.random() * 400,
+      age: 0,
+      r: 2 + Math.random() * 2,
+    });
+  }
+}
+function tick(t, canvas) {
+  const dt = t - last;
+  last = t;
+
+  if (isBursting) {
+    spawn(dt / 1000, canvas);
+  }
+
+  // Optional: fill canvas with transparent background if needed
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = particles.length - 1; i >= 0; i--) {
+    const p = particles[i];
+    p.age += dt;
+    if (p.age > p.life) {
+      particles.splice(i, 1);
+      continue;
+    }
+
+    p.x += p.vx * dt * 0.05;
+    p.y += p.vy * dt * 0.05;
+
+    const alpha = 1 - p.age / p.life;
+    const r = p.r * (1 + 0.5 * alpha);
+
+    // GREEN PARTICLE GLOW
+    const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 6);
+    g.addColorStop(0, `rgba(175,230,57,${0.6 * alpha})`); // #AFE639
+    g.addColorStop(1, "transparent");
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, r * 6, 0, Math.PI * 2);
+    ctx.fill();
+
+    // GREEN PARTICLE CORE
+    ctx.fillStyle = `rgba(175,230,57,${0.8 * alpha})`;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  if (isVisible || particles.length > 0) {
+    rafId = requestAnimationFrame((time) => tick(time, canvas));
+  }
+}
+
+function stopBurst(canvas) {
+  if (ctx && canvas) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+  particles = []
+  isBursting = false
+}
+
+// Run after mount
+onMounted(() => {
+  // Fade in observer
+  const fadeElements = document.querySelectorAll('.fade-left, .fade-right, .fade-up')
+  const fadeObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in')
+          entry.target.classList.remove('fade-out')
+        } else {
+          entry.target.classList.remove('fade-in')
+          entry.target.classList.add('fade-out')
+        }
+      })
+    },
+    { threshold: 0.2 }
+  )
+  fadeElements.forEach(el => fadeObserver.observe(el))
+
+  // Canvas and rocket setup
+  const canvas = burstCanvas.value
+  const container = rocketContainer.value
+  if (canvas && container) {
+    ctx = canvas.getContext("2d")
+    fitCanvas(canvas)
+
+    rocketEl = container.querySelector('#optamizerocket')
+    if (rocketEl) {
+      rocketEl.style.animation = 'none'
+      rocketEl.style.transform = `translateY(${lowerPosition})`
+    }
+
+    last = performance.now()
+    rafId = requestAnimationFrame((time) => tick(time, canvas))
+
+    // Visibility observer for rocket container
+    const containerObserver = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0]
+        if (entry.isIntersecting) {
+          // Enter view
+          if (!isVisible) {
+            isVisible = true
+            if (rocketEl) {
+              rocketEl.style.animation = 'none'
+              rocketEl.style.transform = 'translateY(0px)'
+            }
+            burstTimeout = setTimeout(() => {
+              if (isVisible && rocketEl) {
+                rocketEl.style.animation = 'floatRocket 3s ease-in-out infinite'
+                isBursting = true
+                particles = []
+                last = performance.now()
+                rafId = requestAnimationFrame((time) => tick(time, canvas))
+              }
+            }, 2000)
+          }
+        } else {
+          // Exit view
+          if (isVisible) {
+            isBursting = false
+            isVisible = false
+            clearTimeout(burstTimeout)
+            clearTimeout(landingTimeout)
+            if (rocketEl) {
+              rocketEl.style.animation = 'none'
+            }
+            landingTimeout = setTimeout(() => {
+              if (rocketEl) {
+                rocketEl.style.transform = `translateY(${lowerPosition})`
+              }
+            }, 500)
+          }
+        }
+      },
+      { threshold: 0.5 }
+    )
+    containerObserver.observe(container)
+  }
+})
+
+onBeforeUnmount(() => {
+  if (rafId) cancelAnimationFrame(rafId)
+  clearTimeout(burstTimeout)
+  clearTimeout(landingTimeout)
+  const canvas = burstCanvas.value
+  stopBurst(canvas)
+  isVisible = false
+  if (rocketEl) {
+    rocketEl.style.animation = 'none'
+    rocketEl.style.transform = `translateY(${lowerPosition})`
+  }
+})
 </script>
+
+<style>
+
+
+  .fade-left,
+  .fade-right,
+  .fade-up {
+    opacity: 0;
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+  }
+
+  .fade-left {
+    transform: translateX(-40px);
+  }
+  .fade-right {
+    transform: translateX(40px);
+  }
+  .fade-up {
+    transform: translateY(40px);
+  }
+
+  .fade-in {
+    opacity: 1 !important;
+    transform: translateX(0) translateY(0) !important;
+  }
+
+  .fade-out.fade-left {
+    transform: translateX(-40px);
+  }
+  .fade-out.fade-right {
+    transform: translateX(40px);
+  }
+  .fade-out.fade-up {
+    transform: translateY(40px);
+  }
+
+  
+
+  .fade-out {
+    opacity: 0 !important;
+  }
+
+
+
+@keyframes floatRocket {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+
+#optamizerocket {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 2s ease-out;
+}
+canvas {
+  display: block;
+}
+
+</style>
