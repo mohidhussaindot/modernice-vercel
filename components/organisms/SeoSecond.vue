@@ -36,7 +36,7 @@
       <div class="flex xl:flex-row gap-10 xl:gap-[13.5625rem]">
         <div class="xl:w-[25.375rem] xl:h-[24.125rem]" ref="SeoSecondref" v-html="seosecond"></div>
 
-        <div class="font-light text-[1.25rem] flex items-center w-[599px] fade-right">
+        <div class="font-light text-[1.25rem] flex items-center xl:w-[599px] fade-right">
           <p>
             Die besten SEO-Maßnahmen basieren auf einer starken technischen Infrastruktur, die sich
             leicht anpassen lässt, um aktuellen und zukünftigen Suchmaschinenanforderungen gerecht
@@ -105,8 +105,9 @@
       ></div>
 
       <!-- Text Content -->
+       <div class=" pl-10 flex ">
       <div
-        class="absolute fade-left w-[37.4375rem] top-[8.75rem] lg:left-[14.0625rem] xl:left-[17.0625rem]flex flex-col gap-[1.5rem] h-[16.25rem] z-10"
+        class="absolute fade-left w-[37.4375rem] top-[8.75rem]   flex flex-col gap-[1.5rem] h-[16.25rem] z-10"
       >
         <h1 class="italic text-[3.75rem] font-semibold">
           Unser
@@ -121,6 +122,7 @@
           Sichtbarkeit erhöhen und letztlich dazu beitragen, deine Geschäftsziele zu erreichen.
         </p>
       </div>
+    </div>
     </div>
   </section>
 

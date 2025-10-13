@@ -9,11 +9,11 @@
     ></div>
 
     <!-- Main Content -->
-    <div class="relative z-10 flex flex-col lg:flex-row items-center 2xl:gap-50 gap-4 xl:gap-16">
+    <div class="relative z-10 flex flex-col lg:flex-row md:gap-0 items-center 2xl:gap-50 gap-4 xl:gap-16">
       <!-- Text Column -->
-      <div class="text-white max-w-[599px] flex-1 flex flex-col gap-8">
+      <div class="text-white min-w-[299px] flex-1 flex flex-col gap-8">
         <h1
-          class="text-[2.5rem] md:text-[3rem] lg:text-[3.75rem] italic font-lightbold leading-tight"
+          class="text-[2.5rem] md:text-[3rem] xl:text-[3.75rem] italic font-lightbold leading-tight"
         >
           Bereit für den
           <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
@@ -46,8 +46,8 @@
         </div>
       </div>
 
-      <div class="flex-1 w-full max-w-[28rem] xl:max-w-[32rem]">
-        <div ref="seocharacter" v-html="Seocharacter" class="w-full h-auto pointer-events-none" />
+      <div class="flex-1 w-full ">
+        <div ref="seocharacter" v-html="Seocharacter" class="w-full  xl:h-auto pointer-events-none" />
       </div>
     </div>
   </section>

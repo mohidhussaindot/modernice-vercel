@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white sm:block hidden bg-[#020111]">
+  <div class="text-white overflow-hidden sm:block hidden bg-[#020111]">
     <div
       ref="firstPart"
       :class="[isFirstPartVisible ? 'fade-in' : 'fade-out']"
