@@ -1,30 +1,30 @@
 <template>
   <section class="relative bg-black overflow-hidden">
     <div
-      class="flex flex-col md:flex-col lg:flex-row items-center lg:items-start px-6 max-w-7xl mx-auto gap-12   md:gap-[0rem] xl:gap-[6rem]"
+      class="flex flex-col md:flex-col lg:flex-row items-center lg:items-start px-6 max-w-7xl mx-auto gap-12 md:gap-[0rem] xl:gap-[6rem]"
     >
       <!-- Content -->
       <!-- TEXT CONTENT -->
       <div
         class="text-white xl:pt-20 xl:max-w-[38rem] lg:max-w-[25rem] flex flex-col gap-[1.8rem] md:items-center text-center lg:items-start lg:text-left"
       >
-        <h1 class="md:text-[2.8rem] xl:text-[3.8rem]  font-semibold italic">
+        <h1 class="md:text-[2.8rem] xl:text-[3.8rem] font-semibold italic">
           <span class="text-green-500">Form</span> folgt
           <span class="text-green-500">Funktion</span>
         </h1>
 
-        <p class=" xl:text-[1.125rem] md:text-[0.9rem]  font-semilight">
+        <p class="xl:text-[1.125rem] md:text-[0.9rem] font-semilight">
           Insbesondere bei Websites, die durch ihr beeindruckendes visuelles Auftreten bestechen,
           wird die technische Leistungsfähigkeit oft vernachlässigt.
         </p>
 
-        <p class=" xl:text-[1.125rem] md:text-[0.9rem] font-semilight">
+        <p class="xl:text-[1.125rem] md:text-[0.9rem] font-semilight">
           Die Umsetzung einer ansprechenden und benutzerfreundlichen Seite verlangt nicht nur ein
           gutes Auge für’s Design. Von entscheidender Bedeutung sind vor allem eine robuste
           technische Infrastruktur und das Einhalten von Best Practices.
         </p>
 
-        <p class=" xl:text-[1.125rem] md:text-[0.9rem]  font-semilight">
+        <p class="xl:text-[1.125rem] md:text-[0.9rem] font-semilight">
           Letztlich muss die Funktion immer im Zentrum der Entwicklung stehen. Nur auf einer soliden
           technischen Grundlage kann ein attraktives Design seine volle Wirkung entfalten und über
           die reine Ästhetik hinaus einen Mehrwert bieten.

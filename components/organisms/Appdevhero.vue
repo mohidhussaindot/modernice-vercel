@@ -93,8 +93,7 @@
               guidelines and meets the needs of your users.
             </p>
           </div>
-          <div>
-          </div>
+          <div> </div>
         </div>
 
         <!-- Section 3 -->
@@ -110,21 +109,19 @@
           <div class="max-w-[37.5rem] hidden md:flex" v-html="appdevmiddle2"></div>
         </div>
 
-      <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
-    <!-- Rocket SVG -->
-    <div v-html="appdevlast2"></div>
+        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
+          <!-- Rocket SVG -->
+          <div v-html="appdevlast2"></div>
 
-  
-
-  <div class="fade-right flex flex-col gap-8 max-w-[31.625rem] text-white">
-    <h2 class=" text-2xl font-semibold">4. Testing and Launch</h2>
-    <p class="font-light text-lg">
-      Before launching the app, we conduct thorough testing to ensure that it is stable and
-      bug-free. Once the app is ready, we help you with the submission process and launch it
-      on the App Store and Google Play.
-    </p>
-  </div>
-</div>
+          <div class="fade-right flex flex-col gap-8 max-w-[31.625rem] text-white">
+            <h2 class="text-2xl font-semibold">4. Testing and Launch</h2>
+            <p class="font-light text-lg">
+              Before launching the app, we conduct thorough testing to ensure that it is stable and
+              bug-free. Once the app is ready, we help you with the submission process and launch it
+              on the App Store and Google Play.
+            </p>
+          </div>
+        </div>
         <!-- Section 5 -->
         <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
           <div class="fade-right flex flex-col gap-8 max-w-[31.625rem] text-white">
@@ -135,15 +132,14 @@
               also offer optimization services to help increase user engagement and drive growth.
             </p>
           </div>
-            <div class="relative max-w-[37.5rem]" ref="rocketContainer">
-
-          <div class="max-w-[37.5rem]" v-html="appdevlast1"></div>
+          <div class="relative max-w-[37.5rem]" ref="rocketContainer">
+            <div class="max-w-[37.5rem]" v-html="appdevlast1"></div>
             <!-- Burst Canvas Overlay -->
-    <canvas
-      ref="burstCanvas"
-      class="absolute top-0 z-10 pl-37 pt-5 inset-0 w-full h-full pointer-events-none"
-    ></canvas>
-    </div>
+            <canvas
+              ref="burstCanvas"
+              class="absolute top-0 z-10 pl-37 pt-5 inset-0 w-full h-full pointer-events-none"
+            ></canvas>
+          </div>
         </div>
       </div>
     </div>
@@ -207,217 +203,212 @@
   import appdevlast1 from '@atoms/svgs/appdev/appdevlast (1).svg?raw'
   import appdevlast2 from '@atoms/svgs/appdev/appdevlast (2).svg?raw'
   import appdevlines from '@atoms/svgs/appdevlines.svg?raw'
-  import { onMounted, onBeforeUnmount, ref } from "vue";
+  import { onMounted, onBeforeUnmount, ref } from 'vue'
 
-const rocketContainer = ref(null);
-const burstCanvas = ref(null);
+  const rocketContainer = ref(null)
+  const burstCanvas = ref(null)
 
-let ctx, rafId, last
-let particles = []
-let rocketEl = null
-let isVisible = false
-let isBursting = false
-let burstTimeout = null
-let landingTimeout = null
-const lowerPosition = '40px'
+  let ctx, rafId, last
+  let particles = []
+  let rocketEl = null
+  let isVisible = false
+  let isBursting = false
+  let burstTimeout = null
+  let landingTimeout = null
+  const lowerPosition = '40px'
 
-// Make canvas retina-safe
-function fitCanvas(canvas) {
-  const ratio = window.devicePixelRatio || 1
-  canvas.width = canvas.clientWidth * ratio
-  canvas.height = canvas.clientHeight * ratio
-  ctx.setTransform(ratio, 0, 0, ratio, 0, 0)
-}
-function spawn(dt, canvas) {
-  const perSec = 25;
-  let toSpawn = perSec * dt;
-  while (toSpawn-- > 0) {
-    particles.push({
-      x: canvas.width / 2 / devicePixelRatio,
-      y: (canvas.height * 0.7) / devicePixelRatio,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: 1 + Math.random() * 0.5,
-      life: 700 + Math.random() * 400,
-      age: 0,
-      r: 2 + Math.random() * 2,
-    });
+  // Make canvas retina-safe
+  function fitCanvas(canvas) {
+    const ratio = window.devicePixelRatio || 1
+    canvas.width = canvas.clientWidth * ratio
+    canvas.height = canvas.clientHeight * ratio
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0)
   }
-}
-function tick(t, canvas) {
-  const dt = t - last;
-  last = t;
-
-  if (isBursting) {
-    spawn(dt / 1000, canvas);
+  function spawn(dt, canvas) {
+    const perSec = 25
+    let toSpawn = perSec * dt
+    while (toSpawn-- > 0) {
+      particles.push({
+        x: canvas.width / 2 / devicePixelRatio,
+        y: (canvas.height * 0.7) / devicePixelRatio,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: 1 + Math.random() * 0.5,
+        life: 700 + Math.random() * 400,
+        age: 0,
+        r: 2 + Math.random() * 2
+      })
+    }
   }
+  function tick(t, canvas) {
+    const dt = t - last
+    last = t
 
-  // Optional: fill canvas with transparent background if needed
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  for (let i = particles.length - 1; i >= 0; i--) {
-    const p = particles[i];
-    p.age += dt;
-    if (p.age > p.life) {
-      particles.splice(i, 1);
-      continue;
+    if (isBursting) {
+      spawn(dt / 1000, canvas)
     }
 
-    p.x += p.vx * dt * 0.05;
-    p.y += p.vy * dt * 0.05;
+    // Optional: fill canvas with transparent background if needed
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-    const alpha = 1 - p.age / p.life;
-    const r = p.r * (1 + 0.5 * alpha);
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i]
+      p.age += dt
+      if (p.age > p.life) {
+        particles.splice(i, 1)
+        continue
+      }
 
-    // PINK PARTICLE GLOW
-    const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 6);
-    g.addColorStop(0, `rgba(213,57,211,${0.6 * alpha})`); // #D539D3
-    g.addColorStop(1, "transparent");
-    ctx.fillStyle = g;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, r * 6, 0, Math.PI * 2);
-    ctx.fill();
+      p.x += p.vx * dt * 0.05
+      p.y += p.vy * dt * 0.05
 
-    // PINK PARTICLE CORE
-    ctx.fillStyle = `rgba(213,57,211,${0.8 * alpha})`;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
-    ctx.fill();
+      const alpha = 1 - p.age / p.life
+      const r = p.r * (1 + 0.5 * alpha)
+
+      // PINK PARTICLE GLOW
+      const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 6)
+      g.addColorStop(0, `rgba(213,57,211,${0.6 * alpha})`) // #D539D3
+      g.addColorStop(1, 'transparent')
+      ctx.fillStyle = g
+      ctx.beginPath()
+      ctx.arc(p.x, p.y, r * 6, 0, Math.PI * 2)
+      ctx.fill()
+
+      // PINK PARTICLE CORE
+      ctx.fillStyle = `rgba(213,57,211,${0.8 * alpha})`
+      ctx.beginPath()
+      ctx.arc(p.x, p.y, r, 0, Math.PI * 2)
+      ctx.fill()
+    }
+
+    if (isVisible || particles.length > 0) {
+      rafId = requestAnimationFrame(time => tick(time, canvas))
+    }
   }
 
-  if (isVisible || particles.length > 0) {
-    rafId = requestAnimationFrame((time) => tick(time, canvas));
+  function stopBurst(canvas) {
+    if (ctx && canvas) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+    }
+    particles = []
+    isBursting = false
   }
-}
 
-function stopBurst(canvas) {
-  if (ctx && canvas) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-  }
-  particles = []
-  isBursting = false
-}
+  onMounted(() => {
+    // Fade in observer
+    const fadeElements = document.querySelectorAll('.fade-left, .fade-right, .fade-up')
+    const fadeObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in')
+            entry.target.classList.remove('fade-out')
+          } else {
+            entry.target.classList.remove('fade-in')
+            entry.target.classList.add('fade-out')
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+    fadeElements.forEach(el => fadeObserver.observe(el))
 
-onMounted(() => {
-  // Fade in observer
-  const fadeElements = document.querySelectorAll('.fade-left, .fade-right, .fade-up')
-  const fadeObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in')
-          entry.target.classList.remove('fade-out')
-        } else {
-          entry.target.classList.remove('fade-in')
-          entry.target.classList.add('fade-out')
-        }
-      })
-    },
-    { threshold: 0.2 }
-  )
-  fadeElements.forEach(el => fadeObserver.observe(el))
+    // Canvas and rocket setup
+    const canvas = burstCanvas.value
+    const container = rocketContainer.value
+    if (canvas && container) {
+      ctx = canvas.getContext('2d')
+      fitCanvas(canvas)
 
-  // Canvas and rocket setup
-  const canvas = burstCanvas.value
-  const container = rocketContainer.value
-  if (canvas && container) {
-    ctx = canvas.getContext("2d")
-    fitCanvas(canvas)
+      rocketEl = container.querySelector('#optamizerocket')
+      if (rocketEl) {
+        rocketEl.style.animation = 'none'
+        rocketEl.style.transform = `translateY(${lowerPosition})`
+      }
 
-    rocketEl = container.querySelector('#optamizerocket')
+      last = performance.now()
+      rafId = requestAnimationFrame(time => tick(time, canvas))
+
+      // Visibility observer for rocket container
+      const containerObserver = new IntersectionObserver(
+        entries => {
+          const entry = entries[0]
+          if (entry.isIntersecting) {
+            // Enter view
+            if (!isVisible) {
+              isVisible = true
+              if (rocketEl) {
+                rocketEl.style.animation = 'none'
+                rocketEl.style.transform = 'translateY(0px)'
+              }
+              burstTimeout = setTimeout(() => {
+                if (isVisible && rocketEl) {
+                  rocketEl.style.animation = 'floatRocket 3s ease-in-out infinite'
+                  isBursting = true
+                  particles = []
+                  last = performance.now()
+                  rafId = requestAnimationFrame(time => tick(time, canvas))
+                }
+              }, 2000)
+            }
+          } else {
+            // Exit view
+            if (isVisible) {
+              isBursting = false
+              isVisible = false
+              clearTimeout(burstTimeout)
+              clearTimeout(landingTimeout)
+              if (rocketEl) {
+                rocketEl.style.animation = 'none'
+              }
+              landingTimeout = setTimeout(() => {
+                if (rocketEl) {
+                  rocketEl.style.transform = `translateY(${lowerPosition})`
+                }
+              }, 500)
+            }
+          }
+        },
+        { threshold: 0.5 }
+      )
+      containerObserver.observe(container)
+    }
+  })
+
+  onBeforeUnmount(() => {
+    if (rafId) cancelAnimationFrame(rafId)
+    clearTimeout(burstTimeout)
+    clearTimeout(landingTimeout)
+    const canvas = burstCanvas.value
+    stopBurst(canvas)
+    isVisible = false
     if (rocketEl) {
       rocketEl.style.animation = 'none'
       rocketEl.style.transform = `translateY(${lowerPosition})`
     }
-
-    last = performance.now()
-    rafId = requestAnimationFrame((time) => tick(time, canvas))
-
-    // Visibility observer for rocket container
-    const containerObserver = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0]
-        if (entry.isIntersecting) {
-          // Enter view
-          if (!isVisible) {
-            isVisible = true
-            if (rocketEl) {
-              rocketEl.style.animation = 'none'
-              rocketEl.style.transform = 'translateY(0px)'
-            }
-            burstTimeout = setTimeout(() => {
-              if (isVisible && rocketEl) {
-                rocketEl.style.animation = 'floatRocket 3s ease-in-out infinite'
-                isBursting = true
-                particles = []
-                last = performance.now()
-                rafId = requestAnimationFrame((time) => tick(time, canvas))
-              }
-            }, 2000)
-          }
-        } else {
-          // Exit view
-          if (isVisible) {
-            isBursting = false
-            isVisible = false
-            clearTimeout(burstTimeout)
-            clearTimeout(landingTimeout)
-            if (rocketEl) {
-              rocketEl.style.animation = 'none'
-            }
-            landingTimeout = setTimeout(() => {
-              if (rocketEl) {
-                rocketEl.style.transform = `translateY(${lowerPosition})`
-              }
-            }, 500)
-          }
-        }
-      },
-      { threshold: 0.5 }
-    )
-    containerObserver.observe(container)
-  }
-})
-
-onBeforeUnmount(() => {
-  if (rafId) cancelAnimationFrame(rafId)
-  clearTimeout(burstTimeout)
-  clearTimeout(landingTimeout)
-  const canvas = burstCanvas.value
-  stopBurst(canvas)
-  isVisible = false
-  if (rocketEl) {
-    rocketEl.style.animation = 'none'
-    rocketEl.style.transform = `translateY(${lowerPosition})`
-  }
-})
+  })
 </script>
 
-
-<style >
-
-@keyframes floatRocket {
-  0% {
-    transform: translateY(0px);
+<style>
+  @keyframes floatRocket {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
   }
-  50% {
-    transform: translateY(-20px);
+
+  #optamizerocket {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 2s ease-out;
   }
-  100% {
-    transform: translateY(0px);
+  canvas {
+    display: block;
   }
-}
-
-
-
-#optamizerocket {
-  transform-box: fill-box;
-  transform-origin: center;
-  transition: transform 2s ease-out;
-}
-canvas {
-  display: block;
-}
-
 
   .fade-left,
   .fade-right,

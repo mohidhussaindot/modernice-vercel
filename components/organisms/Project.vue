@@ -1,29 +1,27 @@
 <template>
   <div>
-  
-   <div class="fixed bottom-10 right-12 z-[9999] flex items-center gap-3 text-white/70">
-    <RouterLink to="/work">
-      <Button
-        aria-label="Go to Work"
-        class="p-2 rounded-md bg-white/20 border border-white/20 hover:bg-white/30 transition hover:cursor-pointer backdrop-blur-xl"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 text-white"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+    <div class="fixed bottom-10 right-12 z-[9999] flex items-center gap-3 text-white/70">
+      <RouterLink to="/work">
+        <Button
+          aria-label="Go to Work"
+          class="p-2 rounded-md bg-white/20 border border-white/20 hover:bg-white/30 transition hover:cursor-pointer backdrop-blur-xl"
         >
-          <path d="M5 15l7-7 7 7" />
-        </svg>
-      </Button>
-    </RouterLink>
-  </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 15l7-7 7 7" />
+          </svg>
+        </Button>
+      </RouterLink>
+    </div>
     <header
-    
       class="fixed top-0 left-0 w-full z-[9999] bg-gradient-to-t from-[#000]/0 via-[#000]/50 to-[#000]"
       @mouseenter="isNavbarHovered = true"
       @mouseleave="isNavbarHovered = false"
@@ -101,7 +99,6 @@
       </div>
     </header>
 
-
     <div
       class="bg-black min-h-screen text-white flex justify-center items-center px-8 mt-10"
       @mousemove="updateMouse"
@@ -150,7 +147,7 @@
   </div>
 </template>
 <script setup>
-import Button from '@atoms/Button.vue'
+  import Button from '@atoms/Button.vue'
   import { ref, onMounted } from 'vue'
 
   const isNavbarHovered = ref(false)

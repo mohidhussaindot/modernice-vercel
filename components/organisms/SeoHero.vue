@@ -9,7 +9,9 @@
     ></div>
 
     <!-- Main Content -->
-    <div class="relative z-10 flex flex-col lg:flex-row md:gap-0 items-center 2xl:gap-50 gap-4 xl:gap-16">
+    <div
+      class="relative z-10 flex flex-col lg:flex-row md:gap-0 items-center 2xl:gap-50 gap-4 xl:gap-16"
+    >
       <!-- Text Column -->
       <div class="text-white min-w-[299px] flex-1 flex flex-col gap-8">
         <h1
@@ -46,8 +48,12 @@
         </div>
       </div>
 
-      <div class="flex-1 w-full ">
-        <div ref="seocharacter" v-html="Seocharacter" class="w-full  xl:h-auto pointer-events-none" />
+      <div class="flex-1 w-full">
+        <div
+          ref="seocharacter"
+          v-html="Seocharacter"
+          class="w-full xl:h-auto pointer-events-none"
+        />
       </div>
     </div>
   </section>

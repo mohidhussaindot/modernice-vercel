@@ -26,53 +26,48 @@
         <div class="w-full pt-[3rem]" v-html="Ecshero"></div>
       </section>
 
+      <!-- slider: replace the whole inner block with this -->
+      <div ref="wrapper" class="outer-wrapper hidden lg:flex items-center overflow-hidden bg-black">
+        <div class="relative inner-container">
+          <div ref="scroller" class="scroller flex items-start">
+            <div ref="slide1" class="slide">
+              <div class="rounded-xl shadow-2xl p-4">
+                <img class="p-20" src="/images/Store.png" alt="store" />
+              </div>
+              <div class="text-content">
+                <p>A user friendly appealing online store</p>
+              </div>
+            </div>
 
+            <div ref="slide2" class="slide">
+              <div class="rounded-xl shadow-2xl p-4">
+                <img class="p-20" src="/images/map.png" alt="plan" />
+              </div>
+              <div class="text-content">
+                <p>A Personalized plan tailored to your business</p>
+              </div>
+            </div>
 
+            <div ref="slide3" class="slide">
+              <div class="rounded-xl shadow-2xl p-4">
+                <img class="p-20" src="/images/microchip.png" alt="technology" />
+              </div>
+              <div class="text-content">
+                <p>The most up to date e-commerce technologies</p>
+              </div>
+            </div>
 
-   <!-- slider: replace the whole inner block with this -->
-<div ref="wrapper" class="outer-wrapper hidden lg:flex items-center overflow-hidden bg-black">
-  <div class="relative inner-container">
-    <div ref="scroller" class="scroller flex items-start ">
-      <div ref="slide1" class="slide">
-        <div class="rounded-xl shadow-2xl p-4">
-          <img class="p-20" src="/images/Store.png" alt="store" />
-        </div>
-        <div class="text-content">
-          <p>A user friendly appealing online store</p>
+            <div ref="slide4" class="slide">
+              <div class="rounded-xl shadow-2xl p-4">
+                <img class="p-20" src="/images/comments.png" alt="Comments icon" />
+              </div>
+              <div class="text-content">
+                <p>Ongoing support to ensure success of your store</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div ref="slide2" class="slide">
-        <div class="rounded-xl shadow-2xl p-4">
-          <img class="p-20" src="/images/map.png" alt="plan" />
-        </div>
-        <div class="text-content">
-          <p>A Personalized plan tailored to your business</p>
-        </div>
-      </div>
-
-      <div ref="slide3" class="slide">
-        <div class="rounded-xl shadow-2xl p-4">
-          <img class="p-20" src="/images/microchip.png" alt="technology" />
-        </div>
-        <div class="text-content">
-          <p>The most up to date e-commerce technologies</p>
-        </div>
-      </div>
-
-      <div ref="slide4" class="slide">
-        <div class="rounded-xl shadow-2xl p-4">
-          <img class="p-20" src="/images/comments.png" alt="Comments icon" />
-        </div>
-        <div class="text-content">
-          <p>Ongoing support to ensure success of your store</p>
-        </div>
-      </div>
-    
-        
-      </div>
-    </div>
-  </div>
       <!-- E-Commerce Demo Section -->
       <section class="relative w-full text-white overflow-hidden pt-10">
         <div class="relative z-10 flex flex-col items-center px-6">
@@ -246,15 +241,15 @@
 </template>
 
 <script setup>
-import Ecshero from '@atoms/svgs/ecs-hero.svg?raw'
-import Ecsmain1 from '@atoms/svgs/ecs-main1.svg?raw'
-import Ecsmain2 from '@atoms/svgs/ecs-main2.svg?raw'
-import Ecsmain3 from '@atoms/svgs/ecs-main3.svg?raw'
-import Ecsmain4 from '@atoms/svgs/ecs-main4.svg?raw'
-import svgbg from '@atoms/svgs/ecsbgline.svg?raw'
-// 
+  import Ecshero from '@atoms/svgs/ecs-hero.svg?raw'
+  import Ecsmain1 from '@atoms/svgs/ecs-main1.svg?raw'
+  import Ecsmain2 from '@atoms/svgs/ecs-main2.svg?raw'
+  import Ecsmain3 from '@atoms/svgs/ecs-main3.svg?raw'
+  import Ecsmain4 from '@atoms/svgs/ecs-main4.svg?raw'
+  import svgbg from '@atoms/svgs/ecsbgline.svg?raw'
+  //
 
- const serviceCards = [
+  const serviceCards = [
     {
       title: '1. Discovery & Strategy',
       description:
@@ -281,7 +276,7 @@ import svgbg from '@atoms/svgs/ecsbgline.svg?raw'
     }
   ]
 
- import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
+  import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
   import gsap from 'gsap'
   import ScrollTrigger from 'gsap/ScrollTrigger'
 
@@ -306,7 +301,7 @@ import svgbg from '@atoms/svgs/ecsbgline.svg?raw'
     })
     triggers = []
 
-const slides = [slide1.value, slide2.value, slide3.value, slide4.value]
+    const slides = [slide1.value, slide2.value, slide3.value, slide4.value]
     if (!scroller.value || !wrapper.value) return
 
     const windowWidth = window.innerWidth
@@ -384,8 +379,7 @@ const slides = [slide1.value, slide2.value, slide3.value, slide4.value]
 </script>
 
 <style scoped>
-
- .outer-wrapper {
+  .outer-wrapper {
     position: relative;
     height: 130vh;
   }
@@ -423,8 +417,6 @@ const slides = [slide1.value, slide2.value, slide3.value, slide4.value]
     color: white;
   }
 
-
-
   .text-content p {
     font-size: 1.195rem;
     line-height: 1.6;
@@ -445,5 +437,4 @@ const slides = [slide1.value, slide2.value, slide3.value, slide4.value]
       font-size: 0.9rem;
     }
   }
-  
 </style>

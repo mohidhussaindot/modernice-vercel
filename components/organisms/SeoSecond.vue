@@ -105,24 +105,25 @@
       ></div>
 
       <!-- Text Content -->
-       <div class=" pl-10 flex ">
-      <div
-        class="absolute fade-left w-[37.4375rem] top-[8.75rem]   flex flex-col gap-[1.5rem] h-[16.25rem] z-10"
-      >
-        <h1 class="italic text-[3.75rem] font-semibold">
-          Unser
-          <span class="bg-gradient-to-r to-[#01A3FF] from-[#25CDDA] bg-clip-text text-transparent"
-            >Prozess</span
-          >
-        </h1>
+      <div class="pl-10 flex">
+        <div
+          class="absolute fade-left w-[37.4375rem] top-[8.75rem] flex flex-col gap-[1.5rem] h-[16.25rem] z-10"
+        >
+          <h1 class="italic text-[3.75rem] font-semibold">
+            Unser
+            <span class="bg-gradient-to-r to-[#01A3FF] from-[#25CDDA] bg-clip-text text-transparent"
+              >Prozess</span
+            >
+          </h1>
 
-        <p class="text-[1.125rem] font-light">
-          e den gezielten Einsatz von datenbasierten Analysen, technischer Expertise und innovativen
-          Ansätzen schaffen wir maßgeschneiderte Lösungen, die deine Online-Präsenz stärken, die
-          Sichtbarkeit erhöhen und letztlich dazu beitragen, deine Geschäftsziele zu erreichen.
-        </p>
+          <p class="text-[1.125rem] font-light">
+            e den gezielten Einsatz von datenbasierten Analysen, technischer Expertise und
+            innovativen Ansätzen schaffen wir maßgeschneiderte Lösungen, die deine Online-Präsenz
+            stärken, die Sichtbarkeit erhöhen und letztlich dazu beitragen, deine Geschäftsziele zu
+            erreichen.
+          </p>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 

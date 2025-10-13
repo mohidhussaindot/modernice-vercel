@@ -98,11 +98,11 @@
       </div>
     </header>
     <div class="canvas-wrapper">
-    <canvas
-  ref="canvas"
-  :style="{ pointerEvents: loading || selectedImage ? 'none' : 'auto' }"
-  class="background-canvas"
-/>
+      <canvas
+        ref="canvas"
+        :style="{ pointerEvents: loading || selectedImage ? 'none' : 'auto' }"
+        class="background-canvas"
+      />
     </div>
 
     <div
@@ -117,45 +117,45 @@
         Index
       </Button>
     </div>
-   <div
-  v-if="selectedImage"
-  class="fixed inset-0 bg-black/70 backdrop-blur-md flex flex-col items-center justify-center z-[99999]"
-  @click.self="closeOverlay"
->
-  <Button
-    class="absolute top-6 right-6 text-white text-2xl font-bold hover:cursor-pointer"
-    @click.stop="closeOverlay"
-  >
-    ✕
-  </Button>
-
-  <a
-    :href="selectedImage.url"
-    target="_blank"
-    class="mt-4 inline-block rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/30"
-    @click.stop
-  >
-    <img
-      :src="selectedImage.src"
-      alt="Selected Image"
-      class="max-w-[80vw] max-h-[70vh] rounded-xl shadow-lg"
-      @click.stop
-    />
-  </a>
-
-  <div class="text-center text-white mt-6 max-w-[600px]" @click.stop>
-    <h2 class="text-2xl font-bold">{{ selectedImage.info }}</h2>
-    <p class="mt-2 opacity-80">{{ selectedImage.description }}</p>
-    <a
-      :href="selectedImage.url"
-      target="_blank"
-      class="mt-4 inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/30"
-      @click.stop
+    <div
+      v-if="selectedImage"
+      class="fixed inset-0 bg-black/70 backdrop-blur-md flex flex-col items-center justify-center z-[99999]"
+      @click.self="closeOverlay"
     >
-      Visit Site
-    </a>
-  </div>
-</div>
+      <Button
+        class="absolute top-6 right-6 text-white text-2xl font-bold hover:cursor-pointer"
+        @click.stop="closeOverlay"
+      >
+        ✕
+      </Button>
+
+      <a
+        :href="selectedImage.url"
+        target="_blank"
+        class="mt-4 inline-block rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/30"
+        @click.stop
+      >
+        <img
+          :src="selectedImage.src"
+          alt="Selected Image"
+          class="max-w-[80vw] max-h-[70vh] rounded-xl shadow-lg"
+          @click.stop
+        />
+      </a>
+
+      <div class="text-center text-white mt-6 max-w-[600px]" @click.stop>
+        <h2 class="text-2xl font-bold">{{ selectedImage.info }}</h2>
+        <p class="mt-2 opacity-80">{{ selectedImage.description }}</p>
+        <a
+          :href="selectedImage.url"
+          target="_blank"
+          class="mt-4 inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/30"
+          @click.stop
+        >
+          Visit Site
+        </a>
+      </div>
+    </div>
   </div>
   <div
     ref="greenLayer"
@@ -220,10 +220,10 @@
   const loadingBar = ref(null)
   const loadingProgress = ref(0)
 
-  const closeOverlay = (e) => {
-  e?.stopPropagation?.() 
-  selectedImage.value = null
-}
+  const closeOverlay = e => {
+    e?.stopPropagation?.()
+    selectedImage.value = null
+  }
 
   onMounted(async () => {
     window.addEventListener('keydown', event => {

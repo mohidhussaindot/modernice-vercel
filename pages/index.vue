@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+  import { ref } from 'vue'
 
-import Navbar from '@organisms/Navbar.vue'
-import SiteFooter from '@organisms/SiteFooter.vue'
-import Servicessecond from '@organisms/Servicessecond.vue'
-import ServicesSlider from '@organisms/ServicesSlider.vue'
-import Servicesmain from '@organisms/Servicesmain.vue'
-import ScrollToTopButton from '@organisms/Scrolltotop.vue'
-import HerosectionCopy2 from '@organisms/Herosection copy 2.vue'
-import Serviceshero from '@organisms/Serviceshero.vue'
-
+  import Navbar from '@organisms/Navbar.vue'
+  import SiteFooter from '@organisms/SiteFooter.vue'
+  import Servicessecond from '@organisms/Servicessecond.vue'
+  import ServicesSlider from '@organisms/ServicesSlider.vue'
+  import Servicesmain from '@organisms/Servicesmain.vue'
+  import ScrollToTopButton from '@organisms/Scrolltotop.vue'
+  import HerosectionCopy2 from '@organisms/Herosection copy 2.vue'
+  import Serviceshero from '@organisms/Serviceshero.vue'
 </script>
 
 <template>
   <div>
-    <div >
+    <div>
       <ScrollToTopButton />
 
       <Navbar
@@ -29,12 +28,14 @@ import Serviceshero from '@organisms/Serviceshero.vue'
         cta-from="#01A3FF"
         cta-to-color="#25CDDA"
       />
-    
-      <HerosectionCopy2  />
-      <Serviceshero/>
-      <Servicessecond />
-      <ServicesSlider />
-      <Servicesmain />
+
+      <HerosectionCopy2 />
+      <div class="hidden lg:flex">
+        <Serviceshero />
+        <Servicessecond />
+        <ServicesSlider />
+        <Servicesmain />
+      </div>
 
       <div class="bg-[#020111] text-white">
         <SiteFooter

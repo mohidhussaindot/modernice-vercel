@@ -16,7 +16,7 @@
     ></div>
 
     <div ref="cockpitRef" class="cockpit-container">
-      <img src="@atoms/svgs/cockpit.svg" alt="Cockpit" class="cockpit-img " />
+      <img src="@atoms/svgs/cockpit.svg" alt="Cockpit" class="cockpit-img" />
     </div>
 
     <div ref="pinWrapRef" class="relative z-20 w-full flex justify-center">
@@ -24,11 +24,11 @@
         ref="contentRef"
         class="relative scale-[0.5] pb-2 origin-center z-20 max-w-7xl w-full px-6"
       >
-        <div class="flex flex-col  pt-20 lg:flex-row justify-between gap-12 lg:gap-[6rem]">
+        <div class="flex flex-col pt-20 lg:flex-row justify-between gap-12 lg:gap-[6rem]">
           <!-- Text Section -->
           <div class="flex-1 flex flex-col gap-[1.5rem] max-w-[32.13rem] mx-auto">
             <h1
-              class=" md:text-[2.8rem] xl:text-[3.8rem]  font-lightbold italic leading-[1.2] text-center lg:text-left"
+              class="md:text-[2.8rem] xl:text-[3.8rem] font-lightbold italic leading-[1.2] text-center lg:text-left"
             >
               Von der ersten <span class="text-[#00FFB3]">Skizze</span><br />
               bis zum letzten <span class="text-[#00FFB3]">Pixel</span>
@@ -60,7 +60,7 @@
           <div class="flex-1 max-w-[34.5rem] w-full flex justify-center">
             <div
               ref="servicesHeroRef"
-              class="w-full h-auto pointer-events-none  services-hero-svg"
+              class="w-full h-auto pointer-events-none services-hero-svg"
               v-html="ServicesHeroRaw"
             ></div>
           </div>
@@ -185,8 +185,6 @@
 </script>
 
 <style scoped>
-
-
   .cockpit-container {
     position: absolute;
     top: 0;

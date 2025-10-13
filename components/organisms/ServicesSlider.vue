@@ -1,7 +1,7 @@
 <template>
   <div ref="wrapper" class="outer-wrapper hidden lg:flex items-center overflow-hidden bg-black">
     <div class="relative inner-container">
-      <div ref="scroller" class="scroller flex items-start ">
+      <div ref="scroller" class="scroller flex items-start">
         <div ref="slide1" class="slide">
           <div class="rounded-xl shadow-2xl p-4">
             <img src="/images/slider-first.png" alt="Robuste Technologie" class="rounded-lg" />
