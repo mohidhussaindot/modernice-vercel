@@ -33,6 +33,7 @@
       <div
         class="flex flex-col lg:gap-[14px] md:px-[3rem] lg:px-[3rem] xl:px-[7.5rem] text-white relative"
       >
+     
         <div class="flex lg:gap-0 xl:gap-[143px] items-center">
           <div
             class="pt-[152px] fade-left flex flex-col gap-[1.5rem] md:text-center lg:text-start w-full max-w-full px-4 md:max-w-[640px] md:px-6 lg:max-w-[27.13rem] xl:max-w-[32.13rem]"
@@ -43,6 +44,7 @@
               werden die Visionen und Ziele ausgelotet und so der Grundstein für ein kreatives und
               zielführendes Webkonzept gelegt.
             </p>
+
           </div>
 
           <div class="relative pt-[71px] w-[32.94rem] h-[32.94rem] hidden md:hidden lg:flex">
@@ -243,92 +245,149 @@
   </section>
 
   <!-- ✅ Mobile-Only Version -->
-  <section class="block sm:hidden bg-black text-white px-6">
+  <section  class="block lg:hidden pt-[4.5rem] md:flex md:flex-col md:justify-center bg-black text-white ">
     <!-- Section Header -->
-    <div class="py-[7.5rem] text-center">
-      <h1 class="text-[2rem] font-serif font-lightbold">
+<div>
+    <div class="absolute">
+       <img
+        src="@atoms/svgs/seoherobg.svg"
+        alt="Background SVG"
+        class="w-full h-[450px]"
+      />
+    </div>
+    <div  class="py-[4.5rem]  text-center ">
+      <h1 class="text-[2rem] md:text-[3rem] italic font-semibold">
         Phasen des <span class="text-[#00FFB3]">Erfolgs</span>
       </h1>
-      <p class="mt-6 text-[1rem] font-light leading-relaxed">
+      <p class="mt-6 text-[0.9rem] px-10 md:px-30  font-semilight leading-relaxed">
         Wir lassen uns nicht von vorgefertigten Abläufen leiten, sondern gestalten den Weg gemeinsam
         mit Dir – so vielseitig und einzigartig wie Dein Projekt es erfordert. Dabei durchlaufen wir
         verschiedene Stationen, um sicherzustellen, dass Deine Website funktional und wirkungsvoll
         ist.
       </p>
     </div>
+    </div>
 
+    
+ 
     <!-- Section 1 -->
-    <div class="py-[7.5rem] text-center">
-      <h1 class="text-[2rem] font-serif font-lightbold">
+
+    
+    <div class="py-[4.5rem] px-5 items-center overflow-hidden flex text-center ">
+      <div class="hidden md:block">
+        <img src="@atoms/svgs/servicesfourth.svg"   class="w-200 h-auto object-contain" alt="service fourth">
+      </div>
+     <div class="flex flex-col">
+       
+  
+      <h1 class="text-[2rem] italic font-semibold">
         <span class="text-[#00FFB3]">Quellen</span> der Inspiration
       </h1>
-      <p class="mt-6 text-[1rem] font-light leading-relaxed">
+      <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
         Hinter jeder beeindruckenden Website steht eine kraftvolle Idee. In der Anfangsphase werden
         die Visionen und Ziele ausgelotet und so der Grundstein für ein kreatives und zielführendes
         Webkonzept gelegt.
       </p>
+         </div>
     </div>
 
     <!-- Section 2 -->
-    <div class="py-[7.5rem] text-center">
-      <h1 class="text-[2rem] font-serif font-lightbold">
+    <div class="py-[4.5rem] px-5 flex items-center text-center ">
+     
+      <div class="flex flex-col">
+      <h1 class="text-[2rem] italic font-semibold">
         <span class="text-[#00FFB3]">Routen</span>planung
       </h1>
-      <p class="mt-6 text-[1rem] font-light leading-relaxed">
+      <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
         Mit den definierten Zielen und Anforderungen wird eine klare Roadmap erstellt, die sowohl
         das Nutzererlebnis als auch die technischen Aspekte berücksichtigt und somit eine
         zielgerichtete Entwicklung ermöglicht.
       </p>
+      </div>
+        <div class="hidden md:block">
+        <img src="@atoms/svgs/servicesfourthsecond.svg"   class="w-200 h-auto object-contain" alt="service fourth">
+      </div>
     </div>
 
-    <!-- Section 3 -->
-    <div class="py-[7.5rem] text-center">
-      <h1 class="text-[2rem] font-serif font-lightbold">
-        Sterne zum <span class="text-[#00FFB3]">Leuchten</span> bringen
-      </h1>
-      <p class="mt-6 text-[1rem] font-light leading-relaxed">
-        In dieser Phase kommt unsere kreative und technische Expertise zum Einsatz, um eine
-        lebendige und funktionale Website zu gestalten. Hierbei steht die Verbindung von
-        ästhetischer Erscheinung und solider technischer Basis im Vordergrund.
-      </p>
-    </div>
+    <div>
+   <!-- Section 3 -->
+<div class="py-[4.5rem] px-5 items-center overflow-hidden flex text-center flex-col md:flex-row">
+  <div class="hidden md:block">
+   
+            <NuxtImg
+              src="/images/services5-1.png"
+              alt="Visual representation of route planning"
+              class="w-200 h-full object-contain"
+            />
+        
+  </div>
+  <div class="flex flex-col">
+    <h1 class="text-[2rem] italic font-semibold">
+      Sterne zum <span class="text-[#00FFB3]">Leuchten</span> bringen
+    </h1>
+    <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
+      In dieser Phase kommt unsere kreative und technische Expertise zum Einsatz, um eine
+      lebendige und funktionale Website zu gestalten. Hierbei steht die Verbindung von
+      ästhetischer Erscheinung und solider technischer Basis im Vordergrund.
+    </p>
+  </div>
+</div>
 
-    <!-- Section 4 -->
-    <div class="py-[7.5rem] text-center">
-      <h1 class="text-[2rem] font-serif font-lightbold">
-        <span class="text-[#00FFB3]">Qualität</span> im Fokus
-      </h1>
-      <p class="mt-6 text-[1rem] font-light leading-relaxed">
-        Durch ausgiebige Tests wird sichergestellt, dass Deine Website in allen Bereichen - von der
-        Nutzererfahrung bis hin zur Performance und Darstellung auf verschiedenen Endgeräten -
-        reibungslos funktioniert. Gezielte Optimierungen gewährleisten hierbei die bestmögliche
-        Umsetzung.
-      </p>
-    </div>
+<!-- Section 4 -->
+<div class="py-[4.5rem] px-5 items-center overflow-hidden flex text-center flex-col md:flex-row-reverse">
+  <div class="hidden md:block">
+    <img  src="/images/services-5-2.png" class="w-250 h-auto object-contain" alt="service fourth">
+  </div>
+  <div class="flex flex-col">
+    <h1 class="text-[2rem] italic font-semibold">
+      <span class="text-[#00FFB3]">Qualität</span> im Fokus
+    </h1>
+    <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
+      Durch ausgiebige Tests wird sichergestellt, dass Deine Website in allen Bereichen – von der
+      Nutzererfahrung bis hin zur Performance und Darstellung auf verschiedenen Endgeräten –
+      reibungslos funktioniert. Gezielte Optimierungen gewährleisten hierbei die bestmögliche
+      Umsetzung.
+    </p>
+  </div>
+</div>
 
-    <!-- Section 5 -->
-    <div class="py-[7.5rem] text-center">
-      <h1 class="text-[2rem] font-serif font-lightbold">
-        <span class="text-[#00FFB3]">Live-</span>Schaltung <span class="text-[#00FFB3]">[WIP]</span>
-      </h1>
-      <p class="mt-6 text-[1rem] font-light leading-relaxed">
-        Nach sorgfältiger Vorbereitung und Optimierung geht sie live und nimmt ihren Platz in der
-        digitalen Landschaft ein. Von diesem Moment an beginnt sie, die Nutzer zu begeistern,
-        wichtige Verbindungen zu knüpfen und Deine Botschaft effektiv zu kommunizieren.
-      </p>
-    </div>
+<!-- Section 5 -->
+<div class="relative py-[4.5rem] px-5 items-center overflow-hidden flex text-center flex-col md:flex-row">
+  <div class="absolute hidden md:block">
+    <img src="@atoms/svgs/seoherobg.svg" alt="Background SVG" class="w-[900px] h-[400px]" />
+  </div>
+  <div class="hidden md:block z-10">
+    <img src="@atoms/svgs/servicesfifth.svg" class="w-200 h-auto object-contain" alt="service fifth">
+  </div>
+  <div class="flex flex-col z-10">
+    <h1 class="text-[2rem] italic font-semibold">
+      <span class="text-[#00FFB3]">Live-</span>Schaltung <span class="text-[#00FFB3]">[WIP]</span>
+    </h1>
+    <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
+      Nach sorgfältiger Vorbereitung und Optimierung geht sie live und nimmt ihren Platz in der
+      digitalen Landschaft ein. Von diesem Moment an beginnt sie, die Nutzer zu begeistern,
+      wichtige Verbindungen zu knüpfen und Deine Botschaft effektiv zu kommunizieren.
+    </p>
+  </div>
+</div>
 
-    <!-- Section 6 -->
-    <div class="py-[7.5rem] text-center">
-      <h1 class="text-[2rem] font-serif font-lightbold">
-        Perfektion durch <span class="text-[#00FFB3]">Iteration</span>
-      </h1>
-      <p class="mt-6 text-[1rem] font-light leading-relaxed">
-        Mit der erfolgreichen Veröffentlichung muss die Reise nicht enden. Kontinuierliche
-        Optimierungen und datenbasierte Analysen können dafür sorgen, dass Deine Website stets eine
-        hohe Sichtbarkeit und Leistungsfähigkeit aufweist, um ihr Wachstum weiter voranzutreiben.
-      </p>
-    </div>
+<!-- Section 6 -->
+<div class="py-[4.5rem] px-5 items-center overflow-hidden flex text-center flex-col md:flex-row-reverse">
+  <div class="hidden md:block">
+    <img src="/images/services-5-d-2.png" class="w-200 h-auto object-contain" alt="service sixth">
+  </div>
+  <div class="flex flex-col">
+    <h1 class="text-[2rem] italic font-semibold">
+      Perfektion durch <span class="text-[#00FFB3]">Iteration</span>
+    </h1>
+    <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
+      Mit der erfolgreichen Veröffentlichung muss die Reise nicht enden. Kontinuierliche
+      Optimierungen und datenbasierte Analysen können dafür sorgen, dass Deine Website stets eine
+      hohe Sichtbarkeit und Leistungsfähigkeit aufweist, um ihr Wachstum weiter voranzutreiben.
+    </p>
+  </div>
+</div>
+</div>
   </section>
 </template>
 

@@ -1,50 +1,203 @@
 <template>
-  <section class="bg-black text-white overflow-hidden relative w-full">
+
+  <!-- mobile -->
+  
+  <section class="bg-black lg:hidden text-white overflow-hidden relative w-full px-6 py-40">
+  <div class="max-w-[800px] mx-auto flex flex-col gap-12">
+
+    <!-- Hero Section -->
+     <div class="flex flex-col md:flex-row">
+    <div class="flex flex-col  max-w-[400px] gap-8 text-left">
+      <h1 class="text-[2rem] italic font-semibold leading-tight">
+        <span class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent">
+          Der Wegweiser zur KI-Revolution: <br />
+          Strategische Beratung für dein Unternehmen
+        </span>
+      </h1>
+      <p class="text-[0.9rem] leading-relaxed  mx-auto">
+        Die KI-Revolution steht vor der Tür. Bist du bereit, Künstliche Intelligenz zu deinem
+        Vorteil zu nutzen? Mit uns wird die KI-Integration zur nahtlosen Reise, von der ersten
+        Idee bis zur vollen Umsetzung. Starte jetzt. Sei innovativ. Sei effizient. Sei
+        revolutionär.
+      </p>
+      <div
+        class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
+      >
+        <Button
+          class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+        >
+          <span
+            class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
+          >
+            KI-Beratung starten.
+          </span>
+        </Button>
+      </div>
+      </div>
+      <div>
+      <img
+        src="@atoms/svgs/aidev/aiheroimg.svg"
+        alt="AI Hero"
+        class="w-full max-w-[300px] mx-auto mt-6"
+      />
+      </div>
+    </div>
+
+   <div class="flex flex-col md:flex-row-reverse items-center gap-10">
+      <!-- Text -->
+      <div class="md:w-1/2 text-center md:text-left flex flex-col gap-6">
+        <h2 class="text-2xl font-semibold">
+          <span class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent">Hybrid?</span> What does that mean?
+        </h2>
+        <p class="text-base font-light">
+          Don’t worry, the term hybrid within app development actually stands for a good thing. Hybrid apps combine the best of app and web development, letting your lightning-fast app run on all devices.
+        </p>
+      </div>
+      <!-- SVG -->
+      <div class="md:w-[400px] w-full">
+        <img src="@atoms/svgs/aidev/aisecondimg.svg" alt="">
+      </div>
+    </div>
+
+   <!-- Our Approach Section -->
+<div class="flex flex-col gap-12 mt-12">
+
+  <!-- Discovery -->
+  <div class="flex items-center gap-4">
+    <div class="flex w-[400px] gap-5 flex-col">
+      <h1 class="text-2xl font-bold">
+        Our
+        <span class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent"
+          >Approach</span
+        >
+      </h1>
+      <h2 class="text-xl font-semibold">1. Discovery</h2>
+      <p class="font-light text-base">
+        During the discovery phase, we work with you to understand your business goals and
+        needs, as well as gather requirements and specifications for your hybrid app.
+      </p>
+    </div>
+    <div>
+      <img
+        src="@atoms/svgs/aidev/aiourapproach.svg"
+        alt="Our Approach"
+        class="w-full max-w-[400px]"
+      />
+    </div>
+  </div>
+
+  <!-- Design -->
+  <div class="flex items-center gap-4">
+      <div>
+      <img
+        src="@atoms/svgs/aidev/aidesign.svg"
+        alt="Design"
+        class="w-full max-w-[400px]"
+      />
+    </div>
+    <div class="flex w-[400px] gap-5 flex-col">
+      <h2 class="text-xl font-semibold">2. Design</h2>
+      <p class="font-light text-base">
+        Next, our team of designers creates wireframes and mockups to visualise the user flow
+        and layout of the app. We work with you to ensure the design aligns with your brand
+        guidelines and meets the needs of your users.
+      </p>
+    </div>
+  
+  </div>
+
+  <!-- Development -->
+  <div class="flex items-center gap-4">
+    <div class="flex w-[400px] gap-5 flex-col">
+      <h2 class="text-xl font-semibold">3. Development</h2>
+      <p class="font-light text-base">
+        Using the latest tools and technologies, such as Flutter, we begin building the hybrid
+        app according to the approved design. Our developers ensure that the app functions
+        smoothly and provides a seamless user experience on both iOS and Android platforms.
+      </p>
+    </div>
+    <div>
+      <img
+        src="@atoms/svgs/aidev/aidevelopment.svg"
+        alt="Development"
+        class="w-full max-w-[400px]"
+      />
+    </div>
+  </div>
+
+  <!-- Testing and Launch -->
+  <div class="flex items-center gap-4">
+      <div>
+      <img
+        src="@atoms/svgs/aidev/aitesting.svg"
+        alt="Testing and Launch"
+        class="w-full max-w-[400px]"
+      />
+    </div>
+    <div class="flex w-[400px] gap-5 flex-col">
+      <h2 class="text-xl font-semibold">4. Testing and Launch</h2>
+      <p class="font-light text-base">
+        Before launching the app, we conduct thorough testing to ensure that it is stable and
+        bug-free. Once the app is ready, we help you with the submission process and launch it
+        on the App Store and Google Play.
+      </p>
+    </div>
+  
+  </div>
+
+  <!-- Optimize for Growth -->
+  <div class="flex items-center gap-4 mb-12 relative">
+    <div class="flex w-[400px] gap-5 flex-col">
+      <h2 class="text-xl font-semibold">5. Optimize for Growth</h2>
+      <p class="font-light text-base">
+        After the app is launched, we provide ongoing support and maintenance to ensure that
+        it continues to function smoothly and meet the changing needs of your business. We
+        also offer optimization services to help increase user engagement and drive growth.
+      </p>
+    </div>
+    <div>
+      <img
+        src="@atoms/svgs/aidev/aioptamize.svg"
+        alt="Optimize for Growth"
+        class="w-full max-w-[400px]"
+      />
+    </div>
+  </div>
+
+</div>
+
+  </div>
+   <div class="bg-[#1a1a1a] p-6 rounded-xl border border-[#A138E0] text-center mt-10">
+      <h2 class="italic font-semibold text-2xl mb-4">Get in Touch</h2>
+      <p class="text-base font-light mb-6">
+        Let us help take your online presence to the next level. Schedule a call today and let's talk about growing your business.
+      </p>
+
+      <div class="flex flex-col gap-4">
+        <div>
+          <p class="text-sm">Drop us a message at</p>
+          <h3 class="text-lg font-bold italic bg-gradient-to-r from-[#A138E0] to-[#7137EC] bg-clip-text text-transparent">
+            hello@modernice.design
+          </h3>
+        </div>
+        <div>
+          <p class="text-sm">Or talk to us directly</p>
+          <h3 class="text-lg italic font-bold bg-gradient-to-r from-[#FFE401] to-[#FFB401] bg-clip-text text-transparent">
+            Schedule a Call
+          </h3>
+        </div>
+      </div>
+      </div>
+</section>
+
+
+
+  <section class="bg-black hidden lg:flex text-white overflow-hidden relative w-full">
     <div
       class="absolute inset-0 md:flex hidden z-0 bg-no-repeat bg-cover pointer-events-none"
       :style="{ backgroundImage: `url('${lines}')` }"
     ></div>
-    <!-- mobile version -->
-    <div class="block lg:hidden bg-[#020111] text-white overflow-hidden my-36 px-6">
-      <div class="flex flex-col items-center gap-8 text-center">
-        <h1 class="text-5xl leading-tight italic font-semibold">
-          <span class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent">
-            Der Wegweiser zur KI-Revolution: <br />
-            Strategische Beratung für dein Unternehmen
-          </span>
-        </h1>
-
-        <p class="text-[1rem] leading-relaxed font-light max-w-[90%] mx-auto">
-          Die KI-Revolution steht vor der Tür. Bist du bereit, Künstliche Intelligenz zu deinem
-          Vorteil zu nutzen? Mit uns wird die KI-Integration zur nahtlosen Reise, von der ersten
-          Idee bis zur vollen Umsetzung.
-          <br /><br />
-          Starte jetzt. Sei innovativ. Sei effizient. Sei revolutionär.
-        </p>
-
-        <div>
-          <Button
-            class="px-6 py-2.5 text-base border border-[#3BE8E8] rounded transition hover:cursor-pointer bg-transparent text-white hover:text-white"
-          >
-            <span
-              class="bg-gradient-to-r from-[#AFE639] via-[#3BE8E8] to-[#3BE8E8] text-transparent bg-clip-text duration-300 hover:text-white"
-            >
-              KI-Beratung starten.
-            </span>
-          </Button>
-        </div>
-
-        <!-- Image -->
-        <div class="w-full max-w-[20rem] mt-6">
-          <img
-            src="@atoms/svgs/aidev/aiheroimg.svg"
-            alt="AI Hero Graphic"
-            class="w-full h-auto object-contain"
-          />
-        </div>
-      </div>
-    </div>
-    <!--  -->
+    
 
     <div class="relative z-10 xl:mx-auto xl:px-6 2xl:px-12">
       <div

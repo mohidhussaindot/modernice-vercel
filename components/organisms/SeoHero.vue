@@ -59,19 +59,19 @@
   </section>
 
   <!-- Mobile version, hidden on lg and above -->
-  <section class="block lg:hidden bg-[#020111] text-white py-16 px-6 relative">
+  <section class="block lg:hidden bg-[#020111] text-white pt-20 px-6 relative">
     <!-- Image at top -->
-    <div class="w-full flex justify-center mb-10">
+    <div class="w-full flex justify-center mb-5">
       <img
         src="@atoms/svgs/seo-character.svg"
         alt="SEO Character"
-        class="w-[16rem] h-auto object-contain"
+        class="w-[20rem] h-auto object-contain"
       />
     </div>
 
     <!-- Text content -->
-    <div class="flex flex-col items-center gap-6 text-center">
-      <h1 class="text-[2rem] font-lightbold italic leading-snug">
+    <div class="flex flex-col items-center gap-3 text-center">
+      <h1 class="text-[2rem] font-semibold italic leading-snug">
         Bereit für den
         <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
           Startschuss
@@ -84,7 +84,7 @@
         </span>
       </h1>
 
-      <p class="text-[1.125rem] font-light leading-relaxed">
+      <p class="text-[1rem]  md:w-[500px] font-semilight leading-relaxed">
         Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive
         SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein [after-thought] sein.
       </p>
@@ -94,7 +94,7 @@
         class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#01A3FF] to-[#25CDDA]"
       >
         <Button
-          class="px-[1.5rem] py-[0.625rem] text-[1rem] rounded-[10px] bg-black bg-opacity-90 text-white hover:text-white transition"
+          class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[10px] bg-black bg-opacity-90 text-white hover:text-white transition"
         >
           <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] text-transparent bg-clip-text">
             Startbefehl geben

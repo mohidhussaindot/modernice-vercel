@@ -4,7 +4,7 @@
   <header
     ref="headerRef"
     :class="[
-      'fixed z-[9999] h-[2.8281rem] sm:block hidden top-[3.46125rem] transition-opacity duration-500 left-1/2 -translate-x-1/2 backdrop-blur-sm bg-black/1',
+      'fixed z-[9999] h-[2.8281rem] md:px-3 sm:block hidden top-[3.46125rem] transition-opacity duration-500 left-1/2 -translate-x-1/2 backdrop-blur-sm bg-black/1',
       'w-full max-w-[74.875rem] 2xl:max-w-[90rem]',
       { 'opacity-0 pointer-events-none': hidden }
     ]"
@@ -91,7 +91,7 @@
 
   <!-- Mobile Header -->
   <header
-    class="block sm:hidden fixed top-0 left-0 z-[9999] w-full bg-[#0B061F] px-4 py-3 flex justify-between items-center"
+    class=" sm:hidden fixed top-0 left-0 z-[9999] w-full bg-[#0B061F] px-4 py-3 flex justify-between items-center"
   >
     <!-- Logo -->
     <NuxtLink v-if="logoSrc" to="/" aria-label="Modernise home">

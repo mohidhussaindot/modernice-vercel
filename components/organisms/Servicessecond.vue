@@ -1,14 +1,14 @@
 <template>
   <section class="relative bg-black overflow-hidden">
     <div
-      class="flex flex-col md:flex-col lg:flex-row items-center lg:items-start px-6 max-w-7xl mx-auto gap-12 md:gap-[0rem] xl:gap-[6rem]"
+      class="flex flex-col md:flex-col lg:flex-row items-center lg:items-start px-6  lg:max-w-7xl mx-auto gap-12 md:gap-[0rem] xl:gap-[6rem]"
     >
       <!-- Content -->
       <!-- TEXT CONTENT -->
       <div
-        class="text-white xl:pt-20 xl:max-w-[38rem] lg:max-w-[25rem] flex flex-col gap-[1.8rem] md:items-center text-center lg:items-start lg:text-left"
+        class="text-white xl:pt-20 xl:max-w-[38rem] lg:max-w-[25rem] md:max-w-[29rem] flex flex-col gap-[1.8rem] md:items-center text-center lg:items-start lg:text-left"
       >
-        <h1 class="md:text-[2.8rem] xl:text-[3.8rem] font-semibold italic">
+        <h1 class="text-[2rem] md:text-[3rem] xl:text-[3.8rem] font-semibold italic">
           <span class="text-green-500">Form</span> folgt
           <span class="text-green-500">Funktion</span>
         </h1>
@@ -32,11 +32,11 @@
       </div>
 
       <!-- SVG CONTENT -->
-      <div class="md:flex lg:items-center xl:pt-20 lg:pt-2 md:justify-center">
+      <div class="lg:flex lg:items-center xl:pt-20 lg:pt-2  hidden">
         <div
           ref="services2"
           v-html="servicesscond"
-          class="mt-12 md:mt-16 lg:mt-0 lg:ml-16 w-full lg:w-[25rem] xl:max-w-[64rem] h-auto services-hero-svg"
+          class="mt-12 md:mt-16 lg:mt-0 lg:ml-16 w-full lg:w-[25rem]  xl:max-w-[64rem] h-auto services-hero-svg"
         />
       </div>
     </div>

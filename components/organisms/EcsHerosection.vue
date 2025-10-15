@@ -1,30 +1,30 @@
 <template>
   <div class="relative bg-black text-white overflow-hidden">
     <!-- Top background SVG -->
-    <div class="absolute inset-0 w-full h-full z-0 pointer-events-none" v-html="svgbg"></div>
+    <div class="absolute inset-0 w-full h-full hidden top-[-8%] left-[13%] lg:flex z-0 pointer-events-none" v-html="svgbg"></div>
 
     <!-- Content -->
     <div class="relative z-10">
       <!-- Hero Section -->
       <section
-        class="grid grid-cols-1 lg:grid-cols-2 gap-[2rem] lg:items-center px-6 lg:px-[7.8125rem] pt-[10rem]"
+        class="grid grid-cols-1 md:grid-cols-2 gap-[0.2rem] md:items-center px-6 lg:px-[7.8125rem] pt-30 md:pt-[8rem]  lg:pt-[10rem]"
       >
         <div class="flex flex-col gap-[2rem] xl:w-[39.625rem]">
-          <h1 class="text-4xl lg:text-5xl font-semibold leading-tight">
+          <h1 class="text-[2rem] lg:text-5xl font-semibold leading-tight">
             Maximize online sales with our custom <br />
             <span class="bg-gradient-to-r from-[#FFE501] to-[#FFA901] text-transparent bg-clip-text"
               >E-Commerce</span
             >
             strategy service.
           </h1>
-          <p class="text-[1.125rem] font-light">
+          <p class="lg:text-[1.5rem] text-[1rem] font-semilight">
             Our e-commerce strategy service is designed to help businesses of all sizes and
             industries succeed in the world of online sales. Whether you're a B2C company looking to
             sell directly to consumers, or a B2B company looking to streamline your sales process,
             we can help you create a personalized e-commerce plan that meets your unique needs.
           </p>
         </div>
-        <div class="w-full pt-[3rem]" v-html="Ecshero"></div>
+        <div class=" lg:w-full pt-[3rem]" v-html="Ecshero"></div>
       </section>
 
       <!-- "What's in store" Section -->
@@ -68,19 +68,19 @@
             class="w-full max-w-[82.4375rem] rounded-[0.75rem] bg-gradient-to-b from-[#FFB6013D]/24 to-[#FFB801A8]/26 border mt-10 border-amber-400 overflow-hidden"
           >
             <div
-              class="h-[2.5rem] flex items-center bg-gradient-to-b from-[#13121E] to-[#07052761] px-[0.5rem]"
+              class="h-[2.5rem] flex  items-center bg-gradient-to-b from-[#13121E] to-[#07052761] px-[0.5rem]"
             >
               <img src="/images/ecs-circles.png" height="1.25rem" alt="ecs" />
             </div>
 
-            <div class="bg-black flex items-center justify-between gap-[3rem] px-4 py-6">
+            <div class="bg-black flex flex-col md:flex-row items-center justify-between gap-[1rem] lg:gap-[3rem] px-4 py-6">
               <div class="flex items-center gap-2">
-                <img src="/images/modernice-logoecs.png" alt="modernice logo" class="h-[2.5rem]" />
-                <h1 class="text-xl font-semibold">modernice.shop</h1>
+                <img src="/images/modernice-logoecs.png" alt="modernice logo" class=" h-[1.2rem] lg:h-[2.5rem]" />
+                <h1 class="text-sm lg:text-xl font-semibold">modernice.shop</h1>
               </div>
               <div class="flex items-center gap-2">
                 <Icon name="mdi:phone" class="w-5 h-5 text-white" />
-                <span>0800 - 123 456 789</span>
+                <span class="text-sm ">0800 - 123 456 789</span>
               </div>
               <div class="flex items-center bg-[#1A1A1A] px-2 py-1 rounded">
                 <input
@@ -95,7 +95,7 @@
               </div>
             </div>
 
-            <div class="flex text-sm bg-[#020111]">
+            <div class="flex text-[10px] lg:text-sm bg-[#020111]">
               <div
                 class="flex-1 text-center py-3 border-r border-amber-400 hover:bg-amber-400 cursor-pointer"
                 >Category 1</div
@@ -117,7 +117,7 @@
               >
             </div>
 
-            <div class="flex justify-center mt-8">
+            <div class=" hidden lg:flex justify-center mt-8">
               <div
                 class="flex justify-between items-center w-full max-w-[75rem] px-6 py-2 bg-[#020111] rounded"
               >
@@ -155,7 +155,7 @@
                 </div>
 
                 <div
-                  class="flex items-center gap-2 bg-[#0E0D1A] border border-[#F2C94C] px-3 py-1 rounded cursor-pointer"
+                  class="flex  items-center gap-2 bg-[#0E0D1A] border border-[#F2C94C] px-3 py-1 rounded cursor-pointer"
                 >
                   <Icon name="mdi:chevron-down" class="w-4 h-4 text-white opacity-70" />
                   <span>Relevance</span>
@@ -176,10 +176,10 @@
                   class="bg-[#0E0D1A] border text-start border-[#FFA901]/50 p-6 rounded-lg overflow-hidden flex flex-col justify-between"
                 >
                   <div v-html="card.html" class="mx-auto mb-4"></div>
-                  <h2 class="text-2xl flex font-bold">{{ card.title }}</h2>
-                  <p class="text-sm opacity-70">{{ card.description }}</p>
+                  <h2 class="text-[1rem] lg:text-2xl flex font-bold">{{ card.title }}</h2>
+                  <p class="text-[0.8rem] lg:text-sm opacity-70">{{ card.description }}</p>
                   <div class="flex justify-between items-center mt-4">
-                    <span class="text-xl font-medium"
+                    <span class="text-sm lg:text-xl font-medium"
                       >420,00 <span class="text-amber-400">€</span></span
                     >
                     <div class="flex items-center gap-2">
