@@ -179,7 +179,7 @@
       <!-- Third Row: Keyword- und Wettbewerbsanalyse -->
       <div class="flex flex-col lg:px-5 lg:flex-row justify-between items-center gap-12">
         <div class="w-full max-w-[35.75rem] fade-left flex flex-col gap-8">
-          <h1 class="text-[2.5rem] italic font-semibold">Keyword- und Wettbewerbsanalyse</h1>
+          <h1 class="text-[2.5rem] italic font-semibold">Keyworde- und Wettbewerbsanalyse</h1>
           <p class="text-[1.125rem] font-light">
             Im nächsten Schritt identifizieren wir die Schlüsselbegriffe, welche die Zielgruppe zur
             Suche nach relevanten Produkten oder Dienstleistungen verwendet. Parallel dazu
@@ -189,7 +189,7 @@
         </div>
 
         <div class="w-full max-w-[30.9375rem] relative z-20">
-          <div id="svg-container" class="w-full h-auto"></div>
+<div ref="svgContainer" class="w-full h-auto"></div>
         </div>
       </div>
     </div>
