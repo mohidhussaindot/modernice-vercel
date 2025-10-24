@@ -7,7 +7,7 @@
         { label: 'Work', to: '/work' }
       ]"
       cta-label="Boost Sales"
-      cta-to="/contact"
+      cta-to="/appointment"
       logo-src="/images/ecs-logo.png"
       cta-from="#FFE501"
       cta-to-color="#FFA901"

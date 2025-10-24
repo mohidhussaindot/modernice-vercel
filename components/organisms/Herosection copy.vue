@@ -143,7 +143,7 @@
         </div>
       </div>
       <div class="w-full flex justify-center items-center">
-        <img
+        <NuxtImg
           src="/images/rocketmoon.png"
           alt="Rocket Moon"
           class="xl:w-[650.4355025557797px] 2xl:w-[750.4355025557797px] w-full h-full right-left object-contain select-none pointer-events-none"
@@ -226,7 +226,7 @@
         style="transform-origin: center center; will-change: transform"
       >
         <!-- Cockpit SVG -->
-        <img
+        <NuxtImg
           src="@atoms/svgs/cockpit.svg"
           alt="cockpit"
           style="transform: scale(0.99); transform-origin: center center"
@@ -293,7 +293,7 @@
 
   <section class="text-white block md:hidden overflow-hidden bg-[#020111]">
     <div class="relative mt-30">
-      <img
+      <NuxtImg
         alt="rocketmoonhero"
         class="block md:hidden absolute right-[-85%] top-12 w-[200%] max-w-none"
         src="@atoms/svgs/rocket-moon-hero.svg"
@@ -330,7 +330,7 @@
     </div>
 
     <div class="relative mt-80 h-[40rem] bg-black">
-      <img src="/first-three-sect-img/city.png" class="w-full h-full object-cover" alt="City" />
+      <NuxtImg src="/first-three-sect-img/city.png" class="w-full h-full object-cover" alt="City" />
 
       <!-- Text overlay -->
       <div class="absolute inset-0 flex flex-col mt-40 px-4 sm:px-8 text-white bg-opacity-40">
@@ -452,7 +452,6 @@
   import bghero from '@atoms/svgs/bghero.svg?raw'
   import rocket from '@atoms/svgs/leftsectionsvg.svg?raw'
   import bglines from '@atoms/svgs/Lines.svg?raw'
-  import cockpit from '@atoms/svgs/cockpit.svg?raw'
   import ServicesSlider from './ServicesSlider.vue'
   import Servicesmain from './Servicesmain.vue'
 

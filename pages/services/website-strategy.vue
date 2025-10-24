@@ -7,7 +7,7 @@
         { label: 'Work', to: '/work' }
       ]"
       cta-label="Let’s Talk"
-      cta-to="/contact"
+      cta-to="/appointment"
       logo-src="/images/services-navbar.png"
       cta-from="#38EF61"
       cta-to-color="#44E5C8"

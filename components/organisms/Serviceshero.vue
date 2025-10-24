@@ -44,15 +44,22 @@
             <div
               class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#38EF61] to-[#44E5C8] mx-auto lg:mx-0"
             >
-              <Button
-                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] lg:text-[1.25rem] rounded-[10px] bg-black bg-opacity-90 text-white hover:text-white transition"
+              <div
+                ref="buttonWrapperRef"
+                class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#38EF61] to-[#44E5C8] mx-auto lg:mx-0"
               >
-                <span
-                  class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text"
-                >
-                  Termin vereinbaren
-                </span>
-              </Button>
+                <NuxtLink to="/appointment">
+                  <Button
+                    class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] lg:text-[1.25rem] rounded-[10px] bg-black bg-opacity-90 text-white hover:text-white transition"
+                  >
+                    <span
+                      class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text"
+                    >
+                      Termin vereinbaren
+                    </span>
+                  </Button>
+                </NuxtLink>
+              </div>
             </div>
           </div>
 
@@ -111,7 +118,7 @@
 </template>
 
 <script setup>
-  import { onMounted, onBeforeUnmount, ref } from 'vue'
+  import { onMounted, onBeforeUnmount, ref, nextTick } from 'vue'
   import gsap from 'gsap'
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
   import Button from '@atoms/Button.vue'
@@ -122,36 +129,43 @@
 
   const cockpitRef = ref(null)
   const contentRef = ref(null)
-  const overlayRef = ref(null)
   const servicesTopRef = ref(null)
-  const pinWrapRef = ref(null)
+  const buttonWrapperRef = ref(null)
 
-  onMounted(() => {
+  onMounted(async () => {
+    await nextTick()
+
     const cockpitEl = cockpitRef.value
     const contentEl = contentRef.value
-    const overlayEl = overlayRef.value
     const topEl = servicesTopRef.value
+    const buttonEl = buttonWrapperRef.value
+    const animationEnd = 500
 
-    // Pin the section with smoother scrub (higher value)
+    const setButtonState = enabled => {
+      if (buttonEl) buttonEl.style.pointerEvents = enabled ? 'auto' : 'none'
+    }
+
+    const currentScroll = window.scrollY
+    const sectionTop = topEl?.offsetTop ?? 0
+    setButtonState(currentScroll >= sectionTop + animationEnd)
+
     ScrollTrigger.create({
       trigger: topEl,
       start: 'top top',
       end: '+=1200',
       pin: true,
-      pinSpacing: true,
       scrub: 1.4,
       anticipatePin: 1
     })
 
-    // Smooth timeline without overlay fade-in
     gsap
       .timeline({
         scrollTrigger: {
           trigger: topEl,
           start: 'top top',
-          end: '+=500',
-
-          scrub: 1.2 // match scrub with ScrollTrigger pin
+          end: `+=${animationEnd}`,
+          scrub: 1.2,
+          onUpdate: self => setButtonState(self.progress >= 1)
         }
       })
       .to(
@@ -160,9 +174,9 @@
           scale: 1.1,
           autoAlpha: 0,
           ease: 'power1.out',
-          transformOrigin: 'center ',
-          duration: 2, // slightly longer duration for softness
-          delay: 0.2 // small delay for smooth start
+          transformOrigin: 'center',
+          duration: 2,
+          delay: 0.2
         },
         0
       )
@@ -180,7 +194,7 @@
   })
 
   onBeforeUnmount(() => {
-    ScrollTrigger.getAll().forEach(inst => inst.kill())
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill())
   })
 </script>
 

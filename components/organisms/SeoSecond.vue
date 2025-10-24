@@ -163,7 +163,7 @@
       <!-- Second Row: Technische SEO-Optimierung -->
       <div class="flex flex-col lg:px-5 lg:flex-row justify-between items-center gap-12">
         <div class="w-full max-w-[32.9375rem]" ref="SeoFifthref" v-html="seofifth"></div>
-      
+
         <div class="w-full max-w-[38.1875rem] fade-right flex flex-col gap-5">
           <h1 class="text-[2.5rem] italic font-semibold">Technische SEO-Optimierung</h1>
           <p class="text-[1.125rem] font-light">
@@ -188,12 +188,8 @@
           </p>
         </div>
 
-        <div class="w-full max-w-[30.9375rem]">
-          <NuxtImg
-            src="/images/seo-fifth-second.png"
-            alt="seo-fifth-second-image"
-            class="w-full h-auto object-contain"
-          />
+        <div class="w-full max-w-[30.9375rem] relative z-20">
+          <div id="svg-container" class="w-full h-auto"></div>
         </div>
       </div>
     </div>
@@ -319,28 +315,27 @@
 
   <div class="block lg:hidden bg-[#020111] text-white overflow-hidden">
     <!-- Section 1 -->
-        
+
     <section class="relative py-16 px-6 items-center flex md:flex-row flex-col overflow-hidden">
-       <div class="mt-8">
-          <img
-            src="@atoms/svgs/seo-second-first.svg"
-            alt="Question Mark Graphic"
-            class="w-50 md:w-100 h-auto object-contain"
-          />
-        </div>
-      <div class="flex flex-col  items-center gap-6">
-        <h1 class="italic font-semibold  text-[2rem] leading-snug text-center px-4">
+      <div class="mt-8">
+        <img
+          src="@atoms/svgs/seo-second-first.svg"
+          alt="Question Mark Graphic"
+          class="w-50 md:w-100 h-auto object-contain"
+        />
+      </div>
+      <div class="flex flex-col items-center gap-6">
+        <h1 class="italic font-semibold text-[2rem] leading-snug text-center px-4">
           <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
             Fundament des Erfolgs:
-          </span> 
+          </span>
           <br />
           Warum technische SEO entscheidend ist
         </h1>
-        <p class="w-[300px] text-[0.9rem]  fontsemi-light leading-relaxed text-center px-4">
+        <p class="w-[300px] text-[0.9rem] fontsemi-light leading-relaxed text-center px-4">
           SEO ist mehr als kurzfristige Taktiken; es ist ein solides technisches Fundament, das
           nachhaltiges Wachstum ermöglicht.
         </p>
-    
       </div>
     </section>
 
@@ -415,12 +410,15 @@
     </section>
 
     <!-- Section 5 -->
-    <section class="py-16 px-6 flex flex-col md:flex-row items-center  overflow-hidden">
-        <div>
-          <img src="@atoms/svgs/seo-fifth.svg"   class="w-50 md:w-100  h-auto object-contain" alt="tech">
-        </div>
+    <section class="py-16 px-6 flex flex-col md:flex-row items-center overflow-hidden">
+      <div>
+        <img
+          src="@atoms/svgs/seo-fifth.svg"
+          class="w-50 md:w-100 h-auto object-contain"
+          alt="tech"
+        />
+      </div>
       <div class="flex flex-col items-center gap-6">
-
         <h1 class="italic font-semibold text-[2rem] text-center px-4">
           Technische SEO‑Optimierung
         </h1>
@@ -476,8 +474,7 @@
     </section>
 
     <!-- Section 9 -->
-    <section class="py-16 px-6  flex flex-col md:flex-row gap-10 items-center overflow-hidden">
-     
+    <section class="py-16 px-6 flex flex-col md:flex-row gap-10 items-center overflow-hidden">
       <div class="flex flex-col items-center gap-6">
         <h1 class="italic font-semibold text-[2rem] text-center px-4">
           Monitoring &amp;
@@ -493,9 +490,13 @@
           liefert.
         </p>
       </div>
-        <div>
-          <img src="@atoms/svgs/seo-fifth.svg"   class="w-50 md:w-100 h-auto object-contain" alt="tech">
-        </div>
+      <div>
+        <img
+          src="@atoms/svgs/seo-fifth.svg"
+          class="w-50 md:w-100 h-auto object-contain"
+          alt="tech"
+        />
+      </div>
     </section>
 
     <!-- Section 10: Final Note -->
@@ -508,20 +509,26 @@
     </section>
   </div>
 </template>
-
 <script setup>
-  import Button from '@atoms/Button.vue'
   import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
+  import Button from '@atoms/Button.vue'
   import seofifth from '@atoms/svgs/seo-fifth.svg?raw'
   import seosecond from '@atoms/svgs/seo-second.svg?raw'
   import seosecondbg from '@atoms/svgs/seosecondbg.svg?raw'
   import Seoquestionmark from '@atoms/svgs/seo-second-first.svg?raw'
   import svgmainlines from '@atoms/svgs/seomainlines.svg?raw'
   import rawLines from '@atoms/svgs/seo3rdpartlines.svg?raw'
+  import seoSvg from '@/components/atoms/svgs/blog-svg.svg?raw'
 
   const SeoFifthref = ref(null)
   const SeoSecondref = ref(null)
   const seoquestionmarkone = ref(null)
+  const svgContainer = ref(null)
+
+  let observer = null
+  let flickerTimer = null
+  let glowUpActive = false
+  let sequenceInterval = null
 
   const responsiveBg = seosecondbg
     .replace(/width="[^"]*"/, 'width="100%"')
@@ -533,33 +540,130 @@
     .replace(/height="[^"]*"/, 'height="100%"')
     .replace(/<svg([^>]*)>/, '<svg$1 preserveAspectRatio="xMidYMid slice">')
 
-  let observer
-
   function randomRange(min, max) {
     return Math.random() * (max - min) + min
   }
 
   function onQuestionMarksMouseEnter() {
-    const elements = seoquestionmarkone.value.querySelectorAll('.question-mark')
+    const elements = seoquestionmarkone.value?.querySelectorAll('.question-mark') || []
     elements.forEach(el => {
-      const randomX = randomRange(-10, 10)
-      const randomY = randomRange(-10, 10)
+      const x = randomRange(-10, 10)
+      const y = randomRange(-10, 10)
       el.style.transition = 'transform 0.5s ease'
-      el.style.transform = `translate(${randomX}px, ${randomY}px)`
+      el.style.transform = `translate(${x}px, ${y}px)`
     })
   }
 
   function onQuestionMarksMouseLeave() {
-    const elements = seoquestionmarkone.value.querySelectorAll('.question-mark')
+    const elements = seoquestionmarkone.value?.querySelectorAll('.question-mark') || []
     elements.forEach(el => {
       el.style.transition = 'transform 0.5s ease'
-      el.style.transform = `translate(0, 0)`
+      el.style.transform = 'translate(0, 0)'
     })
   }
 
-  onMounted(async () => {
-    const elements = document.querySelectorAll('.fade-element, .fade-top, .fade-left, .fade-right')
+  function animateTriangleGlow(root) {
+    if (!root || glowUpActive) return
+    glowUpActive = true
 
+    const t1 = root.querySelector('#triangle1')
+    const t2 = root.querySelector('#triangle2')
+    const t3 = root.querySelector('#triangle3')
+    if (!t1 || !t2 || !t3) return
+
+    const low = 0.2
+    t1.style.opacity = low
+    t2.style.opacity = low
+    t3.style.opacity = low
+
+    const glowUp = async () => {
+      t3.style.opacity = '1'
+      await new Promise(r => setTimeout(r, 400))
+      t2.style.opacity = '1'
+      await new Promise(r => setTimeout(r, 400))
+      t1.style.opacity = '1'
+      await new Promise(r => setTimeout(r, 400))
+
+      t3.style.opacity = low
+      t2.style.opacity = low
+      t1.style.opacity = low
+      await new Promise(r => setTimeout(r, 400))
+
+      if (glowUpActive) glowUp()
+    }
+    glowUp()
+  }
+
+  function animateSeoFlicker(root) {
+    const group = root?.querySelector('#SEO')
+    if (!group) return
+
+    const flicker = () => {
+      group.style.filter = 'brightness(1000%)'
+      setTimeout(() => {
+        group.style.filter = 'none'
+      }, 500)
+    }
+
+    const loop = () => {
+      flicker()
+      const delay = Math.random() * 3000 + 2000
+      flickerTimer = setTimeout(loop, delay)
+    }
+    loop()
+  }
+
+  function initBlogSvg(container) {
+    if (!container) return
+    container.innerHTML = seoSvg
+    const svg = container.querySelector('svg')
+    if (!svg) return
+
+    const ids = ['Star', 'Thumb', 'Heart', 'Mail']
+    const elements = ids.map(id => svg.querySelector(`#${id}`)).filter(Boolean)
+
+    elements.forEach(el => {
+      el.style.opacity = '0.3'
+      el.style.transition = 'opacity 0.6s ease, filter 0.6s ease'
+      el.style.filter = 'brightness(0.5)'
+    })
+
+    let index = 0
+    const showWithShine = i => {
+      elements.forEach((el, j) => {
+        if (i === j) {
+          el.style.opacity = '1'
+          el.style.filter = 'brightness(2) drop-shadow(0 0 8px #01A3FF)'
+        } else {
+          el.style.opacity = '0.3'
+          el.style.filter = 'brightness(0.5)'
+        }
+      })
+    }
+
+    showWithShine(index)
+    sequenceInterval = setInterval(() => {
+      index = (index + 1) % elements.length
+      showWithShine(index)
+    }, 1200)
+  }
+
+  onMounted(async () => {
+    await nextTick()
+
+    initBlogSvg(svgContainer.value)
+    animateTriangleGlow(SeoSecondref.value)
+    animateSeoFlicker(SeoFifthref.value)
+
+    if (seoquestionmarkone.value) {
+      seoquestionmarkone.value
+        .querySelectorAll('g[id^="Question Mark"]')
+        .forEach(el => el.classList.add('question-mark'))
+    }
+
+    const fadeElements = document.querySelectorAll(
+      '.fade-element, .fade-top, .fade-left, .fade-right'
+    )
     observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
@@ -574,80 +678,14 @@
       },
       { threshold: 0.2 }
     )
-
-    elements.forEach(el => observer.observe(el))
-
-    await nextTick()
-
-    const root2 = SeoSecondref.value
-    if (root2) {
-      const idselector1 = root2.querySelector('#triangle1')
-      const idselector2 = root2.querySelector('#triangle2')
-      const idselector3 = root2.querySelector('#triangle3')
-
-      if (idselector1 && idselector2 && idselector3) {
-        const lowOpacity = 0.2
-        idselector1.style.opacity = lowOpacity
-        idselector2.style.opacity = lowOpacity
-        idselector3.style.opacity = lowOpacity
-
-        const glowUp = async () => {
-          idselector3.style.opacity = '1'
-          await new Promise(r => setTimeout(r, 400))
-
-          idselector2.style.opacity = '1'
-          await new Promise(r => setTimeout(r, 400))
-
-          idselector1.style.opacity = '1'
-          await new Promise(r => setTimeout(r, 400))
-
-          idselector3.style.opacity = lowOpacity
-          idselector2.style.opacity = lowOpacity
-          idselector1.style.opacity = lowOpacity
-
-          await new Promise(r => setTimeout(r, 400))
-
-          glowUp()
-        }
-        glowUp()
-      }
-    }
-
-    const root = SeoFifthref.value
-    if (root) {
-      const seoGroup = root.querySelector('#SEO')
-      if (seoGroup) {
-        seoGroup.style.transition = 'filter 0.1s ease'
-
-        const flicker = () => {
-          seoGroup.style.filter = 'brightness(1000%)'
-          setTimeout(() => {
-            seoGroup.style.filter = 'none'
-          }, 100)
-        }
-
-        const startFlickerLoop = () => {
-          const delay = Math.random() * 3000 + 2000
-          setTimeout(() => {
-            flicker()
-            startFlickerLoop()
-          }, delay)
-        }
-
-        startFlickerLoop()
-      }
-    }
-
-    if (seoquestionmarkone.value) {
-      const questionMarks = seoquestionmarkone.value.querySelectorAll('g[id^="Question Mark"]')
-      questionMarks.forEach(el => {
-        el.classList.add('question-mark')
-      })
-    }
+    fadeElements.forEach(el => observer.observe(el))
   })
 
   onBeforeUnmount(() => {
     if (observer) observer.disconnect()
+    glowUpActive = false
+    clearTimeout(flickerTimer)
+    clearInterval(sequenceInterval)
   })
 </script>
 

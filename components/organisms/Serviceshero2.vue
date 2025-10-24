@@ -30,15 +30,17 @@
         <div
           class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#38EF61] to-[#44E5C8]"
         >
-          <Button
-            class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] lg:text-[1.25rem] rounded-[10px] bg-black bg-opacity-90 text-white hover:text-white transition"
-          >
-            <span
-              class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text"
+          <NuxtLink to="/appointment">
+            <Button
+              class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] lg:text-[1.25rem] rounded-[10px] bg-black bg-opacity-90 text-white hover:text-white transition"
             >
-              Termin vereinbaren
-            </span>
-          </Button>
+              <span
+                class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text"
+              >
+                Termin vereinbaren
+              </span>
+            </Button>
+          </NuxtLink>
         </div>
       </div>
 
@@ -70,7 +72,9 @@
     <div class="absolute inset-0 z-10 bg-black opacity-80"></div>
 
     <!-- Content -->
-    <div class="relative  z-20 md:pt-40 flex flex-col items-center text-center px-6 pt-24 pb-16 gap-8">
+    <div
+      class="relative z-20 md:pt-40 flex flex-col items-center text-center px-6 pt-24 pb-16 gap-8"
+    >
       <h1 class="text-5xl font-semibold italic leading-tight">
         Von der ersten <span class="text-[#00FFB3]">Skizze</span><br />
         bis zum letzten <span class="text-[#00FFB3]">Pixel</span>

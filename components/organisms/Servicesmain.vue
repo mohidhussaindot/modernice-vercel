@@ -33,7 +33,6 @@
       <div
         class="flex flex-col lg:gap-[14px] md:px-[3rem] lg:px-[3rem] xl:px-[7.5rem] text-white relative"
       >
-     
         <div class="flex lg:gap-0 xl:gap-[143px] items-center">
           <div
             class="pt-[152px] fade-left flex flex-col gap-[1.5rem] md:text-center lg:text-start w-full max-w-full px-4 md:max-w-[640px] md:px-6 lg:max-w-[27.13rem] xl:max-w-[32.13rem]"
@@ -44,11 +43,10 @@
               werden die Visionen und Ziele ausgelotet und so der Grundstein für ein kreatives und
               zielführendes Webkonzept gelegt.
             </p>
-
           </div>
 
           <div class="relative pt-[71px] w-[32.94rem] h-[32.94rem] hidden md:hidden lg:flex">
-            <img
+            <NuxtImg
               src="/images/services4shine.png"
               alt="services4thimage"
               class="absolute left-[62px] z-0 w-[27.53rem] h-[22rem] object-contain"
@@ -245,183 +243,201 @@
   </section>
 
   <!-- ✅ Mobile-Only Version -->
-  <section  class="block lg:hidden pt-[4.5rem] md:flex md:flex-col md:justify-center bg-black text-white ">
+  <section
+    class="block lg:hidden pt-[4.5rem] md:flex md:flex-col md:justify-center bg-black text-white"
+  >
     <!-- Section Header -->
-<div>
-    <div class="absolute">
-       <img
-        src="@atoms/svgs/seoherobg.svg"
-        alt="Background SVG"
-        class="w-full h-[450px]"
-      />
-    </div>
-    <div  class="py-[4.5rem]  text-center ">
-      <h1 class="text-[2rem] md:text-[3rem] italic font-semibold">
-        Phasen des <span class="text-[#00FFB3]">Erfolgs</span>
-      </h1>
-      <p class="mt-6 text-[0.9rem] px-10 md:px-30  font-semilight leading-relaxed">
-        Wir lassen uns nicht von vorgefertigten Abläufen leiten, sondern gestalten den Weg gemeinsam
-        mit Dir – so vielseitig und einzigartig wie Dein Projekt es erfordert. Dabei durchlaufen wir
-        verschiedene Stationen, um sicherzustellen, dass Deine Website funktional und wirkungsvoll
-        ist.
-      </p>
-    </div>
+    <div>
+      <div class="absolute">
+        <img src="@atoms/svgs/seoherobg.svg" alt="Background SVG" class="w-full h-[450px]" />
+      </div>
+      <div class="py-[4.5rem] text-center">
+        <h1 class="text-[2rem] md:text-[3rem] italic font-semibold">
+          Phasen des <span class="text-[#00FFB3]">Erfolgs</span>
+        </h1>
+        <p class="mt-6 text-[0.9rem] px-10 md:px-30 font-semilight leading-relaxed">
+          Wir lassen uns nicht von vorgefertigten Abläufen leiten, sondern gestalten den Weg
+          gemeinsam mit Dir – so vielseitig und einzigartig wie Dein Projekt es erfordert. Dabei
+          durchlaufen wir verschiedene Stationen, um sicherzustellen, dass Deine Website funktional
+          und wirkungsvoll ist.
+        </p>
+      </div>
     </div>
 
-    
- 
     <!-- Section 1 -->
 
-    
-    <div class="py-[4.5rem] px-5 items-center overflow-hidden flex text-center ">
+    <div class="py-[4.5rem] px-5 items-center overflow-hidden flex text-center">
       <div class="hidden md:block">
-        <img src="@atoms/svgs/servicesfourth.svg"   class="w-200 h-auto object-contain" alt="service fourth">
+        <img
+          src="@atoms/svgs/servicesfourth.svg"
+          class="w-200 h-auto object-contain"
+          alt="service fourth"
+        />
       </div>
-     <div class="flex flex-col">
-       
-  
-      <h1 class="text-[2rem] italic font-semibold">
-        <span class="text-[#00FFB3]">Quellen</span> der Inspiration
-      </h1>
-      <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
-        Hinter jeder beeindruckenden Website steht eine kraftvolle Idee. In der Anfangsphase werden
-        die Visionen und Ziele ausgelotet und so der Grundstein für ein kreatives und zielführendes
-        Webkonzept gelegt.
-      </p>
-         </div>
+      <div class="flex flex-col">
+        <h1 class="text-[2rem] italic font-semibold">
+          <span class="text-[#00FFB3]">Quellen</span> der Inspiration
+        </h1>
+        <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
+          Hinter jeder beeindruckenden Website steht eine kraftvolle Idee. In der Anfangsphase
+          werden die Visionen und Ziele ausgelotet und so der Grundstein für ein kreatives und
+          zielführendes Webkonzept gelegt.
+        </p>
+      </div>
     </div>
 
     <!-- Section 2 -->
-    <div class="py-[4.5rem] px-5 flex items-center text-center ">
-     
+    <div class="py-[4.5rem] px-5 flex items-center text-center">
       <div class="flex flex-col">
-      <h1 class="text-[2rem] italic font-semibold">
-        <span class="text-[#00FFB3]">Routen</span>planung
-      </h1>
-      <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
-        Mit den definierten Zielen und Anforderungen wird eine klare Roadmap erstellt, die sowohl
-        das Nutzererlebnis als auch die technischen Aspekte berücksichtigt und somit eine
-        zielgerichtete Entwicklung ermöglicht.
-      </p>
+        <h1 class="text-[2rem] italic font-semibold">
+          <span class="text-[#00FFB3]">Routen</span>planung
+        </h1>
+        <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
+          Mit den definierten Zielen und Anforderungen wird eine klare Roadmap erstellt, die sowohl
+          das Nutzererlebnis als auch die technischen Aspekte berücksichtigt und somit eine
+          zielgerichtete Entwicklung ermöglicht.
+        </p>
       </div>
-        <div class="hidden md:block">
-        <img src="@atoms/svgs/servicesfourthsecond.svg"   class="w-200 h-auto object-contain" alt="service fourth">
+      <div class="hidden md:block">
+        <img
+          src="@atoms/svgs/servicesfourthsecond.svg"
+          class="w-200 h-auto object-contain"
+          alt="service fourth"
+        />
       </div>
     </div>
 
     <div>
-   <!-- Section 3 -->
-<div class="py-[4.5rem] px-5 items-center overflow-hidden flex text-center flex-col md:flex-row">
-  <div class="hidden md:block">
-   
-            <NuxtImg
-              src="/images/services5-1.png"
-              alt="Visual representation of route planning"
-              class="w-200 h-full object-contain"
-            />
-        
-  </div>
-  <div class="flex flex-col">
-    <h1 class="text-[2rem] italic font-semibold">
-      Sterne zum <span class="text-[#00FFB3]">Leuchten</span> bringen
-    </h1>
-    <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
-      In dieser Phase kommt unsere kreative und technische Expertise zum Einsatz, um eine
-      lebendige und funktionale Website zu gestalten. Hierbei steht die Verbindung von
-      ästhetischer Erscheinung und solider technischer Basis im Vordergrund.
-    </p>
-  </div>
-</div>
+      <!-- Section 3 -->
+      <div
+        class="py-[4.5rem] px-5 items-center overflow-hidden flex text-center flex-col md:flex-row"
+      >
+        <div class="hidden md:block">
+          <img
+            src="/images/services5-1.png"
+            alt="Visual representation of route planning"
+            class="w-200 h-full object-contain"
+          />
+        </div>
+        <div class="flex flex-col">
+          <h1 class="text-[2rem] italic font-semibold">
+            Sterne zum <span class="text-[#00FFB3]">Leuchten</span> bringen
+          </h1>
+          <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
+            In dieser Phase kommt unsere kreative und technische Expertise zum Einsatz, um eine
+            lebendige und funktionale Website zu gestalten. Hierbei steht die Verbindung von
+            ästhetischer Erscheinung und solider technischer Basis im Vordergrund.
+          </p>
+        </div>
+      </div>
 
-<!-- Section 4 -->
-<div class="py-[4.5rem] px-5 items-center overflow-hidden flex text-center flex-col md:flex-row-reverse">
-  <div class="hidden md:block">
-    <img  src="/images/services-5-2.png" class="w-250 h-auto object-contain" alt="service fourth">
-  </div>
-  <div class="flex flex-col">
-    <h1 class="text-[2rem] italic font-semibold">
-      <span class="text-[#00FFB3]">Qualität</span> im Fokus
-    </h1>
-    <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
-      Durch ausgiebige Tests wird sichergestellt, dass Deine Website in allen Bereichen – von der
-      Nutzererfahrung bis hin zur Performance und Darstellung auf verschiedenen Endgeräten –
-      reibungslos funktioniert. Gezielte Optimierungen gewährleisten hierbei die bestmögliche
-      Umsetzung.
-    </p>
-  </div>
-</div>
+      <!-- Section 4 -->
+      <div
+        class="py-[4.5rem] px-5 items-center overflow-hidden flex text-center flex-col md:flex-row-reverse"
+      >
+        <div class="hidden md:block">
+          <img
+            src="/images/services-5-2.png"
+            class="w-250 h-auto object-contain"
+            alt="service fourth"
+          />
+        </div>
+        <div class="flex flex-col">
+          <h1 class="text-[2rem] italic font-semibold">
+            <span class="text-[#00FFB3]">Qualität</span> im Fokus
+          </h1>
+          <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
+            Durch ausgiebige Tests wird sichergestellt, dass Deine Website in allen Bereichen – von
+            der Nutzererfahrung bis hin zur Performance und Darstellung auf verschiedenen Endgeräten
+            – reibungslos funktioniert. Gezielte Optimierungen gewährleisten hierbei die
+            bestmögliche Umsetzung.
+          </p>
+        </div>
+      </div>
 
-<!-- Section 5 -->
-<div class="relative py-[4.5rem] px-5 items-center overflow-hidden flex text-center flex-col md:flex-row">
-  <div class="absolute hidden md:block">
-    <img src="@atoms/svgs/seoherobg.svg" alt="Background SVG" class="w-[900px] h-[400px]" />
-  </div>
-  <div class="hidden md:block z-10">
-    <img src="@atoms/svgs/servicesfifth.svg" class="w-200 h-auto object-contain" alt="service fifth">
-  </div>
-  <div class="flex flex-col z-10">
-    <h1 class="text-[2rem] italic font-semibold">
-      <span class="text-[#00FFB3]">Live-</span>Schaltung <span class="text-[#00FFB3]">[WIP]</span>
-    </h1>
-    <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
-      Nach sorgfältiger Vorbereitung und Optimierung geht sie live und nimmt ihren Platz in der
-      digitalen Landschaft ein. Von diesem Moment an beginnt sie, die Nutzer zu begeistern,
-      wichtige Verbindungen zu knüpfen und Deine Botschaft effektiv zu kommunizieren.
-    </p>
-  </div>
-</div>
+      <!-- Section 5 -->
+      <div
+        class="relative py-[4.5rem] px-5 items-center overflow-hidden flex text-center flex-col md:flex-row"
+      >
+        <div class="absolute hidden md:block">
+          <img src="@atoms/svgs/seoherobg.svg" alt="Background SVG" class="w-[900px] h-[400px]" />
+        </div>
+        <div class="hidden md:block z-10">
+          <img
+            src="@atoms/svgs/servicesfifth.svg"
+            class="w-200 h-auto object-contain"
+            alt="service fifth"
+          />
+        </div>
+        <div class="flex flex-col z-10">
+          <h1 class="text-[2rem] italic font-semibold">
+            <span class="text-[#00FFB3]">Live-</span>Schaltung
+            <span class="text-[#00FFB3]">[WIP]</span>
+          </h1>
+          <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
+            Nach sorgfältiger Vorbereitung und Optimierung geht sie live und nimmt ihren Platz in
+            der digitalen Landschaft ein. Von diesem Moment an beginnt sie, die Nutzer zu
+            begeistern, wichtige Verbindungen zu knüpfen und Deine Botschaft effektiv zu
+            kommunizieren.
+          </p>
+        </div>
+      </div>
 
-<!-- Section 6 -->
-<div class="py-[4.5rem] px-5 items-center overflow-hidden flex text-center flex-col md:flex-row-reverse">
-  <div class="hidden md:block">
-    <img src="/images/services-5-d-2.png" class="w-200 h-auto object-contain" alt="service sixth">
-  </div>
-  <div class="flex flex-col">
-    <h1 class="text-[2rem] italic font-semibold">
-      Perfektion durch <span class="text-[#00FFB3]">Iteration</span>
-    </h1>
-    <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
-      Mit der erfolgreichen Veröffentlichung muss die Reise nicht enden. Kontinuierliche
-      Optimierungen und datenbasierte Analysen können dafür sorgen, dass Deine Website stets eine
-      hohe Sichtbarkeit und Leistungsfähigkeit aufweist, um ihr Wachstum weiter voranzutreiben.
-    </p>
-  </div>
-</div>
-</div>
+      <!-- Section 6 -->
+      <div
+        class="py-[4.5rem] px-5 items-center overflow-hidden flex text-center flex-col md:flex-row-reverse"
+      >
+        <div class="hidden md:block">
+          <img
+            src="/images/services-5-d-2.png"
+            class="w-200 h-auto object-contain"
+            alt="service sixth"
+          />
+        </div>
+        <div class="flex flex-col">
+          <h1 class="text-[2rem] italic font-semibold">
+            Perfektion durch <span class="text-[#00FFB3]">Iteration</span>
+          </h1>
+          <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
+            Mit der erfolgreichen Veröffentlichung muss die Reise nicht enden. Kontinuierliche
+            Optimierungen und datenbasierte Analysen können dafür sorgen, dass Deine Website stets
+            eine hohe Sichtbarkeit und Leistungsfähigkeit aufweist, um ihr Wachstum weiter
+            voranzutreiben.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
-
 <script setup>
   import servicesMainBg from '@atoms/svgs/services-mainbg.svg?raw'
   import servicesfourth from '@atoms/svgs/servicesfourth.svg?raw'
   import servicesfourth2 from '@atoms/svgs/servicesfourthsecond.svg?raw'
   import svgContent from '@atoms/svgs/servicesfifth.svg?raw'
-  import { onMounted, onBeforeUnmount, ref, nextTick } from 'vue'
-  import gsap from 'gsap'
+  import { onMounted, onBeforeUnmount, ref } from 'vue'
+  import { gsap } from 'gsap'
 
   const servicesFourthContainer = ref(null)
   const servicesFourth2Container = ref(null)
   const svgContainer = ref(null)
   const burstCanvas = ref(null)
 
-  let ctx
+  let ctx,
+    rafId,
+    last = 0
   let particles = []
-  let last = 0
-  let rafId
+  let rocket, svgburst, rocketTl
+  let observer, fadeObserver
 
-  let rocket, svgburst
-  let rocketTl
-  let observer
-
-  function fitCanvas(canvas) {
+  const fitCanvas = canvas => {
     const ratio = window.devicePixelRatio || 1
     canvas.width = canvas.clientWidth * ratio
     canvas.height = canvas.clientHeight * ratio
     ctx.setTransform(ratio, 0, 0, ratio, 0, 0)
   }
 
-  function spawn(dt, canvas) {
-    const perSec = 25
+  const spawn = (dt, canvas) => {
+    const perSec = 18
     let toSpawn = perSec * dt
     while (toSpawn-- > 0) {
       particles.push({
@@ -429,17 +445,16 @@
         y: (canvas.height * 0.7) / devicePixelRatio,
         vx: (Math.random() - 0.5) * 0.5,
         vy: 1 + Math.random() * 0.5,
-        life: 700 + Math.random() * 400,
+        life: 600 + Math.random() * 300,
         age: 0,
         r: 2 + Math.random() * 2
       })
     }
   }
 
-  function tick(t, canvas) {
+  const tick = (t, canvas) => {
     const dt = t - last
     last = t
-
     spawn(dt / 1000, canvas)
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
@@ -453,7 +468,6 @@
 
       p.x += p.vx * dt * 0.05
       p.y += p.vy * dt * 0.05
-
       const alpha = 1 - p.age / p.life
       const r = p.r * (1 + 0.5 * alpha)
 
@@ -474,25 +488,20 @@
     rafId = requestAnimationFrame(time => tick(time, canvas))
   }
 
-  function initAnimations() {
+  const initAnimations = () => {
     const svgEl = svgContainer.value
     if (!svgEl) return
 
-    const getById = id =>
-      Array.from(svgEl.querySelectorAll(`#${id}`)).find(
-        el => el.closest('svg') === svgEl.querySelector('svg')
-      )
-
-    rocket = getById('rocket')
-    svgburst = getById('burst')
-
+    const getEl = id => svgEl.querySelector(`#${id}`)
+    rocket = getEl('rocket')
+    svgburst = getEl('burst')
     if (!rocket || !svgburst) return
 
     svgburst.style.opacity = 0
     gsap.set(rocket, { y: 100 })
 
-    rocketTl = gsap.timeline({ paused: true })
-    rocketTl
+    rocketTl = gsap
+      .timeline({ paused: true })
       .to(rocket, {
         y: -1,
         duration: 3,
@@ -518,34 +527,41 @@
       })
   }
 
-  function setupObserver() {
+  const pulseStroke = (el, from, to) => {
+    if (!el) return
+    el.removeAttribute('style')
+    el.setAttribute('stroke-width', '2.5')
+    el.setAttribute('stroke', from)
+    gsap.to(el, {
+      stroke: to,
+      duration: 1,
+      repeat: -1,
+      yoyo: true,
+      ease: 'power1.inOut'
+    })
+  }
+
+  const setupObserver = () => {
     const container = svgContainer.value
     if (!container) return
 
     observer = new IntersectionObserver(
       entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setTimeout(() => rocketTl.restart(true), 500)
-          } else {
-            rocketTl.pause()
-
-            gsap.to(rocket, {
-              y: 100,
-              duration: 1.5,
-              ease: 'power2.inOut',
-              onComplete: () => {
-                svgburst.style.opacity = 0
-              }
-            })
-
-            cancelAnimationFrame(rafId)
-            if (ctx && burstCanvas.value) {
-              ctx.clearRect(0, 0, burstCanvas.value.width, burstCanvas.value.height)
-            }
-            particles = []
-          }
-        })
+        const [entry] = entries
+        if (entry.isIntersecting) {
+          setTimeout(() => rocketTl.restart(true), 400)
+        } else {
+          rocketTl.pause()
+          gsap.to(rocket, {
+            y: 100,
+            duration: 1.2,
+            ease: 'power2.inOut',
+            onComplete: () => (svgburst.style.opacity = 0)
+          })
+          cancelAnimationFrame(rafId)
+          ctx?.clearRect(0, 0, burstCanvas.value?.width || 0, burstCanvas.value?.height || 0)
+          particles = []
+        }
       },
       { threshold: 0.5 }
     )
@@ -553,86 +569,45 @@
     observer.observe(container)
   }
 
-  onMounted(async () => {
+  onMounted(() => {
     initAnimations()
     setupObserver()
 
-    // Animate Plant & Shadow
-    const svg1 = servicesFourthContainer.value
-    if (svg1) {
-      const plant = svg1.querySelector('#Plant')
-      const shadow = svg1.querySelector('#Shadow')
+    const plant = servicesFourthContainer.value?.querySelector('#Plant')
+    const shadow1 = servicesFourthContainer.value?.querySelector('#Shadow')
+    const shadow2 = servicesFourth2Container.value?.querySelector('#Shadow')
 
-      if (plant) {
-        gsap.to(plant, {
-          rotate: '7deg',
-          transformOrigin: 'bottom center',
-          duration: 2,
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut'
-        })
-      }
-
-      if (shadow) {
-        shadow.removeAttribute('style')
-        shadow.setAttribute('stroke-width', '2.5')
-        shadow.setAttribute('stroke', '#38EF61')
-
-        gsap.to(shadow, {
-          stroke: '#44E5C8',
-          duration: 1,
-          repeat: -1,
-          yoyo: true,
-          ease: 'power1.inOut'
-        })
-      }
+    if (plant) {
+      gsap.to(plant, {
+        rotate: 7,
+        transformOrigin: 'bottom center',
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+      })
     }
+    pulseStroke(shadow1, '#38EF61', '#44E5C8')
+    pulseStroke(shadow2, '#38EF61', '#44E5C8')
 
-    // Animate Gears
-    const svg2 = servicesFourth2Container.value
-    if (svg2) {
-      const shadow2 = svg2.querySelector('#Shadow')
-
-      if (shadow2) {
-        shadow2.removeAttribute('style')
-        shadow2.setAttribute('stroke-width', '2.5')
-        shadow2.setAttribute('stroke', '#38EF61')
-
-        gsap.to(shadow2, {
-          stroke: '#44E5C8',
-          duration: 1,
-          repeat: -1,
-          yoyo: true,
-          ease: 'power1.inOut'
-        })
-      }
-    }
-
-    // ✅ Replace GSAP fade logic with IntersectionObserver
-    await nextTick()
-    const fadeElements = document.querySelectorAll('.fade-left, .fade-right, .fade-up')
-
-    const fadeObserver = new IntersectionObserver(
+    fadeObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in')
-            entry.target.classList.remove('fade-out')
-          } else {
-            entry.target.classList.remove('fade-in')
-            entry.target.classList.add('fade-out')
-          }
+          entry.target.classList.toggle('fade-in', entry.isIntersecting)
+          entry.target.classList.toggle('fade-out', !entry.isIntersecting)
         })
       },
       { threshold: 0.2 }
     )
 
-    fadeElements.forEach(el => fadeObserver.observe(el))
+    document
+      .querySelectorAll('.fade-left, .fade-right, .fade-up')
+      .forEach(el => fadeObserver.observe(el))
   })
 
   onBeforeUnmount(() => {
-    if (observer && svgContainer.value) observer.unobserve(svgContainer.value)
+    observer?.disconnect()
+    fadeObserver?.disconnect()
     cancelAnimationFrame(rafId)
   })
 </script>

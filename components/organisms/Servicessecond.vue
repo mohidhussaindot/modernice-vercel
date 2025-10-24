@@ -1,7 +1,7 @@
 <template>
   <section class="relative bg-black overflow-hidden">
     <div
-      class="flex flex-col md:flex-col lg:flex-row items-center lg:items-start px-6  lg:max-w-7xl mx-auto gap-12 md:gap-[0rem] xl:gap-[6rem]"
+      class="flex flex-col md:flex-col lg:flex-row items-center lg:items-start px-6 lg:max-w-7xl mx-auto gap-12 md:gap-[0rem] xl:gap-[6rem]"
     >
       <!-- Content -->
       <!-- TEXT CONTENT -->
@@ -32,11 +32,11 @@
       </div>
 
       <!-- SVG CONTENT -->
-      <div class="lg:flex lg:items-center xl:pt-20 lg:pt-2  hidden">
+      <div class="lg:flex lg:items-center xl:pt-20 lg:pt-2 hidden">
         <div
           ref="services2"
           v-html="servicesscond"
-          class="mt-12 md:mt-16 lg:mt-0 lg:ml-16 w-full lg:w-[25rem]  xl:max-w-[64rem] h-auto services-hero-svg"
+          class="mt-12 md:mt-16 lg:mt-0 lg:ml-16 w-full lg:w-[25rem] xl:max-w-[64rem] h-auto services-hero-svg"
         />
       </div>
     </div>
@@ -54,10 +54,10 @@
     if (!gears) return
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+      (entries, obs) => {
+        if (entries[0].isIntersecting) {
           gears.classList.add('visible')
-          observer.unobserve(gears)
+          obs.disconnect()
         }
       },
       { threshold: 0.5 }

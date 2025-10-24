@@ -7,7 +7,7 @@
         { label: 'Work', to: '/work' }
       ]"
       cta-label="Startbefehl geben"
-      cta-to="/contact"
+      cta-to="/appointment"
       logo-src="/images/SEO-logo.png"
       cta-from="#01A3FF"
       cta-to-color="#25CDDA"
