@@ -32,7 +32,7 @@
           <div ref="scroller" class="scroller flex items-start">
             <div ref="slide1" class="slide">
               <div class="rounded-xl shadow-2xl p-4">
-                <img class="p-20" src="/images/Store.png" alt="store" />
+                <NuxtImg class="p-20" src="/images/Store.png" alt="store" />
               </div>
               <div class="text-content">
                 <p>A user friendly appealing online store</p>
@@ -41,7 +41,7 @@
 
             <div ref="slide2" class="slide">
               <div class="rounded-xl shadow-2xl p-4">
-                <img class="p-20" src="/images/map.png" alt="plan" />
+                <NuxtImg class="p-20" src="/images/map.png" alt="plan" />
               </div>
               <div class="text-content">
                 <p>A Personalized plan tailored to your business</p>
@@ -50,7 +50,7 @@
 
             <div ref="slide3" class="slide">
               <div class="rounded-xl shadow-2xl p-4">
-                <img class="p-20" src="/images/microchip.png" alt="technology" />
+                <NuxtImg class="p-20" src="/images/microchip.png" alt="technology" />
               </div>
               <div class="text-content">
                 <p>The most up to date e-commerce technologies</p>
@@ -59,7 +59,7 @@
 
             <div ref="slide4" class="slide">
               <div class="rounded-xl shadow-2xl p-4">
-                <img class="p-20" src="/images/comments.png" alt="Comments icon" />
+                <NuxtImg class="p-20" src="/images/comments.png" alt="Comments icon" />
               </div>
               <div class="text-content">
                 <p>Ongoing support to ensure success of your store</p>
@@ -84,12 +84,16 @@
             <div
               class="h-[2.5rem] flex items-center bg-gradient-to-b from-[#13121E] to-[#07052761] px-[0.5rem]"
             >
-              <img src="/images/ecs-circles.png" height="1.25rem" alt="ecs" />
+              <NuxtImg src="/images/ecs-circles.png" height="1.25rem" alt="ecs" />
             </div>
 
             <div class="bg-black flex items-center justify-between gap-[3rem] px-4 py-6">
               <div class="flex items-center gap-2">
-                <img src="/images/modernice-logoecs.png" alt="modernice logo" class="h-[2.5rem]" />
+                <NuxtImg
+                  src="/images/modernice-logoecs.png"
+                  alt="modernice logo"
+                  class="h-[2.5rem]"
+                />
                 <h1 class="text-xl font-semibold">modernice.shop</h1>
               </div>
               <div class="flex items-center gap-2">
@@ -277,7 +281,7 @@
   ]
 
   import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
-  import gsap from 'gsap'
+  import { gsap } from 'gsap'
   import ScrollTrigger from 'gsap/ScrollTrigger'
 
   gsap.registerPlugin(ScrollTrigger)

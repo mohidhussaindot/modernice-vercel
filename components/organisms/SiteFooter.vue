@@ -31,7 +31,7 @@
       >
         <p>© 2023 MODERNICE LIMITED</p>
         <div class="flex gap-6 mt-4 md:mt-0">
-          <NuxtLink to="/privacy" class="hover:text-white">Privacy Policy</NuxtLink>
+          <NuxtLink to="/policy" class="hover:text-white">Privacy Policy</NuxtLink>
           <NuxtLink to="/about" class="hover:text-white">About</NuxtLink>
         </div>
       </div>

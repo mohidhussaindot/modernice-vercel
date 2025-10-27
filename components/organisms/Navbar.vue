@@ -91,7 +91,7 @@
 
   <!-- Mobile Header -->
   <header
-    class=" sm:hidden fixed top-0 left-0 z-[9999] w-full bg-[#0B061F] px-4 py-3 flex justify-between items-center"
+    class="sm:hidden fixed top-0 left-0 z-[9999] w-full bg-[#0B061F] px-4 py-3 flex justify-between items-center"
   >
     <!-- Logo -->
     <NuxtLink v-if="logoSrc" to="/" aria-label="Modernise home">

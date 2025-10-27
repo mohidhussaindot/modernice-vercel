@@ -423,7 +423,7 @@
 
 <script setup>
   import { ref, computed, onMounted, onUnmounted, nextTick, defineEmits } from 'vue'
-  import gsap from 'gsap'
+  import { gsap } from 'gsap'
   import ScrollTrigger from 'gsap/ScrollTrigger'
 
   import Button from '@atoms/Button.vue'

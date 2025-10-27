@@ -7,7 +7,7 @@
         { label: 'Referenzen', to: '/Referenzen' }
       ]"
       cta-label="KI-Beratung"
-      cta-to="/contact"
+      cta-to="/appointment"
       logo-src=""
       cta-from="#3BE8E8"
       cta-to-color="#AFE639"

@@ -84,7 +84,7 @@
         </span>
       </h1>
 
-      <p class="text-[1rem]  md:w-[500px] font-semilight leading-relaxed">
+      <p class="text-[1rem] md:w-[500px] font-semilight leading-relaxed">
         Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive
         SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein [after-thought] sein.
       </p>
@@ -104,48 +104,48 @@
     </div>
   </section>
 </template>
-
 <script setup>
-  import { onMounted, ref, nextTick } from 'vue'
+  import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
+  import { gsap } from 'gsap'
   import Button from '@atoms/Button.vue'
   import Seocharacter from '@atoms/svgs/seo-character.svg?raw'
   import seoherolines from '@atoms/svgs/seolines.svg?raw'
-  import { gsap } from 'gsap'
 
   const seocharacter = ref(null)
   const seoLinesContainer = ref(null)
+  let tl = null
 
   onMounted(async () => {
     await nextTick()
 
-    if (seoLinesContainer.value) {
-      const svg = seoLinesContainer.value.querySelector('svg')
-      if (svg) {
-        svg.setAttribute('width', '100%')
-        svg.setAttribute('height', '100%')
-        svg.style.display = 'block'
-        svg.style.maxWidth = '100%'
-        svg.style.width = '100%'
-        svg.style.height = '100%'
-        svg.style.objectFit = 'cover'
-        svg.style.scale = '1.2'
-      }
+    const lines = seoLinesContainer.value?.querySelector('svg')
+    if (lines) {
+      Object.assign(lines.style, {
+        display: 'block',
+        maxWidth: '100%',
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        scale: '1.2'
+      })
     }
 
-    // Animate character (rocket wiggle)
-    if (seocharacter.value) {
-      const characterElement = seocharacter.value.querySelector('#Character')
-      if (characterElement) {
-        gsap.set(characterElement, { transformOrigin: '50% 50%' })
+    const character = seocharacter.value?.querySelector('#Character')
+    if (character) {
+      gsap.set(character, { transformOrigin: '50% 50%' })
+      tl = gsap.timeline({
+        repeat: -1,
+        yoyo: true,
+        defaults: { ease: 'sine.inOut' }
+      })
+      tl.to(character, { y: -15, duration: 2 }).to(character, { y: 0, duration: 2 })
+    }
+  })
 
-        const tl = gsap.timeline({
-          repeat: -1,
-          yoyo: true,
-          defaults: { ease: 'sine.inOut' }
-        })
-
-        tl.to(characterElement, { y: -15, duration: 2 }).to(characterElement, { y: 0, duration: 2 })
-      }
+  onBeforeUnmount(() => {
+    if (tl) {
+      tl.kill()
+      tl = null
     }
   })
 </script>

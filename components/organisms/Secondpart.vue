@@ -51,7 +51,7 @@
 <script setup>
   import { ref, computed, onMounted, onUnmounted } from 'vue'
   import Button from '@atoms/Button.vue'
-  import gsap from 'gsap'
+  import { gsap } from 'gsap'
   import ScrollTrigger from 'gsap/ScrollTrigger'
 
   gsap.registerPlugin(ScrollTrigger)

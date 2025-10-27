@@ -44,11 +44,10 @@
     </div>
   </div>
 </template>
-
 <script setup>
   import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
-  import gsap from 'gsap'
-  import ScrollTrigger from 'gsap/ScrollTrigger'
+  import { gsap } from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
   gsap.registerPlugin(ScrollTrigger)
 
@@ -57,28 +56,29 @@
   const slide1 = ref(null)
   const slide2 = ref(null)
   const slide3 = ref(null)
+
   let triggers = []
+
+  const cleanupTriggers = () => {
+    triggers.forEach(t => t?.kill?.())
+    triggers = []
+  }
 
   const initAnimation = async () => {
     await nextTick()
 
-    // Kill existing triggers to avoid duplicates
-    triggers.forEach(t => {
-      try {
-        t.kill?.()
-      } catch (e) {}
-    })
-    triggers = []
+    if (typeof window === 'undefined') return
+    if (!wrapper.value || !scroller.value) return
+
+    cleanupTriggers()
 
     const slides = [slide1.value, slide2.value, slide3.value]
-    if (!scroller.value || !wrapper.value) return
-
     const windowWidth = window.innerWidth
     const scrollerWidth = slides.length * windowWidth
+    const scrollDistance = scrollerWidth - windowWidth
 
     gsap.set(scroller.value, { width: scrollerWidth })
-
-    const scrollDistance = scrollerWidth - windowWidth
+    gsap.set(slides, { opacity: 0.35, scale: 0.92, transformOrigin: 'center center' })
 
     const horiz = gsap.to(scroller.value, {
       x: -scrollDistance,
@@ -94,10 +94,6 @@
     })
     triggers.push(horiz)
 
-    slides.forEach(s => {
-      gsap.set(s, { opacity: 0.35, scale: 0.92, transformOrigin: 'center center' })
-    })
-
     const watcher = ScrollTrigger.create({
       trigger: wrapper.value,
       start: 'top top',
@@ -106,23 +102,17 @@
       onUpdate: () => {
         const vw = window.innerWidth
         const vwCenter = vw / 2
-        const minOpacity = 0.35
-        const maxOpacity = 1
-        const minScale = 0.92
-        const maxScale = 1.05
 
         slides.forEach(slide => {
           const rect = slide.getBoundingClientRect()
           const slideCenter = rect.left + rect.width / 2
-          const dist = Math.abs(slideCenter - vwCenter)
-
-          const normalized = Math.min(dist / (vw / 2), 1)
+          const normalized = Math.min(Math.abs(slideCenter - vwCenter) / (vw / 2), 1)
           const easeFactor = 1 - normalized
 
-          const opacity = minOpacity + easeFactor * (maxOpacity - minOpacity)
-          const scale = minScale + easeFactor * (maxScale - minScale)
-
-          gsap.set(slide, { opacity, scale })
+          gsap.set(slide, {
+            opacity: 0.35 + easeFactor * 0.65,
+            scale: 0.92 + easeFactor * 0.13
+          })
         })
       }
     })
@@ -132,18 +122,15 @@
   }
 
   onMounted(() => {
+    if (typeof window === 'undefined') return
     initAnimation()
-    window.addEventListener('resize', initAnimation)
+    window.addEventListener('resize', initAnimation, { passive: true })
   })
 
   onBeforeUnmount(() => {
+    if (typeof window === 'undefined') return
     window.removeEventListener('resize', initAnimation)
-    triggers.forEach(t => {
-      try {
-        t.kill?.()
-      } catch (e) {}
-    })
-    triggers = []
+    cleanupTriggers()
   })
 </script>
 

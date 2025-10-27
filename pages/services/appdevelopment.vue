@@ -7,7 +7,7 @@
         { label: 'Work', to: '/work' }
       ]"
       cta-label="Get responsive"
-      cta-to="/contact"
+      cta-to="/appointment"
       logo-src=""
       cta-from="#DD39D1"
       cta-to-color="#7137EC"

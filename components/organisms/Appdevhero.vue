@@ -9,9 +9,9 @@
       <div
         class="relative z-10 px-7 flex flex-col items-center lg:flex-row h-[49.375rem] gap-12 lg:gap-0 mb-32"
       >
-        <div class="lg:w-1/2 flex items-center">
+        <div class="lg:w-1/2 md:fpl-10 flex items-center">
           <div
-            class="w-full text-center max-w-[41.1875rem] flex flex-col gap-6 mt-36 lg:text-start px-4 lg:px-0"
+            class="w-full text-center max-w-[41.1875rem] flex flex-col gap-6 mt-36 lg:text-start lg:pl-10 px-4 lg:px-0"
           >
             <h1 class="text-5xl italic font-bold leading-tight">
               <span
@@ -62,7 +62,7 @@
       </div>
 
       <!-- Sections 1-5: Discovery, Design, etc. -->
-      <div class="flex flex-col gap-15">
+      <div class="flex flex-col px-4 gap-15">
         <!-- Section 1 -->
         <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
           <div class="fade-left flex flex-col gap-10 max-w-[31.625rem] text-white">
@@ -143,8 +143,6 @@
         </div>
       </div>
     </div>
-
-
   </section>
 
   <!-- end section aka get in touch -->
@@ -195,141 +193,159 @@
     </div>
   </section>
 
-  
-<!-- mobile -->
-  <section class="block lg:hidden pt-30 bg-black text-white relative w-full overflow-hidden px-6 ">
-  <div class="max-w-[1440px] mx-auto flex flex-col gap-16">
-    <!-- HERO Section -->
-    <div class="flex flex-col md:flex-row items-center gap-5">
-      <!-- Text -->
-      <div class="md:w-[800px] text-center md:text-left flex flex-col gap-6">
-        <h1 class="text-4xl font-bold italic leading-tight">
-          <span class="bg-gradient-to-r from-[#D539D3] to-[#D539D3] bg-clip-text text-transparent">App</span>solute Genius. Custom
-          <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent">App Development</span>
-          Services for Your Business.
-        </h1>
-        <p class="text-base leading-relaxed">
-          Looking for a cost-effective and convenient way to develop your hybrid app? Our hybrid app development service combines the best of both worlds – the reach of a native app with the ease of development of a web app.
-        </p>
-      </div>
-      <!-- SVG -->
-      <div class=" w-full" >
-        <img  src="@atoms/svgs/appdevhero.svg" alt="hero">
-      </div>
-    </div>
-
-    <!-- What is Hybrid Section -->
-    <div class="flex flex-col md:flex-row-reverse items-center gap-10">
-      <!-- Text -->
-      <div class="md:w-1/2 text-center md:text-left flex flex-col gap-6">
-        <h2 class="text-2xl font-semibold">
-          <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent">Hybrid?</span> What does that mean?
-        </h2>
-        <p class="text-base font-light">
-          Don’t worry, the term hybrid within app development actually stands for a good thing. Hybrid apps combine the best of app and web development, letting your lightning-fast app run on all devices.
-        </p>
-      </div>
-      <!-- SVG -->
-      <div class="md:w-[400px] w-full">
-        <img src="@atoms/svgs/appdevhero2.svg" alt="">
-      </div>
-    </div>
-
-    <!-- 5 Steps -->
-    <div class="flex flex-col gap-16">
-      <!-- 1. Discovery -->
-      <div class="flex flex-col md:flex-row items-center gap-10">
-        <div class="md:w-1/2 flex flex-col gap-4">
-          <h2 class="text-2xl font-semibold">1. Discovery</h2>
-          <p class="text-base font-light">
-            During the discovery phase, we work with you to understand your business goals and gather all requirements for your hybrid app.
+  <!-- mobile -->
+  <section class="block lg:hidden pt-30 bg-black text-white relative w-full overflow-hidden px-6">
+    <div class="max-w-[1440px] mx-auto flex flex-col gap-16">
+      <!-- HERO Section -->
+      <div class="flex flex-col md:flex-row items-center gap-5">
+        <!-- Text -->
+        <div class="md:w-[800px] text-center md:text-left flex flex-col gap-6">
+          <h1 class="text-4xl font-bold italic leading-tight">
+            <span class="bg-gradient-to-r from-[#D539D3] to-[#D539D3] bg-clip-text text-transparent"
+              >App</span
+            >solute Genius. Custom
+            <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent"
+              >App Development</span
+            >
+            Services for Your Business.
+          </h1>
+          <p class="text-base leading-relaxed">
+            Looking for a cost-effective and convenient way to develop your hybrid app? Our hybrid
+            app development service combines the best of both worlds – the reach of a native app
+            with the ease of development of a web app.
           </p>
         </div>
-        <div class="md:w-1/2 w-full" >
-          <img src="@atoms/svgs/appdevsection2.svg" alt="appdevsectionsecond">
+        <!-- SVG -->
+        <div class="w-full">
+          <img src="@atoms/svgs/appdevhero.svg" alt="hero" />
         </div>
       </div>
 
-      <!-- 2. Design -->
+      <!-- What is Hybrid Section -->
       <div class="flex flex-col md:flex-row-reverse items-center gap-10">
-        <div class="md:w-1/2 flex flex-col gap-4">
-          <h2 class="text-2xl font-semibold">2. Design</h2>
+        <!-- Text -->
+        <div class="md:w-1/2 text-center md:text-left flex flex-col gap-6">
+          <h2 class="text-2xl font-semibold">
+            <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent"
+              >Hybrid?</span
+            >
+            What does that mean?
+          </h2>
           <p class="text-base font-light">
-            Our designers create wireframes and mockups to visualize the user flow and layout. We make sure everything aligns with your brand and users’ needs.
+            Don’t worry, the term hybrid within app development actually stands for a good thing.
+            Hybrid apps combine the best of app and web development, letting your lightning-fast app
+            run on all devices.
           </p>
         </div>
-       <div class="md:w-1/2 w-full">
-        <img src="@atoms/svgs/appdevmiddle (1).svg" alt="appdevmiddle1">
-      </div>
+        <!-- SVG -->
+        <div class="md:w-[400px] w-full">
+          <img src="@atoms/svgs/appdevhero2.svg" alt="cuz" />
+        </div>
       </div>
 
-      <!-- 3. Development -->
-      <div class="flex flex-col md:flex-row items-center gap-10">
-        <div class="md:w-1/2 flex flex-col gap-4">
-          <h2 class="text-2xl font-semibold">3. Development</h2>
-          <p class="text-base font-light">
-            We use Flutter and modern technologies to build high-performing hybrid apps for iOS and Android with seamless user experiences.
-          </p>
+      <!-- 5 Steps -->
+      <div class="flex flex-col gap-16">
+        <!-- 1. Discovery -->
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <div class="md:w-1/2 flex flex-col gap-4">
+            <h2 class="text-2xl font-semibold">1. Discovery</h2>
+            <p class="text-base font-light">
+              During the discovery phase, we work with you to understand your business goals and
+              gather all requirements for your hybrid app.
+            </p>
+          </div>
+          <div class="md:w-1/2 w-full">
+            <img src="@atoms/svgs/appdevsection2.svg" alt="appdevsectionsecond" />
+          </div>
         </div>
-         <div class="md:w-1/2 w-full">
-        <img src="@atoms/svgs/appdevmiddle (2).svg" alt="">
-      </div>
+
+        <!-- 2. Design -->
+        <div class="flex flex-col md:flex-row-reverse items-center gap-10">
+          <div class="md:w-1/2 flex flex-col gap-4">
+            <h2 class="text-2xl font-semibold">2. Design</h2>
+            <p class="text-base font-light">
+              Our designers create wireframes and mockups to visualize the user flow and layout. We
+              make sure everything aligns with your brand and users’ needs.
+            </p>
+          </div>
+          <div class="md:w-1/2 w-full">
+            <img src="@atoms/svgs/appdevmiddle (1).svg" alt="appdevmiddle1" />
+          </div>
+        </div>
+
+        <!-- 3. Development -->
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <div class="md:w-1/2 flex flex-col gap-4">
+            <h2 class="text-2xl font-semibold">3. Development</h2>
+            <p class="text-base font-light">
+              We use Flutter and modern technologies to build high-performing hybrid apps for iOS
+              and Android with seamless user experiences.
+            </p>
+          </div>
+          <div class="md:w-1/2 w-full">
+            <img src="@atoms/svgs/appdevmiddle (2).svg" alt="" />
+          </div>
+        </div>
+
+        <!-- 4. Testing & Launch -->
+        <div class="flex flex-col md:flex-row-reverse items-center gap-10">
+          <div class="md:w-1/2 flex flex-col gap-4">
+            <h2 class="text-2xl font-semibold">4. Testing & Launch</h2>
+            <p class="text-base font-light">
+              We thoroughly test your app, squash bugs, and help you publish it on both the App
+              Store and Google Play.
+            </p>
+          </div>
+          <div class="md:w-1/2 w-full">
+            <img src="@atoms/svgs/appdev/appdevrocket.svg" alt="appdevlast" />
+          </div>
+        </div>
+
+        <!-- 5. Optimize for Growth -->
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <div class="md:w-1/2 flex flex-col gap-4">
+            <h2 class="text-2xl font-semibold">5. Optimize for Growth</h2>
+            <p class="text-base font-light">
+              Post-launch, we support your app with updates and performance enhancements to boost
+              user engagement and long-term success.
+            </p>
+          </div>
+          <div class="md:w-1/2 w-full">
+            <img src="@atoms/svgs/appdev/appdevlast (1).svg" alt="appdevlast" />
+          </div>
+        </div>
       </div>
 
-      <!-- 4. Testing & Launch -->
-      <div class="flex flex-col md:flex-row-reverse items-center gap-10">
-        <div class="md:w-1/2 flex flex-col gap-4">
-          <h2 class="text-2xl font-semibold">4. Testing & Launch</h2>
-          <p class="text-base font-light">
-            We thoroughly test your app, squash bugs, and help you publish it on both the App Store and Google Play.
-          </p>
-        </div>
-         <div class="md:w-1/2 w-full">
-        <img src="@atoms/svgs/appdev/appdevlast (2).svg" alt="appdevlast">
-      </div>
-      </div>
+      <!-- CTA: Get in Touch -->
+      <div class="bg-[#1a1a1a] p-6 rounded-xl border border-[#A138E0] text-center mt-10">
+        <h2 class="italic font-semibold text-2xl mb-4">Get in Touch</h2>
+        <p class="text-base font-light mb-6">
+          Let us help take your online presence to the next level. Schedule a call today and let's
+          talk about growing your business.
+        </p>
 
-      <!-- 5. Optimize for Growth -->
-      <div class="flex flex-col md:flex-row items-center gap-10">
-        <div class="md:w-1/2 flex flex-col gap-4">
-          <h2 class="text-2xl font-semibold">5. Optimize for Growth</h2>
-          <p class="text-base font-light">
-            Post-launch, we support your app with updates and performance enhancements to boost user engagement and long-term success.
-          </p>
+        <div class="flex flex-col gap-4">
+          <div>
+            <p class="text-sm">Drop us a message at</p>
+            <h3
+              class="text-lg font-bold italic bg-gradient-to-r from-[#A138E0] to-[#7137EC] bg-clip-text text-transparent"
+            >
+              hello@modernice.design
+            </h3>
+          </div>
+          <div>
+            <p class="text-sm">Or talk to us directly</p>
+            <h3
+              class="text-lg italic font-bold bg-gradient-to-r from-[#FFE401] to-[#FFB401] bg-clip-text text-transparent"
+            >
+              Schedule a Call
+            </h3>
+          </div>
         </div>
-         <div class="md:w-1/2 w-full">
-        <img src="@atoms/svgs/appdev/appdevlast (1).svg" alt="appdevlast">
-      </div>
       </div>
     </div>
-
-    <!-- CTA: Get in Touch -->
-    <div class="bg-[#1a1a1a] p-6 rounded-xl border border-[#A138E0] text-center mt-10">
-      <h2 class="italic font-semibold text-2xl mb-4">Get in Touch</h2>
-      <p class="text-base font-light mb-6">
-        Let us help take your online presence to the next level. Schedule a call today and let's talk about growing your business.
-      </p>
-
-      <div class="flex flex-col gap-4">
-        <div>
-          <p class="text-sm">Drop us a message at</p>
-          <h3 class="text-lg font-bold italic bg-gradient-to-r from-[#A138E0] to-[#7137EC] bg-clip-text text-transparent">
-            hello@modernice.design
-          </h3>
-        </div>
-        <div>
-          <p class="text-sm">Or talk to us directly</p>
-          <h3 class="text-lg italic font-bold bg-gradient-to-r from-[#FFE401] to-[#FFB401] bg-clip-text text-transparent">
-            Schedule a Call
-          </h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+  </section>
 </template>
-
 <script setup>
   import appdevhero from '@atoms/svgs/appdevhero.svg?raw'
   import appdevhero2 from '@atoms/svgs/appdevhero2.svg?raw'
@@ -337,7 +353,7 @@
   import appdevmiddle1 from '@atoms/svgs/appdevmiddle (1).svg?raw'
   import appdevmiddle2 from '@atoms/svgs/appdevmiddle (2).svg?raw'
   import appdevlast1 from '@atoms/svgs/appdev/appdevlast (1).svg?raw'
-  import appdevlast2 from '@atoms/svgs/appdev/appdevlast (2).svg?raw'
+  import appdevlast2 from '@atoms/svgs/appdev/appdevrocket.svg?raw'
   import appdevlines from '@atoms/svgs/appdevlines.svg?raw'
   import { onMounted, onBeforeUnmount, ref } from 'vue'
 
@@ -351,6 +367,8 @@
   let isBursting = false
   let burstTimeout = null
   let landingTimeout = null
+  let fadeObserver = null
+  let containerObserver = null
   const lowerPosition = '40px'
 
   // Make canvas retina-safe
@@ -360,6 +378,7 @@
     canvas.height = canvas.clientHeight * ratio
     ctx.setTransform(ratio, 0, 0, ratio, 0, 0)
   }
+
   function spawn(dt, canvas) {
     const perSec = 25
     let toSpawn = perSec * dt
@@ -375,15 +394,14 @@
       })
     }
   }
+
   function tick(t, canvas) {
     const dt = t - last
     last = t
+    if (!ctx || !canvas) return
 
-    if (isBursting) {
-      spawn(dt / 1000, canvas)
-    }
+    if (isBursting) spawn(dt / 1000, canvas)
 
-    // Optional: fill canvas with transparent background if needed
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     for (let i = particles.length - 1; i >= 0; i--) {
@@ -393,23 +411,19 @@
         particles.splice(i, 1)
         continue
       }
-
       p.x += p.vx * dt * 0.05
       p.y += p.vy * dt * 0.05
 
       const alpha = 1 - p.age / p.life
       const r = p.r * (1 + 0.5 * alpha)
-
-      // PINK PARTICLE GLOW
       const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 6)
-      g.addColorStop(0, `rgba(213,57,211,${0.6 * alpha})`) // #D539D3
+      g.addColorStop(0, `rgba(213,57,211,${0.6 * alpha})`)
       g.addColorStop(1, 'transparent')
       ctx.fillStyle = g
       ctx.beginPath()
       ctx.arc(p.x, p.y, r * 6, 0, Math.PI * 2)
       ctx.fill()
 
-      // PINK PARTICLE CORE
       ctx.fillStyle = `rgba(213,57,211,${0.8 * alpha})`
       ctx.beginPath()
       ctx.arc(p.x, p.y, r, 0, Math.PI * 2)
@@ -422,17 +436,14 @@
   }
 
   function stopBurst(canvas) {
-    if (ctx && canvas) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-    }
+    if (ctx && canvas) ctx.clearRect(0, 0, canvas.width, canvas.height)
     particles = []
     isBursting = false
   }
 
   onMounted(() => {
-    // Fade in observer
     const fadeElements = document.querySelectorAll('.fade-left, .fade-right, .fade-up')
-    const fadeObserver = new IntersectionObserver(
+    fadeObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -448,75 +459,67 @@
     )
     fadeElements.forEach(el => fadeObserver.observe(el))
 
-    // Canvas and rocket setup
     const canvas = burstCanvas.value
     const container = rocketContainer.value
-    if (canvas && container) {
-      ctx = canvas.getContext('2d')
-      fitCanvas(canvas)
+    if (!canvas || !container) return
 
-      rocketEl = container.querySelector('#optamizerocket')
-      if (rocketEl) {
-        rocketEl.style.animation = 'none'
-        rocketEl.style.transform = `translateY(${lowerPosition})`
-      }
+    ctx = canvas.getContext('2d')
+    fitCanvas(canvas)
 
-      last = performance.now()
-      rafId = requestAnimationFrame(time => tick(time, canvas))
-
-      // Visibility observer for rocket container
-      const containerObserver = new IntersectionObserver(
-        entries => {
-          const entry = entries[0]
-          if (entry.isIntersecting) {
-            // Enter view
-            if (!isVisible) {
-              isVisible = true
-              if (rocketEl) {
-                rocketEl.style.animation = 'none'
-                rocketEl.style.transform = 'translateY(0px)'
-              }
-              burstTimeout = setTimeout(() => {
-                if (isVisible && rocketEl) {
-                  rocketEl.style.animation = 'floatRocket 3s ease-in-out infinite'
-                  isBursting = true
-                  particles = []
-                  last = performance.now()
-                  rafId = requestAnimationFrame(time => tick(time, canvas))
-                }
-              }, 2000)
-            }
-          } else {
-            // Exit view
-            if (isVisible) {
-              isBursting = false
-              isVisible = false
-              clearTimeout(burstTimeout)
-              clearTimeout(landingTimeout)
-              if (rocketEl) {
-                rocketEl.style.animation = 'none'
-              }
-              landingTimeout = setTimeout(() => {
-                if (rocketEl) {
-                  rocketEl.style.transform = `translateY(${lowerPosition})`
-                }
-              }, 500)
-            }
-          }
-        },
-        { threshold: 0.5 }
-      )
-      containerObserver.observe(container)
+    rocketEl = container.querySelector('#optamizerocket')
+    if (rocketEl) {
+      rocketEl.style.animation = 'none'
+      rocketEl.style.transform = `translateY(${lowerPosition})`
     }
+
+    last = performance.now()
+    rafId = requestAnimationFrame(time => tick(time, canvas))
+
+    containerObserver = new IntersectionObserver(
+      entries => {
+        const entry = entries[0]
+        if (entry.isIntersecting) {
+          if (!isVisible) {
+            isVisible = true
+            if (rocketEl) {
+              rocketEl.style.animation = 'none'
+              rocketEl.style.transform = 'translateY(0px)'
+            }
+            burstTimeout = setTimeout(() => {
+              if (isVisible && rocketEl) {
+                rocketEl.style.animation = 'floatRocket 3s ease-in-out infinite'
+                isBursting = true
+                particles = []
+                last = performance.now()
+                rafId = requestAnimationFrame(time => tick(time, canvas))
+              }
+            }, 2000)
+          }
+        } else {
+          if (isVisible) {
+            isBursting = false
+            isVisible = false
+            clearTimeout(burstTimeout)
+            clearTimeout(landingTimeout)
+            if (rocketEl) rocketEl.style.animation = 'none'
+            landingTimeout = setTimeout(() => {
+              if (rocketEl) rocketEl.style.transform = `translateY(${lowerPosition})`
+            }, 500)
+          }
+        }
+      },
+      { threshold: 0.5 }
+    )
+    containerObserver.observe(container)
   })
 
   onBeforeUnmount(() => {
     if (rafId) cancelAnimationFrame(rafId)
     clearTimeout(burstTimeout)
     clearTimeout(landingTimeout)
-    const canvas = burstCanvas.value
-    stopBurst(canvas)
-    isVisible = false
+    if (fadeObserver) fadeObserver.disconnect()
+    if (containerObserver) containerObserver.disconnect()
+    stopBurst(burstCanvas.value)
     if (rocketEl) {
       rocketEl.style.animation = 'none'
       rocketEl.style.transform = `translateY(${lowerPosition})`

@@ -104,7 +104,6 @@
         class="background-canvas"
       />
     </div>
-
     <div
       v-if="!loading"
       class="absolute bottom-10 flex items-center gap-3 text-white/70 right-22 z-[9999]"
@@ -128,7 +127,6 @@
       >
         ✕
       </Button>
-
       <a
         :href="selectedImage.url"
         target="_blank"
@@ -142,7 +140,6 @@
           @click.stop
         />
       </a>
-
       <div class="text-center text-white mt-6 max-w-[600px]" @click.stop>
         <h2 class="text-2xl font-bold">{{ selectedImage.info }}</h2>
         <p class="mt-2 opacity-80">{{ selectedImage.description }}</p>
@@ -160,54 +157,27 @@
   <div
     ref="greenLayer"
     class="fixed inset-0 bg-blue-100 z-[999998] transform translate-y-full transition-transform duration-600 ease-in-out"
-  ></div>
+  >
+  </div>
   <div
     ref="blackLayer"
     class="fixed inset-0 bg-black z-[999999] transform translate-y-full transition-transform duration-600 ease-in-out"
-  ></div>
+  >
+  </div>
 </template>
 <script setup>
-  import { ref, onMounted, nextTick } from 'vue'
+  import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
   import * as THREE from 'three'
   import gsap from 'gsap'
   import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
   import { Box3, Vector3 } from 'three'
   import Button from '@atoms/Button.vue'
+  import { useRouter } from 'vue-router'
   const dropdownOpen = ref(false)
-  const services = [
-    { label: 'App Development', to: '/services/appdevelopment' },
-    { label: 'AI Consulting', to: '/services/aiconsulting' },
-    { label: 'E-commerce', to: '/services/ecs' },
-    { label: 'Website Strategy', to: '/services/website-strategy' },
-    { label: 'SEO', to: '/services/seo' }
-  ]
-  let dropdownTimeout = null
-  const openDropdown = () => {
-    clearTimeout(dropdownTimeout)
-    dropdownOpen.value = true
-  }
-  const closeDropdown = () => {
-    dropdownTimeout = setTimeout(() => {
-      dropdownOpen.value = false
-    }, 150)
-  }
   const isNavbarHovered = ref(false)
   const transitionOverlay = ref(null)
   const greenLayer = ref(null)
   const blackLayer = ref(null)
-  const router = useRouter()
-  const startTransition = () => {
-    if (!greenLayer.value || !blackLayer.value) return
-    greenLayer.value.classList.remove('translate-y-full')
-    greenLayer.value.classList.add('translate-y-0')
-    setTimeout(() => {
-      blackLayer.value.classList.remove('translate-y-full')
-      blackLayer.value.classList.add('translate-y-0')
-    }, 600)
-    setTimeout(() => {
-      router.push('/work/projects')
-    }, 1200)
-  }
   const canvas = ref(null)
   const hoveredLabel = ref(null)
   const hoveredPosition = ref({ x: 0, y: 0 })
@@ -219,18 +189,89 @@
   const loading = ref(true)
   const loadingBar = ref(null)
   const loadingProgress = ref(0)
-
+  const router = useRouter()
+  const services = [
+    { label: 'App Development', to: '/services/appdevelopment' },
+    { label: 'AI Consulting', to: '/services/aiconsulting' },
+    { label: 'E-commerce', to: '/services/ecs' },
+    { label: 'Website Strategy', to: '/services/website-strategy' },
+    { label: 'SEO', to: '/services/seo' }
+  ]
+  const imageLinks = [
+    {
+      name: 'adobelino.png',
+      url: 'https://adobelino.com',
+      info: 'Adobe Lino Project',
+      description: 'A digital store for purchasing original software & licenses'
+    },
+    {
+      name: 'crovillas.png',
+      url: 'https://crovillas.com/',
+      info: 'Crovillas Site',
+      description: 'Offers luxury villa rentals, often with pool and sea views.'
+    },
+    {
+      name: 'cube.expert.png',
+      url: 'https://cubee.expert/en',
+      info: 'Cube Expert',
+      description: 'A service for independent vehicle appraisals and damage assessments'
+    },
+    {
+      name: 'depositdirect.png',
+      url: 'https://depositdirect.net',
+      info: 'Deposit Direct',
+      description:
+        'Lets tenants rent without paying a cash deposit by issuing a rental deposit guarantee'
+    },
+    {
+      name: 'epass.png',
+      url: 'https://Epass.gg',
+      info: 'Epass Game',
+      description: 'Platform for identity verification and digital KYC services.'
+    },
+    {
+      name: 'prestige-cars.png',
+      url: 'https://prestige.cars',
+      info: 'Prestige Cars',
+      description: 'A luxury and exotic car rental platform offering elite sports and supercars.'
+    },
+    {
+      name: 'tzone.png',
+      url: 'https://T.zone',
+      info: 'T.Zone Platform',
+      description: 'Organize your tournament and earn money'
+    }
+  ]
+  const glbPaths = ['/work/Spaceship.glb', '/work/moon.glb', '/work/satelite.glb']
+  const glbNames = ['Spaceship', 'moon', 'satelite']
+  let dropdownTimeout = null
+  const openDropdown = () => {
+    clearTimeout(dropdownTimeout)
+    dropdownOpen.value = true
+  }
+  const closeDropdown = () => {
+    dropdownTimeout = setTimeout(() => (dropdownOpen.value = false), 150)
+  }
+  const startTransition = () => {
+    if (!greenLayer.value || !blackLayer.value) return
+    greenLayer.value.classList.remove('translate-y-full')
+    greenLayer.value.classList.add('translate-y-0')
+    setTimeout(() => {
+      blackLayer.value.classList.remove('translate-y-full')
+      blackLayer.value.classList.add('translate-y-0')
+    }, 600)
+    setTimeout(() => router.push('/work/projects'), 1200)
+  }
   const closeOverlay = e => {
     e?.stopPropagation?.()
     selectedImage.value = null
   }
-
+  const removers = []
+  const cancelAll = () => {
+    removers.forEach(r => r())
+    removers.length = 0
+  }
   onMounted(async () => {
-    window.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && selectedImage.value) {
-        selectedImage.value = null
-      }
-    })
     await nextTick()
     let assetsLoaded = false
     let progressDone = false
@@ -260,11 +301,7 @@
     )
     camera.position.set(850, 830, 3200)
     camera.lookAt(-100, -100, 1350)
-    const renderer = new THREE.WebGLRenderer({
-      canvas: canvas.value,
-      antialias: true,
-      alpha: true
-    })
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas.value, antialias: true, alpha: true })
     renderer.setSize(window.innerWidth, window.innerHeight)
     renderer.setClearColor(0x000000, 0)
     renderer.outputEncoding = THREE.sRGBEncoding
@@ -281,115 +318,52 @@
     const modelsGroup = new THREE.Group()
     scene.add(modelsGroup)
     const textureLoader = new THREE.TextureLoader()
-    const spacingZ = 1900
-    const imageLinks = [
-      {
-        name: 'adobelino.png',
-        url: 'https://adobelino.com',
-        info: 'Adobe Lino Project',
-        description: 'A digital store for purchasing original software & licenses'
-      },
-      {
-        name: 'crovillas.png',
-        url: 'https://crovillas.com/',
-        info: 'Crovillas Site',
-        description: 'Offers luxury villa rentals, often with pool and sea views.'
-      },
-      {
-        name: 'cube.expert.png',
-        url: 'https://cubee.expert/en',
-        info: 'Cube Expert',
-        description: 'A service for independent vehicle appraisals and damage assessments'
-      },
-      {
-        name: 'depositdirect.png',
-        url: 'https://depositdirect.net',
-        info: 'Deposit Direct',
-        description:
-          'Lets tenants rent without paying a cash deposit by issuing a rental deposit guarantee'
-      },
-      {
-        name: 'epass.png',
-        url: 'https://Epass.gg',
-        info: 'Epass Game',
-        description: 'Platform for identity verification and digital KYC services.'
-      },
-      {
-        name: 'prestige-cars.png',
-        url: 'https://prestige.cars',
-        info: 'Prestige Cars',
-        description: 'A luxury and exotic car rental platform offering elite sports and supercars.'
-      },
-      {
-        name: 'tzone.png',
-        url: 'https://T.zone',
-        info: 'T.Zone Platform',
-        description: 'Organize your tournament and earn money'
-      }
-    ]
-    const glbPaths = ['/work/Spaceship.glb', '/work/moon.glb', '/work/satelite.glb']
-    const glbNames = ['Spaceship', 'moon', 'satelite']
     const gltfLoader = new GLTFLoader()
+    const spacingZ = 1900
     const SLOT_BASE_Z = 1450
     const SLOT_GAP = 2000
     const slots = Array.from({ length: glbPaths.length }, (_, i) => SLOT_BASE_Z - i * SLOT_GAP)
     const slotScales = Array.from({ length: glbPaths.length }, (_, i) => 1 - i * 0.1)
+    const loadGLB = url =>
+      new Promise((resolve, reject) =>
+        gltfLoader.load(url, gltf => resolve(gltf.scene), undefined, reject)
+      )
     const models = []
     const modelSlot = new Map()
     let isCarouselAnimating = false
-    const loadGLB = url =>
-      new Promise((resolve, reject) => {
-        gltfLoader.load(url, gltf => resolve(gltf.scene), undefined, reject)
-      })
-    Promise.all(glbPaths.map(loadGLB)).then(scenes => {
-      scenes.forEach((sceneModel, i) => {
-        sceneModel.name = glbNames[i] || 'model-' + i
-        sceneModel.traverse(c => {
-          if (c.isMesh) c.castShadow = true
+    Promise.all(glbPaths.map(loadGLB))
+      .then(scenes => {
+        scenes.forEach((sceneModel, i) => {
+          sceneModel.name = glbNames[i] || `model-${i}`
+          sceneModel.traverse(c => {
+            if (c.isMesh) c.castShadow = true
+          })
+          const box = new Box3().setFromObject(sceneModel)
+          const size = new Vector3()
+          box.getSize(size)
+          let targetWidth = 500
+          if (sceneModel.name === 'satelite' || sceneModel.name === 'moon') targetWidth = 400
+          const scaleFactor = size.x ? targetWidth / size.x : 1
+          sceneModel.userData.baseScale = scaleFactor
+          const slotIndex = i % slots.length
+          sceneModel.position.set(-800, 0, slots[slotIndex])
+          const s = slotScales[slotIndex] * scaleFactor
+          sceneModel.scale.set(s, s, s)
+          modelsGroup.add(sceneModel)
+          models.push(sceneModel)
+          modelSlot.set(sceneModel, slotIndex)
         })
-        const box = new Box3().setFromObject(sceneModel)
-        const size = new Vector3()
-        box.getSize(size)
-        let targetWidth = 500
-        if (sceneModel.name === 'satelite') {
-          targetWidth = 400
-        }
-        if (sceneModel.name === 'moon') {
-          targetWidth = 400
-        }
-        const scaleFactor = targetWidth / size.x
-        sceneModel.scale.setScalar(scaleFactor)
-        sceneModel.userData.baseScale = scaleFactor
-        const slotIndex = i % slots.length
-        if (sceneModel.name === 'Spaceship') {
-          sceneModel.position.set(-800, 0, slots[slotIndex])
-        } else if (sceneModel.name === 'moon') {
-          sceneModel.position.set(-800, 0, slots[slotIndex])
-        } else if (sceneModel.name === 'satelite') {
-          sceneModel.position.set(-800, 0, slots[slotIndex])
-        }
-        const s = slotScales[slotIndex] * scaleFactor
-        sceneModel.scale.set(s, s, s)
-        modelsGroup.add(sceneModel)
-        models.push(sceneModel)
-        modelSlot.set(sceneModel, slotIndex)
+        assetsLoaded = true
+        checkFinishLoading()
       })
-      assetsLoaded = true
-      checkFinishLoading()
-    })
-    const bobbingModels = new Set()
+      .catch(() => {
+        assetsLoaded = true
+        checkFinishLoading()
+      })
     const animateModelToSlot = (model, targetSlot, opts = {}) => {
       const duration = opts.duration ?? 1.0
       const ease = opts.ease ?? 'power2.inOut'
-      const onComplete = opts.onComplete
-      gsap.to(model.position, {
-        z: slots[targetSlot],
-        duration,
-        ease,
-        onComplete: () => {
-          if (onComplete) onComplete()
-        }
-      })
+      gsap.to(model.position, { z: slots[targetSlot], duration, ease, onComplete: opts.onComplete })
       const baseScale = model.userData.baseScale || 1
       gsap.to(model.scale, {
         x: slotScales[targetSlot] * baseScale,
@@ -398,48 +372,23 @@
         duration,
         ease
       })
-      if (targetSlot === 0) {
-        gsap.to(model.rotation, { x: 0, y: 0, z: 0, duration })
-      }
+      if (targetSlot === 0) gsap.to(model.rotation, { x: 0, y: 0, z: 0, duration })
     }
-    const rotateCarouselForward = () => {
+    const rotateCarousel = (direction = 1) => {
       if (isCarouselAnimating || models.length < slots.length) return
       isCarouselAnimating = true
       let completed = 0
       models.forEach(m => {
         const current = modelSlot.get(m)
-        const next = (current + 1) % slots.length
+        const next = (current + direction + slots.length) % slots.length
         animateModelToSlot(m, next, {
           duration: 1.1,
           onComplete: () => {
             completed++
             if (completed === models.length) {
-              models.forEach(mm => {
-                const c = modelSlot.get(mm)
-                modelSlot.set(mm, (c + 1) % slots.length)
-              })
-              isCarouselAnimating = false
-            }
-          }
-        })
-      })
-    }
-    const rotateCarouselBackward = () => {
-      if (isCarouselAnimating || models.length < slots.length) return
-      isCarouselAnimating = true
-      let completed = 0
-      models.forEach(m => {
-        const current = modelSlot.get(m)
-        const next = (current - 1 + slots.length) % slots.length
-        animateModelToSlot(m, next, {
-          duration: 1.1,
-          onComplete: () => {
-            completed++
-            if (completed === models.length) {
-              models.forEach(mm => {
-                const c = modelSlot.get(mm)
-                modelSlot.set(mm, (c - 1 + slots.length) % slots.length)
-              })
+              models.forEach(mm =>
+                modelSlot.set(mm, (modelSlot.get(mm) + direction + slots.length) % slots.length)
+              )
               isCarouselAnimating = false
             }
           }
@@ -451,47 +400,39 @@
     let lastScrollTime = 0
     const SCROLL_TRIGGER_COUNT = 9
     const SCROLL_DELAY = 290
-    window.addEventListener(
-      'wheel',
-      e => {
-        if (loading.value) return
-        if (isNavbarHovered.value || selectedImage.value) {
-          scrollCount = 0
-          lastDir = 0
-          return
-        }
-        const now = Date.now()
-        if (now - lastScrollTime < SCROLL_DELAY) return
-        lastScrollTime = now
-        const dir = e.deltaY > 0 ? 1 : -1
-        if (dir !== lastDir) {
-          scrollCount = 0
-          lastDir = dir
-        }
-        scrollCount++
-        if (scrollCount >= SCROLL_TRIGGER_COUNT) {
-          if (dir > 0) rotateCarouselForward()
-          else rotateCarouselBackward()
-          scrollCount = 0
-          lastDir = 0
-        }
-      },
-      { passive: true }
-    )
+    const onWheelForCarousel = e => {
+      if (loading.value) return
+      if (isNavbarHovered.value || selectedImage.value) {
+        scrollCount = 0
+        lastDir = 0
+        return
+      }
+      const now = Date.now()
+      if (now - lastScrollTime < SCROLL_DELAY) return
+      lastScrollTime = now
+      const dir = e.deltaY > 0 ? 1 : -1
+      if (dir !== lastDir) {
+        scrollCount = 0
+        lastDir = dir
+      }
+      scrollCount++
+      if (scrollCount >= SCROLL_TRIGGER_COUNT) {
+        rotateCarousel(dir)
+        scrollCount = 0
+        lastDir = 0
+      }
+    }
     const planes = []
-    const clickablePlanes = new Map()
-    const shadowPlanes = new Map()
     const planeLabels = new Map()
     const planeInfos = new Map()
+    const shadowPlanes = new Map()
     const hoverTriggers = []
     const loadTexture = image =>
-      new Promise(resolve => {
-        textureLoader.load('/work/' + image.name, texture => resolve(texture))
-      })
+      new Promise(resolve => textureLoader.load('/work/' + image.name, tex => resolve(tex)))
     Promise.all(imageLinks.map(loadTexture)).then(textures => {
       textures.forEach((texture, i) => {
-        const fixedWidth = 950
-        const fixedHeight = 550
+        const fixedWidth = 950,
+          fixedHeight = 550
         const geometry = new THREE.PlaneGeometry(fixedWidth, fixedHeight)
         const material = new THREE.MeshBasicMaterial({
           map: texture,
@@ -503,7 +444,6 @@
         plane.position.set(0, 0, -i * spacingZ)
         planesGroup.add(plane)
         planes.push(plane)
-        clickablePlanes.set(plane, imageLinks[i].url)
         planeLabels.set(plane, imageLinks[i].name.replace('.png', ''))
         planeInfos.set(plane, {
           info: imageLinks[i].info,
@@ -515,7 +455,7 @@
           side: THREE.DoubleSide
         })
         const hoverPlane = new THREE.Mesh(geometry.clone(), hoverMaterial)
-        hoverPlane.position.set(0, 0, -i * spacingZ)
+        hoverPlane.position.copy(plane.position)
         planesGroup.add(hoverPlane)
         hoverTriggers.push({ plane, hoverPlane })
         const shadowMaterial = new THREE.MeshBasicMaterial({
@@ -523,7 +463,7 @@
           side: THREE.DoubleSide
         })
         const shadowPlane = new THREE.Mesh(geometry.clone(), shadowMaterial)
-        shadowPlane.position.set(0, 0, -i * spacingZ)
+        shadowPlane.position.copy(plane.position)
         planesGroup.add(shadowPlane)
         shadowPlanes.set(plane, shadowPlane)
       })
@@ -535,51 +475,68 @@
     let isAnimating = false
     let scrollSpeed = 350
     const scrollDamp = 0.95
-    window.addEventListener('wheel', event => {
-      if (!loading.value) scrollSpeed -= event.deltaY * 0.02
-    })
-    window.addEventListener('mousemove', event => {
+    const onWheel = e => {
+      if (!loading.value) scrollSpeed -= e.deltaY * 0.06
+      onWheelForCarousel(e)
+    }
+    const onMouseMove = event => {
       if (!loading.value) {
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1
         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
       }
-    })
-    window.addEventListener('click', () => {
+    }
+    const onClick = () => {
       if (isNavbarHovered.value || loading.value || selectedImage.value) return
       raycaster.setFromCamera(mouse, camera)
       const intersects = raycaster.intersectObjects(planes, false)
       if (intersects.length > 0) {
         const plane = intersects[0].object
         const imageData = planeInfos.get(plane)
-        selectedImage.value = {
-          src: '/work/' + planeLabels.get(plane) + '.png',
-          ...imageData
-        }
+        selectedImage.value = { src: '/work/' + planeLabels.get(plane) + '.png', ...imageData }
       }
-    })
-    window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight
-      camera.updateProjectionMatrix()
-      renderer.setSize(window.innerWidth, window.innerHeight)
-    })
-    function animate() {
-      requestAnimationFrame(animate)
+    }
+    let resizeTimeout = null
+    const onResize = () => {
+      clearTimeout(resizeTimeout)
+      resizeTimeout = setTimeout(() => {
+        camera.aspect = window.innerWidth / window.innerHeight
+        camera.updateProjectionMatrix()
+        renderer.setSize(window.innerWidth, window.innerHeight)
+      }, 120)
+    }
+    const addRemover = (target, event, handler, options) => {
+      target.addEventListener(event, handler, options)
+      removers.push(() => target.removeEventListener(event, handler, options))
+    }
+    addRemover(window, 'wheel', onWheel, { passive: true })
+    addRemover(window, 'mousemove', onMouseMove)
+    addRemover(window, 'click', onClick)
+    addRemover(window, 'resize', onResize)
+    const onKeyDown = event => {
+      if (event.key === 'Escape' && selectedImage.value) selectedImage.value = null
+    }
+    addRemover(window, 'keydown', onKeyDown)
+    let rafId = null
+    const animate = () => {
+      rafId = requestAnimationFrame(animate)
       if (loading.value) return
       planesGroup.position.z += scrollSpeed
       scrollSpeed *= scrollDamp
       const cameraZ = camera.position.z
-      hoverTriggers.forEach(({ plane, hoverPlane }) => {
+      for (const { plane, hoverPlane } of hoverTriggers) {
         const worldZ = planesGroup.position.z + plane.position.z
         if (worldZ > cameraZ + spacingZ) {
           plane.position.z -= planes.length * spacingZ
           hoverPlane.position.z -= planes.length * spacingZ
-          shadowPlanes.get(plane).position.z -= planes.length * spacingZ
+          const shadow = shadowPlanes.get(plane)
+          if (shadow) shadow.position.z -= planes.length * spacingZ
         } else if (worldZ < cameraZ - planes.length * spacingZ) {
           plane.position.z += planes.length * spacingZ
           hoverPlane.position.z += planes.length * spacingZ
-          shadowPlanes.get(plane).position.z += planes.length * spacingZ
+          const shadow = shadowPlanes.get(plane)
+          if (shadow) shadow.position.z += planes.length * spacingZ
         }
-      })
+      }
       if (!isNavbarHovered.value && !selectedImage.value) {
         raycaster.setFromCamera(mouse, camera)
         const intersectPlanes = raycaster.intersectObjects(
@@ -600,11 +557,13 @@
           if (intersectedPlane && intersectedPlane !== currentHoveredPlane) {
             if (currentHoveredPlane) {
               gsap.to(currentHoveredPlane.position, { x: 0, duration: 0.3 })
-              gsap.to(shadowPlanes.get(currentHoveredPlane).scale, { x: 1, duration: 0.3 })
+              const prevShadow = shadowPlanes.get(currentHoveredPlane)
+              if (prevShadow) gsap.to(prevShadow.scale, { x: 1, duration: 0.3 })
             }
             currentHoveredPlane = intersectedPlane
             isAnimating = true
-            gsap.to(shadowPlanes.get(currentHoveredPlane).scale, { x: 1.01, duration: 0.9 })
+            const s = shadowPlanes.get(currentHoveredPlane)
+            if (s) gsap.to(s.scale, { x: 1.01, duration: 0.9 })
             hoveredLabel.value = planeLabels.get(currentHoveredPlane)
             topLeftText.value = planeInfos.get(currentHoveredPlane) || { info: '', description: '' }
             nextTick(() => {
@@ -644,7 +603,8 @@
             x: 0,
             duration: 0.3,
             onComplete: () => {
-              gsap.to(shadowPlanes.get(currentHoveredPlane).scale, { x: 1, duration: 0.3 })
+              const s = shadowPlanes.get(currentHoveredPlane)
+              if (s) gsap.to(s.scale, { x: 1, duration: 0.3 })
               currentHoveredPlane = null
               isAnimating = false
             }
@@ -660,7 +620,8 @@
           x: 0,
           duration: 0.3,
           onComplete: () => {
-            gsap.to(shadowPlanes.get(currentHoveredPlane).scale, { x: 1, duration: 0.3 })
+            const s = shadowPlanes.get(currentHoveredPlane)
+            if (s) gsap.to(s.scale, { x: 1, duration: 0.3 })
             currentHoveredPlane = null
             isAnimating = false
           }
@@ -670,9 +631,18 @@
         if (topLeftDiv.value) gsap.to(topLeftDiv.value, { opacity: 0, x: -50, duration: 0.3 })
         document.body.style.cursor = 'default'
       }
-      models.forEach(m => {})
       renderer.render(scene, camera)
     }
+    onBeforeUnmount(() => {
+      try {
+        cancelAnimationFrame(rafId)
+      } catch (e) {}
+      cancelAll()
+      try {
+        renderer.forceContextLoss?.()
+        renderer.dispose?.()
+      } catch (e) {}
+    })
   })
 </script>
 <style scoped>
@@ -683,18 +653,22 @@
     left: 0;
     z-index: 0;
   }
+
   .animate-pulse {
     animation: pulse 1.5s infinite;
   }
+
   @keyframes pulse {
     0%,
     100% {
       opacity: 1;
     }
+
     50% {
       opacity: 0.5;
     }
   }
+
   .canvas-wrapper {
     position: fixed;
     top: 0;
@@ -708,6 +682,7 @@
     background-color: black;
     z-index: 0;
   }
+
   .background-canvas {
     position: absolute;
     top: 0;
@@ -717,6 +692,7 @@
     z-index: 1;
     display: block;
   }
+
   .transition-overlay {
     display: flex;
     align-items: center;
