@@ -2,14 +2,14 @@
   <section class="bg-black hidden lg:block text-white relative w-full overflow-hidden">
     <div class="   ">
       <div
-        class="absolute inset-0 left-10 top-[-10] hidden md:flex z-0 w-full h-full pointer-events-none"
+        class="absolute inset-0 left-35 top-[-10] hidden md:flex z-0 w-full h-full pointer-events-none"
         v-html="appdevlines"
       ></div>
 
       <div
         class="relative z-10 px-7 flex flex-col items-center lg:flex-row h-[49.375rem] gap-12 lg:gap-0 mb-32"
       >
-        <div class="lg:w-1/2 md:fpl-10 flex items-center">
+        <div class="lg:w-1/2 md:pl-10 flex items-center">
           <div
             class="w-full text-center max-w-[41.1875rem] flex flex-col gap-6 mt-36 lg:text-start lg:pl-10 px-4 lg:px-0"
           >
@@ -33,18 +33,18 @@
         </div>
 
         <!-- Right Side -->
-        <div class="lg:w-1/2 items-center">
+        <div class="lg:w-1/2 2xl:ml-30 items-center">
           <div class="w-full max-w-[37.5rem]" v-html="appdevhero"></div>
         </div>
       </div>
 
-      <div class="relative z-10 flex flex-col 2xl:top-15 lg:flex-row gap-16 lg:gap-24 mb-32">
-        <div class="lg:w-1/2 hidden lg:flex justify-center">
-          <div class="w-full flex max-w-[37.5rem] 2xl:max-w-[50rem]" v-html="appdevhero2"></div>
+      <div class="relative z-10 flex flex-col 2xl:top-15 lg:flex-row gap-16 lg:gap-0 mb-32">
+        <div class="lg:w-1/2 hidden lg:flex px-30 justify-center">
+          <div class="w-full 2xl:max-w-[50rem]" v-html="appdevhero2"></div>
         </div>
 
         <div
-          class="fade-up lg:w-[32.5625rem] mt-[40rem] md:mt-0 flex flex-col text-center gap-6 mx-auto pt-3 lg:pt-12 xl:pt-36"
+          class="fade-up  lg:w-[32.5625rem] mt-[40rem] md:mt-0 flex flex-col text-center gap-6 mx-auto pt-3 lg:pt-12 xl:pt-36"
         >
           <h1 class="text-2xl 2xl:text-4xl font-semibold">
             <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent"
@@ -64,7 +64,7 @@
       <!-- Sections 1-5: Discovery, Design, etc. -->
       <div class="flex flex-col px-4 gap-15">
         <!-- Section 1 -->
-        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
+        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-19 lg:gap-38">
           <div class="fade-left flex flex-col gap-10 max-w-[31.625rem] text-white">
             <h1 class="text-3xl font-bold">
               Our
@@ -83,7 +83,7 @@
         </div>
 
         <!-- Section 2 -->
-        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
+        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-38">
           <div class="max-w-[37.5rem] hidden lg:flex" v-html="appdevmiddle1"></div>
           <div class="fade-right flex flex-col gap-8 max-w-[31.625rem] text-white">
             <h2 class="text-2xl font-semibold">2. Design</h2>
@@ -97,7 +97,7 @@
         </div>
 
         <!-- Section 3 -->
-        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
+        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-38">
           <div class="fade-left flex flex-col gap-8 max-w-[31.625rem] text-white">
             <h2 class="text-2xl font-semibold">3. Development</h2>
             <p class="font-light text-lg">
@@ -109,7 +109,7 @@
           <div class="max-w-[37.5rem] hidden md:flex" v-html="appdevmiddle2"></div>
         </div>
 
-        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
+        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-38">
           <!-- Rocket SVG -->
           <div v-html="appdevlast2"></div>
 
@@ -123,7 +123,7 @@
           </div>
         </div>
         <!-- Section 5 -->
-        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-24">
+        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-38">
           <div class="fade-right flex flex-col gap-8 max-w-[31.625rem] text-white">
             <h2 class="text-2xl font-semibold">5. Optimize for Growth</h2>
             <p class="font-light text-lg">
