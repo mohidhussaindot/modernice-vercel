@@ -16,9 +16,9 @@
           ></div>
         </ClientOnly>
 
-        <div class="flex justify-center">
+        <div class="flex  justify-center">
           <div
-            class="absolute z-30 inset-0 flex md:pt-[9rem] xl:pt-[18.125rem] lg:pt-[11.25rem] pl-4 sm:pl-6 md:pl-[3rem] lg:pl-[5rem] xl:pl-[7.1875rem]"
+            class="absolute z-30 inset-0 flex md:pt-[9rem] xl:pt-[18.125rem] lg:pt-[11.25rem] mx-auto sm:pl-6  max-w-7xl  "
           >
             <div
               class="text-white flex flex-col w-full max-w-none sm:max-w-[32rem] md:max-w-[29rem] xl:max-w-[34.875rem]"
@@ -56,7 +56,7 @@
             </div>
 
             <ClientOnly>
-              <div class="float-moon md:w-252 w-full" v-html="moonSVGRaw"></div>
+              <div class="float-moon md:w-252 2xl:w-[1200px] 2xl:h-[900px] md:h-[600px]  " v-html="moonSVGRaw"></div>
             </ClientOnly>
           </div>
         </div>
@@ -121,12 +121,12 @@
       <div
         ref="sectionRef"
         :class="[
-          'flex 2xl:mt-[-10rem] xl:mt-[-15rem] overflow-visible xl:px-[7.1875rem] px-4 md:pl-10 gap-12 md:gap-0 lg:gap-0 transition-opacity duration-700 relative z-20',
+          'flex 2xl:mt-[-10rem]  xl:mt-[-15rem] overflow-visible  max-w-7xl mx-auto md:pl-10 gap-12 md:gap-0 lg:gap-0 transition-opacity duration-700 relative z-20',
           fadeClassSection
         ]"
       >
         <div
-          class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 max-w-full xl:min-w-[500px] lg:w-[597px] md:w-[500px]"
+          class="flex flex-col gap-6  sm:gap-8 md:gap-10 lg:gap-12 max-w-full xl:min-w-[500px] lg:w-[597px] md:w-[500px]"
         >
           <h1
             class="font-semibold italic text-[1.75rem] sm:text-[2.125rem] md:text-[2rem] lg:text-[2.625rem] leading-tight"
@@ -537,7 +537,7 @@
 
   .float-moon {
     animation: float 3s ease-in-out infinite;
-    margin-top: -80px;
+    margin-top: 0px;
   }
 
   .fade-in {

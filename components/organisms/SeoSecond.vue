@@ -105,9 +105,9 @@
       ></div>
 
       <!-- Text Content -->
-      <div class="pl-10 flex">
+      <div class="pl-10 2xl:justify-center flex">
         <div
-          class="absolute fade-left w-[37.4375rem] top-[8.75rem] flex flex-col gap-[1.5rem] h-[16.25rem] z-10"
+          class="absolute fade-left  w-[37.4375rem] top-[8.75rem] flex flex-col gap-[1.5rem] h-[16.25rem] z-10"
         >
           <h1 class="italic text-[3.75rem] font-semibold">
             Unser
@@ -253,7 +253,7 @@
     </div>
   </section>
 
-  <div class="relative pl-[7.4375rem] hidden lg:flex h-[27.6875rem] w-full text-white bg-[#020111]">
+  <div class="relative pl-[7.4375rem] 2xl:justify-center hidden lg:flex h-[27.6875rem] w-full text-white bg-[#020111]">
     <div class="flex pt-10 h-full">
       <div class="fade-element w-full max-w-[35.75rem] px-6 text-center lg:text-left">
         <p class="text-[1.125rem] font-light">

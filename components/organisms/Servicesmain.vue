@@ -1,21 +1,21 @@
 <template>
   <div
-    class="w-full h-[400px] bg-black hidden lg:flex bg-no-repeat bg-cover bg-center"
+    class="w-full h-[400px]  bg-black hidden lg:flex bg-no-repeat bg-cover bg-center"
     style="background-image: url('/images/services-third.png')"
   ></div>
 
   <section
     ref="containerRef"
-    class="bg-black hidden lg:flex lg:h-[3717px] relative text-white overflow-hidden"
+    class="bg-black hidden  lg:flex lg:h-[3717px] relative text-white overflow-hidden"
   >
     <div
-      class="svg-wrapper w-full h-full pointer-events-none select-none transition-all duration-300"
+      class="svg-wrapper w-full h-full scale pointer-events-none select-none transition-all duration-300"
     >
       <div v-html="servicesMainBg"></div>
     </div>
 
     <div
-      class="fade-left absolute flex flex-col top-0 left-[273px] text-white max-w-[42.125rem] text-center md:text-left mx-auto md:mx-0"
+      class="fade-left absolute flex  flex-col top-0 2xl:left-[473px] text-white max-w-[42.125rem] text-center md:text-left mx-auto md:mx-0"
     >
       <h1 class="text-[2.5rem] font-serif font-lightbold">Phasen des Erfolgs</h1>
       <div class="mt-[2rem]">
@@ -29,9 +29,9 @@
     </div>
 
     <!-- Section 1 -->
-    <div class="absolute top-[403px]">
+    <div class="absolute 2xl:left-[473px] top-[403px]">
       <div
-        class="flex flex-col lg:gap-[14px] md:px-[3rem] lg:px-[3rem] xl:px-[7.5rem] text-white relative"
+        class="flex  flex-col lg:gap-[14px] md:px-[3rem] lg:px-[3rem] xl:px-[7.5rem] text-white relative"
       >
         <div class="flex lg:gap-0 xl:gap-[143px] items-center">
           <div
@@ -61,7 +61,7 @@
         </div>
 
         <div
-          class="flex relative pt-[130px] justify-between lg:gap-1 xl:gap-[4rem] flex-col md:flex-row"
+          class="flex relative  pt-[130px] justify-between lg:gap-1 xl:gap-[4rem] flex-col md:flex-row"
         >
           <!-- Image -->
           <div
@@ -86,7 +86,7 @@
     </div>
 
     <!-- Section 2 -->
-    <div class="absolute top-[1490px]">
+    <div class="absolute 2xl:left-[473px] top-[1490px]">
       <div
         class="flex flex-col lg:gap-[14px] md:px-[3rem] lg:px-[3rem] xl:px-[7.5rem] text-white relative"
       >
@@ -138,7 +138,7 @@
     </div>
 
     <!-- Section 3 -->
-    <div class="absolute top-[2372px] w-full flex flex-col gap-[6rem]">
+    <div class="absolute top-[2372px] max-w-[1600px] 2xl:left-[473px] w-full flex flex-col gap-[6rem]">
       <!-- Row 1 -->
       <div
         class="flex flex-col md:flex-row justify-between gap-[3rem] pt-[120px] px-4 md:px-[3rem] lg:px-[3.5rem] text-white"
@@ -158,7 +158,7 @@
 
         <!-- SVG/Image -->
         <div
-          class="relative w-full max-w-[33.117rem] h-[29.812rem] pt-[0.4375rem] hidden md:hidden lg:block mx-auto"
+          class="relative h-[29.812rem] pt-[0.4375rem] hidden md:hidden lg:block mx-auto"
         >
           <div class="absolute left-[5.8rem] w-full top-[14rem] pointer-events-none">
             <canvas ref="burstCanvas" class="w-full h-[10rem]"></canvas>
@@ -663,4 +663,14 @@
   .fade-out {
     opacity: 0 !important;
   }
+
+@media screen and (min-width: 2040px) {
+  .scale {
+    scale: 1.4;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40rem;
+    left: 40rem;
+  }
+}
 </style>

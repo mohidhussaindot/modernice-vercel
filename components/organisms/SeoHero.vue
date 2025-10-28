@@ -10,7 +10,7 @@
 
     <!-- Main Content -->
     <div
-      class="relative z-10 flex flex-col lg:flex-row md:gap-0 items-center 2xl:gap-50 gap-4 xl:gap-16"
+      class="relative z-10 flex 2xl:mx-auto flex-col lg:flex-row md:gap-0 items-center 2xl:gap-50 gap-4 xl:gap-16"
     >
       <!-- Text Column -->
       <div class="text-white min-w-[299px] flex-1 flex flex-col gap-8">
