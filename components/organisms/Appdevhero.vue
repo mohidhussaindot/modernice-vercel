@@ -1,46 +1,49 @@
 <template>
   <section class="bg-black hidden lg:block text-white relative w-full overflow-hidden">
     <div class="   ">
-      <div
-        class="absolute inset-0 left-35 top-[-10] hidden md:flex z-0 w-full h-full pointer-events-none"
-        v-html="appdevlines"
-      ></div>
+  <div
+  class="absolute inset-0 hidden md:flex z-0 w-full h-full pointer-events-none appdev-lines"
+  v-html="appdevlines"
+></div>
 
-      <div
-        class="relative z-10 px-7 flex flex-col items-center lg:flex-row h-[49.375rem] gap-12 lg:gap-0 mb-32"
-      >
-        <div class="lg:w-1/2 md:pl-10 flex items-center">
-          <div
-            class="w-full text-center max-w-[41.1875rem] flex flex-col gap-6 mt-36 lg:text-start lg:pl-10 px-4 lg:px-0"
-          >
-            <h1 class="text-5xl italic font-bold leading-tight">
-              <span
-                class="bg-gradient-to-r from-[#D539D3] to-[#D539D3] bg-clip-text text-transparent"
-                >App</span
-              >solute Genius. Custom
-              <span
-                class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent"
-                >App Development</span
-              >
-              Services for Your Business.
-            </h1>
-            <p class="text-lg leading-relaxed max-w-[600px]">
-              Looking for a cost-effective and convenient way to develop your hybrid app? Our hybrid
-              app development service combines the best of both worlds – the reach of a native app
-              with the ease of development of a web app.
-            </p>
-          </div>
-        </div>
 
-        <!-- Right Side -->
-        <div class="lg:w-1/2 2xl:ml-30 items-center">
-          <div class="w-full max-w-[37.5rem]" v-html="appdevhero"></div>
-        </div>
-      </div>
+<div
+  class="relative z-10 px-7 flex justify-center flex-col items-center lg:flex-row h-[49.375rem] gap-12 lg:gap-0 mb-32 custom-section mx-auto"
+>
+  <!-- Left Side -->
+  <div class="lg:w-1/2 md:pl-10 items-center">
+    <div
+      class="w-full text-center max-w-[41.1875rem] flex flex-col gap-6 mt-36 lg:text-start lg:pl-10 px-4 lg:px-0"
+    >
+      <h1 class="text-5xl italic font-bold leading-tight">
+        <span
+          class="bg-gradient-to-r from-[#D539D3] to-[#D539D3] bg-clip-text text-transparent"
+          >App</span
+        >solute Genius. Custom
+        <span
+          class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent"
+          >App Development</span
+        >
+        Services for Your Business.
+      </h1>
+      <p class="text-lg leading-relaxed max-w-[600px]">
+        Looking for a cost-effective and convenient way to develop your hybrid app? Our hybrid
+        app development service combines the best of both worlds – the reach of a native app
+        with the ease of development of a web app.
+      </p>
+    </div>
+  </div>
 
-      <div class="relative z-10 flex flex-col 2xl:top-15 lg:flex-row gap-16 lg:gap-0 mb-32">
-        <div class="lg:w-1/2 hidden lg:flex px-30 justify-center">
-          <div class="w-full 2xl:max-w-[50rem]" v-html="appdevhero2"></div>
+  <!-- Right Side -->
+  <div class="lg:w-1/2 2xl:ml-30 items-center">
+    <div class="w-full max-w-[37.5rem]" v-html="appdevhero"></div>
+  </div>
+</div>
+
+
+      <div class="relative z-10 flex flex-col 2xl:top-15 lg:flex-row gap-10 custom-section mx-auto lg:gap-0 mb-32">
+        <div class="lg:w-1/2 hidden lg:flex px-10 justify-center">
+          <div class="w-full  2xl:max-w-[50rem]" v-html="appdevhero2"></div>
         </div>
 
         <div
@@ -93,7 +96,7 @@
               guidelines and meets the needs of your users.
             </p>
           </div>
-          <div> </div>
+        
         </div>
 
         <!-- Section 3 -->
@@ -528,6 +531,57 @@
 </script>
 
 <style>
+
+.appdev-lines {
+  left: 0; /* Default position for small screens */
+}
+
+/* 2XL screens (≥1536px) */
+@media (min-width: 1536px) {
+  .appdev-lines {
+    left: 8rem; /* move slightly left */
+  }
+}
+
+@media (min-width: 1920px) {
+  .appdev-lines {
+    left: 32rem; /* move further left */
+    transform: scale(1.2); /* zoom in more */
+    top: 22rem;
+  }
+}
+
+.custom-section {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* LG (≥1024px) */
+@media (min-width: 1024px) {
+  .custom-section {
+    max-width: 1300px;
+  }
+}
+
+/* 2XL (≥1536px) */
+@media (min-width: 1536px) {
+  .custom-section {
+    max-width: 1500px;
+  }
+}
+
+/* 3XL (≥1920px) */
+@media (min-width: 1920px) {
+  .custom-section {
+    max-width: 1600px;
+  }
+}
+
+
+
+
   @keyframes floatRocket {
     0% {
       transform: translateY(0px);

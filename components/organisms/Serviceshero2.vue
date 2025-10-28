@@ -1,10 +1,10 @@
 <template>
   <div
     id="services-top"
-    class="relative min-h-screen hidden lg:flex bg-black overflow-hidden text-white"
+    class="relative min-h-[1000px] hidden lg:flex bg-black overflow-hidden text-white"
   >
     <div
-      class="absolute inset-0 w-full h-[800px] pointer-events-none z-0 overflow-hidden"
+      class="absolute inset-0 w-full pointer-events-none z-0 overflow-hidden"
       v-html="Seoherobg"
     />
 
@@ -18,7 +18,7 @@
           class="text-[2rem] md:text-[2.8rem] lg:text-[3.8rem] font-lightbold italic leading-[1.2]"
         >
           Von der ersten <span class="text-[#00FFB3]">Skizze</span><br />
-          bis zum 3etzten <span class="text-[#00FFB3]">Pixel</span>
+          bis zum letzten <span class="text-[#00FFB3]">Pixel</span>
         </h1>
 
         <p class="text-base lg:text-[1.125rem] font-light leading-relaxed">
@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <div class="flex-1 max-w-[34.5rem] w-full flex justify-center items-center">
+      <div class="flex-1 max-w-[34.5rem] w-full flex justify-center ">
         <div
           ref="servicesHeroRef"
           class="w-full h-auto pointer-events-none services-hero-svg"

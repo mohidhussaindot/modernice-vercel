@@ -10,28 +10,28 @@
     <div class="relative z-10">
       <!-- Hero Section -->
       <section
-        class="grid grid-cols-1 md:grid-cols-2 gap-[0.2rem] md:items-center px-6 lg:px-[7.8125rem] pt-30 md:pt-[8rem] lg:pt-[10rem]"
+        class="flex  xl:gap-[10rem] justify-center md:items-center  px-6 lg:px-[7.8125rem] pt-30 md:pt-[8rem] lg:pt-[10rem]"
       >
-        <div class="flex flex-col gap-[2rem] xl:w-[39.625rem]">
-          <h1 class="text-[2rem] lg:text-5xl font-semibold leading-tight">
+        <div class="flex flex-col gap-[2rem] 2xl:w-[40rem] lg:w-[120rem] md:w-[30rem] xl:w-[90.625rem]">
+          <h1 class="text-[2rem] xl:text-5xl lg:text-4xl font-semibold leading-tight">
             Maximize online sales with our custom <br />
             <span class="bg-gradient-to-r from-[#FFE501] to-[#FFA901] text-transparent bg-clip-text"
               >E-Commerce</span
             >
             strategy service.
           </h1>
-          <p class="lg:text-[1.5rem] text-[1rem] font-semilight">
+          <p class="xl:text-[1.5rem] lg:text-[1rem] font-semilight">
             Our e-commerce strategy service is designed to help businesses of all sizes and
             industries succeed in the world of online sales. Whether you're a B2C company looking to
             sell directly to consumers, or a B2B company looking to streamline your sales process,
             we can help you create a personalized e-commerce plan that meets your unique needs.
           </p>
         </div>
-        <div class="lg:w-full pt-[3rem]" v-html="Ecshero"></div>
+        <div class="2xl:w-100  lg:w-450 pt-[3rem]" v-html="Ecshero"></div>
       </section>
 
       <!-- "What's in store" Section -->
-      <section class="pt-[6rem] px-6 lg:px-[7.8125rem] xl:px-[8rem] 2xl:px-[10rem]">
+      <section class="pt-[6rem] px-6 lg:px-[7.8125rem] xl:px-[8rem] 2xl:px-[30rem]">
         <h2 class="text-4xl lg:text-5xl font-semibold mb-[2rem]">What's in store?</h2>
         <div
           class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-6 xl:gap-8 2xl:gap-10"
