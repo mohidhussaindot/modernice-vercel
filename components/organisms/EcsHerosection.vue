@@ -10,7 +10,7 @@
     <div class="relative z-10">
       <!-- Hero Section -->
       <section
-        class="flex  xl:gap-[10rem] justify-center md:items-center  px-6 lg:px-[7.8125rem] pt-30 md:pt-[8rem] lg:pt-[10rem]"
+        class="flex  xl:gap-[8rem]  md:items-center  px-6 xl:px-0 max-w-6xl mx-auto lg:px-[7.8125rem] pt-30 md:pt-[8rem] lg:pt-[10rem]"
       >
         <div class="flex flex-col gap-[2rem] 2xl:w-[40rem] lg:w-[120rem] md:w-[30rem] xl:w-[90.625rem]">
           <h1 class="text-[2rem] xl:text-5xl lg:text-4xl font-semibold leading-tight">
@@ -31,7 +31,7 @@
       </section>
 
       <!-- "What's in store" Section -->
-      <section class="pt-[6rem] px-6 lg:px-[7.8125rem] xl:px-[8rem] 2xl:px-[30rem]">
+      <section class="pt-[6rem] max-w-6xl mx-auto">
         <h2 class="text-4xl lg:text-5xl font-semibold mb-[2rem]">What's in store?</h2>
         <div
           class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-6 xl:gap-8 2xl:gap-10"
@@ -59,7 +59,7 @@
       </section>
 
       <section class="relative w-full text-white overflow-hidden pt-10">
-        <div class="relative z-10 flex flex-col items-center px-6">
+        <div class="relative z-10 flex flex-col items-center ">
           <div class="text-center w-full max-w-[39.625rem] text-[2.875rem] font-semibold">
             <h1>
               Ready to see how we do <br />
@@ -68,7 +68,7 @@
           </div>
 
           <div
-            class="w-full max-w-[82.4375rem] rounded-[0.75rem] bg-gradient-to-b from-[#FFB6013D]/24 to-[#FFB801A8]/26 border mt-10 border-amber-400 overflow-hidden"
+            class="w-full max-w-6xl rounded-[0.75rem] bg-gradient-to-b from-[#FFB6013D]/24 to-[#FFB801A8]/26 border mt-10 border-amber-400 overflow-hidden"
           >
             <div
               class="h-[2.5rem] flex items-center bg-gradient-to-b from-[#13121E] to-[#07052761] px-[0.5rem]"

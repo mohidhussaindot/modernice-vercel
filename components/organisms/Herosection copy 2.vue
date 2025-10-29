@@ -16,9 +16,9 @@
           ></div>
         </ClientOnly>
 
-        <div class="flex  justify-center">
+        <div class="flex  ">
           <div
-            class="absolute z-30 inset-0 flex md:pt-[9rem] xl:pt-[18.125rem] lg:pt-[11.25rem] mx-auto sm:pl-6  max-w-7xl  "
+            class="absolute z-30 inset-0 flex md:pt-[9rem] xl:pt-[18.125rem] lg:pt-[11.25rem] mx-auto sm:pl-6  max-w-6xl  "
           >
             <div
               class="text-white flex flex-col w-full max-w-none sm:max-w-[32rem] md:max-w-[29rem] xl:max-w-[34.875rem]"
@@ -66,10 +66,10 @@
       <div
         ref="cityRef"
         :class="[
-          'relative text-white overflow-hidden w-full grid place-items-center px-1 sm:px-1.5 transition-opacity duration-700'
+          'relative text-white overflow-hidden w-full grid place-items-center   max-w-6xl mx-auto transition-opacity duration-700'
         ]"
       >
-        <div class="w-full max-w-[65.9375rem]">
+        <div class="w-full  max-w-6xl">
           <div
             ref="cityImage"
             class="relative w-full xl:h-[61rem] h-[50rem] bg-no-repeat bg-contain bg-center bg-[url('/first-three-sect-img/city.png')] transition-opacity duration-1000 ease-in-out image-fade"
@@ -121,7 +121,7 @@
       <div
         ref="sectionRef"
         :class="[
-          'flex 2xl:mt-[-10rem]  xl:mt-[-15rem] overflow-visible  max-w-7xl mx-auto md:pl-10 gap-12 md:gap-0 lg:gap-0 transition-opacity duration-700 relative z-20',
+          'flex 2xl:mt-[-10rem]  xl:mt-[-15rem] overflow-visible  max-w-6xl mx-auto md:pl-10 gap-12 md:gap-0 lg:gap-0 transition-opacity duration-700 relative z-20',
           fadeClassSection
         ]"
       >
@@ -179,7 +179,7 @@
           ></div>
         </ClientOnly>
 
-        <div class="relative mx-auto max-w-7xl w-full z-10">
+        <div class="relative mx-auto max-w-6xl w-full z-10">
           <div class="relative flex justify-center items-center">
             <div
               class="relative z-10 md:top-[19.438rem] xl:top-[23.438rem] 2xl:top-[25.438rem] flex flex-col gap-[1.5rem] xl:w-[37.125rem] lg:w-[30rem] md:w-[30rem] max-h-[25.375rem]"

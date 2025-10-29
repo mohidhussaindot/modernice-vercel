@@ -8,12 +8,12 @@
 
 
 <div
-  class="relative z-10 px-7 flex justify-center flex-col items-center lg:flex-row h-[49.375rem] gap-12 lg:gap-0 mb-32 custom-section mx-auto"
+  class="relative z-10  flex justify-center flex-col items-center lg:flex-row h-[49.375rem] gap-12 lg:gap-0 mb-32 max-w-6xl mx-auto"
 >
   <!-- Left Side -->
-  <div class="lg:w-1/2 md:pl-10 items-center">
+  <div class="lg:w-1/2 items-center">
     <div
-      class="w-full text-center max-w-[41.1875rem] flex flex-col gap-6 mt-36 lg:text-start lg:pl-10 px-4 lg:px-0"
+      class="w-full text-center  flex flex-col gap-6 mt-36 lg:text-start "
     >
       <h1 class="text-5xl italic font-bold leading-tight">
         <span
@@ -35,19 +35,19 @@
   </div>
 
   <!-- Right Side -->
-  <div class="lg:w-1/2 2xl:ml-30 items-center">
+  <div class="lg:w-1/2 items-center">
     <div class="w-full max-w-[37.5rem]" v-html="appdevhero"></div>
   </div>
 </div>
 
 
-      <div class="relative z-10 flex flex-col 2xl:top-15 lg:flex-row gap-10 custom-section mx-auto lg:gap-0 mb-32">
-        <div class="lg:w-1/2 hidden lg:flex px-10 justify-center">
+      <div class="relative z-10 flex flex-col 2xl:top-15 lg:flex-row gap-10 max-w-6xl mx-auto lg:gap-0 mb-32">
+        <div class="lg:w-1/2 hidden lg:flex justify-center">
           <div class="w-full  2xl:max-w-[50rem]" v-html="appdevhero2"></div>
         </div>
 
         <div
-          class="fade-up  lg:w-[32.5625rem] mt-[40rem] md:mt-0 flex flex-col text-center gap-6 mx-auto pt-3 lg:pt-12 xl:pt-36"
+          class="fade-up  w-full mt-[40rem] md:mt-0 flex flex-col text-center gap-6  pt-3 lg:pt-12 xl:pt-36"
         >
           <h1 class="text-2xl 2xl:text-4xl font-semibold">
             <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent"
@@ -55,7 +55,7 @@
             >
             What does that mean?
           </h1>
-          <p class="text-lg 2xl:text-xl font-light max-w-[32.5rem] 2xl:max-w-[40rem] mx-auto">
+          <p class="text-lg 2xl:text-xl font-light  ">
             Don’t worry, the term hybrid within app development actually stands for a good thing.
             You see, unlike hybrid cars which combine the worst aspects of petrol and electric cars
             hybrid apps actually combine the best aspects of app and web development. This means you
@@ -65,10 +65,10 @@
       </div>
 
       <!-- Sections 1-5: Discovery, Design, etc. -->
-      <div class="flex flex-col px-4 gap-15">
+      <div class="flex flex-col max-w-6xl mx-auto gap-15">
         <!-- Section 1 -->
-        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-19 lg:gap-38">
-          <div class="fade-left flex flex-col gap-10 max-w-[31.625rem] text-white">
+        <div class="flex flex-col z-10 lg:flex-row    items-center gap-19 lg:gap-38">
+          <div class="fade-left flex flex-col gap-10  text-white">
             <h1 class="text-3xl font-bold">
               Our
               <span
@@ -86,9 +86,9 @@
         </div>
 
         <!-- Section 2 -->
-        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-38">
+        <div class="flex flex-col z-10 lg:flex-row  max-w-6xl mx-auto  items-center gap-16 lg:gap-38">
           <div class="max-w-[37.5rem] hidden lg:flex" v-html="appdevmiddle1"></div>
-          <div class="fade-right flex flex-col gap-8 max-w-[31.625rem] text-white">
+          <div class="fade-right flex flex-col gap-8  text-white">
             <h2 class="text-2xl font-semibold">2. Design</h2>
             <p class="font-light text-lg">
               Next, our team of designers creates wireframes and mockups to visualise the user flow
@@ -100,8 +100,8 @@
         </div>
 
         <!-- Section 3 -->
-        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-38">
-          <div class="fade-left flex flex-col gap-8 max-w-[31.625rem] text-white">
+        <div class="flex flex-col z-10 lg:flex-row  max-w-6xl mx-auto  items-center gap-16 lg:gap-38">
+          <div class="fade-left flex flex-col gap-8  text-white">
             <h2 class="text-2xl font-semibold">3. Development</h2>
             <p class="font-light text-lg">
               Using the latest tools and technologies, such as Flutter, we begin building the hybrid
@@ -112,11 +112,11 @@
           <div class="max-w-[37.5rem] hidden md:flex" v-html="appdevmiddle2"></div>
         </div>
 
-        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-38">
+        <div class="flex flex-col z-10 lg:flex-row  max-w-6xl mx-auto  items-center gap-16 lg:gap-38">
           <!-- Rocket SVG -->
           <div v-html="appdevlast2"></div>
 
-          <div class="fade-right flex flex-col gap-8 max-w-[31.625rem] text-white">
+          <div class="fade-right flex flex-col gap-8  text-white">
             <h2 class="text-2xl font-semibold">4. Testing and Launch</h2>
             <p class="font-light text-lg">
               Before launching the app, we conduct thorough testing to ensure that it is stable and
@@ -126,8 +126,8 @@
           </div>
         </div>
         <!-- Section 5 -->
-        <div class="flex flex-col z-10 lg:flex-row justify-center items-center gap-16 lg:gap-38">
-          <div class="fade-right flex flex-col gap-8 max-w-[31.625rem] text-white">
+        <div class="flex flex-col z-10 lg:flex-row  max-w-6xl mx-auto items-center gap-16 lg:gap-38">
+          <div class="fade-right flex flex-col gap-8  text-white">
             <h2 class="text-2xl font-semibold">5. Optimize for Growth</h2>
             <p class="font-light text-lg">
               After the app is launched, we provide ongoing support and maintenance to ensure that
@@ -548,34 +548,6 @@
     left: 32rem; /* move further left */
     transform: scale(1.2); /* zoom in more */
     top: 22rem;
-  }
-}
-
-.custom-section {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-/* LG (≥1024px) */
-@media (min-width: 1024px) {
-  .custom-section {
-    max-width: 1300px;
-  }
-}
-
-/* 2XL (≥1536px) */
-@media (min-width: 1536px) {
-  .custom-section {
-    max-width: 1500px;
-  }
-}
-
-/* 3XL (≥1920px) */
-@media (min-width: 1920px) {
-  .custom-section {
-    max-width: 1600px;
   }
 }
 

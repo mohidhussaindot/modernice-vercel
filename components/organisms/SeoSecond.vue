@@ -1,50 +1,57 @@
 <template>
-  <section class="relative h-[1082px] hidden lg:flex overflow-x-hidden text-white bg-[#020111]">
+  <section class="relative h-[1082px]  hidden lg:flex overflow-x-hidden text-white bg-[#020111]">
     <!-- Background SVG injected -->
     <div
       class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden"
       v-html="responsiveBg"
     ></div>
 
-    <div class="relative z-10 flex flex-col px-6 pt-10 gap-20 xl:gap-16 max-w-7xl mx-auto">
-      <div class="flex items-center xl:flex-row gap-10 xl:gap-6">
-        <div class="flex flex-col justify-start xl:w-1/2 gap-8 xl:gap-4 fade-left">
-          <h1 class="italic font-semibold text-[2.5rem] leading-snug">
-            <span
-              class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent"
-            >
-              Fundament des Erfolgs: </span
-            ><br />
-            Warum technische SEO entscheidend ist
-          </h1>
-          <p class="text-[1.25rem] font-light">
-            SEO ist mehr als kurzfristige Taktiken; es ist ein solides<br />
-            technisches Fundament, das nachhaltiges Wachstum<br />
-            ermöglicht.
-          </p>
-        </div>
+   <div class="relative z-10 max-w-6xl mx-auto flex flex-col gap-20 pt-10 px-4 md:px-6 lg:px-0">
 
-        <div
-          class="p-5 xl:w-[26.6875rem] xl:h-[27.875rem]"
-          ref="seoquestionmarkone"
-          v-html="Seoquestionmark"
-          @mouseenter="onQuestionMarksMouseEnter"
-          @mouseleave="onQuestionMarksMouseLeave"
-        ></div>
-      </div>
-
-      <div class="flex xl:flex-row gap-10 xl:gap-[13.5625rem]">
-        <div class="xl:w-[25.375rem] xl:h-[24.125rem]" ref="SeoSecondref" v-html="seosecond"></div>
-
-        <div class="font-light text-[1.25rem] flex items-center xl:w-[599px] fade-right">
-          <p>
-            Die besten SEO-Maßnahmen basieren auf einer starken technischen Infrastruktur, die sich
-            leicht anpassen lässt, um aktuellen und zukünftigen Suchmaschinenanforderungen gerecht
-            zu werden.
-          </p>
-        </div>
-      </div>
+  <!-- Section 1: Fundament des Erfolgs -->
+  <div class="flex flex-col lg:flex-row items-center gap-10 xl:gap-16">
+    <!-- Text Column -->
+    <div class="flex-1 max-w-[600px] fade-left">
+      <h1 class="italic font-semibold text-[2.5rem] leading-snug">
+        <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
+          Fundament des Erfolgs:
+        </span>
+        <br />
+        Warum technische SEO entscheidend ist
+      </h1>
+      <p class="text-[1.25rem] font-light mt-4">
+        SEO ist mehr als kurzfristige Taktiken; es ist ein solides
+        technisches Fundament, das nachhaltiges Wachstum ermöglicht.
+      </p>
     </div>
+
+    <!-- Question Mark SVG -->
+    <div
+      class="xl:w-[26.6875rem] xl:h-[27.875rem] block "
+      ref="seoquestionmarkone"
+      v-html="Seoquestionmark"
+      @mouseenter="onQuestionMarksMouseEnter"
+      @mouseleave="onQuestionMarksMouseLeave"
+    ></div>
+  </div>
+
+  <!-- Section 2: Second SEO Content -->
+  <div class="flex flex-col lg:flex-row items-center gap-10 xl:gap-[13.5625rem]">
+    <!-- Second SVG -->
+    <div class="xl:w-[25.375rem] xl:h-[24.125rem] block flex-shrink-0" ref="SeoSecondref" v-html="seosecond"></div>
+
+    <!-- Text Column -->
+    <div class="flex-1 font-light text-[1.25rem] fade-right">
+      <p>
+        Die besten SEO-Maßnahmen basieren auf einer starken technischen Infrastruktur, die sich
+        leicht anpassen lässt, um aktuellen und zukünftigen Suchmaschinenanforderungen gerecht
+        zu werden.
+      </p>
+    </div>
+  </div>
+
+</div>
+
   </section>
 
   <section class="relative hidden lg:flex overflow-hidden text-white bg-[#020111] h-[52.3125rem]">
@@ -105,7 +112,7 @@
       ></div>
 
       <!-- Text Content -->
-      <div class="pl-10 2xl:justify-center flex">
+      <div class="justify-center flex">
         <div
           class="absolute fade-left  w-[37.4375rem] top-[8.75rem] flex flex-col gap-[1.5rem] h-[16.25rem] z-10"
         >
@@ -128,7 +135,7 @@
   </section>
 
   <section
-    class="relative overflow-hidden hidden lg:flex 2xl:h-[2200.495361328125px] lg:h-[2050.495361328125px] text-white bg-[#020111] bg-no-repeat bg-[length:100%]"
+    class="relative overflow-hidden  hidden lg:flex 2xl:h-[2200.495361328125px] lg:h-[2050.495361328125px] text-white bg-[#020111] bg-no-repeat bg-[length:100%]"
   >
     <!-- Shared SVG Background -->
     <div
@@ -137,10 +144,10 @@
     ></div>
 
     <div
-      class="relative z-10 flex flex-col 2xl:gap-[270px] lg:gap-[200px] pt-24 pb-16 max-w-[1440px] mx-auto"
+      class="relative z-10 flex flex-col  2xl:gap-[270px] lg:gap-[200px] pt-24 pb-16  max-w-6xl mx-auto"
     >
       <!-- First Row: Analyse des Ist-Zustands -->
-      <div class="flex flex-col lg:px-5 lg:flex-row items-center gap-[400px]">
+      <div class="flex flex-col lg:flex-row items-center gap-[13.5rem]">
         <div class="w-full xl:w-[32rem] fade-left flex flex-col gap-5">
           <h1 class="text-[2.5rem] italic font-semibold">Analyse des Ist-Zustands</h1>
           <p class="text-[1.125rem] font-light">
@@ -161,7 +168,7 @@
       </div>
 
       <!-- Second Row: Technische SEO-Optimierung -->
-      <div class="flex flex-col lg:px-5 lg:flex-row justify-between items-center gap-12">
+      <div class="flex flex-col  lg:flex-row items-center gap-12">
         <div class="w-full max-w-[32.9375rem]" ref="SeoFifthref" v-html="seofifth"></div>
 
         <div class="w-full max-w-[38.1875rem] fade-right flex flex-col gap-5">
@@ -177,7 +184,7 @@
       </div>
 
       <!-- Third Row: Keyword- und Wettbewerbsanalyse -->
-      <div class="flex flex-col lg:px-5 lg:flex-row justify-between items-center gap-12">
+      <div class="flex flex-col lg:px-5 xl:px-0 lg:flex-row justify-between items-center gap-12">
         <div class="w-full max-w-[35.75rem] fade-left flex flex-col gap-8">
           <h1 class="text-[2.5rem] italic font-semibold">Keyworde- und Wettbewerbsanalyse</h1>
           <p class="text-[1.125rem] font-light">
@@ -197,7 +204,7 @@
 
   <!-- 6th Section -->
   <section class="min-h-screen hidden lg:flex overflow-hidden text-white pt-5 bg-[#020111]">
-    <div class="flex flex-col gap-24 max-w-7xl mx-auto px-6">
+    <div class="flex flex-col gap-24 max-w-6xl mx-auto md:px-6 lg:px-0">
       <!-- Row 1: Text left / Image right -->
       <div class="flex flex-row justify-between items-center gap-12 fade-left">
         <div class="w-full max-w-[35.75rem] flex flex-col gap-8">
@@ -253,7 +260,7 @@
     </div>
   </section>
 
-  <div class="relative pl-[7.4375rem] 2xl:justify-center hidden lg:flex h-[27.6875rem] w-full text-white bg-[#020111]">
+  <div class="relative  justify-center hidden lg:flex h-[27.6875rem] w-full text-white bg-[#020111]">
     <div class="flex pt-10 h-full">
       <div class="fade-element w-full max-w-[35.75rem] px-6 text-center lg:text-left">
         <p class="text-[1.125rem] font-light">

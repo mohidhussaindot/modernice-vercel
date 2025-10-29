@@ -1,62 +1,65 @@
 <template>
-  <section
-    class="bg-[#020111] hidden lg:flex relative 2xl:h-[1000px] lg:h-[837px] overflow-hidden py-24 px-6 md:px-16 lg:px-10 xl:px-23"
+<section
+  class="bg-[#020111] hidden lg:flex relative 2xl:h-[1000px] lg:h-[837px] overflow-hidden py-24 px-6 md:px-16 lg:px-0"
+>
+  <div
+    class="absolute inset-0 w-full h-full z-0 overflow-hidden"
+    ref="seoLinesContainer"
+    v-html="seoherolines"
+  ></div>
+
+  <!-- Main Content -->
+  <div
+    class="relative z-10 flex flex-col lg:flex-row items-center w-full max-w-6xl mx-auto gap-16"
   >
-    <div
-      class="absolute inset-0 w-full h-full z-0 overflow-hidden"
-      ref="seoLinesContainer"
-      v-html="seoherolines"
-    ></div>
-
-    <!-- Main Content -->
-    <div
-      class="relative z-10 flex 2xl:mx-auto flex-col lg:flex-row md:gap-0 items-center 2xl:gap-50 gap-4 xl:gap-16"
-    >
-      <!-- Text Column -->
-      <div class="text-white min-w-[299px] flex-1 flex flex-col gap-8">
-        <h1
-          class="text-[2.5rem] md:text-[3rem] xl:text-[3.75rem] italic font-lightbold leading-tight"
+    <!-- Text Column -->
+    <div class="text-white flex-1 flex flex-col gap-8 min-w-[299px]">
+      <h1
+        class="text-[2.5rem] md:text-[3rem] xl:text-[3.75rem] italic font-lightbold leading-tight"
+      >
+        Bereit für den
+        <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
+          Startschuss
+        </span>
+        nach
+        <span
+          class="bg-gradient-to-r from-[#25CDDA] via-[#01A3FF] to-[#1EC5E1] bg-clip-text text-transparent"
         >
-          Bereit für den
-          <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
-            Startschuss
-          </span>
-          nach
+          Oben?
+        </span>
+      </h1>
+
+      <p class="font-light text-[1.425rem] w-full max-w-full">
+        Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive
+        SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein [after-thought] sein.
+      </p>
+
+      <div
+        class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] hover:from-[#25CDDA] hover:to-[#01A3FF]"
+      >
+        <Button
+          class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+        >
           <span
-            class="bg-gradient-to-r from-[#25CDDA] via-[#01A3FF] to-[#1EC5E1] bg-clip-text text-transparent"
+            class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] text-transparent bg-clip-text duration-300"
           >
-            Oben?
+            Startbefehl geben
           </span>
-        </h1>
-
-        <p class="font-light text-[1.425rem] max-w-[37.5rem]">
-          Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive
-          SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein [after-thought] sein.
-        </p>
-
-        <div
-          class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] hover:from-[#25CDDA] hover:to-[#01A3FF]"
-        >
-          <Button
-            class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-          >
-            <span
-              class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] text-transparent bg-clip-text duration-300"
-              >Startbefehl geben</span
-            >
-          </Button>
-        </div>
-      </div>
-
-      <div class="flex-1 w-full">
-        <div
-          ref="seocharacter"
-          v-html="Seocharacter"
-          class="w-full xl:h-auto pointer-events-none"
-        />
+        </Button>
       </div>
     </div>
-  </section>
+
+    <!-- Illustration Column -->
+    <div class="flex-1 w-full max-w-[600px]">
+      <div
+        ref="seocharacter"
+        v-html="Seocharacter"
+        class="w-full xl:h-auto pointer-events-none"
+      />
+    </div>
+  </div>
+</section>
+
 
   <!-- Mobile version, hidden on lg and above -->
   <section class="block lg:hidden bg-[#020111] text-white pt-20 px-6 relative">
