@@ -1,12 +1,12 @@
 <template>
   <div
-    class="w-full h-[400px]  bg-black hidden lg:flex bg-no-repeat bg-cover bg-center"
+    class="w-full h-[400px] bg-black hidden lg:flex bg-no-repeat bg-cover bg-center"
     style="background-image: url('/images/services-third.png')"
   ></div>
 
   <section
     ref="containerRef"
-    class="bg-black hidden  lg:flex lg:h-[3717px] relative text-white overflow-hidden"
+    class="bg-black hidden lg:flex lg:h-[3717px] relative text-white overflow-hidden"
   >
     <div
       class="svg-wrapper w-full h-full scale pointer-events-none select-none transition-all duration-300"
@@ -14,56 +14,52 @@
       <div v-html="servicesMainBg"></div>
     </div>
 
-
-  <div
-    class="fade-left absolute top-0 left-1/2 -translate-x-1/2 flex flex-col text-white text-center md:text-left max-w-6xl  lg:px-4 xl:px-0 md:px-6"
-  >
-    <h1 class="text-[2.5rem] font-serif font-lightbold">Phasen des Erfolgs</h1>
-    <div class="mt-[2rem]">
-      <p class="text-[1.25rem] font-light">
-        Wir lassen uns nicht von vorgefertigten Abläufen leiten, sondern gestalten den Weg
-        gemeinsam mit Dir – so vielseitig und einzigartig wie Dein Projekt es erfordert. Dabei
-        durchlaufen wir verschiedene Stationen, um sicherzustellen, dass Deine Website funktional
-        und wirkungsvoll ist.
-      </p>
-    </div>
-  </div>
-
-
-
-    <<!-- Section 1 -->
-<div class="absolute top-[403px] w-full">
-  <div class="max-w-6xl mx-auto flex flex-col lg:gap-[14px] text-white relative">
-    <div class="flex lg:gap-0 xl:gap-[143px] items-center">
-      <div
-        class="pt-[152px] fade-left flex flex-col gap-[1.5rem] md:text-center lg:text-start w-full max-w-full  lg:px-4 xl:px-0 md:max-w-[640px]  lg:max-w-[27.13rem] xl:max-w-[32.13rem]"
-      >
-        <h1 class="font-lightbold text-[2rem] font-serif">Quellen der Inspiration</h1>
-        <p class="font-light text-[1.13rem]">
-          Hinter jeder beeindruckenden Website steht eine kraftvolle Idee. In der Anfangsphase
-          werden die Visionen und Ziele ausgelotet und so der Grundstein für ein kreatives und
-          zielführendes Webkonzept gelegt.
+    <div
+      class="fade-left absolute top-0 left-1/2 -translate-x-1/2 flex flex-col text-white text-center md:text-left max-w-6xl lg:px-4 xl:px-0 md:px-6"
+    >
+      <h1 class="text-[2.5rem] font-serif font-lightbold">Phasen des Erfolgs</h1>
+      <div class="mt-[2rem]">
+        <p class="text-[1.25rem] font-light">
+          Wir lassen uns nicht von vorgefertigten Abläufen leiten, sondern gestalten den Weg
+          gemeinsam mit Dir – so vielseitig und einzigartig wie Dein Projekt es erfordert. Dabei
+          durchlaufen wir verschiedene Stationen, um sicherzustellen, dass Deine Website funktional
+          und wirkungsvoll ist.
         </p>
       </div>
-
-      <div class="relative pt-[71px] w-[32.94rem] h-[32.94rem] hidden md:hidden lg:flex">
-        <NuxtImg
-          src="/images/services4shine.png"
-          alt="services4thimage"
-          class="absolute left-[62px] z-0 w-[27.53rem] h-[22rem] object-contain"
-          style="transform: rotate(-29.69deg)"
-        />
-        <div
-          v-html="servicesfourth"
-          ref="servicesFourthContainer"
-          class="relative z-10 w-full h-full"
-        ></div>
-      </div>
     </div>
 
+    <<!-- Section 1 -->
+    <div class="absolute top-[403px] w-full">
+      <div class="max-w-6xl mx-auto flex flex-col lg:gap-[14px] text-white relative">
+        <div class="flex lg:gap-0 xl:gap-[143px] items-center">
+          <div
+            class="pt-[152px] fade-left flex flex-col gap-[1.5rem] md:text-center lg:text-start w-full max-w-full lg:px-4 xl:px-0 md:max-w-[640px] lg:max-w-[27.13rem] xl:max-w-[32.13rem]"
+          >
+            <h1 class="font-lightbold text-[2rem] font-serif">Quellen der Inspiration</h1>
+            <p class="font-light text-[1.13rem]">
+              Hinter jeder beeindruckenden Website steht eine kraftvolle Idee. In der Anfangsphase
+              werden die Visionen und Ziele ausgelotet und so der Grundstein für ein kreatives und
+              zielführendes Webkonzept gelegt.
+            </p>
+          </div>
+
+          <div class="relative pt-[71px] w-[32.94rem] h-[32.94rem] hidden md:hidden lg:flex">
+            <NuxtImg
+              src="/images/services4shine.png"
+              alt="services4thimage"
+              class="absolute left-[62px] z-0 w-[27.53rem] h-[22rem] object-contain"
+              style="transform: rotate(-29.69deg)"
+            />
+            <div
+              v-html="servicesfourth"
+              ref="servicesFourthContainer"
+              class="relative z-10 w-full h-full"
+            ></div>
+          </div>
+        </div>
 
         <div
-          class="flex relative  pt-[130px] justify-between lg:gap-1 xl:gap-[4rem] flex-col md:flex-row"
+          class="flex relative pt-[130px] justify-between lg:gap-1 xl:gap-[4rem] flex-col md:flex-row"
         >
           <!-- Image -->
           <div
@@ -74,7 +70,7 @@
 
           <!-- Text -->
           <div
-            class="pt-[152px] fade-right flex flex-col gap-[1.5rem] md:text-center lg:text-start ,md:items-center w-full max-w-full  lg:px-4 xl:px-0 md:max-w-[640px]  lg:max-w-[27.13rem] xl:max-w-[32.13rem]"
+            class="pt-[152px] fade-right flex flex-col gap-[1.5rem] md:text-center lg:text-start ,md:items-center w-full max-w-full lg:px-4 xl:px-0 md:max-w-[640px] lg:max-w-[27.13rem] xl:max-w-[32.13rem]"
           >
             <h1 class="font-lightbold text-[2rem] font-serif">Routenplanung</h1>
             <p class="font-light text-[1.13rem]">
@@ -87,116 +83,111 @@
       </div>
     </div>
 
-  <!-- Section -->
-<div class="absolute top-[1490px] w-full">
-  <div class="max-w-6xl mx-auto flex flex-col lg:gap-[14px]  text-white relative">
-    
-    <!-- First Row -->
-    <div class="flex lg:gap-0 xl:gap-[143px] items-start">
-      <div
-        class="pt-[152px] flex flex-col gap-[1.5rem] md:text-center lg:text-start md:items-center w-full max-w-full  lg:px-4 xl:px-0 md:max-w-[640px]  lg:max-w-[27.13rem] xl:max-w-[32.13rem]"
-      >
-        <h1 class="font-lightbold text-[2rem] font-serif">Sterne zum Leuchten bringen [WIP]</h1>
-        <p class="font-light text-[1.125rem]">
-          In dieser Phase kommt unsere kreative und technische Expertise zum Einsatz, um eine
-          lebendige und funktionale Website zu gestalten. Hierbei steht die Verbindung von
-          ästhetischer Erscheinung und solider technischer Basis im Vordergrund.
-        </p>
-      </div>
+    <!-- Section -->
+    <div class="absolute top-[1490px] w-full">
+      <div class="max-w-6xl mx-auto flex flex-col lg:gap-[14px] text-white relative">
+        <!-- First Row -->
+        <div class="flex lg:gap-0 xl:gap-[143px] items-start">
+          <div
+            class="pt-[152px] flex flex-col gap-[1.5rem] md:text-center lg:text-start md:items-center w-full max-w-full lg:px-4 xl:px-0 md:max-w-[640px] lg:max-w-[27.13rem] xl:max-w-[32.13rem]"
+          >
+            <h1 class="font-lightbold text-[2rem] font-serif">Sterne zum Leuchten bringen [WIP]</h1>
+            <p class="font-light text-[1.125rem]">
+              In dieser Phase kommt unsere kreative und technische Expertise zum Einsatz, um eine
+              lebendige und funktionale Website zu gestalten. Hierbei steht die Verbindung von
+              ästhetischer Erscheinung und solider technischer Basis im Vordergrund.
+            </p>
+          </div>
 
-      <!-- Image -->
-      <div class="relative pt-[71px] w-[34.946rem] h-[29.787rem] hidden md:hidden lg:flex">
-        <NuxtImg
-          src="/images/services5-1.png"
-          alt="Visual representation of route planning"
-          class="w-full h-full object-contain"
-        />
-      </div>
-    </div>
-
-    <!-- Second Row -->
-    <div class="flex relative justify-between lg:gap-1 xl:gap-[4rem] flex-col md:flex-row">
-      <div class="w-[31.125rem] h-[29.5625rem] hidden md:hidden lg:flex pt-2">
-        <NuxtImg
-          src="/images/services-5-2.png"
-          alt="Illustration supporting route planning details"
-          class="w-full h-full object-contain"
-        />
-      </div>
-
-      <!-- Text -->
-      <div
-        class="pt-[152px] flex flex-col gap-[1.5rem] md:text-center lg:text-start fade-right w-full max-w-full  lg:px-4 xl:px-0 md:max-w-[640px]  lg:max-w-[27.13rem] xl:max-w-[32.13rem]"
-      >
-        <h1 class="font-lightbold text-[2rem] font-serif">Qualität im Fokus</h1>
-        <p class="font-light text-[1.125rem]">
-          Durch ausgiebige Tests wird sichergestellt, dass Deine Website in allen Bereichen –
-          von der Nutzererfahrung bis hin zur Performance und Darstellung auf verschiedenen
-          Endgeräten – reibungslos funktioniert. Gezielte Optimierungen gewährleisten hierbei
-          die bestmögliche Umsetzung.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-   <!-- Section 3 -->
-<div class="absolute top-[2372px] w-full">
-  <div class="max-w-6xl mx-auto flex flex-col gap-[6rem]">
-    
-    <!-- Row 1 -->
-    <div class="flex flex-col md:flex-row justify-between gap-[3rem] pt-[120px]  text-white">
-      <!-- Text -->
-      <div
-        class="pt-[152px] flex flex-col gap-[1.5rem]  text-start lg: lg:px-4 xl:px-0  w-full max-w-full  fade-left md:max-w-[640px]  lg:max-w-[27.13rem] xl:max-w-[32.13rem] mx-auto md:mx-0"
-      >
-        <h1 class="font-lightbold text-[2rem] font-serif">Live-Schaltung [WIP]</h1>
-        <p class="font-light text-[1.125rem]">
-          Nach sorgfältiger Vorbereitung und Optimierung geht sie live und nimmt ihren Platz in
-          der digitalen Landschaft ein. Von diesem Moment an beginnt sie, die Nutzer zu
-          begeistern, wichtige Verbindungen zu knüpfen und Deine Botschaft effektiv zu
-          kommunizieren.
-        </p>
-      </div>
-
-      <!-- SVG/Image -->
-      <div class="relative h-[29.812rem] pt-[0.4375rem] hidden md:hidden lg:block mx-auto">
-        <div class="absolute left-[5.8rem] w-full top-[14rem] pointer-events-none">
-          <canvas ref="burstCanvas" class="w-full h-[10rem]"></canvas>
+          <!-- Image -->
+          <div class="relative pt-[71px] w-[34.946rem] h-[29.787rem] hidden md:hidden lg:flex">
+            <NuxtImg
+              src="/images/services5-1.png"
+              alt="Visual representation of route planning"
+              class="w-full h-full object-contain"
+            />
+          </div>
         </div>
-        <div ref="svgContainer" v-html="svgContent" class="relative w-full h-full z-10"></div>
+
+        <!-- Second Row -->
+        <div class="flex relative justify-between lg:gap-1 xl:gap-[4rem] flex-col md:flex-row">
+          <div class="w-[31.125rem] h-[29.5625rem] hidden md:hidden lg:flex pt-2">
+            <NuxtImg
+              src="/images/services-5-2.png"
+              alt="Illustration supporting route planning details"
+              class="w-full h-full object-contain"
+            />
+          </div>
+
+          <!-- Text -->
+          <div
+            class="pt-[152px] flex flex-col gap-[1.5rem] md:text-center lg:text-start fade-right w-full max-w-full lg:px-4 xl:px-0 md:max-w-[640px] lg:max-w-[27.13rem] xl:max-w-[32.13rem]"
+          >
+            <h1 class="font-lightbold text-[2rem] font-serif">Qualität im Fokus</h1>
+            <p class="font-light text-[1.125rem]">
+              Durch ausgiebige Tests wird sichergestellt, dass Deine Website in allen Bereichen –
+              von der Nutzererfahrung bis hin zur Performance und Darstellung auf verschiedenen
+              Endgeräten – reibungslos funktioniert. Gezielte Optimierungen gewährleisten hierbei
+              die bestmögliche Umsetzung.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Row 2 -->
-    <div class="flex flex-col md:flex-row justify-start gap-[9rem]  text-white">
-      <!-- Image -->
-      <div class="w-full max-w-[33.438rem] h-[30.1875rem] hidden md:hidden lg:block">
-        <NuxtImg
-          src="/images/services-5-d-2.png"
-          alt="Illustration showing continuous website optimization"
-          class="w-full h-full object-contain"
-        />
-      </div>
+    <!-- Section 3 -->
+    <div class="absolute top-[2372px] w-full">
+      <div class="max-w-6xl mx-auto flex flex-col gap-[6rem]">
+        <!-- Row 1 -->
+        <div class="flex flex-col md:flex-row justify-between gap-[3rem] pt-[120px] text-white">
+          <!-- Text -->
+          <div
+            class="pt-[152px] flex flex-col gap-[1.5rem] text-start lg: lg:px-4 xl:px-0 w-full max-w-full fade-left md:max-w-[640px] lg:max-w-[27.13rem] xl:max-w-[32.13rem] mx-auto md:mx-0"
+          >
+            <h1 class="font-lightbold text-[2rem] font-serif">Live-Schaltung [WIP]</h1>
+            <p class="font-light text-[1.125rem]">
+              Nach sorgfältiger Vorbereitung und Optimierung geht sie live und nimmt ihren Platz in
+              der digitalen Landschaft ein. Von diesem Moment an beginnt sie, die Nutzer zu
+              begeistern, wichtige Verbindungen zu knüpfen und Deine Botschaft effektiv zu
+              kommunizieren.
+            </p>
+          </div>
 
-      <!-- Text -->
-      <div
-        class="xl:pt-[152px] lg:pt-[80px] flex flex-col gap-[1.5rem] md:text-center lg:text-start  w-full max-w-full  fade-right md:max-w-[640px]  lg:max-w-[27.13rem] xl:max-w-[32.13rem] mx-auto md:mx-0"
-      >
-        <h1 class="font-lightbold text-[2rem] font-serif">Perfektion durch Iteration</h1>
-        <p class="font-light text-[1.125rem]">
-          Mit der erfolgreichen Veröffentlichung muss die Reise nicht enden. Kontinuierliche
-          Optimierungen und datenbasierte Analysen können dafür sorgen, dass Deine Website stets
-          eine hohe Sichtbarkeit und Leistungsfähigkeit aufweist, um ihr Wachstum weiter
-          voranzutreiben.
-        </p>
+          <!-- SVG/Image -->
+          <div class="relative h-[29.812rem] pt-[0.4375rem] hidden md:hidden lg:block mx-auto">
+            <div class="absolute left-[5.8rem] w-full top-[14rem] pointer-events-none">
+              <canvas ref="burstCanvas" class="w-full h-[10rem]"></canvas>
+            </div>
+            <div ref="svgContainer" v-html="svgContent" class="relative w-full h-full z-10"></div>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="flex flex-col md:flex-row justify-start gap-[9rem] text-white">
+          <!-- Image -->
+          <div class="w-full max-w-[33.438rem] h-[30.1875rem] hidden md:hidden lg:block">
+            <NuxtImg
+              src="/images/services-5-d-2.png"
+              alt="Illustration showing continuous website optimization"
+              class="w-full h-full object-contain"
+            />
+          </div>
+
+          <!-- Text -->
+          <div
+            class="xl:pt-[152px] lg:pt-[80px] flex flex-col gap-[1.5rem] md:text-center lg:text-start w-full max-w-full fade-right md:max-w-[640px] lg:max-w-[27.13rem] xl:max-w-[32.13rem] mx-auto md:mx-0"
+          >
+            <h1 class="font-lightbold text-[2rem] font-serif">Perfektion durch Iteration</h1>
+            <p class="font-light text-[1.125rem]">
+              Mit der erfolgreichen Veröffentlichung muss die Reise nicht enden. Kontinuierliche
+              Optimierungen und datenbasierte Analysen können dafür sorgen, dass Deine Website stets
+              eine hohe Sichtbarkeit und Leistungsfähigkeit aufweist, um ihr Wachstum weiter
+              voranzutreiben.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
   </section>
 
   <section
@@ -667,13 +658,13 @@
     opacity: 0 !important;
   }
 
-@media screen and (min-width: 2040px) {
-  .scale {
-    scale: 1.4;
-    margin-left: auto;
-    margin-right: auto;
-    top: 40rem;
-    left: 40rem;
+  @media screen and (min-width: 2040px) {
+    .scale {
+      scale: 1.4;
+      margin-left: auto;
+      margin-right: auto;
+      top: 40rem;
+      left: 40rem;
+    }
   }
-}
 </style>

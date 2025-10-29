@@ -10,9 +10,11 @@
     <div class="relative z-10">
       <!-- Hero Section -->
       <section
-        class="flex  xl:gap-[8rem]  md:items-center  px-6 xl:px-0 max-w-6xl mx-auto lg:px-[7.8125rem] pt-30 md:pt-[8rem] lg:pt-[10rem]"
+        class="flex xl:gap-[8rem] md:items-center px-6 xl:px-0 max-w-6xl mx-auto lg:px-[7.8125rem] pt-30 md:pt-[8rem] lg:pt-[10rem]"
       >
-        <div class="flex flex-col gap-[2rem] 2xl:w-[40rem] lg:w-[120rem] md:w-[30rem] xl:w-[90.625rem]">
+        <div
+          class="flex flex-col gap-[2rem] 2xl:w-[40rem] lg:w-[120rem] md:w-[30rem] xl:w-[90.625rem]"
+        >
           <h1 class="text-[2rem] xl:text-5xl lg:text-4xl font-semibold leading-tight">
             Maximize online sales with our custom <br />
             <span class="bg-gradient-to-r from-[#FFE501] to-[#FFA901] text-transparent bg-clip-text"
@@ -27,7 +29,7 @@
             we can help you create a personalized e-commerce plan that meets your unique needs.
           </p>
         </div>
-        <div class="2xl:w-100  lg:w-450 pt-[3rem]" v-html="Ecshero"></div>
+        <div class="2xl:w-100 lg:w-450 pt-[3rem]" v-html="Ecshero"></div>
       </section>
 
       <!-- "What's in store" Section -->
@@ -59,7 +61,7 @@
       </section>
 
       <section class="relative w-full text-white overflow-hidden pt-10">
-        <div class="relative z-10 flex flex-col items-center ">
+        <div class="relative z-10 flex flex-col items-center">
           <div class="text-center w-full max-w-[39.625rem] text-[2.875rem] font-semibold">
             <h1>
               Ready to see how we do <br />

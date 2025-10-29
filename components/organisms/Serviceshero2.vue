@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <div class="flex-1 max-w-[34.5rem] w-full flex justify-center ">
+      <div class="flex-1 max-w-[34.5rem] w-full flex justify-center">
         <div
           ref="servicesHeroRef"
           class="w-full h-auto pointer-events-none services-hero-svg"

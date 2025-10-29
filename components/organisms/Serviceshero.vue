@@ -20,10 +20,7 @@
     </div>
 
     <div ref="pinWrapRef" class="relative z-20 w-full flex mx-auto max-w-6xl justify-center">
-      <div
-        ref="contentRef"
-        class="relative scale-[0.5] pb-2 origin-center z-20 max-w-6xl w-full "
-      >
+      <div ref="contentRef" class="relative scale-[0.5] pb-2 origin-center z-20 max-w-6xl w-full">
         <div class="flex flex-col pt-20 lg:flex-row justify-between gap-12 lg:gap-[6rem]">
           <!-- Text Section -->
           <div class="flex-1 flex flex-col gap-[1.5rem] max-w-[32.13rem] mx-auto">

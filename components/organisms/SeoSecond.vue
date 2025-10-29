@@ -1,57 +1,60 @@
 <template>
-  <section class="relative h-[1082px]  hidden lg:flex overflow-x-hidden text-white bg-[#020111]">
+  <section class="relative h-[1082px] hidden lg:flex overflow-x-hidden text-white bg-[#020111]">
     <!-- Background SVG injected -->
     <div
       class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden"
       v-html="responsiveBg"
     ></div>
 
-   <div class="relative z-10 max-w-6xl mx-auto flex flex-col gap-20 pt-10 px-4 md:px-6 lg:px-0">
+    <div class="relative z-10 max-w-6xl mx-auto flex flex-col gap-20 pt-10 px-4 md:px-6 lg:px-0">
+      <!-- Section 1: Fundament des Erfolgs -->
+      <div class="flex flex-col lg:flex-row items-center gap-10 xl:gap-16">
+        <!-- Text Column -->
+        <div class="flex-1 max-w-[600px] fade-left">
+          <h1 class="italic font-semibold text-[2.5rem] leading-snug">
+            <span
+              class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent"
+            >
+              Fundament des Erfolgs:
+            </span>
+            <br />
+            Warum technische SEO entscheidend ist
+          </h1>
+          <p class="text-[1.25rem] font-light mt-4">
+            SEO ist mehr als kurzfristige Taktiken; es ist ein solides technisches Fundament, das
+            nachhaltiges Wachstum ermöglicht.
+          </p>
+        </div>
 
-  <!-- Section 1: Fundament des Erfolgs -->
-  <div class="flex flex-col lg:flex-row items-center gap-10 xl:gap-16">
-    <!-- Text Column -->
-    <div class="flex-1 max-w-[600px] fade-left">
-      <h1 class="italic font-semibold text-[2.5rem] leading-snug">
-        <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
-          Fundament des Erfolgs:
-        </span>
-        <br />
-        Warum technische SEO entscheidend ist
-      </h1>
-      <p class="text-[1.25rem] font-light mt-4">
-        SEO ist mehr als kurzfristige Taktiken; es ist ein solides
-        technisches Fundament, das nachhaltiges Wachstum ermöglicht.
-      </p>
+        <!-- Question Mark SVG -->
+        <div
+          class="xl:w-[26.6875rem] xl:h-[27.875rem] block"
+          ref="seoquestionmarkone"
+          v-html="Seoquestionmark"
+          @mouseenter="onQuestionMarksMouseEnter"
+          @mouseleave="onQuestionMarksMouseLeave"
+        ></div>
+      </div>
+
+      <!-- Section 2: Second SEO Content -->
+      <div class="flex flex-col lg:flex-row items-center gap-10 xl:gap-[13.5625rem]">
+        <!-- Second SVG -->
+        <div
+          class="xl:w-[25.375rem] xl:h-[24.125rem] block flex-shrink-0"
+          ref="SeoSecondref"
+          v-html="seosecond"
+        ></div>
+
+        <!-- Text Column -->
+        <div class="flex-1 font-light text-[1.25rem] fade-right">
+          <p>
+            Die besten SEO-Maßnahmen basieren auf einer starken technischen Infrastruktur, die sich
+            leicht anpassen lässt, um aktuellen und zukünftigen Suchmaschinenanforderungen gerecht
+            zu werden.
+          </p>
+        </div>
+      </div>
     </div>
-
-    <!-- Question Mark SVG -->
-    <div
-      class="xl:w-[26.6875rem] xl:h-[27.875rem] block "
-      ref="seoquestionmarkone"
-      v-html="Seoquestionmark"
-      @mouseenter="onQuestionMarksMouseEnter"
-      @mouseleave="onQuestionMarksMouseLeave"
-    ></div>
-  </div>
-
-  <!-- Section 2: Second SEO Content -->
-  <div class="flex flex-col lg:flex-row items-center gap-10 xl:gap-[13.5625rem]">
-    <!-- Second SVG -->
-    <div class="xl:w-[25.375rem] xl:h-[24.125rem] block flex-shrink-0" ref="SeoSecondref" v-html="seosecond"></div>
-
-    <!-- Text Column -->
-    <div class="flex-1 font-light text-[1.25rem] fade-right">
-      <p>
-        Die besten SEO-Maßnahmen basieren auf einer starken technischen Infrastruktur, die sich
-        leicht anpassen lässt, um aktuellen und zukünftigen Suchmaschinenanforderungen gerecht
-        zu werden.
-      </p>
-    </div>
-  </div>
-
-</div>
-
   </section>
 
   <section class="relative hidden lg:flex overflow-hidden text-white bg-[#020111] h-[52.3125rem]">
@@ -114,7 +117,7 @@
       <!-- Text Content -->
       <div class="justify-center flex">
         <div
-          class="absolute fade-left  w-[37.4375rem] top-[8.75rem] flex flex-col gap-[1.5rem] h-[16.25rem] z-10"
+          class="absolute fade-left w-[37.4375rem] top-[8.75rem] flex flex-col gap-[1.5rem] h-[16.25rem] z-10"
         >
           <h1 class="italic text-[3.75rem] font-semibold">
             Unser
@@ -135,7 +138,7 @@
   </section>
 
   <section
-    class="relative overflow-hidden  hidden lg:flex 2xl:h-[2200.495361328125px] lg:h-[2050.495361328125px] text-white bg-[#020111] bg-no-repeat bg-[length:100%]"
+    class="relative overflow-hidden hidden lg:flex 2xl:h-[2200.495361328125px] lg:h-[2050.495361328125px] text-white bg-[#020111] bg-no-repeat bg-[length:100%]"
   >
     <!-- Shared SVG Background -->
     <div
@@ -144,7 +147,7 @@
     ></div>
 
     <div
-      class="relative z-10 flex flex-col  2xl:gap-[270px] lg:gap-[200px] pt-24 pb-16  max-w-6xl mx-auto"
+      class="relative z-10 flex flex-col 2xl:gap-[270px] lg:gap-[200px] pt-24 pb-16 max-w-6xl mx-auto"
     >
       <!-- First Row: Analyse des Ist-Zustands -->
       <div class="flex flex-col lg:flex-row items-center gap-[13.5rem]">
@@ -168,7 +171,7 @@
       </div>
 
       <!-- Second Row: Technische SEO-Optimierung -->
-      <div class="flex flex-col  lg:flex-row items-center gap-12">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
         <div class="w-full max-w-[32.9375rem]" ref="SeoFifthref" v-html="seofifth"></div>
 
         <div class="w-full max-w-[38.1875rem] fade-right flex flex-col gap-5">
@@ -196,7 +199,7 @@
         </div>
 
         <div class="w-full max-w-[30.9375rem] relative z-20">
-<div ref="svgContainer" class="w-full h-auto"></div>
+          <div ref="svgContainer" class="w-full h-auto"></div>
         </div>
       </div>
     </div>
@@ -260,7 +263,7 @@
     </div>
   </section>
 
-  <div class="relative  justify-center hidden lg:flex h-[27.6875rem] w-full text-white bg-[#020111]">
+  <div class="relative justify-center hidden lg:flex h-[27.6875rem] w-full text-white bg-[#020111]">
     <div class="flex pt-10 h-full">
       <div class="fade-element w-full max-w-[35.75rem] px-6 text-center lg:text-left">
         <p class="text-[1.125rem] font-light">
