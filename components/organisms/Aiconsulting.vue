@@ -198,13 +198,11 @@
       :style="{ backgroundImage: `url('${lines}')` }"
     ></div>
 
-    <div class="relative z-10 xl:mx-auto xl:px-6 2xl:px-12">
+    <div class="relative z-10 max-w-6xl mx-auto">
       <div
         class="lg:flex flex-col hidden md:flex lg:flex-row 2xl:pt-50 items-center h-[49.375rem] gap-8 2xl:gap-76 xl:justify-center"
       >
-        <div
-          class="flex flex-col gap-7 text-left lg:max-w-[500px] xl:max-w-[800px] w-full mx-auto lg:mx-0 lg:pl-10 lg:pr-0"
-        >
+        <div class="flex flex-col gap-7 text-left w-full lg:mx-0 lg:pr-0">
           <h1 class="text-[2.5rem] italic font-semibold leading-tight">
             <span
               class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent"
@@ -233,24 +231,20 @@
           </div>
         </div>
 
-        <div
-          class="w-full md:hidden lg:flex justify-center xl:max-w-[500px] lg:max-w-[100px] lg:mr-6 lg:ml-0"
-        >
+        <div class="w-full md:hidden lg:flex justify-center xl:max-w-[450px] lg:ml-0">
           <div class="w-full" v-html="aiheroimg"></div>
         </div>
       </div>
 
       <!-- Hybrid Section -->
       <div
-        class="flex flex-col 2xl:mt-60 lg:flex-row gap-16 lg:gap-24 mt-20 justify-center items-center"
+        class="flex flex-col 2xl:mt-60 mx-auto max-w-6xl lg:flex-row gap-16 lg:gap-10 mt-20 items-center"
       >
-        <div class="flex justify-center w-full max-w-[600px] mx-auto lg:mx-0 lg:pr-10">
+        <div class="flex justify-center w-full max-w-[600px] lg:mx-0">
           <div class="w-full md:flex hidden" v-html="aisecondimg"></div>
         </div>
 
-        <div
-          class="flex fade-up text-center flex-col gap-8 max-w-[600px] text-center mx-auto lg:mx-0 lg:pl-10"
-        >
+        <div class="flex fade-up text-center flex-col gap-8 max-w-6xl mx-auto lg:mx-0">
           <h1 class="text-2xl font-semibold">
             <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent"
               >Hybrid?</span
@@ -265,13 +259,13 @@
           </p>
         </div>
       </div>
-
       <!-- Our Approach Section -->
-      <div class="flex flex-col gap-y-20 max-w-[1440px] mx-auto mt-20 px-4 md:px-6 lg:px-10">
+      <div class="flex flex-col gap-y-20 max-w-6xl mx-auto mt-20">
         <div
-          class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full"
+          class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-between w-full"
         >
-          <div class="fade-left text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0 lg:pr-8">
+          <!-- Text Block -->
+          <div class="fade-left text-white max-w-[600px] flex-shrink-0">
             <h1 class="text-[2.625rem] font-bold">
               Our
               <span
@@ -286,23 +280,22 @@
             </p>
           </div>
 
+          <!-- Illustration -->
           <div
-            class="max-w-[600px] md:flex hidden w-full flex-shrink-0 mx-auto lg:mx-0 lg:pl-8"
+            class="hidden md:flex max-w-[600px] w-full flex-shrink-0"
             v-html="aiourapproach"
           ></div>
         </div>
 
+        <!-- Step 2: Design -->
         <div
-          class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full"
+          class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center w-full max-w-6xl mx-auto mt-20 px-4 md:px-6 lg:px-0"
         >
-          <div
-            class="max-w-[600px] w-full flex-shrink-0 mx-auto lg:mx-0 lg:pr-8"
-            v-html="aidesign"
-          ></div>
+          <!-- Illustration -->
+          <div class="max-w-[600px] w-full" v-html="aidesign"></div>
 
-          <div
-            class="fade-right text-white max-w-[600px] pt-10 lg:pt-0 flex-shrink-0 mx-auto lg:mx-0 lg:pl-8"
-          >
+          <!-- Text -->
+          <div class="fade-right text-white w-full max-w-[600px] pt-10 lg:pt-0 mx-auto lg:mx-0">
             <h2 class="text-2xl font-semibold">2. Design</h2>
             <p class="font-light text-lg mt-2">
               Next, our team of designers creates wireframes and mockups to visualise the user flow
@@ -312,10 +305,12 @@
           </div>
         </div>
 
+        <!-- Step 3: Development -->
         <div
-          class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full"
+          class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center w-full max-w-6xl mx-auto mt-20 px-4 md:px-6 lg:px-0"
         >
-          <div class="fade-left text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0 lg:pr-8">
+          <!-- Text -->
+          <div class="fade-left text-white w-full max-w-[600px] mx-auto lg:mx-0 pt-10 lg:pt-0">
             <h2 class="text-2xl font-semibold">3. Development</h2>
             <p class="font-light text-lg mt-2">
               Using the latest tools and technologies, such as Flutter, we begin building the hybrid
@@ -324,23 +319,19 @@
             </p>
           </div>
 
-          <div
-            class="max-w-[600px] hidden lg:flex w-full flex-shrink-0 mx-auto lg:mx-0 lg:pl-8"
-            v-html="aidevelopment"
-          ></div>
+          <!-- Illustration -->
+          <div class="max-w-[600px] w-full mx-auto lg:mx-0" v-html="aidevelopment"></div>
         </div>
 
+        <!-- Step 4: Testing and Launch -->
         <div
-          class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full"
+          class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center w-full max-w-6xl mx-auto mt-20 px-4 md:px-6 lg:px-0"
         >
-          <div
-            class="max-w-[600px] w-full flex-shrink-0 mx-auto lg:mx-0 lg:pr-8"
-            v-html="aitesting"
-          ></div>
+          <!-- Illustration -->
+          <div class="max-w-[600px] w-full flex-shrink-0 mx-auto lg:mx-0" v-html="aitesting"></div>
 
-          <div
-            class="text-white max-w-[600px] fade-right pt-10 lg:pt-0 flex-shrink-0 mx-auto lg:mx-0 lg:pl-8"
-          >
+          <!-- Text -->
+          <div class="text-white fade-right pt-10 lg:pt-0 flex-1">
             <h2 class="text-2xl font-semibold">4. Testing and Launch</h2>
             <p class="font-light text-lg mt-2">
               Before launching the app, we conduct thorough testing to ensure that it is stable and
@@ -351,9 +342,9 @@
         </div>
 
         <div
-          class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center justify-center w-full mb-20"
+          class="flex flex-col lg:flex-row gap-x-10 xl:gap-x-24 items-center max-w-6xl mx-auto w-full mb-20"
         >
-          <div class="fade-left text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0 lg:pr-8">
+          <div class="fade-left text-white max-w-[600px] flex-shrink-0 mx-auto lg:mx-0">
             <h2 class="text-2xl font-semibold">5. Optimize for Growth</h2>
             <p class="font-light text-lg mt-2">
               After the app is launched, we provide ongoing support and maintenance to ensure that
@@ -363,7 +354,7 @@
           </div>
           <div class="relative max-w-[37.5rem]" ref="rocketContainer">
             <div
-              class="max-w-[600px] hidden lg:flex w-full flex-shrink-0 mx-auto lg:mx-0 lg:pl-8"
+              class="max-w-[600px] hidden lg:flex w-full flex-shrink-0 mx-auto lg:mx-0"
               v-html="aioptamize"
             ></div>
             <canvas

@@ -15,13 +15,13 @@
     >
       <div class="flex-1 flex flex-col gap-[1.5rem] max-w-[32.13rem]">
         <h1
-          class="text-[2rem] md:text-[2.8rem] lg:text-[3.8rem] font-lightbold italic leading-[1.2]"
+          class="text-[2rem] md:text-[2.8rem] lg:text-[2.8rem] xl:text-[3.8rem] font-lightbold italic leading-[1.2]"
         >
           Von der ersten <span class="text-[#00FFB3]">Skizze</span><br />
           bis zum letzten <span class="text-[#00FFB3]">Pixel</span>
         </h1>
 
-        <p class="text-base lg:text-[1.125rem] font-light leading-relaxed">
+        <p class="text-base lg:text-[1rem] xl:text-[1.125rem] font-light leading-relaxed">
           Du hast eine Vision und wir die Leidenschaft, sie zum Leben zu erwecken. Eine umfassende
           Website-Strategie verwandelt Deine kreativen Vorstellungen in einen beeindruckende
           digitalen Auftritt. Für ein ästhetisches Design und messbare Ergebnisse.
@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <div class="flex-1 max-w-[34.5rem] w-full flex justify-center ">
+      <div class="flex-1 max-w-[34.5rem] w-full flex justify-center">
         <div
           ref="servicesHeroRef"
           class="w-full h-auto pointer-events-none services-hero-svg"

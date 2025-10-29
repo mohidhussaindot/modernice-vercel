@@ -1,7 +1,7 @@
 <template>
   <section class="relative bg-black overflow-hidden">
     <div
-      class="flex flex-col md:flex-col lg:flex-row items-center lg:items-start px-6 lg:max-w-7xl mx-auto gap-12 md:gap-[0rem] xl:gap-[6rem]"
+      class="flex flex-col md:flex-col lg:flex-row items-center lg:items-start px-6 lg:max-w-6xl mx-auto gap-12 md:gap-[0rem] xl:gap-[6rem]"
     >
       <!-- Content -->
       <!-- TEXT CONTENT -->

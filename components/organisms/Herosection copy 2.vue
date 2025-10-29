@@ -16,9 +16,9 @@
           ></div>
         </ClientOnly>
 
-        <div class="flex  justify-center">
+        <div class="flex">
           <div
-            class="absolute z-30 inset-0 flex md:pt-[9rem] xl:pt-[18.125rem] lg:pt-[11.25rem] mx-auto sm:pl-6  max-w-7xl  "
+            class="absolute z-30 inset-0 flex md:pt-[9rem] xl:pt-[18.125rem] lg:pt-[11.25rem] mx-auto sm:pl-6 max-w-6xl"
           >
             <div
               class="text-white flex flex-col w-full max-w-none sm:max-w-[32rem] md:max-w-[29rem] xl:max-w-[34.875rem]"
@@ -56,7 +56,10 @@
             </div>
 
             <ClientOnly>
-              <div class="float-moon md:w-252 2xl:w-[1200px] 2xl:h-[900px] md:h-[600px]  " v-html="moonSVGRaw"></div>
+              <div
+                class="float-moon md:w-252 2xl:w-[1200px] 2xl:h-[900px] md:h-[600px]"
+                v-html="moonSVGRaw"
+              ></div>
             </ClientOnly>
           </div>
         </div>
@@ -66,10 +69,10 @@
       <div
         ref="cityRef"
         :class="[
-          'relative text-white overflow-hidden w-full grid place-items-center px-1 sm:px-1.5 transition-opacity duration-700'
+          'relative text-white overflow-hidden w-full grid place-items-center   max-w-6xl mx-auto transition-opacity duration-700'
         ]"
       >
-        <div class="w-full max-w-[65.9375rem]">
+        <div class="w-full max-w-6xl">
           <div
             ref="cityImage"
             class="relative w-full xl:h-[61rem] h-[50rem] bg-no-repeat bg-contain bg-center bg-[url('/first-three-sect-img/city.png')] transition-opacity duration-1000 ease-in-out image-fade"
@@ -94,22 +97,21 @@
                     die Art und Weise, wie wir arbeiten und wachsen.
                   </p>
 
-              <NuxtLink to="/services/aiconsulting">
-  <div
-    class="inline-block mx-auto mt-[2rem] hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
-  >
-    <Button
-      class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[0.8rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-    >
-      <span
-        class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
-      >
-        Prozessoptimierung durch KI
-      </span>
-    </Button>
-  </div>
-</NuxtLink>
-
+                  <NuxtLink to="/services/aiconsulting">
+                    <div
+                      class="inline-block mx-auto mt-[2rem] hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
+                    >
+                      <Button
+                        class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[0.8rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+                      >
+                        <span
+                          class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
+                        >
+                          Prozessoptimierung durch KI
+                        </span>
+                      </Button>
+                    </div>
+                  </NuxtLink>
                 </div>
               </div>
             </div>
@@ -121,12 +123,12 @@
       <div
         ref="sectionRef"
         :class="[
-          'flex 2xl:mt-[-10rem]  xl:mt-[-15rem] overflow-visible  max-w-7xl mx-auto md:pl-10 gap-12 md:gap-0 lg:gap-0 transition-opacity duration-700 relative z-20',
+          'flex 2xl:mt-[-10rem]  xl:mt-[-15rem] overflow-visible  max-w-6xl mx-auto md:pl-10 gap-12 md:gap-0 lg:gap-0 transition-opacity duration-700 relative z-20',
           fadeClassSection
         ]"
       >
         <div
-          class="flex flex-col gap-6  sm:gap-8 md:gap-10 lg:gap-12 max-w-full xl:min-w-[500px] lg:w-[597px] md:w-[500px]"
+          class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 max-w-full xl:min-w-[500px] lg:w-[597px] md:w-[500px]"
         >
           <h1
             class="font-semibold italic text-[1.75rem] sm:text-[2.125rem] md:text-[2rem] lg:text-[2.625rem] leading-tight"
@@ -179,7 +181,7 @@
           ></div>
         </ClientOnly>
 
-        <div class="relative mx-auto max-w-7xl w-full z-10">
+        <div class="relative mx-auto max-w-6xl w-full z-10">
           <div class="relative flex justify-center items-center">
             <div
               class="relative z-10 md:top-[19.438rem] xl:top-[23.438rem] 2xl:top-[25.438rem] flex flex-col gap-[1.5rem] xl:w-[37.125rem] lg:w-[30rem] md:w-[30rem] max-h-[25.375rem]"
@@ -197,22 +199,21 @@
                 Lass die Zukunft nicht warten.
               </p>
 
-             <NuxtLink to="/services/aiconsulting">
-  <div
-    class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] hover:from-[#3BE8E8] hover:to-[#AFE639]"
-  >
-    <Button
-      class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[0.8rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-    >
-      <span
-        class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text duration-300"
-      >
-        KI-Beratung
-      </span>
-    </Button>
-  </div>
-</NuxtLink>
-
+              <NuxtLink to="/services/aiconsulting">
+                <div
+                  class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] hover:from-[#3BE8E8] hover:to-[#AFE639]"
+                >
+                  <Button
+                    class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[0.8rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+                  >
+                    <span
+                      class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text duration-300"
+                    >
+                      KI-Beratung
+                    </span>
+                  </Button>
+                </div>
+              </NuxtLink>
             </div>
 
             <div
@@ -285,21 +286,20 @@
           </p>
 
           <NuxtLink to="/services/aiconsulting">
-  <div
-    class="inline-block mx-auto mt-[2rem] hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
-  >
-    <Button
-      class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[0.8rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-    >
-      <span
-        class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
-      >
-        Prozessoptimierung durch KI
-      </span>
-    </Button>
-  </div>
-</NuxtLink>
-
+            <div
+              class="inline-block mx-auto mt-[2rem] hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
+            >
+              <Button
+                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[0.8rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+              >
+                <span
+                  class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
+                >
+                  Prozessoptimierung durch KI
+                </span>
+              </Button>
+            </div>
+          </NuxtLink>
         </div>
       </div>
 
@@ -343,22 +343,21 @@
             Strategie werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften. Lass
             die Zukunft nicht warten.
           </p>
-        <NuxtLink to="/services/aiconsulting">
-  <div
-    class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8]"
-  >
-    <Button
-      class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-    >
-      <span
-        class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text duration-300"
-      >
-        KI-Beratung
-      </span>
-    </Button>
-  </div>
-</NuxtLink>
-
+          <NuxtLink to="/services/aiconsulting">
+            <div
+              class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8]"
+            >
+              <Button
+                class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+              >
+                <span
+                  class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text duration-300"
+                >
+                  KI-Beratung
+                </span>
+              </Button>
+            </div>
+          </NuxtLink>
         </div>
       </div>
 

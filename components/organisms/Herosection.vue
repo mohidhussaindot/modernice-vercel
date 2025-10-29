@@ -85,22 +85,21 @@
                   Sprachmodellen (LLMs) und Maschinellem Lernen (ML). Diese Technologien verändern
                   die Art und Weise, wie wir arbeiten und wachsen.
                 </p>
-               <NuxtLink to="/services/aiconsulting">
-  <div
-    class="inline-block mx-auto mt-[2rem] hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
-  >
-    <Button
-      class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[0.8rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-    >
-      <span
-        class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
-      >
-        Prozessoptimierung durch KI
-      </span>
-    </Button>
-  </div>
-</NuxtLink>
-
+                <NuxtLink to="/services/aiconsulting">
+                  <div
+                    class="inline-block mx-auto mt-[2rem] hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
+                  >
+                    <Button
+                      class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[0.8rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+                    >
+                      <span
+                        class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
+                      >
+                        Prozessoptimierung durch KI
+                      </span>
+                    </Button>
+                  </div>
+                </NuxtLink>
               </div>
             </div>
           </div>
