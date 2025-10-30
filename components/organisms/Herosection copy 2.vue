@@ -229,161 +229,169 @@
       </div>
     </div>
 
-    <!-- MOBILE (only) -->
-    <section class="block md:hidden text-white overflow-hidden bg-[#020111]">
-      <div class="relative mt-30">
-        <ClientOnly>
-          <img
-            alt="rocketmoonhero"
-            class="absolute right-[-85%] top-12 w-[200%] max-w-none"
-            src="@atoms/svgs/rocket-moon-hero.svg"
-          />
-        </ClientOnly>
+   <!-- MOBILE (only) -->
+<section class="block md:hidden text-white bg-[#020111] overflow-x-hidden">
+  <!-- HERO SECTION -->
+  <div class="relative mt-30">
+    <ClientOnly>
+      <img
+        alt="rocketmoonhero"
+        class="absolute right-0 left-10 top-12 w-[150%] max-w-none will-change-transform"
+        src="@atoms/svgs/rocket-moon-hero.svg"
+      />
+    </ClientOnly>
 
-        <div class="relative px-3 pt-50 flex flex-col">
-          <h1 class="text-[2rem] font-bold mb-[0.5rem] leading-snug">
-            <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE]"
-            >
-              Entdecke<br />Neue Horizonte
-            </span>
-          </h1>
-
-          <p class="w-[300px] text-[0.9rem] font-light leading-relaxed">
-            Kreatives Webdesign, meisterhafte Softwareentwicklung und bahnbrechende AI-Technologien,
-            die dein Geschäft auf die Überholspur bringen.
-          </p>
-
-          <div
-            class="mt-4 inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF]"
-          >
-            <Button
-              class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-            >
-              <span
-                class="bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] text-transparent bg-clip-text duration-300"
-              >
-                Erzähl mir mehr.
-              </span>
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      <div class="relative mt-100 h-[40rem] bg-black">
-        <img src="/first-three-sect-img/city.png" class="w-full h-full object-cover" alt="City" />
-
-        <div
-          class="absolute items-center text-center inset-0 flex flex-col mt-70 px-4 sm:px-8 text-white bg-opacity-40"
+    <div class="relative px-4 pt-48 flex flex-col z-10">
+      <h1 class="text-[2rem] font-bold mb-2 leading-snug">
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE] [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
         >
-          <h1 class="text-[2rem] font-bold mb-[rem] leading-snug"
-            >KI-gesteuerte Geschäftslösungen</h1
-          >
-          <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
-            Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz (KI), Großen
-            Sprachmodellen (LLMs) und Maschinellem Lernen (ML). Diese Technologien verändern die Art
-            und Weise, wie wir arbeiten und wachsen.
-          </p>
+          Entdecke<br />Neue Horizonte
+        </span>
+      </h1>
 
-          <NuxtLink to="/services/aiconsulting">
-            <div
-              class="inline-block mx-auto mt-[2rem] hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
-            >
-              <Button
-                class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[0.8rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-              >
-                <span
-                  class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
-                >
-                  Prozessoptimierung durch KI
-                </span>
-              </Button>
-            </div>
-          </NuxtLink>
-        </div>
-      </div>
+      <p class="max-w-[300px] text-[0.9rem] font-light leading-relaxed">
+        Kreatives Webdesign, meisterhafte Softwareentwicklung und bahnbrechende AI-Technologien,
+        die dein Geschäft auf die Überholspur bringen.
+      </p>
 
-      <!-- remaining mobile sections kept as-is -->
-      <div class="h-[30rem] flex items-center px-5">
-        <div class="flex flex-col items-center text-center gap-6 max-w-full">
-          <h1 class="text-[2rem] font-bold mb-[0.5rem] leading-snug italic"
-            >Innovation <br />
-            durch Design und Technologie</h1
+      <div
+        class="mt-4 inline-block transition-transform duration-300 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] active:scale-105"
+      >
+        <Button
+          class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
+        >
+          <span
+            class="bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
           >
-          <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
-            In einer erfolgreichen Web-Lösung verschmelzen Design und Entwicklung zu einem
-            harmonischen Ganzen. Die nahtlose Integration von Frontend und Backend, ergänzt durch
-            den Einsatz modernster Technologien wie Künstlicher Intelligenz, Großen Sprachmodellen
-            (LLM) und Machine Learning, ermöglicht die Schaffung von Produkten, die den Horizont des
-            Möglichen erweitern und das Nutzererlebnis auf ein ungekanntes Niveau heben.
-          </p>
-          <div
-            class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#FFE501] to-[#FFA901]"
-          >
-            <Button
-              class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-            >
-              <span
-                class="bg-gradient-to-r from-[#FFA901] to-[#FFE501] text-transparent bg-clip-text duration-300"
-                >Schaffe Außergewöhnliches</span
-              >
-            </Button>
-          </div>
-        </div>
+            Erzähl mir mehr.
+          </span>
+        </Button>
       </div>
+    </div>
+  </div>
 
-      <!-- CTA mobile blocks -->
-      <div class="h-[30rem] flex items-center px-5">
-        <div class="relative z-10 items-center text-center flex flex-col gap-6 max-w-full">
-          <h2 class="text-[2rem] font-bold mb-[0.5rem] leading-snug italic"
-            >Sei der Wandel, den du in deiner Branche sehen möchtest.</h2
-          >
-          <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
-            Wir transformieren Daten in Einblicke, Herausforderungen in Chancen. Mit unserer
-            Strategie werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften. Lass
-            die Zukunft nicht warten.
-          </p>
-          <NuxtLink to="/services/aiconsulting">
-            <div
-              class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8]"
-            >
-              <Button
-                class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
-              >
-                <span
-                  class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text duration-300"
-                >
-                  KI-Beratung
-                </span>
-              </Button>
-            </div>
-          </NuxtLink>
-        </div>
-      </div>
+  <!-- SECTION 2 -->
+  <div class="relative mt-54 h-[40rem] bg-black overflow-hidden">
+    <img
+      src="/first-three-sect-img/city.png"
+      class="w-full h-full object-cover will-change-transform"
+      alt="City"
+    />
 
-      <div class="h-[20rem] flex items-center px-5">
-        <div class="flex flex-col items-center text-center gap-6 max-w-full">
-          <h1 class="text-[2rem] font-bold mb-[0.5rem] leading-snug italic"
-            >Ready to take your Online Presence to the next level?</h1
+    <div
+      class="absolute inset-0 flex flex-col justify-center items-center text-center px-5 text-white bg-black/30 backdrop-blur-[1px]"
+    >
+      <h1 class="text-[2rem] font-bold leading-snug mb-2">
+        KI-gesteuerte Geschäftslösungen
+      </h1>
+      <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
+        Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz (KI), Großen Sprachmodellen
+        (LLMs) und Maschinellem Lernen (ML). Diese Technologien verändern die Art und Weise, wie wir
+        arbeiten und wachsen.
+      </p>
+
+      <NuxtLink to="/services/aiconsulting">
+        <div
+          class="inline-block mt-6 transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639]"
+        >
+          <Button
+            class="px-[1.25rem] py-[0.625rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
           >
-          <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed"
-            >We'll work with you to plan ...</p
-          >
-          <div
-            class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#38EF61] to-[#44E5C8]"
-          >
-            <Button
-              class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+            <span
+              class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
             >
-              <span
-                class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text duration-300"
-                >Get a Website Strategy</span
-              >
-            </Button>
-          </div>
+              Prozessoptimierung durch KI
+            </span>
+          </Button>
         </div>
+      </NuxtLink>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="h-[30rem] flex items-center px-5">
+    <div class="flex flex-col items-center text-center gap-6 max-w-full">
+      <h1 class="text-[2rem] font-bold italic leading-snug">
+        Innovation <br />durch Design und Technologie
+      </h1>
+      <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
+        In einer erfolgreichen Web-Lösung verschmelzen Design und Entwicklung zu einem harmonischen
+        Ganzen. Die nahtlose Integration von Frontend und Backend, ergänzt durch modernste
+        Technologien wie KI, LLMs und Machine Learning, schafft Produkte, die den Horizont des
+        Möglichen erweitern.
+      </p>
+      <div
+        class="inline-block transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#FFE501] to-[#FFA901]"
+      >
+        <Button
+          class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
+        >
+          <span
+            class="bg-gradient-to-r from-[#FFA901] to-[#FFE501] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
+          >
+            Schaffe Außergewöhnliches
+          </span>
+        </Button>
       </div>
-    </section>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="h-[30rem] flex items-center px-5">
+    <div class="relative z-10 flex flex-col items-center text-center gap-6 max-w-full">
+      <h2 class="text-[2rem] font-bold italic leading-snug">
+        Sei der Wandel, den du in deiner Branche sehen möchtest.
+      </h2>
+      <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
+        Wir transformieren Daten in Einblicke, Herausforderungen in Chancen. Mit unserer Strategie
+        werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften. Lass die Zukunft
+        nicht warten.
+      </p>
+      <NuxtLink to="/services/aiconsulting">
+        <div
+          class="inline-block transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8]"
+        >
+          <Button
+            class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
+          >
+            <span
+              class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
+            >
+              KI-Beratung
+            </span>
+          </Button>
+        </div>
+      </NuxtLink>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="h-[20rem] flex items-center px-5">
+    <div class="flex flex-col items-center text-center gap-6 max-w-full">
+      <h1 class="text-[2rem] font-bold italic leading-snug">
+        Ready to take your Online Presence to the next level?
+      </h1>
+      <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
+        We'll work with you to plan ...
+      </p>
+      <div
+        class="inline-block transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#38EF61] to-[#44E5C8]"
+      >
+        <Button
+          class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
+        >
+          <span
+            class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
+          >
+            Get a Website Strategy
+          </span>
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
   </div>
 </template>
 <script setup>
