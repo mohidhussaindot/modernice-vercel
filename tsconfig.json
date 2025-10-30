@@ -15,7 +15,8 @@
       "#app": [".nuxt/types/app"],
       "#app/*": [".nuxt/types/app/*"]
     },
-    "types": ["node", "vue", "@vue/runtime-dom", "@nuxt/types", "@nuxtjs/i18n", "nuxt"]
+    "types": ["node", "vue", "@vue/runtime-dom", "nuxt/app", "@nuxtjs/i18n"],
+    "typeRoots": ["./types", "./node_modules/@types"]
   },
   "include": ["./**/*.ts", "./**/*.vue", "types/**/*.ts", ".nuxt/types/**/*.d.ts"]
 }

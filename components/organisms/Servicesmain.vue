@@ -403,34 +403,38 @@
     </div>
   </section>
 </template>
-<script setup>
+
+<script setup lang="ts">
   import servicesMainBg from '@atoms/svgs/services-mainbg.svg?raw'
   import servicesfourth from '@atoms/svgs/servicesfourth.svg?raw'
   import servicesfourth2 from '@atoms/svgs/servicesfourthsecond.svg?raw'
   import svgContent from '@atoms/svgs/servicesfifth.svg?raw'
-  import { onMounted, onBeforeUnmount, ref } from 'vue'
-  import { gsap } from 'gsap'
+  import { ref, onMounted, onBeforeUnmount } from 'vue'
+  import { useGSAP } from '../../composables/useGSAP'
 
-  const servicesFourthContainer = ref(null)
-  const servicesFourth2Container = ref(null)
-  const svgContainer = ref(null)
-  const burstCanvas = ref(null)
+  const { gsap, cleanup } = useGSAP()
 
-  let ctx,
-    rafId,
-    last = 0
-  let particles = []
-  let rocket, svgburst, rocketTl
-  let observer, fadeObserver
+  const servicesFourthContainer = ref<HTMLElement | null>(null)
+  const servicesFourth2Container = ref<HTMLElement | null>(null)
+  const svgContainer = ref<HTMLElement | null>(null)
+  const burstCanvas = ref<HTMLCanvasElement | null>(null)
 
-  const fitCanvas = canvas => {
+  let ctx: CanvasRenderingContext2D | null = null
+  let rafId: number
+  let last = 0
+  let particles: any[] = []
+  let rocket: any, svgburst: any, rocketTl: gsap.core.Timeline
+  let observer: IntersectionObserver | null = null
+  let fadeObserver: IntersectionObserver | null = null
+
+  const fitCanvas = (canvas: HTMLCanvasElement) => {
     const ratio = window.devicePixelRatio || 1
     canvas.width = canvas.clientWidth * ratio
     canvas.height = canvas.clientHeight * ratio
-    ctx.setTransform(ratio, 0, 0, ratio, 0, 0)
+    ctx?.setTransform(ratio, 0, 0, ratio, 0, 0)
   }
 
-  const spawn = (dt, canvas) => {
+  const spawn = (dt: number, canvas: HTMLCanvasElement) => {
     const perSec = 18
     let toSpawn = perSec * dt
     while (toSpawn-- > 0) {
@@ -446,11 +450,11 @@
     }
   }
 
-  const tick = (t, canvas) => {
+  const tick = (t: number, canvas: HTMLCanvasElement) => {
     const dt = t - last
     last = t
     spawn(dt / 1000, canvas)
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx?.clearRect(0, 0, canvas.width, canvas.height)
 
     for (let i = particles.length - 1; i >= 0; i--) {
       const p = particles[i]
@@ -459,43 +463,36 @@
         particles.splice(i, 1)
         continue
       }
-
       p.x += p.vx * dt * 0.05
       p.y += p.vy * dt * 0.05
       const alpha = 1 - p.age / p.life
       const r = p.r * (1 + 0.5 * alpha)
-
-      const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 6)
+      const g = ctx!.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 6)
       g.addColorStop(0, `rgba(80,255,160,${0.6 * alpha})`)
       g.addColorStop(1, 'transparent')
-      ctx.fillStyle = g
-      ctx.beginPath()
-      ctx.arc(p.x, p.y, r * 6, 0, Math.PI * 2)
-      ctx.fill()
-
-      ctx.fillStyle = `rgba(120,255,180,${0.8 * alpha})`
-      ctx.beginPath()
-      ctx.arc(p.x, p.y, r, 0, Math.PI * 2)
-      ctx.fill()
+      ctx!.fillStyle = g
+      ctx!.beginPath()
+      ctx!.arc(p.x, p.y, r * 6, 0, Math.PI * 2)
+      ctx!.fill()
+      ctx!.fillStyle = `rgba(120,255,180,${0.8 * alpha})`
+      ctx!.beginPath()
+      ctx!.arc(p.x, p.y, r, 0, Math.PI * 2)
+      ctx!.fill()
     }
-
     rafId = requestAnimationFrame(time => tick(time, canvas))
   }
 
   const initAnimations = () => {
     const svgEl = svgContainer.value
     if (!svgEl) return
-
-    const getEl = id => svgEl.querySelector(`#${id}`)
+    const getEl = (id: string) => svgEl.querySelector(`#${id}`)
     rocket = getEl('rocket')
     svgburst = getEl('burst')
     if (!rocket || !svgburst) return
-
     svgburst.style.opacity = 0
     gsap.set(rocket, { y: 100 })
-
-    rocketTl = gsap
-      .timeline({ paused: true })
+    rocketTl = gsap.timeline({ paused: true })
+    rocketTl
       .to(rocket, {
         y: -1,
         duration: 3,
@@ -521,7 +518,7 @@
       })
   }
 
-  const pulseStroke = (el, from, to) => {
+  const pulseStroke = (el: SVGElement | null, from: string, to: string) => {
     if (!el) return
     el.removeAttribute('style')
     el.setAttribute('stroke-width', '2.5')
@@ -538,7 +535,6 @@
   const setupObserver = () => {
     const container = svgContainer.value
     if (!container) return
-
     observer = new IntersectionObserver(
       entries => {
         const [entry] = entries
@@ -550,7 +546,9 @@
             y: 100,
             duration: 1.2,
             ease: 'power2.inOut',
-            onComplete: () => (svgburst.style.opacity = 0)
+            onComplete: () => {
+              svgburst.style.opacity = '0'
+            }
           })
           cancelAnimationFrame(rafId)
           ctx?.clearRect(0, 0, burstCanvas.value?.width || 0, burstCanvas.value?.height || 0)
@@ -559,18 +557,15 @@
       },
       { threshold: 0.5 }
     )
-
     observer.observe(container)
   }
 
   onMounted(() => {
     initAnimations()
     setupObserver()
-
-    const plant = servicesFourthContainer.value?.querySelector('#Plant')
-    const shadow1 = servicesFourthContainer.value?.querySelector('#Shadow')
-    const shadow2 = servicesFourth2Container.value?.querySelector('#Shadow')
-
+    const plant = servicesFourthContainer.value?.querySelector('#Plant') as SVGElement | null
+    const shadow1 = servicesFourthContainer.value?.querySelector('#Shadow') as SVGElement | null
+    const shadow2 = servicesFourth2Container.value?.querySelector('#Shadow') as SVGElement | null
     if (plant) {
       gsap.to(plant, {
         rotate: 7,
@@ -583,7 +578,6 @@
     }
     pulseStroke(shadow1, '#38EF61', '#44E5C8')
     pulseStroke(shadow2, '#38EF61', '#44E5C8')
-
     fadeObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
@@ -593,16 +587,16 @@
       },
       { threshold: 0.2 }
     )
-
     document
       .querySelectorAll('.fade-left, .fade-right, .fade-up')
-      .forEach(el => fadeObserver.observe(el))
+      .forEach(el => fadeObserver!.observe(el))
   })
 
   onBeforeUnmount(() => {
     observer?.disconnect()
     fadeObserver?.disconnect()
     cancelAnimationFrame(rafId)
+    cleanup()
   })
 </script>
 

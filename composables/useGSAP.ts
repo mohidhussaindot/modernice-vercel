@@ -1,63 +1,53 @@
 // composables/useGSAP.ts
-import { ref, onMounted, onUnmounted, type Ref } from 'vue'
+import { ref, onUnmounted } from 'vue'
+import { useNuxtApp, type NuxtApp } from 'nuxt/app'
+import type gsap from 'gsap'
+import type { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export const useGSAP = () => {
-  const { $gsap, $ScrollTrigger } = useNuxtApp()
-  const animations = ref<gsap.core.Timeline[]>([])
-  const scrollTriggers = ref<ScrollTrigger[]>([])
-
-  // Create animation with automatic cleanup
-  const createAnimation = (callback: (gsap: typeof $gsap) => gsap.core.Timeline | void) => {
-    if (!$gsap) return
-
-    const timeline = callback($gsap)
-    if (timeline) {
-      animations.value.push(timeline)
-    }
-    return timeline
+  const nuxtApp = useNuxtApp() as NuxtApp & {
+    $gsap: typeof gsap
+    $ScrollTrigger: typeof ScrollTrigger
   }
 
-  // Create ScrollTrigger with automatic cleanup
+  const $gsap = nuxtApp.$gsap
+  const $ScrollTrigger = nuxtApp.$ScrollTrigger
+
+  const animations = ref<(gsap.core.Tween | gsap.core.Timeline)[]>([])
+  const scrollTriggers = ref<ScrollTrigger[]>([])
+
+  const createAnimation = (
+    callback: (gsap: typeof $gsap) => gsap.core.Tween | gsap.core.Timeline | void
+  ) => {
+    if (!$gsap) return
+    const anim = callback($gsap)
+    if (anim) animations.value.push(anim)
+    return anim
+  }
+
   const createScrollTrigger = (config: ScrollTrigger.StaticVars) => {
     if (!$ScrollTrigger) return
-
     const st = $ScrollTrigger.create(config)
     scrollTriggers.value.push(st)
     return st
   }
 
-  // Batch animations for better performance
   const batchAnimate = (elements: Element[], animationConfig: gsap.TweenVars) => {
     if (!$gsap) return
-
     return $gsap.to(elements, {
       ...animationConfig,
-      stagger: 0.1 // Default stagger for batch animations
+      stagger: 0.1
     })
   }
 
-  // Cleanup all animations and scroll triggers
   const cleanup = () => {
-    animations.value.forEach(timeline => {
-      if (timeline) {
-        timeline.kill()
-      }
-    })
-
-    scrollTriggers.value.forEach(st => {
-      if (st) {
-        st.kill()
-      }
-    })
-
+    animations.value.forEach(anim => anim?.kill?.())
+    scrollTriggers.value.forEach(st => st?.kill?.())
     animations.value = []
     scrollTriggers.value = []
   }
 
-  // Auto cleanup on unmount
-  onUnmounted(() => {
-    cleanup()
-  })
+  onUnmounted(() => cleanup())
 
   return {
     gsap: $gsap,
@@ -69,85 +59,54 @@ export const useGSAP = () => {
   }
 }
 
-// Composable for common animation patterns
+// ----------------------------
+// Common animation utilities
+// ----------------------------
 export const useGSAPAnimations = () => {
   const { gsap, createAnimation, createScrollTrigger } = useGSAP()
 
-  // Fade in animation
-  const fadeIn = (element: Element | Element[], options: gsap.TweenVars = {}) => {
-    return createAnimation(() => {
-      return gsap.fromTo(
+  const fadeIn = (element: Element | Element[], options: gsap.TweenVars = {}) =>
+    createAnimation(() =>
+      gsap.fromTo(
         element,
         { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-          ...options
-        }
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', ...options }
       )
-    })
-  }
+    )
 
-  // Slide in from left
-  const slideInLeft = (element: Element | Element[], options: gsap.TweenVars = {}) => {
-    return createAnimation(() => {
-      return gsap.fromTo(
+  const slideInLeft = (element: Element | Element[], options: gsap.TweenVars = {}) =>
+    createAnimation(() =>
+      gsap.fromTo(
         element,
         { x: -100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: 'power2.out',
-          ...options
-        }
+        { x: 0, opacity: 1, duration: 0.8, ease: 'power2.out', ...options }
       )
-    })
-  }
+    )
 
-  // Slide in from right
-  const slideInRight = (element: Element | Element[], options: gsap.TweenVars = {}) => {
-    return createAnimation(() => {
-      return gsap.fromTo(
+  const slideInRight = (element: Element | Element[], options: gsap.TweenVars = {}) =>
+    createAnimation(() =>
+      gsap.fromTo(
         element,
         { x: 100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: 'power2.out',
-          ...options
-        }
+        { x: 0, opacity: 1, duration: 0.8, ease: 'power2.out', ...options }
       )
-    })
-  }
+    )
 
-  // Scale in animation
-  const scaleIn = (element: Element | Element[], options: gsap.TweenVars = {}) => {
-    return createAnimation(() => {
-      return gsap.fromTo(
+  const scaleIn = (element: Element | Element[], options: gsap.TweenVars = {}) =>
+    createAnimation(() =>
+      gsap.fromTo(
         element,
         { scale: 0, opacity: 0 },
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 0.6,
-          ease: 'back.out(1.7)',
-          ...options
-        }
+        { scale: 1, opacity: 1, duration: 0.6, ease: 'back.out(1.7)', ...options }
       )
-    })
-  }
+    )
 
-  // Scroll-triggered animation
   const onScroll = (
     element: Element | Element[],
-    animation: gsap.TweenVars,
+    animation: { from?: gsap.TweenVars; to?: gsap.TweenVars },
     triggerOptions: ScrollTrigger.StaticVars = {}
-  ) => {
-    return createScrollTrigger({
+  ) =>
+    createScrollTrigger({
       trigger: element,
       start: 'top 80%',
       end: 'bottom 20%',
@@ -155,21 +114,15 @@ export const useGSAPAnimations = () => {
       ...triggerOptions,
       animation: gsap.fromTo(element, animation.from || {}, animation.to || {})
     })
-  }
 
-  // Parallax effect
-  const parallax = (element: Element | Element[], speed: number = 0.5) => {
-    return createScrollTrigger({
+  const parallax = (element: Element | Element[], speed: number = 0.5) =>
+    createScrollTrigger({
       trigger: element,
       start: 'top bottom',
       end: 'bottom top',
       scrub: true,
-      animation: gsap.to(element, {
-        y: -100 * speed,
-        ease: 'none'
-      })
+      animation: gsap.to(element, { y: -100 * speed, ease: 'none' })
     })
-  }
 
   return {
     fadeIn,

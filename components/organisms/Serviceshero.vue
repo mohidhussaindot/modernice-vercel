@@ -113,21 +113,19 @@
     </div>
   </div>
 </template>
-
-<script setup>
-  import { onMounted, onBeforeUnmount, ref, nextTick } from 'vue'
-  import gsap from 'gsap'
-  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+<script setup lang="ts">
+  import { ref, onMounted, nextTick } from 'vue'
   import Button from '@atoms/Button.vue'
   import ServicesHeroRaw from '@atoms/svgs/servicesfirst.svg?raw'
   import Seoherobg from '@atoms/svgs/seoherobg.svg?raw'
+  import { useGSAP } from '../../composables/useGSAP'
 
-  gsap.registerPlugin(ScrollTrigger)
+  const { gsap, ScrollTrigger, cleanup } = useGSAP()
 
-  const cockpitRef = ref(null)
-  const contentRef = ref(null)
-  const servicesTopRef = ref(null)
-  const buttonWrapperRef = ref(null)
+  const cockpitRef = ref<HTMLElement | null>(null)
+  const contentRef = ref<HTMLElement | null>(null)
+  const servicesTopRef = ref<HTMLElement | null>(null)
+  const buttonWrapperRef = ref<HTMLElement | null>(null)
 
   onMounted(async () => {
     await nextTick()
@@ -138,12 +136,14 @@
     const buttonEl = buttonWrapperRef.value
     const animationEnd = 500
 
-    const setButtonState = enabled => {
-      if (buttonEl) buttonEl.style.pointerEvents = enabled ? 'auto' : 'none'
+    if (!gsap || !ScrollTrigger || !topEl || !cockpitEl || !contentEl || !buttonEl) return
+
+    const setButtonState = (enabled: boolean) => {
+      buttonEl.style.pointerEvents = enabled ? 'auto' : 'none'
     }
 
     const currentScroll = window.scrollY
-    const sectionTop = topEl?.offsetTop ?? 0
+    const sectionTop = topEl.offsetTop ?? 0
     setButtonState(currentScroll >= sectionTop + animationEnd)
 
     ScrollTrigger.create({
@@ -155,43 +155,38 @@
       anticipatePin: 1
     })
 
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: topEl,
-          start: 'top top',
-          end: `+=${animationEnd}`,
-          scrub: 1.2,
-          onUpdate: self => setButtonState(self.progress >= 1)
-        }
-      })
-      .to(
-        cockpitEl,
-        {
-          scale: 1.1,
-          autoAlpha: 0,
-          ease: 'power1.out',
-          transformOrigin: 'center',
-          duration: 2,
-          delay: 0.2
-        },
-        0
-      )
-      .to(
-        contentEl,
-        {
-          scale: 1,
-          ease: 'power2.out',
-          transformOrigin: 'center',
-          duration: 1.8,
-          delay: 0.2
-        },
-        0
-      )
-  })
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: topEl,
+        start: 'top top',
+        end: `+=${animationEnd}`,
+        scrub: 1.2,
+        onUpdate: (self: any) => setButtonState(self.progress >= 1)
+      }
+    })
 
-  onBeforeUnmount(() => {
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+    tl.to(
+      cockpitEl,
+      {
+        scale: 1.1,
+        autoAlpha: 0,
+        ease: 'power1.out',
+        transformOrigin: 'center',
+        duration: 2,
+        delay: 0.2
+      },
+      0
+    ).to(
+      contentEl,
+      {
+        scale: 1,
+        ease: 'power2.out',
+        transformOrigin: 'center',
+        duration: 1.8,
+        delay: 0.2
+      },
+      0
+    )
   })
 </script>
 

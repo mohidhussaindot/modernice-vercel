@@ -168,11 +168,14 @@
 <script setup>
   import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
   import * as THREE from 'three'
-  import gsap from 'gsap'
   import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
   import { Box3, Vector3 } from 'three'
   import Button from '@atoms/Button.vue'
   import { useRouter } from 'vue-router'
+  import { useGSAP } from '../../composables/useGSAP'
+
+  const { gsap } = useGSAP()
+
   const dropdownOpen = ref(false)
   const isNavbarHovered = ref(false)
   const transitionOverlay = ref(null)
@@ -190,6 +193,7 @@
   const loadingBar = ref(null)
   const loadingProgress = ref(0)
   const router = useRouter()
+
   const services = [
     { label: 'App Development', to: '/services/appdevelopment' },
     { label: 'AI Consulting', to: '/services/aiconsulting' },
@@ -197,6 +201,7 @@
     { label: 'Website Strategy', to: '/services/website-strategy' },
     { label: 'SEO', to: '/services/seo' }
   ]
+
   const imageLinks = [
     {
       name: 'adobelino.png',
@@ -242,8 +247,10 @@
       description: 'Organize your tournament and earn money'
     }
   ]
+
   const glbPaths = ['/work/Spaceship.glb', '/work/moon.glb', '/work/satelite.glb']
   const glbNames = ['Spaceship', 'moon', 'satelite']
+
   let dropdownTimeout = null
   const openDropdown = () => {
     clearTimeout(dropdownTimeout)
@@ -252,6 +259,7 @@
   const closeDropdown = () => {
     dropdownTimeout = setTimeout(() => (dropdownOpen.value = false), 150)
   }
+
   const startTransition = () => {
     if (!greenLayer.value || !blackLayer.value) return
     greenLayer.value.classList.remove('translate-y-full')
@@ -262,22 +270,27 @@
     }, 600)
     setTimeout(() => router.push('/work/projects'), 1200)
   }
+
   const closeOverlay = e => {
     e?.stopPropagation?.()
     selectedImage.value = null
   }
+
   const removers = []
   const cancelAll = () => {
     removers.forEach(r => r())
     removers.length = 0
   }
+
   onMounted(async () => {
     await nextTick()
+
     let assetsLoaded = false
     let progressDone = false
     const checkFinishLoading = () => {
       if (assetsLoaded && progressDone) loading.value = false
     }
+
     const progress = { value: 0 }
     gsap.to(progress, {
       value: 100,
@@ -292,6 +305,8 @@
         checkFinishLoading()
       }
     })
+
+    // === Three.js Setup ===
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(
       25,
@@ -301,36 +316,45 @@
     )
     camera.position.set(850, 830, 3200)
     camera.lookAt(-100, -100, 1350)
+
     const renderer = new THREE.WebGLRenderer({ canvas: canvas.value, antialias: true, alpha: true })
     renderer.setSize(window.innerWidth, window.innerHeight)
     renderer.setClearColor(0x000000, 0)
     renderer.outputEncoding = THREE.sRGBEncoding
     renderer.toneMapping = THREE.ACESFilmicToneMapping
     renderer.toneMappingExposure = 1.2
+
     const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.6)
     hemiLight.position.set(0, 200, 0)
     scene.add(hemiLight)
+
     const dirLight = new THREE.DirectionalLight(0xffffff, 2)
     dirLight.position.set(5, 10, 7.5)
     scene.add(dirLight)
+
     const planesGroup = new THREE.Group()
-    scene.add(planesGroup)
     const modelsGroup = new THREE.Group()
+    scene.add(planesGroup)
     scene.add(modelsGroup)
+
     const textureLoader = new THREE.TextureLoader()
     const gltfLoader = new GLTFLoader()
+
     const spacingZ = 1900
     const SLOT_BASE_Z = 1450
     const SLOT_GAP = 2000
     const slots = Array.from({ length: glbPaths.length }, (_, i) => SLOT_BASE_Z - i * SLOT_GAP)
     const slotScales = Array.from({ length: glbPaths.length }, (_, i) => 1 - i * 0.1)
+
     const loadGLB = url =>
       new Promise((resolve, reject) =>
         gltfLoader.load(url, gltf => resolve(gltf.scene), undefined, reject)
       )
+
     const models = []
     const modelSlot = new Map()
     let isCarouselAnimating = false
+
     Promise.all(glbPaths.map(loadGLB))
       .then(scenes => {
         scenes.forEach((sceneModel, i) => {
@@ -360,6 +384,7 @@
         assetsLoaded = true
         checkFinishLoading()
       })
+
     const animateModelToSlot = (model, targetSlot, opts = {}) => {
       const duration = opts.duration ?? 1.0
       const ease = opts.ease ?? 'power2.inOut'
@@ -374,6 +399,7 @@
       })
       if (targetSlot === 0) gsap.to(model.rotation, { x: 0, y: 0, z: 0, duration })
     }
+
     const rotateCarousel = (direction = 1) => {
       if (isCarouselAnimating || models.length < slots.length) return
       isCarouselAnimating = true
@@ -395,11 +421,13 @@
         })
       })
     }
+
     let scrollCount = 0
     let lastDir = 0
     let lastScrollTime = 0
     const SCROLL_TRIGGER_COUNT = 9
     const SCROLL_DELAY = 290
+
     const onWheelForCarousel = e => {
       if (loading.value) return
       if (isNavbarHovered.value || selectedImage.value) {
@@ -422,17 +450,20 @@
         lastDir = 0
       }
     }
+
     const planes = []
     const planeLabels = new Map()
     const planeInfos = new Map()
     const shadowPlanes = new Map()
     const hoverTriggers = []
+
     const loadTexture = image =>
       new Promise(resolve => textureLoader.load('/work/' + image.name, tex => resolve(tex)))
+
     Promise.all(imageLinks.map(loadTexture)).then(textures => {
       textures.forEach((texture, i) => {
-        const fixedWidth = 950,
-          fixedHeight = 550
+        const fixedWidth = 950
+        const fixedHeight = 550
         const geometry = new THREE.PlaneGeometry(fixedWidth, fixedHeight)
         const material = new THREE.MeshBasicMaterial({
           map: texture,
@@ -450,6 +481,7 @@
           description: imageLinks[i].description,
           url: imageLinks[i].url
         })
+
         const hoverMaterial = new THREE.MeshBasicMaterial({
           visible: false,
           side: THREE.DoubleSide
@@ -458,6 +490,7 @@
         hoverPlane.position.copy(plane.position)
         planesGroup.add(hoverPlane)
         hoverTriggers.push({ plane, hoverPlane })
+
         const shadowMaterial = new THREE.MeshBasicMaterial({
           visible: false,
           side: THREE.DoubleSide
@@ -469,22 +502,26 @@
       })
       animate()
     })
+
     const raycaster = new THREE.Raycaster()
     const mouse = new THREE.Vector2()
     let currentHoveredPlane = null
     let isAnimating = false
     let scrollSpeed = 350
     const scrollDamp = 0.95
+
     const onWheel = e => {
       if (!loading.value) scrollSpeed -= e.deltaY * 0.06
       onWheelForCarousel(e)
     }
+
     const onMouseMove = event => {
       if (!loading.value) {
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1
         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
       }
     }
+
     const onClick = () => {
       if (isNavbarHovered.value || loading.value || selectedImage.value) return
       raycaster.setFromCamera(mouse, camera)
@@ -495,6 +532,7 @@
         selectedImage.value = { src: '/work/' + planeLabels.get(plane) + '.png', ...imageData }
       }
     }
+
     let resizeTimeout = null
     const onResize = () => {
       clearTimeout(resizeTimeout)
@@ -504,24 +542,28 @@
         renderer.setSize(window.innerWidth, window.innerHeight)
       }, 120)
     }
+
     const addRemover = (target, event, handler, options) => {
       target.addEventListener(event, handler, options)
       removers.push(() => target.removeEventListener(event, handler, options))
     }
+
     addRemover(window, 'wheel', onWheel, { passive: true })
     addRemover(window, 'mousemove', onMouseMove)
     addRemover(window, 'click', onClick)
     addRemover(window, 'resize', onResize)
-    const onKeyDown = event => {
-      if (event.key === 'Escape' && selectedImage.value) selectedImage.value = null
-    }
-    addRemover(window, 'keydown', onKeyDown)
+    addRemover(window, 'keydown', e => {
+      if (e.key === 'Escape' && selectedImage.value) selectedImage.value = null
+    })
+
     let rafId = null
     const animate = () => {
       rafId = requestAnimationFrame(animate)
       if (loading.value) return
+
       planesGroup.position.z += scrollSpeed
       scrollSpeed *= scrollDamp
+
       const cameraZ = camera.position.z
       for (const { plane, hoverPlane } of hoverTriggers) {
         const worldZ = planesGroup.position.z + plane.position.z
@@ -537,6 +579,7 @@
           if (shadow) shadow.position.z += planes.length * spacingZ
         }
       }
+
       if (!isNavbarHovered.value && !selectedImage.value) {
         raycaster.setFromCamera(mouse, camera)
         const intersectPlanes = raycaster.intersectObjects(
@@ -548,12 +591,14 @@
           false
         )
         const anyHovered = intersectPlanes.length > 0 || intersectHoverPlanes.length > 0
+
         if (anyHovered && !isAnimating) {
           let intersectedPlane =
             intersectPlanes[0]?.object instanceof THREE.Mesh &&
             planes.includes(intersectPlanes[0].object)
               ? intersectPlanes[0].object
               : hoverTriggers.find(ht => ht.hoverPlane === intersectHoverPlanes[0]?.object)?.plane
+
           if (intersectedPlane && intersectedPlane !== currentHoveredPlane) {
             if (currentHoveredPlane) {
               gsap.to(currentHoveredPlane.position, { x: 0, duration: 0.3 })
@@ -566,12 +611,13 @@
             if (s) gsap.to(s.scale, { x: 1.01, duration: 0.9 })
             hoveredLabel.value = planeLabels.get(currentHoveredPlane)
             topLeftText.value = planeInfos.get(currentHoveredPlane) || { info: '', description: '' }
+
             nextTick(() => {
               if (topLeftDiv.value)
                 gsap.fromTo(
                   topLeftDiv.value,
                   { opacity: 0, x: -50 },
-                  { opacity: 1, x: 0, duration: 0.6, ease: 'power2.out' }
+                  { opacity: 1, x: 0, duration: 0.6 }
                 )
               if (topLeftTitle.value)
                 gsap.fromTo(
@@ -586,65 +632,25 @@
                   { opacity: 1, y: 0, duration: 0.6, delay: 0.2 }
                 )
             })
-            const pos = new THREE.Vector3()
-            currentHoveredPlane.getWorldPosition(pos)
-            const offset = new THREE.Vector3(1, 0, 0)
-            offset.applyQuaternion(currentHoveredPlane.quaternion)
-            pos.add(offset.multiplyScalar(currentHoveredPlane.geometry.parameters.width / 2 + 60))
-            pos.project(camera)
-            hoveredPosition.value = {
-              x: (pos.x * 0.5 + 0.5) * window.innerWidth,
-              y: (-pos.y * 0.5 + 0.5) * window.innerHeight
-            }
           }
-        } else if (!anyHovered && currentHoveredPlane && !isAnimating) {
-          isAnimating = true
-          gsap.to(currentHoveredPlane.position, {
-            x: 0,
-            duration: 0.3,
-            onComplete: () => {
-              const s = shadowPlanes.get(currentHoveredPlane)
-              if (s) gsap.to(s.scale, { x: 1, duration: 0.3 })
-              currentHoveredPlane = null
-              isAnimating = false
-            }
-          })
-          hoveredLabel.value = null
-          topLeftText.value = { info: '', description: '' }
-          if (topLeftDiv.value) gsap.to(topLeftDiv.value, { opacity: 0, x: -50, duration: 0.3 })
-          document.body.style.cursor = 'default'
         }
-      } else if (currentHoveredPlane && !isAnimating) {
-        isAnimating = true
-        gsap.to(currentHoveredPlane.position, {
-          x: 0,
-          duration: 0.3,
-          onComplete: () => {
-            const s = shadowPlanes.get(currentHoveredPlane)
-            if (s) gsap.to(s.scale, { x: 1, duration: 0.3 })
-            currentHoveredPlane = null
-            isAnimating = false
-          }
-        })
-        hoveredLabel.value = null
-        topLeftText.value = { info: '', description: '' }
-        if (topLeftDiv.value) gsap.to(topLeftDiv.value, { opacity: 0, x: -50, duration: 0.3 })
-        document.body.style.cursor = 'default'
       }
       renderer.render(scene, camera)
     }
+
     onBeforeUnmount(() => {
       try {
         cancelAnimationFrame(rafId)
-      } catch (e) {}
+      } catch {}
       cancelAll()
       try {
         renderer.forceContextLoss?.()
         renderer.dispose?.()
-      } catch (e) {}
+      } catch {}
     })
   })
 </script>
+
 <style scoped>
   canvas {
     display: block;
