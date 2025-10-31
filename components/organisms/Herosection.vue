@@ -426,9 +426,7 @@
 
 <script setup>
   import { ref, computed, onMounted, onUnmounted, nextTick, defineEmits } from 'vue'
-  import { gsap } from 'gsap'
-  import ScrollTrigger from 'gsap/ScrollTrigger'
-
+  import { useGSAP } from '~/composables/useGSAP'
   import Button from '@atoms/Button.vue'
   import moonSVGRaw from '@atoms/svgs/rocket-moon-hero.svg?raw'
   import stripessvg from '@atoms/svgs/herosectionstripes.svg?raw'
@@ -437,7 +435,7 @@
   import bglines from '@atoms/svgs/Lines.svg?raw'
   import cockpit from '@atoms/svgs/cockpit.svg?raw'
 
-  gsap.registerPlugin(ScrollTrigger)
+  const { gsap, ScrollTrigger, createAnimation, createScrollTrigger } = useGSAP()
 
   const emit = defineEmits(['show-services'])
 
@@ -468,6 +466,7 @@
   let observers = []
 
   onMounted(() => {
+    if (!gsap || !ScrollTrigger) return
     //   const canvas = lightspeedRef.value.querySelector('canvas');
     // const ctx = canvas.getContext('2d');
 
@@ -546,45 +545,57 @@
       cssFadeObserver.observe(cityImage.value)
       observers.push(cssFadeObserver)
 
-      gsap.fromTo(
-        cityImage.value,
-        { scale: 0.86 },
-        {
-          scale: 1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: cityImage.value,
-            start: 'top bottom',
-            end: 'top 40%',
-            scrub: 1
-          }
-        }
-      )
+      // Add will-change for performance
+      if (cityImage.value && cityImage.value.style) {
+        cityImage.value.style.willChange = 'transform'
+      }
 
-      gsap.fromTo(
-        textContent.value,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
+      createAnimation(() => {
+        return gsap.fromTo(
+          cityImage.value,
+          { scale: 0.86 },
+          {
+            scale: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: cityImage.value,
+              start: 'top bottom',
+              end: 'top 40%',
+              scrub: 1
+            }
+          }
+        )
+      })
+
+      createAnimation(() => {
+        return gsap.fromTo(
+          textContent.value,
+          { autoAlpha: 0, y: 30 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: cityImage.value,
+              start: 'top 23%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        )
+      })
+
+      createAnimation(() => {
+        return gsap.to(cityRef.value, {
+          autoAlpha: 0,
           ease: 'power2.out',
           scrollTrigger: {
-            trigger: cityImage.value,
-            start: 'top 23%',
-            toggleActions: 'play none none reverse'
+            trigger: cityRef.value,
+            start: 'bottom 60%',
+            end: 'bottom 100%',
+            scrub: true
           }
-        }
-      )
-      gsap.to(cityRef.value, {
-        opacity: 0,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: cityRef.value,
-          start: 'bottom 60%',
-          end: 'bottom 100%',
-          scrub: true
-        }
+        })
       })
 
       const observer = new IntersectionObserver(
@@ -641,7 +652,7 @@
       if (spaceship) {
         gsap.set(spaceship, { opacity: 1, x: 0, y: 0 })
 
-        ScrollTrigger.create({
+        createScrollTrigger({
           trigger: section,
           start: 'top bottom',
           end: 'bottom top',
@@ -670,33 +681,35 @@
       const textContentEl = cockpitEl.querySelector('.cockpit-text')
       const card = cockpitEl.querySelector('.cockpit-card')
 
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: contentWrapper,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            scrub: 1
-          }
-        })
-        .fromTo(
-          bg,
-          { scale: 1 },
-          { scale: 1.15, transformOrigin: 'center center', ease: 'none' },
-          0
-        )
-        .fromTo(
-          [textContentEl, card],
-          { scale: 0.9, autoAlpha: 0 },
-          { scale: 1, autoAlpha: 1, duration: 1, ease: 'power3.out' },
-          0
-        )
+      createAnimation(() => {
+        return gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: contentWrapper,
+              start: 'top 80%',
+              end: 'bottom 20%',
+              scrub: 1
+            }
+          })
+          .fromTo(
+            bg,
+            { scale: 1 },
+            { scale: 1.15, transformOrigin: 'center center', ease: 'none' },
+            0
+          )
+          .fromTo(
+            [textContentEl, card],
+            { scale: 0.9, autoAlpha: 0 },
+            { scale: 1, autoAlpha: 1, duration: 1, ease: 'power3.out' },
+            0
+          )
+      })
     })
   })
 
   onUnmounted(() => {
     observers.forEach(obs => obs.disconnect())
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+    // Cleanup handled by composable
   })
 
   const handleClick = () => {

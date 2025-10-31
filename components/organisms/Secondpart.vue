@@ -51,10 +51,9 @@
 <script setup>
   import { ref, computed, onMounted, onUnmounted } from 'vue'
   import Button from '@atoms/Button.vue'
-  import { gsap } from 'gsap'
-  import ScrollTrigger from 'gsap/ScrollTrigger'
+  import { useGSAP } from '~/composables/useGSAP'
 
-  gsap.registerPlugin(ScrollTrigger)
+  const { gsap, ScrollTrigger, createAnimation } = useGSAP()
 
   const cityRef = ref(null)
   const cityImage = ref(null)
@@ -64,6 +63,8 @@
   const fadeClass = computed(() => (isVisible.value ? 'fade-in' : 'fade-out'))
 
   onMounted(() => {
+    if (!gsap || !ScrollTrigger) return
+
     const city = cityRef.value
     const image = cityImage.value
     const text = textContent.value
@@ -79,36 +80,45 @@
     )
     cssFadeObserver.observe(image)
 
-    gsap.fromTo(
-      image,
-      { scale: 0.86 },
-      {
-        scale: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: image,
-          start: 'top bottom',
-          end: 'top 30%',
-          scrub: 1
-        }
-      }
-    )
+    // Add will-change for performance
+    if (image.style) {
+      image.style.willChange = 'transform'
+    }
 
-    gsap.fromTo(
-      text,
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: image,
-          start: 'top 15%',
-          toggleActions: 'play none none reverse'
+    createAnimation(() => {
+      return gsap.fromTo(
+        image,
+        { scale: 0.86 },
+        {
+          scale: 1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: image,
+            start: 'top bottom',
+            end: 'top 30%',
+            scrub: 1
+          }
         }
-      }
-    )
+      )
+    })
+
+    createAnimation(() => {
+      return gsap.fromTo(
+        text,
+        { autoAlpha: 0, y: 30 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: image,
+            start: 'top 15%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      )
+    })
 
     const fadeObserver = new IntersectionObserver(
       ([entry]) => {
@@ -121,7 +131,7 @@
     onUnmounted(() => {
       cssFadeObserver.disconnect()
       fadeObserver.disconnect()
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+      // Cleanup handled by composable
     })
   })
 </script>
