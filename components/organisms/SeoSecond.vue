@@ -519,6 +519,7 @@
     </section>
   </div>
 </template>
+
 <script setup>
   import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
   import Button from '@atoms/Button.vue'

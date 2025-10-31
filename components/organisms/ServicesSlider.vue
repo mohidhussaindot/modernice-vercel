@@ -44,20 +44,20 @@
     </div>
   </div>
 </template>
-<script setup>
+
+<script setup lang="ts">
   import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
-  import { gsap } from 'gsap'
-  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+  import { useGSAP } from '../../composables/useGSAP'
 
-  gsap.registerPlugin(ScrollTrigger)
+  const { gsap, ScrollTrigger, cleanup } = useGSAP()
 
-  const wrapper = ref(null)
-  const scroller = ref(null)
-  const slide1 = ref(null)
-  const slide2 = ref(null)
-  const slide3 = ref(null)
+  const wrapper = ref<HTMLElement | null>(null)
+  const scroller = ref<HTMLElement | null>(null)
+  const slide1 = ref<HTMLElement | null>(null)
+  const slide2 = ref<HTMLElement | null>(null)
+  const slide3 = ref<HTMLElement | null>(null)
 
-  let triggers = []
+  let triggers: ScrollTrigger[] = []
 
   const cleanupTriggers = () => {
     triggers.forEach(t => t?.kill?.())
@@ -72,7 +72,7 @@
 
     cleanupTriggers()
 
-    const slides = [slide1.value, slide2.value, slide3.value]
+    const slides = [slide1.value, slide2.value, slide3.value].filter(Boolean) as HTMLElement[]
     const windowWidth = window.innerWidth
     const scrollerWidth = slides.length * windowWidth
     const scrollDistance = scrollerWidth - windowWidth
@@ -92,7 +92,7 @@
         anticipatePin: 1
       }
     })
-    triggers.push(horiz)
+    triggers.push(horiz.scrollTrigger as ScrollTrigger)
 
     const watcher = ScrollTrigger.create({
       trigger: wrapper.value,
@@ -131,6 +131,7 @@
     if (typeof window === 'undefined') return
     window.removeEventListener('resize', initAnimation)
     cleanupTriggers()
+    cleanup()
   })
 </script>
 

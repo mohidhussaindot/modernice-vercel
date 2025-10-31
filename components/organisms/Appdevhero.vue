@@ -346,6 +346,7 @@
     </div>
   </section>
 </template>
+
 <script setup>
   import appdevhero from '@atoms/svgs/appdevhero.svg?raw'
   import appdevhero2 from '@atoms/svgs/appdevhero2.svg?raw'

@@ -7,14 +7,12 @@
         :class="[isFirstPartVisible ? 'fade-in' : 'fade-out']"
         class="relative w-full overflow-hidden"
       >
-        <ClientOnly>
-          <div class="w-full" v-html="bghero"></div>
-          <div
-            ref="stripesDiv"
-            class="absolute inset-0 pointer-events-none z-10"
-            v-html="stripessvg"
-          ></div>
-        </ClientOnly>
+        <div class="w-full" v-html="bghero"></div>
+        <div
+          ref="stripesDiv"
+          class="absolute inset-0 pointer-events-none z-10"
+          v-html="stripessvg"
+        ></div>
 
         <div class="flex">
           <div
@@ -24,7 +22,7 @@
               class="text-white flex flex-col w-full max-w-none sm:max-w-[32rem] md:max-w-[29rem] xl:max-w-[34.875rem]"
             >
               <h1
-                class="font-bold leading-tight text-[1.75rem] sm:text-[2.25rem] md:text-[2rem] lg:text-[3rem] xl:text-[3.375rem] 2xl:text-[4.5rem] w-full xl:w-[34.0625rem]"
+                class="font-bold leading-tight text-[2.5rem] sm:text-[2.25rem] md:text-[2rem] lg:text-[1.75rem] xl:text-[1.875rem] 2xl:text-[3.5rem] w-full"
               >
                 <span
                   class="text-transparent bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE]"
@@ -34,7 +32,7 @@
               </h1>
 
               <p
-                class="mt-[1.5rem] font-light leading-relaxed text-[1rem] sm:text-[1.125rem] md:text-[1rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.5rem] w-full xl:w-[34.875rem]"
+                class="mt-[1.5rem] font-light leading-relaxed text-[1rem] sm:text-[1.125rem] md:text-[1rem] lg:text-[0.95rem] xl:text-[1rem] 2xl:text-[1.25rem] w-full xl:w-[34.875rem]"
               >
                 Kreatives Webdesign, meisterhafte Softwareentwicklung und bahnbrechende
                 AI-Technologien, die dein Geschäft auf die Überholspur bringen.
@@ -44,7 +42,7 @@
                 class="mt-[2rem] inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] hover:from-[#6BE0FF] hover:to-[#3BB1FF]"
               >
                 <Button
-                  class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[0.8rem] lg:text-[1.1875rem] xl:text-[1.25rem] 2xl:text-[1.45rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
+                  class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] md:text-[0.8rem] lg:text-[0.9rem] xl:text-[1rem] 2xl:text-[1.25rem] rounded-[0.625rem] bg-black bg-opacity-90 transition hover:cursor-pointer text-white hover:text-white"
                 >
                   <span
                     class="bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] text-transparent bg-clip-text duration-300"
@@ -57,7 +55,7 @@
 
             <ClientOnly>
               <div
-                class="float-moon md:w-252 2xl:w-[1200px] 2xl:h-[900px] md:h-[600px]"
+                class="float-moon md:w-289 2xl:w-[1200px] 2xl:h-[900px] md:h-[600px]"
                 v-html="moonSVGRaw"
               ></div>
             </ClientOnly>
@@ -229,174 +227,169 @@
       </div>
     </div>
 
-   <!-- MOBILE (only) -->
-<section class="block md:hidden text-white bg-[#020111] overflow-x-hidden">
-  <!-- HERO SECTION -->
-  <div class="relative mt-30">
-    <ClientOnly>
-      <img
-        alt="rocketmoonhero"
-        class="absolute right-0 left-10 top-12 w-[150%] max-w-none will-change-transform"
-        src="@atoms/svgs/rocket-moon-hero.svg"
-      />
-    </ClientOnly>
+    <!-- MOBILE (only) -->
+    <section class="block md:hidden text-white bg-[#020111] overflow-x-hidden">
+      <!-- HERO SECTION -->
+      <div class="relative mt-30">
+        <ClientOnly>
+          <img
+            alt="rocketmoonhero"
+            class="absolute right-0 left-10 top-12 w-[150%] max-w-none will-change-transform"
+            src="@atoms/svgs/rocket-moon-hero.svg"
+          />
+        </ClientOnly>
 
-    <div class="relative px-4 pt-48 flex flex-col z-10">
-      <h1 class="text-[2rem] font-bold mb-2 leading-snug">
-        <span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE] [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
-        >
-          Entdecke<br />Neue Horizonte
-        </span>
-      </h1>
-
-      <p class="max-w-[300px] text-[0.9rem] font-light leading-relaxed">
-        Kreatives Webdesign, meisterhafte Softwareentwicklung und bahnbrechende AI-Technologien,
-        die dein Geschäft auf die Überholspur bringen.
-      </p>
-
-      <div
-        class="mt-4 inline-block transition-transform duration-300 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] active:scale-105"
-      >
-        <Button
-          class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
-        >
-          <span
-            class="bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
-          >
-            Erzähl mir mehr.
-          </span>
-        </Button>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 2 -->
-  <div class="relative mt-54 h-[40rem] bg-black overflow-hidden">
-    <img
-      src="/first-three-sect-img/city.png"
-      class="w-full h-full object-cover will-change-transform"
-      alt="City"
-    />
-
-    <div
-      class="absolute inset-0 flex flex-col justify-center items-center text-center px-5 text-white bg-black/30 backdrop-blur-[1px]"
-    >
-      <h1 class="text-[2rem] font-bold leading-snug mb-2">
-        KI-gesteuerte Geschäftslösungen
-      </h1>
-      <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
-        Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz (KI), Großen Sprachmodellen
-        (LLMs) und Maschinellem Lernen (ML). Diese Technologien verändern die Art und Weise, wie wir
-        arbeiten und wachsen.
-      </p>
-
-      <NuxtLink to="/services/aiconsulting">
-        <div
-          class="inline-block mt-6 transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639]"
-        >
-          <Button
-            class="px-[1.25rem] py-[0.625rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
-          >
+        <div class="relative px-4 pt-48 flex flex-col z-10">
+          <h1 class="text-[2rem] font-bold mb-2 leading-snug">
             <span
-              class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
+              class="text-transparent bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE] [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
             >
-              Prozessoptimierung durch KI
+              Entdecke<br />Neue Horizonte
             </span>
-          </Button>
-        </div>
-      </NuxtLink>
-    </div>
-  </div>
+          </h1>
 
-  <!-- SECTION 3 -->
-  <div class="h-[30rem] flex items-center px-5">
-    <div class="flex flex-col items-center text-center gap-6 max-w-full">
-      <h1 class="text-[2rem] font-bold italic leading-snug">
-        Innovation <br />durch Design und Technologie
-      </h1>
-      <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
-        In einer erfolgreichen Web-Lösung verschmelzen Design und Entwicklung zu einem harmonischen
-        Ganzen. Die nahtlose Integration von Frontend und Backend, ergänzt durch modernste
-        Technologien wie KI, LLMs und Machine Learning, schafft Produkte, die den Horizont des
-        Möglichen erweitern.
-      </p>
-      <div
-        class="inline-block transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#FFE501] to-[#FFA901]"
-      >
-        <Button
-          class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
-        >
-          <span
-            class="bg-gradient-to-r from-[#FFA901] to-[#FFE501] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
+          <p class="max-w-[300px] text-[0.9rem] font-light leading-relaxed">
+            Kreatives Webdesign, meisterhafte Softwareentwicklung und bahnbrechende AI-Technologien,
+            die dein Geschäft auf die Überholspur bringen.
+          </p>
+
+          <div
+            class="mt-4 inline-block transition-transform duration-300 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] active:scale-105"
           >
-            Schaffe Außergewöhnliches
-          </span>
-        </Button>
+            <Button
+              class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
+            >
+              <span
+                class="bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
+              >
+                Erzähl mir mehr.
+              </span>
+            </Button>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- SECTION 4 -->
-  <div class="h-[30rem] flex items-center px-5">
-    <div class="relative z-10 flex flex-col items-center text-center gap-6 max-w-full">
-      <h2 class="text-[2rem] font-bold italic leading-snug">
-        Sei der Wandel, den du in deiner Branche sehen möchtest.
-      </h2>
-      <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
-        Wir transformieren Daten in Einblicke, Herausforderungen in Chancen. Mit unserer Strategie
-        werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften. Lass die Zukunft
-        nicht warten.
-      </p>
-      <NuxtLink to="/services/aiconsulting">
+      <!-- SECTION 2 -->
+      <div class="relative mt-54 h-[40rem] bg-black overflow-hidden">
+        <img
+          src="/first-three-sect-img/city.png"
+          class="w-full h-full object-cover will-change-transform"
+          alt="City"
+        />
+
         <div
-          class="inline-block transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8]"
+          class="absolute inset-0 flex flex-col justify-center items-center text-center px-5 text-white bg-black/30 backdrop-blur-[1px]"
         >
-          <Button
-            class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
-          >
-            <span
-              class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
+          <h1 class="text-[2rem] font-bold leading-snug mb-2"> KI-gesteuerte Geschäftslösungen </h1>
+          <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
+            Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz (KI), Großen
+            Sprachmodellen (LLMs) und Maschinellem Lernen (ML). Diese Technologien verändern die Art
+            und Weise, wie wir arbeiten und wachsen.
+          </p>
+
+          <NuxtLink to="/services/aiconsulting">
+            <div
+              class="inline-block mt-6 transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639]"
             >
-              KI-Beratung
-            </span>
-          </Button>
+              <Button
+                class="px-[1.25rem] py-[0.625rem] text-[1rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
+              >
+                <span
+                  class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
+                >
+                  Prozessoptimierung durch KI
+                </span>
+              </Button>
+            </div>
+          </NuxtLink>
         </div>
-      </NuxtLink>
-    </div>
-  </div>
-
-  <!-- FINAL CTA -->
-  <div class="h-[20rem] flex items-center px-5">
-    <div class="flex flex-col items-center text-center gap-6 max-w-full">
-      <h1 class="text-[2rem] font-bold italic leading-snug">
-        Ready to take your Online Presence to the next level?
-      </h1>
-      <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
-        We'll work with you to plan ...
-      </p>
-      <div
-        class="inline-block transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#38EF61] to-[#44E5C8]"
-      >
-        <Button
-          class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
-        >
-          <span
-            class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
-          >
-            Get a Website Strategy
-          </span>
-        </Button>
       </div>
-    </div>
-  </div>
-</section>
 
+      <!-- SECTION 3 -->
+      <div class="h-[30rem] flex items-center px-5">
+        <div class="flex flex-col items-center text-center gap-6 max-w-full">
+          <h1 class="text-[2rem] font-bold italic leading-snug">
+            Innovation <br />durch Design und Technologie
+          </h1>
+          <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
+            In einer erfolgreichen Web-Lösung verschmelzen Design und Entwicklung zu einem
+            harmonischen Ganzen. Die nahtlose Integration von Frontend und Backend, ergänzt durch
+            modernste Technologien wie KI, LLMs und Machine Learning, schafft Produkte, die den
+            Horizont des Möglichen erweitern.
+          </p>
+          <div
+            class="inline-block transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#FFE501] to-[#FFA901]"
+          >
+            <Button
+              class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
+            >
+              <span
+                class="bg-gradient-to-r from-[#FFA901] to-[#FFE501] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
+              >
+                Schaffe Außergewöhnliches
+              </span>
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 4 -->
+      <div class="h-[30rem] flex items-center px-5">
+        <div class="relative z-10 flex flex-col items-center text-center gap-6 max-w-full">
+          <h2 class="text-[2rem] font-bold italic leading-snug">
+            Sei der Wandel, den du in deiner Branche sehen möchtest.
+          </h2>
+          <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
+            Wir transformieren Daten in Einblicke, Herausforderungen in Chancen. Mit unserer
+            Strategie werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften. Lass
+            die Zukunft nicht warten.
+          </p>
+          <NuxtLink to="/services/aiconsulting">
+            <div
+              class="inline-block transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8]"
+            >
+              <Button
+                class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
+              >
+                <span
+                  class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
+                >
+                  KI-Beratung
+                </span>
+              </Button>
+            </div>
+          </NuxtLink>
+        </div>
+      </div>
+
+      <!-- FINAL CTA -->
+      <div class="h-[20rem] flex items-center px-5">
+        <div class="flex flex-col items-center text-center gap-6 max-w-full">
+          <h1 class="text-[2rem] font-bold italic leading-snug">
+            Ready to take your Online Presence to the next level?
+          </h1>
+          <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
+            We'll work with you to plan ...
+          </p>
+          <div
+            class="inline-block transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#38EF61] to-[#44E5C8]"
+          >
+            <Button
+              class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
+            >
+              <span
+                class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
+              >
+                Get a Website Strategy
+              </span>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
-<script setup>
-  import { gsap } from 'gsap'
-  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+<script setup lang="ts">
   import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
   import { useRoute } from 'vue-router'
   import Button from '@atoms/Button.vue'
@@ -404,127 +397,173 @@
   import stripessvg from '@atoms/svgs/herosectionstripes.svg?raw'
   import bghero from '@atoms/svgs/bghero.svg?raw'
   import bglines from '@atoms/svgs/Lines.svg?raw'
-  gsap.registerPlugin(ScrollTrigger)
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+  // ✅ Import composables
+  import { useGSAP, useGSAPAnimations } from '../../composables/useGSAP'
+
+  // ✅ Initialize GSAP safely
+  const { gsap, createScrollTrigger, cleanup } = useGSAP()
+  const { onScroll, parallax } = useGSAPAnimations()
+
+  // Type guards — ensure gsap is loaded before use
+  const getGSAP = () => {
+    if (!gsap) throw new Error('GSAP is not initialized yet')
+    return gsap
+  }
+
   const route = useRoute()
-  const firstPart = ref(null)
-  const stripesDiv = ref(null)
-  const cityRef = ref(null)
-  const cityImage = ref(null)
-  const textContent = ref(null)
-  const sectionRef = ref(null)
-  const ctaSectionRef = ref(null)
+
+  // ✅ Refs
+  const firstPart = ref<HTMLElement | null>(null)
+  const stripesDiv = ref<HTMLElement | null>(null)
+  const cityRef = ref<HTMLElement | null>(null)
+  const cityImage = ref<HTMLElement | null>(null)
+  const textContent = ref<HTMLElement | null>(null)
+  const sectionRef = ref<HTMLElement | null>(null)
+  const ctaSectionRef = ref<HTMLElement | null>(null)
+
+  // ✅ Visibility states
   const isFirstPartVisible = ref(true)
   const isCityVisible = ref(true)
   const isSectionVisible = ref(true)
   const isCTAVisible = ref(false)
+
   const fadeClassSection = computed(() => (isSectionVisible.value ? 'fade-in' : 'fade-out'))
   const fadecta = computed(() => (isCTAVisible.value ? 'fade-in' : 'fade-out'))
-  let observers = []
-  let triggers = []
-  function observeElement(el, callback, options = { threshold: 0.1 }) {
+
+  // ✅ IntersectionObserver helper
+  let observers: IntersectionObserver[] = []
+  function observeElement(
+    el: Element | null,
+    callback: (visible: boolean) => void,
+    options: IntersectionObserverInit = { threshold: 0.1 }
+  ) {
     if (!el) return
     const observer = new IntersectionObserver(([entry]) => callback(entry.isIntersecting), options)
     observer.observe(el)
     observers.push(observer)
   }
-  function cleanup() {
+
+  // ✅ Cleanup Observers + GSAP
+  function localCleanup() {
     observers.forEach(obs => obs.disconnect())
     observers = []
-    triggers.forEach(t => t.kill())
-    triggers = []
+    cleanup() // kills GSAP timelines & ScrollTriggers
   }
+
+  // ✅ Main animation logic
   function runGSAPAnimations() {
-    cleanup()
+    localCleanup()
+
+    const gsapInstance = getGSAP()
+
     const vectorEl =
       stripesDiv.value?.querySelector('#Vector\\ 343') ||
       stripesDiv.value?.querySelector('#Vector343')
+
     if (firstPart.value && vectorEl) {
       observeElement(vectorEl, visible => (isFirstPartVisible.value = visible))
     }
+
     if (!(cityRef.value && cityImage.value && textContent.value)) return
+
     observeElement(cityRef.value, visible => (isCityVisible.value = visible))
     observeElement(ctaSectionRef.value, visible => (isCTAVisible.value = visible), {
       threshold: 0.3
     })
-    gsap.fromTo(
-      cityImage.value,
-      { scale: 0.86 },
-      {
-        scale: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          id: 'hero-city-scale',
-          trigger: cityImage.value,
-          start: 'top bottom',
-          end: 'top 40%',
-          scrub: 1
-        }
-      }
-    )
-    gsap.fromTo(
-      textContent.value,
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          id: 'hero-text-fade',
-          trigger: cityImage.value,
-          start: 'top 23%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    )
-    gsap.to(cityRef.value, {
-      opacity: 0,
-      ease: 'power2.out',
-      scrollTrigger: {
-        id: 'hero-city-fade',
-        trigger: cityRef.value,
-        start: 'bottom 60%',
-        end: 'bottom 100%',
-        scrub: true
-      }
+
+    // ✅ Parallax scale effect on city image
+    createScrollTrigger({
+      id: 'hero-city-scale',
+      trigger: cityImage.value!,
+      start: 'top bottom',
+      end: 'top 40%',
+      scrub: true,
+      animation: gsapInstance.fromTo(
+        cityImage.value,
+        { scale: 0.86 },
+        { scale: 1, ease: 'power2.out' }
+      )
     })
+
+    // ✅ Fade text on scroll
+    onScroll(
+      textContent.value!,
+      {
+        from: { opacity: 0, y: 30 },
+        to: { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }
+      },
+      {
+        id: 'hero-text-fade',
+        trigger: cityImage.value!,
+        start: 'top 23%',
+        toggleActions: 'play none none reverse'
+      }
+    )
+
+    // ✅ Fade out city as it scrolls away
+    createScrollTrigger({
+      id: 'hero-city-fade',
+      trigger: cityRef.value!,
+      start: 'bottom 60%',
+      end: 'bottom 100%',
+      scrub: true,
+      animation: gsapInstance.to(cityRef.value, {
+        opacity: 0,
+        ease: 'power2.out'
+      })
+    })
+
+    // ✅ Observe section visibility
     observeElement(sectionRef.value, visible => (isSectionVisible.value = visible), {
       threshold: 0.1,
       rootMargin: '-100px 0px -100px 0px'
     })
+
+    // ✅ Spaceship scroll movement
     if (ctaSectionRef.value) {
-      const spaceship = ctaSectionRef.value.querySelector('.spaceship-wrapper')
+      const spaceship = ctaSectionRef.value.querySelector(
+        '.spaceship-wrapper'
+      ) as HTMLElement | null
       if (spaceship) {
-        gsap.set(spaceship, { opacity: 1, x: 0, y: 0 })
-        const trigger = ScrollTrigger.create({
+        gsapInstance.set(spaceship, { opacity: 1, x: 0, y: 0 })
+
+        createScrollTrigger({
           id: 'hero-spaceship',
-          trigger: ctaSectionRef.value,
+          trigger: ctaSectionRef.value!,
           start: 'top bottom',
           end: 'bottom top',
           scrub: true,
           onUpdate: self => {
-            gsap.set(spaceship, {
+            gsapInstance.set(spaceship, {
               x: -200 * self.progress,
               y: 100 * self.progress
             })
           }
         })
-        triggers.push(trigger)
       }
     }
   }
+
   onMounted(async () => {
     await nextTick()
     runGSAPAnimations()
   })
+
   watch(
     () => route.fullPath,
     async () => {
       await nextTick()
-      ScrollTrigger.refresh()
+      const gsapInstance = gsap
+      if (gsapInstance) {
+        gsapInstance.delayedCall(0.1, () => gsapInstance.globalTimeline?.clear())
+        ScrollTrigger.refresh()
+      }
     }
   )
-  onUnmounted(() => cleanup())
+
+  onUnmounted(() => localCleanup())
 </script>
 
 <style scoped>

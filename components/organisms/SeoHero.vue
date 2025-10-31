@@ -106,16 +106,17 @@
     </div>
   </section>
 </template>
-<script setup>
+<script setup lang="ts">
   import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
   import { gsap } from 'gsap'
+  import { useGSAP } from '../../composables/useGSAP'
   import Button from '@atoms/Button.vue'
   import Seocharacter from '@atoms/svgs/seo-character.svg?raw'
   import seoherolines from '@atoms/svgs/seolines.svg?raw'
 
-  const seocharacter = ref(null)
-  const seoLinesContainer = ref(null)
-  let tl = null
+  const seocharacter = ref<HTMLElement | null>(null)
+  const seoLinesContainer = ref<HTMLElement | null>(null)
+  let tl: gsap.core.Timeline | null = null
 
   onMounted(async () => {
     await nextTick()
@@ -140,6 +141,7 @@
         yoyo: true,
         defaults: { ease: 'sine.inOut' }
       })
+
       tl.to(character, { y: -15, duration: 2 }).to(character, { y: 0, duration: 2 })
     }
   })
