@@ -15,3 +15,6 @@
   --bg-tertiary: #85e642;
   --yellowish: #85e642;
 }
+html, body {
+  overscroll-behavior: none;
+}
