@@ -23,17 +23,22 @@ export const useGSAP = () => {
 
   let gsap: any = nuxtApp.$gsap
   let ScrollTrigger: any = nuxtApp.$ScrollTrigger
-  const prefersReducedMotion =
-    (nuxtApp.$prefersReducedMotion as boolean) || false
+  const prefersReducedMotion = (nuxtApp.$prefersReducedMotion as boolean) || false
 
-  // 🔁 Retry if GSAP not yet injected
-  if (!gsap || !ScrollTrigger) {
+  // Get device performance level from plugin
+  const devicePerformanceLevel =
+    (nuxtApp.$devicePerformanceLevel as 'high' | 'medium' | 'low') || 'high'
+  const shouldLoadHeavyAnimations = (nuxtApp.$shouldLoadHeavyAnimations as boolean) ?? true
+  const isLowPerformanceDevice = (nuxtApp.$isLowPerformanceDevice as boolean) || false
+
+  // 🔁 Retry if GSAP not yet injected (only for high/medium performance)
+  if (!gsap && devicePerformanceLevel !== 'low') {
     console.warn('⚠️ GSAP not yet available, waiting for plugin injection...')
     onMounted(() => {
       const app = useNuxtApp()
       gsap = app.$gsap
       ScrollTrigger = app.$ScrollTrigger
-      if (gsap && ScrollTrigger) {
+      if (gsap) {
         console.info('✅ GSAP initialized successfully after mount.')
       } else {
         console.error('❌ GSAP still missing after mount. Check gsap.client.ts.')
@@ -43,12 +48,20 @@ export const useGSAP = () => {
 
   // ✨ Create GSAP timeline with cleanup
   const createAnimation = (callback: (gsapInstance: any) => any, skipIfReducedMotion = false) => {
-    if (!gsap) return null
+    // Skip animations entirely on low performance devices
+    if (devicePerformanceLevel === 'low' || !gsap) return null
     if (prefersReducedMotion && skipIfReducedMotion) return null
 
     try {
       const timeline = callback(gsap)
-      if (timeline) animations.value.push(timeline)
+      if (timeline) {
+        animations.value.push(timeline)
+
+        // Optimize timeline for medium performance devices
+        if (devicePerformanceLevel === 'medium' && timeline.duration) {
+          timeline.duration(timeline.duration() * 0.7) // Shorter duration
+        }
+      }
       return timeline
     } catch (err) {
       console.error('GSAP animation error:', err)
@@ -58,6 +71,10 @@ export const useGSAP = () => {
 
   // 🌀 ScrollTrigger creation helper
   const createScrollTrigger = (config: any, skipIfReducedMotion = false) => {
+    // Skip ScrollTrigger on low performance devices or if not available
+    if (!shouldLoadHeavyAnimations || devicePerformanceLevel === 'low') {
+      return null
+    }
     if (!ScrollTrigger) return null
     if (prefersReducedMotion && skipIfReducedMotion) return null
 
@@ -73,12 +90,19 @@ export const useGSAP = () => {
 
   // 🧩 Batch animations for multiple elements
   const batchAnimate = (elements: Element[], animationConfig: any) => {
-    if (!gsap) return null
+    // Skip batch animations on low performance devices
+    if (devicePerformanceLevel === 'low' || !gsap) return null
+
     const config = { ...animationConfig }
 
     if (!config.hasOwnProperty('autoAlpha') && config.opacity !== undefined) {
       config.autoAlpha = config.opacity
       delete config.opacity
+    }
+
+    // Reduce stagger on medium performance devices
+    if (devicePerformanceLevel === 'medium' && config.stagger) {
+      config.stagger = config.stagger * 0.5 // Faster stagger
     }
 
     try {
@@ -91,8 +115,8 @@ export const useGSAP = () => {
 
   // 🧹 Clean up timelines & triggers
   const cleanup = () => {
-    animations.value.forEach((t) => t?.kill?.())
-    scrollTriggers.value.forEach((st) => st?.kill?.())
+    animations.value.forEach(t => t?.kill?.())
+    scrollTriggers.value.forEach(st => st?.kill?.())
     animations.value = []
     scrollTriggers.value = []
   }
@@ -103,6 +127,9 @@ export const useGSAP = () => {
     gsap,
     ScrollTrigger,
     prefersReducedMotion,
+    devicePerformanceLevel,
+    shouldLoadHeavyAnimations,
+    isLowPerformanceDevice,
     createAnimation,
     createScrollTrigger,
     batchAnimate,
@@ -112,7 +139,13 @@ export const useGSAP = () => {
 
 // --- Common animation presets ---
 export const useGSAPAnimations = () => {
-  const { gsap, createAnimation, createScrollTrigger, prefersReducedMotion } = useGSAP()
+  const {
+    gsap,
+    createAnimation,
+    createScrollTrigger,
+    prefersReducedMotion,
+    devicePerformanceLevel
+  } = useGSAP()
 
   const applyReducedMotion = (element: Element | Element[], finalState: Record<string, any>) => {
     if (!gsap) return
@@ -123,7 +156,7 @@ export const useGSAPAnimations = () => {
     }
 
     Array.isArray(element)
-      ? element.forEach((el) => el && applyStyle(el as HTMLElement))
+      ? element.forEach(el => el && applyStyle(el as HTMLElement))
       : element && applyStyle(element as HTMLElement)
   }
 
@@ -203,16 +236,19 @@ export const useGSAPAnimations = () => {
   }
 
   // --- Parallax ---
-  const parallax = (element: Element | Element[], speed: number = 0.5) =>
-    prefersReducedMotion
-      ? null
-      : createScrollTrigger({
-          trigger: element,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-          animation: gsap.to(element, { y: -100 * speed, ease: 'none' })
-        })
+  const parallax = (element: Element | Element[], speed: number = 0.5) => {
+    // Parallax is heavy - only enable on high performance devices
+    if (prefersReducedMotion || devicePerformanceLevel !== 'high') {
+      return null
+    }
+    return createScrollTrigger({
+      trigger: element,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true,
+      animation: gsap.to(element, { y: -100 * speed, ease: 'none' })
+    })
+  }
 
   return { fadeIn, slideInLeft, slideInRight, scaleIn, onScroll, parallax }
 }
