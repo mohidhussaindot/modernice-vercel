@@ -10,12 +10,16 @@ export const useGSAP = () => {
       gsap: null,
       ScrollTrigger: null,
       prefersReducedMotion: false,
+      isMobile: false,
       createAnimation: () => null,
       createScrollTrigger: () => null,
       batchAnimate: () => null,
       cleanup: () => {}
     }
   }
+
+  // Check for mobile device
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768
 
   const nuxtApp = useNuxtApp()
   const animations = ref<any[]>([])
