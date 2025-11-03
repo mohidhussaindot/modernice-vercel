@@ -48,11 +48,28 @@ export default defineNuxtConfig({
     },
     define: {
       __GSAP_VERSION__: JSON.stringify(process.env.NODE_ENV === 'production' ? '3.13.0' : '3.13.0')
+    },
+    build: {
+      // Performance optimizations for mobile/low-end devices
+      // GSAP plugins are conditionally loaded based on device performance
+      // See plugins/gsap.client.ts for performance-based loading
+      rollupOptions: {
+        output: {
+          // Code splitting for GSAP - allows conditional loading
+          manualChunks: {
+            'gsap-core': ['gsap'],
+            'gsap-heavy': ['gsap/ScrollTrigger', 'gsap/MotionPathPlugin', 'gsap/DrawSVGPlugin']
+          }
+        }
+      }
     }
   },
 
   build: {
     transpile: ['vue-toastification', 'swiper', 'gsap']
+    // Note: GSAP plugins are conditionally loaded at runtime based on device performance
+    // (memory, CPU cores, network speed) to optimize for low-end devices
+    // See plugins/gsap.client.ts for the performance detection logic
   },
 
   alias: {
