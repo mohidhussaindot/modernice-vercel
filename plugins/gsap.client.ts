@@ -10,6 +10,23 @@ export default defineNuxtPlugin(async nuxtApp => {
     nuxtApp.provide('MotionPathPlugin', null)
     nuxtApp.provide('DrawSVGPlugin', null)
     nuxtApp.provide('prefersReducedMotion', false)
+    nuxtApp.provide('isMobile', false)
+    return
+  }
+
+  // Check for mobile using media query
+  const isMobile = window.matchMedia('(max-width: 767px)').matches
+
+  // If on mobile, provide null values to completely disable animations
+  if (isMobile) {
+    console.info('Mobile device detected - animations disabled')
+    nuxtApp.provide('gsap', null)
+    nuxtApp.provide('ScrollTrigger', null)
+    nuxtApp.provide('TextPlugin', null)
+    nuxtApp.provide('MotionPathPlugin', null)
+    nuxtApp.provide('DrawSVGPlugin', null)
+    nuxtApp.provide('prefersReducedMotion', true)
+    nuxtApp.provide('isMobile', true)
     return
   }
 
@@ -23,7 +40,7 @@ export default defineNuxtPlugin(async nuxtApp => {
         import('gsap/DrawSVGPlugin')
       ])
 
-    // Register all plugins centrally
+    // Register plugins (only for desktop)
     gsap.registerPlugin(ScrollTrigger, TextPlugin, MotionPathPlugin, DrawSVGPlugin)
 
     // Production GSAP performance optimizations
@@ -73,6 +90,7 @@ export default defineNuxtPlugin(async nuxtApp => {
     nuxtApp.provide('MotionPathPlugin', MotionPathPlugin)
     nuxtApp.provide('DrawSVGPlugin', DrawSVGPlugin)
     nuxtApp.provide('prefersReducedMotion', prefersReducedMotion)
+    nuxtApp.provide('isMobile', false)
   } catch (error) {
     console.error('GSAP initialization failed:', error)
     // Return empty provides to prevent crashes
@@ -81,6 +99,7 @@ export default defineNuxtPlugin(async nuxtApp => {
     nuxtApp.provide('TextPlugin', null)
     nuxtApp.provide('MotionPathPlugin', null)
     nuxtApp.provide('DrawSVGPlugin', null)
-    nuxtApp.provide('prefersReducedMotion', false)
+    nuxtApp.provide('prefersReducedMotion', true)
+    nuxtApp.provide('isMobile', true)
   }
 })

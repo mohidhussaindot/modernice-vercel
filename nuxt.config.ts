@@ -1,12 +1,14 @@
-import { defineNuxtConfig } from 'nuxt/config' // ✅ Import type for TS
+import { defineNuxtConfig } from 'nuxt/config'
 import tailwindcss from '@tailwindcss/vite'
 import { resolve } from 'path'
 
 export default defineNuxtConfig({
   css: ['~/assets/tailwind.css', 'swiper/css', 'swiper/css/navigation', 'swiper/css/autoplay'],
+
   typescript: {
     shim: false
   },
+
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
@@ -22,7 +24,17 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
+  // ✅ Allow LAN / mobile access
+  devServer: {
+    host: '0.0.0.0',
+    port: 3000
+  },
+
   vite: {
+    server: {
+      host: '0.0.0.0',
+      port: 3000
+    },
     plugins: [tailwindcss()],
     optimizeDeps: {
       include: [
@@ -35,7 +47,6 @@ export default defineNuxtConfig({
       ]
     },
     define: {
-      // Optimize GSAP for production
       __GSAP_VERSION__: JSON.stringify(process.env.NODE_ENV === 'production' ? '3.13.0' : '3.13.0')
     }
   },

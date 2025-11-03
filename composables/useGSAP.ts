@@ -10,6 +10,7 @@ export const useGSAP = () => {
       gsap: null,
       ScrollTrigger: null,
       prefersReducedMotion: false,
+      isMobile: false,
       createAnimation: () => null,
       createScrollTrigger: () => null,
       batchAnimate: () => null,
@@ -17,14 +18,16 @@ export const useGSAP = () => {
     }
   }
 
+  // Check for mobile device
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768
+
   const nuxtApp = useNuxtApp()
   const animations = ref<any[]>([])
   const scrollTriggers = ref<any[]>([])
 
   let gsap: any = nuxtApp.$gsap
   let ScrollTrigger: any = nuxtApp.$ScrollTrigger
-  const prefersReducedMotion =
-    (nuxtApp.$prefersReducedMotion as boolean) || false
+  const prefersReducedMotion = (nuxtApp.$prefersReducedMotion as boolean) || false
 
   // 🔁 Retry if GSAP not yet injected
   if (!gsap || !ScrollTrigger) {
@@ -91,8 +94,8 @@ export const useGSAP = () => {
 
   // 🧹 Clean up timelines & triggers
   const cleanup = () => {
-    animations.value.forEach((t) => t?.kill?.())
-    scrollTriggers.value.forEach((st) => st?.kill?.())
+    animations.value.forEach(t => t?.kill?.())
+    scrollTriggers.value.forEach(st => st?.kill?.())
     animations.value = []
     scrollTriggers.value = []
   }
@@ -123,7 +126,7 @@ export const useGSAPAnimations = () => {
     }
 
     Array.isArray(element)
-      ? element.forEach((el) => el && applyStyle(el as HTMLElement))
+      ? element.forEach(el => el && applyStyle(el as HTMLElement))
       : element && applyStyle(element as HTMLElement)
   }
 
