@@ -1,11 +1,11 @@
 // composables/useGSAP.ts
-import { ref, onUnmounted, onMounted } from 'vue'
+import { ref, onUnmounted, onMounted, nextTick } from 'vue'
 import { useNuxtApp } from 'nuxt/app'
 
 // --- Core composable ---
 export const useGSAP = () => {
   if (!process.client) {
-    // Return empty stub for SSR
+    // SSR-safe stub
     return {
       gsap: null,
       ScrollTrigger: null,
@@ -43,10 +43,10 @@ export const useGSAP = () => {
       } else {
         console.error('❌ GSAP still missing after mount. Check gsap.client.ts.')
       }
-    })
-  }
+    }
+  })
 
-  // ✨ Create GSAP timeline with cleanup
+  // ✨ Create GSAP timeline
   const createAnimation = (callback: (gsapInstance: any) => any, skipIfReducedMotion = false) => {
     // Skip animations entirely on low performance devices
     if (devicePerformanceLevel === 'low' || !gsap) return null
@@ -88,7 +88,7 @@ export const useGSAP = () => {
     }
   }
 
-  // 🧩 Batch animations for multiple elements
+  // 🧩 Batch animation helper
   const batchAnimate = (elements: Element[], animationConfig: any) => {
     // Skip batch animations on low performance devices
     if (devicePerformanceLevel === 'low' || !gsap) return null
@@ -113,7 +113,7 @@ export const useGSAP = () => {
     }
   }
 
-  // 🧹 Clean up timelines & triggers
+  // 🧹 Cleanup
   const cleanup = () => {
     animations.value.forEach(t => t?.kill?.())
     scrollTriggers.value.forEach(st => st?.kill?.())
@@ -160,7 +160,6 @@ export const useGSAPAnimations = () => {
       : element && applyStyle(element as HTMLElement)
   }
 
-  // --- Basic animations ---
   const fadeIn = (element: Element | Element[], options: any = {}) =>
     prefersReducedMotion
       ? (applyReducedMotion(element, { autoAlpha: 1, y: 0 }), null)
@@ -205,7 +204,6 @@ export const useGSAPAnimations = () => {
           )
         )
 
-  // --- Scroll-based animations ---
   const onScroll = (element: Element | Element[], animation: any, triggerOptions: any = {}) => {
     if (prefersReducedMotion) {
       const finalState = { ...(animation.from || {}), ...(animation.to || {}) }
