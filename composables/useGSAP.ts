@@ -23,8 +23,7 @@ export const useGSAP = () => {
 
   let gsap: any = nuxtApp.$gsap
   let ScrollTrigger: any = nuxtApp.$ScrollTrigger
-  const prefersReducedMotion =
-    (nuxtApp.$prefersReducedMotion as boolean) || false
+  const prefersReducedMotion = (nuxtApp.$prefersReducedMotion as boolean) || false
 
   // 🔁 Retry if GSAP not yet injected
   if (!gsap || !ScrollTrigger) {
@@ -91,8 +90,8 @@ export const useGSAP = () => {
 
   // 🧹 Clean up timelines & triggers
   const cleanup = () => {
-    animations.value.forEach((t) => t?.kill?.())
-    scrollTriggers.value.forEach((st) => st?.kill?.())
+    animations.value.forEach(t => t?.kill?.())
+    scrollTriggers.value.forEach(st => st?.kill?.())
     animations.value = []
     scrollTriggers.value = []
   }
@@ -123,7 +122,7 @@ export const useGSAPAnimations = () => {
     }
 
     Array.isArray(element)
-      ? element.forEach((el) => el && applyStyle(el as HTMLElement))
+      ? element.forEach(el => el && applyStyle(el as HTMLElement))
       : element && applyStyle(element as HTMLElement)
   }
 

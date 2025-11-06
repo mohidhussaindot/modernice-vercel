@@ -218,14 +218,13 @@
   }
 
   const services = [
-     { label: 'Website Strategy', to: '/services/website-strategy' },
-         { label: 'AI Consulting', to: '/services/aiconsulting' },
-             { label: 'SEO', to: '/services/seo' },
+    { label: 'Website Strategy', to: '/services/website-strategy' },
+    { label: 'AI Consulting', to: '/services/aiconsulting' },
+    { label: 'SEO', to: '/services/seo' },
 
     { label: 'E-commerce', to: '/services/ecs' },
 
-    { label: 'App Development', to: '/services/appdevelopment' },
-   
+    { label: 'App Development', to: '/services/appdevelopment' }
   ]
 
   const isActive = (path: string) => route.path === path

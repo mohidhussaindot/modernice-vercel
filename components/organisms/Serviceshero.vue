@@ -23,7 +23,7 @@
       <div ref="contentRef" class="relative scale-[0.5] pb-2 origin-center z-20 max-w-7xl w-full">
         <div class="flex flex-col pt-20 lg:flex-row justify-between gap-12 lg:gap-[6rem]">
           <!-- Text Section -->
-          <div class="flex-1 flex flex-col gap-[1.5rem] max-w-[32.13rem] ">
+          <div class="flex-1 flex flex-col gap-[1.5rem] max-w-[32.13rem]">
             <h1
               class="md:text-[2.8rem] xl:text-[3.8rem] font-lightbold italic leading-[1.2] text-center lg:text-left"
             >

@@ -1,15 +1,11 @@
 <template>
   <section class="relative bg-black overflow-hidden">
     <div
-      class="flex flex-col lg:flex-row items-center lg:items-start justify-between
-             max-w-7xl mx-auto lg:px-4 xl:px-0
-             gap-12 md:gap-20"
+      class="flex flex-col lg:flex-row items-center lg:items-start justify-between max-w-7xl mx-auto lg:px-4 xl:px-0 gap-12 md:gap-20"
     >
       <!-- TEXT CONTENT -->
       <div
-        class="text-white xl:pt-20 xl:max-w-[38rem] lg:max-w-[28rem] md:max-w-[32rem]
-               flex flex-col gap-[1.8rem] md:items-center text-center
-               lg:items-start lg:text-left"
+        class="text-white xl:pt-20 xl:max-w-[38rem] lg:max-w-[28rem] md:max-w-[32rem] flex flex-col gap-[1.8rem] md:items-center text-center lg:items-start lg:text-left"
       >
         <h1 class="text-[2rem] md:text-[3rem] xl:text-[3.8rem] font-semibold italic">
           <span class="text-green-500">Form</span> folgt
@@ -47,63 +43,75 @@
 </template>
 
 <script setup>
-import servicesscond from '@atoms/svgs/servicessecond.svg?raw'
-import { onMounted, ref } from 'vue'
+  import servicesscond from '@atoms/svgs/servicessecond.svg?raw'
+  import { onMounted, ref } from 'vue'
 
-const services2 = ref(null)
+  const services2 = ref(null)
 
-onMounted(() => {
-  const gears = services2.value?.querySelector('#Gears')
-  if (!gears) return
+  onMounted(() => {
+    const gears = services2.value?.querySelector('#Gears')
+    if (!gears) return
 
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      if (entries[0].isIntersecting) {
-        gears.classList.add('visible')
-        obs.disconnect()
-      }
-    },
-    { threshold: 0.5 }
-  )
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        if (entries[0].isIntersecting) {
+          gears.classList.add('visible')
+          obs.disconnect()
+        }
+      },
+      { threshold: 0.5 }
+    )
 
-  observer.observe(gears)
-})
+    observer.observe(gears)
+  })
 </script>
 
 <style>
-@keyframes shadowPulse {
-  0%, 100% {
-    stroke: #ffff33;
-    filter: drop-shadow(0 0 10px #ffff33);
+  @keyframes shadowPulse {
+    0%,
+    100% {
+      stroke: #ffff33;
+      filter: drop-shadow(0 0 10px #ffff33);
+    }
+    50% {
+      stroke: #ffff99;
+      filter: drop-shadow(0 0 40px #ffff33);
+    }
   }
-  50% {
-    stroke: #ffff99;
-    filter: drop-shadow(0 0 40px #ffff33);
+
+  @keyframes plantSwing {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(7deg);
+    }
   }
-}
 
-@keyframes plantSwing {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(7deg); }
-}
+  @keyframes gearsSlideIn {
+    0% {
+      transform: translateX(-60px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 
-@keyframes gearsSlideIn {
-  0% { transform: translateX(-60px); opacity: 0; }
-  100% { transform: translateX(0); opacity: 1; }
-}
+  .services-hero-svg #Plant {
+    transform-origin: bottom center;
+    animation: plantSwing 5s ease-in-out infinite;
+  }
 
-.services-hero-svg #Plant {
-  transform-origin: bottom center;
-  animation: plantSwing 5s ease-in-out infinite;
-}
+  .services-hero-svg #Gears {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: none;
+  }
 
-.services-hero-svg #Gears {
-  opacity: 0;
-  transform: translateX(-60px);
-  transition: none;
-}
-
-.services-hero-svg #Gears.visible {
-  animation: gearsSlideIn 3s ease-out forwards;
-}
+  .services-hero-svg #Gears.visible {
+    animation: gearsSlideIn 3s ease-out forwards;
+  }
 </style>

@@ -2,9 +2,9 @@
   <!-- mobile -->
 
   <section class="bg-black lg:hidden text-white overflow-hidden relative w-full px-6 lg:px-0 py-40">
-    <div class="max-w-[800px]  mx-auto flex flex-col gap-12">
+    <div class="max-w-[800px] mx-auto flex flex-col gap-12">
       <!-- Hero Section -->
-      <div class="flex flex-col  md:flex-row">
+      <div class="flex flex-col md:flex-row">
         <div class="flex flex-col max-w-[400px] gap-8 text-left">
           <h1 class="text-[2rem] italic font-semibold leading-tight">
             <span
@@ -194,13 +194,14 @@
 
   <section class="bg-black hidden lg:flex text-white overflow-hidden relative w-full">
     <div
-      class="absolute  inset-0 md:flex hidden z-0 bg-no-repeat bg-cover pointer-events-none"
-      :style="{ backgroundImage: `url('${lines}')` }" style="scale: 1;"
+      class="absolute inset-0 md:flex hidden z-0 bg-no-repeat bg-cover pointer-events-none"
+      :style="{ backgroundImage: `url('${lines}')` }"
+      style="scale: 1"
     ></div>
 
     <div class="relative z-10 lg:px-4 xl:px-0 max-w-7xl mx-auto">
       <div
-        class="lg:flex flex-col hidden md:flex lg:flex-row 2xl:pt-50 items-center 2xl:h-[53rem] h-[49.375rem] gap-8  xl:justify-center"
+        class="lg:flex flex-col hidden md:flex lg:flex-row 2xl:pt-50 items-center 2xl:h-[53rem] h-[49.375rem] gap-8 xl:justify-center"
       >
         <div class="flex flex-col gap-7 text-left w-full lg:mx-0 lg:pr-0">
           <h1 class="text-[2.5rem] italic font-semibold leading-tight">
@@ -260,47 +261,47 @@
         </div>
       </div>
       <!-- Our Approach Section -->
-     <div class="flex flex-col gap-y-20 max-w-7xl mx-auto mt-20 ">
-  <div
-    class="flex flex-col lg:flex-row items-center lg:items-center justify-between w-full"
-  >
-    <!-- Text Block -->
-    <div class="fade-left text-white flex-shrink-0 lg:max-w-[600px]">
-      <h1 class="text-[2.625rem] font-bold">
-        Our
-        <span
-          class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent"
-          >Approach</span
-        >
-      </h1>
+      <div class="flex flex-col gap-y-20 max-w-7xl mx-auto mt-20">
+        <div class="flex flex-col lg:flex-row items-center lg:items-center justify-between w-full">
+          <!-- Text Block -->
+          <div class="fade-left text-white flex-shrink-0 lg:max-w-[600px]">
+            <h1 class="text-[2.625rem] font-bold">
+              Our
+              <span
+                class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent"
+                >Approach</span
+              >
+            </h1>
 
-      <h2 class="text-2xl font-semibold mt-4">1. Discovery</h2>
+            <h2 class="text-2xl font-semibold mt-4">1. Discovery</h2>
 
-      <p class="font-light text-lg mt-2 w-[500px] max-w-full leading-relaxed">
-        During the discovery phase, we work with you to understand your business goals and
-        needs, as well as gather requirements and specifications for your hybrid app.
-      </p>
-    </div>
+            <p class="font-light text-lg mt-2 w-[500px] max-w-full leading-relaxed">
+              During the discovery phase, we work with you to understand your business goals and
+              needs, as well as gather requirements and specifications for your hybrid app.
+            </p>
+          </div>
 
-    <!-- Illustration -->
-    <div
-      class="hidden md:flex justify-center w-full lg:w-auto flex-shrink-0"
-      v-html="aiourapproach"
-    ></div>
-  </div>
-
+          <!-- Illustration -->
+          <div
+            class="hidden md:flex justify-center w-full lg:w-auto flex-shrink-0"
+            v-html="aiourapproach"
+          ></div>
+        </div>
 
         <!-- Step 2: Design -->
         <div
           class="flex flex-col lg:flex-row justify-between items-center w-full max-w-7xl mx-auto mt-20 px-4 md:px-6 lg:px-0"
         >
           <!-- Illustration -->
-          <div class="hidden md:flex justify-center w-full lg:w-auto flex-shrink-0" v-html="aidesign"></div>
+          <div
+            class="hidden md:flex justify-center w-full lg:w-auto flex-shrink-0"
+            v-html="aidesign"
+          ></div>
 
           <!-- Text -->
           <div class="fade-right text-white w-full max-w-[500px] pt-10 lg:pt-0 mx-auto lg:mx-0">
             <h2 class="text-2xl font-semibold">2. Design</h2>
-            <p class="font-light  text-lg mt-2">
+            <p class="font-light text-lg mt-2">
               Next, our team of designers creates wireframes and mockups to visualise the user flow
               and layout of the app. We work with you to ensure the design aligns with your brand
               guidelines and meets the needs of your users.
@@ -308,78 +309,74 @@
           </div>
         </div>
 
-      <!-- Step 3: Development -->
-<div
-  class="flex flex-col lg:flex-row items-center justify-between 
-         w-full max-w-7xl mx-auto mt-20 px-6 lg:px-0 "
->
-  <!-- Text -->
-  <div class="fade-left text-white flex-shrink-0 max-w-[600px] pt-10 lg:pt-0">
-    <h2 class="text-2xl font-semibold">3. Development</h2>
-    <p class="font-light text-lg mt-2 w-[500px] max-w-full leading-relaxed">
-      Using the latest tools and technologies, such as Flutter, we begin building the hybrid
-      app according to the approved design. Our developers ensure that the app functions
-      smoothly and provides a seamless user experience on both iOS and Android platforms.
-    </p>
-  </div>
+        <!-- Step 3: Development -->
+        <div
+          class="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl mx-auto mt-20 px-6 lg:px-0"
+        >
+          <!-- Text -->
+          <div class="fade-left text-white flex-shrink-0 max-w-[600px] pt-10 lg:pt-0">
+            <h2 class="text-2xl font-semibold">3. Development</h2>
+            <p class="font-light text-lg mt-2 w-[500px] max-w-full leading-relaxed">
+              Using the latest tools and technologies, such as Flutter, we begin building the hybrid
+              app according to the approved design. Our developers ensure that the app functions
+              smoothly and provides a seamless user experience on both iOS and Android platforms.
+            </p>
+          </div>
 
-  <!-- Illustration -->
-  <div
-    class="hidden md:flex justify-center w-full lg:w-auto flex-shrink-0 max-w-[600px]"
-    v-html="aidevelopment"
-  ></div>
-</div>
+          <!-- Illustration -->
+          <div
+            class="hidden md:flex justify-center w-full lg:w-auto flex-shrink-0 max-w-[600px]"
+            v-html="aidevelopment"
+          ></div>
+        </div>
 
-<!-- Step 4: Testing and Launch -->
-<div
-  class="flex flex-col lg:flex-row items-center justify-between 
-         w-full max-w-7xl mx-auto mt-20 px-6 lg:px-0"
->
-  <!-- Illustration -->
-  <div
-    class="hidden md:flex justify-center w-full lg:w-auto flex-shrink-0 max-w-[600px]"
-    v-html="aitesting"
-  ></div>
+        <!-- Step 4: Testing and Launch -->
+        <div
+          class="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl mx-auto mt-20 px-6 lg:px-0"
+        >
+          <!-- Illustration -->
+          <div
+            class="hidden md:flex justify-center w-full lg:w-auto flex-shrink-0 max-w-[600px]"
+            v-html="aitesting"
+          ></div>
 
-  <!-- Text -->
-  <div class="text-white fade-right flex-shrink-0 max-w-[600px] pt-10 lg:pt-0">
-    <h2 class="text-2xl font-semibold">4. Testing and Launch</h2>
-    <p class="font-light text-lg mt-2 w-[500px] max-w-full leading-relaxed">
-      Before launching the app, we conduct thorough testing to ensure that it is stable and
-      bug-free. Once the app is ready, we help you with the submission process and launch it
-      on the App Store and Google Play.
-    </p>
-  </div>
-</div>
+          <!-- Text -->
+          <div class="text-white fade-right flex-shrink-0 max-w-[600px] pt-10 lg:pt-0">
+            <h2 class="text-2xl font-semibold">4. Testing and Launch</h2>
+            <p class="font-light text-lg mt-2 w-[500px] max-w-full leading-relaxed">
+              Before launching the app, we conduct thorough testing to ensure that it is stable and
+              bug-free. Once the app is ready, we help you with the submission process and launch it
+              on the App Store and Google Play.
+            </p>
+          </div>
+        </div>
 
-<!-- Step 5: Optimize for Growth -->
-<div
-  class="flex flex-col lg:flex-row items-center justify-between 
-         w-full max-w-7xl mx-auto mt-20 mb-20 px-6 lg:px-0"
->
-  <!-- Text -->
-  <div class="fade-left text-white flex-shrink-0 max-w-[600px]">
-    <h2 class="text-2xl font-semibold">5. Optimize for Growth</h2>
-    <p class="font-light text-lg mt-2 w-[500px] max-w-full leading-relaxed">
-      After the app is launched, we provide ongoing support and maintenance to ensure that
-      it continues to function smoothly and meet the changing needs of your business. We
-      also offer optimization services to help increase user engagement and drive growth.
-    </p>
-  </div>
+        <!-- Step 5: Optimize for Growth -->
+        <div
+          class="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl mx-auto mt-20 mb-20 px-6 lg:px-0"
+        >
+          <!-- Text -->
+          <div class="fade-left text-white flex-shrink-0 max-w-[600px]">
+            <h2 class="text-2xl font-semibold">5. Optimize for Growth</h2>
+            <p class="font-light text-lg mt-2 w-[500px] max-w-full leading-relaxed">
+              After the app is launched, we provide ongoing support and maintenance to ensure that
+              it continues to function smoothly and meet the changing needs of your business. We
+              also offer optimization services to help increase user engagement and drive growth.
+            </p>
+          </div>
 
-  <!-- Illustration -->
-  <div class="relative max-w-[37.5rem]" ref="rocketContainer">
-    <div
-      class="hidden lg:flex justify-center w-full lg:w-auto flex-shrink-0 max-w-[600px]"
-      v-html="aioptamize"
-    ></div>
-    <canvas
-      ref="burstCanvas"
-      class="absolute inset-0 left-20 top-5 z-10 w-full h-full pointer-events-none"
-    ></canvas>
-  </div>
-</div>
-
+          <!-- Illustration -->
+          <div class="relative max-w-[37.5rem]" ref="rocketContainer">
+            <div
+              class="hidden lg:flex justify-center w-full lg:w-auto flex-shrink-0 max-w-[600px]"
+              v-html="aioptamize"
+            ></div>
+            <canvas
+              ref="burstCanvas"
+              class="absolute inset-0 left-20 top-5 z-10 w-full h-full pointer-events-none"
+            ></canvas>
+          </div>
+        </div>
       </div>
     </div>
   </section>

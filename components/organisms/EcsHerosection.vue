@@ -2,8 +2,9 @@
   <div class="relative bg-black text-white overflow-hidden">
     <!-- Top background SVG -->
     <div
-      class="absolute inset-0 w-full h-full hidden  2xl:left-[10%] xl:-left-[8%] lg:flex z-0 pointer-events-none"
-      v-html="svgbg" style="scale: 1.4;"
+      class="absolute inset-0 w-full h-full hidden 2xl:left-[10%] xl:-left-[8%] lg:flex z-0 pointer-events-none"
+      v-html="svgbg"
+      style="scale: 1.4"
     ></div>
 
     <!-- Content -->
@@ -60,7 +61,7 @@
         </div>
       </section>
 
-      <section class="relative  lg:px-0 px-2  w-full text-white overflow-hidden pt-10">
+      <section class="relative lg:px-0 px-2 w-full text-white overflow-hidden pt-10">
         <div class="relative z-10 flex flex-col items-center">
           <div class="text-center w-full max-w-[39.625rem] text-[2.875rem] font-semibold">
             <h1>

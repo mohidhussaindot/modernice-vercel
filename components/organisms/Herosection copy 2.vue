@@ -1,7 +1,7 @@
 <template>
-  <div class="text-white  overflow-hidden bg-[#020111]">
+  <div class="text-white overflow-hidden bg-[#020111]">
     <!-- DESKTOP HERO (hidden on small screens) -->
-    <div class="hidden  sm:block">
+    <div class="hidden sm:block">
       <div
         ref="firstPart"
         :class="[isFirstPartVisible ? 'fade-in' : 'fade-out']"
@@ -15,9 +15,7 @@
         ></div>
 
         <div class="flex">
-          <div
-            class="absolute z-30 inset-0 flex items-center mx-auto  max-w-7xl"
-          >
+          <div class="absolute z-30 inset-0 flex items-center mx-auto max-w-7xl">
             <div
               class="text-white flex flex-col w-full max-w-none sm:max-w-[32rem] md:max-w-[29rem] xl:max-w-[34.875rem]"
             >
@@ -173,13 +171,13 @@
       >
         <ClientOnly>
           <div
-            class="absolute  inset-0 flex justify-center pt-[5.5%] pl-[13%] pointer-events-none select-none z-0"
+            class="absolute inset-0 flex justify-center pt-[5.5%] pl-[13%] pointer-events-none select-none z-0"
             style="transform: scale(3.2) rotate(3.9deg); transform-origin: center"
             v-html="bglines"
           ></div>
         </ClientOnly>
 
-        <div class="relative  mx-auto max-w-7xl w-full z-10">
+        <div class="relative mx-auto max-w-7xl w-full z-10">
           <div class="relative flex justify-center items-center">
             <div
               class="relative z-10 md:top-[19.438rem] xl:top-[23.438rem] 2xl:top-[25.438rem] flex flex-col gap-[1.5rem] xl:w-[37.125rem] lg:w-[30rem] md:w-[30rem] max-h-[25.375rem]"
@@ -330,11 +328,7 @@
               </span>
             </Button>
           </div>
-            <img
-            src="/first-three-sect-img/rocketmoon.png"
-            alt="Rocket Moon"
-         
-          />
+          <img src="/first-three-sect-img/rocketmoon.png" alt="Rocket Moon" />
         </div>
       </div>
 
@@ -534,19 +528,19 @@
       if (spaceship) {
         gsapInstance.set(spaceship, { opacity: 1, x: 0, y: 0 })
 
-      createScrollTrigger({
-  id: 'hero-spaceship',
-  trigger: ctaSectionRef.value!,
-  start: 'top bottom',
-  end: 'bottom top',
-  scrub: true,
-  onUpdate: (self: ScrollTrigger) => {
-    gsapInstance.set(spaceship, {
-      x: -200 * self.progress,
-      y: 100 * self.progress
-    })
-  }
-})
+        createScrollTrigger({
+          id: 'hero-spaceship',
+          trigger: ctaSectionRef.value!,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+          onUpdate: (self: ScrollTrigger) => {
+            gsapInstance.set(spaceship, {
+              x: -200 * self.progress,
+              y: 100 * self.progress
+            })
+          }
+        })
       }
     }
   }
@@ -674,11 +668,11 @@
   }
 
   .svg-gradient {
-  mask-image: url('/path/to/Lines.svg');
-  mask-repeat: no-repeat;
-  mask-size: cover;
-  background: linear-gradient(to top, #ff66cc, #3399ff);
-  width: 100%;
-  height: 100%;
-}
+    mask-image: url('/path/to/Lines.svg');
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    background: linear-gradient(to top, #ff66cc, #3399ff);
+    width: 100%;
+    height: 100%;
+  }
 </style>
