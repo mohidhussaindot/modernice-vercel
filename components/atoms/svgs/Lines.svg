@@ -6,13 +6,15 @@
   style="width: 100%; height: auto;"
 >
   <defs>
+    <!-- 20% top solid blue, 80% bottom pink→blue blend -->
     <linearGradient id="pinkBlueGradient" x1="0" y1="3022" x2="0" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#ff66cc"/> <!-- bottom = pink -->
-      <stop offset="100%" stop-color="#3399ff"/> 
+      <stop offset="0%" stop-color="#ff66cc" />       <!-- bottom = pink -->
+      <stop offset="80%" stop-color="#3399ff" />      <!-- 80% height = blue -->
+      <stop offset="100%" stop-color="#3399ff" />     <!-- top = blue -->
     </linearGradient>
   </defs>
 
-  <!-- Paths using the same vertical gradient -->
+  <!-- Paths all use the same gradient -->
   <path d="M1612.72 68.6677C1601.22 381.334 1453.12 1026.37 952.718 1105.17C327.218 1203.67 31.2178 1423.17 859.718 1655.17C1688.22 1887.17 1276.72 2003.17 859.718 2136.17C442.718 2269.17 506.718 2466.67 518.218 2501.17C529.718 2535.67 802.218 2831.17 147.718 2952.67" stroke="url(#pinkBlueGradient)" stroke-width="2" />
   <path d="M1637.77 81.6713C1620.82 394.09 1461.48 1036.44 959.784 1106.49C332.66 1194.06 32.8741 1408.36 857.199 1654.79C1681.52 1901.21 1268.06 2010.01 848.804 2135.71C429.547 2261.42 490.09 2460 500.986 2494.7C511.882 2529.39 779.184 2829.61 122.663 2939.66" stroke="url(#pinkBlueGradient)" stroke-width="2" />
   <path d="M1662.6 95.1102C1640.19 407.185 1469.67 1046.66 966.825 1107.95C338.269 1184.56 34.7887 1393.59 854.687 1654.36C1674.59 1915.14 1259.29 2016.71 837.901 2135.07C416.513 2253.44 473.581 2453.05 483.87 2487.93C494.159 2522.81 756.18 2827.64 97.8389 2926.23" stroke="url(#pinkBlueGradient)" stroke-width="2" />
