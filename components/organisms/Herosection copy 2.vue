@@ -1,7 +1,7 @@
 <template>
-  <div class="text-white overflow-hidden bg-[#020111]">
+  <div class="text-white  overflow-hidden bg-[#020111]">
     <!-- DESKTOP HERO (hidden on small screens) -->
-    <div class="hidden sm:block">
+    <div class="hidden  sm:block">
       <div
         ref="firstPart"
         :class="[isFirstPartVisible ? 'fade-in' : 'fade-out']"
@@ -10,19 +10,19 @@
         <div class="w-full" v-html="bghero"></div>
         <div
           ref="stripesDiv"
-          class="absolute inset-0 pointer-events-none z-10"
+          class="absolute -top-40 inset-0 pointer-events-none z-10"
           v-html="stripessvg"
         ></div>
 
         <div class="flex">
           <div
-            class="absolute z-30 inset-0 flex md:pt-[9rem] xl:pt-[18.125rem] lg:pt-[11.25rem] mx-auto sm:pl-6 max-w-6xl"
+            class="absolute z-30 inset-0 flex items-center mx-auto  max-w-7xl"
           >
             <div
               class="text-white flex flex-col w-full max-w-none sm:max-w-[32rem] md:max-w-[29rem] xl:max-w-[34.875rem]"
             >
               <h1
-                class="font-bold leading-tight text-[2.5rem] sm:text-[2.25rem] md:text-[2rem] lg:text-[1.75rem] xl:text-[1.875rem] 2xl:text-[3.5rem] w-full"
+                class="font-bold leading-tight text-[2.5rem] sm:text-[2.25rem] md:text-[2rem] lg:text-[1.75rem] xl:text-[2.75rem] 2xl:text-[3.5rem] w-full"
               >
                 <span
                   class="text-transparent bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE]"
@@ -32,7 +32,7 @@
               </h1>
 
               <p
-                class="mt-[1.5rem] font-light leading-relaxed text-[1rem] sm:text-[1.125rem] md:text-[1rem] lg:text-[0.95rem] xl:text-[1rem] 2xl:text-[1.25rem] w-full xl:w-[34.875rem]"
+                class="mt-[1.5rem] font-light leading-relaxed text-[1rem] sm:text-[1.125rem] md:text-[1rem] lg:text-[0.95rem] xl:text-[1.5rem] 2xl:text-[1.25rem] w-full xl:w-[34.875rem]"
               >
                 Kreatives Webdesign, meisterhafte Softwareentwicklung und bahnbrechende
                 AI-Technologien, die dein Geschäft auf die Überholspur bringen.
@@ -67,10 +67,10 @@
       <div
         ref="cityRef"
         :class="[
-          'relative text-white overflow-hidden w-full grid place-items-center   max-w-6xl mx-auto transition-opacity duration-700'
+          'relative text-white overflow-hidden w-full grid place-items-center   max-w-7xl mx-auto transition-opacity duration-700'
         ]"
       >
-        <div class="w-full max-w-6xl">
+        <div class="w-full max-w-7xl">
           <div
             ref="cityImage"
             class="relative w-full xl:h-[61rem] h-[50rem] bg-no-repeat bg-contain bg-center bg-[url('/first-three-sect-img/city.png')] transition-opacity duration-1000 ease-in-out image-fade"
@@ -121,7 +121,7 @@
       <div
         ref="sectionRef"
         :class="[
-          'flex 2xl:mt-[-10rem]  xl:mt-[-15rem] overflow-visible  max-w-6xl mx-auto md:pl-10 gap-12 md:gap-0 lg:gap-0 transition-opacity duration-700 relative z-20',
+          'flex 2xl:mt-[-10rem]  xl:mt-[-15rem] overflow-visible  max-w-7xl mx-auto md:pl-10 gap-12 md:gap-0 lg:gap-0 transition-opacity duration-700 relative z-20',
           fadeClassSection
         ]"
       >
@@ -159,7 +159,7 @@
 
         <div class="w-full flex justify-center items-center">
           <img
-            src="/images/rocketmoon.png"
+            src="/first-three-sect-img/rocketmoon.png"
             alt="Rocket Moon"
             class="xl:w-[650.4355px] 2xl:w-[750.4355px] w-full h-full right-left object-contain select-none pointer-events-none"
           />
@@ -169,17 +169,17 @@
       <!-- CTA Section -->
       <div
         ref="ctaSectionRef"
-        :class="[`cta-section mt-[-10rem] relative h-[69.625rem] overflow-hidden w-full`, fadecta]"
+        :class="[`cta-section relative h-[69.625rem] overflow-hidden w-full`, fadecta]"
       >
         <ClientOnly>
           <div
-            class="absolute inset-0 flex justify-center pt-[5.5%] pl-[10%] pointer-events-none select-none z-0"
-            style="transform: scale(3) rotate(2.9deg); transform-origin: center"
+            class="absolute  inset-0 flex justify-center pt-[5.5%] pl-[13%] pointer-events-none select-none z-0"
+            style="transform: scale(3.2) rotate(3.9deg); transform-origin: center"
             v-html="bglines"
           ></div>
         </ClientOnly>
 
-        <div class="relative mx-auto max-w-6xl w-full z-10">
+        <div class="relative  mx-auto max-w-7xl w-full z-10">
           <div class="relative flex justify-center items-center">
             <div
               class="relative z-10 md:top-[19.438rem] xl:top-[23.438rem] 2xl:top-[25.438rem] flex flex-col gap-[1.5rem] xl:w-[37.125rem] lg:w-[30rem] md:w-[30rem] max-h-[25.375rem]"
@@ -219,7 +219,7 @@
               style="will-change: transform"
             >
               <ClientOnly>
-                <img src="/images/rocket.png" height="800" width="1000" />
+                <img src="/first-three-sect-img/rocket.png" height="800" width="1000" />
               </ClientOnly>
             </div>
           </div>
@@ -227,7 +227,7 @@
       </div>
     </div>
 
-    <!-- MOBILE (only) -->
+    <!-- mobile (only) -->
     <section class="block md:hidden text-white bg-[#020111] overflow-x-hidden">
       <!-- HERO SECTION -->
       <div class="relative mt-30">
@@ -306,7 +306,7 @@
       </div>
 
       <!-- SECTION 3 -->
-      <div class="h-[30rem] flex items-center px-5">
+      <div class="h-[45rem] flex items-center px-5">
         <div class="flex flex-col items-center text-center gap-6 max-w-full">
           <h1 class="text-[2rem] font-bold italic leading-snug">
             Innovation <br />durch Design und Technologie
@@ -330,6 +330,11 @@
               </span>
             </Button>
           </div>
+            <img
+            src="/first-three-sect-img/rocketmoon.png"
+            alt="Rocket Moon"
+         
+          />
         </div>
       </div>
 
@@ -667,4 +672,13 @@
   .content .section {
     height: 100vh;
   }
+
+  .svg-gradient {
+  mask-image: url('/path/to/Lines.svg');
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  background: linear-gradient(to top, #ff66cc, #3399ff);
+  width: 100%;
+  height: 100%;
+}
 </style>

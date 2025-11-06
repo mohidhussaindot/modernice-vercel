@@ -3,14 +3,14 @@
     class="bg-[#020111] hidden lg:flex relative 2xl:h-[1000px] lg:h-[837px] overflow-hidden py-24 px-6 md:px-16 lg:px-0"
   >
     <div
-      class="absolute inset-0 w-full h-full z-0 overflow-hidden"
+      class="absolute inset-0 xl:scale-[1.1] w-full h-full z-0 overflow-hidden"
       ref="seoLinesContainer"
       v-html="seoherolines"
     ></div>
 
     <!-- Main Content -->
     <div
-      class="relative z-10 flex flex-col lg:flex-row items-center w-full max-w-6xl mx-auto gap-16"
+      class="relative z-10 flex flex-col lg:flex-row items-center w-full max-w-7xl mx-auto gap-16"
     >
       <!-- Text Column -->
       <div class="text-white flex-1 flex flex-col gap-8 min-w-[299px]">

@@ -1,21 +1,23 @@
-<template>
+<template class="overflow-hidden">
+  
   <div
-    class="w-full h-[400px] bg-black hidden lg:flex bg-no-repeat bg-cover bg-center"
-    style="background-image: url('/images/services-third.png')"
-  ></div>
+    class="w-full   bg-black overflow-hidden hidden lg:flex bg-no-repeat bg-cover bg-center"
+     >
+  <img style="scale: 1 ; rotate: 2deg;" src="/images/services-third.png" alt="img" ></img>
+</div>
 
   <section
     ref="containerRef"
     class="bg-black hidden lg:flex lg:h-[3717px] relative text-white overflow-hidden"
   >
-    <div
-      class="svg-wrapper w-full h-full scale pointer-events-none select-none transition-all duration-300"
+    <div 
+      class="svg-wrapper w-full h-full -left-10  scale pointer-events-none select-none transition-all duration-300"
     >
       <div v-html="servicesMainBg"></div>
     </div>
 
     <div
-      class="fade-left absolute top-0 left-1/2 -translate-x-1/2 flex flex-col text-white text-center md:text-left max-w-6xl lg:px-4 xl:px-0 md:px-6"
+      class="fade-left absolute top-0 left-1/2 -translate-x-1/2 flex flex-col text-white text-center md:text-left max-w-7xl lg:px-4 xl:px-0 md:px-6"
     >
       <h1 class="text-[2.5rem] font-serif font-lightbold">Phasen des Erfolgs</h1>
       <div class="mt-[2rem]">
@@ -30,8 +32,8 @@
 
     <<!-- Section 1 -->
     <div class="absolute top-[403px] w-full">
-      <div class="max-w-6xl mx-auto flex flex-col lg:gap-[14px] text-white relative">
-        <div class="flex lg:gap-0 xl:gap-[143px] items-center">
+      <div class="max-w-7xl mx-auto flex flex-col lg:gap-[14px] text-white relative">
+        <div class="flex justify-between items-center">
           <div
             class="pt-[152px] fade-left flex flex-col gap-[1.5rem] md:text-center lg:text-start w-full max-w-full lg:px-4 xl:px-0 md:max-w-[640px] lg:max-w-[27.13rem] xl:max-w-[32.13rem]"
           >
@@ -85,9 +87,9 @@
 
     <!-- Section -->
     <div class="absolute top-[1490px] w-full">
-      <div class="max-w-6xl mx-auto flex flex-col lg:gap-[14px] text-white relative">
+      <div class="max-w-7xl mx-auto flex flex-col lg:gap-[14px] text-white relative">
         <!-- First Row -->
-        <div class="flex lg:gap-0 xl:gap-[143px] items-start">
+        <div class="flex justify-between items-center">
           <div
             class="pt-[152px] flex flex-col gap-[1.5rem] md:text-center lg:text-start md:items-center w-full max-w-full lg:px-4 xl:px-0 md:max-w-[640px] lg:max-w-[27.13rem] xl:max-w-[32.13rem]"
           >
@@ -137,9 +139,9 @@
 
     <!-- Section 3 -->
     <div class="absolute top-[2372px] w-full">
-      <div class="max-w-6xl mx-auto flex flex-col gap-[6rem]">
+      <div class="max-w-7xl mx-auto flex  flex-col gap-[6rem]">
         <!-- Row 1 -->
-        <div class="flex flex-col md:flex-row justify-between gap-[3rem] pt-[120px] text-white">
+        <div class="flex flex-col md:flex-row gap-[13rem] pt-[120px] text-white">
           <!-- Text -->
           <div
             class="pt-[152px] flex flex-col gap-[1.5rem] text-start lg: lg:px-4 xl:px-0 w-full max-w-full fade-left md:max-w-[640px] lg:max-w-[27.13rem] xl:max-w-[32.13rem] mx-auto md:mx-0"
@@ -163,7 +165,7 @@
         </div>
 
         <!-- Row 2 -->
-        <div class="flex flex-col md:flex-row justify-start gap-[9rem] text-white">
+        <div class="flex flex-col  md:flex-row justify-between  text-white">
           <!-- Image -->
           <div class="w-full max-w-[33.438rem] h-[30.1875rem] hidden md:hidden lg:block">
             <NuxtImg
@@ -199,7 +201,7 @@
     ></div>
 
     <div
-      class="absolute w-[53.6875rem] 2xl:w-[56rem] 2xl:h-[32rem] bg-black h-[27.9375rem] border border-green-500 rounded"
+      class="absolute w-[53.6875rem] 2xl:w-[62rem] 2xl:h-[37rem] bg-black h-[27.9375rem] border border-green-500 rounded"
     >
       <div
         class="absolute h-[12.5rem] text-white w-[45.6875rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]"

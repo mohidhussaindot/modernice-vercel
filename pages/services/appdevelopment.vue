@@ -8,7 +8,7 @@
       ]"
       cta-label="Get responsive"
       cta-to="/appointment"
-      logo-src=""
+      logo-src="/images/app-dev-logo.png"
       cta-from="#DD39D1"
       cta-to-color="#7137EC"
     />

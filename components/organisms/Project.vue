@@ -293,6 +293,14 @@
       role: 'Fullstack',
       year: 2024
     },
+     {
+      image: 'wiresoft.png',
+      name: 'Wiresoft',
+      url: 'https://www.wiresoft.com',
+      description: "discounted licensed business software's online.",
+      role: 'Fullstack',
+      year: 2024
+    },
     {
       image: 'cube.expert.png',
       name: 'Cube.expert',
@@ -331,7 +339,7 @@
       url: 'https://T.zone',
       description: 'Tournament organizer and monetization platform',
       role: 'Fullstack',
-      year: 2023
+      year: 2025,
     }
   ]
 

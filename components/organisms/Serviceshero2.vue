@@ -11,7 +11,7 @@
     <div class="'absolute inset-0 z-10 bg-black transition-opacity duration-700',"></div>
 
     <div
-      class="relative z-20 flex flex-col lg:flex-row justify-between max-w-7xl mx-auto px-6 pt-12 2xl:pt-[13rem] lg:pt-[8rem] gap-12 lg:gap-[6rem]"
+      class="relative z-20 flex flex-col lg:flex-row justify-between max-w-7xl mx-auto  pt-12 2xl:pt-[13rem] lg:pt-[8rem] gap-12 lg:gap-[6rem]"
     >
       <div class="flex-1 flex flex-col gap-[1.5rem] max-w-[32.13rem]">
         <h1

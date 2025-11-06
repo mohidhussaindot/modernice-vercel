@@ -204,7 +204,7 @@
         ></div>
 
         <div
-          class="absolute w-[53.6875rem] 2xl:w-[56rem] 2xl:h-[32rem] bg-black h-[27.9375rem] flex justify-center border border-amber-600 rounded"
+          class="absolute w-[53.6875rem] 2xl:w-[62rem] 2xl:h-[37rem] bg-black h-[27.9375rem] flex justify-center border border-amber-600 rounded"
         >
           <div
             class="absolute h-[12.5rem] text-white w-[45.6875rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]"

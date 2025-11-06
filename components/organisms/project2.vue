@@ -137,64 +137,72 @@ onMounted(async () => {
 onBeforeUnmount(() => {
   cleanup()
 })
-const imageLinks = [
-  {
-    image: 'adobelino.png',
-    name: 'Adobelino',
-    url: 'https://adobelino.com',
-    description: 'A digital store for purchasing original software & licenses.',
-    role: 'Fullstack',
-    year: 2023
-  },
-  {
-    image: 'crovillas.png',
-    name: 'Crovillas',
-    url: 'https://crovillas.com/',
-    description: 'Luxury villa rentals with pool and sea views.',
-    role: 'Fullstack',
-    year: 2024
-  },
-  {
-    image: 'cube.expert.png',
-    name: 'Cube.expert',
-    url: 'https://cubee.expert/en',
-    description: 'Vehicle appraisals and damage assessments.',
-    role: 'Fullstack',
-    year: 2022
-  },
-  {
-    image: 'depositdirect.png',
-    name: 'Depositdirect',
-    url: 'https://depositdirect.net',
-    description: 'Rent without a cash deposit with a rental guarantee.',
-    role: 'Fullstack',
-    year: 2023
-  },
-  {
-    image: 'epass.png',
-    name: 'Epass',
-    url: 'https://Epass.gg',
-    description: 'Identity verification and KYC platform.',
-    role: 'Fullstack',
-    year: 2025
-  },
-  {
-    image: 'prestige-cars.png',
-    name: 'Prestige Cars',
-    url: 'https://prestige.cars',
-    description: 'Luxury & exotic car rental platform.',
-    role: 'Fullstack',
-    year: 2024
-  },
-  {
-    image: 'tzone.png',
-    name: 'Tzone',
-    url: 'https://T.zone',
-    description: 'Tournament organizer and monetization platform.',
-    role: 'Fullstack',
-    year: 2023
-  }
-]
+ const imageLinks = [
+    {
+      image: 'adobelino.png',
+      name: 'Adobelino',
+      url: 'https://adobelino.com',
+      description: 'A digital store for purchasing original software & licenses',
+      role: 'Fullstack',
+      year: 2023
+    },
+    {
+      image: 'crovillas.png',
+      name: 'Crovillas',
+      url: 'https://crovillas.com/',
+      description: 'Luxury villa rentals with pool and sea views.',
+      role: 'Fullstack',
+      year: 2024
+    },
+     {
+      image: 'wiresoft.png',
+      name: 'Wiresoft',
+      url: 'https://www.wiresoft.com',
+      description: "discounted licensed business software's online.",
+      role: 'Fullstack',
+      year: 2024
+    },
+    {
+      image: 'cube.expert.png',
+      name: 'Cube.expert',
+      url: 'https://cubee.expert/en',
+      description: 'Vehicle appraisals and damage assessments',
+      role: 'Fullstack',
+      year: 2022
+    },
+    {
+      image: 'depositdirect.png',
+      name: 'Depositdirect',
+      url: 'https://depositdirect.net',
+      description: 'Rent without a cash deposit with a rental guarantee',
+      role: 'Fullstack',
+      year: 2023
+    },
+    {
+      image: 'epass.png',
+      name: 'Epass',
+      url: 'https://Epass.gg',
+      description: 'Identity verification and KYC platform',
+      role: 'Fullstack',
+      year: 2025
+    },
+    {
+      image: 'prestige-cars.png',
+      name: 'Prestige Cars',
+      url: 'https://prestige.cars',
+      description: 'Luxury & exotic car rental platform',
+      role: 'Fullstack',
+      year: 2024
+    },
+    {
+      image: 'tzone.png',
+      name: 'Tzone',
+      url: 'https://T.zone',
+      description: 'Tournament organizer and monetization platform',
+      role: 'Fullstack',
+      year: 2025,
+    }
+  ]
 </script>
 <style scoped>
 .image-wrapper img {

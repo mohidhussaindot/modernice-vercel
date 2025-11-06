@@ -1,9 +1,9 @@
 <template>
   <footer
-    class="text-white/70 pt-12 pb-8 border-t border-white/10"
+    class="text-white/70 pt-12 px-2 md:px-0 pb-8 border-t border-white/10"
     :style="{ backgroundColor: props.bgColor }"
   >
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
           <h3 class="uppercase tracking-wide text-xs font-semibold mb-3 text-white/60">messages</h3>
