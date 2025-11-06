@@ -65,8 +65,8 @@
       <!-- Sections 1-5: Discovery, Design, etc. -->
       <div class="flex flex-col max-w-7xl mx-auto gap-15">
         <!-- Section 1 -->
-        <div class="flex flex-col z-10 lg:flex-row items-center  justify-between">
-          <div class="fade-left   flex flex-col gap-10 text-white">
+        <div class="flex flex-col z-10 lg:flex-row items-center justify-between">
+          <div class="fade-left flex flex-col gap-10 text-white">
             <h1 class="text-3xl font-bold">
               Our
               <span
@@ -84,9 +84,11 @@
         </div>
 
         <!-- Section 2 -->
-        <div class="flex flex-col z-10 lg:flex-row max-w-7xl justify-between items-center gap-16 lg:gap-38">
+        <div
+          class="flex flex-col z-10 lg:flex-row max-w-7xl justify-between items-center gap-16 lg:gap-38"
+        >
           <div class="max-w-[37.5rem] hidden lg:flex" v-html="appdevmiddle1"></div>
-          <div class="fade-right flex  flex-col gap-8 text-white">
+          <div class="fade-right flex flex-col gap-8 text-white">
             <h2 class="text-2xl font-semibold">2. Design</h2>
             <p class="font-light w-[500px] text-lg">
               Next, our team of designers creates wireframes and mockups to visualise the user flow
@@ -97,7 +99,7 @@
         </div>
 
         <!-- Section 3 -->
-        <div class="flex flex-col z-10 lg:flex-row max-w-7xl  items-center justify-between">
+        <div class="flex flex-col z-10 lg:flex-row max-w-7xl items-center justify-between">
           <div class="fade-left flex flex-col gap-8 text-white">
             <h2 class="text-2xl font-semibold">3. Development</h2>
             <p class="font-light w-[500px] text-lg">
@@ -109,12 +111,12 @@
           <div class="max-w-[37.5rem] hidden md:flex" v-html="appdevmiddle2"></div>
         </div>
 
-        <div class="flex flex-col z-10 lg:flex-row max-w-7xl items-center justify-between ">
+        <div class="flex flex-col z-10 lg:flex-row max-w-7xl items-center justify-between">
           <!-- Rocket SVG -->
           <div v-html="appdevlast2"></div>
 
           <div class="fade-right flex flex-col gap-8 text-white">
-            <h2 class="text-2xl  font-semibold">4. Testing and Launch</h2>
+            <h2 class="text-2xl font-semibold">4. Testing and Launch</h2>
             <p class="font-light w-[500px] text-lg">
               Before launching the app, we conduct thorough testing to ensure that it is stable and
               bug-free. Once the app is ready, we help you with the submission process and launch it

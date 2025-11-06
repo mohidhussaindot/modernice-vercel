@@ -293,7 +293,7 @@
       role: 'Fullstack',
       year: 2024
     },
-     {
+    {
       image: 'wiresoft.png',
       name: 'Wiresoft',
       url: 'https://www.wiresoft.com',
@@ -339,7 +339,7 @@
       url: 'https://T.zone',
       description: 'Tournament organizer and monetization platform',
       role: 'Fullstack',
-      year: 2025,
+      year: 2025
     }
   ]
 

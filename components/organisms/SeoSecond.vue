@@ -2,8 +2,9 @@
   <section class="relative min-h-screen hidden lg:flex overflow-hidden text-white bg-[#020111]">
     <!-- Background SVG injected -->
     <div
-      class="absolute inset-0  w-full  h-full pointer-events-none z-0 overflow-hidden"
-      v-html="responsiveBg" style="rotate: 10deg; scale: 1.1;"
+      class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden"
+      v-html="responsiveBg"
+      style="rotate: 10deg; scale: 1.1"
     ></div>
 
     <div class="relative z-10 max-w-7xl mx-auto flex flex-col gap-20 pt-10 px-4 md:px-6 lg:px-0">
@@ -143,7 +144,8 @@
     <!-- Shared SVG Background -->
     <div
       class="absolute inset-0 pointer-events-none h-full left-[400px] z-0 w-full"
-      v-html="svgmainlines" style="rotate: 10deg; "
+      v-html="svgmainlines"
+      style="rotate: 10deg"
     ></div>
 
     <div
@@ -284,7 +286,7 @@
     ></div>
 
     <div
-      class="absolute lg:w-[53.6875rem] bg-black 2xl:w-[62rem] 2xl:h-[37rem]  lg:h-[27.9375rem] flex justify-center border rounded border-[#01A3FF]"
+      class="absolute lg:w-[53.6875rem] bg-black 2xl:w-[62rem] 2xl:h-[37rem] lg:h-[27.9375rem] flex justify-center border rounded border-[#01A3FF]"
     >
       <div
         class="absolute h-[12.5rem] text-white w-[45.6875rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]"
