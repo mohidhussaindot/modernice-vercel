@@ -1,5 +1,5 @@
 // plugins/gsap.client.ts
-// Inert plugin — doesn't import, inject, or load anything.
+// Inert plugin — doesn't import, inject, or load anything.w
 
 import { defineNuxtPlugin } from 'nuxt/app'
 
