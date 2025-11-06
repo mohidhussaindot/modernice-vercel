@@ -534,19 +534,19 @@
       if (spaceship) {
         gsapInstance.set(spaceship, { opacity: 1, x: 0, y: 0 })
 
-        createScrollTrigger({
-          id: 'hero-spaceship',
-          trigger: ctaSectionRef.value!,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-          onUpdate: self => {
-            gsapInstance.set(spaceship, {
-              x: -200 * self.progress,
-              y: 100 * self.progress
-            })
-          }
-        })
+      createScrollTrigger({
+  id: 'hero-spaceship',
+  trigger: ctaSectionRef.value!,
+  start: 'top bottom',
+  end: 'bottom top',
+  scrub: true,
+  onUpdate: (self: ScrollTrigger) => {
+    gsapInstance.set(spaceship, {
+      x: -200 * self.progress,
+      y: 100 * self.progress
+    })
+  }
+})
       }
     }
   }
