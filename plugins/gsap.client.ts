@@ -1,7 +1,7 @@
 // plugins/gsap.client.ts
-import { defineNuxtPlugin } from '#app'
+import { defineNuxtPlugin } from 'nuxt/app'
 import { nextTick } from 'vue'
-import { useRouter } from '#app'
+import { useRouter } from 'nuxt/app'
 
 export default defineNuxtPlugin(async (nuxtApp) => {
   if (!process.client) return
