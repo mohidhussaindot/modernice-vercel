@@ -3,7 +3,7 @@ import { defineNuxtPlugin } from 'nuxt/app'
 import { nextTick } from 'vue'
 import { useRouter } from 'nuxt/app'
 
-export default defineNuxtPlugin(async (nuxtApp) => {
+export default defineNuxtPlugin(async nuxtApp => {
   if (!process.client) return
 
   // Dynamic imports to avoid SSR issues

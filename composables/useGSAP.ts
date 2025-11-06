@@ -46,5 +46,12 @@ export const useGSAP = () => {
 
   onUnmounted(cleanup)
 
-  return { gsap: $gsap, ScrollTrigger: $ScrollTrigger, createAnimation, createScrollTrigger, batchAnimate, cleanup }
+  return {
+    gsap: $gsap,
+    ScrollTrigger: $ScrollTrigger,
+    createAnimation,
+    createScrollTrigger,
+    batchAnimate,
+    cleanup
+  }
 }
