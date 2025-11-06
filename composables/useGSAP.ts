@@ -1,11 +1,11 @@
 // composables/useGSAP.ts
-import { ref, onUnmounted, onMounted, nextTick } from 'vue'
+import { ref, onUnmounted, onMounted } from 'vue'
 import { useNuxtApp } from 'nuxt/app'
 
 // --- Core composable ---
 export const useGSAP = () => {
   if (!process.client) {
-    // SSR-safe stub
+    // Return empty stub for SSR
     return {
       gsap: null,
       ScrollTrigger: null,
@@ -25,23 +25,22 @@ export const useGSAP = () => {
   let ScrollTrigger: any = nuxtApp.$ScrollTrigger
   const prefersReducedMotion = (nuxtApp.$prefersReducedMotion as boolean) || false
 
-  // 🔁 Ensure GSAP is injected before use
-  onMounted(async () => {
-    await nextTick()
-    if (!gsap || !ScrollTrigger) {
+  // 🔁 Retry if GSAP not yet injected
+  if (!gsap || !ScrollTrigger) {
+    console.warn('⚠️ GSAP not yet available, waiting for plugin injection...')
+    onMounted(() => {
       const app = useNuxtApp()
       gsap = app.$gsap
       ScrollTrigger = app.$ScrollTrigger
-
       if (gsap && ScrollTrigger) {
         console.info('✅ GSAP initialized successfully after mount.')
       } else {
         console.error('❌ GSAP still missing after mount. Check gsap.client.ts.')
       }
-    }
-  })
+    })
+  }
 
-  // ✨ Create GSAP timeline
+  // ✨ Create GSAP timeline with cleanup
   const createAnimation = (callback: (gsapInstance: any) => any, skipIfReducedMotion = false) => {
     if (!gsap) return null
     if (prefersReducedMotion && skipIfReducedMotion) return null
@@ -71,7 +70,7 @@ export const useGSAP = () => {
     }
   }
 
-  // 🧩 Batch animation helper
+  // 🧩 Batch animations for multiple elements
   const batchAnimate = (elements: Element[], animationConfig: any) => {
     if (!gsap) return null
     const config = { ...animationConfig }
@@ -89,7 +88,7 @@ export const useGSAP = () => {
     }
   }
 
-  // 🧹 Cleanup
+  // 🧹 Clean up timelines & triggers
   const cleanup = () => {
     animations.value.forEach(t => t?.kill?.())
     scrollTriggers.value.forEach(st => st?.kill?.())
@@ -127,6 +126,7 @@ export const useGSAPAnimations = () => {
       : element && applyStyle(element as HTMLElement)
   }
 
+  // --- Basic animations ---
   const fadeIn = (element: Element | Element[], options: any = {}) =>
     prefersReducedMotion
       ? (applyReducedMotion(element, { autoAlpha: 1, y: 0 }), null)
@@ -171,6 +171,7 @@ export const useGSAPAnimations = () => {
           )
         )
 
+  // --- Scroll-based animations ---
   const onScroll = (element: Element | Element[], animation: any, triggerOptions: any = {}) => {
     if (prefersReducedMotion) {
       const finalState = { ...(animation.from || {}), ...(animation.to || {}) }
@@ -200,6 +201,7 @@ export const useGSAPAnimations = () => {
     })
   }
 
+  // --- Parallax ---
   const parallax = (element: Element | Element[], speed: number = 0.5) =>
     prefersReducedMotion
       ? null
