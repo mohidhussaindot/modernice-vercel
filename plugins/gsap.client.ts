@@ -1,11 +1,9 @@
-// plugins/gsap.client.ts
 import { defineNuxtPlugin, useRouter } from 'nuxt/app'
 import { nextTick } from 'vue'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { TextPlugin } from 'gsap/TextPlugin'
-import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
+
+// NOTE: All static imports for 'gsap' and plugins have been removed.
+// We will rely purely on dynamic imports within the plugin logic
+// to ensure code-splitting and conditional loading work correctly.
 
 /**
  * Device performance detection
@@ -94,6 +92,7 @@ const detectDevicePerformance = (): {
 }
 
 export default defineNuxtPlugin(async nuxtApp => {
+  // Provide defaults for SSR
   if (!process.client) {
     nuxtApp.provide('gsap', null)
     nuxtApp.provide('ScrollTrigger', null)
@@ -165,7 +164,7 @@ export default defineNuxtPlugin(async nuxtApp => {
       })
 
       // Light debounced refresh
-      let refreshTimeout: NodeJS.Timeout | null = null
+      let refreshTimeout: ReturnType<typeof setTimeout> | null = null
       const debouncedRefresh = () => {
         if (refreshTimeout) clearTimeout(refreshTimeout)
         refreshTimeout = setTimeout(() => {
