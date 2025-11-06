@@ -113,19 +113,20 @@
     </div>
   </div>
 </template>
-<script setup lang="ts">
+<script setup>
   import { ref, onMounted, nextTick } from 'vue'
-  import Button from '@atoms/Button.vue'
   import ServicesHeroRaw from '@atoms/svgs/servicesfirst.svg?raw'
   import Seoherobg from '@atoms/svgs/seoherobg.svg?raw'
-  import { useGSAP } from '../../composables/useGSAP'
+  import Button from '@atoms/Button.vue'
+  import { gsap } from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-  const { gsap, ScrollTrigger, cleanup } = useGSAP()
+  gsap.registerPlugin(ScrollTrigger)
 
-  const cockpitRef = ref<HTMLElement | null>(null)
-  const contentRef = ref<HTMLElement | null>(null)
-  const servicesTopRef = ref<HTMLElement | null>(null)
-  const buttonWrapperRef = ref<HTMLElement | null>(null)
+  const cockpitRef = ref(null)
+  const contentRef = ref(null)
+  const servicesTopRef = ref(null)
+  const buttonWrapperRef = ref(null)
 
   onMounted(async () => {
     await nextTick()
@@ -136,9 +137,9 @@
     const buttonEl = buttonWrapperRef.value
     const animationEnd = 500
 
-    if (!gsap || !ScrollTrigger || !topEl || !cockpitEl || !contentEl || !buttonEl) return
+    if (!topEl || !cockpitEl || !contentEl || !buttonEl) return
 
-    const setButtonState = (enabled: boolean) => {
+    const setButtonState = enabled => {
       buttonEl.style.pointerEvents = enabled ? 'auto' : 'none'
     }
 
@@ -161,7 +162,7 @@
         start: 'top top',
         end: `+=${animationEnd}`,
         scrub: 1.2,
-        onUpdate: (self: any) => setButtonState(self.progress >= 1)
+        onUpdate: self => setButtonState(self.progress >= 1)
       }
     })
 

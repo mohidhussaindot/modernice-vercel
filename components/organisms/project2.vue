@@ -102,13 +102,19 @@
   import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
   import Button from '@atoms/Button.vue'
   import bghero from '@atoms/svgs/bghero.svg?raw'
-  import { useGSAP, useGSAPAnimations } from '../../composables/useGSAP'
+
+  // ✅ Import GSAP and ScrollTrigger
+  import { gsap } from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+  // ✅ Register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger)
+
   const isGrid = ref(false)
   const sections = ref([])
   const heroTitle = ref(null)
   const heroSubtitle = ref(null)
-  const { ScrollTrigger, cleanup } = useGSAP()
-  const { fadeIn, onScroll } = useGSAPAnimations()
+
   const toggleView = async () => {
     if (window.innerWidth < 768) {
       isGrid.value = false
@@ -118,6 +124,7 @@
     await nextTick()
     if (!isGrid.value) animateSections()
   }
+
   const animateSections = () => {
     if (!ScrollTrigger) return console.warn('ScrollTrigger not initialized yet.')
 
@@ -128,25 +135,30 @@
     sections.value.forEach(section => {
       const image = section.querySelector('.project-image')
       const textBlock = section.querySelector('.info-block')
+
       if (image) {
-        onScroll(
-          image,
-          {
-            from: { scale: 0.9, autoAlpha: 0 },
-            to: { scale: 1, autoAlpha: 1, duration: 1.2, ease: 'power3.out' }
-          },
-          { trigger: section, start: 'top 80%' }
-        )
+        // ✅ Replaced onScroll composable
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top 80%',
+          animation: gsap.fromTo(
+            image,
+            { scale: 0.9, autoAlpha: 0 },
+            { scale: 1, autoAlpha: 1, duration: 1.2, ease: 'power3.out' }
+          )
+        })
       }
       if (textBlock) {
-        onScroll(
-          textBlock,
-          {
-            from: { x: 100, autoAlpha: 0 },
-            to: { x: 0, autoAlpha: 1, duration: 1, delay: 0.3, ease: 'power3.out' }
-          },
-          { trigger: section, start: 'top 75%' }
-        )
+        // ✅ Replaced onScroll composable
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top 75%',
+          animation: gsap.fromTo(
+            textBlock,
+            { x: 100, autoAlpha: 0 },
+            { x: 0, autoAlpha: 1, duration: 1, delay: 0.3, ease: 'power3.out' }
+          )
+        })
       }
     })
   }
@@ -166,14 +178,23 @@
         info.style.transform = 'none'
       })
     } else {
-      fadeIn(heroTitle.value, { duration: 1, y: 0 })
-      fadeIn(heroSubtitle.value, { duration: 1, delay: 0.3, y: 0 })
+      // ✅ Replaced fadeIn composable (assuming default 'from' state)
+      gsap.fromTo(heroTitle.value, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 1 })
+      // ✅ Replaced fadeIn composable (assuming default 'from' state)
+      gsap.fromTo(
+        heroSubtitle.value,
+        { autoAlpha: 0, y: 20 },
+        { autoAlpha: 1, y: 0, duration: 1, delay: 0.3 }
+      )
       animateSections()
     }
   })
+
   onBeforeUnmount(() => {
-    cleanup()
+    // ✅ Replaced cleanup() composable
+    ScrollTrigger.killAll()
   })
+
   const imageLinks = [
     {
       image: 'adobelino.png',

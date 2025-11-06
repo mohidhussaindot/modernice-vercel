@@ -389,168 +389,158 @@
   </div>
 </template>
 <script setup>
- import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
- import { useRoute } from 'vue-router'
- import Button from '@atoms/Button.vue'
- import moonSVGRaw from '@atoms/svgs/rocket-moon-hero.svg?raw'
- import stripessvg from '@atoms/svgs/herosectionstripes.svg?raw'
- import bghero from '@atoms/svgs/bghero.svg?raw'
- import bglines from '@atoms/svgs/Lines.svg?raw'
+  import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
+  import { useRoute } from 'vue-router'
+  import Button from '@atoms/Button.vue'
+  import moonSVGRaw from '@atoms/svgs/rocket-moon-hero.svg?raw'
+  import stripessvg from '@atoms/svgs/herosectionstripes.svg?raw'
+  import bghero from '@atoms/svgs/bghero.svg?raw'
+  import bglines from '@atoms/svgs/Lines.svg?raw'
 
- // ✅ Import GSAP and ScrollTrigger
- import { gsap } from 'gsap'
- import { ScrollTrigger } from 'gsap/ScrollTrigger'
+  // ✅ Import GSAP and ScrollTrigger
+  import { gsap } from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
- // ✅ Register ScrollTrigger plugin
- gsap.registerPlugin(ScrollTrigger)
+  // ✅ Register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger)
 
- const route = useRoute()
+  const route = useRoute()
 
- // ✅ Refs
- const firstPart = ref(null)
- const stripesDiv = ref(null)
- const cityRef = ref(null)
- const cityImage = ref(null)
- const textContent = ref(null)
- const sectionRef = ref(null)
- const ctaSectionRef = ref(null)
+  // ✅ Refs
+  const firstPart = ref(null)
+  const stripesDiv = ref(null)
+  const cityRef = ref(null)
+  const cityImage = ref(null)
+  const textContent = ref(null)
+  const sectionRef = ref(null)
+  const ctaSectionRef = ref(null)
 
- // ✅ Visibility states
- const isFirstPartVisible = ref(true)
- const isCityVisible = ref(true)
- const isSectionVisible = ref(true)
- const isCTAVisible = ref(false)
+  // ✅ Visibility states
+  const isFirstPartVisible = ref(true)
+  const isCityVisible = ref(true)
+  const isSectionVisible = ref(true)
+  const isCTAVisible = ref(false)
 
- const fadeClassSection = computed(() => (isSectionVisible.value ? 'fade-in' : 'fade-out'))
- const fadecta = computed(() => (isCTAVisible.value ? 'fade-in' : 'fade-out'))
+  const fadeClassSection = computed(() => (isSectionVisible.value ? 'fade-in' : 'fade-out'))
+  const fadecta = computed(() => (isCTAVisible.value ? 'fade-in' : 'fade-out'))
 
- // ✅ IntersectionObserver helper
- let observers = []
- function observeElement(
-  el,
-  callback,
-options = { threshold: 0.1 }
- ) {
-  if (!el) return
-  const observer = new IntersectionObserver(([entry]) => callback(entry.isIntersecting), options)
-  observer.observe(el)
-  observers.push(observer)
- }
-
- // ✅ Cleanup Observers + GSAP
- function localCleanup() {
-  observers.forEach(obs => obs.disconnect())
-  observers = []
-  ScrollTrigger.killAll() // Kills GSAP ScrollTriggers
- }
-
- // ✅ Main animation logic
- function runGSAPAnimations() {
-  localCleanup()
-
-  const vectorEl =
-   stripesDiv.value?.querySelector('#Vector\\ 343') ||
-   stripesDiv.value?.querySelector('#Vector343')
-
-  if (firstPart.value && vectorEl) {
-   observeElement(vectorEl, visible => (isFirstPartVisible.value = visible))
+  // ✅ IntersectionObserver helper
+  let observers = []
+  function observeElement(el, callback, options = { threshold: 0.1 }) {
+    if (!el) return
+    const observer = new IntersectionObserver(([entry]) => callback(entry.isIntersecting), options)
+    observer.observe(el)
+    observers.push(observer)
   }
 
-  if (!(cityRef.value && cityImage.value && textContent.value)) return
+  // ✅ Cleanup Observers + GSAP
+  function localCleanup() {
+    observers.forEach(obs => obs.disconnect())
+    observers = []
+    ScrollTrigger.killAll() // Kills GSAP ScrollTriggers
+  }
 
-  observeElement(cityRef.value, visible => (isCityVisible.value = visible))
-  observeElement(ctaSectionRef.value, visible => (isCTAVisible.value = visible), {
-   threshold: 0.3
-  })
+  // ✅ Main animation logic
+  function runGSAPAnimations() {
+    localCleanup()
 
-  // ✅ Parallax scale effect on city image
-  ScrollTrigger.create({
-   id: 'hero-city-scale',
-   trigger: cityImage.value,
-   start: 'top bottom',
-   end: 'top 40%',
-   scrub: true,
-   animation: gsap.fromTo(
-    cityImage.value,
-    { scale: 0.86 },
-    { scale: 1, ease: 'power2.out' }
-   )
-  })
+    const vectorEl =
+      stripesDiv.value?.querySelector('#Vector\\ 343') ||
+      stripesDiv.value?.querySelector('#Vector343')
 
-  // ✅ Fade text on scroll
-  ScrollTrigger.create({
-   id: 'hero-text-fade',
-   trigger: cityImage.value,
-   start: 'top 23%',
-   toggleActions: 'play none none reverse',
-   animation: gsap.fromTo(
-    textContent.value,
-    { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }
-   )
-  })
+    if (firstPart.value && vectorEl) {
+      observeElement(vectorEl, visible => (isFirstPartVisible.value = visible))
+    }
 
-  // ✅ Fade out city as it scrolls away
-  ScrollTrigger.create({
-   id: 'hero-city-fade',
-   trigger: cityRef.value,
-   start: 'bottom 60%',
-   end: 'bottom 100%',
-   scrub: true,
-   animation: gsap.to(cityRef.value, {
-    opacity: 0,
-    ease: 'power2.out'
-   })
-  })
+    if (!(cityRef.value && cityImage.value && textContent.value)) return
 
-  // ✅ Observe section visibility
-  observeElement(sectionRef.value, visible => (isSectionVisible.value = visible), {
-   threshold: 0.1,
-   rootMargin: '-100px 0px -100px 0px'
-  })
-
-  // ✅ Spaceship scroll movement
-  if (ctaSectionRef.value) {
-   const spaceship = ctaSectionRef.value.querySelector(
-    '.spaceship-wrapper'
-   )
-   if (spaceship) {
-    gsap.set(spaceship, { opacity: 1, x: 0, y: 0 })
-
-    ScrollTrigger.create({
-     id: 'hero-spaceship',
-     trigger: ctaSectionRef.value,
-     start: 'top bottom',
-     end: 'bottom top',
-     scrub: true,
-     onUpdate: (self) => {
-       gsap.set(spaceship, {
-       x: -200 * self.progress,
-       y: 100 * self.progress
-      })
-     }
+    observeElement(cityRef.value, visible => (isCityVisible.value = visible))
+    observeElement(ctaSectionRef.value, visible => (isCTAVisible.value = visible), {
+      threshold: 0.3
     })
-   }
+
+    // ✅ Parallax scale effect on city image
+    ScrollTrigger.create({
+      id: 'hero-city-scale',
+      trigger: cityImage.value,
+      start: 'top bottom',
+      end: 'top 40%',
+      scrub: true,
+      animation: gsap.fromTo(cityImage.value, { scale: 0.86 }, { scale: 1, ease: 'power2.out' })
+    })
+
+    // ✅ Fade text on scroll
+    ScrollTrigger.create({
+      id: 'hero-text-fade',
+      trigger: cityImage.value,
+      start: 'top 23%',
+      toggleActions: 'play none none reverse',
+      animation: gsap.fromTo(
+        textContent.value,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }
+      )
+    })
+
+    // ✅ Fade out city as it scrolls away
+    ScrollTrigger.create({
+      id: 'hero-city-fade',
+      trigger: cityRef.value,
+      start: 'bottom 60%',
+      end: 'bottom 100%',
+      scrub: true,
+      animation: gsap.to(cityRef.value, {
+        opacity: 0,
+        ease: 'power2.out'
+      })
+    })
+
+    // ✅ Observe section visibility
+    observeElement(sectionRef.value, visible => (isSectionVisible.value = visible), {
+      threshold: 0.1,
+      rootMargin: '-100px 0px -100px 0px'
+    })
+
+    // ✅ Spaceship scroll movement
+    if (ctaSectionRef.value) {
+      const spaceship = ctaSectionRef.value.querySelector('.spaceship-wrapper')
+      if (spaceship) {
+        gsap.set(spaceship, { opacity: 1, x: 0, y: 0 })
+
+        ScrollTrigger.create({
+          id: 'hero-spaceship',
+          trigger: ctaSectionRef.value,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+          onUpdate: self => {
+            gsap.set(spaceship, {
+              x: -200 * self.progress,
+              y: 100 * self.progress
+            })
+          }
+        })
+      }
+    }
   }
- }
 
- onMounted(async () => {
-  await nextTick()
-  runGSAPAnimations()
- })
+  onMounted(async () => {
+    await nextTick()
+    runGSAPAnimations()
+  })
 
- watch(
-  () => route.fullPath,
-  async () => {
-   await nextTick()
-   if (gsap) {
-    gsap.delayedCall(0.1, () => gsap.globalTimeline?.clear())
-    ScrollTrigger.refresh()
-   }
-  }
- )
+  watch(
+    () => route.fullPath,
+    async () => {
+      await nextTick()
+      if (gsap) {
+        gsap.delayedCall(0.1, () => gsap.globalTimeline?.clear())
+        ScrollTrigger.refresh()
+      }
+    }
+  )
 
- onUnmounted(() => localCleanup())
+  onUnmounted(() => localCleanup())
 </script>
 
 <style scoped>
