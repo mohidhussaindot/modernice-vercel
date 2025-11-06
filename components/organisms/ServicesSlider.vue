@@ -51,23 +51,26 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
+<script setup>
   import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
-  import { useGSAP } from '../../composables/useGSAP'
 
-  const { gsap, ScrollTrigger, cleanup } = useGSAP()
+  // ✅ Import GSAP and ScrollTrigger
+  import { gsap } from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-  const wrapper = ref<HTMLElement | null>(null)
-  const scroller = ref<HTMLElement | null>(null)
-  const slide1 = ref<HTMLElement | null>(null)
-  const slide2 = ref<HTMLElement | null>(null)
-  const slide3 = ref<HTMLElement | null>(null)
+  // ✅ Register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger)
 
-  let triggers: ScrollTrigger[] = []
+  const wrapper = ref(null)
+  const scroller = ref(null)
+  const slide1 = ref(null)
+  const slide2 = ref(null)
+  const slide3 = ref(null)
+
+  let triggers = []
 
   // helper to get CSS gap value in px
-  function getGapPx(el: HTMLElement): number {
+  function getGapPx(el) {
     const styles = getComputedStyle(el)
     const gap = styles.getPropertyValue('gap') || styles.getPropertyValue('column-gap') || '0px'
     if (gap.endsWith('px')) return parseFloat(gap)
@@ -90,7 +93,7 @@
 
     cleanupTriggers()
 
-    const slides = [slide1.value, slide2.value, slide3.value].filter(Boolean) as HTMLElement[]
+    const slides = [slide1.value, slide2.value, slide3.value].filter(Boolean)
     if (!slides.length) return
 
     const wrapperEl = wrapper.value
@@ -170,10 +173,9 @@
     if (typeof window === 'undefined') return
     window.removeEventListener('resize', initAnimation)
     cleanupTriggers()
-    cleanup()
+    ScrollTrigger.killAll() // Replaced composable 'cleanup()'
   })
 </script>
-
 <style scoped>
   .outer-wrapper {
     position: relative;

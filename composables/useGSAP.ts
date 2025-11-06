@@ -42,8 +42,8 @@ export const useGSAP = () => {
       } else {
         console.error('❌ GSAP still missing after mount. Check gsap.client.ts.')
       }
-    }
-  )}
+    })
+  }
 
   // ✨ Create GSAP timeline
   const createAnimation = (callback: (gsapInstance: any) => any, skipIfReducedMotion = false) => {
