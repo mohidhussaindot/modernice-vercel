@@ -7,7 +7,7 @@
       ></div>
 
       <div
-        class="relative z-10 flex justify-center flex-col items-center lg:flex-row h-[49.375rem] gap-12 lg:gap-0 mb-32 max-w-6xl mx-auto"
+        class="relative z-10 flex justify-center flex-col items-center lg:flex-row h-[49.375rem] gap-12 lg:gap-0 mb-32 max-w-7xl mx-auto"
       >
         <!-- Left Side -->
         <div class="lg:w-1/2 items-center">
@@ -38,7 +38,7 @@
       </div>
 
       <div
-        class="relative z-10 flex flex-col 2xl:top-15 lg:flex-row gap-10 max-w-6xl mx-auto lg:gap-0 mb-32"
+        class="relative z-10 flex flex-col 2xl:top-15 lg:flex-row gap-10 max-w-7xl mx-auto lg:gap-0 mb-32"
       >
         <div class="lg:w-1/2 hidden lg:flex justify-center">
           <div class="w-full 2xl:max-w-[50rem]" v-html="appdevhero2"></div>
@@ -63,10 +63,10 @@
       </div>
 
       <!-- Sections 1-5: Discovery, Design, etc. -->
-      <div class="flex flex-col max-w-6xl mx-auto gap-15">
+      <div class="flex flex-col max-w-7xl mx-auto gap-15">
         <!-- Section 1 -->
-        <div class="flex flex-col z-10 lg:flex-row items-center gap-19 lg:gap-38">
-          <div class="fade-left flex flex-col gap-10 text-white">
+        <div class="flex flex-col z-10 lg:flex-row items-center  justify-between">
+          <div class="fade-left   flex flex-col gap-10 text-white">
             <h1 class="text-3xl font-bold">
               Our
               <span
@@ -75,7 +75,7 @@
               >roach
             </h1>
             <h2 class="text-2xl font-semibold">1. Discovery</h2>
-            <p class="font-light text-lg">
+            <p class="font-light w-[500px] text-lg">
               During the discovery phase, we work with you to understand your business goals and
               needs, as well as gather requirements and specifications for your hybrid app.
             </p>
@@ -84,11 +84,11 @@
         </div>
 
         <!-- Section 2 -->
-        <div class="flex flex-col z-10 lg:flex-row max-w-6xl mx-auto items-center gap-16 lg:gap-38">
+        <div class="flex flex-col z-10 lg:flex-row max-w-7xl justify-between items-center gap-16 lg:gap-38">
           <div class="max-w-[37.5rem] hidden lg:flex" v-html="appdevmiddle1"></div>
-          <div class="fade-right flex flex-col gap-8 text-white">
+          <div class="fade-right flex  flex-col gap-8 text-white">
             <h2 class="text-2xl font-semibold">2. Design</h2>
-            <p class="font-light text-lg">
+            <p class="font-light w-[500px] text-lg">
               Next, our team of designers creates wireframes and mockups to visualise the user flow
               and layout of the app. We work with you to ensure the design aligns with your brand
               guidelines and meets the needs of your users.
@@ -97,10 +97,10 @@
         </div>
 
         <!-- Section 3 -->
-        <div class="flex flex-col z-10 lg:flex-row max-w-6xl mx-auto items-center gap-16 lg:gap-38">
+        <div class="flex flex-col z-10 lg:flex-row max-w-7xl  items-center justify-between">
           <div class="fade-left flex flex-col gap-8 text-white">
             <h2 class="text-2xl font-semibold">3. Development</h2>
-            <p class="font-light text-lg">
+            <p class="font-light w-[500px] text-lg">
               Using the latest tools and technologies, such as Flutter, we begin building the hybrid
               app according to the approved design. Our developers ensure that the app functions
               smoothly and provides a seamless user experience on both iOS and Android platforms.
@@ -109,13 +109,13 @@
           <div class="max-w-[37.5rem] hidden md:flex" v-html="appdevmiddle2"></div>
         </div>
 
-        <div class="flex flex-col z-10 lg:flex-row max-w-6xl mx-auto items-center gap-16 lg:gap-38">
+        <div class="flex flex-col z-10 lg:flex-row max-w-7xl items-center justify-between ">
           <!-- Rocket SVG -->
           <div v-html="appdevlast2"></div>
 
           <div class="fade-right flex flex-col gap-8 text-white">
-            <h2 class="text-2xl font-semibold">4. Testing and Launch</h2>
-            <p class="font-light text-lg">
+            <h2 class="text-2xl  font-semibold">4. Testing and Launch</h2>
+            <p class="font-light w-[500px] text-lg">
               Before launching the app, we conduct thorough testing to ensure that it is stable and
               bug-free. Once the app is ready, we help you with the submission process and launch it
               on the App Store and Google Play.
@@ -123,10 +123,10 @@
           </div>
         </div>
         <!-- Section 5 -->
-        <div class="flex flex-col z-10 lg:flex-row max-w-6xl mx-auto items-center gap-16 lg:gap-38">
+        <div class="flex flex-col z-10 lg:flex-row max-w-7xl justify-between items-center">
           <div class="fade-right flex flex-col gap-8 text-white">
             <h2 class="text-2xl font-semibold">5. Optimize for Growth</h2>
-            <p class="font-light text-lg">
+            <p class="font-light w-[500px] text-lg">
               After the app is launched, we provide ongoing support and maintenance to ensure that
               it continues to function smoothly and meet the changing needs of your business. We
               also offer optimization services to help increase user engagement and drive growth.
@@ -156,7 +156,7 @@
     ></div>
 
     <div
-      class="absolute w-[53.6875rem] bg-black 2xl:w-[56rem] 2xl:h-[32rem] h-[27.9375rem] flex justify-center border border-[#A138E0] rounded"
+      class="absolute w-[53.6875rem] bg-black 2xl:w-[62rem] 2xl:h-[37rem] h-[27.9375rem] flex justify-center border border-[#A138E0] rounded"
     >
       <div
         class="absolute h-[12.5rem] text-white w-[45.6875rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]"

@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-black text-white font-sans px-6 py-16 md:px-20 md:py-34">
-    <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+    <main class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
       <!-- Blog Content -->
       <article class="md:col-span-2 bg-gray-900 rounded-xl shadow-lg p-10">
         <h1 class="text-4xl font-semibold mb-6 text-white">Exploring the Future of Web Design</h1>

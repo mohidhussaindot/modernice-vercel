@@ -8,7 +8,7 @@
       ]"
       cta-label="KI-Beratung"
       cta-to="/appointment"
-      logo-src=""
+      logo-src="/images/ai-logo.png"
       cta-from="#3BE8E8"
       cta-to-color="#AFE639"
     />

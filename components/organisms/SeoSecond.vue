@@ -1,12 +1,12 @@
 <template>
-  <section class="relative h-[1082px] hidden lg:flex overflow-x-hidden text-white bg-[#020111]">
+  <section class="relative min-h-screen hidden lg:flex overflow-hidden text-white bg-[#020111]">
     <!-- Background SVG injected -->
     <div
-      class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden"
-      v-html="responsiveBg"
+      class="absolute inset-0  w-full  h-full pointer-events-none z-0 overflow-hidden"
+      v-html="responsiveBg" style="rotate: 10deg; scale: 1.1;"
     ></div>
 
-    <div class="relative z-10 max-w-6xl mx-auto flex flex-col gap-20 pt-10 px-4 md:px-6 lg:px-0">
+    <div class="relative z-10 max-w-7xl mx-auto flex flex-col gap-20 pt-10 px-4 md:px-6 lg:px-0">
       <!-- Section 1: Fundament des Erfolgs -->
       <div class="flex flex-col lg:flex-row items-center gap-10 xl:gap-16">
         <!-- Text Column -->
@@ -142,12 +142,12 @@
   >
     <!-- Shared SVG Background -->
     <div
-      class="absolute inset-0 pointer-events-none h-full left-[100px] z-0 w-full"
-      v-html="svgmainlines"
+      class="absolute inset-0 pointer-events-none h-full left-[400px] z-0 w-full"
+      v-html="svgmainlines" style="rotate: 10deg; "
     ></div>
 
     <div
-      class="relative z-10 flex flex-col 2xl:gap-[270px] lg:gap-[200px] pt-24 pb-16 max-w-6xl mx-auto"
+      class="relative z-10 flex flex-col 2xl:gap-[270px] lg:gap-[200px] pt-24 pb-16 max-w-7xl mx-auto"
     >
       <!-- First Row: Analyse des Ist-Zustands -->
       <div class="flex flex-col lg:flex-row items-center gap-[13.5rem]">
@@ -207,7 +207,7 @@
 
   <!-- 6th Section -->
   <section class="min-h-screen hidden lg:flex overflow-hidden text-white pt-5 bg-[#020111]">
-    <div class="flex flex-col gap-24 max-w-6xl mx-auto md:px-6 lg:px-0">
+    <div class="flex flex-col gap-24 max-w-7xl mx-auto md:px-6 lg:px-0">
       <!-- Row 1: Text left / Image right -->
       <div class="flex flex-row justify-between items-center gap-12 fade-left">
         <div class="w-full max-w-[35.75rem] flex flex-col gap-8">
@@ -284,7 +284,7 @@
     ></div>
 
     <div
-      class="absolute lg:w-[53.6875rem] bg-black 2xl:w-[56rem] 2xl:h-[32rem] lg:h-[27.9375rem] flex justify-center border rounded border-[#01A3FF]"
+      class="absolute lg:w-[53.6875rem] bg-black 2xl:w-[62rem] 2xl:h-[37rem]  lg:h-[27.9375rem] flex justify-center border rounded border-[#01A3FF]"
     >
       <div
         class="absolute h-[12.5rem] text-white w-[45.6875rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]"
