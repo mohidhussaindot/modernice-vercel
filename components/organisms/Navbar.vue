@@ -10,12 +10,14 @@
     ]"
   >
     <div class="flex justify-between items-center w-full relative z-[9999]">
+      <!-- Logo -->
       <span>
-        <NuxtLink v-if="logoSrc" to="/" aria-label="Modernise home">
+        <NuxtLink v-if="logoSrc" :to="localePath('/')" aria-label="Modernise home">
           <NuxtImg :src="logoSrc" alt="Logo" class="select-none w-[2.8306rem] h-[2.8306rem]" />
         </NuxtLink>
       </span>
 
+      <!-- Desktop Navigation -->
       <nav
         class="relative grid grid-flow-col auto-cols-max items-center gap-[2rem] sm:gap-[3rem] md:gap-[4rem] text-white 2xl:text-[1.3rem] xl:text-[1rem] font-light"
         aria-label="Primary"
@@ -32,6 +34,7 @@
               {{ link.label }}
             </button>
 
+            <!-- Services Dropdown -->
             <div
               v-show="dropdownOpen"
               class="absolute left-0 mt-2 w-[13rem] rounded-lg shadow-lg border border-gray-700 overflow-hidden z-[9999]"
@@ -40,7 +43,7 @@
               <NuxtLink
                 v-for="service in services"
                 :key="service.to"
-                :to="service.to"
+                :to="localePath(service.to)"
                 class="block px-4 py-2 text-sm transition-colors duration-200"
                 :class="{
                   'text-black': true,
@@ -54,18 +57,18 @@
           </div>
 
           <!-- Normal Link -->
-          <NuxtLink v-else :to="link.to" class="hover:underline">
+          <NuxtLink v-else :to="localePath(link.to)" class="hover:underline">
             {{ link.label }}
           </NuxtLink>
         </template>
+
+        <!-- Language Switcher -->
         <div class="relative group">
-          <!-- Current locale button (flag + dropdown arrow) -->
           <button
             class="font-semibold text-white hover:underline focus:outline-none flex items-center gap-1"
           >
             <span v-if="locale === 'en'" class="fi fi-gb"></span>
             <span v-else-if="locale === 'de'" class="fi fi-de"></span>
-
             <svg
               class="w-3 h-3 inline-block ml-1"
               fill="none"
@@ -79,7 +82,7 @@
             </svg>
           </button>
 
-          <!-- Dropdown -->
+          <!-- Language Dropdown -->
           <div
             class="absolute left-0 mt-2 w-[6rem] rounded-lg shadow-lg bg-[#0B061F] border border-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
           >
@@ -89,8 +92,8 @@
               @click="switchLanguage(loc)"
               class="block w-full px-3 py-2 text-left text-white flex items-center gap-2 transition-colors duration-200"
               :class="{
-                'bg-[#1a1234]': locale === loc, // active locale
-                'hover:bg-[#1a1234]': locale !== loc // hover effect on others
+                'bg-[#1a1234]': locale === loc,
+                'hover:bg-[#1a1234]': locale !== loc
               }"
             >
               <span v-if="loc === 'en'" class="fi fi-gb"></span>
@@ -99,10 +102,11 @@
             </button>
           </div>
         </div>
-        <!-- CTA -->
+
+        <!-- CTA Button -->
         <NuxtLink
           v-if="ctaLabel"
-          :to="ctaTo"
+          :to="localePath(ctaTo)"
           class="relative inline-block px-[1.5rem] py-[0.5rem] font-semibold text-base rounded-[0.75rem] transition-transform duration-300 hover:scale-105"
         >
           <div
@@ -111,7 +115,6 @@
           >
             <div class="w-full h-full rounded-[0.625rem] bg-[#0B061F]"></div>
           </div>
-
           <span
             class="relative 2xl:text-[1.3rem] z-10"
             :style="`
@@ -134,11 +137,11 @@
     class="sm:hidden fixed top-0 left-0 z-[9999] w-full bg-[#0B061F] px-4 py-3 flex justify-between items-center"
   >
     <!-- Logo -->
-    <NuxtLink v-if="logoSrc" to="/" aria-label="Modernise home">
+    <NuxtLink v-if="logoSrc" :to="localePath('/')" aria-label="Modernise home">
       <NuxtImg :src="logoSrc" alt="Logo" class="w-10 h-10 select-none" />
     </NuxtLink>
 
-    <!-- Hamburger Icon -->
+    <!-- Hamburger -->
     <button @click="toggleMenu" aria-label="Open menu" class="focus:outline-none">
       <svg
         class="w-7 h-7 text-white"
@@ -153,7 +156,7 @@
       </svg>
     </button>
 
-    <!-- Mobile Slide Menu -->
+    <!-- Mobile Menu -->
     <transition name="slide">
       <div
         v-if="menuOpen"
@@ -177,11 +180,12 @@
           </button>
         </div>
 
+        <!-- Mobile Links -->
         <nav class="flex flex-col gap-5 text-white">
           <template v-for="(link, index) in navLinks" :key="index">
             <NuxtLink
               v-if="!['services', 'leistungen'].includes(link.label.toLowerCase())"
-              :to="link.to"
+              :to="localePath(link.to)"
               class="text-base hover:underline"
               @click="toggleMenu"
             >
@@ -193,7 +197,7 @@
               <NuxtLink
                 v-for="service in services"
                 :key="service.to"
-                :to="service.to"
+                :to="localePath(service.to)"
                 class="text-sm ml-2 hover:underline"
                 @click="toggleMenu"
               >
@@ -203,9 +207,31 @@
           </template>
         </nav>
 
+        <!-- Language Switcher (Mobile) -->
+        <div class="mt-6 border-t border-gray-700 pt-4">
+          <span class="text-white font-semibold mb-2 block">Language</span>
+          <div class="flex flex-col gap-2">
+            <button
+              v-for="loc in availableLocales"
+              :key="loc"
+              @click="switchLanguage(loc)"
+              class="flex items-center gap-2 px-3 py-2 text-white rounded-md transition-colors duration-200"
+              :class="{
+                'bg-[#1a1234]': locale === loc,
+                'hover:bg-[#1a1234]': locale !== loc
+              }"
+            >
+              <span v-if="loc === 'en'" class="fi fi-gb"></span>
+              <span v-else-if="loc === 'de'" class="fi fi-de"></span>
+              <span>{{ loc.toUpperCase() }}</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- CTA -->
         <div v-if="ctaLabel" class="mt-6">
           <NuxtLink
-            :to="ctaTo"
+            :to="localePath(ctaTo)"
             class="inline-block w-full text-center py-3 rounded-lg text-white font-semibold transition-transform duration-300 hover:scale-105"
             :style="`background: linear-gradient(135deg, ${ctaFrom}, ${ctaToColor})`"
             @click="toggleMenu"
@@ -217,24 +243,24 @@
     </transition>
   </header>
 </template>
+
 <script setup>
   import { ref, onMounted, onUnmounted, nextTick } from 'vue'
-  import { useRoute, useRouter } from 'vue-router'
+  import { useRoute } from 'vue-router'
   import { useI18n } from 'vue-i18n'
   import 'flag-icons/css/flag-icons.min.css'
 
+  import { useLocalePath } from '#i18n'
+
+  // Locale-aware path helper
+  const localePath = useLocalePath()
+
   // Props
   const props = defineProps({
-    navLinks: {
-      type: Array,
-      required: true
-    },
+    navLinks: { type: Array, required: true },
     ctaLabel: String,
     ctaTo: String,
-    logoSrc: {
-      type: String,
-      required: true
-    },
+    logoSrc: { type: String, required: true },
     ctaFrom: String,
     ctaVia: String,
     ctaToColor: String
@@ -242,29 +268,28 @@
 
   // Router & i18n
   const route = useRoute()
-  const router = useRouter()
-  const { locale, availableLocales, t, setLocale } = useI18n()
+  const { locale, availableLocales, setLocale } = useI18n()
 
-  // Persist locale across pages
+  // Persist locale
   onMounted(() => {
-    const savedLocale = localStorage.getItem('locale')
-    if (savedLocale && locale.value !== savedLocale) {
-      locale.value = savedLocale
+    const saved = localStorage.getItem('locale')
+    if (saved && locale.value !== saved) {
+      locale.value = saved
     }
   })
 
-  // Switch language function
+  // Switch language
   const switchLanguage = code => {
     setLocale(code)
     localStorage.setItem('locale', code)
-  } //set variable
+  }
 
+  // Header logic
   const headerRef = ref(null)
   const mobileMenuRef = ref(null)
   const hidden = ref(false)
   const dropdownOpen = ref(false)
   const menuOpen = ref(false)
-
   let closeTimeout = null
 
   const openDropdown = () => {
@@ -278,7 +303,7 @@
     }, 200)
   }
 
-  // Services dropdown links
+  // Services links
   const services = [
     { label: 'Website Strategy', to: '/services/website-strategy' },
     { label: 'AI Consulting', to: '/services/aiconsulting' },
@@ -287,19 +312,16 @@
     { label: 'App Development', to: '/services/appdevelopment' }
   ]
 
-  // Check if route is active
-  const isActive = path => route.path === path
+  // Check active route (locale-aware)
+  const isActive = path => route.path.endsWith(path)
 
   // Mobile menu toggle
   const toggleMenu = () => {
     menuOpen.value = !menuOpen.value
-
     if (menuOpen.value) {
       document.body.style.overflow = 'hidden'
       nextTick(() => {
-        setTimeout(() => {
-          document.addEventListener('click', handleClickOutside)
-        }, 50)
+        setTimeout(() => document.addEventListener('click', handleClickOutside), 50)
       })
     } else {
       document.body.style.overflow = ''
@@ -307,26 +329,22 @@
     }
   }
 
-  // Handle outside click
-  const handleClickOutside = event => {
+  const handleClickOutside = e => {
     const menuEl = mobileMenuRef.value
-    if (menuOpen.value && menuEl && !menuEl.contains(event.target)) {
+    if (menuOpen.value && menuEl && !menuEl.contains(e.target)) {
       toggleMenu()
     }
   }
 
-  // Header scroll hide/show
+  // Hide header on scroll
   let lastScrollY = 0
   const onScroll = () => {
-    const currentScrollY = window.scrollY || window.pageYOffset
-    hidden.value = currentScrollY > lastScrollY && currentScrollY > 100
-    lastScrollY = currentScrollY
+    const current = window.scrollY || window.pageYOffset
+    hidden.value = current > lastScrollY && current > 100
+    lastScrollY = current
   }
 
-  onMounted(() => {
-    window.addEventListener('scroll', onScroll, { passive: true })
-  })
-
+  onMounted(() => window.addEventListener('scroll', onScroll, { passive: true }))
   onUnmounted(() => {
     window.removeEventListener('scroll', onScroll)
     document.removeEventListener('click', handleClickOutside)

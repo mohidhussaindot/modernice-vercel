@@ -36,7 +36,7 @@
         <div
           class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#38EF61] to-[#44E5C8]"
         >
-          <NuxtLink to="/appointment">
+          <NuxtLink :to="localePath('/appointment')">
             <Button
               class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] lg:text-[1.25rem] rounded-[10px] bg-black bg-opacity-90 text-white hover:text-white transition"
             >
@@ -121,6 +121,8 @@
 
   import ServicesHeroRaw from '@atoms/svgs/servicesfirst.svg?raw'
   import Seoherobg from '@atoms/svgs/seoherobg.svg?raw'
+  import { useLocalePath } from '#i18n'
+  const localePath = useLocalePath()
 
   const servicesHeroRef = ref(null)
 </script>
