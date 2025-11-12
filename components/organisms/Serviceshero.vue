@@ -45,7 +45,7 @@
                 ref="buttonWrapperRef"
                 class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#38EF61] to-[#44E5C8] mx-auto lg:mx-0"
               >
-                <NuxtLink to="/appointment">
+                <NuxtLink :to="localePath('/appointment')">
                   <Button
                     class="px-[1.5rem] py-[0.625rem] text-[1rem] sm:text-[1.125rem] lg:text-[1.25rem] rounded-[10px] bg-black bg-opacity-90 text-white hover:text-white transition"
                   >
@@ -120,6 +120,9 @@
   import Button from '@atoms/Button.vue'
   import { gsap } from 'gsap'
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
+  import { useLocalePath } from '#i18n'
+
+  const localePath = useLocalePath()
 
   gsap.registerPlugin(ScrollTrigger)
 

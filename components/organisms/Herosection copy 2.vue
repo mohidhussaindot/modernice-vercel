@@ -90,7 +90,7 @@
                     {{ $t('citySection.subtitle') }}
                   </p>
 
-                  <NuxtLink to="/services/aiconsulting">
+                  <NuxtLink :to="localePath('/services/aiconsulting')">
                     <div
                       class="inline-block mx-auto mt-[2rem] hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
                     >
@@ -185,7 +185,7 @@
                 {{ $t('ctaSection.subtitle') }}
               </p>
 
-              <NuxtLink to="/services/aiconsulting">
+              <NuxtLink :to="localePath('/services/aiconsulting')">
                 <div
                   class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] hover:from-[#3BE8E8] hover:to-[#AFE639]"
                 >
@@ -272,7 +272,7 @@
             {{ $t('citySection.subtitle') }}
           </p>
 
-          <NuxtLink to="/services/aiconsulting">
+          <NuxtLink :to="localePath('/services/aiconsulting')">
             <div
               class="inline-block mt-6 transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639]"
             >
@@ -325,7 +325,7 @@
           <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
             {{ $t('ctaSection.subtitle') }}
           </p>
-          <NuxtLink to="/services/aiconsulting">
+          <NuxtLink :to="localePath('/services/aiconsulting')">
             <div
               class="inline-block transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#AFE639] to-[#3BE8E8]"
             >
@@ -378,6 +378,9 @@
   import stripessvg from '@atoms/svgs/herosectionstripes.svg?raw'
   import bghero from '@atoms/svgs/bghero.svg?raw'
   import bglines from '@atoms/svgs/Lines.svg?raw'
+  import { useLocalePath } from '#i18n'
+
+  const localePath = useLocalePath()
 
   // ✅ Import GSAP and ScrollTrigger
   import { gsap } from 'gsap'
