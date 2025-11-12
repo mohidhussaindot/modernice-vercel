@@ -17,17 +17,15 @@
           class="flex flex-col gap-[2rem] 2xl:w-[40rem] lg:w-[120rem] md:w-[30rem] xl:w-[90.625rem]"
         >
           <h1 class="text-[2rem] xl:text-5xl lg:text-4xl font-semibold leading-tight">
-            Maximize online sales with our custom <br />
-            <span class="bg-gradient-to-r from-[#FFE501] to-[#FFA901] text-transparent bg-clip-text"
-              >E-Commerce</span
+            {{ $t('ecs.hero.heading1') }} <br />
+            <span
+              class="bg-gradient-to-r from-[#FFE501] to-[#FFA901] text-transparent bg-clip-text"
             >
-            strategy service.
+              {{ $t('ecs.hero.heading2') }}</span
+            >
           </h1>
           <p class="xl:text-[1.5rem] lg:text-[1rem] font-semilight">
-            Our e-commerce strategy service is designed to help businesses of all sizes and
-            industries succeed in the world of online sales. Whether you're a B2C company looking to
-            sell directly to consumers, or a B2B company looking to streamline your sales process,
-            we can help you create a personalized e-commerce plan that meets your unique needs.
+            {{ $t('ecs.hero.paragraph') }}
           </p>
         </div>
         <div class="2xl:w-100 lg:w-450 pt-[3rem] hidden md:block" v-html="Ecshero"></div>
@@ -65,8 +63,8 @@
         <div class="relative z-10 flex flex-col items-center">
           <div class="text-center w-full max-w-[39.625rem] text-[2.875rem] font-semibold">
             <h1>
-              Ready to see how we do <br />
-              <span class="text-yellow-400">E-Commerce</span>?
+              {{ $t('ecs.demo.heading1') }} <br />
+              <span class="text-yellow-400"> {{ $t('ecs.demo.heading2') }}</span>
             </h1>
           </div>
 
@@ -265,11 +263,9 @@
           <div
             class="absolute h-[12.5rem] text-white w-[45.6875rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]"
           >
-            <h1 class="italic font-semibold text-[2.25rem]">Get in Touch</h1>
+            <h1 class="italic font-semibold text-[2.25rem]">{{ $t('contact.title') }}</h1>
             <p class="max-w-[45.6875rem] max-h-[9rem] text-[1.25rem] font-light">
-              Now that you've learned about our process, why not take the next step and let us help
-              you take your online presence to the next level? Don't wait – schedule a call with us
-              today and let's discuss how we can give your business the recognition it deserves.
+              {{ $t('contact.description') }}
             </p>
           </div>
 
@@ -277,20 +273,20 @@
             class="absolute flex w-[45.6875rem] h-[4.9375rem] gap-[4rem] mx-[4rem] top-[19.5rem] text-white"
           >
             <span>
-              <p class="text-[1.125rem] mb-[0.625rem]">Drop us a message at</p>
+              <p class="text-[1.125rem] mb-[0.625rem]"> {{ $t('contact.message.label') }}</p>
               <h2
                 class="text-[2rem] italic font-bold bg-gradient-to-r from-[#FCD265] to-[#E56731] bg-clip-text text-transparent"
               >
-                hello@modernice.design
+                {{ $t('contact.message.email').replace(' [at] ', '@') }}
               </h2>
             </span>
 
             <span>
-              <p class="text-[1.125rem] mb-[0.625rem]">Or talk to us directly</p>
+              <p class="text-[1.125rem] mb-[0.625rem]">{{ $t('contact.call.label') }}</p>
               <h2
                 class="text-[2rem] bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent italic font-bold"
               >
-                Schedule a Call
+                {{ $t('contact.call.action') }}
               </h2>
             </span>
           </div>
@@ -301,7 +297,8 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue'
+  import { ref, computed } from 'vue'
+  import { useI18n } from 'vue-i18n'
   import Ecshero from '@atoms/svgs/ecs-hero.svg?raw'
   import Ecsmain1 from '@atoms/svgs/ecs-main1.svg?raw'
   import Ecsmain2 from '@atoms/svgs/ecs-main2.svg?raw'
@@ -309,57 +306,59 @@
   import Ecsmain4 from '@atoms/svgs/ecs-main4.svg?raw'
   import svgbg from '@atoms/svgs/ecsbgline.svg?raw'
 
-  // --- static data (copied from your original file) ---
-  const cards = [
-    {
-      icon: '/images/map.png',
-      alt: 'Map icon',
-      text: 'A Personalized plan tailored to your business'
-    },
+  const { t } = useI18n()
+
+  // --- Cards Section (What's in Store) ---
+  // Dynamically imported from en.json → ecs.slider
+  const cards = computed(() => [
     {
       icon: '/images/Store.png',
       alt: 'Store icon',
-      text: 'A user friendly appealing online store'
+      text: t('ecs.slider.slide1')
+    },
+    {
+      icon: '/images/map.png',
+      alt: 'Map icon',
+      text: t('ecs.slider.slide2')
     },
     {
       icon: '/images/microchip.png',
       alt: 'Chip icon',
-      text: 'The most up to date e-commerce technologies'
+      text: t('ecs.slider.slide3')
     },
     {
       icon: '/images/comments.png',
       alt: 'Comments icon',
-      text: 'Ongoing support to ensure success of your store'
+      text: t('ecs.slider.slide4')
     }
-  ]
+  ])
 
-  const serviceCards = [
+  // --- Service Cards Section ---
+  // Dynamically imported from en.json → ecs.cards
+  const serviceCards = computed(() => [
     {
-      title: '1. Discovery & Strategy',
-      description:
-        'The first step in our e-commerce strategy process is to gain a thorough understanding of your business goals and target audience. This includes conducting market research and analyzing your competitors to determine the most effective e-commerce strategy for your business.',
+      title: t('ecs.cards.1.title'),
+      description: t('ecs.cards.1.desc'),
       html: Ecsmain1
     },
     {
-      title: '2. Design & Development',
-      description:
-        'Once we have developed a personalized e-commerce strategy for your business, our team will begin working on the design and development of your online store. This includes creating a visually appealing and user-friendly website, as well as implementing the necessary e-commerce tools and technologies.',
+      title: t('ecs.cards.2.title'),
+      description: t('ecs.cards.2.desc'),
       html: Ecsmain2
     },
     {
-      title: '3. Testing & Launch',
-      description:
-        'Before launching your online store, we will conduct thorough testing to ensure that everything is functioning properly. This includes testing the user experience, payment processes, and overall functionality of your website. Once we are confident that your online store is ready for launch, we will help you get your business up and running in the digital world.',
+      title: t('ecs.cards.3.title'),
+      description: t('ecs.cards.3.desc'),
       html: Ecsmain3
     },
     {
-      title: '4. Optimize for Growth',
-      description:
-        'Our work doesnt end once your online store is launched. We will continue to monitor and analyze the performance of your e-commerce platform, making ongoing adjustments and optimizations as needed. We also provide ongoing support and maintenance to ensure that your online store continues to function smoothly and effectively',
+      title: t('ecs.cards.4.title'),
+      description: t('ecs.cards.4.desc'),
       html: Ecsmain4
     }
-  ]
+  ])
 
+  // --- View Mode Controls (Grid/List/Masonry) ---
   const viewMode = ref('grid')
 
   function setView(mode) {

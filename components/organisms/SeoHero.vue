@@ -17,21 +17,22 @@
         <h1
           class="text-[2.5rem] md:text-[3rem] xl:text-[3.75rem] italic font-lightbold leading-tight"
         >
-          Bereit für den
+          {{ t('seohero.desktop.title.part1') }}
+
           <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
-            Startschuss
+            {{ t('seohero.desktop.title.highlight1') }}
           </span>
-          nach
+          {{ t('seohero.desktop.title.part2') }}
+
           <span
             class="bg-gradient-to-r from-[#25CDDA] via-[#01A3FF] to-[#1EC5E1] bg-clip-text text-transparent"
           >
-            Oben?
+            {{ t('seohero.desktop.title.highlight2') }}
           </span>
         </h1>
 
         <p class="font-light text-[1.425rem] w-full max-w-full">
-          Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive
-          SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein [after-thought] sein.
+          {{ t('seohero.desktop.description') }}
         </p>
 
         <div
@@ -43,7 +44,7 @@
             <span
               class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] text-transparent bg-clip-text duration-300"
             >
-              Startbefehl geben
+              {{ t('seohero.desktop.button') }}
             </span>
           </Button>
         </div>
@@ -74,21 +75,21 @@
     <!-- Text content -->
     <div class="flex flex-col items-center gap-3 text-center">
       <h1 class="text-[2rem] font-semibold italic leading-snug">
-        Bereit für den
+        {{ t('seohero.desktop.title.part1') }}
+
         <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
-          Startschuss
+          {{ t('seohero.desktop.title.part1') }}
         </span>
         nach
         <span
           class="bg-gradient-to-r from-[#25CDDA] via-[#01A3FF] to-[#1EC5E1] bg-clip-text text-transparent"
         >
-          Oben?
+          {{ t('seohero.desktop.title.highlight2') }}
         </span>
       </h1>
 
       <p class="text-[1rem] md:w-[500px] font-semilight leading-relaxed">
-        Vertraue auf einen bedachten und strategischen Prozess, der von Anfang an effektive
-        SEO-Maßnahmen in die Entwicklung mit einbezieht. SEO muss kein [after-thought] sein.
+        {{ t('seohero.desktop.description') }}
       </p>
 
       <!-- Button -->
@@ -99,7 +100,7 @@
           class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[10px] bg-black bg-opacity-90 text-white hover:text-white transition"
         >
           <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] text-transparent bg-clip-text">
-            Startbefehl geben
+            {{ t('seohero.desktop.button') }}
           </span>
         </Button>
       </div>
@@ -107,12 +108,14 @@
   </section>
 </template>
 <script setup lang="ts">
+  import { useI18n } from 'vue-i18n'
+
   import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
   import { gsap } from 'gsap'
-  import { useGSAP } from '../../composables/useGSAP'
   import Button from '@atoms/Button.vue'
   import Seocharacter from '@atoms/svgs/seo-character.svg?raw'
   import seoherolines from '@atoms/svgs/seolines.svg?raw'
+  const { t } = useI18n()
 
   const seocharacter = ref<HTMLElement | null>(null)
   const seoLinesContainer = ref<HTMLElement | null>(null)

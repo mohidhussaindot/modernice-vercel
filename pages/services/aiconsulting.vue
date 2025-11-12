@@ -2,11 +2,11 @@
   <div>
     <Navbar
       :nav-links="[
-        { label: 'modernice.design', to: '/' },
-        { label: 'Leistungen', to: '' },
-        { label: 'Referenzen', to: '/Referenzen' }
+        { label: $t('nav.brand'), to: '/' },
+        { label: $t('nav.services') },
+        { label: $t('nav.work'), to: '/work' }
       ]"
-      cta-label="KI-Beratung"
+      :cta-label="$t('button.talk2')"
       cta-to="/appointment"
       logo-src="/images/ai-logo.png"
       cta-from="#3BE8E8"

@@ -58,7 +58,47 @@
             {{ link.label }}
           </NuxtLink>
         </template>
+        <div class="relative group">
+          <!-- Current locale button (flag + dropdown arrow) -->
+          <button
+            class="font-semibold text-white hover:underline focus:outline-none flex items-center gap-1"
+          >
+            <span v-if="locale === 'en'" class="fi fi-gb"></span>
+            <span v-else-if="locale === 'de'" class="fi fi-de"></span>
 
+            <svg
+              class="w-3 h-3 inline-block ml-1"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+
+          <!-- Dropdown -->
+          <div
+            class="absolute left-0 mt-2 w-[6rem] rounded-lg shadow-lg bg-[#0B061F] border border-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+          >
+            <button
+              v-for="loc in availableLocales"
+              :key="loc"
+              @click="switchLanguage(loc)"
+              class="block w-full px-3 py-2 text-left text-white flex items-center gap-2 transition-colors duration-200"
+              :class="{
+                'bg-[#1a1234]': locale === loc, // active locale
+                'hover:bg-[#1a1234]': locale !== loc // hover effect on others
+              }"
+            >
+              <span v-if="loc === 'en'" class="fi fi-gb"></span>
+              <span v-else-if="loc === 'de'" class="fi fi-de"></span>
+              <span>{{ loc.toUpperCase() }}</span>
+            </button>
+          </div>
+        </div>
         <!-- CTA -->
         <NuxtLink
           v-if="ctaLabel"
@@ -177,34 +217,55 @@
     </transition>
   </header>
 </template>
-
-<script setup lang="ts">
+<script setup>
   import { ref, onMounted, onUnmounted, nextTick } from 'vue'
-  import { useRoute } from 'vue-router'
+  import { useRoute, useRouter } from 'vue-router'
+  import { useI18n } from 'vue-i18n'
+  import 'flag-icons/css/flag-icons.min.css'
 
-  type NavLink = {
-    label: string
-    to: string
-  }
+  // Props
+  const props = defineProps({
+    navLinks: {
+      type: Array,
+      required: true
+    },
+    ctaLabel: String,
+    ctaTo: String,
+    logoSrc: {
+      type: String,
+      required: true
+    },
+    ctaFrom: String,
+    ctaVia: String,
+    ctaToColor: String
+  })
 
-  const props = defineProps<{
-    navLinks: NavLink[]
-    ctaLabel?: string
-    ctaTo?: string
-    logoSrc: string
-    ctaFrom?: string
-    ctaVia?: string
-    ctaToColor?: string
-  }>()
-
+  // Router & i18n
   const route = useRoute()
-  const headerRef = ref<HTMLElement | null>(null)
-  const mobileMenuRef = ref<HTMLElement | null>(null)
+  const router = useRouter()
+  const { locale, availableLocales, t, setLocale } = useI18n()
+
+  // Persist locale across pages
+  onMounted(() => {
+    const savedLocale = localStorage.getItem('locale')
+    if (savedLocale && locale.value !== savedLocale) {
+      locale.value = savedLocale
+    }
+  })
+
+  // Switch language function
+  const switchLanguage = code => {
+    setLocale(code)
+    localStorage.setItem('locale', code)
+  } //set variable
+
+  const headerRef = ref(null)
+  const mobileMenuRef = ref(null)
   const hidden = ref(false)
   const dropdownOpen = ref(false)
   const menuOpen = ref(false)
 
-  let closeTimeout: ReturnType<typeof setTimeout> | null = null
+  let closeTimeout = null
 
   const openDropdown = () => {
     if (closeTimeout) clearTimeout(closeTimeout)
@@ -217,24 +278,24 @@
     }, 200)
   }
 
+  // Services dropdown links
   const services = [
     { label: 'Website Strategy', to: '/services/website-strategy' },
     { label: 'AI Consulting', to: '/services/aiconsulting' },
     { label: 'SEO', to: '/services/seo' },
-
     { label: 'E-commerce', to: '/services/ecs' },
-
     { label: 'App Development', to: '/services/appdevelopment' }
   ]
 
-  const isActive = (path: string) => route.path === path
+  // Check if route is active
+  const isActive = path => route.path === path
 
+  // Mobile menu toggle
   const toggleMenu = () => {
     menuOpen.value = !menuOpen.value
 
     if (menuOpen.value) {
       document.body.style.overflow = 'hidden'
-
       nextTick(() => {
         setTimeout(() => {
           document.addEventListener('click', handleClickOutside)
@@ -246,13 +307,15 @@
     }
   }
 
-  const handleClickOutside = (event: MouseEvent) => {
+  // Handle outside click
+  const handleClickOutside = event => {
     const menuEl = mobileMenuRef.value
-    if (menuOpen.value && menuEl && !menuEl.contains(event.target as Node)) {
+    if (menuOpen.value && menuEl && !menuEl.contains(event.target)) {
       toggleMenu()
     }
   }
 
+  // Header scroll hide/show
   let lastScrollY = 0
   const onScroll = () => {
     const currentScrollY = window.scrollY || window.pageYOffset

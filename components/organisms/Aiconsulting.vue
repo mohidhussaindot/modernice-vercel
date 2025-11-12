@@ -10,15 +10,11 @@
             <span
               class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent"
             >
-              Der Wegweiser zur KI-Revolution: <br />
-              Strategische Beratung für dein Unternehmen
+              {{ $t('aihero.title') }}
             </span>
           </h1>
           <p class="text-[0.9rem] leading-relaxed mx-auto">
-            Die KI-Revolution steht vor der Tür. Bist du bereit, Künstliche Intelligenz zu deinem
-            Vorteil zu nutzen? Mit uns wird die KI-Integration zur nahtlosen Reise, von der ersten
-            Idee bis zur vollen Umsetzung. Starte jetzt. Sei innovativ. Sei effizient. Sei
-            revolutionär.
+            {{ $t('aihero.description') }}
           </p>
           <div
             class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
@@ -29,7 +25,7 @@
               <span
                 class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
               >
-                KI-Beratung starten.
+                {{ $t('aihero.button') }}
               </span>
             </Button>
           </div>
@@ -47,15 +43,15 @@
         <!-- Text -->
         <div class="md:w-1/2 text-center md:text-left flex flex-col gap-6">
           <h2 class="text-2xl font-semibold">
-            <span class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent"
-              >Hybrid?</span
+            <span
+              class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent"
             >
-            What does that mean?
+              {{ $t('hybrid.title1') }}</span
+            >
+            {{ $t('hybrid.title2') }}
           </h2>
           <p class="text-base font-light">
-            Don’t worry, the term hybrid within app development actually stands for a good thing.
-            Hybrid apps combine the best of app and web development, letting your lightning-fast app
-            run on all devices.
+            {{ $t('hybrid.description') }}
           </p>
         </div>
         <!-- SVG -->
@@ -70,16 +66,15 @@
         <div class="flex items-center gap-4">
           <div class="flex w-[400px] gap-5 flex-col">
             <h1 class="text-2xl font-bold">
-              Our
+              {{ $t('approach.title1') }}
               <span
                 class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent"
-                >Approach</span
+                >{{ $t('approach.title2') }}</span
               >
             </h1>
-            <h2 class="text-xl font-semibold">1. Discovery</h2>
+            <h2 class="text-xl font-semibold">{{ $t('approach.steps.1.title') }}</h2>
             <p class="font-light text-base">
-              During the discovery phase, we work with you to understand your business goals and
-              needs, as well as gather requirements and specifications for your hybrid app.
+              {{ $t('approach.steps.1.description') }}
             </p>
           </div>
           <div>
@@ -97,11 +92,9 @@
             <img src="@atoms/svgs/aidev/aidesign.svg" alt="Design" class="w-full max-w-[400px]" />
           </div>
           <div class="flex w-[400px] gap-5 flex-col">
-            <h2 class="text-xl font-semibold">2. Design</h2>
+            <h2 class="text-xl font-semibold"> {{ $t('approach.steps.2.title') }}</h2>
             <p class="font-light text-base">
-              Next, our team of designers creates wireframes and mockups to visualise the user flow
-              and layout of the app. We work with you to ensure the design aligns with your brand
-              guidelines and meets the needs of your users.
+              {{ $t('approach.steps.2.description') }}
             </p>
           </div>
         </div>
@@ -109,11 +102,9 @@
         <!-- Development -->
         <div class="flex items-center gap-4">
           <div class="flex w-[400px] gap-5 flex-col">
-            <h2 class="text-xl font-semibold">3. Development</h2>
+            <h2 class="text-xl font-semibold"> {{ $t('approach.steps.3.title') }}</h2>
             <p class="font-light text-base">
-              Using the latest tools and technologies, such as Flutter, we begin building the hybrid
-              app according to the approved design. Our developers ensure that the app functions
-              smoothly and provides a seamless user experience on both iOS and Android platforms.
+              {{ $t('approach.steps.3.description') }}
             </p>
           </div>
           <div>
@@ -135,11 +126,9 @@
             />
           </div>
           <div class="flex w-[400px] gap-5 flex-col">
-            <h2 class="text-xl font-semibold">4. Testing and Launch</h2>
+            <h2 class="text-xl font-semibold"> {{ $t('approach.steps.4.title') }}</h2>
             <p class="font-light text-base">
-              Before launching the app, we conduct thorough testing to ensure that it is stable and
-              bug-free. Once the app is ready, we help you with the submission process and launch it
-              on the App Store and Google Play.
+              {{ $t('approach.steps.4.description') }}
             </p>
           </div>
         </div>
@@ -147,11 +136,9 @@
         <!-- Optimize for Growth -->
         <div class="flex items-center gap-4 mb-12 relative">
           <div class="flex w-[400px] gap-5 flex-col">
-            <h2 class="text-xl font-semibold">5. Optimize for Growth</h2>
+            <h2 class="text-xl font-semibold">{{ $t('approach.steps.5.title') }}</h2>
             <p class="font-light text-base">
-              After the app is launched, we provide ongoing support and maintenance to ensure that
-              it continues to function smoothly and meet the changing needs of your business. We
-              also offer optimization services to help increase user engagement and drive growth.
+              {{ $t('approach.steps.4.description') }}
             </p>
           </div>
           <div>
@@ -165,27 +152,26 @@
       </div>
     </div>
     <div class="bg-[#1a1a1a] p-6 rounded-xl border border-[#A138E0] text-center mt-10">
-      <h2 class="italic font-semibold text-2xl mb-4">Get in Touch</h2>
+      <h2 class="italic font-semibold text-2xl mb-4"> {{ $t('contact.title') }} </h2>
       <p class="text-base font-light mb-6">
-        Let us help take your online presence to the next level. Schedule a call today and let's
-        talk about growing your business.
+        {{ $t('contact.description') }}
       </p>
 
       <div class="flex flex-col gap-4">
         <div>
-          <p class="text-sm">Drop us a message at</p>
+          <p class="text-sm">{{ $t('contact.message.label') }} </p>
           <h3
             class="text-lg font-bold italic bg-gradient-to-r from-[#A138E0] to-[#7137EC] bg-clip-text text-transparent"
           >
-            hello@modernice.design
+            {{ $t('contact.message.email').replace(' [at] ', '@') }}
           </h3>
         </div>
         <div>
-          <p class="text-sm">Or talk to us directly</p>
+          <p class="text-sm">{{ $t('contact.call.label') }}</p>
           <h3
             class="text-lg italic font-bold bg-gradient-to-r from-[#FFE401] to-[#FFB401] bg-clip-text text-transparent"
           >
-            Schedule a Call
+            {{ $t('contact.call.action') }}
           </h3>
         </div>
       </div>
@@ -208,15 +194,11 @@
             <span
               class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent"
             >
-              Der Wegweiser zur KI-Revolution: <br />
-              Strategische Beratung für dein Unternehmen
+              {{ $t('aihero.title') }}
             </span>
           </h1>
           <p class="text-[1.25rem] xl:max-w-[500px] leading-relaxed">
-            Die KI-Revolution steht vor der Tür. Bist du bereit, Künstliche Intelligenz zu deinem
-            Vorteil zu nutzen? Mit uns wird die KI-Integration zur nahtlosen Reise, von der ersten
-            Idee bis zur vollen Umsetzung. Starte jetzt. Sei innovativ. Sei effizient. Sei
-            revolutionär.
+            {{ $t('aihero.description') }}
           </p>
           <div
             class="inline-block hover:scale-105 transition w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] hover:from-[#AFE639] hover:to-[#3BE8E8]"
@@ -226,7 +208,8 @@
             >
               <span
                 class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
-                >KI-Beratung starten.</span
+              >
+                {{ $t('aihero.button') }}</span
               >
             </Button>
           </div>
@@ -247,16 +230,15 @@
 
         <div class="flex fade-up text-center flex-col gap-8 max-w-7xl mx-auto lg:mx-0">
           <h1 class="text-2xl font-semibold">
-            <span class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent"
-              >Hybrid?</span
+            <span
+              class="bg-gradient-to-r from-[#D539D3] to-[#7137EC] bg-clip-text text-transparent"
             >
-            What does that mean?
+              {{ $t('hybrid.title1') }}</span
+            >
+            {{ $t('hybrid.title2') }}
           </h1>
           <p class="text-lg font-light">
-            Don’t worry, the term hybrid within app development actually stands for a good thing.
-            You see, unlike hybrid cars which combine the worst aspects of petrol and electric cars
-            hybrid apps actually combine the best aspects of app and web development. This means you
-            will be able to use your lightning fast apps across all devices you can think of!
+            {{ $t('hybrid.description') }}
           </p>
         </div>
       </div>
@@ -266,18 +248,18 @@
           <!-- Text Block -->
           <div class="fade-left text-white flex-shrink-0 lg:max-w-[600px]">
             <h1 class="text-[2.625rem] font-bold">
-              Our
+              {{ $t('approach.title1') }}
               <span
                 class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] bg-clip-text text-transparent"
-                >Approach</span
+              >
+                {{ $t('approach.title2') }}</span
               >
             </h1>
 
-            <h2 class="text-2xl font-semibold mt-4">1. Discovery</h2>
+            <h2 class="text-2xl font-semibold mt-4"> {{ $t('approach.steps.1.title') }}</h2>
 
             <p class="font-light text-lg mt-2 w-[500px] max-w-full leading-relaxed">
-              During the discovery phase, we work with you to understand your business goals and
-              needs, as well as gather requirements and specifications for your hybrid app.
+              {{ $t('approach.steps.1.description') }}
             </p>
           </div>
 
@@ -300,11 +282,9 @@
 
           <!-- Text -->
           <div class="fade-right text-white w-full max-w-[500px] pt-10 lg:pt-0 mx-auto lg:mx-0">
-            <h2 class="text-2xl font-semibold">2. Design</h2>
+            <h2 class="text-2xl font-semibold"> {{ $t('approach.steps.2.title') }}</h2>
             <p class="font-light text-lg mt-2">
-              Next, our team of designers creates wireframes and mockups to visualise the user flow
-              and layout of the app. We work with you to ensure the design aligns with your brand
-              guidelines and meets the needs of your users.
+              {{ $t('approach.steps.2.description') }}
             </p>
           </div>
         </div>
@@ -315,11 +295,9 @@
         >
           <!-- Text -->
           <div class="fade-left text-white flex-shrink-0 max-w-[600px] pt-10 lg:pt-0">
-            <h2 class="text-2xl font-semibold">3. Development</h2>
+            <h2 class="text-2xl font-semibold"> {{ $t('approach.steps.3.title') }}</h2>
             <p class="font-light text-lg mt-2 w-[500px] max-w-full leading-relaxed">
-              Using the latest tools and technologies, such as Flutter, we begin building the hybrid
-              app according to the approved design. Our developers ensure that the app functions
-              smoothly and provides a seamless user experience on both iOS and Android platforms.
+              {{ $t('approach.steps.3.description') }}
             </p>
           </div>
 
@@ -342,11 +320,9 @@
 
           <!-- Text -->
           <div class="text-white fade-right flex-shrink-0 max-w-[600px] pt-10 lg:pt-0">
-            <h2 class="text-2xl font-semibold">4. Testing and Launch</h2>
+            <h2 class="text-2xl font-semibold"> {{ $t('approach.steps.4.title') }}</h2>
             <p class="font-light text-lg mt-2 w-[500px] max-w-full leading-relaxed">
-              Before launching the app, we conduct thorough testing to ensure that it is stable and
-              bug-free. Once the app is ready, we help you with the submission process and launch it
-              on the App Store and Google Play.
+              {{ $t('approach.steps.4.description') }}
             </p>
           </div>
         </div>
@@ -357,11 +333,9 @@
         >
           <!-- Text -->
           <div class="fade-left text-white flex-shrink-0 max-w-[600px]">
-            <h2 class="text-2xl font-semibold">5. Optimize for Growth</h2>
+            <h2 class="text-2xl font-semibold"> {{ $t('approach.steps.5.title') }}</h2>
             <p class="font-light text-lg mt-2 w-[500px] max-w-full leading-relaxed">
-              After the app is launched, we provide ongoing support and maintenance to ensure that
-              it continues to function smoothly and meet the changing needs of your business. We
-              also offer optimization services to help increase user engagement and drive growth.
+              {{ $t('approach.steps.5.description') }}
             </p>
           </div>
 
@@ -395,11 +369,9 @@
       <div
         class="absolute h-[12.5rem] text-white w-[45.688rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]"
       >
-        <h1 class="italic font-semibold text-[2.25rem]">Get in Touch</h1>
+        <h1 class="italic font-semibold text-[2.25rem]">{{ $t('contact.title') }}</h1>
         <p class="max-w-[45.688rem] max-h-[9rem] text-[1.25rem] font-light">
-          Now that you've learned about our process, why not take the next step and let us help you
-          take your online presence to the next level? Don't wait – schedule a call with us today
-          and let's discuss how we can give your business the recognition it deserves.
+          {{ $t('contact.description') }}
         </p>
       </div>
 
@@ -407,20 +379,20 @@
         class="absolute flex w-[45.688rem] h-[4.938rem] gap-[4rem] mx-[4rem] top-[19.5rem] text-white"
       >
         <span>
-          <p class="text-[1.125rem] mb-[0.625rem]">Drop us a message at</p>
+          <p class="text-[1.125rem] mb-[0.625rem]"> {{ $t('contact.message.label') }}</p>
           <h2
             class="text-[2rem] italic font-bold bg-gradient-to-r from-[#A138E0] to-[#7137EC] bg-clip-text text-transparent"
           >
-            hello@modernice.design
+            {{ $t('contact.message.email').replace(' [at] ', '@') }}
           </h2>
         </span>
 
         <span>
-          <p class="text-[1.125rem] mb-[0.625rem]">Or talk to us directly</p>
+          <p class="text-[1.125rem] mb-[0.625rem]">{{ $t('contact.call.label') }}</p>
           <h2
             class="text-[2rem] bg-gradient-to-r from-[#FCD265] to-[#E56731] bg-clip-text text-transparent italic font-bold"
           >
-            Schedule a Call
+            {{ $t('contact.call.action') }}
           </h2>
         </span>
       </div>

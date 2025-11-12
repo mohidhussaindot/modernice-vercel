@@ -1,1501 +1,335 @@
 {
-  "navigation": {
-    "home": "HOME",
-    "features": "FEATURES",
-    "organizer": "ORGANIZER",
-    "player": "PLAYER",
-    "growth": "MARKETPLACE"
+  "hero": {
+    "title": "Discover\nNew Horizons",
+    "subtitle": "Creative web design, masterful software development, and groundbreaking AI technologies to accelerate your business.",
+    "button": "Tell me more."
   },
-  "auth": {
-    "login": "LOGIN",
-    "signUp": "SIGN UP"
+  "citySection": {
+    "title": "AI-Driven Business Solutions",
+    "subtitle": "The future of business lies in Artificial Intelligence (AI), Large Language Models (LLMs), and Machine Learning (ML). These technologies are changing the way we work and grow.",
+    "button": "Optimize Processes with AI"
   },
-  "lintro": {
-    "title": "Esports for Everyone. Real Matches.",
-    "titleHighlight": "Real Money.",
-    "description": "Whether you're grinding for glory, running your own tournaments, or just here to watch and cheer, TZone gives you the power to do more — with less hassle.",
-    "joinNow": "Join Now",
-    "viewTournaments": "View The Tournament"
+  "innovationSection": {
+    "title": "Innovation \nThrough Design and Technology",
+    "subtitle": "In a successful web solution, design and development merge into a harmonious whole. Seamless integration of frontend and backend, complemented by cutting-edge technologies like AI, LLMs, and ML, allows us to create products that expand the horizon of what's possible and elevate the user experience.",
+    "button": "Create the Extraordinary"
   },
-  "footer": {
-    "resources": {
-      "title": "Resources",
-      "items": ["Help Center", "Privacy Policy", "Roadmap", "Changelog"]
-    },
-    "features": {
-      "title": "Features",
-      "items": ["Affiliates", "Anti Cheat", "Contact us", "Sponsors"]
-    },
-    "company": {
-      "title": "Company",
-      "about": "About",
-      "blog": "Blog",
-      "careers": "Careers",
-      "terms": "Terms & Condition"
-    },
-    "notifyMe": {
-      "title": "Notify me at launch date",
-      "placeholder": "Register your email",
-      "button": "Notify me"
-    },
-    "trustedByGamers": {
-      "title": "Trusted by Gamers Worldwide",
-      "description": "Join thousands of players who trust TZONE for seamless gaming, secure tournaments, and real rewards."
-    },
-    "contact_us": "Contact Our Team"
+  "ctaSection": {
+    "title": "Be the Change You Want to See in Your Industry",
+    "subtitle": "We turn data into insights, challenges into opportunities. With our strategy, AI and your ambitions become driving forces. Don’t let the future wait.",
+    "button": "AI Consulting"
   },
-  "helpCenter": {
-    "breadcrumb": {
-      "home": "Home",
-      "helpCenter": "Help Center"
+  "serviceshero": {
+    "headline": {
+      "part1": "From the first ",
+      "highlight1": "sketch",
+      "part2": " to the final ",
+      "highlight2": "pixel"
     },
-    "header": {
-      "title": "Need Help?",
-      "subtitle": "Find answers or ask your questions"
+    "description": "You have a vision, and we have the passion to bring it to life. A comprehensive website strategy turns your creative ideas into an impressive digital presence—for aesthetic design and measurable results.",
+    "button": "Schedule Appointment"
+  },
+  "servicesSecond": {
+    "headline": {
+      "highlight1": "Form",
+      "part1": " follows ",
+      "highlight2": "Function"
     },
-    "search": {
-      "placeholder": "What can we help you with?"
+    "paragraph1": "Especially for websites that impress visually, technical performance is often overlooked.",
+    "paragraph2": "Creating an attractive and user-friendly website requires more than just a good eye for design. A robust technical foundation and adherence to best practices are essential.",
+    "paragraph3": "Ultimately, functionality must always be at the center of development. Only on a solid technical foundation can appealing design reach its full potential and create value beyond pure aesthetics."
+  },
+  "sliderContent": {
+    "slide1": {
+      "title": "Robust Technology",
+      "description": "Reliable technologies and platforms ensure that a website not only looks good but works seamlessly."
     },
-    "categories": {
-      "account": {
-        "title": "Account Issues",
-        "description": "Password reset, account recovery"
-      },
-      "gameplay": {
-        "title": "Gameplay Support",
-        "description": "Game mechanics, achievements"
-      },
-      "payments": {
-        "title": "Payments & Billing",
-        "description": "Subscriptions, refunds"
-      },
-      "technical": {
-        "title": "Technical Help",
-        "description": "System requirements, bugs"
-      },
-      "security": {
-        "title": "Security",
-        "description": "Privacy, security settings"
-      },
-      "community": {
-        "title": "Community Guidelines",
-        "description": "Rules, reporting"
-      }
+    "slide2": {
+      "title": "Innovative Design",
+      "description": "Unique, tailor-made designs that represent brands and bring visions to life."
     },
-    "faqs": {
-      "title": "Popular FAQs",
-      "items": {
-        "password": {
-          "question": "How do I reset my password?",
-          "answer": "To reset your password, go to the login screen and click \"Forgot Password\". We'll send a reset link to your registered email. Follow the instructions to set a new password."
-        },
-        "settings": {
-          "question": "Where can I find my account settings?",
-          "answer": "You can access your account settings by clicking on your avatar in the top-right corner of the site and selecting \"Settings\". From there, you can update your profile, email, and preferences."
-        },
-        "support": {
-          "question": "How to contact customer support?",
-          "answer": "Click the \"Contact Support\" button at the bottom of this page or go to our Support Center. You can open a ticket for technical issues, billing inquiries, or report a player."
-        },
-        "payment": {
-          "question": "What payment methods do you accept?",
-          "answer": "We support major credit/debit cards, PayPal, Google Pay, and Apple Pay. Regional payment options are also available depending on your location."
-        },
-        "technical": {
-          "question": "How to report a technical issue?",
-          "answer": "To report a bug or technical issue, visit the \"Technical Help\" section, describe the issue in detail, and attach screenshots or logs if available. Our team will review and respond as quickly as possible."
-        }
-      }
-    },
-    "stillNeedHelp": {
-      "title": "Still need help?",
-      "contactSupport": "Contact Support"
+    "slide3": {
+      "title": "Found & Visible",
+      "description": "Don’t get lost in the dark. Targeted SEO helps you shine brighter than your competition."
     }
   },
-  "affiliatesPage": {
-    "breadcrumb": "Affiliates",
-    "headerTitle": "Earn with TZONE",
-    "headerSubtitle": "Join the Future of Gaming Partnerships",
-    "stats": {
-      "totalEarned": "Total Earned",
-      "activePartners": "Active Partners",
-      "averageMonthly": "Average Monthly"
+  "servicesmainhero": {
+    "title": "Phases of Success",
+    "description": "We don’t follow pre-made processes — instead, we shape the journey together with you, as versatile and unique as your project demands. Along the way, we pass through several stages to ensure your website is functional and impactful."
+  },
+  "section1": {
+    "title": "Sources of Inspiration",
+    "text": "Behind every impressive website lies a powerful idea. In the initial phase, we explore visions and goals, laying the foundation for a creative and purposeful web concept."
+  },
+  "section2": {
+    "title": "Route Planning",
+    "text": "With defined goals and requirements, a clear roadmap is created that considers both user experience and technical aspects, enabling a targeted development process."
+  },
+  "section3": {
+    "title": "Bringing Stars to Shine [WIP]",
+    "text": "In this phase, our creative and technical expertise comes into play to design a lively and functional website. The focus lies on the harmony between aesthetic appearance and solid technical foundation."
+  },
+  "section4": {
+    "title": "Quality in Focus",
+    "text": "Extensive testing ensures that your website performs smoothly across all areas — from user experience to performance and display on different devices. Targeted optimizations guarantee the best possible implementation."
+  },
+  "section5": {
+    "title": "Go Live [WIP]",
+    "text": "After thorough preparation and optimization, your site goes live and takes its place in the digital landscape. From that moment, it begins to engage users, build meaningful connections, and communicate your message effectively."
+  },
+  "section6": {
+    "title": "Perfection Through Iteration",
+    "text": "The journey doesn’t have to end after launch. Continuous optimization and data-driven analysis ensure your website maintains high visibility and performance, driving ongoing growth."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Now that you've learned about our process, why not take the next step and let us help you elevate your online presence? Don’t wait — schedule a call with us today and let’s discuss how we can give your business the recognition it deserves.",
+    "message": {
+      "label": "Drop us a message at",
+      "email": "hello [at] modernice.design"
     },
-    "rewards": {
-      "title": "Unmatched Rewards",
-      "bronze": "Bronze",
-      "bronzeCommission": "10% Commission Rate",
-      "silver": "Silver",
-      "silverCommission": "15% Commission Rate",
-      "gold": "Gold",
-      "goldCommission": "20% Commission Rate"
-    },
-    "howItWorks": {
-      "title": "How It Works",
-      "signUp": "Sign Up",
-      "signUpDescription": "Create your TZONE partner account",
-      "share": "Share",
-      "shareDescription": "Promote using your unique links",
-      "earn": "Earn",
-      "earnDescription": "Get paid for every successful referral"
-    },
-    "partnerBenefits": {
-      "title": "Partner Benefits",
-      "realTimeTracking": "Real-Time Tracking",
-      "realTimeTrackingDescription": "Monitor your performance 24/7",
-      "instantPayouts": "Instant Payouts",
-      "instantPayoutsDescription": "Get paid every 30 days",
-      "dedicatedSupport": "Dedicated Support",
-      "dedicatedSupportDescription": "24/7 partner support team",
-      "exclusiveTools": "Exclusive Tools",
-      "exclusiveToolsDescription": "Advanced analytics and reporting"
-    },
-    "faq": {
-      "title": "Frequently Asked Questions",
-      "q1": "How do I get paid?",
-      "a1": "You will receive payments via your registered bank or e-wallet every 30 days.",
-      "q2": "What are the requirements?",
-      "a2": "You must have a verified account and promote using your unique referral link.",
-      "q3": "When do I receive commissions?",
-      "a3": "Commissions are processed at the end of each month for the previous month’s referrals.",
-      "q4": "How do I track my referrals?",
-      "a4": "You can track referrals in your dashboard with real-time data and insights."
-    },
-    "cta": {
-      "title": "Start Earning Today",
-      "joinNowButton": "Join Now"
+    "call": {
+      "label": "Or talk to us directly",
+      "action": "Schedule a Call"
     }
   },
-  "roadmapPage": {
-    "breadcrumb": "Roadmap",
-    "title": "Our Roadmap",
-    "titleHighlight": "to the Future",
-    "subtitle": "Tracking TZONE’s evolution and future innovations",
-    "quarterlyViewButton": "Quarterly View",
-    "yearlyViewButton": "Yearly View",
-    "statusCompleted": "Completed",
-    "statusInProgress": "In Progress",
-    "statusComingSoon": "Coming Soon",
-    "items": {
-      "q2_2025_launch_title": "TZONE Core Platform Launch",
-      "q2_2025_launch_description": "Initial release of our gaming ecosystem with core features and community hub.",
-      "q3_2025_matchmaking_title": "Advanced Matchmaking System",
-      "q3_2025_matchmaking_description": "AI-powered player matching and skill-based tournament organization.",
-      "q3_2025_nft_title": "NFT Marketplace Integration",
-      "q3_2025_nft_description": "Digital asset trading platform with exclusive gaming collectibles.",
-      "q1_2026_expansion_title": "Cross-Platform Expansion",
-      "q1_2026_expansion_description": "Cross-platform gameplay integration.",
-      "q3_2026_vr_title": "Virtual Reality Integration",
-      "q3_2026_vr_description": "Immersive VR gaming experiences and social spaces."
-    },
-    "subscribeTitle": "Stay Updated",
-    "subscribeSubtitle": "Subscribe to our newsletter for the latest updates on TZONE’s development",
-    "subscribePlaceholder": "Enter your email",
-    "subscribeButton": "Subscribe"
+  "aihero": {
+    "title": "The Guide to the AI Revolution: Strategic Consulting for Your Business",
+    "description": "The AI revolution is at your doorstep. Are you ready to use Artificial Intelligence to your advantage? With us, AI integration becomes a seamless journey—from the first idea to full implementation. Start now. Be innovative. Be efficient. Be revolutionary.",
+    "button": "Start AI Consulting."
   },
-  "changelogPage": {
-    "breadcrumb": "Changelog",
-    "title": "TZONE Updates",
-    "subtitle": "Stay up to date with our latest changes",
-    "filterAll": "All",
-    "updateTypes": {
-      "major": "Major Update",
-      "minor": "Minor Update",
-      "patch": "Patch"
-    },
-    "changes": {
-      "v3_1_2": {
-        "item1": "Enhanced user interface performance",
-        "item2": "Added new dashboard widgets",
-        "item3": "Fixed critical security vulnerabilities",
-        "item4": "Implemented real-time collaboration features",
-        "item5": "Added advanced analytics dashboard"
-      },
-      "v3_1_1": {
-        "item1": "Bug fixes and stability improvements",
-        "item2": "Updated dependency packages",
-        "item3": "Improved error handling"
-      },
-      "v3_1_0": {
-        "item1": "Introduced dark mode toggle",
-        "item2": "Added new animation effects",
-        "item3": "Enhanced mobile responsiveness"
-      }
-    },
-    "widgets": {
-      "quickLinksTitle": "Quick Links",
-      "quickLinkPreviousVersions": "Previous Versions",
-      "quickLinkRequestFeature": "Request a Feature",
-      "versionTypesTitle": "Version Types",
-      "versionTypeMajor": "Major Updates",
-      "versionTypeMinor": "Minor Updates",
-      "versionTypePatch": "Patch Updates",
-      "latestFeaturesTitle": "Latest Features",
-      "latestFeature1": "Dark Mode Toggle",
-      "latestFeature2": "Real-time Collaboration",
-      "latestFeature3": "Advanced Analytics"
-    }
+  "hybrid": {
+    "title1": "Hybrid?",
+    "title2": "What does that mean?",
+    "description": "Don’t worry, the term 'hybrid' in app development actually stands for a good thing. Hybrid apps combine the best of app and web development, allowing your lightning-fast app to run on all devices."
   },
-  "contactUs": {
-    "breadcrumb": {
-      "home": "Home",
-      "contactUs": "Contact us"
-    },
-    "header": {
-      "title": "contact us!",
-      "subtitle": "Your Questions. Our Mission."
-    },
-    "form": {
-      "title": "Let's Talk",
-      "description": "Have a question, feedback, or just want to say hi? Fill out the form and we'll get back to you soon.",
-      "name": "Your Name",
-      "email": "Your Email Address",
-      "topic": "What's this about?",
-      "message": "Your Message",
-      "screenshot": "Upload screenshot (if any)",
-      "placeholders": {
-        "name": "Enter your name",
-        "email": "Enter your email",
-        "selectTopic": "Select a topic",
-        "message": "Type your message here...",
-        "dropzone": "Drag and drop your file here, or click to select"
+  "approach": {
+    "title1": "Our",
+    "title2": "Approach",
+    "steps": {
+      "1": {
+        "title": "1. Discovery",
+        "description": "During the discovery phase, we work with you to understand your business goals and needs, as well as gather requirements and specifications for your hybrid app."
       },
-      "topics": {
-        "default": "Select a topic",
-        "generalInquiry": "General Inquiry",
-        "support": "Support",
-        "feedback": "Feedback"
+      "2": {
+        "title": "2. Design",
+        "description": "Next, our team of designers creates wireframes and mockups to visualize the user flow and layout of the app. We work with you to ensure the design aligns with your brand guidelines and meets the needs of your users."
       },
-      "submit": "Send Message"
-    },
-    "sidebar": {
-      "connectTitle": "Connect With Us",
-      "discord": "Discord",
-      "twitter": "Twitter",
-      "twitch": "Twitch",
-      "youtube": "YouTube",
-      "helpTitle": "Need Help Fast?",
-      "helpOptions": {
-        "faq": {
-          "title": "FAQ & Help Center",
-          "description": "Find quick answers to common questions"
-        },
-        "business": {
-          "title": "Business Inquiries"
-        },
-        "report": {
-          "title": "Report a Player",
-          "description": "Use our reporting tool"
-        }
+      "3": {
+        "title": "3. Development",
+        "description": "Using the latest tools and technologies such as Flutter, we begin building the hybrid app according to the approved design. Our developers ensure the app functions smoothly and provides a seamless user experience on both iOS and Android platforms."
+      },
+      "4": {
+        "title": "4. Testing and Launch",
+        "description": "Before launching the app, we conduct thorough testing to ensure it is stable and bug-free. Once the app is ready, we help you with the submission process and launch it on the App Store and Google Play."
+      },
+      "5": {
+        "title": "5. Optimize for Growth",
+        "description": "After the app is launched, we provide ongoing support and maintenance to ensure it continues to run smoothly and meets the evolving needs of your business. We also offer optimization services to help increase user engagement and drive growth."
       }
     }
   },
-  "careerPage": {
-    "breadcrumb": {
-      "home": "Home",
-      "career": "Career"
-    },
-    "hero": {
-      "title": "Powering the Next Era of Competitive Gaming Starts with You.",
-      "subtitle": "We're building a global platform where players rise, events scale, and esports thrives — and we need talented people to help us get there."
-    },
-    "cta": {
-      "viewRoles": "View Open Roles",
-      "connectLinkedIn": "Connect on LinkedIn"
-    },
-    "whyWorkHere": {
-      "title": "Why Work at TZone",
-      "quote": "At TZone, your work doesn't just ship — it competes.",
-      "reasons": {
-        "missionDriven": {
-          "title": "Mission-driven team",
-          "description": "We're solving real problems in esports, not chasing trends."
-        },
-        "remoteFirst": {
-          "title": "Remote-first",
-          "description": "Work from anywhere, collaborate globally."
-        },
-        "impactfulRoles": {
-          "title": "Impactful roles",
-          "description": "You won't get stuck in a silo — you'll build features used by real players every day."
-        },
-        "builtByGamers": {
-          "title": "Built by gamers, for gamers",
-          "description": "We understand the industry, because we're in it too."
-        },
-        "stabilityTrust": {
-          "title": "Stability & trust",
-          "description": "Backed by EPAS and built for scale."
-        }
-      }
-    },
-    "openRoles": {
-      "title": "Open Roles",
-      "filters": {
-        "location": "All Locations",
-        "type": "All Types"
+  "seohero": {
+    "desktop": {
+      "title": {
+        "part1": "Ready for the",
+        "highlight1": "Starting Shot",
+        "part2": "to",
+        "highlight2": "the Top?"
       },
-      "button": "Apply Now",
-      "noRoles": "No matching job positions found. Please try different filters."
-    },
-    "cultureAndValues": {
-      "title": "Culture & Values",
-      "values": [
-        {
-          "title": "Player-First",
-          "description": "Everything we build starts with the user experience."
-        },
-        {
-          "title": "Integrity Matters",
-          "description": "Fairness, security, and respect drive every system we deploy."
-        },
-        {
-          "title": "Move With Intent",
-          "description": "We move fast, but we build with purpose and data."
-        },
-        {
-          "title": "Grow Together",
-          "description": "Personal growth is part of team growth."
-        },
-        {
-          "title": "Global By Default",
-          "description": "Esports is worldwide. So are we."
-        }
-      ],
-      "testimonial": {
-        "quote": "Working at TZone is like being on a startup team and an esports squad at the same time — fast-paced, focused, and always competitive.",
-        "author": "Senior Backend Engineer, TZone"
-      },
-      "callToAction": {
-        "title": "Ready to Build the Platform Esports Deserves?",
-        "submitApplication": "Submit General Application",
-        "chatWithTeam": "Chat with Our Team"
-      }
+      "description": "Trust in a thoughtful and strategic process that integrates effective SEO measures right from the start of development. SEO doesn’t have to be an afterthought.",
+      "button": "Initiate Launch"
     }
   },
-  "lgames": {
-    "title": "Compete Across the Games You Love to Play",
-    "description": "From 1v1 showdowns to full-team battles – TZone supports the biggest competitive titles, with brackets built to fit every format.",
-    "activeTournaments": "🏆 {count} Active Tournaments",
-    "viewAllGames": "View All Supported Games",
-    "games": {
-      "assassinsCreed": "Assassin's Creed",
-      "tombRaider": "Tomb Raider",
-      "farcry3": "Farcry 3",
-      "minecraft": "Minecraft"
-    }
+  "appdevhero": {
+    "heading": "Appsolute Genius. Custom App Development Services for Your Business.",
+    "highlight1": "App",
+    "highlight2": "App Development",
+    "paragraph": "Looking for a cost-effective and convenient way to develop your hybrid app? Our hybrid app development service combines the best of both worlds – the reach of a native app with the ease of development of a web app.",
+    "servicesline": "Services for Your Business."
   },
-  "lsteps": {
-    "title": "START IN",
-    "titleHighlight": "4 EASY STEPS",
-    "description": "TZONE delivers true Competition, instant rewards, and team play designed for Dedicated Gamers.",
-    "steps": [
-      {
-        "title": "SIGN UP & CREATE YOUR",
-        "highlight": "PROFILE",
-        "description": "Join TZONE using your email, social media, or gaming platform account (Steam, PlayStation, Xbox, Discord)."
-      },
-      {
-        "title": "CREATE OR JOIN A",
-        "highlight": "TOURNAMENT",
-        "description": "Set up your own tournament or join an existing one with just a few clicks."
-      },
-      {
-        "title": "COMPETE &",
-        "highlight": "WIN",
-        "description": "Play your best, track your stats, and climb the leaderboards."
-      },
-      {
-        "title": "EARN",
-        "highlight": "REWARD",
-        "description": "Win cash prizes, earn badges, and gain recognition in the gaming community."
-      }
-    ]
-  },
-  "lposter": {
-    "organizer": "Organizer",
-    "title": "Run Tournaments Like a Pro",
-    "subtitle": "Even If You're Not One Yet",
-    "description": "T-zone makes it easy to manage events, payouts, players, and sponsors – all in one place",
-    "features": [
-      {
-        "title": "Effortless",
-        "span": "Tournament",
-        "description": "Bracket builder with drag & drop"
-      },
-      {
-        "title": "Custom",
-        "span": "Tournament",
-        "description": "Automated check-ins & score reporting"
-      },
-      {
-        "title": "Fraud",
-        "span": "Protection",
-        "description": "Verified player entry & fraud protection"
-      },
-      {
-        "title": "Complete",
-        "span": "Control",
-        "description": "Entry fees, prize splits, & ticket sales"
-      }
-    ]
-  },
-  "lplayer": {
-    "category": "Players",
-    "title": "You're Here to Play.",
-    "subtitle": "We Make Everything Else Easy.",
-    "benefits": [
-      "Find And Join Tournaments That Match Your Skill Level",
-      "Track Your Wins, XP, And Stats In One Clean Profile",
-      "Host Events With Automated Brackets, Check-Ins, & Payouts",
-      "Earn Rewards For Competing, Spectating",
-      "Follow Teams, Vote MVP, & Stay In The Action"
-    ],
-    "browseTournaments": "Browse Tournaments"
-  },
-  "lgamers": {
-    "title": "Built for Gamers Who Take Competition Seriously",
-    "description": "Fair play, real rewards, and no fake accounts — just skill and hustle.",
-    "features": [
-      {
-        "title": "Verified Matches",
-        "description": "No smurfs, no fakes. Everyone plays with a real identity."
-      },
-      {
-        "title": "Matchmaking",
-        "description": "Get paired by skill, not by chance. E-Score balances every game."
-      },
-      {
-        "title": "Real Rewards",
-        "description": "Win XP, unlock badges, and compete for cash prizes."
-      },
-      {
-        "title": "Career Stats",
-        "description": "See how you're growing across every match and every game."
-      }
-    ]
-  },
-  "ltrusted": {
-    "title": "Trusted by Gamers. Built for Growth.",
-    "stats": [
-      {
-        "value": "14,000+",
-        "label": "Active Players"
-      },
-      {
-        "value": "1,200+",
-        "label": "Hosted Tournaments"
-      },
-      {
-        "value": "$250,000+",
-        "label": "Verified Payouts"
-      },
-      {
-        "value": "100%",
-        "label": "EPASS-verified Competition"
-      }
-    ],
-    "testimonial": {
-      "quote": "Finally a platform where everything actually works. Hosting is easy, payouts are fast, and my team loves it.",
-      "author": "– Local Organizer"
-    }
-  },
-  "lTimer": {
-    "title": "Time left to ",
-    "subTitle": " Zone in"
-  },
-  "sponsor": {
-    "breadcrumb": "Sponsor a Tournament",
-    "intro": {
-      "title": "Sponsor a Tournament. Power the Prize Pool.",
-      "description": "Your brand. Our stream. Real players competing — live on Twitch. 100% of your sponsorship goes directly to the winners.",
-      "sponsorButton": "Sponsor a Tournament",
-      "infoButton": "Request Sponsorship Info"
-    },
-    "promotion": {
-      "title": "Isn't Just Promotion —",
-      "titleHighlight": "It's Player-Powered Engagement",
-      "features": [
-        "100% Goes To The Players — No Platform Cut",
-        "Live Esports Stream = High Attention, High Interaction",
-        "Smart Placement = No Wasted Impressions",
-        "Great For Creators, Tech Brands, Gaming Startups & Local Orgs"
-      ],
-      "audienceTitle": "Audience",
-      "audienceTitleHighlight": "Breakdown",
-      "audienceTypes": {
-        "players": {
-          "title": "Players",
-          "description": "On brackets, rewards, and official results"
-        },
-        "twitch": {
-          "title": "Twitch Viewers",
-          "description": "In overlays, intros, and MVP shoutouts"
-        },
-        "community": {
-          "title": "Community",
-          "description": "Across Discord, socials, and email blasts"
-        }
-      },
-      "ctaTitle": "Want to Sponsor the",
-      "ctaTitleHighlight": "Next Tournament?",
-      "ctaDescription": "We stream. You sponsor. Players win.",
-      "ctaSponsorButton": "Sponsor a Tournament Now",
-      "ctaInfoButton": "Request Sponsorship Info",
-      "footerStats": ["Trusted by 50+ Brands", "Streamed on Twitch", "EPASS Verified"]
-    },
-    "whereGoes": {
-      "title": "Where Your",
-      "titleHighlight": "Sponsorship Goes",
-      "cards": [
-        {
-          "title": "You Fund the Prize Pool",
-          "description": "Your contribution becomes the prize money — every cent goes to top-performing players."
-        },
-        {
-          "title": "We Host & Stream the Event",
-          "description": "TZone runs the tournament and broadcasts it live on Twitch to an active gaming audience."
-        },
-        {
-          "title": "Your Brand Gets the Spotlight",
-          "description": "You're featured in overlays, announcements, MVP shoutouts, and tournament graphics."
-        }
-      ],
-      "visibilityTitle": "Visibility That",
-      "visibilityTitleHighlight": "Players Actually See",
-      "visibilityItems": [
-        {
-          "title": "Live Stream Branding",
-          "description": "Logo in overlays, intro screens, and caster callouts during Twitch broadcasts."
-        },
-        {
-          "title": "Brackets & Winner Graphics",
-          "description": "Your brand shown on match brackets, win screens, and leaderboard recaps."
-        },
-        {
-          "title": "Social Media & Discord Push",
-          "description": "Mentions in community posts, event announcements, and MVP polls."
-        },
-        {
-          "title": "Sponsor a Reward Drop",
-          "description": "Attach your name to an XP-based unlock or custom giveaway."
-        }
-      ]
-    }
-  },
-  "aboutPage": {
-    "breadcrumb": "About us",
-    "header": {
-      "title": "Powering the Future of",
-      "titleHighlight": "Competitive Esports",
-      "subtitle": "A secure, skill-based platform where players compete, organizers host, and fans engage — backed by real data, real rewards, and real trust.",
-      "buttons": {
-        "createProfile": "Create Your Profile",
-        "viewTournaments": "View Tournaments"
-      },
-      "stats": [
-        {
-          "icon": "mdi:gamepad-variant",
-          "label": "10K ACTIVE PLAYERS",
-          "color": "text-green-500"
-        },
-        {
-          "icon": "mdi:trophy",
-          "label": "1,400+ TOURNAMENTS",
-          "color": "text-yellow-500"
-        },
-        {
-          "icon": "mdi:motorbike",
-          "label": "1000s OF WINS",
-          "color": "text-green-500"
-        }
-      ]
-    },
-    "whatIsTzone": {
-      "title": "What is",
-      "titleHighlight": "TZone",
-      "subtitle": "TZone is a competitive esports platform that brings players, organizers, and fans together in one trusted, skill-based ecosystem",
-      "button": "We provide"
-    },
-    "challenges": {
-      "title": "How",
-      "titleHighlight": "TZone",
-      "titleEnd": "Solves the Core Challenges",
-      "subtitle": "TZone addresses the real issues in competitive gaming with powerful, secure, and scalable solutions — built for players, organizers, and fans.",
-      "items": [
-        {
-          "text": "Verified, skill-based matchmaking using T-Zone and EPASS",
-          "icon": "mdi:account-check-outline"
-        },
-        {
-          "text": "Automated tournament tools for brackets, payouts, and check-ins",
-          "icon": "mdi:trophy-outline"
-        },
-        {
-          "text": "Real-time player progression with XP, achievements, and stats",
-          "icon": "mdi:chart-line"
-        },
-        {
-          "text": "Secure marketplace with escrow and verified seller profiles",
-          "icon": "mdi:shield-lock-outline"
-        },
-        {
-          "text": "Interactive fan features like stats, MVP voting and rewards",
-          "icon": "mdi:star-outline"
-        },
-        {
-          "text": "Powerful admin tools for dispute resolution and fair moderation",
-          "icon": "mdi:gavel"
-        }
-      ]
-    },
-    "impact": {
-      "title": "Our",
-      "titleHighlight": "Impact",
-      "subtitle": "Built for trust. Powered by competition.",
-      "items": [
-        {
-          "value": "14,000+",
-          "label": "Registered Players",
-          "icon": "bi:people-fill"
-        },
-        {
-          "value": "$250,000+",
-          "label": "Prize Payouts",
-          "icon": "mynaui:credit-card-solid"
-        },
-        {
-          "value": "1,200+",
-          "label": "Tournaments Hosted",
-          "icon": "material-symbols:trophy-rounded"
-        },
-        {
-          "value": "100%",
-          "label": "Verified Skill-based Events",
-          "icon": "map:sheild"
-        },
-        {
-          "value": "4.9/5",
-          "label": "Average Satisfaction",
-          "icon": "streamline-flex:like-1-solid"
-        }
-      ]
-    },
-    "video": {
-      "title": "What Makes",
-      "titleHighlight": "TZone",
-      "titleEnd": "Different"
-    },
-    "partner": {
-      "title": "Partner with us",
-      "subtitle": "TZone is actively forming partnerships with:",
-      "button": "get in touch us",
-      "items": [
-        {
-          "label": "Esports teams and organizations",
-          "icon": "mdi:gamepad-variant"
-        },
-        {
-          "label": "Game publishers",
-          "icon": "material-symbols:developer-mode"
-        },
-        {
-          "label": "Local and global tournament operators",
-          "icon": "ic:baseline-emoji-events"
-        },
-        {
-          "label": "Influencers and content creators",
-          "icon": "mdi:account-star"
-        },
-        {
-          "label": "Strategic investors and sponsors",
-          "icon": "mdi:hand-coin"
-        }
-      ]
-    }
-  },
-  "termsPage": {
-    "breadcrumb": "Terms & Conditions",
-    "title": "Terms & Conditions",
-    "subtitle": "Welcome, Traveler. By stepping into the T-zone realm, you accept the following laws of the land.",
-    "exploreButton": "Explore Our Products",
-    "terms": [
-      {
-        "title": "Eligibility – Who May Enter the Arena",
-        "description": "You must be at least 13 years old to play in the T.Zone realm. By continuing, you confirm you have the wisdom and power to join this world."
-      },
-      {
-        "title": "Account Responsibilities – Guard Your Gateway",
-        "description": "Your account is your portal. Protect it fiercely. Notify us of any breaches in your security walls."
-      },
-      {
-        "title": "Use of Services – Honor the Code",
-        "description": "Engage fairly. Use your powers for good, not chaos. Violations summon consequences."
-      },
-      {
-        "title": "Content Ownership – Forge & Share",
-        "description": "Your creations remain yours. By sharing them here, you grant us rights to showcase them within the realm."
-      },
-      {
-        "title": "Prohibited Activities – Forbidden Dark Arts",
-        "description": "No spamming, hacking, griefing, or any malicious deeds. Those who misuse the realm shall be banished"
-      },
-      {
-        "title": "Termination – Exile From the Realm",
-        "description": "Breaking the code? We may revoke your access—no potions or spells can undo it."
-      },
-      {
-        "title": "Disclaimer – What You See Is What You Get",
-        "description": "The platform is provided \"as is.\" We offer no promises of treasure or smooth quests."
-      },
-      {
-        "title": "Limitation of Liability – The Realm's Boundaries",
-        "description": "We are not liable for indirect, magical, or cosmic damages resulting from misuse."
-      },
-      {
-        "title": "Modifications – The Scrolls May Change",
-        "description": "The Code may evolve. Continued access means continued agreement."
-      }
-    ]
-  },
-  "epass": {
+  "seo": {
     "section1": {
-      "title": "Play Fair. Level Up. Get Verified with EPASS.",
-      "subtitle": {
-        "highlight": "TZone",
-        "text": "features curated gear — surfaced to real players through EPASS, a trusted third-party system for verified gaming identities."
-      },
-      "action": "Get Verified Now"
+      "headingHighlight": "Foundation of Success:",
+      "heading": "Why Technical SEO Is Essential",
+      "paragraph": "SEO is more than short-term tactics; it’s a solid technical foundation that enables sustainable growth."
     },
     "section2": {
-      "title": "EPASS is your verified digital identity on TZone",
-      "description": "It connects your real player profile (email, game ID, region, age) with your tournament stats — so no one can fake wins, cheat the system, or play under multiple names.Think of it as your esports passport"
+      "paragraph": "The best SEO practices are built on a strong technical infrastructure that can easily adapt to current and future search engine requirements."
     },
     "section3": {
-      "title": "You can’t compete on the big stage without it — and once you have it, your progress truly matters.",
-      "subtitle": "Why Does EPASS Matter?",
-      "feature1": {
-        "title": "Because competitive gaming deserves real protection.",
-        "description": "Smurfs and bots ruin legit matches Fake identities cheat prize payouts Organizers waste time sorting disputes"
-      },
-      "feature2": {
-        "title": "EPASS makes sure",
-        "description": "Everyone is who they say they are Match results are trusted XP, rewards, and coins go to real players Sponsors and organizers can host with confidence"
-      }
+      "headingHighlight": "Free",
+      "heading": "Search Engine Optimization",
+      "paragraph1": "For optimal SEO results, technical SEO must always be an integral part of the web design and development process. It should not be seen as an optional extra but as a cornerstone of a successful website.",
+      "paragraph2": "That’s why technical SEO is a fundamental part of our website design and strategy services. Every website we design and develop automatically benefits from comprehensive technical SEO optimization. This includes everything from improving website speed to efficiently structuring data.",
+      "button": "Plan Website Strategy"
     },
     "section4": {
-      "title": "How It Works",
-      "description": "TZONE delivers true competition, instant rewards, and team play designed for dedicated gamers",
-      "steps": {
-        "steps": [
-          {
-            "title": "",
-            "highlight": "1. Sign up on TZone"
-          },
-          {
-            "title": "",
-            "highlight": "2.Submit your player info (email, game account, age)"
-          },
-          {
-            "title": "3. Get your EPASS badge on your profile",
-            "highlight": ""
-          },
-          {
-            "title": "4. Compete in verified tournaments, claim prizes, and build your rep",
-            "highlight": ""
-          }
-        ]
-      }
+      "heading1": "Our",
+      "heading2": "Process",
+      "paragraph": "Through the targeted use of data-driven analysis, technical expertise, and innovative approaches, we create tailored solutions that strengthen your online presence, increase visibility, and ultimately help you achieve your business goals."
     },
     "section5": {
-      "title": "Verified Players. Verified Wins.",
-      "description": "With EPASS, you're not just another gamer. You're a trusted competitor — with real matches, real rewards, and a profile that proves it.",
-      "action": "Get EPASS and Start Competing"
-    }
-  },
-  "organizer": {
-    "hero": {
-      "title": "Host Tournaments That Players Actually Want to Join",
-      "description": "From casual matches to official events — T-zone gives you everything you need to create, manage, and promote your tournaments, without the mess.",
-      "action": "Start Hosting"
-    },
-    "section2": {
-      "title": "What You Can Do as a T-zone Organizer",
-      "features": [
-        {
-          "title": "Host\nTournaments",
-          "description": "Set up game, format, player slots, and rewards"
-        },
-        {
-          "title": "Manage\nBrackets",
-          "description": "Automate Swiss, knockout, and double-elimination formats"
-        },
-        {
-          "title": "Set \nMatch Rules",
-          "description": "Set up game, format, player slots, and rewards"
-        },
-        {
-          "title": "Moderate\nParticipation",
-          "description": "Accept/deny player entries, manage no-shows and check-ins"
-        },
-        {
-          "title": "Distribute Rewards",
-          "description": "Choose XP, coin, or prize pool payouts for winners"
-        },
-        {
-          "title": "View \nAnalytics",
-          "description": "See signups, drop-offs, average match times, and leaderboard stats"
-        }
-      ],
-      "action": "Start Hosting"
-    },
-    "section3": {
-      "title": "Your Event Control Center",
-      "features": [
-        {
-          "title": "Player Verifier (EPASS)",
-          "description": "Filter by verified profiles, skill levels"
-        },
-        {
-          "title": "Tournament Builder",
-          "description": "Step-by-step creation flow (Game → Rules → Slots)"
-        },
-        {
-          "title": "Analytics Dashboard",
-          "description": "Real-time insights and performance metrics"
-        },
-        {
-          "title": "Announcement Feed",
-          "description": "Post updates, polls, MVP shoutouts"
-        },
-        {
-          "title": "Reward Panel",
-          "description": "Assign XP, coins, products or gift drops"
-        }
-      ]
-    },
-    "section4": {
-      "title": "How Hosting Works",
-      "steps": [
-        {
-          "step": "1",
-          "title": "Create Your Tournament",
-          "description": "Choose game, format, date"
-        },
-        {
-          "step": "2",
-          "title": "Customize the Experience",
-          "description": "Add rules, XP, sponsors, limits"
-        },
-        {
-          "step": "3",
-          "title": "Go Live & Manage",
-          "description": "Use brackets and announcements"
-        },
-        {
-          "step": "4",
-          "title": "Close & Reward",
-          "description": "XP/prizes automatically delivered"
-        }
-      ],
-      "action": "host now!"
-    },
-    "section5": {
-      "title": "Run Clean, Competitive Events — Without the Mess",
-      "description": "TZone gives you the tools, structure, and reach to create legit tournaments — whether you're running for fun or streaming for an audience.",
-      "action": "Launch Your First Tournament"
-    }
-  },
-  "marketplace": {
-    "hero": {
-      "title": {
-        "line1": "Trusted Gear. Promoted",
-        "line2": "Where It Counts."
+      "row1": {
+        "heading": "Current State Analysis",
+        "paragraph": "For every SEO strategy we develop, we start with a thorough analysis of the website’s current state. We consider technical aspects, content factors, and user behavior to identify weaknesses and uncover potential."
       },
-      "description": {
-        "part1": "From high-performance hardware to everyday essentials",
-        "highlight": "T-zone features",
-        "part2": "its own curated product line across the platform, so the right people see the right gear at the right time."
+      "row2": {
+        "heading": "Technical SEO Optimization",
+        "paragraph": "Whether designing a new website or improving an existing one, technical SEO is at the core of our work. For new projects, we ensure optimal search engine friendliness from the start. When optimizing existing sites, we enhance the technical foundation to improve search result visibility."
       },
-      "cta": "Explore Our Products"
-    },
-    "mid": {
-      "title": {
-        "part1": "Don't Just Flex Badges.",
-        "highlight": "Get Real Gear"
-      },
-      "description": "Grind XP, dominate tournaments, and unlock legit prizes — from gaming skins to gear drops, apparel, and exclusive merch. No fluff. Just the stuff players actually want."
-    },
-    "audience": {
-      "title": "Your Products, In Front of the Right People",
-      "partners": {
-        "title": "Partners & Sponsors",
-        "description": "See products positioned next to real match results, profiles."
-      },
-      "organizers": {
-        "title": "Organizers",
-        "description": "Can bundle featured gear into tournaments as prizes or partner promos."
-      },
-      "players": {
-        "title": "Players",
-        "description": "Get gear recommendations in-game, during tournaments, and inside their personal dashboards."
+      "row3": {
+        "heading": "Keyword and Competitor Analysis",
+        "paragraph": "Next, we identify the key terms your target audience uses to search for relevant products or services. At the same time, we analyze the competitive landscape to understand market positioning and develop effective strategies to improve rankings."
       }
-    },
-    "features": {
-      "title": {
-        "part1": "Simple. Direct.",
-        "highlight": "Built to Move."
-      },
-      "feature1": {
-        "title": "No third-party sellers",
-        "description": "Only Tzone-managed inventory — verified and quality-checked."
-      },
-      "feature2": {
-        "title": "Player-centered flow",
-        "description": "Products show up naturally in places players already interact with."
-      },
-      "feature3": {
-        "title": "Clear conversion paths",
-        "description": "From click to checkout — no redirects, no bloat."
-      }
-    }
-  },
-  "playerPage": {
-    "hero": {
-      "title": "Compete. Level Up. Get Recognized.",
-      "description": "Whether you're here to rise through the ranks or collect XP for every clutch win T-zone gives you the tools to grow your esports journey.",
-      "cta": "Start Playing"
-    },
-    "section2": {
-      "title": "What You Can Do as a Player",
-      "toDos": [
-        {
-          "label": "Join Verified Tournaments",
-          "value": "Daily events for your game, rank, and region."
-        },
-        {
-          "label": "Get EP ASS Verified",
-          "value": "Prove you're real. No smurfs. No bots."
-        },
-        {
-          "label": "Track E-Score & XP",
-          "value": "Know how you're improving — and where you rank."
-        },
-        {
-          "label": "Earn Rewards",
-          "value": "XP, coins, gear, badges, and bragging rights."
-        },
-        {
-          "label": "Grow Your Profile",
-          "value": "Showcase stats, wins, and highlight reels."
-        }
-      ]
-    },
-    "section3": {
-      "title": "Why It Matters",
-      "subtitle": "Because Playing on Random Platforms Doesnʼt Cut It Anymore",
-      "matters": [
-        {
-          "label": "No Fair Play:",
-          "value": "No verification = smurfs and cheats"
-        },
-        {
-          "label": "No Real Progress",
-          "value": "No XP system = no real sense of progress"
-        },
-        {
-          "label": "No Record:",
-          "value": "No rewards = nothing to grind for"
-        },
-        {
-          "label": "No Glory:",
-          "value": "No record = your wins disappear"
-        }
-      ]
-    },
-    "section4": {
-      "cta": "Stats, badges, leaderboards — all in your profile",
-      "description": "Stats, badges, leaderboards — all in your profile"
-    },
-    "section5": {
-      "title": "Player Trust & Security",
-      "description": "EPASS ensures fair play with smurf and ban prevention, an evidence-based dispute system, skill-based matchmaking via E-Score, public player profiles for accountability, and robust fraud detection with payout verification."
     },
     "section6": {
-      "title": "Itʼs Your Game. Make It Count.",
-      "description": "Join a platform where your identity, skills, and rewards are all connected — and where every win moves you forward",
-      "cta": "Join a Tournament Now"
-    }
-  },
-  "organizerInfo": {
-    "hero": {
-      "title": "Host Tournaments. Lead the Game.",
-      "description": "T-Zone helps organizers create verified, competitive experiences for players of every skill level, game, and region.",
-      "action": "Start Hosting"
-    },
-    "section2": {
-      "title": "Why Host with T-Zone",
-      "features": [
-        {
-          "title": "Fully Verified",
-          "description": "Host only real players — no smurfs or fakes."
-        },
-        {
-          "title": "Game-Agnostic",
-          "description": "Support any game with custom rules and formats."
-        },
-        {
-          "title": "Easy Setup",
-          "description": "Create & manage tournaments in minutes."
-        },
-        {
-          "title": "Built-in Tools",
-          "description": "E-scores, XP, and ranking already built in."
-        },
-        {
-          "title": "Reward Ready",
-          "description": "Automated rewards and payout verification."
-        },
-        {
-          "title": "Player Growth",
-          "description": "Tournaments impact player profiles, XP, and progress."
-        }
-      ],
-      "action": "Host Now"
-    },
-    "section3": {
-      "title": "Built For Organizers",
-      "features": [
-        {
-          "title": "Verified Identity",
-          "description": "Real players, no smurfs, no bots — ever."
-        },
-        {
-          "title": "Powerful Control",
-          "description": "Choose rules, rewards, matchmaking, and more."
-        },
-        {
-          "title": "Live Performance",
-          "description": "Track XP, stats, and tournament data live."
-        },
-        {
-          "title": "Earn Recognition",
-          "description": "Build your rep and get followed by players."
-        },
-        {
-          "title": "Promotion Tools",
-          "description": "Built-in features to get more signups and visibility."
-        }
-      ]
-    },
-    "section4": {
-      "title": "How It Works",
-      "steps": [
-        {
-          "step": "1",
-          "title": "Create Your Tournament",
-          "description": "Choose game, rules, format, and rewards."
-        },
-        {
-          "step": "2",
-          "title": "Get Verified Players",
-          "description": "T-Zone ensures real players only — no fakes."
-        },
-        {
-          "step": "3",
-          "title": "Track XP and Results",
-          "description": "Monitor progress with XP and stats automatically."
-        },
-        {
-          "step": "4",
-          "title": "Distribute Rewards",
-          "description": "Deliver payouts fairly with fraud protection."
-        }
-      ],
-      "action": "Host a Tournament"
-    },
-    "section5": {
-      "title": "Ready to Launch?",
-      "description": "T-Zone gives you everything you need to organize tournaments at any scale — backed by our verified system and esports tools.",
-      "action": "Hosting"
-    }
-  },
-  "contactUss": {
-    "validation": {
-      "name": {
-        "required": "Name is required"
+      "row1": {
+        "heading": "Strategy Development",
+        "paragraph": "Based on our extensive analysis, we create a customized SEO strategy tailored precisely to your company’s goals and audience. At this stage, we set objectives, plan actions, and define KPIs to make our success measurable."
       },
-      "email": {
-        "required": "Email is required",
-        "invalid": "Please enter a valid email address"
+      "row2": {
+        "heading": "Implementation",
+        "paragraph": "With the developed strategy, we move into the implementation phase. Our work includes both technical website optimizations and the creation of high-quality content that appeals to your target audience and is positively evaluated by search engines."
       },
-      "topic": {
-        "required": "Please select a topic"
-      },
-      "message": {
-        "required": "Message is required",
-        "minLength": "Message must be at least {count} characters long"
+      "row3": {
+        "heading": "Monitoring & Optimization",
+        "paragraph": "Since SEO is a dynamic process, we continuously monitor website performance, analyze collected data, and make adjustments as needed. Through continuous monitoring and targeted optimization, we ensure your website consistently aligns with SEO best practices and delivers the best possible results."
       }
     },
-    "errors": {
-      "submissionFailed": "Form submission failed. Please try again.",
-      "genericError": "An error occurred. Please try again later."
+    "section7": {
+      "paragraph": "By combining data analysis, technical expertise, and creative work, we strive to enhance our clients’ online presence and help them achieve their business goals."
+    }
+  },
+  "ecs": {
+    "hero": {
+      "heading1": "Maximize online sales with our custom",
+      "heading2": "E-Commerce strategy service.",
+      "paragraph": "Our e-commerce strategy service is designed to help businesses of all sizes and industries succeed in the world of online sales. Whether you're a B2C company looking to sell directly to consumers, or a B2B company looking to streamline your sales process, we can help you create a personalized e-commerce plan that meets your unique needs."
     },
+    "slider": {
+      "slide1": "A user friendly appealing online store",
+      "slide2": "A personalized plan tailored to your business",
+      "slide3": "The most up to date e-commerce technologies",
+      "slide4": "Ongoing support to ensure success of your store"
+    },
+    "demo": {
+      "heading1": "Ready to see how we do",
+      "heading2": "E-Commerce?"
+    },
+    "cards": {
+      "1": {
+        "title": "1. Discovery & Strategy",
+        "desc": "The first step in our e-commerce strategy process is to gain a thorough understanding of your business goals and target audience. This includes conducting market research and analyzing your competitors to determine the most effective e-commerce strategy for your business."
+      },
+      "2": {
+        "title": "2. Design & Development",
+        "desc": "Once we have developed a personalized e-commerce strategy for your business, our team will begin working on the design and development of your online store. This includes creating a visually appealing and user-friendly website, as well as implementing the necessary e-commerce tools and technologies."
+      },
+      "3": {
+        "title": "3. Testing & Launch",
+        "desc": "Before launching your online store, we will conduct thorough testing to ensure that everything is functioning properly. This includes testing the user experience, payment processes, and overall functionality of your website. Once we are confident that your online store is ready for launch, we will help you get your business up and running in the digital world."
+      },
+      "4": {
+        "title": "4. Optimize for Growth",
+        "desc": "Our work doesn’t end once your online store is launched. We will continue to monitor and analyze the performance of your e-commerce platform, making ongoing adjustments and optimizations as needed. We also provide ongoing support and maintenance to ensure that your online store continues to function smoothly and effectively."
+      }
+    }
+  },
+  "about": {
+    "title": "About Modernice",
+    "heading": "Bring your vision to life with Expertise and Dedication",
+    "stats": {
+      "employees": "Employees",
+      "projects": "Ongoing Projects",
+      "deals": "Deals Closed",
+      "inhouse": "Inhouse Projects",
+      "stacks": "Stacks Used"
+    },
+    "story": {
+      "title": "Crafting Excellence",
+      "heading": "The Vision Crafters Journey Story",
+      "paragraph": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque blanditiis quidem ducimus? Earum dolorum sit tenetur magnam debitis itaque expedita fugiat quibusdam! Dignissimos quo pariatur quidem maxime, nam est doloribus! Vel in voluptate voluptates, voluptas et odit suscipit nihil dolor dolores delectus facilis optio rerum nemo repellendus, explicabo minima eius veritatis? Provident commodi necessitatibus repudiandae ratione illo pariatur veritatis earum? Facere aspernatur dolore aliquam. Tempora doloribus odio ea mollitia voluptas nam aliquid ullam veniam rerum. Quidem, in veniam, rem aspernatur facere consectetur fugiat hic, ab maxime iste ea! Reprehenderit, in."
+    }
+  },
+
+  "appointment": {
+    "title": "Modernice Appointment Booking",
+    "subtitle": "Want to contact us? Book your appointment below and we'll get back to you ASAP.",
     "form": {
-      "successMessage": "Thank you for your message! We'll get back to you soon.",
-      "submitting": "Submitting..."
-    }
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Your full name",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "you [at] example.com",
+      "phoneLabel": "Phone Number",
+      "phonePlaceholder": "+123 456 7890",
+      "dateLabel": "Appointment Date",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Any special requests or notes",
+      "submit": "Book Appointment"
+    },
+    "success": "Thanks, {name}! Your appointment is booked for {date}. We'll contact you soon."
   },
-  "tournamentsPage": {
-    "hero": {
-      "title": "Browse Tournament By Game",
-      "subtitle": "Let the battle begin"
-    },
-    "search": {
-      "placeholder": "Search for games or tournaments"
-    },
-    "sort": {
-      "label": "Sort by:",
-      "default": "Featured"
-    },
-    "popularGames": {
-      "title": "Popular Games"
-    },
-    "viewMode": {
-      "grid": "Grid view",
-      "list": "List view"
-    },
-    "games": {
-      "grandTheftAutoV": "Grand Theft Auto V",
-      "pubgBattlegrounds": "PUBG Battlegrounds",
-      "zelda": "Zelda: Breath of the Wild",
-      "tombRaider": "Tomb Raider",
-      "uncharted4": "Uncharted 4",
-      "deadByDaylight": "Dead by Daylight",
-      "hogwartsLegacy": "Hogwarts Legacy",
-      "hogwartsLegacy2": "Hogwarts Legacy",
-      "hogwartsLegacy3": "Hogwarts Legacy",
-      "expedition33": "Expedition 33"
-    }
+  "footer": {
+    "messagesTitle": "Messages",
+    "reachUs": "Reach us",
+    "email": "hello [at] modernice.design",
+    "scheduleCall": "Schedule a Call",
+    "findUsTitle": "Find us",
+    "addressLine1": "Senator-Braun-Allee 13",
+    "addressLine2": "31135 Hildesheim, Germany",
+    "privacyPolicy": "Privacy Policy",
+    "about": "About",
+    "copyright": "© 2023 MODERNICE LIMITED"
   },
-  "antiCheat": {
-    "hero": {
-      "title": "Play Fair. Win Right.",
-      "subtitle": "Built to reward skill — not shortcuts. Every match takes place on level ground."
-    },
-    "section2": {
-      "title": "What Is Prevented",
-      "items": {
-        "smurfing": {
-          "title": "Smurfing",
-          "text": "One verified account per player"
-        },
-        "fakeAccounts": {
-          "title": "Fake Accounts",
-          "text": "One verified account per player"
-        },
-        "unfairPlay": {
-          "title": "Unfair Play:",
-          "text": "Tools or behaviors that create unnatural advantages"
-        },
-        "bracketAbuse": {
-          "title": "Bracket Abuse:",
-          "text": "Live monitoring detects suspicious patterns"
-        }
-      }
-    },
-    "consequences": {
-      "title": "Consequences for Cheating",
-      "items": [
-        "Account flags or temporary suspensions",
-        "Disqualification from tournaments and leaderboards",
-        "Loss of earned rewards and XP"
-      ]
-    },
-    "verified": {
-      "title": "Verified Accounts, Legit Matches",
-      "items": [
-        "Only verified accounts can enter ranked tournaments",
-        "Prevents duplicate identities and stat manipulation"
-      ]
-    },
-    "reporting": {
-      "title": "Reporting Tools",
-      "description": "Built to reward skill — not shortcuts. Every match takes place on level ground.",
-      "items": [
-        {
-          "title": "Reviewer Remarks",
-          "description": "Add optional notes for reviewers"
-        },
-        {
-          "title": "Submit Visual Evidence",
-          "description": "Upload screenshots or video"
-        },
-        {
-          "title": "Review by TZone Team",
-          "description": "Every case is manually reviewed by moderators"
-        }
-      ]
-    },
-    "footer": {
-      "notice": "Automation isn’t enough. Flagged actions are always reviewed by human moderators.",
-      "buttons": {
-        "report": "Report Suspicious Activity",
-        "policy": "View Ban Policy",
-        "learnMore": "Learn About EPASS"
-      }
-    }
-  },
-  "learn_more": "Learn More",
-  "marketplaceSection": {
-    "heading": "Get the right gaming products at the right moment",
-    "description": "From XP-unlocked rewards to verified essentials, TZone features quality items directly in tournaments, profiles, and drops"
-  },
-  "countdown": {
-    "title": "Event Countdown",
-    "days": "Days",
-    "hours": "Hours",
-    "minutes": "Minutes",
-    "seconds": "Seconds",
-    "join_tornament": "Join the tournament when the countdown ends!",
-    "mins": "Mins",
-    "secs": "Secs"
-  },
-  "buyTooltip": {
-    "tooltip": "Like the look? Get your Zone gear",
-    "button": "Own the look — $29",
-    "description": "Tap to unlock the official T-Zone tee. Get it delivered to your setup in just 2 clicks."
-  },
-  "privacyPolicy": {
-    "title": "Privacy policy",
-    "intro": "This Privacy Policy outlines how data is collected, used, and protected across all features of TZone — including player profiles, tournament participation, KYC verification (for organizers), and marketplace interactions.",
+  "privacy_policy": {
+    "title": "Privacy & Policy",
+    "intro": "At Modernice, your privacy is our priority. This policy explains how we collect, use, and protect your information.",
     "sections": {
-      "collected": {
-        "title": "1. Whatʼs Collected",
-        "description": "TZone may collect the following data based on how the platform is used:"
+      "info_collect": {
+        "title": "1. Information We Collect",
+        "text": "We collect only the necessary information to provide our services efficiently, including personal data such as your name, email, and usage data."
       },
-      "account": {
-        "title": "2. Account & Profile Data",
-        "items": [
-          "Username, email, encrypted password",
-          "Display name, region, age, profile image",
-          "Public/private visibility preferences (for earnings, skill, badges, and stats)"
-        ]
+      "use_info": {
+        "title": "2. How We Use Your Information",
+        "text": "Your information helps us improve our website, communicate updates, and ensure a personalized experience."
       },
-      "game": {
-        "title": "3. Game & Match Data",
-        "items": [
-          "Connected accounts (Steam, Riot, EA, etc.)",
-          "Match history, win/loss rate, clutch moments",
-          "Skill-based matchmaking rating (E-Score)"
-        ]
+      "data_security": {
+        "title": "3. Data Security",
+        "text": "We implement robust security measures to protect your data from unauthorized access or disclosure."
       },
-      "organizer": {
-        "title": "4. Organizer & KYC Data",
-        "items": [
-          "Business verification details: license, tax ID, banking info",
-          "Custom branding elements for event hosting",
-          "Tournament history, payout records, sponsorship uploads"
-        ]
+      "cookies": {
+        "title": "4. Cookies",
+        "text": "Our website uses cookies to enhance user experience. You can disable cookies via your browser settings if preferred."
       },
-      "usage": {
-        "title": "5. Usage & Platform Activity",
-        "items": [
-          "XP earned, achievements, badges, titles",
-          "Tournament results, participation, referrals",
-          "Wallet earnings: tournament prizes, tips, affiliate revenue"
-        ]
+      "your_rights": {
+        "title": "5. Your Rights",
+        "text": "You have the right to access, modify, or delete your personal data. Contact us at",
+        "email": "privacy [at] modernice.com"
       },
-      "device": {
-        "title": "6. Device & Security Info",
-        "items": [
-          "Device ID, browser type, IP address",
-          "Login logs and fraud-detection metadata",
-          "2FA setup (email, SMS, authenticator apps)"
-        ]
-      },
-      "usageOfData": {
-        "title": "7. How Your Data is Used",
-        "description": "Your data supports the following platform operations:",
-        "items": [
-          "Creating and managing secure player and organizer accounts",
-          "Verifying eligibility for tournaments, leaderboards, and prize earnings",
-          "Enabling automated matchmaking and fraud prevention",
-          "Displaying stats, profile achievements, and wallet dashboards",
-          "Delivering communications related to matches, reports, and product drops",
-          "Supporting moderator reviews for reports, bans, or disputes"
-        ]
-      },
-      "protection": {
-        "title": "8. How Your Data is Protected",
-        "description": "TZone applies strong security protocols to protect all collected information:",
-        "items": [
-          "All passwords and personal data are encrypted in storage",
-          "Secure connections (HTTPS) are enforced platform-wide",
-          "Sensitive access (e.g., KYC) is permission-restricted",
-          "Admin actions are logged and reviewed",
-          "Optional 2FA is supported to help protect access"
-        ]
-      },
-      "sharing": {
-        "title": "9. When Data is Shared",
-        "description": "TZone does not sell your personal information. Limited sharing may occur to operate core services:",
-        "items": [
-          "With tournament partners or payout services (to deliver rewards or verify entries)",
-          "With payment processors and wallet services (to fulfill withdrawals or purchases)",
-          "With moderation or legal channels (to address serious policy violations)"
-        ]
-      },
-      "rights": {
-        "title": "10. Your Rights and Controls",
-        "description": "Users can manage and control data usage through profile settings:",
-        "items": [
-          "View, edit, or delete account and game-linked info",
-          "Adjust privacy settings on profile visibility",
-          "Request data exports or permanent deletion",
-          "Choose communication preferences (unsubscribe links included)"
-        ]
-      },
-      "contact": {
-        "title": "11. Contact TZone",
-        "description": "All questions, comments, or enquiries related to TZone should be directed to T-zone at",
-        "respondingTime": "We will  respond to all queries within three business days."
-      }
-    }
-  },
-  "report": {
-    "pageTitle": "Notice Unfair Play? Report It",
-    "pageSubtitle": "Support fair tournaments. Use this form to report cheating, smurfing, harassment, impersonation, or rule violations.",
-    "form": {
-      "reportType": "Report Type",
-      "reportedPlayer": "Reported Player or Team",
-      "tournamentId": "Tournament/Event ID",
-      "incidentDate": "Date/Time of Incident",
-      "description": "Detailed Description",
-      "descriptionPlaceholder": "Enter the tournament Description",
-      "evidence": "Supporting Evidence Upload",
-      "evidenceNote": "Please upload screenshots or videos",
-      "upload": "Upload",
-      "selected": "Selected",
-      "email": "Email for Updates (Optional)",
-      "emailPlaceholder": "Enter your email",
-      "submit": "Send to Review Team",
-      "placeholder": {
-        "player": "Insert linked to user profile or match",
-        "tournament": "Enter the tournament Name or Event ID"
+      "terms": {
+        "title": "6. Terms of Service",
+        "text": "By using Modernice services, you agree to comply with our terms and conditions, ensuring respectful and lawful usage."
       }
     },
-    "policy": {
-      "title": "Reporting Policy",
-      "points": [
-        "Reports should include supporting material such as chat logs, replays, screenshots, or video footage",
-        "All reports must be submitted in good faith. False submissions may result in moderation action",
-        "Reports are stored and tracked against player history and tournament logs"
-      ]
-    },
-    "review": {
-      "title": "Review Process",
-      "points": [
-        "A case ID is automatically generated",
-        "Assigned moderators review evidence (chat logs, match data, report history)",
-        "Outcome determined within 24–72 hours",
-        "Sanctions (if any) are applied:"
-      ],
-      "sanctions": ["No action", "Warning", "Temporary restriction", "Ban and XP removal"]
-    },
-    "reportTypes": {
-      "cheating": "Cheating",
-      "smurfing": "Smurfing",
-      "harassment": "Harassment",
-      "impersonation": "Impersonation",
-      "other": "Other"
-    }
+    "footer2": "All rights reserved."
   },
-  "sponsorship": {
-    "title": "Tournament Sponsorship",
-    "subtitle": "Partner with the future of esports",
-    "button": {
-      "submit": "Submit My Sponsorship Application",
-      "submitting": "Submitting..."
-    },
-    "success": "Sponsorship application submitted successfully!",
-    "error": "Failed to submit sponsorship application.",
-    "errors": {
-      "fullName": "Your name is required.",
-      "organization": "Organization name is required.",
-      "email": "Email address is required.",
-      "phone": "Phone number is required.",
-      "sponsorOptions": "At least one brand placement option is required.",
-      "budget": "Total budget is required.",
-      "package": "Preferred sponsorship package is required.",
-      "selectedGames": "At least one preferred game is required.",
-      "targetRegions": "Target region is required.",
-      "isAuthorized": "You must be authorized to represent."
-    }
+  "projects": {
+    "title": "Modernice Projects",
+    "subtitle": "Crafted with precision, passion & performance.",
+    "grid_view": "Grid View",
+    "column_view": "Column View",
+    "visit": "Visit"
   },
-  "sponsorInfo": {
-    "title": "Sponsor Information",
-    "fullName": "Full Name",
-    "fullNamePlaceholder": "e.g., John Doe",
-    "organization": "Brand / Organization",
-    "organizationPlaceholder": "e.g., GigaTech Gaming",
-    "email": "Email Address",
-    "phone": "Phone Number",
-    "phonePlaceholder": "+1 (555) 000-0000"
+  "nav": {
+    "brand": "modernice.design",
+    "services": "Services",
+    "work": "Work"
   },
-  "sponsorOptions": {
-    "title": "What would you like to sponsor?",
-    "options": {
-      "full_tournament": "Full Tournament",
-      "giveaway_reward_drop": "Giveaway / Reward Drop",
-      "twitch_stream_segment": "Twitch Stream Segment",
-      "product_placement": "Product Placement",
-      "player_mvp_award": "Player MVP Award",
-      "other": "Other"
-    }
-  },
-  "sponsorBudget": {
-    "title": "Sponsorship Budget & Package",
-    "budget": {
-      "label": "Budget (USD)",
-      "placeholder": "Select Budget"
-    },
-    "package": {
-      "label": "Preferred Package",
-      "placeholder": "Select Package",
-      "options": {
-        "gold": "Gold",
-        "silver": "Silver",
-        "bronze": "Bronze",
-        "custom": "Custom"
-      }
-    },
-    "branding": {
-      "label": "Do you have branding materials ready?"
-    },
-    "upload": {
-      "placeholder": "Drag and drop your files here, or click to select files",
-      "details": "Supported formats: PNG, SVG, PDF"
-    }
-  },
-  "sponsorGames": {
-    "title": "Games, Regions & Reports",
-    "targetRegionPlaceholder": "Target Region(s)",
-    "report": {
-      "label": "Would you like a post-event performance report?"
-    }
-  },
-  "sponsorAuthorization": {
-    "title": "Authorization & Contact",
-    "question": "Are you authorized to represent this brand?"
-  },
-  "sponsorshipSuccess": {
-    "title": "Thank you for registering as a potential sponsor with TZone!",
-    "subtitle": "Our partnerships team will review your application and contact you shortly.",
-    "button": "Back to Home"
-  },
-  "yes": "Yes",
-  "no": "No",
-  "select_option": "Select option",
-  "other": "Other"
+  "button": {
+    "talk": "lets talk",
+    "talk2": "Get-resposive",
+    "talk3": "Boost Sales",
+    "talk4": "Give start command"
+  }
 }

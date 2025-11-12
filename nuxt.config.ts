@@ -1,12 +1,12 @@
-import { defineNuxtConfig } from 'nuxt/config' // ✅ Import type for TS
+import { defineNuxtConfig } from 'nuxt/config'
 import tailwindcss from '@tailwindcss/vite'
 import { resolve } from 'path'
 
 export default defineNuxtConfig({
   css: ['~/assets/tailwind.css', 'swiper/css', 'swiper/css/navigation', 'swiper/css/autoplay'],
-  typescript: {
-    shim: false
-  },
+
+  typescript: { shim: false },
+
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
@@ -35,16 +35,11 @@ export default defineNuxtConfig({
       ]
     },
     define: {
-      // Optimize GSAP for production
-      __GSAP_VERSION__: JSON.stringify(process.env.NODE_ENV === 'production' ? '3.13.0' : '3.13.0')
+      __GSAP_VERSION__: JSON.stringify('3.13.0')
     },
     build: {
-      // Performance optimizations for mobile/low-end devices
-      // GSAP plugins are conditionally loaded based on device performance
-      // See plugins/gsap.client.ts for performance-based loading
       rollupOptions: {
         output: {
-          // Code splitting for GSAP - allows conditional loading
           manualChunks: {
             'gsap-core': ['gsap'],
             'gsap-heavy': ['gsap/ScrollTrigger', 'gsap/MotionPathPlugin', 'gsap/DrawSVGPlugin']
@@ -56,9 +51,6 @@ export default defineNuxtConfig({
 
   build: {
     transpile: ['vue-toastification', 'swiper', 'gsap']
-    // Note: GSAP plugins are conditionally loaded at runtime based on device performance
-    // (memory, CPU cores, network speed) to optimize for low-end devices
-    // See plugins/gsap.client.ts for the performance detection logic
   },
 
   alias: {
@@ -79,12 +71,19 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/icon', '@nuxt/image', '@nuxtjs/i18n'],
 
+  i18n: {
+    defaultLocale: 'en',
+    locales: [
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'de', name: 'German', file: 'de.json' }
+    ]
+  },
+
   plugins: [
     { src: '~/plugins/gsap.client.ts', mode: 'client' },
     { src: '~/plugins/apexcharts.client.ts', mode: 'client' },
     { src: '~/plugins/customLoading.ts', mode: 'client' },
     { src: '~/plugins/progress-bar.ts', mode: 'client' },
-    { src: '~/plugins/countryDisplay.ts', mode: 'client' },
-    { src: '~/plugins/i18n-persist.client.ts', mode: 'client' }
+    { src: '~/plugins/countryDisplay.ts', mode: 'client' }
   ]
 })

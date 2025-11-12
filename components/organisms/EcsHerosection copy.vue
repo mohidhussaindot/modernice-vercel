@@ -12,12 +12,12 @@
           <h1 class="text-4xl lg:text-5xl font-semibold leading-tight">
             Maximize online sales with our custom <br />
             <span class="bg-gradient-to-r from-[#FFE501] to-[#FFA901] text-transparent bg-clip-text"
-              >E-Commerce</span
+              >E-Commercez</span
             >
             strategy service.
           </h1>
           <p class="text-[1.125rem] font-light">
-            Our e-commerce strategy service is designed to help businesses of all sizes and
+            Our eeee-commerce strategy service is designed to help businesses of all sizes and
             industries succeed in the world of online sales. Whether you're a B2C company looking to
             sell directly to consumers, or a B2B company looking to streamline your sales process,
             we can help you create a personalized e-commerce plan that meets your unique needs.
