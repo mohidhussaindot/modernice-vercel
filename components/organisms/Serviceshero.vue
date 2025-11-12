@@ -27,16 +27,16 @@
             <h1
               class="md:text-[2.8rem] xl:text-[3.8rem] font-lightbold italic leading-[1.2] text-center lg:text-left"
             >
-              Von der ersten <span class="text-[#00FFB3]">Skizze</span><br />
-              bis zum letzten <span class="text-[#00FFB3]">Pixel</span>
+              {{ $t('serviceshero.headline.part1') }}
+              <span class="text-[#00FFB3]">{{ $t('serviceshero.headline.highlight1') }}</span>
+              {{ $t('serviceshero.headline.part2') }}
+              <span class="text-[#00FFB3]">{{ $t('serviceshero.headline.highlight2') }}</span>
             </h1>
+
             <p
               class="text-base xl:text-[1.125rem] md:text-[0.9rem] font-light leading-relaxed text-center lg:text-left"
             >
-              Du hast eine Vision und wir die Leidenschaft, sie zum Leben zu erwecken. Eine
-              umfassende Website‑Strategie verwandelt Deine kreativen Vorstellungen in einen
-              beeindruckenden digitalen Auftritt. Für ein ästhetisches Design und messbare
-              Ergebnisse.
+              {{ $t('serviceshero.description') }}
             </p>
             <div
               class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#38EF61] to-[#44E5C8] mx-auto lg:mx-0"
@@ -52,7 +52,7 @@
                     <span
                       class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text"
                     >
-                      Termin vereinbaren
+                      {{ $t('serviceshero.button') }}
                     </span>
                   </Button>
                 </NuxtLink>

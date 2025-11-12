@@ -2,39 +2,44 @@
   <div
     class="relative bg-gradient-to-b from-black via-zinc-900 to-black text-white overflow-hidden min-h-screen"
   >
+    <!-- Background SVG -->
     <div
       class="absolute top-0 left-0 w-full z-0 pointer-events-none opacity-60"
       v-html="bghero"
     ></div>
+
+    <!-- Hero Section -->
     <div class="relative z-10 flex flex-col items-center justify-center pt-52 mb-5 text-center">
       <h1
         class="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent opacity-0"
         ref="heroTitle"
       >
-        Modernice Projects
+        {{ $t('projects.title') }}
       </h1>
       <p class="text-gray-400 mt-4 text-lg opacity-0" ref="heroSubtitle">
-        Crafted with precision, passion & performance.
+        {{ $t('projects.subtitle') }}
       </p>
     </div>
+
+    <!-- View Toggle Button -->
     <div class="relative z-20 hidden md:flex justify-center mx-auto mb-12">
       <Button
         @click="toggleView"
         class="text-lg font-medium text-white tracking-wide hover:cursor-pointer px-6 py-4 rounded-lg backdrop-blur-md bg-white/10 border border-white/10 hover:bg-white/20 transition-all duration-300"
       >
-        {{ isGrid ? 'Column View' : 'Grid View' }}
+        {{ isGrid ? $t('projects.column_view') : $t('projects.grid_view') }}
       </Button>
     </div>
-    <div
-      class="relative z-10 transition-all duration-700 ease-in-out"
-      :class="isGrid ? 'opacity-100 scale-100' : 'opacity-100 scale-100'"
-    >
+
+    <!-- Projects Display -->
+    <div class="relative z-10 transition-all duration-700 ease-in-out">
+      <!-- Grid View -->
       <div
         v-if="isGrid"
         class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 px-8 md:px-16 pb-20"
       >
         <div
-          v-for="(project, index) in imageLinks"
+          v-for="(project, index) in projects"
           :key="index"
           class="relative group overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-800/60 to-zinc-900/60 border border-white/10 shadow-xl cursor-pointer hover:shadow-2xl transition-all duration-500"
         >
@@ -53,9 +58,11 @@
           </a>
         </div>
       </div>
+
+      <!-- Column View -->
       <div v-else>
         <section
-          v-for="(project, index) in imageLinks"
+          v-for="(project, index) in projects"
           :key="index"
           ref="sections"
           class="md:min-h-screen mt-30 md:mt-0 flex flex-col items-center justify-center text-center px-6 md:px-16 gap-8"
@@ -72,7 +79,9 @@
               <div
                 class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-500"
               >
-                <p class="text-lg font-semibold text-white"> Visit {{ project.name }} </p>
+                <p class="text-lg font-semibold text-white"
+                  >{{ $t('projects.visit') }} {{ project.name }}</p
+                >
               </div>
             </a>
           </div>
@@ -98,16 +107,14 @@
     </div>
   </div>
 </template>
+
 <script setup>
   import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
   import Button from '@atoms/Button.vue'
   import bghero from '@atoms/svgs/bghero.svg?raw'
-
-  // ✅ Import GSAP and ScrollTrigger
   import { gsap } from 'gsap'
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-  // ✅ Register ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger)
 
   const isGrid = ref(false)
@@ -115,21 +122,9 @@
   const heroTitle = ref(null)
   const heroSubtitle = ref(null)
 
-  const toggleView = async () => {
-    if (window.innerWidth < 768) {
-      isGrid.value = false
-      return
-    }
-    isGrid.value = !isGrid.value
-    await nextTick()
-    if (!isGrid.value) animateSections()
-  }
-
   const animateSections = () => {
-    if (!ScrollTrigger) return console.warn('ScrollTrigger not initialized yet.')
-
+    if (!ScrollTrigger) return
     ScrollTrigger.getAll().forEach(t => t.kill())
-
     if (window.innerWidth < 768) return
 
     sections.value.forEach(section => {
@@ -137,7 +132,6 @@
       const textBlock = section.querySelector('.info-block')
 
       if (image) {
-        // ✅ Replaced onScroll composable
         ScrollTrigger.create({
           trigger: section,
           start: 'top 80%',
@@ -148,8 +142,8 @@
           )
         })
       }
+
       if (textBlock) {
-        // ✅ Replaced onScroll composable
         ScrollTrigger.create({
           trigger: section,
           start: 'top 75%',
@@ -163,24 +157,34 @@
     })
   }
 
+  const animateImagesOnce = () => {
+    document.querySelectorAll('.project-image').forEach(img => {
+      img.style.opacity = 1
+      img.style.transform = 'scale(1)'
+    })
+    document.querySelectorAll('.info-block').forEach(info => {
+      info.style.opacity = 1
+      info.style.transform = 'none'
+    })
+  }
+
+  const toggleView = async () => {
+    if (window.innerWidth < 768) return
+    isGrid.value = !isGrid.value
+    await nextTick()
+    if (!isGrid.value) animateSections()
+  }
+
   onMounted(async () => {
     const isMobile = window.innerWidth < 768
+    await nextTick()
+
     if (isMobile) {
-      if (heroTitle.value) heroTitle.value.style.opacity = 1
-      if (heroSubtitle.value) heroSubtitle.value.style.opacity = 1
-      await nextTick()
-      document.querySelectorAll('.project-image').forEach(img => {
-        img.style.opacity = 1
-        img.style.transform = 'scale(1)'
-      })
-      document.querySelectorAll('.info-block').forEach(info => {
-        info.style.opacity = 1
-        info.style.transform = 'none'
-      })
+      heroTitle.value.style.opacity = 1
+      heroSubtitle.value.style.opacity = 1
+      animateImagesOnce()
     } else {
-      // ✅ Replaced fadeIn composable (assuming default 'from' state)
       gsap.fromTo(heroTitle.value, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 1 })
-      // ✅ Replaced fadeIn composable (assuming default 'from' state)
       gsap.fromTo(
         heroSubtitle.value,
         { autoAlpha: 0, y: 20 },
@@ -191,11 +195,11 @@
   })
 
   onBeforeUnmount(() => {
-    // ✅ Replaced cleanup() composable
     ScrollTrigger.killAll()
   })
 
-  const imageLinks = [
+  // i18n-based data
+  const projects = [
     {
       image: 'adobelino.png',
       name: 'Adobelino',
@@ -216,7 +220,7 @@
       image: 'wiresoft.png',
       name: 'Wiresoft',
       url: 'https://www.wiresoft.com',
-      description: "discounted licensed business software's online.",
+      description: "Discounted licensed business software's online.",
       role: 'Fullstack',
       year: 2024
     },
@@ -262,6 +266,7 @@
     }
   ]
 </script>
+
 <style scoped>
   .image-wrapper img {
     transition:

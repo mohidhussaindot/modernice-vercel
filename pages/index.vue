@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script script setup>
   import { ref } from 'vue'
 
   import Navbar from '@organisms/Navbar.vue'
@@ -18,11 +18,11 @@
 
       <Navbar
         :nav-links="[
-          { label: 'modernice.design', to: '/' },
-          { label: 'Services', to: '' },
-          { label: 'Work', to: '/work' }
+          { label: $t('nav.brand'), to: '/' },
+          { label: $t('nav.services') },
+          { label: $t('nav.work'), to: '/work' }
         ]"
-        cta-label="Let’s Talk"
+        :cta-label="$t('button.talk')"
         cta-to="/appointment"
         logo-src="/first-three-sect-img/navbar-img.png"
         cta-from="#01A3FF"

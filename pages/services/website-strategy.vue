@@ -2,11 +2,11 @@
   <div class="">
     <Navbar
       :nav-links="[
-        { label: 'modernice.design', to: '/' },
-        { label: 'Services' },
-        { label: 'Work', to: '/work' }
+        { label: $t('nav.brand'), to: '/' },
+        { label: $t('nav.services') },
+        { label: $t('nav.work'), to: '/work' }
       ]"
-      cta-label="Let’s Talk"
+      :cta-label="$t('button.talk')"
       cta-to="/appointment"
       logo-src="/images/services-navbar.png"
       cta-from="#38EF61"

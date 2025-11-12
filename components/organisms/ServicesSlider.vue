@@ -14,10 +14,9 @@
             />
           </div>
           <div class="text-content">
-            <h1>Robuste Technologie</h1>
+            <h1>{{ $t('sliderContent.slide1.title') }}</h1>
             <p>
-              Zuverlässige Technologien und Plattformen, die sicherstellen, dass eine Website nicht
-              nur gut aussieht, sondern auch nahtlos funktioniert.
+              {{ $t('sliderContent.slide1.description') }}
             </p>
           </div>
         </div>
@@ -27,10 +26,9 @@
             <img src="/website-strategy/slider-second.png" alt="Innovatives Design" />
           </div>
           <div class="text-content">
-            <h1>Innovatives Design</h1>
+            <h1>{{ $t('sliderContent.slide2.title') }}</h1>
             <p>
-              Einzigartige und maßgeschneiderte Designs, die Marken repräsentieren und Visionen zum
-              Leben erwecken.
+              {{ $t('sliderContent.slide2.description') }}
             </p>
           </div>
         </div>
@@ -40,11 +38,12 @@
             <img src="/website-strategy/slider-third.png" alt="Gesucht & Gefunden" />
           </div>
           <div class="text-content">
-            <h1>Gesucht & Gefunden</h1>
-            <p>
-              Tappe nicht im Dunkeln. Gezielte Suchmaschinen-Optimierung lässt Dich heller strahlen
-              als Deine Konkurrenz.
-            </p>
+            <div class="text-content">
+              <h1>{{ $t('sliderContent.slide3.title') }}</h1>
+              <p>
+                {{ $t('sliderContent.slide3.description') }}
+              </p>
+            </div>
           </div>
         </div>
       </div>

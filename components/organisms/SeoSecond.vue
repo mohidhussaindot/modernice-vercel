@@ -16,14 +16,13 @@
             <span
               class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent"
             >
-              Fundament des Erfolgs:
+              {{ $t('seo.section1.headingHighlight') }}
             </span>
             <br />
-            Warum technische SEO entscheidend ist
+            {{ $t('seo.section1.heading') }}
           </h1>
           <p class="text-[1.25rem] font-light mt-4">
-            SEO ist mehr als kurzfristige Taktiken; es ist ein solides technisches Fundament, das
-            nachhaltiges Wachstum ermöglicht.
+            {{ $t('seo.section1.paragraph') }}
           </p>
         </div>
 
@@ -49,9 +48,7 @@
         <!-- Text Column -->
         <div class="flex-1 font-light text-[1.25rem] fade-right">
           <p>
-            Die besten SEO-Maßnahmen basieren auf einer starken technischen Infrastruktur, die sich
-            leicht anpassen lässt, um aktuellen und zukünftigen Suchmaschinenanforderungen gerecht
-            zu werden.
+            {{ $t('seo.section2.paragraph') }}
           </p>
         </div>
       </div>
@@ -70,23 +67,17 @@
             <span
               class="bg-gradient-to-r to-[#01A3FF] from-[#25CDDA] text-transparent bg-clip-text"
             >
-              Kostenfreie
+              {{ $t('seo.section3.headingHighlight') }}
             </span>
-            Suchmaschinenoptimierung
+            {{ $t('seo.section3.heading') }}
           </h1>
 
           <p class="w-[51.0625rem] text-[1.125rem] font-light">
-            Für optimale SEO-Ergebnisse muss das technische SEO stets integraler Bestandteil des
-            Webdesign- und Entwicklungsprozesses sein. Es darf nicht als optionales Extra angesehen
-            werden, sondern als Grundpfeiler einer erfolgreichen Webseite.
+            {{ $t('seo.section3.paragraph1') }}
           </p>
 
           <p class="w-[51.0625rem] text-[1.125rem] font-light">
-            Daher ist die technische SEO ein fundamentaler Teil unserer Website-Design- und
-            -Strategieangebote. Jede von uns gestaltete und entwickelte Webseite profitiert
-            automatisch von einer umfassenden technischen SEO-Optimierung. Hierbei nehmen wir alle
-            Facetten des technischen SEO in den Blick, von der Verbesserung der
-            Website-Geschwindigkeit bis zur effizienten Strukturierung von Daten.
+            {{ $t('seo.section3.paragraph2') }}
           </p>
 
           <div
@@ -97,7 +88,7 @@
             >
               <span
                 class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] text-transparent bg-clip-text duration-300"
-                >Website Strategie planen</span
+                >{{ $t('seo.section3.button') }}</span
               >
             </Button>
           </div>
@@ -121,17 +112,16 @@
           class="absolute fade-left w-[37.4375rem] top-[8.75rem] flex flex-col gap-[1.5rem] h-[16.25rem] z-10"
         >
           <h1 class="italic text-[3.75rem] font-semibold">
-            Unser
-            <span class="bg-gradient-to-r to-[#01A3FF] from-[#25CDDA] bg-clip-text text-transparent"
-              >Prozess</span
+            {{ $t('seo.section4.heading1') }}
+            <span
+              class="bg-gradient-to-r to-[#01A3FF] from-[#25CDDA] bg-clip-text text-transparent"
+            >
+              {{ $t('seo.section4.heading2') }}</span
             >
           </h1>
 
           <p class="text-[1.125rem] font-light">
-            e den gezielten Einsatz von datenbasierten Analysen, technischer Expertise und
-            innovativen Ansätzen schaffen wir maßgeschneiderte Lösungen, die deine Online-Präsenz
-            stärken, die Sichtbarkeit erhöhen und letztlich dazu beitragen, deine Geschäftsziele zu
-            erreichen.
+            {{ $t('seo.section4.paragraph') }}
           </p>
         </div>
       </div>
@@ -151,15 +141,12 @@
     <div
       class="relative z-10 flex flex-col 2xl:gap-[270px] lg:gap-[200px] pt-24 pb-16 max-w-7xl mx-auto"
     >
-      <!-- First Row: Analyse des Ist-Zustands -->
+      <!-- First Row:   -->
       <div class="flex flex-col lg:flex-row items-center gap-[13.5rem]">
         <div class="w-full xl:w-[32rem] fade-left flex flex-col gap-5">
-          <h1 class="text-[2.5rem] italic font-semibold">Analyse des Ist-Zustands</h1>
+          <h1 class="text-[2.5rem] italic font-semibold"> {{ $t('seo.section5.row1.heading') }}</h1>
           <p class="text-[1.125rem] font-light">
-            Bei jeder SEO-Strategie, die wir entwickeln, beginnen wir mit einer gründlichen Analyse
-            des aktuellen Zustands der Website. Dabei berücksichtigen wir technische Aspekte,
-            inhaltliche Faktoren und das Nutzerverhalten, um Schwachstellen und Potenziale
-            aufzudecken.
+            {{ $t('seo.section5.row1.paragraph') }}
           </p>
         </div>
 
@@ -177,13 +164,9 @@
         <div class="w-full max-w-[32.9375rem]" ref="SeoFifthref" v-html="seofifth"></div>
 
         <div class="w-full max-w-[38.1875rem] fade-right flex flex-col gap-5">
-          <h1 class="text-[2.5rem] italic font-semibold">Technische SEO-Optimierung</h1>
+          <h1 class="text-[2.5rem] italic font-semibold"> {{ $t('seo.section5.row2.heading') }}</h1>
           <p class="text-[1.125rem] font-light">
-            Egal ob bei der Gestaltung einer neuen Website oder der Verbesserung einer bestehenden,
-            die technische SEO steht im Zentrum unserer Arbeit. Bei neuen Projekten sorgen wir von
-            Anfang an für eine optimale Suchmaschinenfreundlichkeit. Bei der Optimierung bestehender
-            Websites verbessern wir die technische Grundlage, um die Sichtbarkeit in den
-            Suchergebnissen zu erhöhen.
+            {{ $t('seo.section5.row2.paragraph') }}
           </p>
         </div>
       </div>
@@ -191,12 +174,9 @@
       <!-- Third Row: Keyword- und Wettbewerbsanalyse -->
       <div class="flex flex-col lg:px-5 xl:px-0 lg:flex-row justify-between items-center gap-12">
         <div class="w-full max-w-[35.75rem] fade-left flex flex-col gap-8">
-          <h1 class="text-[2.5rem] italic font-semibold">Keyworde- und Wettbewerbsanalyse</h1>
+          <h1 class="text-[2.5rem] italic font-semibold"> {{ $t('seo.section5.row3.heading') }}</h1>
           <p class="text-[1.125rem] font-light">
-            Im nächsten Schritt identifizieren wir die Schlüsselbegriffe, welche die Zielgruppe zur
-            Suche nach relevanten Produkten oder Dienstleistungen verwendet. Parallel dazu
-            analysieren wir die Wettbewerbssituation, um die Marktposition zu verstehen und wirksame
-            Strategien zur Verbesserung der Platzierung zu entwickeln.
+            {{ $t('seo.section5.row3.paragraph') }}
           </p>
         </div>
 
@@ -213,12 +193,9 @@
       <!-- Row 1: Text left / Image right -->
       <div class="flex flex-row justify-between items-center gap-12 fade-left">
         <div class="w-full max-w-[35.75rem] flex flex-col gap-8">
-          <h1 class="text-[2.5rem] italic font-semibold">Strategieentwicklung</h1>
+          <h1 class="text-[2.5rem] italic font-semibold"> {{ $t('seo.section6.row1.heading') }}</h1>
           <p class="text-[1.125rem] font-light">
-            Basierend auf unseren umfangreichen Analysen erstellen wir eine maßgeschneiderte
-            SEO-Strategie, die genau auf die Ziele und das Publikum des Unternehmens zugeschnitten
-            ist. In diesem Stadium legen wir Ziele fest, planen Maßnahmen und definieren KPIs, um
-            den Erfolg unserer Bemühungen messbar zu machen.
+            {{ $t('seo.section6.row1.paragraph') }}
           </p>
         </div>
         <NuxtImg
@@ -230,12 +207,9 @@
 
       <div class="flex flex-row justify-between items-center gap-12 fade-right">
         <div class="w-full max-w-[35.75rem] flex flex-col gap-8">
-          <h1 class="text-[2.5rem] italic font-semibold">Umsetzung</h1>
+          <h1 class="text-[2.5rem] italic font-semibold">{{ $t('seo.section6.row2.heading') }}</h1>
           <p class="text-[1.125rem] font-light">
-            Mit der entwickelten Strategie geht es in die Umsetzungsphase. Dabei umfasst unsere
-            Arbeit sowohl technische Optimierungen an der Website als auch die Erstellung von
-            qualitativ hochwertigem Content, der sowohl die Zielgruppe anspricht als auch von den
-            Suchmaschinen positiv bewertet wird.
+            {{ $t('seo.section6.row2.paragraph') }}
           </p>
         </div>
         <NuxtImg
@@ -247,13 +221,9 @@
 
       <div class="flex flex-row justify-between items-center gap-12 fade-left">
         <div class="w-full max-w-[35.75rem] flex flex-col gap-8">
-          <h1 class="text-[2.5rem] italic font-semibold">Monitoring & Optimierung</h1>
+          <h1 class="text-[2.5rem] italic font-semibold">{{ $t('seo.section6.row3.heading') }}</h1>
           <p class="text-[1.125rem] font-light">
-            Da SEO ein dynamischer Prozess ist, überwachen wir ständig die Performance der Website,
-            analysieren die gewonnenen Daten und nehmen bei Bedarf Anpassungen vor. Durch unser
-            kontinuierliches Monitoring und die gezielte Optimierung stellen wir sicher, dass die
-            Website stets den aktuellen SEO-Best-Practices entspricht und bestmögliche Ergebnisse
-            liefert.
+            {{ $t('seo.section6.row2.paragraph') }}
           </p>
         </div>
         <NuxtImg
@@ -269,9 +239,7 @@
     <div class="flex pt-10 h-full">
       <div class="fade-element w-full max-w-[35.75rem] px-6 text-center lg:text-left">
         <p class="text-[1.125rem] font-light">
-          Durch die Kombination aus Datenanalyse, technischer Expertise und kreativer Arbeit streben
-          wir an, die Online-Präsenz unserer Kunden zu verbessern und deren Geschäftsziele zu
-          erreichen.
+          {{ $t('seo.section7.paragraph') }}
         </p>
       </div>
     </div>
@@ -291,11 +259,9 @@
       <div
         class="absolute h-[12.5rem] text-white w-[45.6875rem] flex flex-col gap-[1rem] top-[3.5rem] mx-[4rem]"
       >
-        <h1 class="italic font-semibold text-[2.25rem]">Get in Touch</h1>
+        <h1 class="italic font-semibold text-[2.25rem]"> {{ $t('contact.title') }}</h1>
         <p class="max-w-[45.6875rem] max-h-[9rem] text-[1.25rem] font-light">
-          Now that you've learned about our process, why not take the next step and let us help you
-          take your online presence to the next level? Don't wait – schedule a call with us today
-          and let's discuss how we can give your business the recognition it deserves.
+          {{ $t('contact.description') }}
         </p>
       </div>
 
@@ -303,20 +269,20 @@
         class="absolute flex w-[45.6875rem] h-[4.9375rem] gap-[4rem] mx-[4rem] top-[19.5rem] text-white"
       >
         <span>
-          <p class="text-[1.125rem] mb-[0.625rem]">Drop us a message at</p>
+          <p class="text-[1.125rem] mb-[0.625rem]"> {{ $t('contact.message.label') }}</p>
           <h2
             class="text-[2rem] italic font-bold bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent"
           >
-            hello@modernice.design
+            {{ $t('contact.message.email').replace(' [at] ', '@') }}
           </h2>
         </span>
 
         <span>
-          <p class="text-[1.125rem] mb-[0.625rem]">Or talk to us directly</p>
+          <p class="text-[1.125rem] mb-[0.625rem]">{{ $t('contact.call.label') }}</p>
           <h2
             class="text-[2rem] bg-gradient-to-r from-[#FCD265] to-[#E56731] bg-clip-text text-transparent italic font-bold"
           >
-            Schedule a Call
+            {{ $t('contact.call.action') }}
           </h2>
         </span>
       </div>
@@ -339,14 +305,13 @@
       <div class="flex flex-col items-center gap-6">
         <h1 class="italic font-semibold text-[2rem] leading-snug text-center px-4">
           <span class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] bg-clip-text text-transparent">
-            Fundament des Erfolgs:
+            {{ $t('seo.section1.headingHighlight') }}
           </span>
           <br />
-          Warum technische SEO entscheidend ist
+          {{ $t('seo.section1.heading') }}
         </h1>
         <p class="w-[300px] text-[0.9rem] fontsemi-light leading-relaxed text-center px-4">
-          SEO ist mehr als kurzfristige Taktiken; es ist ein solides technisches Fundament, das
-          nachhaltiges Wachstum ermöglicht.
+          {{ $t('seo.section1.paragraph') }}
         </p>
       </div>
     </section>
@@ -356,21 +321,15 @@
       <div class="flex flex-col items-center gap-6">
         <h1 class="italic font-semibold text-[2rem] text-center px-4">
           <span class="bg-gradient-to-r to-[#01A3FF] from-[#25CDDA] bg-clip-text text-transparent">
-            Kostenfreie
+            {{ $t('seo.section3.headingHighlight') }}
           </span>
-          Suchmaschinenoptimierung
+          {{ $t('seo.section3.heading') }}
         </h1>
         <p class="md:w-[500px] text-[0.9rem] font-semilight leading-relaxed text-center px-4">
-          Für optimale SEO-Ergebnisse muss das technische SEO stets integraler Bestandteil des
-          Webdesign- und Entwicklungsprozesses sein. Es darf nicht als optionales Extra angesehen
-          werden, sondern als Grundpfeiler einer erfolgreichen Webseite.
+          {{ $t('seo.section3.paragraph1') }}
         </p>
         <p class="md:w-[500px] text-[0.9rem] font-semilight leading-relaxed text-center px-4">
-          Daher ist die technische SEO ein fundamentaler Teil unserer Website‑Design- und
-          ‑Strategieangebote. Jede von uns gestaltete und entwickelte Webseite profitiert
-          automatisch von einer umfassenden technischen SEO-Optimierung. Hierbei nehmen wir alle
-          Facetten des technischen SEO in den Blick, von der Verbesserung der
-          Website‑Geschwindigkeit bis zur effizienten Strukturierung von Daten.
+          {{ $t('seo.section3.paragraph2') }}
         </p>
         <div
           class="inline-block hover:scale-105 transition w-fit rounded-[10px] p-[2px] bg-gradient-to-r from-[#01A3FF] to-[#25CDDA]"
@@ -381,7 +340,7 @@
             <span
               class="bg-gradient-to-r from-[#01A3FF] to-[#25CDDA] text-transparent bg-clip-text"
             >
-              Website Strategie planen
+              {{ $t('seo.section3.button') }}
             </span>
           </Button>
         </div>
@@ -392,16 +351,13 @@
     <section class="py-16 px-6 overflow-hidden">
       <div class="flex flex-col items-center gap-6">
         <h1 class="italic font-semibold text-[2rem] text-center px-4">
-          Unser
+          {{ $t('seo.section4.heading1') }}
           <span class="bg-gradient-to-r to-[#01A3FF] from-[#25CDDA] bg-clip-text text-transparent">
-            Prozess
+            {{ $t('seo.section4.heading2') }}
           </span>
         </h1>
         <p class="md:w-[500px] text-[0.9rem] font-semilight leading-relaxed text-center px-4">
-          Durch den gezielten Einsatz von datenbasierten Analysen, technischer Expertise und
-          innovativen Ansätzen schaffen wir maßgeschneiderte Lösungen, die deine Online‑Präsenz
-          stärken, die Sichtbarkeit erhöhen und letztlich dazu beitragen, deine Geschäftsziele zu
-          erreichen.
+          {{ $t('seo.section4.paragraph') }}
         </p>
       </div>
     </section>
@@ -410,13 +366,10 @@
     <section class="py-16 px-6 overflow-hidden">
       <div class="flex flex-col items-center gap-6">
         <h1 class="italic font-semibold text-[2rem] text-center px-4">
-          Analyse des Ist‑Zustands
+          {{ $t('seo.section5.row1.heading') }}
         </h1>
         <p class="md:w-[500px] text-[0.9rem] font-semilight leading-relaxed text-center px-4">
-          Bei jeder SEO‑Strategie, die wir entwickeln, beginnen wir mit einer gründlichen Analyse
-          des aktuellen Zustands der Website. Dabei berücksichtigen wir technische Aspekte,
-          inhaltliche Faktoren und das Nutzerverhalten, um Schwachstellen und Potenziale
-          aufzudecken.
+          {{ $t('seo.section5.row1.paragraph') }}
         </p>
       </div>
     </section>
@@ -432,14 +385,10 @@
       </div>
       <div class="flex flex-col items-center gap-6">
         <h1 class="italic font-semibold text-[2rem] text-center px-4">
-          Technische SEO‑Optimierung
+          {{ $t('seo.section5.row2.heading') }}
         </h1>
         <p class="max-w-[400px] text-[0.9rem] font-semilight leading-relaxed text-center px-4">
-          Egal ob bei der Gestaltung einer neuen Website oder der Verbesserung einer bestehenden,
-          die technische SEO steht im Zentrum unserer Arbeit. Bei neuen Projekten sorgen wir von
-          Anfang an für eine optimale Suchmaschinenfreundlichkeit. Bei der Optimierung bestehender
-          Websites verbessern wir die technische Grundlage, um die Sichtbarkeit in den
-          Suchergebnissen zu erhöhen.
+          {{ $t('seo.section5.row2.paragraph') }}
         </p>
       </div>
     </section>
@@ -448,13 +397,10 @@
     <section class="py-16 px-6 overflow-hidden">
       <div class="flex flex-col items-center gap-6">
         <h1 class="italic font-semibold text-[2rem] text-center px-4">
-          Keyword‑ und Wettbewerbsanalyse
+          {{ $t('seo.section5.row3.heading') }}
         </h1>
         <p class="md:w-[500px] text-[0.9rem] font-semilight leading-relaxed text-center px-4">
-          Im nächsten Schritt identifizieren wir die Schlüsselbegriffe, welche die Zielgruppe zur
-          Suche nach relevanten Produkten oder Dienstleistungen verwendet. Parallel dazu analysieren
-          wir die Wettbewerbssituation, um die Marktposition zu verstehen und wirksame Strategien
-          zur Verbesserung der Platzierung zu entwickeln.
+          {{ $t('seo.section5.row3.paragraph') }}
         </p>
       </div>
     </section>
@@ -462,12 +408,11 @@
     <!-- Section 7 -->
     <section class="py-16 px-6 overflow-hidden">
       <div class="flex flex-col items-center gap-6">
-        <h1 class="italic font-semibold text-[2rem] text-center px-4"> Strategieentwicklung </h1>
+        <h1 class="italic font-semibold text-[2rem] text-center px-4">
+          {{ $t('seo.section6.row1.heading') }}</h1
+        >
         <p class="md:w-[500px] text-[0.9rem] font-semilight leading-relaxed text-center px-4">
-          Basierend auf unseren umfangreichen Analysen erstellen wir eine maßgeschneiderte
-          SEO‑Strategie, die genau auf die Ziele und das Publikum des Unternehmens zugeschnitten
-          ist. In diesem Stadium legen wir Ziele fest, planen Maßnahmen und definieren KPIs, um den
-          Erfolg unserer Bemühungen messbar zu machen.
+          {{ $t('seo.section6.row1.paragraph') }}
         </p>
       </div>
     </section>
@@ -475,12 +420,11 @@
     <!-- Section 8 -->
     <section class="py-16 px-6 overflow-hidden">
       <div class="flex flex-col items-center gap-6">
-        <h1 class="italic font-semibold text-[2rem] text-center px-4"> Umsetzung </h1>
+        <h1 class="italic font-semibold text-[2rem] text-center px-4">
+          {{ $t('seo.section6.row2.heading') }}
+        </h1>
         <p class="md:w-[500px] text-[0.9rem] font-semilight leading-relaxed text-center px-4">
-          Mit der entwickelten Strategie geht es in die Umsetzungsphase. Dabei umfasst unsere Arbeit
-          sowohl technische Optimierungen an der Website als auch die Erstellung von qualitativ
-          hochwertigem Content, der sowohl die Zielgruppe anspricht als auch von den Suchmaschinen
-          positiv bewertet wird.
+          {{ $t('seo.section6.row2.paragraph') }}
         </p>
       </div>
     </section>
@@ -489,17 +433,10 @@
     <section class="py-16 px-6 flex flex-col md:flex-row gap-10 items-center overflow-hidden">
       <div class="flex flex-col items-center gap-6">
         <h1 class="italic font-semibold text-[2rem] text-center px-4">
-          Monitoring &amp;
-          <span class="bg-gradient-to-r to-[#01A3FF] from-[#25CDDA] bg-clip-text text-transparent">
-            Optimierung
-          </span>
+          {{ $t('seo.section6.row3.heading') }}
         </h1>
         <p class="w-[400px] text-[0.9rem] font-semilight leading-relaxed text-center px-4">
-          Da SEO ein dynamischer Prozess ist, überwachen wir ständig die Performance der Website,
-          analysieren die gewonnenen Daten und nehmen bei Bedarf Anpassungen vor. Durch unser
-          kontinuierliches Monitoring und die gezielte Optimierung stellen wir sicher, dass die
-          Website stets den aktuellen SEO‑Best Practices entspricht und bestmögliche Ergebnisse
-          liefert.
+          {{ $t('seo.section6.row3.paragraph') }}
         </p>
       </div>
       <div>
@@ -514,9 +451,7 @@
     <!-- Section 10: Final Note -->
     <section class="py-16 flex justify-center overflow-hidden">
       <p class="md:w-[500px] text-[0.9rem] font-semilight leading-relaxed text-center px-4">
-        Durch die Kombination aus Datenanalyse, technischer Expertise und kreativer Arbeit streben
-        wir an, die Online‑Präsenz unserer Kunden zu verbessern und deren Geschäftsziele zu
-        erreichen.
+        {{ $t('seo.section7.paragraph') }}
       </p>
     </section>
   </div>

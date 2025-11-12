@@ -25,15 +25,14 @@
                 <span
                   class="text-transparent bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE]"
                 >
-                  Entdecke<br />Neue Horizonte
+                  <span>{{ $t('hero.title') }}</span>
                 </span>
               </h1>
 
               <p
                 class="mt-[1.5rem] font-light leading-relaxed text-[1rem] sm:text-[1.125rem] md:text-[1rem] lg:text-[0.95rem] xl:text-[1.5rem] 2xl:text-[1.25rem] w-full xl:w-[34.875rem]"
               >
-                Kreatives Webdesign, meisterhafte Softwareentwicklung und bahnbrechende
-                AI-Technologien, die dein Geschäft auf die Überholspur bringen.
+                {{ $t('hero.subtitle') }}
               </p>
 
               <div
@@ -45,7 +44,7 @@
                   <span
                     class="bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] text-transparent bg-clip-text duration-300"
                   >
-                    Erzähl mir mehr.
+                    {{ $t('hero.button') }}
                   </span>
                 </Button>
               </div>
@@ -82,15 +81,13 @@
                 <h1
                   class="text-[1.25rem] sm:text-[2rem] 2xl:text-[3.45rem] lg:text-[3rem] font-bold mb-[0.5rem] leading-snug"
                 >
-                  KI-gesteuerte Geschäftslösungen
+                  {{ $t('citySection.title') }}
                 </h1>
                 <div class="mx-auto grid">
                   <p
                     class="text-[0.95rem] 2xl:text-[1.2rem] sm:text-[1.05rem] md:text-[1rem] xl:max-w-[50.25rem] lg:w-[800px] lg:text-[1rem]"
                   >
-                    Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz (KI), Großen
-                    Sprachmodellen (LLMs) und Maschinellem Lernen (ML). Diese Technologien verändern
-                    die Art und Weise, wie wir arbeiten und wachsen.
+                    {{ $t('citySection.subtitle') }}
                   </p>
 
                   <NuxtLink to="/services/aiconsulting">
@@ -103,7 +100,7 @@
                         <span
                           class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text duration-300"
                         >
-                          Prozessoptimierung durch KI
+                          {{ $t('citySection.button') }}
                         </span>
                       </Button>
                     </div>
@@ -129,15 +126,10 @@
           <h1
             class="font-semibold italic text-[1.75rem] sm:text-[2.125rem] md:text-[2rem] lg:text-[2.625rem] leading-tight"
           >
-            Innovation <br />
-            durch Design und Technologie
+            {{ $t('innovationSection.title') }}
           </h1>
           <p class="font-light 2xl:text-[1.2rem] lg:text-[1rem] sm:text-[1.0625rem] md:text-[1rem]">
-            In einer erfolgreichen Web-Lösung verschmelzen Design und Entwicklung zu einem
-            harmonischen Ganzen. Die nahtlose Integration von Frontend und Backend, ergänzt durch
-            den Einsatz modernster Technologien wie Künstlicher Intelligenz, Großen Sprachmodellen
-            (LLM) und Machine Learning, ermöglicht die Schaffung von Produkten, die den Horizont des
-            Möglichen erweitern und das Nutzererlebnis auf ein ungekanntes Niveau heben.
+            {{ $t('innovationSection.subtitle') }}
           </p>
 
           <div
@@ -149,7 +141,7 @@
               <span
                 class="bg-gradient-to-r from-[#FFA901] to-[#FFE501] text-transparent bg-clip-text duration-300"
               >
-                Schaffe Außergewöhnliches
+                {{ $t('innovationSection.button') }}
               </span>
             </Button>
           </div>
@@ -185,14 +177,12 @@
               <h2
                 class="font-bold italic text-white leading-tight text-[2.25rem] sm:text-[2.5rem] md:text-[2rem] lg:text-[2.2rem] 2xl:text-[3rem] xl:text-[2.7rem]"
               >
-                Sei der Wandel, den du in deiner Branche sehen möchtest.
+                {{ $t('ctaSection.title') }}
               </h2>
               <p
                 class="font-light 2xl:text-[1.2rem] md:text-[1rem] lg:text-[1.2rem] xl:text-[1.24rem]"
               >
-                Wir transformieren Daten in Einblicke, Herausforderungen in Chancen. Mit unserer
-                Strategie werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften.
-                Lass die Zukunft nicht warten.
+                {{ $t('ctaSection.subtitle') }}
               </p>
 
               <NuxtLink to="/services/aiconsulting">
@@ -205,7 +195,7 @@
                     <span
                       class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text duration-300"
                     >
-                      KI-Beratung
+                      {{ $t('ctaSection.button') }}
                     </span>
                   </Button>
                 </div>
@@ -242,13 +232,12 @@
             <span
               class="text-transparent bg-clip-text bg-gradient-to-r from-[#5CCEFF] via-[#B75CFF] to-[#FF5CDE] [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
             >
-              Entdecke<br />Neue Horizonte
+              {{ $t('hero.title') }}
             </span>
           </h1>
 
           <p class="max-w-[300px] text-[0.9rem] font-light leading-relaxed">
-            Kreatives Webdesign, meisterhafte Softwareentwicklung und bahnbrechende AI-Technologien,
-            die dein Geschäft auf die Überholspur bringen.
+            {{ $t('hero.subtitle') }}
           </p>
 
           <div
@@ -260,7 +249,7 @@
               <span
                 class="bg-gradient-to-r from-[#3BB1FF] via-[#6BE0FF] to-[#3BB1FF] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
               >
-                Erzähl mir mehr.
+                {{ $t('hero.button') }}
               </span>
             </Button>
           </div>
@@ -278,11 +267,9 @@
         <div
           class="absolute inset-0 flex flex-col justify-center items-center text-center px-5 text-white bg-black/30 backdrop-blur-[1px]"
         >
-          <h1 class="text-[2rem] font-bold leading-snug mb-2"> KI-gesteuerte Geschäftslösungen </h1>
+          <h1 class="text-[2rem] font-bold leading-snug mb-2"> {{ $t('citySection.title') }}</h1>
           <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
-            Die Zukunft des Geschäfts liegt in der Künstlichen Intelligenz (KI), Großen
-            Sprachmodellen (LLMs) und Maschinellem Lernen (ML). Diese Technologien verändern die Art
-            und Weise, wie wir arbeiten und wachsen.
+            {{ $t('citySection.subtitle') }}
           </p>
 
           <NuxtLink to="/services/aiconsulting">
@@ -295,7 +282,7 @@
                 <span
                   class="bg-gradient-to-r from-[#3BE8E8] to-[#AFE639] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
                 >
-                  Prozessoptimierung durch KI
+                  {{ $t('citySection.button') }}
                 </span>
               </Button>
             </div>
@@ -307,13 +294,10 @@
       <div class="h-[45rem] flex items-center px-5">
         <div class="flex flex-col items-center text-center gap-6 max-w-full">
           <h1 class="text-[2rem] font-bold italic leading-snug">
-            Innovation <br />durch Design und Technologie
+            {{ $t('innovationSection.title') }}
           </h1>
           <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
-            In einer erfolgreichen Web-Lösung verschmelzen Design und Entwicklung zu einem
-            harmonischen Ganzen. Die nahtlose Integration von Frontend und Backend, ergänzt durch
-            modernste Technologien wie KI, LLMs und Machine Learning, schafft Produkte, die den
-            Horizont des Möglichen erweitern.
+            {{ $t('innovationSection.subtitle') }}
           </p>
           <div
             class="inline-block transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#FFE501] to-[#FFA901]"
@@ -324,7 +308,7 @@
               <span
                 class="bg-gradient-to-r from-[#FFA901] to-[#FFE501] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
               >
-                Schaffe Außergewöhnliches
+                {{ $t('innovationSection.button') }}
               </span>
             </Button>
           </div>
@@ -336,12 +320,10 @@
       <div class="h-[30rem] flex items-center px-5">
         <div class="relative z-10 flex flex-col items-center text-center gap-6 max-w-full">
           <h2 class="text-[2rem] font-bold italic leading-snug">
-            Sei der Wandel, den du in deiner Branche sehen möchtest.
+            {{ $t('ctaSection.title') }}
           </h2>
           <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
-            Wir transformieren Daten in Einblicke, Herausforderungen in Chancen. Mit unserer
-            Strategie werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften. Lass
-            die Zukunft nicht warten.
+            {{ $t('ctaSection.subtitle') }}
           </p>
           <NuxtLink to="/services/aiconsulting">
             <div
@@ -353,7 +335,7 @@
                 <span
                   class="bg-gradient-to-r from-[#AFE639] to-[#3BE8E8] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
                 >
-                  KI-Beratung
+                  {{ $t('ctaSection.button') }}
                 </span>
               </Button>
             </div>
