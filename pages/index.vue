@@ -1,5 +1,5 @@
 <script script setup>
-  import { ref, computed } from 'vue'
+  import { ref, onMounted, onBeforeUnmount } from 'vue'
 
   import Navbar from '@organisms/Navbar.vue'
   import SiteFooter from '@organisms/SiteFooter.vue'
@@ -11,7 +11,20 @@
   import Serviceshero from '@organisms/Serviceshero.vue'
 
 
-  const isMobileView = computed(() => window.innerWidth < 640)
+  const isMobileView = ref(false)
+  const updateIsMobileView = () => {
+    if (typeof window === 'undefined') return
+    isMobileView.value = window.innerWidth < 640
+  }
+
+  onMounted(() => {
+    updateIsMobileView()
+    window.addEventListener('resize', updateIsMobileView)
+  })
+
+  onBeforeUnmount(() => {
+    window.removeEventListener('resize', updateIsMobileView)
+  })
 </script>
 
 <template>
