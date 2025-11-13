@@ -1,5 +1,5 @@
 <script script setup>
-  import { ref } from 'vue'
+  import { ref, computed } from 'vue'
 
   import Navbar from '@organisms/Navbar.vue'
   import SiteFooter from '@organisms/SiteFooter.vue'
@@ -9,6 +9,9 @@
   import ScrollToTopButton from '@organisms/Scrolltotop.vue'
   import HerosectionCopy2 from '@organisms/Herosection copy 2.vue'
   import Serviceshero from '@organisms/Serviceshero.vue'
+
+
+  const isMobileView = computed(() => window.innerWidth < 640)
 </script>
 
 <template>
@@ -30,7 +33,7 @@
       />
 
       <HerosectionCopy2 />
-      <div class="hidden lg:block">
+      <div v-if="!isMobileView">
         <Serviceshero />
         <Servicessecond />
         <ServicesSlider />
