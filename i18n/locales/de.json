@@ -26,7 +26,7 @@
       "part2": " bis zum letzten ",
       "highlight2": "Pixel"
     },
-    "description": "Du hast eine Vision und wir die Leidenschaft, sie zum Leben zu erwecken. Eine umfassende Website‑Strategie verwandelt Deine kreativen Vorstellungen in einen beeindruckenden digitalen Auftritt. Für ein ästhetisches Design und messbare Ergebnisse.",
+    "description": "Du hast eine Vision und wir die Leidenschaft, sie zum Leben zu erwecken. Eine umfassende Website-Strategie verwandelt Deine kreativen Vorstellungen in einen beeindruckende digitalen Auftritt. Für ein ästhetisches Design und messbare Ergebnisse.",
     "button": "Termin vereinbaren"
   },
   "servicesSecond": {
@@ -59,7 +59,7 @@
   },
   "section1": {
     "title": "Quellen der Inspiration",
-    "text": "Hinter jeder beeindruckenden Website steht eine kraftvolle Idee. In der Anfangsphase werden Visionen und Ziele ausgelotet und so der Grundstein für ein kreatives und zielführendes Webkonzept gelegt."
+    "text": "Hinter jeder beeindruckenden Website steht eine kraftvolle Idee. In der Anfangsphase werden die Visionen und Ziele ausgelotet und so der Grundstein für ein kreatives und zielführendes Webkonzept gelegt."
   },
   "section2": {
     "title": "Routenplanung",
@@ -71,15 +71,15 @@
   },
   "section4": {
     "title": "Qualität im Fokus",
-    "text": "Durch ausgiebige Tests wird sichergestellt, dass deine Website in allen Bereichen – von der Nutzererfahrung bis hin zur Performance und Darstellung auf verschiedenen Endgeräten – reibungslos funktioniert. Gezielte Optimierungen gewährleisten hierbei die bestmögliche Umsetzung."
+    "text": "Durch ausgiebige Tests wird sichergestellt, dass Deine Website in allen Bereichen - von der Nutzererfahrung bis hin zur Performance und Darstellung auf verschiedenen Endgeräten - reibungslos funktioniert. Gezielte Optimierungen gewährleisten hierbei die bestmögliche Umsetzung."
   },
   "section5": {
     "title": "Live-Schaltung [WIP]",
-    "text": "Nach sorgfältiger Vorbereitung und Optimierung geht sie live und nimmt ihren Platz in der digitalen Landschaft ein. Von diesem Moment an beginnt sie, Nutzer zu begeistern, wichtige Verbindungen zu knüpfen und deine Botschaft effektiv zu kommunizieren."
+    "text": "Nach sorgfältiger Vorbereitung und Optimierung geht sie live und nimmt ihren Platz in der digitalen Landschaft ein. Von diesem Moment an beginnt sie, die Nutzer zu begeistern, wichtige Verbindungen zu knüpfen und Deine Botschaft effektiv zu kommunizieren."
   },
   "section6": {
     "title": "Perfektion durch Iteration",
-    "text": "Mit der erfolgreichen Veröffentlichung muss die Reise nicht enden. Kontinuierliche Optimierungen und datenbasierte Analysen sorgen dafür, dass deine Website stets eine hohe Sichtbarkeit und Leistungsfähigkeit aufweist, um ihr Wachstum weiter voranzutreiben."
+    "text": "Mit der erfolgreichen Veröffentlichung muss die Reise nicht enden. Kontinuierliche Optimierungen und datenbasierte Analysen können dafür sorgen, dass Deine Website stets eine hohe Sichtbarkeit und Leistungsfähigkeit aufweist, um ihr Wachstum weiter voranzutreiben."
   },
   "contact": {
     "title": "Kontaktiere uns",
@@ -95,7 +95,7 @@
   },
   "aihero": {
     "title": "Der Wegweiser zur KI-Revolution: Strategische Beratung für dein Unternehmen",
-    "description": "Die KI-Revolution steht vor der Tür. Bist du bereit, Künstliche Intelligenz zu deinem Vorteil zu nutzen? Mit uns wird die KI-Integration zur nahtlosen Reise – von der ersten Idee bis zur vollen Umsetzung. Starte jetzt. Sei innovativ. Sei effizient. Sei revolutionär.",
+    "description": "Die KI-Revolution steht vor der Tür. Bist du bereit, Künstliche Intelligenz zu deinem Vorteil zu nutzen? Mit uns wird die KI-Integration zur nahtlosen Reise, von der ersten Idee bis zur vollen Umsetzung. Starte jetzt. Sei innovativ. Sei effizient. Sei revolutionär.",
     "button": "KI-Beratung starten."
   },
   "hybrid": {
@@ -219,20 +219,20 @@
     },
     "cards": {
       "1": {
-        "title": "1. Analyse & Strategie",
-        "desc": "Im ersten Schritt analysieren wir Ihre Geschäftsziele und Zielgruppen. Durch Marktanalysen und Wettbewerbsrecherche entwickeln wir die effektivste E-Commerce-Strategie für Ihr Unternehmen."
+        "title": "1. Entdeckung & Strategie",
+        "desc": "Der erste Schritt in unserem E-Commerce-Strategieprozess besteht darin, Ihre Geschäftsziele und Ihre Zielgruppe genau zu verstehen. Dazu gehören Marktforschung und die Analyse Ihrer Wettbewerber, um die effektivste E-Commerce-Strategie für Ihr Unternehmen zu ermitteln."
       },
       "2": {
         "title": "2. Design & Entwicklung",
-        "desc": "Auf Basis der Strategie gestalten und entwickeln wir Ihren Online-Shop – benutzerfreundlich, modern und mit allen wichtigen E-Commerce-Funktionen ausgestattet."
+        "desc": "Sobald wir eine individuelle E-Commerce-Strategie für Ihr Unternehmen entwickelt haben, beginnt unser Team mit der Gestaltung und Entwicklung Ihres Online-Shops. Dies umfasst die Erstellung einer optisch ansprechenden und benutzerfreundlichen Website sowie die Implementierung der notwendigen E-Commerce-Tools und -Technologien."
       },
       "3": {
-        "title": "3. Testen & Start",
-        "desc": "Vor dem Launch führen wir umfangreiche Tests durch, um eine optimale Funktionalität sicherzustellen. Danach begleiten wir Sie beim erfolgreichen Start in den digitalen Handel."
+        "title": "3. Testen & Einführung",
+        "desc": "Vor dem Start Ihres Onlineshops führen wir umfassende Tests durch, um die einwandfreie Funktion aller Komponenten sicherzustellen. Dazu gehören Tests der Benutzerfreundlichkeit, der Zahlungsprozesse und der allgemeinen Funktionalität Ihrer Website. Sobald wir uns vergewissert haben, dass Ihr Onlineshop startbereit ist, unterstützen wir Sie beim erfolgreichen Start Ihres Unternehmens in der digitalen Welt."
       },
       "4": {
-        "title": "4. Optimierung & Wachstum",
-        "desc": "Nach dem Launch überwachen und optimieren wir Ihren Shop kontinuierlich und stehen Ihnen mit Support und Weiterentwicklung zur Seite."
+        "title": "4. Auf Wachstum optimieren.",
+        "desc": "Unsere Arbeit endet nicht mit dem Launch Ihres Onlineshops. Wir überwachen und analysieren weiterhin die Performance Ihrer E-Commerce-Plattform und nehmen bei Bedarf Anpassungen und Optimierungen vor. Darüber hinaus bieten wir fortlaufenden Support und Wartung, um den reibungslosen und effektiven Betrieb Ihres Onlineshops sicherzustellen."
       }
     }
   },
