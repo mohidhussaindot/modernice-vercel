@@ -50,12 +50,10 @@
               </div>
             </div>
 
-           
-              <div
-                class="float-moon md:w-289 2xl:w-[1200px] 2xl:h-[900px] md:h-[600px]"
-                v-html="moonSVGRaw"
-              ></div>
-           
+            <div
+              class="float-moon md:w-289 2xl:w-[1200px] 2xl:h-[900px] md:h-[600px]"
+              v-html="moonSVGRaw"
+            ></div>
           </div>
         </div>
       </div>
@@ -206,7 +204,12 @@
               class="absolute md:w-[350.5314px] md:pt-10 2xl:pt-4 xl:pt-2 xl:w-[534.5314px] right-0 top-0 pointer-events-none z-10 spaceship-wrapper"
             >
               <ClientOnly>
-                <img src="/first-three-sect-img/rocket.png" height="800" width="1000" loading="lazy" />
+                <img
+                  src="/first-three-sect-img/rocket.png"
+                  height="800"
+                  width="1000"
+                  loading="lazy"
+                />
               </ClientOnly>
             </div>
           </div>
