@@ -1,4 +1,4 @@
-<script script setup>
+<script setup>
   import { ref, onMounted, onBeforeUnmount } from 'vue'
 
   import Navbar from '@organisms/Navbar.vue'
@@ -9,7 +9,6 @@
   import ScrollToTopButton from '@organisms/Scrolltotop.vue'
   import HerosectionCopy2 from '@organisms/Herosection copy 2.vue'
   import Serviceshero from '@organisms/Serviceshero.vue'
-
 
   const isMobileView = ref(false)
   const updateIsMobileView = () => {

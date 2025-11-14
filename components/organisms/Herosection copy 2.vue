@@ -50,12 +50,10 @@
               </div>
             </div>
 
-            <ClientOnly>
-              <div
-                class="float-moon md:w-289 2xl:w-[1200px] 2xl:h-[900px] md:h-[600px]"
-                v-html="moonSVGRaw"
-              ></div>
-            </ClientOnly>
+            <div
+              class="float-moon md:w-289 2xl:w-[1200px] 2xl:h-[900px] md:h-[600px]"
+              v-html="moonSVGRaw"
+            ></div>
           </div>
         </div>
       </div>
