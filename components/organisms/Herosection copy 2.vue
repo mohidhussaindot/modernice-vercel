@@ -50,12 +50,12 @@
               </div>
             </div>
 
-            <ClientOnly>
+           
               <div
                 class="float-moon md:w-289 2xl:w-[1200px] 2xl:h-[900px] md:h-[600px]"
                 v-html="moonSVGRaw"
               ></div>
-            </ClientOnly>
+           
           </div>
         </div>
       </div>
@@ -71,7 +71,6 @@
           <div
             ref="cityImage"
             class="relative w-full xl:h-[61rem] h-[50rem] bg-no-repeat bg-contain bg-center bg-[url('/first-three-sect-img/city.png')] transition-opacity duration-1000 ease-in-out image-fade"
-            style="will-change: transform"
           >
             <div class="absolute inset-0 grid place-items-center">
               <div
@@ -152,6 +151,7 @@
             src="/first-three-sect-img/rocketmoon.png"
             alt="Rocket Moon"
             class="xl:w-[650.4355px] 2xl:w-[750.4355px] w-full h-full right-left object-contain select-none pointer-events-none"
+            loading="lazy"
           />
         </div>
       </div>
@@ -204,10 +204,9 @@
 
             <div
               class="absolute md:w-[350.5314px] md:pt-10 2xl:pt-4 xl:pt-2 xl:w-[534.5314px] right-0 top-0 pointer-events-none z-10 spaceship-wrapper"
-              style="will-change: transform"
             >
               <ClientOnly>
-                <img src="/first-three-sect-img/rocket.png" height="800" width="1000" />
+                <img src="/first-three-sect-img/rocket.png" height="800" width="1000" loading="lazy" />
               </ClientOnly>
             </div>
           </div>
@@ -222,8 +221,9 @@
         <ClientOnly>
           <img
             alt="rocketmoonhero"
-            class="absolute right-0 left-10 top-12 w-[150%] max-w-none will-change-transform"
+            class="absolute right-0 left-10 top-12 w-[150%] max-w-none"
             src="@atoms/svgs/rocket-moon-hero.svg"
+            loading="lazy"
           />
         </ClientOnly>
 
@@ -260,12 +260,13 @@
       <div class="relative mt-54 h-[40rem] bg-black overflow-hidden">
         <img
           src="/first-three-sect-img/city.png"
-          class="w-full h-full object-cover will-change-transform"
+          class="w-full h-full object-cover"
           alt="City"
+          loading="lazy"
         />
 
         <div
-          class="absolute inset-0 flex flex-col justify-center items-center text-center px-5 text-white bg-black/30 backdrop-blur-[1px]"
+          class="absolute inset-0 flex flex-col justify-center items-center text-center px-5 text-white bg-black/30 backdrop-blur-0 md:backdrop-blur-[1px]"
         >
           <h1 class="text-[2rem] font-bold leading-snug mb-2"> {{ $t('citySection.title') }}</h1>
           <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
@@ -312,7 +313,7 @@
               </span>
             </Button>
           </div>
-          <img src="/first-three-sect-img/rocketmoon.png" alt="Rocket Moon" />
+          <img src="/first-three-sect-img/rocketmoon.png" alt="Rocket Moon" loading="lazy" />
         </div>
       </div>
 
@@ -386,7 +387,6 @@
   import { gsap } from 'gsap'
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-  // ✅ Register ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger)
 
   const route = useRoute()
@@ -411,6 +411,8 @@
 
   // ✅ IntersectionObserver helper
   let observers = []
+  let activeTriggers = []
+  let resizeRaf = null
   function observeElement(el, callback, options = { threshold: 0.1 }) {
     if (!el) return
     const observer = new IntersectionObserver(([entry]) => callback(entry.isIntersecting), options)
@@ -422,12 +424,37 @@
   function localCleanup() {
     observers.forEach(obs => obs.disconnect())
     observers = []
-    ScrollTrigger.killAll() // Kills GSAP ScrollTriggers
+    activeTriggers.forEach(trigger => trigger.kill())
+    activeTriggers = []
+    if (typeof window !== 'undefined' && resizeRaf) {
+      window.cancelAnimationFrame(resizeRaf)
+      resizeRaf = null
+    }
+    if (cityImage.value) {
+      gsap.set(cityImage.value, { clearProps: 'will-change,transform' })
+    }
+    if (ctaSectionRef.value) {
+      const spaceship = ctaSectionRef.value.querySelector('.spaceship-wrapper')
+      if (spaceship) {
+        gsap.set(spaceship, { clearProps: 'will-change,transform,x,y' })
+      }
+    }
   }
 
   // ✅ Main animation logic
   function runGSAPAnimations() {
     localCleanup()
+
+    const isDesktopView =
+      typeof window !== 'undefined' ? window.matchMedia('(min-width: 768px)').matches : true
+
+    if (!isDesktopView) {
+      isFirstPartVisible.value = true
+      isCityVisible.value = true
+      isSectionVisible.value = true
+      isCTAVisible.value = true
+      return
+    }
 
     const vectorEl =
       stripesDiv.value?.querySelector('#Vector\\ 343') ||
@@ -444,41 +471,49 @@
       threshold: 0.3
     })
 
+    gsap.set(cityImage.value, { willChange: 'transform' })
+
     // ✅ Parallax scale effect on city image
-    ScrollTrigger.create({
-      id: 'hero-city-scale',
-      trigger: cityImage.value,
-      start: 'top bottom',
-      end: 'top 40%',
-      scrub: true,
-      animation: gsap.fromTo(cityImage.value, { scale: 0.86 }, { scale: 1, ease: 'power2.out' })
-    })
+    activeTriggers.push(
+      ScrollTrigger.create({
+        id: 'hero-city-scale',
+        trigger: cityImage.value,
+        start: 'top bottom',
+        end: 'top 40%',
+        scrub: true,
+        animation: gsap.fromTo(cityImage.value, { scale: 0.86 }, { scale: 1, ease: 'power2.out' })
+      })
+    )
 
     // ✅ Fade text on scroll
-    ScrollTrigger.create({
-      id: 'hero-text-fade',
-      trigger: cityImage.value,
-      start: 'top 23%',
-      toggleActions: 'play none none reverse',
-      animation: gsap.fromTo(
-        textContent.value,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }
-      )
-    })
+    activeTriggers.push(
+      ScrollTrigger.create({
+        id: 'hero-text-fade',
+        trigger: cityImage.value,
+        start: 'top 23%',
+        toggleActions: 'play none none reverse',
+        animation: gsap.fromTo(
+          textContent.value,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }
+        )
+      })
+    )
 
     // ✅ Fade out city as it scrolls away
-    ScrollTrigger.create({
-      id: 'hero-city-fade',
-      trigger: cityRef.value,
-      start: 'bottom 60%',
-      end: 'bottom 100%',
-      scrub: true,
-      animation: gsap.to(cityRef.value, {
-        opacity: 0,
-        ease: 'power2.out'
+    activeTriggers.push(
+      ScrollTrigger.create({
+        id: 'hero-city-fade',
+        trigger: cityRef.value,
+        start: 'bottom 60%',
+        end: 'bottom 100%',
+        scrub: true,
+        animation: gsap.to(cityRef.value, {
+          opacity: 0,
+          ease: 'power2.out'
+        })
       })
-    })
+    )
 
     // ✅ Observe section visibility
     observeElement(sectionRef.value, visible => (isSectionVisible.value = visible), {
@@ -486,25 +521,29 @@
       rootMargin: '-100px 0px -100px 0px'
     })
 
-    // ✅ Spaceship scroll movement
     if (ctaSectionRef.value) {
       const spaceship = ctaSectionRef.value.querySelector('.spaceship-wrapper')
       if (spaceship) {
         gsap.set(spaceship, { opacity: 1, x: 0, y: 0 })
 
-        ScrollTrigger.create({
-          id: 'hero-spaceship',
-          trigger: ctaSectionRef.value,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-          onUpdate: self => {
-            gsap.set(spaceship, {
-              x: -200 * self.progress,
-              y: 100 * self.progress
-            })
-          }
-        })
+        gsap.set(spaceship, { willChange: 'transform' })
+
+        // ✅ Spaceship scroll movement
+        activeTriggers.push(
+          ScrollTrigger.create({
+            id: 'hero-spaceship',
+            trigger: ctaSectionRef.value,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+            onUpdate: self => {
+              gsap.set(spaceship, {
+                x: -200 * self.progress,
+                y: 100 * self.progress
+              })
+            }
+          })
+        )
       }
     }
   }
@@ -512,6 +551,9 @@
   onMounted(async () => {
     await nextTick()
     runGSAPAnimations()
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize)
+    }
   })
 
   watch(
@@ -525,7 +567,20 @@
     }
   )
 
-  onUnmounted(() => localCleanup())
+  function handleResize() {
+    if (typeof window === 'undefined') return
+    if (resizeRaf) {
+      window.cancelAnimationFrame(resizeRaf)
+    }
+    resizeRaf = window.requestAnimationFrame(() => runGSAPAnimations())
+  }
+
+  onUnmounted(() => {
+    localCleanup()
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', handleResize)
+    }
+  })
 </script>
 
 <style scoped>
