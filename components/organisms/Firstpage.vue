@@ -255,7 +255,7 @@
       </div>
 
       <!-- SECTION 2 -->
-      <div class="relative mt-54 h-[40rem] bg-black overflow-hidden">
+      <div class="relative mt-70 h-[30rem] bg-[#020111] overflow-hidden">
         <img
           src="/first-three-sect-img/city.png"
           class="w-full h-full object-cover"
@@ -264,7 +264,7 @@
         />
 
         <div
-          class="absolute inset-0 flex flex-col justify-center items-center text-center px-5 text-white bg-black/30 backdrop-blur-0 md:backdrop-blur-[1px]"
+          class="absolute inset-0 flex flex-col  justify-center text-center px-5 text-white bg-black/30 backdrop-blur-0 md:backdrop-blur-[1px]"
         >
           <h1 class="text-[2rem] font-bold leading-snug mb-2"> {{ $t('citySection.title') }}</h1>
           <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
@@ -290,7 +290,8 @@
       </div>
 
       <!-- SECTION 3 -->
-      <div class="h-[45rem] flex items-center px-5">
+      <div class="h-[40rem]  items-center px-5">
+        <img src="/first-three-sect-img/rocket.png" alt="rocket" ></img>
         <div class="flex flex-col items-center text-center gap-6 max-w-full">
           <h1 class="text-[2rem] font-bold italic leading-snug">
             {{ $t('innovationSection.title') }}
@@ -298,6 +299,7 @@
           <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
             {{ $t('innovationSection.subtitle') }}
           </p>
+          
           <div
             class="inline-block transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#FFE501] to-[#FFA901]"
           >
@@ -311,12 +313,14 @@
               </span>
             </Button>
           </div>
-          <img src="/first-three-sect-img/rocketmoon.png" alt="Rocket Moon" loading="lazy" />
+         
         </div>
+        
       </div>
 
       <!-- SECTION 4 -->
-      <div class="h-[30rem] flex items-center px-5">
+      <div class="h-[45rem]  items-center px-5">
+         <img src="/first-three-sect-img/rocketmoon.png" alt="Rocket Moon" loading="lazy" />
         <div class="relative z-10 flex flex-col items-center text-center gap-6 max-w-full">
           <h2 class="text-[2rem] font-bold italic leading-snug">
             {{ $t('ctaSection.title') }}
@@ -342,29 +346,36 @@
         </div>
       </div>
 
-      <!-- FINAL CTA -->
-      <div class="h-[20rem] flex items-center px-5">
-        <div class="flex flex-col items-center text-center gap-6 max-w-full">
-          <h1 class="text-[2rem] font-bold italic leading-snug">
-            Ready to take your Online Presence to the next level?
-          </h1>
-          <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
-            We'll work with you to plan ...
-          </p>
-          <div
-            class="inline-block transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#38EF61] to-[#44E5C8]"
-          >
-            <Button
-              class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
-            >
-              <span
-                class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
-              >
-                Get a Website Strategy
-              </span>
-            </Button>
-          </div>
-        </div>
+  <!-- FINAL CTA -->
+<div class="h-[20rem] flex items-center px-5">
+  <div class="flex flex-col items-center text-center gap-6 max-w-full">
+
+    <h1 class="text-[2rem] font-bold italic leading-snug">
+      {{ $t('MobileEnd.title') }}
+    </h1>
+
+    <p class="max-w-3xl text-[0.9rem] font-light leading-relaxed">
+      {{ $t('MobileEnd.Description') }}
+    </p>
+    <div
+      class="inline-block transition-transform duration-300 active:scale-105 w-fit rounded-[0.625rem] p-[0.125rem] bg-gradient-to-r from-[#38EF61] to-[#44E5C8']"
+    >
+<NuxtLink to="/services/website-strategy">
+
+      <Button
+        class="px-[1rem] py-[0.425rem] text-[0.9rem] rounded-[0.625rem] bg-black bg-opacity-90 text-white"
+      >
+        <span
+          class="bg-gradient-to-r from-[#38EF61] to-[#44E5C8] text-transparent bg-clip-text [-webkit-text-fill-color:transparent] [-webkit-background-clip:text]"
+        >
+          {{ $t('MobileEnd.Button') }}
+        </span>
+      </Button>
+      </NuxtLink>
+    </div>
+
+  </div>
+
       </div>
     </section>
   </div>

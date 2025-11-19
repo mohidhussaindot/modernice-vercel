@@ -19,6 +19,12 @@
     "subtitle": "Wir transformieren Daten in Einblicke, Herausforderungen in Chancen. Mit unserer Strategie werden Künstliche Intelligenz und deine Ambitionen zu treibenden Kräften. Lass die Zukunft nicht warten.",
     "button": "KI-Beratung"
   },
+  "MobileEnd": {
+  "title": "Bereit, Ihre Online-Präsenz auf das nächste Level zu bringen?",
+  "Description": "Wir arbeiten mit Ihnen zusammen, um zu planen",
+  "Button": "Website-Strategie"
+}
+,
   "serviceshero": {
     "headline": {
       "part1": "Von der ersten ",

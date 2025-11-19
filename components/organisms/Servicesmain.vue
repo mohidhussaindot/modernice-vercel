@@ -259,7 +259,7 @@
   <div class="py-[4.5rem] px-5 flex items-center text-center">
     <div class="flex flex-col">
       <h1 class="text-[2rem] italic font-semibold">
-        <span class="text-[#00FFB3]">{{ $t('section2.title') }}</span>
+        <span class="">{{ $t('section2.title') }}</span>
       </h1>
       <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
         {{ $t('section2.text') }}
@@ -284,7 +284,7 @@
       />
     </div>
     <div class="flex flex-col">
-      <h1 class="text-[2rem] italic font-semibold">
+      <h1 class="text-[#00FFB3] text-[2rem] italic font-semibold">
         {{ $t('section3.title') }}
       </h1>
       <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
@@ -325,7 +325,7 @@
       />
     </div>
     <div class="flex flex-col z-10">
-      <h1 class="text-[2rem] italic font-semibold">
+      <h1 class="text-[#00FFB3] text-[2rem] italic font-semibold">
         {{ $t('section5.title') }}
       </h1>
       <p class="mt-6 text-[0.9rem] px-10 font-semilight leading-relaxed">
@@ -354,11 +354,32 @@
   </div>
 
   <!-- Contact Email -->
-  <div class="py-10 text-center">
-    <p class="text-[1rem]">
-      {{ $t('contact.message.label') }} {{ $t('contact.message.email').replace(' [at] ', '@') }}
-    </p>
-  </div>
+ <!-- CTA: {{ $t('contact.title') }} -->
+      <div class="bg-[#1a1a1a] p-6 mx-3 rounded-xl border border-[#00FFB3] text-center mt-10">
+        <h2 class="italic font-semibold text-2xl mb-4">{{ $t('contact.title') }}</h2>
+        <p class="text-base font-light mb-6">
+          {{ $t('contact.description') }}
+        </p>
+
+        <div class="flex flex-col gap-4">
+          <div>
+            <p class="text-sm">{{ $t('contact.message.label') }}</p>
+            <h3
+              class="text-lg font-bold italic bg-gradient-to-r from-[#00FFB3] to-[#00FFB9] bg-clip-text text-transparent"
+            >
+              {{ $t('contact.message.email').replace(' [at] ', '@') }}
+            </h3>
+          </div>
+          <div>
+            <p class="text-sm"> {{ $t('contact.call.label') }}</p>
+            <h3
+              class="text-lg italic font-bold bg-gradient-to-r from-[#FFE401] to-[#FFB401] bg-clip-text text-transparent"
+            >
+              {{ $t('contact.call.action') }}
+            </h3>
+          </div>
+        </div>
+      </div>
 </section>
 
 </template>
