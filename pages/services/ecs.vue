@@ -1,32 +1,12 @@
 <template>
   <div class="">
-    <Navbar
-      :nav-links="[
-        { label: $t('nav.brand'), to: '/' },
-        { label: $t('nav.services') },
-        { label: $t('nav.work'), to: '/work' }
-      ]"
-      :cta-label="$t('button.talk3')"
-      cta-to="/appointment"
-      logo-src="/images/ecs-logo.png"
-      cta-from="#FFE501"
-      cta-to-color="#FFA901"
-    />
-    <ScrollToTopButton />
-
+  
     <EcsHerosection />
-    <SiteFooter
-      bg-color="#020111"
-      textcolor="#FFB401"
-      quote="Stop putting my name under  quotes I didn’t say."
-      author="- Sun Tzu, the art of war"
-    />
+  
   </div>
 </template>
 
 <script setup>
-  import EcsHerosection from '@organisms/EcsHerosection.vue'
-  import Navbar from '@organisms/Navbar.vue'
-  import SiteFooter from '@organisms/SiteFooter.vue'
-  import ScrollToTopButton from '@organisms/Scrolltotop.vue'
+  import EcsHerosection from '@organisms/Ecs.vue'
+
 </script>
